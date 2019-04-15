@@ -1,5 +1,5 @@
-const rp = require('request-promise');
-const $ = require('cheerio');
+import rp from 'request-promise';
+import $ from 'cheerio';
 
 const potusParse = function(url) {
   return rp(url)
@@ -14,4 +14,4 @@ const potusParse = function(url) {
     });
 };
 
-module.exports = potusParse;
+export default potusParse;
