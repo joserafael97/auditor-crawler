@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 25
+    },
+    "auditLog": "/home/joserafael/workspace/MSC/auditor-crawler/log/.6258504e8e8faa81285af5fc8d49e2e80398472d-audit.json",
+    "files": [
+        {
+            "date": 1555437932556,
+            "name": "/home/joserafael/workspace/MSC/auditor-crawler/log/app.log..Tu-04-yyyy",
+            "hash": "6d9cb2bc64fc69af4cf91e3acaaeb1af"
+        }
+    ]
+}

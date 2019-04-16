@@ -1,6 +1,7 @@
 'use strict';
 
 import mongoose from 'mongoose';
+import ItemKeyWord from '../models/itemKeyWord.model'
 
 const CriterionKeyWordSchema = mongoose.Schema({
     name: {
@@ -17,8 +18,8 @@ const CriterionKeyWordSchema = mongoose.Schema({
         required: true
     }],
 }, {
-    collection: 'CriterionKeyWord'
-});
+        collection: 'CriterionKeyWord'
+    });
 
 let CriterionKeyWordModel = mongoose.model('CriterionKeyWord', CriterionKeyWordSchema);
 
@@ -26,8 +27,21 @@ CriterionKeyWordModel.getAll = () => {
     return CriterionKeyWordModel.find({});
 }
 
-CriterionKeyWordModel.addCriterionKeyWordModel = (criterionKeyWordModelToAdd) => {
-    return criterionKeyWordModelToAdd.save();
+CriterionKeyWordModel.addCriterionKeyWordModel = async (criterionKeyWordModelToAdd, identificationKeyWord) => {
+    for (var key in identificationKeyWord) {
+        try {
+            const itemKeyWordSaved = await  ItemKeyWord({
+                name: key,
+                identificationKeyWord: identificationKeyWord[key]
+            }).save();
+
+            criterionKeyWordModelToAdd.itens.push(itemKeyWordSaved);
+        } catch (err) {
+            
+        }
+
+    }
+    await criterionKeyWordModelToAdd.save();
 }
 
 CriterionKeyWordModel.removeCriterionKeyWordModel = (criterionKeyWordId) => {
