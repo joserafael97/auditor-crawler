@@ -7,7 +7,7 @@ const EvaluationSchema = mongoose.Schema({
     county: {type: String, required: true}, 
     cityHallUrl: {type: String, required: true}, 
     transparencyPortalUrl: {type: String}, 
-    criterions: [{type: Schema.Types.ObjectId, ref: 'Criterion' }]
+    criterions: [{type: mongoose.Schema.Types.ObjectId, ref: 'Criterion' }]
 }, {collection : 'Evaluation'});
 
 let EvaluationModel = mongoose.model('Evaluation', EvaluationSchema);

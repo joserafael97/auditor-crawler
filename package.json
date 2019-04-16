@@ -4,7 +4,7 @@
   "description": "todo",
   "main": "potusParse.js",
   "scripts": {
-    "start": "babel-node app.js"
+    "start": "babel-node ./db/createColletionsKeyWordDefault.js"
   },
   "author": "",
   "license": "ISC",

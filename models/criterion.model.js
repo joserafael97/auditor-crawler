@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 const CriterionSchema = mongoose.Schema({
     name: {type: String, required: true}, 
     itens: [{type: Schema.Types.ObjectId, ref: 'Item' }], 
-    evaluation: {type: Schema.Types.ObjectId, ref: 'Evaluation' }
+    evaluation: {type: mongoose.Schema.Types.ObjectId, ref: 'Evaluation' }
 }, {collection : 'Criterion'});
 
 let CriterionModel = mongoose.model('Criterion', CriterionSchema);
