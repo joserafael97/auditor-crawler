@@ -4,7 +4,7 @@
   "description": "todo",
   "main": "potusParse.js",
   "scripts": {
-    "start": "babel-node ./models/president.js"
+    "start": "babel-node app.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,7 +13,9 @@
     "mongoose": "^5.5.1",
     "puppeteer": "^1.14.0",
     "request": "^2.88.0",
-    "request-promise": "^4.2.4"
+    "request-promise": "^4.2.4",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^3.8.0"
   },
   "devDependencies": {
     "@types/request-promise": "^4.1.42",
