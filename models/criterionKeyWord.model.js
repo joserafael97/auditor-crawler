@@ -11,7 +11,7 @@ const CriterionKeyWordSchema = mongoose.Schema({
     },
     itens: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'ItemKeyWords'
+        ref: 'ItemKeyWord'
     }],
     keywordSearch: [{
         type: String,
@@ -23,29 +23,33 @@ const CriterionKeyWordSchema = mongoose.Schema({
 
 let CriterionKeyWordModel = mongoose.model('CriterionKeyWord', CriterionKeyWordSchema);
 
-CriterionKeyWordModel.getAll = () => {
-    return CriterionKeyWordModel.find({});
+CriterionKeyWordModel.getAll = async () => {
+    return await CriterionKeyWordModel.find().populate('itens').exec();
+}
+
+CriterionKeyWordModel.findByName = async (nameCriterion) => {
+    return await CriterionKeyWordModel.findOne({ name: nameCriterion }).populate('itens').exec();
 }
 
 CriterionKeyWordModel.addCriterionKeyWordModel = async (criterionKeyWordModelToAdd, identificationKeyWord) => {
     for (var key in identificationKeyWord) {
         try {
-            const itemKeyWordSaved = await  ItemKeyWord({
+            const itemKeyWordSaved = await ItemKeyWord({
                 name: key,
                 identificationKeyWord: identificationKeyWord[key]
             }).save();
 
             criterionKeyWordModelToAdd.itens.push(itemKeyWordSaved);
         } catch (err) {
-            
+
         }
 
     }
     await criterionKeyWordModelToAdd.save();
 }
 
-CriterionKeyWordModel.removeCriterionKeyWordModel = (criterionKeyWordId) => {
-    return CriterionKeyWordModel.remove({
+CriterionKeyWordModel.removeCriterionKeyWordModel = async (criterionKeyWordId) => {
+    return await CriterionKeyWordModel.remove({
         id: criterionKeyWordId
     });
 }
