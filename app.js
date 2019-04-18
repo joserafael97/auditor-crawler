@@ -1,12 +1,11 @@
 'use strict';
-import CriterionKeyWord from './models/criterionKeyWord.model'
 import connectToDb from './db/connect'
-import mongoose from 'mongoose';
+import XpathUtil from './utils/xpathUtil'
+import {CONTAINSTYPESEARCH} from './utils/xpathUtil'
+
+connectToDb();
 
 
-const conexion = connectToDb();
-
-CriterionKeyWord.findByName('Despesa Extra Orçamentária').then(function(result){
-    console.log(result)
-    mongoose.connection.close()
+XpathUtil.createIdentificationKeyWordXpath('Despesa Extra Orçamentária', CONTAINSTYPESEARCH, '@onclick').then(function (result) {
+    console.log(result);
 });
