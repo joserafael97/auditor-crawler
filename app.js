@@ -6,6 +6,6 @@ import {CONTAINSTYPESEARCH} from './utils/xpathUtil'
 connectToDb();
 
 
-XpathUtil.createIdentificationKeyWordXpath('Despesa Extra Orçamentária', CONTAINSTYPESEARCH, '@onclick').then(function (result) {
+XpathUtil.createIdentificationKeyWordXpath('Despesa Extra Orçamentária').then(function (result) {
     console.log(result);
 });
