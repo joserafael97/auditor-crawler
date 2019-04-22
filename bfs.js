@@ -1,5 +1,7 @@
 'use-strict';
 
+
+
 //Create queue
 let queue = [];
 import { launch } from 'puppeteer';
@@ -24,7 +26,7 @@ let visited_list = [];
 function crawl(url) {
     visited_list.push(url);
 
-    if (queue.length > 99) {
+    if (queue.length > 5) {
         return;
     }
     let urls = [];
@@ -33,8 +35,6 @@ function crawl(url) {
     //for (let index = 0; index < 3; index++) {
       //  urls.push("www.facebook" + index + ".net");
     //}
-
-
 
     for (let index = 0; index < urls.length; index++) {
         let flag = 0;
@@ -46,12 +46,13 @@ function crawl(url) {
             if (j == completeUrl) {
                 flag = 1;
                 break;
+                
             }
         }
 
         // If not found in queue
         if (flag == 0) {
-            if (queue.length > 99) {
+            if (queue.length > 5) {
                 return;
             }
 
@@ -65,7 +66,7 @@ function crawl(url) {
     let current = queue.shift();
 
     //Recursive call to crawl until the queue is populated with 100 URLs
-    crawl(current);
+    return crawl(current);
 
 }
 
