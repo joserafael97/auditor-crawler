@@ -28,4 +28,8 @@ export default class Node {
     getResearched() {
         return this.researched;
     }
+
+    setResearched(researched) {
+        this.researched = researched;
+    }
 }

@@ -1,29 +1,97 @@
 'use-strict';
 
+import Node from './bfs/node'
+import PuppeterUtil from './utils/puppeteerUtil';
+import XpathUtil from './utils/xpathUtil'
+import connectToDb from './db/connect'
+import urljoin from 'url-join'
+
+let root = new Node('http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
+    [], null, false);
 
 
 //Create queue
 let queue = [];
-import { launch } from 'puppeteer';
-
-const url = 'http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB';
-
-const run = async (url) => {
-    const browser = await launch({args: ['--no-sandbox', '--start-fullscreen'], headless: false});
-    const page = await browser.newPage();
-    await page.setViewport({ width: 1920, height: 1080});
-    await page.goto(url);
-
-    return browser.close();
-};
 
 
 //Maintains list of visited pages
 let visited_list = [];
 
+const clickByText = async (page, xpath) => {
+    const linkHandlers = await page.$x(xpath);
+    if (linkHandlers.length > 0) {
 
-// Crawl the page and populate the queue with newly found URLs
-function crawl(url) {
+        await linkHandlers[0].click();
+        console.log('***********clicou*****************')
+
+    } else {
+        throw new Error(`Link not found: ${xpath}`);
+    }
+};
+
+connectToDb();
+
+function extractHostname(url) {
+    let hostname;
+    //find & remove protocol (http, ftp, etc.) and get hostname
+
+    if (url.indexOf("//") > -1) {
+        hostname = url.split('/')[2];
+    }
+    else {
+        hostname = url.split('/')[0];
+    }
+
+    //find & remove port number
+    hostname = hostname.split(':')[0];
+    //find & remove "?"
+    hostname = hostname.split('?')[0];
+
+    return hostname;
+}
+
+function isUrl(s) {
+    var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
+    return regexp.test(s);
+}
+
+
+const run2 = async (node) => {
+    const puppeteer = await PuppeterUtil.createPuppetterInstance();
+    const page = puppeteer.getFirstPage();
+
+    //access url node
+    await Promise.all([page.goto(node.url), page.waitForNavigation()]);
+    node.setResearched(true);
+
+    let xpaths = await XpathUtil.createXpathsToExtractUrls('Despesa Extra Orçamentária');
+
+    console.log("DOMAIN", extractHostname(page.url()));
+
+    for (let xpath of xpaths){
+        const element = await page.$x(xpath);
+        const text = element[0] !== undefined ? await (await element[0].getProperty('textContent')).jsonValue() : 'not found';
+        console.log(isUrl(text))
+        console.log(urljoin(extractHostname(page.url()), text));
+    }
+
+    await page.waitFor(2000)
+
+
+    return puppeteer.getBrowser().close();
+
+}
+
+const logErrorAndExit = err => {
+    console.log(err);
+    process.exit();
+};
+
+run2(root).catch(logErrorAndExit);
+
+
+
+const run = async (node) => {
     visited_list.push(url);
 
     if (queue.length > 5) {
@@ -33,7 +101,7 @@ function crawl(url) {
 
     // extract urls and components proccess
     //for (let index = 0; index < 3; index++) {
-      //  urls.push("www.facebook" + index + ".net");
+    //  urls.push("www.facebook" + index + ".net");
     //}
 
     for (let index = 0; index < urls.length; index++) {
@@ -46,7 +114,7 @@ function crawl(url) {
             if (j == completeUrl) {
                 flag = 1;
                 break;
-                
+
             }
         }
 
@@ -71,21 +139,21 @@ function crawl(url) {
 }
 
 
-crawl("www.google.com.br");
+// // crawl("www.google.com.br");
 
-// Print queue
-for(let j in queue){
-    console.log(j);
-}
+// // Print queue
+// for (let j in queue) {
+//     console.log(j);
+// }
 
-console.log();
-console.log("==============");
-console.log( "Pages crawled:");
-console.log("==============");
-console.log();
+// console.log();
+// console.log("==============");
+// console.log("Pages crawled:");
+// console.log("==============");
+// console.log();
 
-// Print list of visited pages
-for(let j in visited_list){
-    console.log(j);
+// // Print list of visited pages
+// for (let j in visited_list) {
+//     console.log(j);
 
-}
+// }

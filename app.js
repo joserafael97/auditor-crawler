@@ -9,3 +9,4 @@ connectToDb();
 XpathUtil.createXpathsToExtractComponentsJs('Despesa Extra Orçamentária').then(function (result) {
     console.log(result);
 });
+

@@ -1,7 +1,5 @@
 'use strict';
 import CriterionKeyWord from '../models/criterionKeyWord.model'
-import connectToDb from '../db/connect'
-import mongoose from 'mongoose';
 import TextUtil from './texUtil';
 
 const EQUALTYPESEARCH = 'tagSearch = "{}"';
@@ -58,11 +56,11 @@ export default class XpathUtil {
                 xpaths.push('//*[contains({tagSearch},"{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord));
                 xpaths.push('//*[{tagSearch}  = "{}"]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord));
                 xpaths.push('//*[{tagSearch} = "{}"]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord));
-                xpaths.push('//*[contains{tagSearch},"{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord));
+                xpaths.push('//*[contains({tagSearch},"{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord));
                 xpaths.push('//a[contains({tagSearch}, "{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord));
                 xpaths.push('//*[contains({tagSearch}, "{}")]/parent::a/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord));
                 xpaths.push('// *[{tagSearch} = "{}"]/following::td[1]//@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord));
-                xpaths.push('//*[contains({tagSearch} "{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord));
+                xpaths.push('//*[contains({tagSearch}, "{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord));
             }
         });
 

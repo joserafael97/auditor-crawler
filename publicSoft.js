@@ -1,4 +1,4 @@
-import { launch } from 'puppeteer';
+import puppeteer from 'puppeteer' 
 
 const clickByText = async (page, xpath) => {
   const linkHandlers = await page.$x(xpath);
@@ -13,7 +13,7 @@ const clickByText = async (page, xpath) => {
 };
 
 const run = async () => {
-  const browser = await launch({args: ['--no-sandbox', '--start-fullscreen'], headless: false});
+  const browser = await puppeteer.launch({args: ['--no-sandbox', '--start-fullscreen'], headless: false});
   const page = await browser.newPage();
   await page.setViewport({ width: 1920, height: 1080});
   await page.goto('http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB');
