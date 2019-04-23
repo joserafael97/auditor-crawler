@@ -2,8 +2,8 @@
 
 export default class Node {
 
-    constructor(url, edges=[], parent = null, researched = false) {
-        this.url = url;
+    constructor(source, parent = null, edges=null, researched = false) {
+        this.source = source;
         this.edges = edges;
         this.parent = parent;
         this.researched = researched;
@@ -13,8 +13,8 @@ export default class Node {
         this.edges.push(edge);
     }
 
-    getUrl() {
-        return this.url;
+    getSource() {
+        return this.source;
     }
 
     getEdges() {
@@ -31,5 +31,13 @@ export default class Node {
 
     setResearched(researched) {
         this.researched = researched;
+    }
+
+    setParent(parent) {
+        this.parent = parent;
+    }
+
+    setEdges(edges) {
+        this.edges = edges;
     }
 }

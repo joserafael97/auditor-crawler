@@ -3,10 +3,20 @@
 import Node from './bfs/node'
 import PuppeterUtil from './utils/puppeteerUtil';
 import XpathUtil from './utils/xpathUtil'
+import HtmlUtil from './utils/htmlUtil'
+import TextUtil from './utils/texUtil'
+import Element from './models/element.class'
 import connectToDb from './db/connect'
 import urljoin from 'url-join'
+import {
+    QUERYTODYNAMICELEMENT,
+    QUERYTOSTATICCOMPONENT
+} from './models/queryElement.class'
 
-let root = new Node('http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
+// let root = new Node('http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
+//     [], null, false);
+
+let root = new Node('http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB',
     [], null, false);
 
 
@@ -20,10 +30,8 @@ let visited_list = [];
 const clickByText = async (page, xpath) => {
     const linkHandlers = await page.$x(xpath);
     if (linkHandlers.length > 0) {
-
         await linkHandlers[0].click();
         console.log('***********clicou*****************')
-
     } else {
         throw new Error(`Link not found: ${xpath}`);
     }
@@ -31,29 +39,44 @@ const clickByText = async (page, xpath) => {
 
 connectToDb();
 
-function extractHostname(url) {
-    let hostname;
-    //find & remove protocol (http, ftp, etc.) and get hostname
+const extractEdges = async (node, page, criterionKeyWordName) => {
 
-    if (url.indexOf("//") > -1) {
-        hostname = url.split('/')[2];
+    let queryElements = await XpathUtil.createXpathsToExtractUrls(criterionKeyWordName);
+    let queryElementDynamicComponents = await XpathUtil.createXpathsToExtractDynamicComponents(criterionKeyWordName);
+    queryElements = queryElements.concat(queryElementDynamicComponents);
+
+    let edgesList = [];
+
+    for (let queryElement of queryElements) {
+
+        const elements = await page.$x(queryElement.getXpath());
+
+        if (elements.length > 0) {
+            for (let element of elements) {
+                let text = await (await element.getProperty('textContent')).jsonValue();
+
+                if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
+                    text = HtmlUtil.isUrl(text) ? text :
+                        HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(page.url()), text)) ?
+                        urljoin(HtmlUtil.extractHostname(page.url()), text) : undefined;
+                }
+
+                if (text !== undefined) {
+                    text = TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+                    if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined) {
+                        edgesList.push(new Node(new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery()), node));
+                    }
+                }
+            }
+
+        }
     }
-    else {
-        hostname = url.split('/')[0];
-    }
 
-    //find & remove port number
-    hostname = hostname.split(':')[0];
-    //find & remove "?"
-    hostname = hostname.split('?')[0];
-
-    return hostname;
+    node.setEdges(edgesList);
+    return node;
 }
 
-function isUrl(s) {
-    var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
-    return regexp.test(s);
-}
+
 
 
 const run2 = async (node) => {
@@ -61,25 +84,68 @@ const run2 = async (node) => {
     const page = puppeteer.getFirstPage();
 
     //access url node
-    await Promise.all([page.goto(node.url), page.waitForNavigation()]);
+    //TODO verify if is URL or Xpath and root Node
+    await Promise.all([page.goto(node.source), page.waitForNavigation()]);
     node.setResearched(true);
 
-    let xpaths = await XpathUtil.createXpathsToExtractUrls('Despesa Extra Orçamentária');
+    //detect itens of criterion
+    //todo
 
-    console.log("DOMAIN", extractHostname(page.url()));
+  
+    //extract edges
+    node = await extractEdges(node, page, 'Despesa Extra Orçamentária');
 
-    for (let xpath of xpaths){
-        const element = await page.$x(xpath);
-        const text = element[0] !== undefined ? await (await element[0].getProperty('textContent')).jsonValue() : 'not found';
-        console.log(isUrl(text))
-        console.log(urljoin(extractHostname(page.url()), text));
+    for (let edge of node.getEdges()) {
+        run2(edge);
     }
 
-    await page.waitFor(2000)
-
+    await page.waitFor(3000);
 
     return puppeteer.getBrowser().close();
 
+}
+
+
+// if (node.getParent() !== null) {
+//     let it = accessParents(node);
+//     let result = it.next();
+
+//     while (!result.done) {
+//         result = it.next();
+//     }
+
+//     console.log("re: ", result)
+
+// }
+
+
+function accessParents(node) {
+    let nodeActualy = node;
+
+    let iterationCount = 0;
+
+    const rangeIterator = {
+        next: function () {
+            let result;
+
+            if (nodeActualy.parent !== undefined && nodeActualy.parent !== null) {
+                result = {
+                    treeLevel: iterationCount,
+                    done: false
+                }
+                nodeActualy = nodeActualy.getParent();
+                iterationCount++;
+                return result;
+            } else {
+                return {
+                    treeLevel: iterationCount,
+                    done: true
+                }
+            }
+
+        }
+    };
+    return rangeIterator;
 }
 
 const logErrorAndExit = err => {
