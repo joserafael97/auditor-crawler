@@ -90,13 +90,15 @@ const run2 = async (node) => {
 
     //detect itens of criterion
     //todo
+    console.log("level:", node.getSourcesParents())
 
   
     //extract edges
     node = await extractEdges(node, page, 'Despesa Extra Orçamentária');
 
     for (let edge of node.getEdges()) {
-        run2(edge);
+        console.log("sources:", edge.getSourcesParents())
+        // run2(edge);
     }
 
     await page.waitFor(3000);
@@ -105,48 +107,6 @@ const run2 = async (node) => {
 
 }
 
-
-// if (node.getParent() !== null) {
-//     let it = accessParents(node);
-//     let result = it.next();
-
-//     while (!result.done) {
-//         result = it.next();
-//     }
-
-//     console.log("re: ", result)
-
-// }
-
-
-function accessParents(node) {
-    let nodeActualy = node;
-
-    let iterationCount = 0;
-
-    const rangeIterator = {
-        next: function () {
-            let result;
-
-            if (nodeActualy.parent !== undefined && nodeActualy.parent !== null) {
-                result = {
-                    treeLevel: iterationCount,
-                    done: false
-                }
-                nodeActualy = nodeActualy.getParent();
-                iterationCount++;
-                return result;
-            } else {
-                return {
-                    treeLevel: iterationCount,
-                    done: true
-                }
-            }
-
-        }
-    };
-    return rangeIterator;
-}
 
 const logErrorAndExit = err => {
     console.log(err);
