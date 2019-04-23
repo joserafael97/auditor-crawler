@@ -6,6 +6,7 @@ import {QUERYTODYNAMICELEMENT} from '../models/queryElement.class'
 
 const EQUALTYPESEARCH = 'tagSearch = "{}"';
 const CONTAINSTYPESEARCH = 'contains(tagSearch, "{}")';
+const XPATHIFRAME = '//*/iframe';
 
 
 export {
@@ -13,6 +14,10 @@ export {
 };
 export {
     CONTAINSTYPESEARCH
+};
+
+export {
+    XPATHIFRAME
 };
 
 

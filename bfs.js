@@ -27,19 +27,10 @@ let queue = [];
 //Maintains list of visited pages
 let visited_list = [];
 
-const clickByText = async (page, xpath) => {
-    const linkHandlers = await page.$x(xpath);
-    if (linkHandlers.length > 0) {
-        await linkHandlers[0].click();
-        console.log('***********clicou*****************')
-    } else {
-        throw new Error(`Link not found: ${xpath}`);
-    }
-};
 
 connectToDb();
 
-const extractEdges = async (node, page, criterionKeyWordName) => {
+const extractEdges = async (node, page, puppeteer, criterionKeyWordName) => {
 
     let queryElements = await XpathUtil.createXpathsToExtractUrls(criterionKeyWordName);
     let queryElementDynamicComponents = await XpathUtil.createXpathsToExtractDynamicComponents(criterionKeyWordName);
@@ -58,13 +49,13 @@ const extractEdges = async (node, page, criterionKeyWordName) => {
                 if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                     text = HtmlUtil.isUrl(text) ? text :
                         HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(page.url()), text)) ?
-                        urljoin(HtmlUtil.extractHostname(page.url()), text) : undefined;
+                            urljoin(HtmlUtil.extractHostname(page.url()), text) : undefined;
                 }
 
                 if (text !== undefined) {
                     text = TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
                     if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined) {
-                        edgesList.push(new Node(new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery()), node));
+                        edgesList.push(new Node(new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), puppeteer), node));
                     }
                 }
             }
@@ -77,36 +68,71 @@ const extractEdges = async (node, page, criterionKeyWordName) => {
 }
 
 
+const run2 = async (node, puppeteer = null) => {
 
+    try {
+        if (puppeteer == null) {
+            puppeteer = await PuppeterUtil.createPuppetterInstance();
+        }
 
-const run2 = async (node) => {
-    const puppeteer = await PuppeterUtil.createPuppetterInstance();
-    const page = puppeteer.getFirstPage();
+        let page = puppeteer.getFirstPage();
 
-    //access url node
-    //TODO verify if is URL or Xpath and root Node
-    await Promise.all([page.goto(node.source), page.waitForNavigation()]);
-    node.setResearched(true);
+        //node root
+        if (node.getParent().length === 0) {
+            await Promise.all([page.goto(node.source), page.waitForNavigation()]);
+            node = await extractEdges(node, page, puppeteer, 'Despesa Extra Orçamentária');
 
-    //detect itens of criterion
-    //todo
-    console.log("level:", node.getSourcesParents())
+        } else {
+            const value = node.getSource().getValue();
+            const element = node.getSource().getElement();
+            const xpath = node.getSource().getXpath();
 
-  
-    //extract edges
-    node = await extractEdges(node, page, 'Despesa Extra Orçamentária');
+            if (HtmlUtil.isUrl(value)) {
+                await Promise.all([page.goto(value), page.waitForNavigation()]);
+            } else {
+                await element.click();
+                try {
+                    await page.waitForNavigation();
+                    page = await PuppeterUtil.detectContext(puppeteer, xpath);
+                } catch (e) {
+                    console.log("deu erro na mudança,,,", e);
+                }
 
-    for (let edge of node.getEdges()) {
-        console.log("sources:", edge.getSourcesParents())
-        // run2(edge);
+                console.log("elements parent: ", node.getSourcesParents())
+
+                //extract new components
+                //TODO
+
+                //resert page
+                page.reload();
+
+                console.log("fechou......: ")
+
+            }
+
+            console.log("Value: ", value);
+
+        }
+
+        //TODO verify if is URL or Xpath and root Node
+        node.setResearched(true);
+
+        //detect itens of criterion
+
+        while (node.getEdges().length > 0) {
+            const newNode = node.shiftEdge();
+            console.log("TAM FIM: ", node.getEdges().length)
+            await run2(newNode, puppeteer);
+        }
+
+        await page.waitFor(3000);
+
+        return puppeteer.getBrowser().close();
+    } catch (e) {
+        console.log("CLICK ERRO")
     }
 
-    await page.waitFor(3000);
-
-    return puppeteer.getBrowser().close();
-
 }
-
 
 const logErrorAndExit = err => {
     console.log(err);

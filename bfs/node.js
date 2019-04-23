@@ -4,7 +4,7 @@
 
 export default class Node {
 
-    constructor(source, parent = null, edges = null, researched = false) {
+    constructor(source, parent = null, edges = [], researched = false) {
         this.source = source;
         this.edges = edges;
         this.parent = parent;
@@ -73,6 +73,10 @@ export default class Node {
 
     addEdge(edge) {
         this.edges.push(edge);
+    }
+
+    shiftEdge() {
+        return this.edges.shift();
     }
 
     getSource() {
