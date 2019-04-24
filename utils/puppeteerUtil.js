@@ -9,16 +9,19 @@ export default class PuppeteerUltil {
 
     static async createPuppetterInstance() {
         const browser = await puppeteer.launch({
-            args: ['--no-sandbox', '--start-fullscreen'],
+            args: [
+                // '--no-sandbox', 
+            '--start-fullscreen'],
             headless: false
         });
-        const page = await browser.newPage();
-        await page.setViewport({
+        const [page] = await browser.pages();
+        const mainPage = await page.target().page();
+        await mainPage.setViewport({
             width: 1920,
             height: 1080
         });
 
-        return new PuppeteerInstance(browser, [page]);
+        return new PuppeteerInstance(browser, [mainPage]);
     }
 
     static async clickByXpath(page, xpath) {
@@ -37,23 +40,12 @@ export default class PuppeteerUltil {
 
     }
 
-    static async detectContext(puppeteer, xpath) {
-        const page = puppeteer.getFirstPage();
-        console.log("result:", PuppeteerUltil.checkXpath(page, XPATHIFRAME))
-
-        if (PuppeteerUltil.checkXpath(page, XPATHIFRAME)) {
-            for (const iframe of page.frames()) {
-                if (PuppeteerUltil.checkXpath(iframe, xpath)) {
-                    return iframe;
-                }
-            }
+    static async detectContext(page) {
+        if (await PuppeteerUltil.checkXpath(page, XPATHIFRAME)) {
+            console.log('iFRAME return')
+            return page.frames()[0]
         }
-        if (PuppeteerUltil.checkXpath(page, xpath)) {
-            return page;
-        }
-
-        return null;
-        // return PuppeteerUltil.searchNewWindow(puppeteer, xpath)
+        return page;
     }
 
 

@@ -1,5 +1,5 @@
-const keywordSearchDespExtraOrcamentaria = ['despesas extras-orcamentarias', 'despesaextraorcamentaria.aspx',
-    'despesasextras', 'despesas', 'despesa com diarias', 'detalhamentos das despesas'
+const keywordSearchDespExtraOrcamentaria = ['despesas extras-orcamentarias', 'Consultar Despesas Extras-Orçamentárias','Consultar Despesas Extras','despesaextraorcamentaria.aspx',
+    'despesasextras', 'despesas', 'despesa com diarias', 'detalhamentos das despesas',  'consultar'
 ];
 
 const identificationKeyWordDespExtraOrcamentaria = {
