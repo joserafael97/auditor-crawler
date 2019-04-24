@@ -46,7 +46,7 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName) => {
 
                 if (text !== undefined) {
                     text = TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                    if (!checkTextContainsArray(validation(criterionKeyWordName), text)) {
+                    if (!TextUtil.checkTextContainsArray(validation(criterionKeyWordName), text)) {
                         if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
                             ((node.getSourcesParents().filter((n) => n.getValue() === text)[0]) === undefined)) {
 
@@ -80,10 +80,10 @@ const run2 = async (node, puppeteer = null) => {
             await Promise.all([page.goto(value), page.waitForNavigation()]);
         } else {
             const element = node.getSource().getElement();
+            const xpath = node.getSource().getXpath();
             await element.click();
             try {
-                // await page.waitForNavigation();
-                // page = await PuppeterUtil.detectContext(page);
+                page = await PuppeterUtil.detectContext(page, xpath);
             } catch (e) {
                 console.log("deu erro na mudança,,,", e);
             }
@@ -91,16 +91,31 @@ const run2 = async (node, puppeteer = null) => {
             //TODO
         }
 
+
         console.log("********************************************************************")
-        console.log("numPagesOpened: ", numPages);
-        console.log("value clicked: ", value);
-        console.log("level: ", node.getLevel());
-        console.log("parents: ", node.getSourcesParents());
+        // console.log("numPagesOpened: ", numPages);
+        // console.log("value clicked: ", value);
+        // console.log("level: ", node.getLevel());
+        // console.log("parents: ", node.getSourcesParents());
 
-        node = await extractEdges(node, page, puppeteer, 'Despesa Extra Orçamentária');
+        if (node.getLevel() == 0) {
 
-        //TODO verify if is URL or Xpath and root Node
+            node = await extractEdges(node, page, puppeteer, 'Despesa Extra Orçamentária');
+        }
+
         node.setResearched(true);
+
+        //reset page state
+        // page = await PuppeterUtil.resetPage(page, node);
+        //level 01 e 02 use url and max single xpath.
+        if (node.getLevel() == 1) {
+            try {
+                await Promise.all([page.reload(), page.waitForNavigation()]);
+            } catch (e) {
+                console.log("error no reloading")
+            }
+        }
+
 
         //detect itens of criterion
         while (node.getEdges().length > 0) {
@@ -134,14 +149,3 @@ const validation = (criterionName) => {
 
     return unusableTerms[criterionName];
 }
-
-const checkTextContainsArray = (array, text) => {
-    for (let index = 0; index < array.length; index++) {
-        if (text.includes(array[index])) {
-            return true;
-        }
-
-    }
-    return false;
-}
-

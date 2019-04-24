@@ -10,4 +10,14 @@ export default class TextUtil {
         return text.replace(/(\r\n|\n|\r)/gm, '').replace(/ +(?= )/g,'').trim();
     }
 
+    static checkTextContainsArray (array, text){
+        for (let index = 0; index < array.length; index++) {
+            if (text.includes(array[index])) {
+                return true;
+            }
+    
+        }
+        return false;
+    }
+
 }

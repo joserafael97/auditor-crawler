@@ -1,8 +1,16 @@
 'use-strict';
 
 import puppeteer from 'puppeteer'
+import TextUtil from '../utils/texUtil'
 import PuppeteerInstance from '../models/puppeteerInstance.class'
-import { XPATHIFRAME } from '../utils/xpathUtil'
+import {
+    XPATHIFRAME,
+    UNUSABLEIFRAMES
+} from '../utils/xpathUtil'
+
+import Node from '../bfs/node'
+
+
 
 export default class PuppeteerUltil {
 
@@ -10,8 +18,26 @@ export default class PuppeteerUltil {
     static async createPuppetterInstance() {
         const browser = await puppeteer.launch({
             args: [
-                // '--no-sandbox', 
-            '--start-fullscreen'],
+                '--no-sandbox',
+                '--disable-features=site-per-process',
+                '--start-fullscreen',
+                '--disable-extensions',
+                '--ignore-certificate-errors',
+                '--disable-dev-shm-usage',
+                '--disable-webgl',
+                '--disable-popup-blocking',
+                '--blacklist-webgl',
+                '--blacklist-accelerated-compositing',
+                '--dev-shm-usage',
+                '--disable-accelerated-2d-canvas',
+                '--disable-accelerated-compositing',
+                '--disable-accelerated-layers',
+                '--disable-accelerated-plugins',
+                '--disable-accelerated-video',
+                '--disable-accelerated-video-decode',
+                '--disable-infobars',
+                '--test-type',
+            ],
             headless: false
         });
         const [page] = await browser.pages();
@@ -40,10 +66,14 @@ export default class PuppeteerUltil {
 
     }
 
-    static async detectContext(page) {
+    static async detectContext(page, xpath) {
         if (await PuppeteerUltil.checkXpath(page, XPATHIFRAME)) {
-            console.log('iFRAME return')
-            return page.frames()[0]
+            for (const frame of page.mainFrame().childFrames()) {
+                if (!TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, frame.url())) {
+                    return frame;
+
+                }
+            }
         }
         return page;
     }
@@ -58,6 +88,23 @@ export default class PuppeteerUltil {
             return false;
         }
     }
+
+    static async resetPage(page, node) {
+
+        //level 01 e 02 use url and max single xpath.
+        if (node.getLevel() < 3) {
+            try {
+                await page.reload();
+            } catch (e) {
+                console.log(e)
+            }
+            return page;
+        }
+
+        return page;
+    }
+
+
 
     // static async searchNewWindow(puppeteer, xpath){
     //     numPages = (await browser.pages()).length
