@@ -1,0 +1,19 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 25
+    },
+    "auditLog": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/.262e2eee8421c29bff62bc7d2d56b223fb79f113-audit.json",
+    "files": [
+        {
+            "date": 1557171362605,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Mo-05-yyyy",
+            "hash": "2939818f0c14f2c3af73014d4cd781a6"
+        },
+        {
+            "date": 1557235901077,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Tu-05-yyyy",
+            "hash": "e28a3c5efc3dd3b986d0208f4499854a"
+        }
+    ]
+}

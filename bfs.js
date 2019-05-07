@@ -16,8 +16,12 @@ import {
 // let root = new Node('http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
 //     [], null, false);
 
-let root = new Node(new Element('http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB',
-        null, null, null, null),
+// let root = new Node(new Element('http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB',
+//         null, null, null, null),
+//     [], [], false);
+
+let root = new Node(new Element('https://transparencia.joaopessoa.pb.gov.br',
+    null, null, null, null),
     [], [], false);
 
 connectToDb();
@@ -36,16 +40,16 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName) => {
 
         if (elements.length > 0) {
             for (let element of elements) {
+
                 let text = await (await element.getProperty('textContent')).jsonValue();
 
                 if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                     text = HtmlUtil.isUrl(text) ? text :
                         HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(page.url()), text)) ?
-                        urljoin(HtmlUtil.extractHostname(page.url()), text) : undefined;
+                            urljoin(HtmlUtil.extractHostname(page.url()), text) : undefined;
                 }
-
                 if (text !== undefined) {
-                    text = TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+                    text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
                     if (!TextUtil.checkTextContainsArray(validation(criterionKeyWordName), text)) {
                         if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
                             ((node.getSourcesParents().filter((n) => n.getValue() === text)[0]) === undefined)) {
@@ -76,9 +80,13 @@ const run2 = async (node, puppeteer = null) => {
         const value = node.getSource().getValue();
         const numPages = (await puppeteer.getBrowser().pages()).length;
 
+        console.log("VALUE: ", value)
+
         if (HtmlUtil.isUrl(value)) {
+            console.log("is URL");
             await Promise.all([page.goto(value), page.waitForNavigation()]);
         } else {
+            console.log("is element HTML");
             const element = node.getSource().getElement();
             const xpath = node.getSource().getXpath();
             await element.click();
@@ -93,27 +101,39 @@ const run2 = async (node, puppeteer = null) => {
 
 
         console.log("********************************************************************")
-        // console.log("numPagesOpened: ", numPages);
-        // console.log("value clicked: ", value);
-        // console.log("level: ", node.getLevel());
+        console.log("numPagesOpened: ", numPages);
+        console.log("value clicked: ", value);
+        console.log("level: ", node.getLevel());
         // console.log("parents: ", node.getSourcesParents());
 
-        if (node.getLevel() == 0) {
+        await page.waitFor(5000);
 
-            node = await extractEdges(node, page, puppeteer, 'Despesa Extra Orçamentária');
-        }
+        node = await extractEdges(node, page, puppeteer, 'Despesa Extra Orçamentária');
+
 
         node.setResearched(true);
+        
 
         //reset page state
         // page = await PuppeterUtil.resetPage(page, node);
         //level 01 e 02 use url and max single xpath.
-        if (node.getLevel() == 1) {
+        if (node.getLevel() > 0) {
             try {
+                await page.evaluate(() => window.stop());
                 await Promise.all([page.reload(), page.waitForNavigation()]);
             } catch (e) {
                 console.log("error no reloading")
             }
+
+            const parents = node.getSourcesParents()
+            if (parents.length > 1) {
+                for (let element of parents) {
+                    console.log("parent: ****:", element.value);
+                    await element.click();
+
+                }
+            }
+
         }
 
 
@@ -125,9 +145,10 @@ const run2 = async (node, puppeteer = null) => {
 
         await page.waitFor(3000);
 
-        return puppeteer.getBrowser().close();
+        console.log("*********************close browser***********************************************")
+        return await puppeteer.getBrowser().close();
     } catch (e) {
-        console.log("CLICK ERRO: ", e)
+        console.log("************click error*****************")
     }
 
 }

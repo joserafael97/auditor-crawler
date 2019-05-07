@@ -15,7 +15,8 @@ export default class HtmlUtil {
         hostname = hostname.split(':')[0];
         //find & remove "?"
         hostname = hostname.split('?')[0];
-        return hostname;
+
+        return 'http://'+hostname;
     }
 
     static isUrl(url) {
