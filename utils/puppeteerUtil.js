@@ -2,6 +2,7 @@
 
 import puppeteer from 'puppeteer'
 import TextUtil from '../utils/texUtil'
+import HtmlUtil from '../utils/htmlUtil'
 import PuppeteerInstance from '../models/puppeteerInstance.class'
 import {
     XPATHIFRAME,
@@ -43,8 +44,8 @@ export default class PuppeteerUltil {
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
         await mainPage.setViewport({
-            width: 1920,
-            // width: 1700,
+            // width: 1920,
+            width: 1700,
             height: 1080
         });
 
@@ -103,6 +104,29 @@ export default class PuppeteerUltil {
         }
 
         return page;
+    }
+
+
+    static async selectElementPage(page, xpath, searchValue) {
+
+        console.log("URL ATUAL:" , page.url());
+
+        const elements = await page.$x(xpath);
+
+        if (elements.length > 0) {
+            for (let element of elements) {
+                
+                let text = await (await element.getProperty('textContent')).jsonValue();
+                text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+                
+                if (text === searchValue) {
+                    return element;
+                }
+            }
+        }
+
+        return null
+
     }
 
 

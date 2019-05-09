@@ -50,7 +50,7 @@ export default class Node {
             next: function () {
                 let result;
                 if (nodeActualy.parent !== undefined && nodeActualy.parent !== null) {
-                    sources.push(nodeActualy.source);
+                    sources.push(nodeActualy);
                     result = {
                         treeLevel: iterationCount,
                         done: false,
@@ -76,6 +76,10 @@ export default class Node {
     }
 
     shiftEdge() {
+        for (let edge of this.edges) {
+            console.log("node anteriores: ****:", edge.getSource().value);
+        }
+
         return this.edges.shift();
     }
 
@@ -103,7 +107,7 @@ export default class Node {
         this.parent = parent;
     }
 
-    setEdges(edges) {
-        this.edges = edges;
+    setEdgesList(edges) {
+        this.edges.push.apply(this.edges, edges)
     }
 }
