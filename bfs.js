@@ -16,13 +16,13 @@ import {
 // let root = new Node('http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
 //     [], null, false);
 
-// let root = new Node(new Element('http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB',
-//         null, null, null, null),
-//     [], [], false);
-
-let root = new Node(new Element('https://transparencia.joaopessoa.pb.gov.br',
-    null, null, null, null),
+let root = new Node(new Element('http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB',
+        null, null, null, null),
     [], [], false);
+
+// let root = new Node(new Element('https://transparencia.joaopessoa.pb.gov.br',
+//     null, null, null, null),
+//     [], [], false);
 
 connectToDb();
 
@@ -46,7 +46,7 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName) => {
                 if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                     text = HtmlUtil.isUrl(text) ? text :
                         HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(page.url()), text)) ?
-                            urljoin(HtmlUtil.extractHostname(page.url()), text) : undefined;
+                        urljoin(HtmlUtil.extractHostname(page.url()), text) : undefined;
                 }
                 if (text !== undefined) {
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
@@ -79,12 +79,12 @@ const run2 = async (node, puppeteer = null) => {
 
         const value = node.getSource().getValue();
         const numPages = (await puppeteer.getBrowser().pages()).length;
+        const isUrl = HtmlUtil.isUrl(value);
 
         console.log("VALUE: ", value)
 
-        if (HtmlUtil.isUrl(value)) {
-            console.log("is URL");
-            await Promise.all([page.goto(value), page.waitForNavigation()]);
+        if (isUrl) {
+            await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);    
         } else {
             console.log("is element HTML");
             const element = node.getSource().getElement();
@@ -95,8 +95,6 @@ const run2 = async (node, puppeteer = null) => {
             } catch (e) {
                 console.log("deu erro na mudança,,,", e);
             }
-            //extract new components
-            //TODO
         }
 
 
@@ -105,34 +103,35 @@ const run2 = async (node, puppeteer = null) => {
         console.log("value clicked: ", value);
         console.log("level: ", node.getLevel());
         // console.log("parents: ", node.getSourcesParents());
-
-        await page.waitFor(5000);
-
         node = await extractEdges(node, page, puppeteer, 'Despesa Extra Orçamentária');
 
 
         node.setResearched(true);
-        
+
 
         //reset page state
         // page = await PuppeterUtil.resetPage(page, node);
         //level 01 e 02 use url and max single xpath.
+        await page.close();
+        page = await await puppeteer.getBrowser().newPage();
+
         if (node.getLevel() > 0) {
             try {
-                await page.evaluate(() => window.stop());
-                await Promise.all([page.reload(), page.waitForNavigation()]);
-            } catch (e) {
-                console.log("error no reloading")
-            }
-
-            const parents = node.getSourcesParents()
-            if (parents.length > 1) {
-                for (let element of parents) {
-                    console.log("parent: ****:", element.value);
-                    await element.click();
-
+                await page.waitFor(5000);
+                page.waitForNavigation().catch(e => void e)
+                const parents = node.getSourcesParents()
+                if (parents.length > 0) {
+                    for (let element of parents) {
+                        console.log("parent: ****:", element.value);
+                        await HtmlUtil.isUrl(element.value) ? Promise.all([page.goBack(element.value).catch(e => void e), page.waitForNavigation().catch(e => void e)])  : element.click().catch(e => void e);
+                        await page.waitFor(5000);
+                    }
                 }
+            } catch (e) {
+                console.log("error no reloading", e)
             }
+
+
 
         }
 
@@ -148,7 +147,8 @@ const run2 = async (node, puppeteer = null) => {
         console.log("*********************close browser***********************************************")
         return await puppeteer.getBrowser().close();
     } catch (e) {
-        console.log("************click error*****************")
+        console.log("************click error*****************", e)
+
     }
 
 }

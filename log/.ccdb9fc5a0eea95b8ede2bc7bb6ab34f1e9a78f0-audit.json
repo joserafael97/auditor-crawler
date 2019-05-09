@@ -24,6 +24,16 @@
             "date": 1556075029993,
             "name": "/home/hansolo/workspace/MSC/auditor-crawler/log/app.log..We-04-yyyy",
             "hash": "4ef6394ea24e6f9f91db74e3b11aeda5"
+        },
+        {
+            "date": 1557275233452,
+            "name": "/home/hansolo/workspace/MSC/auditor-crawler/log/app.log..Tu-05-yyyy",
+            "hash": "a6d5530b70f2b7bec1b594c323e463b6"
+        },
+        {
+            "date": 1557412046352,
+            "name": "/home/hansolo/workspace/MSC/auditor-crawler/log/app.log..Th-05-yyyy",
+            "hash": "109a74936a42806b8955f8ce1b43c7c3"
         }
     ]
 }
