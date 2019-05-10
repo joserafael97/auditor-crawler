@@ -100,6 +100,6 @@ export default class Node {
     }
 
     setEdgesList(edges) {
-        this.edges.push.apply(this.edges, edges)
+        this.edges = edges;
     }
 }

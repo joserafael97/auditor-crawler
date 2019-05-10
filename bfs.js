@@ -1,8 +1,7 @@
 'use-strict';
 
 import Node from './bfs/node'
-import Graph from './bfs/graph'
-import PuppeterUtil from './utils/puppeteerUtil';
+import PuppeteerUltil from './utils/puppeteerUtil';
 import XpathUtil from './utils/xpathUtil'
 import HtmlUtil from './utils/htmlUtil'
 import TextUtil from './utils/texUtil'
@@ -50,10 +49,11 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName) => {
             for (let element of elements) {
 
                 let text = await (await element.getProperty('textContent')).jsonValue();
+                let currentUrl = await page.url();
 
                 if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                     text = HtmlUtil.isUrl(text) ? text :
-                        HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(page.url()), text)) ?
+                        HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), text)) ?
                         urljoin(HtmlUtil.extractHostname(page.url()), text) : undefined;
                 }
                 if (text !== undefined) {
@@ -63,7 +63,8 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName) => {
 
                         if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
                             ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
-                            edgesList.push(new Node(new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), puppeteer), node));
+                            let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), puppeteer, currentUrl);
+                            edgesList.push(new Node(source, node));
                         }
                     }
                 }
@@ -76,24 +77,27 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName) => {
 }
 
 const run2 = async (node, puppeteer = null) => {
+
+    if (puppeteer == null) {
+        puppeteer = await PuppeteerUltil.createPuppetterInstance();
+    }
+
+    let page = puppeteer.getFirstPage();
+    const value = node.getSource().getValue();
+
+    //save page instance if change to iframe;
+    const currentPage = page;
+
+    const numPages = (await puppeteer.getBrowser().pages()).length;
+    const isUrl = HtmlUtil.isUrl(value);
+    const xpath = node.getSource().getXpath();
+
+    console.log("********************************************************************")
+    console.log("numPagesOpened: ", numPages);
+    console.log("value: ", value);
+    console.log("level: ", node.getLevel());
+
     try {
-        if (puppeteer == null) {
-            puppeteer = await PuppeterUtil.createPuppetterInstance();
-        }
-        let page = puppeteer.getFirstPage();
-        const value = node.getSource().getValue();
-
-        //save page instance if change to iframe;
-        const currentPage = page;
-
-        const numPages = (await puppeteer.getBrowser().pages()).length;
-        const isUrl = HtmlUtil.isUrl(value);
-        const xpath = node.getSource().getXpath();
-
-        console.log("********************************************************************")
-        console.log("numPagesOpened: ", numPages);
-        console.log("value: ", value);
-        console.log("level: ", node.getLevel());
 
         if (node.getLevel() > 0) {
             await page.waitForNavigation().catch(e => void e);
@@ -103,12 +107,14 @@ const run2 = async (node, puppeteer = null) => {
             await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
         } else {
             let element = node.getSource().getElement();
-            element = await PuppeterUtil.selectElementPage(page, xpath, value);
+            element = await PuppeteerUltil.selectElementPage(page, xpath, value);
             await element.click();
             await page.waitForNavigation().catch(e => void e);
+            page = await PuppeteerUltil.detectContext(page, xpath).catch(e => void e);
+        }
 
-
-            page = await PuppeterUtil.detectContext(page, xpath).catch(e => void e);;
+        if (node.getLevel() === 0) {
+            node.getSource().setUrl((await page.url()));
         }
 
         node = await extractEdges(node, page, puppeteer, 'Despesa Extra Orçamentária');
@@ -117,53 +123,30 @@ const run2 = async (node, puppeteer = null) => {
         //change to page if iframe in use;
         page = currentPage
         queue.push.apply(queue, node.getEdges());
-
-        if (node.getLevel() > 0) {
-            try {
-                await page.waitForNavigation().catch(e => void e)
-                const parents = node.getSourcesParents()
-                const nodeParent = parents[parents.length - 1];
-
-                if (!HtmlUtil.isUrl(nodeParent.getSource().getValue())) {
-                    console.log('URL PAI: ', nodeParent.getSource().getValue());
-                    Promise.all([page.goBack(nodePar    ent.getSource().getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)])
-                } else {
-                    if (parents.length > 0) {
-                        for (let parent of parents) {
-                            const source = parent.getSource();
-                            if (HtmlUtil.isUrl(source.getValue())) {
-                                if (!isUrl) {
-                                    Promise.all([page.reload().catch(e => void e), page.waitForNavigation().catch(e => void e)])
-                                } else {
-                                    Promise.all([page.goBack(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)])
-                                }
-                            } else {
-                                await (await PuppeterUtil.selectElementPage(page, xpath, source.value)).click();
-                                await page.waitForNavigation().catch(e => void e);
-                            }
-
-                        }
-                    }
-                }
-            } catch (e) {
-                console.log("error no reloading", e)
-            }
-        }
-
-        while (queue.length > 0) {
-            for (let edge of queue) {
-                console.log("queue nodes: ****:", edge.getSource().value, ' level: ', edge.getLevel());
-            }
-            const newNode = queue.shift();
-            await run2(newNode, puppeteer);
-        }
-
-        await page.waitFor(3000);
-        console.log("*********************close browser***********************************************")
-        return await puppeteer.getBrowser().close();
     } catch (e) {
         console.log("************click error*****************", e)
     }
+
+
+
+    while (queue.length > 0) {
+        for (let edge of queue) {
+            console.log("queue nodes: ****:", edge.getSource().value, ' level: ', edge.getLevel());
+        }
+
+        const newNode = queue.shift();
+
+        if (newNode.getLevel() > 0) {
+            await page.waitForNavigation().catch(e => void e)
+            PuppeteerUltil.accessParent(page, newNode.getSourcesParents())
+        }
+
+        await run2(newNode, puppeteer);
+    }
+
+    await page.waitFor(3000);
+    console.log("*********************close browser***********************************************")
+    return await puppeteer.getBrowser().close();
 
 }
 

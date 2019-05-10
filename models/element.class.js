@@ -1,34 +1,42 @@
-
 'use strict';
 
 
 export default class Element {
-    
-    constructor(value, element, xpath, typeElement, puppeteerInstance) {
+
+    constructor(value, element, xpath, typeElement, puppeteerInstance, url) {
         this.xpath = xpath;
         this.element = element;
         this.typeElement = typeElement;
         this.value = value;
         this.puppeteerInstance = puppeteerInstance;
+        this.url = url;
     }
 
-    getXpath(){
+    getXpath() {
         return this.xpath;
     }
 
-    getTypeElement(){
+    getTypeElement() {
         return this.typeElement;
     }
 
-    getElement(){
+    getElement() {
         return this.element;
     }
 
-    getValue(){
+    getValue() {
         return this.value;
     }
 
-    getPuppeteerInstance(){
+    getPuppeteerInstance() {
         return this.puppeteerInstance;
+    }
+
+    getUrl() {
+        return this.url;
+    }
+
+    setUrl(url) {
+        this.url = url;
     }
 }

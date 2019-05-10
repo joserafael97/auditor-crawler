@@ -91,19 +91,38 @@ export default class PuppeteerUltil {
         }
     }
 
-    static async resetPage(page, node) {
+    static async accessParent(page, parents, xpath) {
 
-        //level 01 e 02 use url and max single xpath.
-        if (node.getLevel() < 3) {
-            try {
-                await page.reload();
-            } catch (e) {
-                console.log(e)
+        const nodeParent = parents[parents.length - 1];
+
+        // if (!HtmlUtil.isUrl(nodeParent.getSource().getValue())) {
+        //     console.log('URL PAI: ', nodeParent.getSource().getValue());
+        //     Promise.all([page.goBack(nodeParent.getSource().getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)])
+        // } else {
+        if (parents.length > 0) {
+            for (let parent of parents.reverse()) {
+                let source = parent.getSource();
+                if (HtmlUtil.isUrl(source.getValue())) {
+                    console.log("----------------------------------URL ATUAL: ", (await page.url()))
+                    console.log("----------------------------------URL TEST: ", source.getUrl())
+                    // if ((await page.url()) === source.getUrl()) {
+                    //     console.log("--------------------RELOAD---------------------------", source.getValue())
+                    //     Promise.all([page.reload().catch(e => void e), page.waitForNavigation().catch(e => void e)])
+                    // } else {
+                    //     console.log("--------------------redirect---------------------------", source.getValue())
+                    Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)])
+                    // 
+
+                } else {
+                    await (await PuppeteerUltil.selectElementPage(page, source.getXpath(), source.getValue())).click();
+                    await page.waitForNavigation().catch(e => void e);
+                    await page.on("dialog", (dialog) => {
+                        dialog.accept().catch(e => void e);
+                    }).catch(e => void e);
+                }
             }
-            return page;
         }
 
-        return page;
     }
 
 
