@@ -1,6 +1,7 @@
 'use-strict';
 
 import Node from './bfs/node'
+import Graph from './bfs/graph'
 import PuppeterUtil from './utils/puppeteerUtil';
 import XpathUtil from './utils/xpathUtil'
 import HtmlUtil from './utils/htmlUtil'
@@ -24,7 +25,14 @@ let root = new Node(new Element('http://portaldatransparencia.publicsoft.com.br/
 //     null, null, null, null),
 //     [], [], false);
 
+//checar se o node URL encontrado tem como pai um xpath e não mudou a página (mesma URL). Caso isso seja verificado, a URL pode ser duplicada.
+//adicionar lista de termos não úteis
+//alimentar palavras não úteis para despesas Extra. 
+//Posso afirmar se a partir de clicar num xpath não pode existir uma URL nova caso após clicar a URL atual não mude? 
+
 connectToDb();
+
+let queue = [];
 
 const extractEdges = async (node, page, puppeteer, criterionKeyWordName) => {
 
@@ -67,23 +75,20 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName) => {
     return node;
 }
 
-
 const run2 = async (node, puppeteer = null) => {
-
-
     try {
         if (puppeteer == null) {
             puppeteer = await PuppeterUtil.createPuppetterInstance();
         }
         let page = puppeteer.getFirstPage();
-
         const value = node.getSource().getValue();
-        
+
         //save page instance if change to iframe;
-        const currentPage = page; 
-        
+        const currentPage = page;
+
         const numPages = (await puppeteer.getBrowser().pages()).length;
         const isUrl = HtmlUtil.isUrl(value);
+        const xpath = node.getSource().getXpath();
 
         console.log("********************************************************************")
         console.log("numPagesOpened: ", numPages);
@@ -98,12 +103,11 @@ const run2 = async (node, puppeteer = null) => {
             await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
         } else {
             let element = node.getSource().getElement();
-            const xpath = node.getSource().getXpath();
             element = await PuppeterUtil.selectElementPage(page, xpath, value);
             await element.click();
             await page.waitForNavigation().catch(e => void e);
 
-          
+
             page = await PuppeterUtil.detectContext(page, xpath).catch(e => void e);;
         }
 
@@ -112,15 +116,17 @@ const run2 = async (node, puppeteer = null) => {
 
         //change to page if iframe in use;
         page = currentPage
+        queue.push.apply(queue, node.getEdges());
 
         if (node.getLevel() > 0) {
             try {
                 await page.waitForNavigation().catch(e => void e)
                 const parents = node.getSourcesParents()
-                node = parents[parents.length - 1];
-                
-                if (!HtmlUtil.isUrl(node.getSource().getValue())) {
-                    Promise.all([page.goBack(node.getSource().getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)])
+                const nodeParent = parents[parents.length - 1];
+
+                if (!HtmlUtil.isUrl(nodeParent.getSource().getValue())) {
+                    console.log('URL PAI: ', nodeParent.getSource().getValue());
+                    Promise.all([page.goBack(nodePar    ent.getSource().getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)])
                 } else {
                     if (parents.length > 0) {
                         for (let parent of parents) {
@@ -143,8 +149,12 @@ const run2 = async (node, puppeteer = null) => {
                 console.log("error no reloading", e)
             }
         }
-        while (node.getEdges().length > 0) {
-            const newNode = node.shiftEdge();
+
+        while (queue.length > 0) {
+            for (let edge of queue) {
+                console.log("queue nodes: ****:", edge.getSource().value, ' level: ', edge.getLevel());
+            }
+            const newNode = queue.shift();
             await run2(newNode, puppeteer);
         }
 
