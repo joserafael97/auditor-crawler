@@ -17,7 +17,7 @@ import {
 //     [], null, false);
 
 let root = new Node(new Element('http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB',
-    null, null, null, null),
+        null, null, null, null),
     [], [], false);
 
 // let root = new Node(new Element('https://transparencia.joaopessoa.pb.gov.br',
@@ -46,13 +46,13 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName) => {
                 if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                     text = HtmlUtil.isUrl(text) ? text :
                         HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(page.url()), text)) ?
-                            urljoin(HtmlUtil.extractHostname(page.url()), text) : undefined;
+                        urljoin(HtmlUtil.extractHostname(page.url()), text) : undefined;
                 }
                 if (text !== undefined) {
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                   
+
                     if (!TextUtil.checkTextContainsArray(validation(criterionKeyWordName), text)) {
-                        
+
                         if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
                             ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
                             edgesList.push(new Node(new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), puppeteer), node));
@@ -63,11 +63,6 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName) => {
 
         }
     }
-
-    for (let edge of node.getEdges()) {
-        console.log("node anteriores222: ****:", edge.getSource().getValue());
-    }
-
     node.setEdgesList(edgesList);
     return node;
 }
@@ -83,6 +78,10 @@ const run2 = async (node, puppeteer = null) => {
         let page = puppeteer.getFirstPage();
 
         const value = node.getSource().getValue();
+        
+        //save page instance if change to iframe;
+        const currentPage = page; 
+        
         const numPages = (await puppeteer.getBrowser().pages()).length;
         const isUrl = HtmlUtil.isUrl(value);
 
@@ -90,8 +89,11 @@ const run2 = async (node, puppeteer = null) => {
         console.log("numPagesOpened: ", numPages);
         console.log("value: ", value);
         console.log("level: ", node.getLevel());
-        await page.waitForNavigation().catch(e => void e);
-        
+
+        if (node.getLevel() > 0) {
+            await page.waitForNavigation().catch(e => void e);
+        }
+
         if (isUrl) {
             await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
         } else {
@@ -99,33 +101,48 @@ const run2 = async (node, puppeteer = null) => {
             const xpath = node.getSource().getXpath();
             element = await PuppeterUtil.selectElementPage(page, xpath, value);
             await element.click();
-            try {
-                page = await PuppeterUtil.detectContext(page, xpath);
-            } catch (e) {
-                console.log("deu erro na mudança,,,", e);
-            }
+            await page.waitForNavigation().catch(e => void e);
+
+          
+            page = await PuppeterUtil.detectContext(page, xpath).catch(e => void e);;
         }
+
         node = await extractEdges(node, page, puppeteer, 'Despesa Extra Orçamentária');
         node.setResearched(true);
+
+        //change to page if iframe in use;
+        page = currentPage
 
         if (node.getLevel() > 0) {
             try {
                 await page.waitForNavigation().catch(e => void e)
                 const parents = node.getSourcesParents()
                 node = parents[parents.length - 1];
-                if (parents.length > 0) {
-                    for (let parent of parents) {
-                        const source = parent.getSource()
-                        await HtmlUtil.isUrl(source.getValue()) ? 
-                        Promise.all([page.goBack(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]) : 
-                        await (await PuppeterUtil.selectElementPage(page, xpath, source.value)).click;
+                
+                if (!HtmlUtil.isUrl(node.getSource().getValue())) {
+                    Promise.all([page.goBack(node.getSource().getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)])
+                } else {
+                    if (parents.length > 0) {
+                        for (let parent of parents) {
+                            const source = parent.getSource();
+                            if (HtmlUtil.isUrl(source.getValue())) {
+                                if (!isUrl) {
+                                    Promise.all([page.reload().catch(e => void e), page.waitForNavigation().catch(e => void e)])
+                                } else {
+                                    Promise.all([page.goBack(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)])
+                                }
+                            } else {
+                                await (await PuppeterUtil.selectElementPage(page, xpath, source.value)).click();
+                                await page.waitForNavigation().catch(e => void e);
+                            }
+
+                        }
                     }
                 }
             } catch (e) {
                 console.log("error no reloading", e)
             }
         }
-
         while (node.getEdges().length > 0) {
             const newNode = node.shiftEdge();
             await run2(newNode, puppeteer);

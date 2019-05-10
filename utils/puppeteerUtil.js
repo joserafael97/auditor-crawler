@@ -108,17 +108,12 @@ export default class PuppeteerUltil {
 
 
     static async selectElementPage(page, xpath, searchValue) {
-
-        console.log("URL ATUAL:" , page.url());
-
         const elements = await page.$x(xpath);
 
         if (elements.length > 0) {
             for (let element of elements) {
-                
                 let text = await (await element.getProperty('textContent')).jsonValue();
                 text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                
                 if (text === searchValue) {
                     return element;
                 }
