@@ -39,6 +39,11 @@
             "date": 1557464060988,
             "name": "/home/hansolo/workspace/MSC/auditor-crawler/log/app.log..Fr-05-yyyy",
             "hash": "3c38f2c3ad8d0bc34222840f16852fb6"
+        },
+        {
+            "date": 1557591825521,
+            "name": "/home/hansolo/workspace/MSC/auditor-crawler/log/app.log..Sa-05-yyyy",
+            "hash": "a15bc92ef06031a2a33ba89264f3b176"
         }
     ]
 }

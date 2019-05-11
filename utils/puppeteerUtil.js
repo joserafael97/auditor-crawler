@@ -1,15 +1,15 @@
 'use-strict';
 
-import puppeteer from 'puppeteer'
-import TextUtil from '../utils/texUtil'
-import HtmlUtil from '../utils/htmlUtil'
-import PuppeteerInstance from '../models/puppeteerInstance.class'
+import puppeteer from 'puppeteer';
+import TextUtil from '../utils/texUtil';
+import HtmlUtil from '../utils/htmlUtil';
+import PuppeteerInstance from '../models/puppeteerInstance.class';
 import {
     XPATHIFRAME,
     UNUSABLEIFRAMES
-} from '../utils/xpathUtil'
+} from '../utils/xpathUtil';
 
-import Node from '../bfs/node'
+import Node from '../bfs/node';
 
 
 
@@ -44,8 +44,8 @@ export default class PuppeteerUltil {
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
         await mainPage.setViewport({
-            // width: 1920,
-            width: 1700,
+            width: 1920,
+            // width: 1700,
             height: 1080
         });
 
@@ -91,37 +91,25 @@ export default class PuppeteerUltil {
         }
     }
 
-    static async accessParent(page, parents, xpath) {
+    static async accessParent(page, parents) {
 
         const nodeParent = parents[parents.length - 1];
-
-        // if (!HtmlUtil.isUrl(nodeParent.getSource().getValue())) {
-        //     console.log('URL PAI: ', nodeParent.getSource().getValue());
-        //     Promise.all([page.goBack(nodeParent.getSource().getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)])
-        // } else {
-        if (parents.length > 0) {
-            for (let parent of parents.reverse()) {
-                let source = parent.getSource();
-                if (HtmlUtil.isUrl(source.getValue())) {
-                    console.log("----------------------------------URL ATUAL: ", (await page.url()))
-                    console.log("----------------------------------URL TEST: ", source.getUrl())
-                    // if ((await page.url()) === source.getUrl()) {
-                    //     console.log("--------------------RELOAD---------------------------", source.getValue())
-                    //     Promise.all([page.reload().catch(e => void e), page.waitForNavigation().catch(e => void e)])
-                    // } else {
-                    //     console.log("--------------------redirect---------------------------", source.getValue())
-                    Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)])
-                    // 
-
-                } else {
-                    await (await PuppeteerUltil.selectElementPage(page, source.getXpath(), source.getValue())).click();
-                    await page.waitForNavigation().catch(e => void e);
-                    await page.on("dialog", (dialog) => {
-                        dialog.accept().catch(e => void e);
-                    }).catch(e => void e);
+        if (!HtmlUtil.isUrl(nodeParent.getSource().getValue())) {
+            Promise.all([page.goto(nodeParent.getSource().getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
+        } else {
+            if (parents.length > 0) {
+                for (let parent of parents.reverse()) {
+                    let source = parent.getSource();
+                    if (HtmlUtil.isUrl(source.getValue())) {
+                        Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
+                    } else {
+                        await (await PuppeteerUltil.selectElementPage(page, source.getXpath(), source.getValue())).click();
+                        await page.waitForNavigation().catch(e => void e);
+                    }
                 }
             }
         }
+
 
     }
 
@@ -139,7 +127,7 @@ export default class PuppeteerUltil {
             }
         }
 
-        return null
+        return null;
 
     }
 

@@ -1,3 +1,5 @@
+import HtmlUtil from "../utils/htmlUtil";
+
 export default class TextUtil {
     
     static normalizeText(text) {
@@ -12,12 +14,24 @@ export default class TextUtil {
 
     static checkTextContainsArray (array, text){
         for (let index = 0; index < array.length; index++) {
-            if (text.includes(array[index])) {
+            if (text === array[index] || text.includes(array[index])) {
                 return true;
             }
     
         }
         return false;
+    }
+
+    static getUrlsNodes (array){
+        let urls = [];
+        for (let index = 0; index < array.length; index++) {
+            const value = array[index].getSource().getValue();
+            if (HtmlUtil.isUrl(value)) {
+                urls.push(value);
+            }
+    
+        }
+        return urls;
     }
 
 }
