@@ -14,6 +14,7 @@ export default class TextUtil {
 
     static checkTextContainsArray (array, text){
         for (let index = 0; index < array.length; index++) {
+
             if (text === array[index] || text.includes(array[index])) {
                 return true;
             }

@@ -57,7 +57,6 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName, urlsIde
                 }
                 if (text !== undefined) {
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-
                     if (!TextUtil.checkTextContainsArray(validation(criterionKeyWordName), text) &&
                         !TextUtil.checkTextContainsArray(urlsIdentify, text)) {
 
@@ -165,12 +164,12 @@ const validation = (criterionName) => {
     const listNotValid = [''];
 
     const unusableTerms = {
-        'Despesa Extra Orçamentária': ['despesa orcamentaria', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'pessoal', 'folha de pagamento'],
-        'Despesa Orçamentária': ['extra']
+        'Despesa Extra Orçamentária': ['despesa orcamentaria', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes','pessoal', 'folha de pagamento'],
+        'Despesa Orçamentária': ['extra', 'receitas', 'receita', 'licitacao', 'licitacoes','pessoal', 'folha de pagamento']
     };
 
 
-    const unusableCommumTerms = ["http://portaldatransparencia.publicsoft.com.br/#","mte", "tempo.pt", "governotransparente", "transparencia.df.gov.br", "anatel", "add", "stf",
+    const unusableCommumTerms = ["http://portaldatransparencia.publicsoft.com.br/#", "mte", "tempo.pt", "governotransparente", "transparencia.df.gov.br", "anatel", "add", "stf",
         "receita.pb.gov.br", "secure.comodo.com", "trustlogo.com", "twitter",
         "facebook", "youtube", "instagram", "login", "linkedin", "transparencia.elmar.inf.br/Images",
         ".pdf", "json", "xml", "favicon", ".json", "google", "Login", "captcha",
@@ -195,6 +194,7 @@ const validation = (criterionName) => {
         "urlConsultaAcessos", "Publicidade", "adobe", "noticia", "sim.joaopessoa.pb.gov.br", "bb.com.br", "http://pinterest.com/",
         "DXR.axd", "DXR"];
     
-    let unusableCommumTermsFinal = unusableTerms[criterionName]
-    return unusableCommumTermsFinal.push.apply(unusableCommumTermsFinal, unusableCommumTerms);
+    let unusableCommumTermsFinal = unusableTerms[criterionName];
+    unusableCommumTermsFinal.push.apply(unusableCommumTermsFinal, unusableCommumTerms)
+    return unusableCommumTermsFinal;
 };
