@@ -17,8 +17,8 @@ import {
 //     [], null, false);
 
 
-let root = new Node(new Element('http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&amp;uf=PB" target=',
-        null, null, null, null),
+let root = new Node(new Element('http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB',
+    null, null, null, null),
     [], [], false);
 
 //checar se o node URL encontrado tem como pai um xpath e não mudou a página (mesma URL). Caso isso seja verificado, a URL pode ser duplicada.
@@ -53,7 +53,7 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName, urlsIde
                 if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                     text = HtmlUtil.isUrl(text) ? text :
                         HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), text)) ?
-                        urljoin(HtmlUtil.extractHostname(page.url()), text) : undefined;
+                            urljoin(HtmlUtil.extractHostname(page.url()), text) : undefined;
                 }
                 if (text !== undefined) {
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
@@ -76,7 +76,7 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName, urlsIde
     return node;
 };
 
-const run2 = async (node, puppeteer = null, urlsAccessed  = []) => {
+const run2 = async (node, puppeteer = null, urlsAccessed = []) => {
 
     if (puppeteer == null) {
         puppeteer = await PuppeteerUltil.createPuppetterInstance();
@@ -145,7 +145,7 @@ const run2 = async (node, puppeteer = null, urlsAccessed  = []) => {
             PuppeteerUltil.accessParent(page, newNode.getSourcesParents());
         }
 
-        await run2(newNode, puppeteer);
+        await run2(newNode, puppeteer, urlsAccessed);
     }
 
     await page.waitFor(3000);
@@ -169,5 +169,32 @@ const validation = (criterionName) => {
         'Despesa Orçamentária': ['extra']
     };
 
-    return unusableTerms[criterionName];
+
+    const unusableCommumTerms = ["http://portaldatransparencia.publicsoft.com.br/#","mte", "tempo.pt", "governotransparente", "transparencia.df.gov.br", "anatel", "add", "stf",
+        "receita.pb.gov.br", "secure.comodo.com", "trustlogo.com", "twitter",
+        "facebook", "youtube", "instagram", "login", "linkedin", "transparencia.elmar.inf.br/Images",
+        ".pdf", "json", "xml", "favicon", ".json", "google", "Login", "captcha",
+        "css", "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css', '.js',
+        'download', 'brasilsemmiseria.gov.br', 'caixa.gov.br', 'widget',
+        "fapesq.rpp.br/web", 'addtoany.com', "paraiba.pb.gov.br", "#frameContent",
+        "#estAcesso", 'body_limpo.html', "camara", "acessoainformacao.gov.br",
+        "edge.sharethis.com", "paraiba.pb.gov.br", "transparencia.ma.gov.br", "cgu", "fnde.gov.br", ".zip", "justica.gov.br", ".jpeg", ".rar", "noticia", "bb.com.br",
+        "senado", "transparencia.gov.br/rio2016", "al.pb.gov.br", "ceis", "sage",
+        "defesa.gov.br", "planejamento.gov.br", "anp.gov.br", "perguntas-tema-empresas",
+        "cepim", "turismo.gov.br", "dnit.gov.br", "fazenda.gov.br", "secretariageral.gov.br",
+        "saude.gov.br", "simec.mec.gov.br", "datasus.gov.br", "pac.gov.br", "mi.gov.br", "integracao.gov.br",
+        "servidor.gov.br", "governoeletronico.gov.br", "dadosabertos.bcb.gov.br", "esporte.gov.br", "aneel.gov.br",
+        "capes.gov.br", "mec.gov.br", "mda.gov.br", "capacidades.gov.br", "conab.gov.br", "comprasnet.gov.br",
+        "mcti.gov.br", "fab.mil.br", "sistemas.cultura.gov.br", "bndes.gov.br", "fab.mil.br", "dados.gov.br",
+        "territoriosdacidadania.gov.br", "mcti.gov.br", "cnpq", "orcamentofederal.gov.br", "brasil.gov.br",
+        "mma.gov.br", "cultura.gov.br", "mpa.gov.br", "mds.gov.br", "servicos.gov.br", "transparencia.org.br",
+        "patrimoniodetodos.gov.br", "portal.mj.gov.br", "transparencia.gov.br/faleConosco", "cnep", "transparencia.gov.br/despesasdiarias", "transparencia.gov.br/ajuda",
+        "concurso", "idoso", "idosa", "aprovado", "aprovada", "prorroga", "desconto", "prazo", "IAPM", "http://pinterest.com/",
+        "DXR.axd", "DXR", "trustlogo.com", "tempo.pt", "portaltransparencia", "portal.convenios.gov.br", "secure.comodo.com", "transparencia.gov.br", "cge", "transparencia.gov.br", "trustlogo.com",
+        "transparenciaativa.com.br", "transparencia.gov.br",
+        "urlConsultaAcessos", "Publicidade", "adobe", "noticia", "sim.joaopessoa.pb.gov.br", "bb.com.br", "http://pinterest.com/",
+        "DXR.axd", "DXR"];
+    
+    let unusableCommumTermsFinal = unusableTerms[criterionName]
+    return unusableCommumTermsFinal.push.apply(unusableCommumTermsFinal, unusableCommumTerms);
 };
