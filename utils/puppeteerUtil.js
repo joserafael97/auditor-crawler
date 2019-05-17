@@ -131,6 +131,28 @@ export default class PuppeteerUltil {
 
     }
 
+    static checkDuplicateNode(arrayNodes, text, currentUrl){
+        for (let node of arrayNodes) {
+            const value = node.getSource().getValue();
+            if (HtmlUtil.isUrl(text)) {
+                if(text === value || text.includes(value)){
+                    return true;
+                }
+            }else{
+                console.log("----------------------ja pesquisado----------------", node.getResearched())
+                console.log("----------------------URL igual----------------", node.getSource().getUrl() === currentUrl)
+                console.log("----------------------testl----------------",text)
+                console.log("----------------------text----------------", node.getSource().getValue() == text)
+
+                if ((node.getResearched() && node.getSource().getUrl() === currentUrl) && node.getSource().getValue() == text){
+                    return true;
+                }
+            }
+    
+        }
+        return false;
+    }
+
 
 
     // static async searchNewWindow(puppeteer, xpath){

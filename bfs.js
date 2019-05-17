@@ -32,7 +32,7 @@ let queue = [];
 let urlsAccessed = [];
 
 
-const extractEdges = async (node, page, puppeteer, criterionKeyWordName, urlsIdentify) => {
+const extractEdges = async (node, page, puppeteer, criterionKeyWordName, elementsIdentify) => {
 
     let queryElements = await XpathUtil.createXpathsToExtractUrls(criterionKeyWordName);
     let queryElementDynamicComponents = await XpathUtil.createXpathsToExtractDynamicComponents(criterionKeyWordName);
@@ -48,17 +48,17 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName, urlsIde
             for (let element of elements) {
 
                 let text = await (await element.getProperty('textContent')).jsonValue();
-                let currentUrl = await page.url();
+                const currentUrl = await page.url();
 
                 if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                     text = HtmlUtil.isUrl(text) ? text :
                         HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), text)) ?
-                            urljoin(HtmlUtil.extractHostname(page.url()), text) : undefined;
+                            urljoin(HtmlUtil.extractHostname(currentUrl), text) : undefined;
                 }
                 if (text !== undefined) {
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
                     if (!TextUtil.checkTextContainsArray(validation(criterionKeyWordName), text) &&
-                        !TextUtil.checkTextContainsArray(urlsIdentify, text)) {
+                        !PuppeteerUltil.checkDuplicateNode(elementsIdentify, text, currentUrl)) {
 
                         if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
                             ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
@@ -75,7 +75,7 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName, urlsIde
     return node;
 };
 
-const run2 = async (node, puppeteer = null, urlsAccessed = []) => {
+const run2 = async (node, puppeteer = null, elementsAccessed = []) => {
 
     if (puppeteer == null) {
         puppeteer = await PuppeteerUltil.createPuppetterInstance();
@@ -104,7 +104,7 @@ const run2 = async (node, puppeteer = null, urlsAccessed = []) => {
 
         if (isUrl) {
             await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
-            urlsAccessed.push(value);
+            elementsAccessed.push(node);
         } else {
             let element = node.getSource().getElement();
             element = await PuppeteerUltil.selectElementPage(page, xpath, value);
@@ -117,20 +117,20 @@ const run2 = async (node, puppeteer = null, urlsAccessed = []) => {
             node.getSource().setUrl((await page.url()));
         }
 
-        const urlsIdentify = []
-        urlsIdentify.push.apply(urlsIdentify, urlsAccessed);
-        urlsIdentify.push.apply(urlsIdentify, TextUtil.getUrlsNodes(queue));
-        node = await extractEdges(node, page, puppeteer, 'Despesa Extra Orçamentária', urlsIdentify);
+        const elementsIdentify = []
+        elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
+        elementsIdentify.push.apply(elementsIdentify, queue);
+        node = await extractEdges(node, page, puppeteer, 'Despesa Extra Orçamentária', elementsIdentify);
 
         //change to page if iframe in use;
         page = currentPage;
         queue.push.apply(queue, node.getEdges());
+        node.setResearched(true);
 
     } catch (e) {
         console.log("************click error*****************", e);
     }
 
-    node.setResearched(true);
 
     while (queue.length > 0) {
         for (let edge of queue) {
