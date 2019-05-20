@@ -100,29 +100,49 @@ export default class PuppeteerUltil {
             if (parents.length > 0) {
                 for (let parent of parents.reverse()) {
                     let source = parent.getSource();
-                    console.log('====================================', source.getValue())
+
+                    if (parents.length > 1) {
+                        console.log("=================================================------------------------------------")
+                        console.log(source.getValue())
+                    }
+
                     if (HtmlUtil.isUrl(source.getValue())) {
                         Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
+                        console.log("===============================================ACESSOU URL")
+
                     } else {
-                        await (await PuppeteerUltil.selectElementPage(page, source.getXpath(), source.getValue())).click();
+                        console.log("===============================================ELEMENT CLICK")
+                        await page.evaluate(() => window.stop());
+                        console.log("===============================================PASSOU 01")
+                        let element = await PuppeteerUltil.selectElementPage(page, source.getXpath(), source.getValue());
+                        console.log("===============================================PASSOU 02")
+
+                        await element.click().catch(e => void e);
+                        console.log("===============================================PASSOU 03")
+
                         await page.waitForNavigation().catch(e => void e);
                     }
                 }
             }
         }
-
+        if (parents.length > 1) {
+            console.log("================================***=================------------------FIM------------------")
+        }
 
     }
 
 
     static async selectElementPage(page, xpath, searchValue) {
+
         const elements = await page.$x(xpath);
+
 
         if (elements.length > 0) {
             for (let element of elements) {
                 let text = await (await element.getProperty('textContent')).jsonValue();
                 text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
                 if (text === searchValue) {
+                    console.log("=======================ACHOU========================")
                     return element;
                 }
             }

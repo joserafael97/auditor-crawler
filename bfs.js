@@ -39,6 +39,9 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName, element
     queryElements = queryElements.concat(queryElementDynamicComponents);
 
     let edgesList = [];
+    const currentValue = node.getSource().getValue();
+    const currentUrl = await page.url();
+    const currentNodeUrl = node.getSource().getUrl();
 
     for (let queryElement of queryElements) {
 
@@ -48,7 +51,6 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName, element
             for (let element of elements) {
 
                 let text = await (await element.getProperty('textContent')).jsonValue();
-                const currentUrl = await page.url();
 
                 if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                     text = HtmlUtil.isUrl(text) ? text :
@@ -57,7 +59,8 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName, element
                 }
                 if (text !== undefined) {
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                    if (!TextUtil.checkTextContainsArray(validation(criterionKeyWordName), text.toLowerCase()) &&
+                    if ((currentNodeUrl === currentUrl && text !== currentValue) &&
+                        !TextUtil.checkTextContainsArray(validation(criterionKeyWordName), text.toLowerCase()) &&
                         !PuppeteerUltil.checkDuplicateNode(elementsIdentify, text, node, currentUrl)) {
 
                         if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
