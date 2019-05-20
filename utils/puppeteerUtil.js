@@ -100,6 +100,7 @@ export default class PuppeteerUltil {
             if (parents.length > 0) {
                 for (let parent of parents.reverse()) {
                     let source = parent.getSource();
+                    console.log('====================================', source.getValue())
                     if (HtmlUtil.isUrl(source.getValue())) {
                         Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
                     } else {
@@ -131,24 +132,22 @@ export default class PuppeteerUltil {
 
     }
 
-    static checkDuplicateNode(arrayNodes, text, currentUrl){
+    static checkDuplicateNode(arrayNodes, text, currentNode, currentUrl) {
         for (let node of arrayNodes) {
             const value = node.getSource().getValue();
             if (HtmlUtil.isUrl(text)) {
-                if(text === value || text.includes(value)){
+                if (text === value || text.includes(value)) {
                     return true;
                 }
-            }else{
-                console.log("----------------------ja pesquisado----------------", node.getResearched())
-                console.log("----------------------URL igual----------------", node.getSource().getUrl() === currentUrl)
-                console.log("----------------------testl----------------",text)
-                console.log("----------------------text----------------", node.getSource().getValue() == text)
-
-                if ((node.getResearched() && node.getSource().getUrl() === currentUrl) && node.getSource().getValue() == text){
+            } else {
+                if (node.getLevel() !== 0 &&
+                    (currentNode.getSource().getValue() === node.getParent().getSource().getValue() &&
+                        node.getSource().getUrl() === currentUrl) &&
+                    value == text) {
                     return true;
                 }
             }
-    
+
         }
         return false;
     }

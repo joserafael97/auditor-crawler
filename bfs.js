@@ -16,10 +16,10 @@ import {
 // let root = new Node('http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
 //     [], null, false);
 
+const element = new Element('http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB',
+null, null, null, null)
 
-let root = new Node(new Element('http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB',
-    null, null, null, null),
-    [], [], false);
+let root = new Node(element, [], [], false);
 
 //checar se o node URL encontrado tem como pai um xpath e não mudou a página (mesma URL). Caso isso seja verificado, a URL pode ser duplicada.
 //adicionar lista de termos não úteis
@@ -57,8 +57,8 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName, element
                 }
                 if (text !== undefined) {
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                    if (!TextUtil.checkTextContainsArray(validation(criterionKeyWordName), text) &&
-                        !PuppeteerUltil.checkDuplicateNode(elementsIdentify, text, currentUrl)) {
+                    if (!TextUtil.checkTextContainsArray(validation(criterionKeyWordName), text.toLowerCase()) &&
+                        !PuppeteerUltil.checkDuplicateNode(elementsIdentify, text, node, currentUrl)) {
 
                         if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
                             ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
@@ -164,12 +164,13 @@ const validation = (criterionName) => {
     const listNotValid = [''];
 
     const unusableTerms = {
-        'Despesa Extra Orçamentária': ['despesa orcamentaria', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes','pessoal', 'folha de pagamento'],
-        'Despesa Orçamentária': ['extra', 'receitas', 'receita', 'licitacao', 'licitacoes','pessoal', 'folha de pagamento']
+        'Despesa Extra Orçamentária': ['despesa orcamentaria', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes','pessoal', 'folha de pagamento', 
+        'demonstrativo', 'outras despesas', 'restos a pagar', 'mais informacoes', 'http://www.transparencia.rn.gov.br/despesas.aspx'],
+        'Despesa Orçamentária': ['extra', 'receitas', 'receita', 'licitacao', 'licitacoes','pessoal', 'folha de pagamento', ]
     };
 
 
-    const unusableCommumTerms = ["http://portaldatransparencia.publicsoft.com.br/#", "mte", "tempo.pt", "governotransparente", "transparencia.df.gov.br", "anatel", "add", "stf",
+    const unusableCommumTerms = ['portal da transparencia', "http://portaldatransparencia.publicsoft.com.br/#", "mte", "tempo.pt", "governotransparente", "transparencia.df.gov.br", "anatel", "add", "stf",
         "receita.pb.gov.br", "secure.comodo.com", "trustlogo.com", "twitter",
         "facebook", "youtube", "instagram", "login", "linkedin", "transparencia.elmar.inf.br/Images",
         ".pdf", "json", "xml", "favicon", ".json", "google", "Login", "captcha",
