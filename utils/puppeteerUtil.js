@@ -44,8 +44,8 @@ export default class PuppeteerUltil {
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
         await mainPage.setViewport({
-            width: 1920,
-            // width: 1700,
+            // width: 1920,
+            width: 1600,
             height: 1080
         });
 
@@ -72,6 +72,7 @@ export default class PuppeteerUltil {
         if (await PuppeteerUltil.checkXpath(page, XPATHIFRAME)) {
             for (const frame of page.mainFrame().childFrames()) {
                 if (!TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, frame.url())) {
+                    console.log("============================================================= IFRAME ACCESS")
                     return frame;
 
                 }
@@ -92,7 +93,6 @@ export default class PuppeteerUltil {
     }
 
     static async accessParent(page, parents) {
-
         const nodeParent = parents[parents.length - 1];
         if (!HtmlUtil.isUrl(nodeParent.getSource().getValue())) {
             Promise.all([page.goto(nodeParent.getSource().getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
@@ -100,56 +100,44 @@ export default class PuppeteerUltil {
             if (parents.length > 0) {
                 for (let parent of parents.reverse()) {
                     let source = parent.getSource();
-
-                    if (parents.length > 1) {
-                        console.log("=================================================------------------------------------")
-                        console.log(source.getValue())
-                    }
-
                     if (HtmlUtil.isUrl(source.getValue())) {
                         Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
-                        console.log("===============================================ACESSOU URL")
-
                     } else {
-                        console.log("===============================================ELEMENT CLICK")
-                        await page.evaluate(() => window.stop());
-                        console.log("===============================================PASSOU 01")
                         let element = await PuppeteerUltil.selectElementPage(page, source.getXpath(), source.getValue());
-                        console.log("===============================================PASSOU 02")
-
                         await element.click().catch(e => void e);
-                        console.log("===============================================PASSOU 03")
-
                         await page.waitForNavigation().catch(e => void e);
                     }
                 }
             }
         }
-        if (parents.length > 1) {
-            console.log("================================***=================------------------FIM------------------")
-        }
-
     }
 
 
     static async selectElementPage(page, xpath, searchValue) {
 
+        await page.waitForNavigation().catch(e => void e);
         const elements = await page.$x(xpath);
 
+        console.log("====================================*****************", await page.url());
 
         if (elements.length > 0) {
             for (let element of elements) {
+
                 let text = await (await element.getProperty('textContent')).jsonValue();
+                const propertyHandleValue = await element.getProperty('value');
                 text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+
+                text = text.length > 0 ? text :
+                    TextUtil.normalizeText(TextUtil.removeWhiteSpace(await propertyHandleValue.jsonValue()));
+
+                console.log("====================================*****************", text);
+                console.log("====================================*****************", searchValue);
                 if (text === searchValue) {
-                    console.log("=======================ACHOU========================")
                     return element;
                 }
             }
         }
-
         return null;
-
     }
 
     static checkDuplicateNode(arrayNodes, text, currentNode, currentUrl) {

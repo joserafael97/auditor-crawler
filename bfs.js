@@ -17,7 +17,7 @@ import {
 //     [], null, false);
 
 const element = new Element('http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB',
-null, null, null, null)
+    null, null, null, null)
 
 let root = new Node(element, [], [], false);
 
@@ -44,13 +44,15 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName, element
     const currentNodeUrl = node.getSource().getUrl();
 
     for (let queryElement of queryElements) {
-
         const elements = await page.$x(queryElement.getXpath());
-
         if (elements.length > 0) {
             for (let element of elements) {
-
                 let text = await (await element.getProperty('textContent')).jsonValue();
+                const propertyHandleValue = await element.getProperty('value');
+                text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+
+                text = text.length > 0 ? text :
+                    await propertyHandleValue.jsonValue();
 
                 if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                     text = HtmlUtil.isUrl(text) ? text :
@@ -59,12 +61,17 @@ const extractEdges = async (node, page, puppeteer, criterionKeyWordName, element
                 }
                 if (text !== undefined) {
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                    if ((currentNodeUrl === currentUrl && text !== currentValue) &&
+                    if (((!HtmlUtil.isUrl(text) && TextUtil.checkTextContainsInText(queryElement.getKeyWord(), text))
+                        || HtmlUtil.isUrl(text)) &&
+                        ((currentNodeUrl === currentUrl && text !== currentValue) ||
+                            (currentNodeUrl !== currentUrl)) &&
                         !TextUtil.checkTextContainsArray(validation(criterionKeyWordName), text.toLowerCase()) &&
                         !PuppeteerUltil.checkDuplicateNode(elementsIdentify, text, node, currentUrl)) {
 
                         if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
                             ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
+                            console.log("---------------------------------------ENTROU 2")
+
                             let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), puppeteer, currentUrl);
                             edgesList.push(new Node(source, node));
                         }
@@ -98,16 +105,15 @@ const run2 = async (node, puppeteer = null, elementsAccessed = []) => {
     console.log("numPagesOpened: ", numPages);
     console.log("value: ", value);
     console.log("level: ", node.getLevel());
-
     try {
 
         if (node.getLevel() > 0) {
             await page.waitForNavigation().catch(e => void e);
+            page = await PuppeteerUltil.detectContext(page, xpath).catch(e => void e);
         }
 
         if (isUrl) {
             await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
-            elementsAccessed.push(node);
         } else {
             let element = node.getSource().getElement();
             element = await PuppeteerUltil.selectElementPage(page, xpath, value);
@@ -120,6 +126,7 @@ const run2 = async (node, puppeteer = null, elementsAccessed = []) => {
             node.getSource().setUrl((await page.url()));
         }
 
+        elementsAccessed.push(node);
         const elementsIdentify = []
         elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
         elementsIdentify.push.apply(elementsIdentify, queue);
@@ -144,7 +151,7 @@ const run2 = async (node, puppeteer = null, elementsAccessed = []) => {
 
         if (newNode.getLevel() > 0) {
             await page.waitForNavigation().catch(e => void e);
-            PuppeteerUltil.accessParent(page, newNode.getSourcesParents());
+            await PuppeteerUltil.accessParent(page, newNode.getSourcesParents());
         }
 
         await run2(newNode, puppeteer, urlsAccessed);
@@ -167,14 +174,14 @@ const validation = (criterionName) => {
     const listNotValid = [''];
 
     const unusableTerms = {
-        'Despesa Extra Orçamentária': ['despesa orcamentaria', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes','pessoal', 'folha de pagamento', 
-        'demonstrativo', 'outras despesas', 'restos a pagar', 'mais informacoes', 'http://www.transparencia.rn.gov.br/despesas.aspx'],
-        'Despesa Orçamentária': ['extra', 'receitas', 'receita', 'licitacao', 'licitacoes','pessoal', 'folha de pagamento', ]
+        'Despesa Extra Orçamentária': ['despesa orcamentaria', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',
+            'demonstrativo', 'outras despesas', 'restos a pagar', 'mais informacoes', 'http://www.transparencia.rn.gov.br/despesas.aspx'],
+        'Despesa Orçamentária': ['extra', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',]
     };
 
 
     const unusableCommumTerms = ['portal da transparencia', "http://portaldatransparencia.publicsoft.com.br/#", "mte", "tempo.pt", "governotransparente", "transparencia.df.gov.br", "anatel", "add", "stf",
-        "receita.pb.gov.br", "secure.comodo.com", "trustlogo.com", "twitter",
+        "receita.pb.gov.br", "secure.comodo.com", "trustlogo.com", "twitter", "javascripthidecalendar()",
         "facebook", "youtube", "instagram", "login", "linkedin", "transparencia.elmar.inf.br/Images",
         ".pdf", "json", "xml", "favicon", ".json", "google", "Login", "captcha",
         "css", "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css', '.js',
@@ -197,7 +204,7 @@ const validation = (criterionName) => {
         "transparenciaativa.com.br", "transparencia.gov.br",
         "urlConsultaAcessos", "Publicidade", "adobe", "noticia", "sim.joaopessoa.pb.gov.br", "bb.com.br", "http://pinterest.com/",
         "DXR.axd", "DXR"];
-    
+
     let unusableCommumTermsFinal = unusableTerms[criterionName];
     unusableCommumTermsFinal.push.apply(unusableCommumTermsFinal, unusableCommumTerms)
     return unusableCommumTermsFinal;

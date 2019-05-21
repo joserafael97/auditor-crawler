@@ -23,6 +23,14 @@ export default class TextUtil {
         return false;
     }
 
+
+    static checkTextContainsInText (textValidation, text){
+        if (text === textValidation || text.includes(textValidation)) {
+                return true;
+        }
+        return false;
+    }
+
     static getUrlsNodes (array){
         let urls = [];
         for (let index = 0; index < array.length; index++) {
