@@ -5,6 +5,9 @@ import XpathUtil from '../utils/xpathUtil';
 import HtmlUtil from '../utils/htmlUtil';
 import PuppeteerUtil from "../utils/puppeteerUtil";
 import Element from '../models/element.class';
+import Evaluation from '../models/evaluation.model';
+import Item from '../models/item.model';
+
 import Node from '../bfs/node';
 
 import {
@@ -31,33 +34,32 @@ export default class CrawlerUtil {
             if (elements.length > 0) {
                 for (let element of elements) {
                     let text = await (await element.getProperty('textContent')).jsonValue();
-                    const propertyHandleValue = await element.getProperty('value');
+                    const value = await (await element.getProperty('value')).jsonValue();
+                    text = TextUtil.normalizeText(TextUtil.removeWhiteSpace(text)).length > 0 ? text :
+                        (value !== undefined && value.length > 0) ? value : '';
+
+                    // if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
+                    //     text = HtmlUtil.isUrl(text) ? text :
+                    //         HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), text)) ?
+                    //             urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
+                    // }
+
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+                    console.log("++++++++++++++++++++++++++++++++++++", text);
+                    
+                    if (TextUtil.checkTextContainsInText(queryElement.getKeyWord(), text) &&
+                        ((currentNodeUrl === currentUrl && text !== currentValue) ||
+                            (currentNodeUrl !== currentUrl)) &&
+                        !TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase()) &&
+                        !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl)) {
 
-                    text = text.length > 0 ? text :
-                        await propertyHandleValue.jsonValue();
-                    if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
-                        text = HtmlUtil.isUrl(text) ? text :
-                            HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), text)) ?
-                            urljoin(HtmlUtil.extractHostname(currentUrl), text) : undefined;
-                    }
-                    if (text !== undefined) {
-                        
-                        text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                        
-                        if (TextUtil.checkTextContainsInText(queryElement.getKeyWord(), text) &&
-                            ((currentNodeUrl === currentUrl && text !== currentValue) ||
-                                (currentNodeUrl !== currentUrl)) &&
-                            !TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase()) &&
-                            !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl)) {
-
-                            if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
-                                ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
-                                let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), puppeteer, currentUrl);
-                                edgesList.push(new Node(source, node));
-                            }
+                        if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
+                            ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
+                            let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), puppeteer, currentUrl);
+                            edgesList.push(new Node(source, node));
                         }
                     }
+
                 }
 
             }
@@ -65,4 +67,61 @@ export default class CrawlerUtil {
         node.setEdgesList(edgesList);
         return node;
     };
+
+
+    static async identificationItens(criterionName, page, itensSearch = null) {
+        const itens = itensSearch !== null ? itensSearch : await CrawlerUtil.initializeItens(criterionName);
+        for (let item of itens) {
+            if (!item.found) {
+                const element = (await page.$x(query.getXpath()))[0];
+                item.text = TextUtil.normalizeText(TextUtil.removeWhiteSpace(await (await element.getProperty('textContent')).jsonValue()));
+                item.found = (text.length > 0 && checkTextContainsArray(item.keywordsXpath, item.text)) ? true : false;
+                item.text = item.found ? text : '';
+
+            }
+
+            console.log("itens::::::::::::::::::::::::::::::::::", item);
+
+        }
+        return itensSearch;
+    }
+
+    static async initializeItens(criterionName) {
+
+        const itensIdentificationItensQueries = await XpathUtil.createXpathsToIdentificationKeyWord(criterionName);
+        let itens = [];
+        for (let query of itensIdentificationItensQueries) {
+            itens.push(CrawlerUtil.createItem(query.getKeyWord(), query.getXpath(), query.getKeyWordsXpath()));
+        }
+        return itens;
+    }
+
+    static async createCriterion(criterionName) {
+        return criterionDespExtra = Criterion({
+            name: name,
+        });
+    }
+
+    static createEvaluation(county, cityHallUrl, transparencyPortalUrl) {
+        return Evaluation({
+            date: new Date(),
+            county: county,
+            cityHallUrl: cityHallUrl,
+            transparencyPortalUrl: transparencyPortalUrl,
+        });
+    }
+
+
+    static createItem(name, xpath, keywordsXpath, found = false, foundText = '', pathSought = '', proof = '', proofText = '') {
+        return Item({
+            name: name,
+            keywordsXpath: keywordsXpath,
+            found: found,
+            foundText: foundText,
+            xpath: xpath,
+            pathSought: pathSought,
+            proof: proof,
+            proofText: proofText
+        });
+    }
 }

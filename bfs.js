@@ -15,7 +15,7 @@ import {
 // let root = new Node('http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
 //     [], null, false);
 
-const element = new Element('http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB',
+const element = new Element('http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
     null, null, null, null)
 
 let root = new Node(element, [], [], false);
@@ -71,6 +71,9 @@ const run2 = async (node, puppeteer = null, elementsAccessed = []) => {
         elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
         elementsIdentify.push.apply(elementsIdentify, queue);
         node = await CrawlerUtil.extractEdges(node, page, puppeteer, 'Despesa Extra Orçamentária', elementsIdentify);
+
+        //search itens 
+        // await CrawlerUtil.initializeItens('Despesa Extra Orçamentária', page, null);        
 
         page = currentPage;
         queue.push.apply(queue, node.getEdges());
