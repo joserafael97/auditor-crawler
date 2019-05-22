@@ -43,4 +43,23 @@ export default class TextUtil {
         return urls;
     }
 
+    static validateItemSearch(criterionName){    
+        const unusableTerms = {
+            'Despesa Extra Orçamentária': ['despesa orcamentaria', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',
+                'demonstrativo', 'outras despesas', 'restos a pagar',
+            ],
+
+            'Despesa Orçamentária': ['extra', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', ]
+        };
+    
+    
+        const unusableCommumTerms = ["css", "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css', 
+        '.js', 'download', 'widget', ".zip", ".jpeg", ".rar", "noticia", "publicidade", "noticia", "pinterest.com",
+        ];
+    
+        let unusableCommumTermsFinal = unusableTerms[criterionName];
+        unusableCommumTermsFinal.push.apply(unusableCommumTermsFinal, unusableCommumTerms)
+        return unusableCommumTermsFinal;
+    };
+
 }
