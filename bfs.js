@@ -29,7 +29,7 @@ connectToDb();
 
 let queue = [];
 
-const run2 = async (node, puppeteer = null, elementsAccessed = [], itens = null) => {
+const run2 = async (node, puppeteer = null, criterion, elementsAccessed = [], itens = null) => {
     if (puppeteer == null) {
         puppeteer = await PuppeteerUtil.createPuppetterInstance();
     }
@@ -70,8 +70,8 @@ const run2 = async (node, puppeteer = null, elementsAccessed = [], itens = null)
         const elementsIdentify = []
         elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
         elementsIdentify.push.apply(elementsIdentify, queue);
-        node = await CrawlerUtil.extractEdges(node, page, puppeteer, 'Despesa Extra Orçamentária', elementsIdentify);
-        itens = await CrawlerUtil.identificationItens('Despesa Extra Orçamentária', page, itens);
+        node = await CrawlerUtil.extractEdges(node, page, puppeteer, criterion.name, elementsIdentify);
+        itens = await CrawlerUtil.identificationItens(criterion.name, page, itens);
         page = currentPage;
         queue.push.apply(queue, node.getEdges());
         node.setResearched(true);
@@ -88,22 +88,25 @@ const run2 = async (node, puppeteer = null, elementsAccessed = [], itens = null)
             await page.waitForNavigation().catch(e => void e);
             await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
         }
-        await run2(newNode, puppeteer, elementsAccessed, itens);
+        return run2(newNode, puppeteer, criterion, elementsAccessed, itens);
     }
 
     await page.waitFor(3000);
     console.log("*********************close browser***********************************************");
     console.log("*********************itens***********************************************");
     console.log(itens);
-    return await puppeteer.getBrowser().close();
+    return (await puppeteer.getBrowser().close());
 
 
 
 };
+
+
 
 const logErrorAndExit = err => {
     console.log(err);
     process.exit();
 };
 
-run2(root, null, []).catch(logErrorAndExit);
+let criterion = CrawlerUtil.createCriterion('Despesa Orçamentária')
+run2(root, null, criterion, []).catch(logErrorAndExit);

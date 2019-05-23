@@ -7,6 +7,7 @@ import PuppeteerUtil from "../utils/puppeteerUtil";
 import Element from '../models/element.class';
 import Evaluation from '../models/evaluation.model';
 import Item from '../models/item.model';
+import Criterion from '../models/criterion.model';
 
 import Node from '../bfs/node';
 
@@ -69,7 +70,7 @@ export default class CrawlerUtil {
 
 
     static async identificationItens(criterionName, page, itensSearch = null) {
-        const itens = itensSearch !== null ? itensSearch : await CrawlerUtil.initializeItens(criterionName);
+        let itens = itensSearch !== null ? itensSearch : await CrawlerUtil.initializeItens(criterionName);
 
         for (let item of itens) {
             const element = (await page.$x(item.xpath))[0];
@@ -80,7 +81,7 @@ export default class CrawlerUtil {
                 item.pathSought = await page.url();
             }
         }
-        return itensSearch;
+        return itens;
     }
 
     static async initializeItens(criterionName) {
@@ -93,9 +94,9 @@ export default class CrawlerUtil {
         return itens;
     }
 
-    static async createCriterion(criterionName) {
-        return criterionDespExtra = Criterion({
-            name: name,
+    static createCriterion(criterionName) {
+        return Criterion({
+            name: criterionName,
         });
     }
 
