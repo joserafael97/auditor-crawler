@@ -15,7 +15,7 @@ import {
 // let root = new Node('http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
 //     [], null, false);
 
-const element = new Element('http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
+const element = new Element('http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB',
     null, null, null, null)
 
 let root = new Node(element, [], [], false);
@@ -29,7 +29,7 @@ connectToDb();
 
 let queue = [];
 
-const run2 = async (node, puppeteer = null, elementsAccessed = []) => {
+const run2 = async (node, puppeteer = null, elementsAccessed = [], itens = null) => {
     if (puppeteer == null) {
         puppeteer = await PuppeteerUtil.createPuppetterInstance();
     }
@@ -71,10 +71,7 @@ const run2 = async (node, puppeteer = null, elementsAccessed = []) => {
         elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
         elementsIdentify.push.apply(elementsIdentify, queue);
         node = await CrawlerUtil.extractEdges(node, page, puppeteer, 'Despesa Extra Orçamentária', elementsIdentify);
-
-        //search itens 
-        // await CrawlerUtil.initializeItens('Despesa Extra Orçamentária', page, null);        
-
+        itens = await CrawlerUtil.identificationItens('Despesa Extra Orçamentária', page, itens);
         page = currentPage;
         queue.push.apply(queue, node.getEdges());
         node.setResearched(true);
@@ -91,12 +88,17 @@ const run2 = async (node, puppeteer = null, elementsAccessed = []) => {
             await page.waitForNavigation().catch(e => void e);
             await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
         }
-        await run2(newNode, puppeteer, elementsAccessed);
+        await run2(newNode, puppeteer, elementsAccessed, itens);
     }
 
     await page.waitFor(3000);
     console.log("*********************close browser***********************************************");
+    console.log("*********************itens***********************************************");
+    console.log(itens);
     return await puppeteer.getBrowser().close();
+
+
+
 };
 
 const logErrorAndExit = err => {
@@ -105,4 +107,3 @@ const logErrorAndExit = err => {
 };
 
 run2(root, null, []).catch(logErrorAndExit);
-

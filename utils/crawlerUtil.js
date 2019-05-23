@@ -45,7 +45,6 @@ export default class CrawlerUtil {
                     // }
 
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                    console.log("++++++++++++++++++++++++++++++++++++", text);
                     
                     if (TextUtil.checkTextContainsInText(queryElement.getKeyWord(), text) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
@@ -71,17 +70,15 @@ export default class CrawlerUtil {
 
     static async identificationItens(criterionName, page, itensSearch = null) {
         const itens = itensSearch !== null ? itensSearch : await CrawlerUtil.initializeItens(criterionName);
+
         for (let item of itens) {
-            if (!item.found) {
-                const element = (await page.$x(query.getXpath()))[0];
+            const element = (await page.$x(item.xpath))[0];
+            if (!item.found && element !== undefined) {
                 item.text = TextUtil.normalizeText(TextUtil.removeWhiteSpace(await (await element.getProperty('textContent')).jsonValue()));
-                item.found = (text.length > 0 && checkTextContainsArray(item.keywordsXpath, item.text)) ? true : false;
-                item.text = item.found ? text : '';
-
+                item.found = (item.text.length > 0 && TextUtil.checkTextContainsArray(item.keywordsXpath, item.text)) ? true : false;
+                item.text = item.found ? item.text : '';
+                item.pathSought = await page.url();
             }
-
-            console.log("itens::::::::::::::::::::::::::::::::::", item);
-
         }
         return itensSearch;
     }
