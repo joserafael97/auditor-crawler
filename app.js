@@ -51,9 +51,9 @@ const run = async (criterion) => {
     console.log(criterion);
 };
 
-run(criterionDespesaOrc);
-run(criterionDespesaExtra);
+// run(criterionDespesaOrc);
+// run(criterionDespesaExtra);
 run(criterionReceitaExtra);
-run(criterionReceitaOrc);
-run(criterionLicit);
-run(criterionPessoal);
+// run(criterionReceitaOrc);
+// run(criterionLicit);
+// run(criterionPessoal);
