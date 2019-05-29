@@ -1,47 +1,59 @@
 'use strict';
 import connectToDb from './db/connect'
 import XpathUtil from './utils/xpathUtil'
-import { CONTAINSTYPESEARCH } from './utils/xpathUtil'
+import {
+    CONTAINSTYPESEARCH
+} from './utils/xpathUtil'
 import CrawlerUtil from './utils/crawlerUtil';
 import Criterion from './models/criterion.model'
 import Evaluation from './models/evaluation.model'
+import Bfs from './bfs'
+import Element from './models/element.class'
+import Node from './bfs/node';
+
+connectToDb(); // let root = new Node('http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
+//     [], null, false);
+
+const element = new Element('http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB',
+    null, null, null, null)
+
+let root = new Node(element, [], [], false);
+
+//checar se o node URL encontrado tem como pai um xpath e não mudou a página (mesma URL). Caso isso seja verificado, a URL pode ser duplicada.
+//adicionar lista de termos não úteis
+//alimentar palavras não úteis para despesas Extra. 
+//Posso afirmar se a partir de clicar num xpath não pode existir uma URL nova caso após clicar a URL atual não mude? 
 
 connectToDb();
 
-let criterionDespExtra = Criterion({
-    name: 'Despesa Extra Orçamentária',
-});
-
+const logErrorAndExit = err => {
+    console.log(err);
+    process.exit();
+};
 
 let evaluation = Evaluation({
     date: new Date(),
-    county: 'Monteiro',
-    cityHallUrl: 'https://www.monteiro.pb.gov.br',
-    transparencyPortalUrl: 'https://www.monteiro.pb.gov.br',
+    county: 'Ouro Velho',
+    cityHallUrl: 'http://ourovelho.pb.gov.br',
+    transparencyPortalUrl: element.getValue(),
 });
 
+let criterionDespesaOrc = CrawlerUtil.createCriterion('Despesa Orçamentária');
+let criterionDespesaExtra = CrawlerUtil.createCriterion('Despesa Extra Orçamentária');
+let criterionReceitaOrc = CrawlerUtil.createCriterion('Receita Orçamentária');
+let criterionReceitaExtra = CrawlerUtil.createCriterion('Receita Extra Orçamentária');
+let criterionLicit = CrawlerUtil.createCriterion('Licitação');
+let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
+const run = async (criterion) => {
+    criterion = await Criterion.addCriterion(criterion, await Bfs.bfsInit(root, null, [], criterion, []).catch(logErrorAndExit));
+    await Evaluation.addEvaluationWithOneCriterion(evaluation, criterion)
+    console.log(criterion);
+};
 
-const run2 = async () => {
-    console.log(await CrawlerUtil.initializeItens('Despesa Extra Orçamentária'))
-    console.log(await CrawlerUtil.initializeItens('Despesa Extra Orçamentária'))
-
-    // const list = await XpathUtil.createXpathsToIdentificationKeyWord('Despesa Extra Orçamentária')
-    // let itens = [];
-    // for (let ob of list) {
-    //     itens.push(CrawlerUtil.createItem(ob.getKeyWord(), ob.getXpath()));
-    // }
-    // criterionDespExtra = await Criterion.addCriterion(criterionDespExtra, itens);
-    // let criterion = [];
-    // criterion.push(criterionDespExtra);
-    // evaluation = await Evaluation.addEvaluation(evaluation, criterion);
-
-}
-
-run2()
-
-
-
-
-// CriterionKeyWord.addCriterionKeyWordModel(criterionKeyWordDespExtra, identificationKeyWordDespExtraOrcamentaria);
-
+run(criterionDespesaOrc);
+run(criterionDespesaExtra);
+run(criterionReceitaExtra);
+run(criterionReceitaOrc);
+run(criterionLicit);
+run(criterionPessoal);

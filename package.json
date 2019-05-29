@@ -4,7 +4,7 @@
   "description": "todo",
   "main": "potusParse.js",
   "scripts": {
-    "start": "babel-node bfs.js"
+    "start": "babel-node app.js"
   },
   "author": "",
   "license": "ISC",

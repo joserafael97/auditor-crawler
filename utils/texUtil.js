@@ -47,7 +47,12 @@ export default class TextUtil {
         const unusableTerms = {
             'Despesa Extra Orçamentária': ['despesa orcamentaria', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',
                 'demonstrativo', 'outras despesas', 'restos a pagar', ' por orgao', 'obras', 'diarias', 'passagens', 'transferencia', 'programatica', 'fornecedor',],
-            'Despesa Orçamentária': ['extra', 'receitas', 'outras despesas','receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo', 'restos a pagar']
+            'Despesa Orçamentária': ['extra', 'receitas', 'outras despesas','receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo', 'restos a pagar'],
+            'Receita Orçamentária': ['extra', 'despesas','licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo'],
+            'Receita Extra Orçamentária': ['despesas', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo'],
+            'Licitação': ['extra', 'receitas', 'outras despesas','receita', 'pessoal', 'folha de pagamento', 'demonstrativo'],
+            'Quadro Pessoal': ['extra', 'receitas', 'outras despesas','receita', 'licitacao', 'licitacoes', 'demonstrativo']
+
         };
 
         const unusableCommumTerms = ["transparencia.rn.gov.br", "css", "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',

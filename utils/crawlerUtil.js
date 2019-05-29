@@ -69,7 +69,7 @@ export default class CrawlerUtil {
     };
 
 
-    static async identificationItens(criterionName, page, itensSearch = null) {
+    static async identificationItens(criterionName, page, itensSearch = null, pageOrigin = page) {
         let itens = itensSearch !== null ? itensSearch : await CrawlerUtil.initializeItens(criterionName);
 
         for (let item of itens) {
@@ -79,6 +79,7 @@ export default class CrawlerUtil {
                 item.found = (item.text.length > 0 && TextUtil.checkTextContainsArray(item.keywordsXpath, item.text)) ? true : false;
                 item.text = item.found ? item.text : '';
                 item.pathSought = await page.url();
+                await pageOrigin.screenshot({path: './proof/'+ criterionName + '-' + new Date()+'-proof.png'});
             }
         }
         return itens;
