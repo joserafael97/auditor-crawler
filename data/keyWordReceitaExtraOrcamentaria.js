@@ -1,5 +1,5 @@
-const keywordSearchRecExtraOrcamentaria = ['consultar receitas extra-orcamentarias', 'extraorcamentaria',
-    'receitas', 'extra-orcamentaria', 'extra orcamentaria'
+const keywordSearchRecExtraOrcamentaria = ['consultar receitas extra-orcamentarias', 'extraorcamentaria', 
+    'receitas', 'extra-orcamentaria', 'extra orcamentaria', 'consultar'
 ];
 
 const identificationKeyWordRecExtraOrcamentaria = {

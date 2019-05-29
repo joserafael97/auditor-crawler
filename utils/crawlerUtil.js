@@ -8,6 +8,7 @@ import Element from '../models/element.class';
 import Evaluation from '../models/evaluation.model';
 import Item from '../models/item.model';
 import Criterion from '../models/criterion.model';
+import Fileutil from '../utils/fileUtil';
 
 import Node from '../bfs/node';
 
@@ -46,7 +47,7 @@ export default class CrawlerUtil {
                     // }
 
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                    
+
                     if (TextUtil.checkTextContainsInText(queryElement.getKeyWord(), text) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
                             (currentNodeUrl !== currentUrl)) &&
@@ -69,17 +70,30 @@ export default class CrawlerUtil {
     };
 
 
-    static async identificationItens(criterionName, page, itensSearch = null, pageOrigin = page) {
+    static async identificationItens(criterionName, page, itensSearch = null, pageOrigin = page, evaluation, node) {
         let itens = itensSearch !== null ? itensSearch : await CrawlerUtil.initializeItens(criterionName);
 
         for (let item of itens) {
             const element = (await page.$x(item.xpath))[0];
-            if (!item.found && element !== undefined) {
+            if (element !== undefined) {
+
+                //creating diretory avaluation if not exists
+                let path = './proof/' + evaluation.county;
+                Fileutil.createDirectory(path);
+                path = path + "/" + evaluation.date.toISOString();
+                Fileutil.createDirectory(path);
+                path = path + "/" + criterionName;
+                Fileutil.createDirectory(path);
+                path = path + "/" + criterionName + '-' 
+                + item.name + '-level-' + node.getLevel()  + '-' + new Date() + '-proof.png'
+
                 item.text = TextUtil.normalizeText(TextUtil.removeWhiteSpace(await (await element.getProperty('textContent')).jsonValue()));
                 item.found = (item.text.length > 0 && TextUtil.checkTextContainsArray(item.keywordsXpath, item.text)) ? true : false;
                 item.text = item.found ? item.text : '';
                 item.pathSought = await page.url();
-                await pageOrigin.screenshot({path: './proof/'+ criterionName + '-' + new Date()+'-proof.png'});
+                item.proofText = await (await element.getProperty('innerHTML')).jsonValue();
+                await pageOrigin.screenshot({ path: path});
+                item.proof = path;
             }
         }
         return itens;

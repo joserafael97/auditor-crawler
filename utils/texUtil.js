@@ -48,8 +48,8 @@ export default class TextUtil {
             'Despesa Extra Orçamentária': ['despesa orcamentaria', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',
                 'demonstrativo', 'outras despesas', 'restos a pagar', ' por orgao', 'obras', 'diarias', 'passagens', 'transferencia', 'programatica', 'fornecedor',],
             'Despesa Orçamentária': ['extra', 'receitas', 'outras despesas','receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo', 'restos a pagar'],
-            'Receita Orçamentária': ['extra', 'despesas','licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo'],
-            'Receita Extra Orçamentária': ['receitas orcamentarias','despesas', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo', 'outras receitas'],
+            'Receita Orçamentária': ['extra', 'detalhado', 'receita de contribuicoes', 'receita de servicos', 'receita patrimonial', 'comparativo', 'restos a pagar', 'prevista', 'resumo geral', 'loalei','execucao','outras receitas', 'despesas','licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo'],
+            'Receita Extra Orçamentária': ['receitas orcamentarias','despesas', 'licitacao', 'licitacoes', 'pessoal', 'restos a pagar', 'folha de pagamento', 'demonstrativo', 'outras receitas'],
             'Licitação': ['extra', 'receitas', 'outras despesas','receita', 'pessoal', 'folha de pagamento', 'demonstrativo'],
             'Quadro Pessoal': ['extra', 'receitas', 'outras despesas','receita', 'licitacao', 'licitacoes', 'demonstrativo']
 

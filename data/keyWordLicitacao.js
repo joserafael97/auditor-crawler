@@ -1,5 +1,5 @@
-const keywordSearchLicitacao = ['consultar licitacoes', 'licitacao', 'licitacoes.aspx', 'acesso licitacoes',
-    'despesa com licitacao', 'Licitacao', 'Licitacoes', 'Licitações', 'Procedimentos Licitatórios'
+const keywordSearchLicitacao = ['consultar licitacoes', 'Licitações Empenhadas', 'licitacao', 'licitacoes.aspx', 'acesso licitacoes',
+    'despesa com licitacao', 'Licitacao', 'Licitacoes', 'Licitações', 'Procedimentos Licitatórios', 'consultar'
 ];
 
 const identificationKeyLicitacao = {

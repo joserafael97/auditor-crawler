@@ -11,6 +11,7 @@ import Bfs from './bfs'
 import Element from './models/element.class'
 import Node from './bfs/node';
 
+
 connectToDb(); // let root = new Node('http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
 //     [], null, false);
 
@@ -38,6 +39,8 @@ let evaluation = Evaluation({
     transparencyPortalUrl: element.getValue(),
 });
 
+let initDate = new Date();
+
 let criterionDespesaOrc = CrawlerUtil.createCriterion('Despesa Orçamentária');
 let criterionDespesaExtra = CrawlerUtil.createCriterion('Despesa Extra Orçamentária');
 let criterionReceitaOrc = CrawlerUtil.createCriterion('Receita Orçamentária');
@@ -46,14 +49,20 @@ let criterionLicit = CrawlerUtil.createCriterion('Licitação');
 let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
 const run = async (criterion) => {
-    criterion = await Criterion.addCriterion(criterion, await Bfs.bfsInit(root, null, [], criterion, []).catch(logErrorAndExit));
+    criterion = await Criterion.addCriterion(criterion, await Bfs.bfsInit(root, null, [], criterion, evaluation, []).catch(logErrorAndExit));
     await Evaluation.addEvaluationWithOneCriterion(evaluation, criterion)
+    const hours = Math.abs(new Date() - initDate) / 36e5
     console.log(criterion);
+    console.log("============================================================================");
+    let delta = Math.abs(new Date() - initDate) / 1000;
+    var minutes = Math.floor(delta / 60) % 60;
+    console.log("Duration: ", minutes, ' min')
+
 };
 
 // run(criterionDespesaOrc);
 // run(criterionDespesaExtra);
-run(criterionReceitaExtra);
+// run(criterionReceitaExtra);
 // run(criterionReceitaOrc);
-// run(criterionLicit);
+run(criterionLicit);
 // run(criterionPessoal);

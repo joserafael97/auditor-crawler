@@ -5,6 +5,9 @@
 /tmp
 /out-tsc
 
+# proof each execution
+/proof
+
 # dependencies
 /node_modules
 

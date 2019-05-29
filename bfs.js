@@ -11,7 +11,7 @@ import {
 
 export default class Bfs {
 
-    static async bfsInit(node, puppeteer = null, queue, criterion, elementsAccessed = [], itens = null) {
+    static async bfsInit(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null) {
         if (puppeteer == null) {
             puppeteer = await PuppeteerUtil.createPuppetterInstance();
         }
@@ -53,7 +53,7 @@ export default class Bfs {
             elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
             elementsIdentify.push.apply(elementsIdentify, queue);
             node = await CrawlerUtil.extractEdges(node, page, puppeteer, criterion.name, elementsIdentify);
-            itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage);
+            itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
             page = currentPage;
             queue.push.apply(queue, node.getEdges());
             node.setResearched(true);
@@ -70,7 +70,7 @@ export default class Bfs {
                 await page.waitForNavigation().catch(e => void e);
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
             }
-            return Bfs.bfsInit(newNode, puppeteer, queue, criterion, elementsAccessed, itens);
+            return Bfs.bfsInit(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens);
         }
     
         console.log("*********************close browser***********************************************");
