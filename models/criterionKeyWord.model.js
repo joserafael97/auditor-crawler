@@ -27,6 +27,10 @@ CriterionKeyWordModel.getAll = async () => {
     return await CriterionKeyWordModel.find().populate('itens').exec();
 }
 
+CriterionKeyWordModel.getAllWithOutItens = async () => {
+    return await CriterionKeyWordModel.find();
+}
+
 CriterionKeyWordModel.findByName = async (nameCriterion) => {
     return await CriterionKeyWordModel.findOne({ name: nameCriterion }).populate('itens').exec();
 }

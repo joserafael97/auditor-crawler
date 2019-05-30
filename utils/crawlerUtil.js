@@ -81,9 +81,9 @@ export default class CrawlerUtil {
                 path = path + "/" + criterionName + '-' 
                 + item.name + '-level-' + node.getLevel()  + '-' + new Date() + '-proof.png'
 
-                item.text = TextUtil.normalizeText(TextUtil.removeWhiteSpace(await (await element.getProperty('textContent')).jsonValue()));
-                item.found = (item.text.length > 0 && TextUtil.checkTextContainsArray(item.keywordsXpath, item.text)) ? true : false;
-                item.text = item.found ? item.text : '';
+                item.foundText = TextUtil.normalizeText(TextUtil.removeWhiteSpace(await (await element.getProperty('textContent')).jsonValue()));
+                item.found = (item.foundText.length > 0 && TextUtil.checkTextContainsArray(item.keywordsXpath, item.foundText)) ? true : false;
+                item.foundText = item.found ? item.foundText : '';
                 item.pathSought = await page.url();
                 item.proofText = await (await element.getProperty('innerHTML')).jsonValue();
                 await pageOrigin.screenshot({ path: path});

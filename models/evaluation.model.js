@@ -2,6 +2,7 @@
 
 import mongoose from 'mongoose';
 import Criterion from '../models/criterion.model'
+import Item from '../models/item.model';
 
 const EvaluationSchema = mongoose.Schema({
     date: {
