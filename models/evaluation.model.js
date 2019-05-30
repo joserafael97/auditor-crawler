@@ -8,6 +8,18 @@ const EvaluationSchema = mongoose.Schema({
         type: Date,
         required: true
     },
+    dateEnd: {
+        type: Date,
+        required: true
+    },
+    duration: {
+        type: String,
+        required: true
+    },
+    durationMin: {
+        type: String,
+        required: true
+    },
     county: {
         type: String,
         required: true
@@ -29,9 +41,37 @@ const EvaluationSchema = mongoose.Schema({
 
 let EvaluationModel = mongoose.model('Evaluation', EvaluationSchema);
 
-EvaluationModel.getAll = () => {
-    return EvaluationModel.find({});
+EvaluationModel.getAll = async () => {
+    return (await EvaluationModel.find().populate({
+        path: 'criterions',
+        populate: {
+            path: 'itens',
+            model: 'Item'
+        }
+    }).exec());
 }
+
+EvaluationModel.findByCounty = async (countyName) => {
+    return (await EvaluationModel.find({ county: countyName }).populate({
+        path: 'criterions',
+        populate: {
+            path: 'itens',
+            model: 'Item'
+        }
+    }).exec());
+}
+
+EvaluationModel.findLastByCounty = async (countyName) => {
+    return (await EvaluationModel.findOne({ county: countyName }, {}, { sort: { 'created_at' : -1 } }).populate({
+        path: 'criterions',
+        populate: {
+            path: 'itens',
+            model: 'Item'
+        }
+    }).exec());
+}
+
+
 
 EvaluationModel.addEvaluation = async (evaluationToAdd, criterions) => {
     for (let criterion of criterions) {

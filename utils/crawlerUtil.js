@@ -8,7 +8,7 @@ import Element from '../models/element.class';
 import Evaluation from '../models/evaluation.model';
 import Item from '../models/item.model';
 import Criterion from '../models/criterion.model';
-import Fileutil from '../utils/fileUtil';
+import FileUtil from '../utils/fileUtil';
 
 import Node from '../bfs/node';
 
@@ -76,14 +76,8 @@ export default class CrawlerUtil {
         for (let item of itens) {
             const element = (await page.$x(item.xpath))[0];
             if (element !== undefined) {
-
-                //creating diretory avaluation if not exists
-                let path = './proof/' + evaluation.county;
-                Fileutil.createDirectory(path);
-                path = path + "/" + evaluation.date.toISOString();
-                Fileutil.createDirectory(path);
-                path = path + "/" + criterionName;
-                Fileutil.createDirectory(path);
+                let path = FileUtil.createMultiDirecttory('./proof/' + evaluation.county, 
+                "/" + evaluation.date.toISOString(), "/" + criterionName)
                 path = path + "/" + criterionName + '-' 
                 + item.name + '-level-' + node.getLevel()  + '-' + new Date() + '-proof.png'
 
