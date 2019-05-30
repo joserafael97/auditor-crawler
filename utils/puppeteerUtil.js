@@ -9,11 +9,9 @@ import {
     UNUSABLEIFRAMES
 } from '../utils/xpathUtil';
 
-import Node from '../bfs/node';
 
 
-
-export default class PuppeteerUltil {
+export default class PuppeteerUtil {
 
 
     static async createPuppetterInstance() {
@@ -44,8 +42,8 @@ export default class PuppeteerUltil {
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
         await mainPage.setViewport({
-            // width: 1920,
-            width: 1600,
+            width: 1920,
+            // width: 1600,
             height: 1080
         });
 
@@ -69,12 +67,10 @@ export default class PuppeteerUltil {
     }
 
     static async detectContext(page, xpath) {
-        if (await PuppeteerUltil.checkXpath(page, XPATHIFRAME)) {
+        if (await PuppeteerUtil.checkXpath(page, XPATHIFRAME)) {
             for (const frame of page.mainFrame().childFrames()) {
                 if (!TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, frame.url())) {
-                    console.log("============================================================= IFRAME ACCESS")
                     return frame;
-
                 }
             }
         }
@@ -103,7 +99,7 @@ export default class PuppeteerUltil {
                     if (HtmlUtil.isUrl(source.getValue())) {
                         Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
                     } else {
-                        let element = await PuppeteerUltil.selectElementPage(page, source.getXpath(), source.getValue());
+                        let element = await PuppeteerUtil.selectElementPage(page, source.getXpath(), source.getValue());
                         await element.click().catch(e => void e);
                         await page.waitForNavigation().catch(e => void e);
                     }
@@ -117,9 +113,6 @@ export default class PuppeteerUltil {
 
         await page.waitForNavigation().catch(e => void e);
         const elements = await page.$x(xpath);
-
-        console.log("====================================*****************", await page.url());
-
         if (elements.length > 0) {
             for (let element of elements) {
 
@@ -129,9 +122,6 @@ export default class PuppeteerUltil {
 
                 text = text.length > 0 ? text :
                     TextUtil.normalizeText(TextUtil.removeWhiteSpace(await propertyHandleValue.jsonValue()));
-
-                console.log("====================================*****************", text);
-                console.log("====================================*****************", searchValue);
                 if (text === searchValue) {
                     return element;
                 }
@@ -159,23 +149,5 @@ export default class PuppeteerUltil {
         }
         return false;
     }
-
-
-
-    // static async searchNewWindow(puppeteer, xpath){
-    //     numPages = (await browser.pages()).length
-    //     if SeleniumUtil.checar_existe_xpath(driver, xpath):
-    //         return driver
-
-    //     elif SeleniumUtil.checar_existe_outra_janela(driver):
-    //         driver = SeleniumUtil.mudar_janela(driver)
-    //         if SeleniumUtil.checar_existe_xpath(driver, xpath):
-    //             return driver
-    //         else:
-    //             return None
-
-    //     else:
-    //         return None
-    // }
 
 }

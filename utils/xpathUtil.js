@@ -36,7 +36,9 @@ export default class XpathUtil {
         await CriterionKeyWord.findByName(criterionKeyWordName).then(function (criterionKeyWords) {
             for (let index = 0; index < criterionKeyWords.itens.length; index++) {
                 let condicao = '';
+                let item = '';
                 for (let i = 0; i < criterionKeyWords.itens[index].identificationKeyWord.length; i++) {
+                    item = criterionKeyWords.itens[index].name;
                     let valor = TextUtil.normalizeText(criterionKeyWords.itens[index].identificationKeyWord[i]);
                     if (i == 0) {
                         condicao += tipo.replace('{}', valor);
@@ -44,7 +46,7 @@ export default class XpathUtil {
                         condicao += ' or ' + tipo.replace('{}', valor);
                     }
                 }
-                xpaths.push('//*[{}]'.replace('{}', condicao))
+                xpaths.push(new QueryElement('//*[{}]'.replace('{}', condicao), item, criterionKeyWords.itens[index].identificationKeyWord));
             }
         });
         return xpaths

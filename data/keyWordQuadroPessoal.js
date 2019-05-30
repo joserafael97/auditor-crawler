@@ -1,4 +1,4 @@
-const keywordSearchPessoal = ['folha de pagamento', 'folhapag', 'quadro pessoal', 'Folha Pagamento'];
+const keywordSearchPessoal = ['folha de pagamento', 'folhapag', 'quadro pessoal', 'Folha Pagamento', 'consultar'];
 
 
 const identificationKeyWordPessoal = {
