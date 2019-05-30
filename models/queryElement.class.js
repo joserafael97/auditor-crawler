@@ -13,17 +13,27 @@ export {
 };
 
 export default class QueryElement {
-    
-    constructor(xpath, typeQuery = QUERYTOSTATICCOMPONENT) {
+
+    constructor(xpath, keyword, keywordsXpath = [], typeQuery = QUERYTOSTATICCOMPONENT) {
         this.xpath = xpath;
+        this.keyword = keyword;
         this.typeQuery = typeQuery;
+        this.keywordsXpath = keywordsXpath;
     }
 
-    getXpath(){
+    getXpath() {
         return this.xpath;
     }
 
-    getTypeQuery(){
+    getTypeQuery() {
         return this.typeQuery;
+    }
+
+    getKeyWord() {
+        return this.keyword;
+    }
+
+    getKeyWordsXpath() {
+        return this.keywordsXpath;
     }
 }

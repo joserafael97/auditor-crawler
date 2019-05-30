@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 
 const ItemSchema = mongoose.Schema({
     name: {type: String, required: true, unique: false, index: true},
+    keywordsXpath: [{type: String, required: true}],
     found: {type: Boolean, required: true}, 
     foundText: {type: String}, 
     xpath: {type: String}, 

@@ -1,19 +1,17 @@
 'use-strict';
 
-import puppeteer from 'puppeteer'
-import TextUtil from '../utils/texUtil'
-import HtmlUtil from '../utils/htmlUtil'
-import PuppeteerInstance from '../models/puppeteerInstance.class'
+import puppeteer from 'puppeteer';
+import TextUtil from '../utils/texUtil';
+import HtmlUtil from '../utils/htmlUtil';
+import PuppeteerInstance from '../models/puppeteerInstance.class';
 import {
     XPATHIFRAME,
     UNUSABLEIFRAMES
-} from '../utils/xpathUtil'
-
-import Node from '../bfs/node'
+} from '../utils/xpathUtil';
 
 
 
-export default class PuppeteerUltil {
+export default class PuppeteerUtil {
 
 
     static async createPuppetterInstance() {
@@ -44,8 +42,8 @@ export default class PuppeteerUltil {
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
         await mainPage.setViewport({
-            // width: 1920,
-            width: 1700,
+            width: 1920,
+            // width: 1600,
             height: 1080
         });
 
@@ -69,11 +67,10 @@ export default class PuppeteerUltil {
     }
 
     static async detectContext(page, xpath) {
-        if (await PuppeteerUltil.checkXpath(page, XPATHIFRAME)) {
+        if (await PuppeteerUtil.checkXpath(page, XPATHIFRAME)) {
             for (const frame of page.mainFrame().childFrames()) {
                 if (!TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, frame.url())) {
                     return frame;
-
                 }
             }
         }
@@ -91,55 +88,66 @@ export default class PuppeteerUltil {
         }
     }
 
-    static async resetPage(page, node) {
-
-        //level 01 e 02 use url and max single xpath.
-        if (node.getLevel() < 3) {
-            try {
-                await page.reload();
-            } catch (e) {
-                console.log(e)
+    static async accessParent(page, parents) {
+        const nodeParent = parents[parents.length - 1];
+        if (!HtmlUtil.isUrl(nodeParent.getSource().getValue())) {
+            Promise.all([page.goto(nodeParent.getSource().getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
+        } else {
+            if (parents.length > 0) {
+                for (let parent of parents.reverse()) {
+                    let source = parent.getSource();
+                    if (HtmlUtil.isUrl(source.getValue())) {
+                        Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
+                    } else {
+                        let element = await PuppeteerUtil.selectElementPage(page, source.getXpath(), source.getValue());
+                        await element.click().catch(e => void e);
+                        await page.waitForNavigation().catch(e => void e);
+                    }
+                }
             }
-            return page;
         }
-
-        return page;
     }
 
 
     static async selectElementPage(page, xpath, searchValue) {
-        const elements = await page.$x(xpath);
 
+        await page.waitForNavigation().catch(e => void e);
+        const elements = await page.$x(xpath);
         if (elements.length > 0) {
             for (let element of elements) {
+
                 let text = await (await element.getProperty('textContent')).jsonValue();
+                const propertyHandleValue = await element.getProperty('value');
                 text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+
+                text = text.length > 0 ? text :
+                    TextUtil.normalizeText(TextUtil.removeWhiteSpace(await propertyHandleValue.jsonValue()));
                 if (text === searchValue) {
                     return element;
                 }
             }
         }
-
-        return null
-
+        return null;
     }
 
+    static checkDuplicateNode(arrayNodes, text, currentNode, currentUrl) {
+        for (let node of arrayNodes) {
+            const value = node.getSource().getValue();
+            if (HtmlUtil.isUrl(text)) {
+                if (text === value || text.includes(value)) {
+                    return true;
+                }
+            } else {
+                if (node.getLevel() !== 0 &&
+                    (currentNode.getSource().getValue() === node.getParent().getSource().getValue() &&
+                        node.getSource().getUrl() === currentUrl) &&
+                    value == text) {
+                    return true;
+                }
+            }
 
-
-    // static async searchNewWindow(puppeteer, xpath){
-    //     numPages = (await browser.pages()).length
-    //     if SeleniumUtil.checar_existe_xpath(driver, xpath):
-    //         return driver
-
-    //     elif SeleniumUtil.checar_existe_outra_janela(driver):
-    //         driver = SeleniumUtil.mudar_janela(driver)
-    //         if SeleniumUtil.checar_existe_xpath(driver, xpath):
-    //             return driver
-    //         else:
-    //             return None
-
-    //     else:
-    //         return None
-    // }
+        }
+        return false;
+    }
 
 }

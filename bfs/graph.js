@@ -5,6 +5,7 @@ export default class Graph {
     constructor(nodes = [], graph = {}) {
         this.nodes = nodes;
         this.graph = graph;
+        this.start = null;
     }
 
     addNode(node) {
@@ -29,5 +30,9 @@ export default class Graph {
 
     getResearched() {
         return this.researched;
+    }
+
+    setStartNode(node) {
+        this.start = node;
     }
 }

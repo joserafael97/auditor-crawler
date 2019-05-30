@@ -75,14 +75,6 @@ export default class Node {
         this.edges.push(edge);
     }
 
-    shiftEdge() {
-        for (let edge of this.edges) {
-            console.log("node anteriores: ****:", edge.getSource().value);
-        }
-
-        return this.edges.shift();
-    }
-
     getSource() {
         return this.source;
     }
@@ -108,6 +100,6 @@ export default class Node {
     }
 
     setEdgesList(edges) {
-        this.edges.push.apply(this.edges, edges)
+        this.edges = edges;
     }
 }

@@ -34,6 +34,31 @@
             "date": 1557412046352,
             "name": "/home/hansolo/workspace/MSC/auditor-crawler/log/app.log..Th-05-yyyy",
             "hash": "109a74936a42806b8955f8ce1b43c7c3"
+        },
+        {
+            "date": 1557464060988,
+            "name": "/home/hansolo/workspace/MSC/auditor-crawler/log/app.log..Fr-05-yyyy",
+            "hash": "3c38f2c3ad8d0bc34222840f16852fb6"
+        },
+        {
+            "date": 1557591825521,
+            "name": "/home/hansolo/workspace/MSC/auditor-crawler/log/app.log..Sa-05-yyyy",
+            "hash": "a15bc92ef06031a2a33ba89264f3b176"
+        },
+        {
+            "date": 1558283138408,
+            "name": "/home/hansolo/workspace/MSC/auditor-crawler/log/app.log..Su-05-yyyy",
+            "hash": "708f3ffe4a37dfc2766e6cb9d891c55f"
+        },
+        {
+            "date": 1558554849296,
+            "name": "/home/hansolo/workspace/MSC/auditor-crawler/log/app.log..We-05-yyyy",
+            "hash": "6660b662aa1419566c188ae371c4818e"
+        },
+        {
+            "date": 1559003511230,
+            "name": "/home/hansolo/workspace/MSC/auditor-crawler/log/app.log..Mo-05-yyyy",
+            "hash": "6a1b0f9eebe7aa471a0e8c853ee70c71"
         }
     ]
 }
