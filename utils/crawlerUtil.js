@@ -10,7 +10,7 @@ import Item from '../models/item.model';
 import Criterion from '../models/criterion.model';
 import FileUtil from '../utils/fileUtil';
 
-import Node from '../bfs/node';
+import Node from '../models/bfs/node';
 
 import {
     QUERYTOSTATICCOMPONENT

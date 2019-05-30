@@ -9,7 +9,7 @@ import Criterion from './models/criterion.model'
 import Evaluation from './models/evaluation.model'
 import Bfs from './bfs'
 import Element from './models/element.class'
-import Node from './bfs/node';
+import Node from './models/bfs/node';
 import CriterionKeyWord from './models/criterionKeyWord.model'
 import CreateKeyWord from './db/createKeyWord'
 
