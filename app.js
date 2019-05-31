@@ -31,12 +31,19 @@ const logErrorAndExit = err => {
 
 
 const run = async (criterion, evaluation, root) => {
-    criterion = await Criterion.addCriterion(criterion, await Bfs.bfsInit(root, null, [], criterion, evaluation, []).catch(logErrorAndExit));
+    const itens = await Bfs.bfsInit(root, null, [], criterion, evaluation, []).catch(logErrorAndExit)
+    
+    const duration = evaluation.dateEnd.getTime() - evaluation.date.getTime();
     evaluation.dateEnd = new Date();
-    evaluation.duration = evaluation.dateEnd.getTime() - evaluation.date.getTime()
     const delta = Math.abs(new Date() - evaluation.date) / 1000;
     const minutes = Math.floor(delta / 60) % 60;
+    
+    evaluation.duration = duration; 
     evaluation.durationMin = minutes;
+    criterion.duration = duration;
+    criterion.durationMin = minutes;
+
+    criterion = await Criterion.addCriterion(criterion, itens);
     await Evaluation.addEvaluationWithOneCriterion(evaluation, criterion)
 
     console.log(criterion);
