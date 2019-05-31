@@ -1,8 +1,9 @@
 'use strict';
 
 import mongoose from 'mongoose';
-import Criterion from '../models/criterion.model'
+import County from '../models/county.model'
 import Item from '../models/item.model';
+import Criterion from '../models/criterion.model';
 
 const EvaluationSchema = mongoose.Schema({
     date: {

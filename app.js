@@ -5,6 +5,7 @@ import {
     CONTAINSTYPESEARCH
 } from './utils/xpathUtil'
 import CrawlerUtil from './utils/crawlerUtil';
+import TextUtil from './utils/texUtil';
 import Criterion from './models/criterion.model'
 import Evaluation from './models/evaluation.model'
 import Bfs from './bfs'
@@ -12,6 +13,8 @@ import Element from './models/element.class'
 import Node from './models/bfs/node';
 import CriterionKeyWord from './models/criterionKeyWord.model'
 import CreateKeyWord from './db/createKeyWord'
+import County from './models/county.model'
+import CreateCountyMetaData from './db/createCountyMetaData'
 
 //checar se o node URL encontrado tem como pai um xpath e não mudou a página (mesma URL). Caso isso seja verificado, a URL pode ser duplicada.
 //adicionar lista de termos não úteis
@@ -20,32 +23,14 @@ import CreateKeyWord from './db/createKeyWord'
 
 connectToDb();
 
-const element = new Element('http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB',
-    null, null, null, null)
-
-let root = new Node(element, [], [], false);
-
-
 const logErrorAndExit = err => {
     console.log(err);
     process.exit();
 };
 
-let evaluation = Evaluation({
-    date: new Date(),
-    county: 'Ouro Velho',
-    cityHallUrl: 'http://ourovelho.pb.gov.br',
-    transparencyPortalUrl: element.getValue(),
-});
 
-let criterionDespesaOrc = CrawlerUtil.createCriterion('Despesa Orçamentária');
-let criterionDespesaExtra = CrawlerUtil.createCriterion('Despesa Extra Orçamentária');
-let criterionReceitaOrc = CrawlerUtil.createCriterion('Receita Orçamentária');
-let criterionReceitaExtra = CrawlerUtil.createCriterion('Receita Extra Orçamentária');
-let criterionLicit = CrawlerUtil.createCriterion('Licitação');
-let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
-const run = async (criterion) => {
+const run = async (criterion, evaluation, root) => {
     criterion = await Criterion.addCriterion(criterion, await Bfs.bfsInit(root, null, [], criterion, evaluation, []).catch(logErrorAndExit));
     evaluation.dateEnd = new Date();
     evaluation.duration = evaluation.dateEnd.getTime() - evaluation.date.getTime()
@@ -60,20 +45,50 @@ const run = async (criterion) => {
 
 };
 
-
-const init = async () => {
+const initColletions = async () => {
     await CriterionKeyWord.getAllWithOutItens().then(async (criterionsKeyWords) => {
         if (criterionsKeyWords.length == 0) {
             await CreateKeyWord.createColletionsKeyWordsDefault();
 
         }
     });
-    run(criterionDespesaOrc);
-    run(criterionDespesaExtra);
-    run(criterionReceitaExtra);
-    run(criterionReceitaOrc);
-    run(criterionLicit);
-    run(criterionPessoal);
+
+    await County.getAll().then(async (counties) => {
+        if (counties.length == 0) {
+            await CreateCountyMetaData.createColletionsCounty();
+        }
+    });
+}
+
+
+const init = async () => {
+    await initColletions();
+    const county = await County.findByName(TextUtil.countyParamExtract(process.argv.slice(2)[0]));
+
+    let evaluation = Evaluation({
+        date: new Date(),
+        county: county.name,
+        cityHallUrl: county.cityHallUrl,
+        transparencyPortalUrl: county.transparencyPortalUrl,
+    });
+
+    const element = new Element(evaluation.transparencyPortalUrl, null, null, null, null);
+    
+    let root = new Node(element, [], [], false);
+
+    let criterionDespesaOrc = CrawlerUtil.createCriterion('Despesa Orçamentária');
+    let criterionDespesaExtra = CrawlerUtil.createCriterion('Despesa Extra Orçamentária');
+    let criterionReceitaOrc = CrawlerUtil.createCriterion('Receita Orçamentária');
+    let criterionReceitaExtra = CrawlerUtil.createCriterion('Receita Extra Orçamentária');
+    let criterionLicit = CrawlerUtil.createCriterion('Licitação');
+    let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
+
+    run(criterionDespesaOrc, evaluation, root);
+    run(criterionDespesaExtra, evaluation, root);
+    run(criterionReceitaExtra, evaluation, root);
+    run(criterionReceitaOrc, evaluation, root);
+    run(criterionLicit, evaluation, root);
+    run(criterionPessoal, evaluation, root);
 
 }
 

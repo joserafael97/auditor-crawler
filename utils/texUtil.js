@@ -12,6 +12,10 @@ export default class TextUtil {
         return text.replace(/(\r\n|\n|\r)/gm, '').replace(/ +(?= )/g, '').trim();
     }
 
+    static countyParamExtract(param){
+        return param.replace('county=', '').trim()
+    }
+
     static checkTextContainsArray(array, text) {
         for (let index = 0; index < array.length; index++) {
             const value = array[index].toLowerCase();
