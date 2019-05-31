@@ -3,7 +3,9 @@
 # Auditor Crawler
 Este projeto tem como objetivo avaliar o desempenho de técnicas do estado da arte para Web Crawler e extração de conteúdos em páginas Web no contexto da automatização da avaliação de portais de transparência no estado da Paraíba.
 
-## BFS
+## Breadth First Search  (BFS)
+
+No projeto utilizamos como abordagem base um grafo com sua varredura na forma de uma BFS. A Figura a seguir apresenta um exemplo desse tipo de estrutura.
 
 ![bfs](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/bfs.png)
 
@@ -12,7 +14,7 @@ Este projeto tem como objetivo avaliar o desempenho de técnicas do estado da ar
 Este projeto foi desenvolvido sobre a linguagem Javascript com a ferramenta [Puppeteer](https://github.com/GoogleChrome/puppeteer) para criação de Crawlers.
 
 ### Estructure
-A estrutura de diretórios do projeto está descrita abaixo
+A estrutura de diretórios do projeto está descrita abaixo 
 
 ```bash
 .
