@@ -33,7 +33,7 @@ Para a execução do projeto é necessário a instalação das seguintes bibliot
 
 ### Installing
 
-Para instalação das bibliotecas execute o comando abaixo dentro da diretório principal do repositório.
+Para instalação das bibliotecas execute o comando abaixo dentro do diretório principal do repositório.
 
 ```
 npm install
