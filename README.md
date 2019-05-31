@@ -3,9 +3,9 @@
 # Auditor Crawler
 Este projeto tem como objetivo avaliar o desempenho de técnicas do estado da arte para Web Crawler e extração de conteúdos em páginas Web no contexto da automatização da avaliação de portais de transparência no estado da Paraíba.
 
-##BFS
+## BFS
 
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![bfs](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/bfs.png)
 
 
 ## Getting Started
