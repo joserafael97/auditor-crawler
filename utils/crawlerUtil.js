@@ -21,7 +21,6 @@ import urljoin from 'url-join';
 export default class CrawlerUtil {
 
     static async extractEdges(node, page, puppeteer, criterionKeyWordName, elementsIdentify) {
-
         let queryElements = await XpathUtil.createXpathsToExtractUrls(criterionKeyWordName);
         let queryElementDynamicComponents = await XpathUtil.createXpathsToExtractDynamicComponents(criterionKeyWordName);
         queryElements = queryElements.concat(queryElementDynamicComponents);
@@ -33,12 +32,9 @@ export default class CrawlerUtil {
 
         for (let queryElement of queryElements) {
             const elements = await page.$x(queryElement.getXpath());
+            let textBefore = null
             if (elements.length > 0) {
                 for (let element of elements) {
-
-                    // console.log('************************************************', (await element.isIntersectingViewport()))
-
-
                     let text = await (await element.getProperty('textContent')).jsonValue();
                     const value = await (await element.getProperty('value')).jsonValue();
                     text = TextUtil.normalizeText(TextUtil.removeWhiteSpace(text)).length > 0 ? text :
@@ -47,11 +43,12 @@ export default class CrawlerUtil {
                     if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                         text = HtmlUtil.isUrl(text) ? text :
                             HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), text)) ?
-                            urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
+                                urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
                     }
 
-
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+
+
 
                     if (TextUtil.checkTextContainsInText(queryElement.getKeyWord(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
@@ -61,13 +58,26 @@ export default class CrawlerUtil {
 
                         if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
                             ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
-                            let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), puppeteer, currentUrl);
-                            edgesList.push(new Node(source, node));
+
+
+                            console.log('codition 01: _________________________________',
+                                ((textBefore !== null && (HtmlUtil.isUrl(text) && HtmlUtil.isUrl(textBefore))) && TextUtil.similarityUrls(textBefore, text)));
+
+                            console.log('codition 02: _________________________________', textBefore == null);
+                            console.log('codition 03: _________________________________', !HtmlUtil.isUrl(text));
+
+                            if ((textBefore == null) ||
+                                (!HtmlUtil.isUrl(text)) ||
+                                ((textBefore !== null && (HtmlUtil.isUrl(text) && HtmlUtil.isUrl(textBefore))) && TextUtil.similarityUrls(textBefore, text))) {
+
+                                let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), puppeteer, currentUrl);
+                                edgesList.push(new Node(source, node));
+                                textBefore = text;
+                            }
                         }
+
                     }
-
                 }
-
             }
         }
         node.setEdgesList(edgesList);
@@ -80,7 +90,7 @@ export default class CrawlerUtil {
 
         for (let item of itens) {
             const element = (await page.$x(item.xpath))[0];
-            if (element !== undefined) {
+            if (element !== undefined && !item.valid) {
                 let path = FileUtil.createMultiDirecttory('./proof/' + evaluation.county,
                     "/" + evaluation.date.toISOString(), "/" + criterionName)
                 path = path + "/" + criterionName + '-' +
@@ -124,7 +134,7 @@ export default class CrawlerUtil {
                     let tagsName = itemEvaluation.tagNameParents;
                     tagsName.push(itemEvaluation.tagName);
                     itemEvaluation.valid = TextUtil.checkRelevantTagInTagsNameItem(tagsName);
-                }else {
+                } else {
                     itemEvaluation.valid = true;
                 }
             }
@@ -137,8 +147,8 @@ export default class CrawlerUtil {
     static checkItensComplete(itens) {
         let count = 0
         for (let item of itens) {
-            if (item.valid){
-                count ++;
+            if (item.valid) {
+                count++;
             }
         }
         return itens.length === count ? true : false;
@@ -165,7 +175,7 @@ export default class CrawlerUtil {
             let element = document.evaluate(xpath, document, null, XPathResult.ANY_TYPE, null);
             var thisHeading = element.iterateNext();
             thisHeading.style.backgroundColor = '#4F0665'
-            thisHeading.style.backgroundColor = '#ffffff'
+            thisHeading.style.color = '#ffffff'
             return element;
         }, xpath);
     }

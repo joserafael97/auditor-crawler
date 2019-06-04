@@ -139,8 +139,8 @@ export default class PuppeteerUtil {
                 }
             } else {
                 if (node.getLevel() !== 0 &&
-                    (currentNode.getSource().getValue() === node.getParent().getSource().getValue() &&
-                        node.getSource().getUrl() === currentUrl) &&
+                    // (currentNode.getSource().getValue() === node.getParent().getSource().getValue() &&
+                    (node.getSource().getUrl() === currentUrl) &&
                     value == text) {
                     return true;
                 }

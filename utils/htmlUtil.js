@@ -1,5 +1,6 @@
 'use strict';
 
+import url from 'url'
 
 export default class HtmlUtil {
 
@@ -19,10 +20,15 @@ export default class HtmlUtil {
         return 'http://' + hostname;
     }
 
-    static extractUri(url) {
-        let l = document.createElement("a");
-        l.href = url;
-        return l.pathname;
+    static extractUri(urlstring) {
+        let pathname = url.parse(urlstring).pathname;
+        return pathname
+    }
+
+
+    static extractHost(urlstring) {
+        const host = url.parse(urlstring).host;
+        return host 
     }
 
     static isUrl(url) {

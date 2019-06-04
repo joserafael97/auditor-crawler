@@ -1,4 +1,5 @@
 import HtmlUtil from "../utils/htmlUtil";
+import StringSimilarity from 'string-similarity'
 
 export default class TextUtil {
 
@@ -25,6 +26,26 @@ export default class TextUtil {
 
         }
         return false;
+    }
+
+    static similarityUrls(url1, url2){
+        const host1 = HtmlUtil.extractHost(url1);
+        const host2 = HtmlUtil.extractHost(url2);
+        
+        if (host1 === host2){
+            const uri1 = HtmlUtil.extractUri(url1).replace('/', '');
+            const uri2 = HtmlUtil.extractUri(url2).replace('/', '');
+            console.log("____________________________________________VALUE: ", uri1);
+            console.log("____________________________________________VALUE: ", uri2);
+            console.log("____________________________________________VALUE: ", url1);
+            console.log("____________________________________________VALUE: ", url2);
+            console.log("____________________________________________VALUE: ", StringSimilarity.compareTwoStrings(uri1, uri2));
+            console.log("____________________________________________VALUE: ",  StringSimilarity.compareTwoStrings(uri1, uri2) < 0.9);
+            return  StringSimilarity.compareTwoStrings(uri1, uri2) < 0.9;
+        }
+
+        
+        return StringSimilarity.compareTwoStrings(url1, url2) < 0.9
     }
 
     static checkRelevantTagInTagsNameItem(tagNameParents){
@@ -60,9 +81,9 @@ export default class TextUtil {
         const unusableTerms = {
             'Despesa Extra Orçamentária': ['despesa orcamentaria', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',
                 'demonstrativo', 'outras despesas', 'restos a pagar', ' por orgao', 'obras', 'diarias', 'passagens', 'transferencia', 'programatica', 'fornecedor',],
-            'Despesa Orçamentária': ['extra', 'receitas', 'outras despesas','receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo', 'restos a pagar'],
-            'Receita Orçamentária': ['extra', 'detalhado', 'receita de contribuicoes', 'receita de servicos', 'receita patrimonial', 'comparativo', 'restos a pagar', 'prevista', 'resumo geral', 'loalei','execucao','outras receitas', 'despesas','licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo'],
-            'Receita Extra Orçamentária': ['receitas orcamentarias','despesas', 'licitacao', 'licitacoes', 'pessoal', 'restos a pagar', 'folha de pagamento', 'demonstrativo', 'outras receitas'],
+            'Despesa Orçamentária': ['extra', 'elemento', 'favorecido', 'orgao', 'programatica', 'obras', 'passagens',  'transferencia', 'diarias', 'receitas', 'outras despesas','receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'restos a pagar'],
+            'Receita Orçamentária': ['extra', 'deducao', 'transferencias', 'transferencia', 'detalhado', 'receita de contribuicoes', 'receita de servicos', 'receita patrimonial', 'comparativo', 'restos a pagar', 'prevista', 'resumo geral', 'loalei','execucao','outras receitas', 'despesas','licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo'],
+            'Receita Extra Orçamentária': [ 'transferencias','receitas orcamentarias','despesas', 'licitacao', 'licitacoes', 'pessoal', 'restos a pagar', 'folha de pagamento', 'demonstrativo', 'outras receitas'],
             'Licitação': ['extra', 'receitas', 'outras despesas','receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'consultar restos a pagar'],
             'Quadro Pessoal': ['extra', 'receitas', 'outras despesas','receita', 'licitacao', 'licitacoes', 'demonstrativo', 'consultar restos a pagar']
 
