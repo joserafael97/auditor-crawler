@@ -14,7 +14,7 @@ export {
 
 export default class QueryElement {
 
-    constructor(xpath, keyword, keywordsXpath = [], typeQuery = QUERYTOSTATICCOMPONENT) {
+    constructor(xpath, keyword, typeQuery = QUERYTODYNAMICELEMENT, keywordsXpath = []) {
         this.xpath = xpath;
         this.keyword = keyword;
         this.typeQuery = typeQuery;

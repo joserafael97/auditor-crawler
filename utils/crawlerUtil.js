@@ -35,20 +35,25 @@ export default class CrawlerUtil {
             const elements = await page.$x(queryElement.getXpath());
             if (elements.length > 0) {
                 for (let element of elements) {
+
+                    // console.log('************************************************', (await element.isIntersectingViewport()))
+
+
                     let text = await (await element.getProperty('textContent')).jsonValue();
                     const value = await (await element.getProperty('value')).jsonValue();
                     text = TextUtil.normalizeText(TextUtil.removeWhiteSpace(text)).length > 0 ? text :
                         (value !== undefined && value.length > 0) ? value : '';
 
-                    // if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
-                    //     text = HtmlUtil.isUrl(text) ? text :
-                    //         HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), text)) ?
-                    //             urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
-                    // }
+                    if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
+                        text = HtmlUtil.isUrl(text) ? text :
+                            HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), text)) ?
+                            urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
+                    }
+
 
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
 
-                    if (TextUtil.checkTextContainsInText(queryElement.getKeyWord(), text) &&
+                    if (TextUtil.checkTextContainsInText(queryElement.getKeyWord(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
                             (currentNodeUrl !== currentUrl)) &&
                         !TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase()) &&
@@ -76,21 +81,59 @@ export default class CrawlerUtil {
         for (let item of itens) {
             const element = (await page.$x(item.xpath))[0];
             if (element !== undefined) {
-                let path = FileUtil.createMultiDirecttory('./proof/' + evaluation.county, 
-                "/" + evaluation.date.toISOString(), "/" + criterionName)
-                path = path + "/" + criterionName + '-' 
-                + item.name + '-level-' + node.getLevel()  + '-' + new Date() + '-proof.png'
+                let path = FileUtil.createMultiDirecttory('./proof/' + evaluation.county,
+                    "/" + evaluation.date.toISOString(), "/" + criterionName)
+                path = path + "/" + criterionName + '-' +
+                    item.name + '-level-' + node.getLevel() + '-' + new Date() + '-proof.png'
 
                 item.foundText = TextUtil.normalizeText(TextUtil.removeWhiteSpace(await (await element.getProperty('textContent')).jsonValue()));
                 item.found = (item.foundText.length > 0 && TextUtil.checkTextContainsArray(item.keywordsXpath, item.foundText)) ? true : false;
                 item.foundText = item.found ? item.foundText : '';
                 item.pathSought = await page.url();
                 item.proofText = await (await element.getProperty('innerHTML')).jsonValue();
-                await pageOrigin.screenshot({ path: path});
+                item.tagName = await CrawlerUtil.extractTagName(element, page);
+
+                const parentLevelOne = (await element.$x('..'))[0];
+                const parentLevelTwo = (await parentLevelOne.$x('..'))[0];
+                item.textParents = await CrawlerUtil.extractValuesParents(parentLevelOne, parentLevelTwo);
+                item.tagNameParents = await CrawlerUtil.extractTagNameParents(parentLevelOne, parentLevelTwo, page);
+                await CrawlerUtil.setColorElementByXpath(item.xpath, page);
+                await pageOrigin.screenshot({
+                    path: path
+                });
                 item.proof = path;
             }
         }
         return itens;
+    }
+
+    static async extractValuesParents(parentLevelOne, parentLevelTwo) {
+        let values = [];
+        values.push(await (await parentLevelOne.getProperty('innerHTML')).jsonValue());
+        values.push(await (await parentLevelTwo.getProperty('innerHTML')).jsonValue());
+        return values;
+    }
+
+    static async extractTagNameParents(parentLevelOne, parentLevelTwo, page) {
+        let values = [];
+        values.push(await CrawlerUtil.extractTagName(parentLevelOne, page));
+        values.push(await CrawlerUtil.extractTagName(parentLevelTwo, page));
+        return values;
+    }
+
+
+    static async setColorElementByXpath(xpath, page) {
+        await page.evaluate((xpath) => {
+            let element = document.evaluate(xpath, document, null, XPathResult.ANY_TYPE, null);
+            var thisHeading = element.iterateNext();
+            thisHeading.style.backgroundColor = '#4F0665'
+            thisHeading.style.backgroundColor = '#FFFFF'
+            return element;
+        }, xpath);
+    }
+
+    static async extractTagName(element, page) {
+        return (await page.evaluate(element => element.tagName, element)).toLowerCase();
     }
 
     static async initializeItens(criterionName) {

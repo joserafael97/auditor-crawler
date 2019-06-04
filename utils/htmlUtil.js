@@ -16,7 +16,13 @@ export default class HtmlUtil {
         //find & remove "?"
         hostname = hostname.split('?')[0];
 
-        return 'http://'+hostname;
+        return 'http://' + hostname;
+    }
+
+    static extractUri(url) {
+        let l = document.createElement("a");
+        l.href = url;
+        return l.pathname;
     }
 
     static isUrl(url) {

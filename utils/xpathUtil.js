@@ -2,7 +2,7 @@
 import CriterionKeyWord from '../models/criterionKeyWord.model'
 import TextUtil from './texUtil';
 import QueryElement from '../models/queryElement.class'
-import { QUERYTODYNAMICELEMENT } from '../models/queryElement.class'
+import { QUERYTODYNAMICELEMENT, QUERYTOSTATICCOMPONENT } from '../models/queryElement.class'
 
 const EQUALTYPESEARCH = 'tagSearch = "{}"';
 const CONTAINSTYPESEARCH = 'contains(tagSearch, "{}")';
@@ -46,7 +46,7 @@ export default class XpathUtil {
                         condicao += ' or ' + tipo.replace('{}', valor);
                     }
                 }
-                xpaths.push(new QueryElement('//*[{}]'.replace('{}', condicao), item, criterionKeyWords.itens[index].identificationKeyWord));
+                xpaths.push(new QueryElement('//*[{}]'.replace('{}', condicao), item, QUERYTODYNAMICELEMENT, criterionKeyWords.itens[index].identificationKeyWord));
             }
         });
         return xpaths
@@ -66,15 +66,15 @@ export default class XpathUtil {
         await CriterionKeyWord.findByName(criterionKeyWordName).then(function (criterionKeyWords) {
             for (let keyWord of criterionKeyWords.keywordSearch) {
                 keyWord = TextUtil.normalizeText(keyWord);
-                xpaths.push(new QueryElement('//*[contains({tagSearch},"{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord));
-                xpaths.push(new QueryElement('//*[contains({tagSearch},"{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord), keyWord));
-                xpaths.push(new QueryElement('//*[{tagSearch}  = "{}"]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord));
-                xpaths.push(new QueryElement('//*[{tagSearch} = "{}"]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord), keyWord));
-                xpaths.push(new QueryElement('//*[contains({tagSearch},"{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord), keyWord));
-                xpaths.push(new QueryElement('//a[contains({tagSearch}, "{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord), keyWord));
-                xpaths.push(new QueryElement('//*[contains({tagSearch}, "{}")]/parent::a/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord));
-                xpaths.push(new QueryElement('// *[{tagSearch} = "{}"]/following::td[1]//@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord));
-                xpaths.push(new QueryElement('//*[contains({tagSearch}, "{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord), keyWord));
+                xpaths.push(new QueryElement('//*[contains({tagSearch},"{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
+                xpaths.push(new QueryElement('//*[contains({tagSearch},"{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
+                xpaths.push(new QueryElement('//*[{tagSearch}  = "{}"]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
+                xpaths.push(new QueryElement('//*[{tagSearch} = "{}"]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
+                xpaths.push(new QueryElement('//*[contains({tagSearch},"{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
+                xpaths.push(new QueryElement('//a[contains({tagSearch}, "{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
+                xpaths.push(new QueryElement('//*[contains({tagSearch}, "{}")]/parent::a/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
+                xpaths.push(new QueryElement('// *[{tagSearch} = "{}"]/following::td[1]//@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
+                xpaths.push(new QueryElement('//*[contains({tagSearch}, "{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
             }
         });
 

@@ -10,6 +10,9 @@ const ItemSchema = mongoose.Schema({
     pathSought: {type: String}, 
     proof: {type: String}, 
     proofText: {type: String},
+    tagName: {type: String},
+    tagNameParents: [{type: String}],
+    textParents: [{type: String}],
 }, {collection : 'Item'});
 
 let ItemModel = mongoose.model('Item', ItemSchema);

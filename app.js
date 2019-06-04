@@ -31,12 +31,17 @@ const logErrorAndExit = err => {
 
 
 const run = async (criterion, evaluation, root) => {
-    criterion = await Criterion.addCriterion(criterion, await Bfs.bfsInit(root, null, [], criterion, evaluation, []).catch(logErrorAndExit));
+    let itens = await Bfs.bfsInit(root, null, [], criterion, evaluation, []).catch(logErrorAndExit)
+    
     evaluation.dateEnd = new Date();
     evaluation.duration = evaluation.dateEnd.getTime() - evaluation.date.getTime()
     const delta = Math.abs(new Date() - evaluation.date) / 1000;
     const minutes = Math.floor(delta / 60) % 60;
     evaluation.durationMin = minutes;
+    criterion.duration = evaluation.duration;
+    criterion.durationMin = minutes;
+    
+    criterion = await Criterion.addCriterion(criterion, itens);
     await Evaluation.addEvaluationWithOneCriterion(evaluation, criterion)
 
     console.log(criterion);
@@ -83,12 +88,12 @@ const init = async () => {
     let criterionLicit = CrawlerUtil.createCriterion('Licitação');
     let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
-    run(criterionDespesaOrc, evaluation, root);
+    // run(criterionDespesaOrc, evaluation, root);
     run(criterionDespesaExtra, evaluation, root);
-    run(criterionReceitaExtra, evaluation, root);
-    run(criterionReceitaOrc, evaluation, root);
-    run(criterionLicit, evaluation, root);
-    run(criterionPessoal, evaluation, root);
+    // run(criterionReceitaExtra, evaluation, root);
+    // run(criterionReceitaOrc, evaluation, root);
+    // run(criterionLicit, evaluation, root);
+    // run(criterionPessoal, evaluation, root);
 
 }
 
