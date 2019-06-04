@@ -11,7 +11,7 @@ import {
 
 export default class Bfs {
 
-    static async bfsInit(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null) {
+    static async gaphBfs(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null) {
         if (puppeteer == null) {
             puppeteer = await PuppeteerUtil.createPuppetterInstance();
         }
@@ -61,7 +61,7 @@ export default class Bfs {
             console.log("************click error*****************", e);
         }
 
-        while (queue.length > 0) {
+        while (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
             for (let edge of queue) {
                 console.log("queue nodes: ****:", edge.getSource().value, ' level: ', edge.getLevel());
             }
@@ -70,12 +70,13 @@ export default class Bfs {
                 await page.waitForNavigation().catch(e => void e);
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
             }
-            return Bfs.bfsInit(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens);
+            return Bfs.gaphBfs(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens);
         }
-    
+
+
         console.log("*********************close browser***********************************************");
         await puppeteer.getBrowser().close();
-        
+
         return itens;
     };
 

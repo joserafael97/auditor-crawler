@@ -27,6 +27,15 @@ export default class TextUtil {
         return false;
     }
 
+    static checkRelevantTagInTagsNameItem(tagNameParents){
+        return TextUtil.checkTextContainsArray(tagNameParents, 'td') ? true : 
+        TextUtil.checkTextContainsArray(tagNameParents, 'th') ? true : 
+        TextUtil.checkTextContainsArray(tagNameParents, 'thead') ? true :  
+        TextUtil.checkTextContainsArray(tagNameParents, 'tr') ? true :
+        TextUtil.checkTextContainsArray(tagNameParents, 'li') ? true : false
+
+    }
+
 
     static checkTextContainsInText(textValidation, text) {
         if (text === textValidation || text.includes(textValidation)) {
@@ -60,7 +69,7 @@ export default class TextUtil {
         };
 
         const unusableCommumTerms = ["transparencia.rn.gov.br", "css", "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
-            '.js', 'download', 'widget', ".zip", ".jpeg", ".rar", "noticia", "publicidade", "noticia", "pinterest.com",
+            '.js', 'download', 'widget', ".zip", ".jpeg", ".rar", "noticia", "publicidade", "noticia", "pinterest.com", 'javascript',
         ];
 
         let unusableCommumTermsFinal = unusableTerms[criterionName];

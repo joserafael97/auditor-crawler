@@ -31,9 +31,9 @@ const logErrorAndExit = err => {
 
 
 const run = async (criterion, evaluation, root) => {
-    let itens = await Bfs.bfsInit(root, null, [], criterion, evaluation, []).catch(logErrorAndExit)    
-    const duration = evaluation.dateEnd.getTime() - evaluation.date.getTime();
+    let itens = await Bfs.gaphBfs(root, null, [], criterion, evaluation, []).catch(logErrorAndExit)    
     evaluation.dateEnd = new Date();
+    const duration = evaluation.dateEnd.getTime() - evaluation.date.getTime();
     const delta = Math.abs(new Date() - evaluation.date) / 1000;
     const minutes = Math.floor(delta / 60) % 60;
     
@@ -88,12 +88,12 @@ const init = async () => {
     let criterionLicit = CrawlerUtil.createCriterion('Licitação');
     let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
-    // run(criterionDespesaOrc, evaluation, root);
+    run(criterionDespesaOrc, evaluation, root);
     run(criterionDespesaExtra, evaluation, root);
-    // run(criterionReceitaExtra, evaluation, root);
-    // run(criterionReceitaOrc, evaluation, root);
-    // run(criterionLicit, evaluation, root);
-    // run(criterionPessoal, evaluation, root);
+    run(criterionReceitaExtra, evaluation, root);
+    run(criterionReceitaOrc, evaluation, root);
+    run(criterionLicit, evaluation, root);
+    run(criterionPessoal, evaluation, root);
 
 }
 

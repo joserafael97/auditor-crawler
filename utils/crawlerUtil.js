@@ -92,7 +92,6 @@ export default class CrawlerUtil {
                 item.pathSought = await page.url();
                 item.proofText = await (await element.getProperty('innerHTML')).jsonValue();
                 item.tagName = await CrawlerUtil.extractTagName(element, page);
-
                 const parentLevelOne = (await element.$x('..'))[0];
                 const parentLevelTwo = (await parentLevelOne.$x('..'))[0];
                 item.textParents = await CrawlerUtil.extractValuesParents(parentLevelOne, parentLevelTwo);
@@ -104,8 +103,47 @@ export default class CrawlerUtil {
                 item.proof = path;
             }
         }
+        CrawlerUtil.checkIdentificationItens(itens);
         return itens;
     }
+
+
+    static async checkIdentificationItens(itens) {
+        let sameIdentificationCount = 0
+        for (let itemEvaluation of itens) {
+            if (itemEvaluation.found) {
+                sameIdentificationCount++;
+                for (let item of itens) {
+                    if (item.found && item.name !== itemEvaluation.name) {
+                        if (item.pathSought === itemEvaluation.pathSought) {
+                            sameIdentificationCount++;
+                        }
+                    }
+                }
+                if (sameIdentificationCount < itens.length) {
+                    let tagsName = itemEvaluation.tagNameParents;
+                    tagsName.push(itemEvaluation.tagName);
+                    itemEvaluation.valid = TextUtil.checkRelevantTagInTagsNameItem(tagsName);
+                }else {
+                    itemEvaluation.valid = true;
+                }
+            }
+
+
+        }
+
+    }
+
+    static checkItensComplete(itens) {
+        let count = 0
+        for (let item of itens) {
+            if (item.valid){
+                count ++;
+            }
+        }
+        return itens.length === count ? true : false;
+    }
+
 
     static async extractValuesParents(parentLevelOne, parentLevelTwo) {
         let values = [];
@@ -127,7 +165,7 @@ export default class CrawlerUtil {
             let element = document.evaluate(xpath, document, null, XPathResult.ANY_TYPE, null);
             var thisHeading = element.iterateNext();
             thisHeading.style.backgroundColor = '#4F0665'
-            thisHeading.style.backgroundColor = '#FFFFF'
+            thisHeading.style.backgroundColor = '#ffffff'
             return element;
         }, xpath);
     }
@@ -162,7 +200,8 @@ export default class CrawlerUtil {
     }
 
 
-    static createItem(name, xpath, keywordsXpath, found = false, foundText = '', pathSought = '', proof = '', proofText = '') {
+    static createItem(name, xpath, keywordsXpath, found = false, valid = false, foundText = '',
+        pathSought = '', proof = '', proofText = '', tagName = '', tagNameParents = []) {
         return Item({
             name: name,
             keywordsXpath: keywordsXpath,
@@ -171,7 +210,10 @@ export default class CrawlerUtil {
             xpath: xpath,
             pathSought: pathSought,
             proof: proof,
-            proofText: proofText
+            proofText: proofText,
+            valid: valid,
+            tagName: tagName,
+            tagNameParents: tagNameParents
         });
     }
 }
