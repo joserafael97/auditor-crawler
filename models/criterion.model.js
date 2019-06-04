@@ -7,6 +7,14 @@ const CriterionSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    duration: {
+        type: String,
+        required: true
+    },
+    durationMin: {
+        type: String,
+        required: true
+    },
     itens: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Item'
