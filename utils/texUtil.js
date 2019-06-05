@@ -28,24 +28,32 @@ export default class TextUtil {
         return false;
     }
 
-    static similarityUrls(url1, url2){
-        const host1 = HtmlUtil.extractHost(url1);
-        const host2 = HtmlUtil.extractHost(url2);
-        
-        if (host1 === host2){
-            const uri1 = HtmlUtil.extractUri(url1).replace('/', '');
-            const uri2 = HtmlUtil.extractUri(url2).replace('/', '');
-            console.log("____________________________________________VALUE: ", uri1);
-            console.log("____________________________________________VALUE: ", uri2);
-            console.log("____________________________________________VALUE: ", url1);
-            console.log("____________________________________________VALUE: ", url2);
-            console.log("____________________________________________VALUE: ", StringSimilarity.compareTwoStrings(uri1, uri2));
-            console.log("____________________________________________VALUE: ",  StringSimilarity.compareTwoStrings(uri1, uri2) < 0.9);
-            return  StringSimilarity.compareTwoStrings(uri1, uri2) < 0.9;
+    static similarityUrls(url1, UrlsList){
+
+        for (const currentUrl of UrlsList){
+            const host1 = HtmlUtil.extractHost(url1);
+            const host2 = HtmlUtil.extractHost(currentUrl);
+
+            if (host1 === host2){
+                const uri1 = HtmlUtil.extractUri(url1).replace('/', '');
+                const uri2 = HtmlUtil.extractUri(currentUrl).replace('/', '');
+
+                if (StringSimilarity.compareTwoStrings(uri1, uri2) > 0.9){
+                    return true;
+                }
+            }else{
+
+                if (StringSimilarity.compareTwoStrings(url1, currentUrl) > 0.9){
+                    return true;
+                }
+
+            }
+
         }
 
-        
-        return StringSimilarity.compareTwoStrings(url1, url2) < 0.9
+        return false;
+    
+  
     }
 
     static checkRelevantTagInTagsNameItem(tagNameParents){

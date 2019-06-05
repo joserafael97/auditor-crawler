@@ -43,12 +43,10 @@ export default class CrawlerUtil {
                     if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                         text = HtmlUtil.isUrl(text) ? text :
                             HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), text)) ?
-                                urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
+                            urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
                     }
 
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-
-
 
                     if (TextUtil.checkTextContainsInText(queryElement.getKeyWord(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
@@ -58,17 +56,8 @@ export default class CrawlerUtil {
 
                         if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
                             ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
-
-
-                            console.log('codition 01: _________________________________',
-                                ((textBefore !== null && (HtmlUtil.isUrl(text) && HtmlUtil.isUrl(textBefore))) && TextUtil.similarityUrls(textBefore, text)));
-
-                            console.log('codition 02: _________________________________', textBefore == null);
-                            console.log('codition 03: _________________________________', !HtmlUtil.isUrl(text));
-
-                            if ((textBefore == null) ||
-                                (!HtmlUtil.isUrl(text)) ||
-                                ((textBefore !== null && (HtmlUtil.isUrl(text) && HtmlUtil.isUrl(textBefore))) && TextUtil.similarityUrls(textBefore, text))) {
+                            if (!HtmlUtil.isUrl(text) ||
+                                (HtmlUtil.isUrl(text) && !TextUtil.similarityUrls(text, TextUtil.getUrlsNodes(edgesList)))) {
 
                                 let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), puppeteer, currentUrl);
                                 edgesList.push(new Node(source, node));

@@ -80,7 +80,7 @@ const init = async () => {
     const element = new Element(evaluation.transparencyPortalUrl, null, null, null, null);
     
     let root = new Node(element, [], [], false);
-
+    
     let criterionDespesaOrc = CrawlerUtil.createCriterion('Despesa Orçamentária');
     let criterionDespesaExtra = CrawlerUtil.createCriterion('Despesa Extra Orçamentária');
     let criterionReceitaOrc = CrawlerUtil.createCriterion('Receita Orçamentária');
