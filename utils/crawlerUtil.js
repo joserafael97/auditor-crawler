@@ -47,14 +47,14 @@ export default class CrawlerUtil {
                     }
 
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                    const isUrl = HtmlUtil.isUrl(text);
-                    if ( isUrl || ( !isUrl && !(await CrawlerUtil.hrefValid(element, currentUrl)) )) {
-                        
-                        if (TextUtil.checkTextContainsInText(queryElement.getKeyWord(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))) &&
-                            ((currentNodeUrl === currentUrl && text !== currentValue) ||
-                                (currentNodeUrl !== currentUrl)) &&
-                            !TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase()) &&
-                            !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
+
+                    if (TextUtil.checkTextContainsInText(queryElement.getKeyWord(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))) &&
+                        ((currentNodeUrl === currentUrl && text !== currentValue) ||
+                            (currentNodeUrl !== currentUrl)) &&
+                        !TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase())) {
+                        const isUrl = HtmlUtil.isUrl(text);
+                        text = !isUrl && (await CrawlerUtil.hrefValid(element, currentUrl)) ? await (await element.getProperty('href')).jsonValue() : text;
+                        if (!PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
 
                             if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
                                 ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
@@ -63,10 +63,10 @@ export default class CrawlerUtil {
                                 textBefore = text;
 
                             }
-
                         }
+
                     }
-                    
+
                 }
             }
         }
@@ -76,9 +76,14 @@ export default class CrawlerUtil {
 
 
     static async hrefValid(element, currentUrl) {
-        let url = await (await element.getProperty('href')).jsonValue();
-        return (url !== undefined && HtmlUtil.isUrl(url)) ? true : 
-        HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), url)) ? true : false;
+        const url = await (await element.getProperty('href')).jsonValue();
+        const onclick = await (await element.getProperty('onclick')).jsonValue();
+        if (onclick !== null || TextUtil.checkTextContainsInText('#', url)) {
+            return false
+        }
+
+        return ((url !== undefined && HtmlUtil.isUrl(url)) && url !== currentUrl) ? true :
+            HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), url)) ? true : false;
     }
 
 
