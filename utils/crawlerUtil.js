@@ -47,31 +47,39 @@ export default class CrawlerUtil {
                     }
 
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+                    const isUrl = HtmlUtil.isUrl(text);
+                    if ( isUrl || ( !isUrl && !(await CrawlerUtil.hrefValid(element, currentUrl)) )) {
+                        
+                        if (TextUtil.checkTextContainsInText(queryElement.getKeyWord(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))) &&
+                            ((currentNodeUrl === currentUrl && text !== currentValue) ||
+                                (currentNodeUrl !== currentUrl)) &&
+                            !TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase()) &&
+                            !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
 
-                    if (TextUtil.checkTextContainsInText(queryElement.getKeyWord(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))) &&
-                        ((currentNodeUrl === currentUrl && text !== currentValue) ||
-                            (currentNodeUrl !== currentUrl)) &&
-                        !TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase()) &&
-                        !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl)) {
-
-                        if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
-                            ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
-                            if (!HtmlUtil.isUrl(text) ||
-                                (HtmlUtil.isUrl(text) && !TextUtil.similarityUrls(text, TextUtil.getUrlsNodes(edgesList)))) {
-
+                            if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
+                                ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
                                 let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), puppeteer, currentUrl);
                                 edgesList.push(new Node(source, node));
                                 textBefore = text;
-                            }
-                        }
 
+                            }
+
+                        }
                     }
+                    
                 }
             }
         }
         node.setEdgesList(edgesList);
         return node;
     };
+
+
+    static async hrefValid(element, currentUrl) {
+        let url = await (await element.getProperty('href')).jsonValue();
+        return (url !== undefined && HtmlUtil.isUrl(url)) ? true : 
+        HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), url)) ? true : false;
+    }
 
 
     static async identificationItens(criterionName, page, itensSearch = null, pageOrigin = page, evaluation, node) {

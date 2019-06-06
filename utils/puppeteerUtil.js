@@ -130,24 +130,27 @@ export default class PuppeteerUtil {
         return null;
     }
 
-    static checkDuplicateNode(arrayNodes, text, currentNode, currentUrl) {
-        for (let node of arrayNodes) {
-            const value = node.getSource().getValue();
-            if (HtmlUtil.isUrl(text)) {
-                if (text === value || text.includes(value)) {
-                    return true;
-                }
-            } else {
-                if (node.getLevel() !== 0 &&
-                    // (currentNode.getSource().getValue() === node.getParent().getSource().getValue() &&
-                    (node.getSource().getUrl() === currentUrl) &&
-                    value == text) {
-                    return true;
-                }
-            }
+    static checkDuplicateNode(arrayNodes, text, currentNode, currentUrl, edgesList = null) {
+        if (HtmlUtil.isUrl(text)) {
+            let urlsList = [];
+            urlsList.push.apply(urlsList, TextUtil.getUrlsNodes(arrayNodes))
+            edgesList !== null ? urlsList.push.apply(urlsList, TextUtil.getUrlsNodes(edgesList)) : urlsList;
+            return TextUtil.similarityUrls(text, urlsList);
+        } else {
 
+            for (let node of arrayNodes) {
+                const value = node.getSource().getValue();
+
+                if ((node.getLevel() !== 0 &&
+                        currentNode.getSource().getValue() === node.getParent().getSource().getValue()) &&
+                    (node.getSource().getUrl() === currentUrl && value == text)) {
+                    return true;
+                }
+
+
+            }
+            return false;
         }
-        return false;
     }
 
 }

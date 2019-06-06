@@ -8,6 +8,7 @@ import {
     QUERYTODYNAMICELEMENT,
     QUERYTOSTATICCOMPONENT
 } from './models/queryElement.class';
+import TextUtil from "./utils/texUtil";
 
 export default class Bfs {
 
@@ -22,6 +23,8 @@ export default class Bfs {
         const numPages = (await puppeteer.getBrowser().pages()).length;
         const isUrl = HtmlUtil.isUrl(value);
         const xpath = node.getSource().getXpath();
+        let changeUrl = false;
+        let newCurrentURL = await page.url();
 
         console.log("********************************************************************");
         console.log("numPagesOpened: ", numPages);
@@ -39,21 +42,27 @@ export default class Bfs {
             } else {
                 let element = node.getSource().getElement();
                 element = await PuppeteerUtil.selectElementPage(page, xpath, value);
+                const currentURL = await page.url();
                 await element.click();
                 await page.waitForNavigation().catch(e => void e);
+                newCurrentURL = await page.url();
                 page = await PuppeteerUtil.detectContext(page, xpath).catch(e => void e);
+                if (currentURL !== newCurrentURL) {
+                    changeUrl = true;
+                }
             }
-
             if (node.getLevel() === 0) {
                 node.getSource().setUrl((await page.url()));
             }
-
             elementsAccessed.push(node);
             const elementsIdentify = []
             elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
             elementsIdentify.push.apply(elementsIdentify, queue);
-            node = await CrawlerUtil.extractEdges(node, page, puppeteer, criterion.name, elementsIdentify);
-            itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
+
+            if (!changeUrl || (changeUrl && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, newCurrentURL, node, newCurrentURL))) {
+                node = await CrawlerUtil.extractEdges(node, page, puppeteer, criterion.name, elementsIdentify);
+                itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
+            }
             page = currentPage;
             queue.push.apply(queue, node.getEdges());
             node.setResearched(true);
@@ -66,7 +75,7 @@ export default class Bfs {
                 console.log("queue nodes: ****:", edge.getSource().value, ' level: ', edge.getLevel());
             }
             const newNode = queue.shift();
-            if (newNode.getLevel() > 0) {
+            if (newNode.getLevel() > 0 && !HtmlUtil.isUrl(newNode.getSource().getValue())) {
                 await page.waitForNavigation().catch(e => void e);
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
             }
