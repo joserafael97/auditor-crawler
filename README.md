@@ -1,16 +1,24 @@
 
 
 # Auditor Crawler
+
 Este projeto tem como objetivo avaliar o desempenho de técnicas do estado da arte para Web Crawler e extração de conteúdos em páginas Web no contexto da automatização da avaliação de portais de transparência no estado da Paraíba.
 
+Nesse sentido, a organização das informações fiscais nos portais de transparência são comumente agrupadas por critérios como Despesas, Receitas, Licitações, Folha de Pagamento entre outros. Nesse cenário, é possível encontrar uma grande heterogeneidade na forma de navegar e visualizar estas informações, não existindo uma padronização clara em seus layouts.
+
 ## Breadth First Search  (BFS)
+
+A pesquisa propõe como modelo base um Web Crawler que utiliza um grafo em forma de BFS para acessar e buscar as páginas web dos portais de transparência para identificar os critérios de transparência. 
+
+Para o melhor entendimento do algoritmo utilizado no modelo base, é necessário descrever todos os passsos anteriores ao início da execução do Crawler. Assim, a Figura abaixo apresenta com maior detalhe esse fluxo.
+
+![modeloBase](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/modeloBase.png)
 
 No projeto utilizamos como abordagem base um grafo com sua varredura na forma de uma BFS. A Figura a seguir apresenta um exemplo desse tipo de estrutura.
 
 ![bfs](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/bfs.png)
 
 
-![bfs](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/modeloBase.png)
 
 
 ## Getting Started
