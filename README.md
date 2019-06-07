@@ -10,6 +10,9 @@ No projeto utilizamos como abordagem base um grafo com sua varredura na forma de
 ![bfs](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/bfs.png)
 
 
+![bfs](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/modeloBase.png)
+
+
 ## Getting Started
 Este projeto foi desenvolvido sobre a linguagem Javascript com a ferramenta [Puppeteer](https://github.com/GoogleChrome/puppeteer) para criação de Crawlers.
 
