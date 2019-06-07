@@ -132,7 +132,7 @@ export default class CrawlerUtil {
                         }
                     }
                 }
-                
+
                 if (sameIdentificationCount < itens.length) {
                     let tagsName = itemEvaluation.tagNameParents;
                     tagsName.push(itemEvaluation.tagName);
@@ -177,6 +177,7 @@ export default class CrawlerUtil {
         await page.evaluate((xpath) => {
             let element = document.evaluate(xpath, document, null, XPathResult.ANY_TYPE, null);
             var thisHeading = element.iterateNext();
+            console.log("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::",this.thisHeading.style);
             thisHeading.style.backgroundColor = '#4F0665'
             thisHeading.style.color = '#ffffff'
             return element;
