@@ -11,12 +11,16 @@ export default class FileUtil {
         }
     }
 
-    static createMultiDirecttory(path1, path2, path3){
+    static createMultiDirecttory(path1, path2, path3) {
         FileUtil.createDirectory('./proof');
         FileUtil.createDirectory(path1);
         FileUtil.createDirectory(path1 + path2);
         FileUtil.createDirectory(path1 + path2 + path3);
         return path1 + path2 + path3;
+    }
+
+    static deleteFile(filePath) {
+        fs.unlinkSync(filePath);
     }
 }
 

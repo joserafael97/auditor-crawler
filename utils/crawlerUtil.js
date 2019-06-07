@@ -32,7 +32,6 @@ export default class CrawlerUtil {
 
         for (let queryElement of queryElements) {
             const elements = await page.$x(queryElement.getXpath());
-            let textBefore = null
             if (elements.length > 0) {
                 for (let element of elements) {
                     let text = await (await element.getProperty('textContent')).jsonValue();
@@ -43,24 +42,24 @@ export default class CrawlerUtil {
                     if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                         text = HtmlUtil.isUrl(text) ? text :
                             HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), text)) ?
-                            urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
+                                urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
                     }
 
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
 
                     if (TextUtil.checkTextContainsInText(queryElement.getKeyWord(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
-                            (currentNodeUrl !== currentUrl)) &&
-                        !TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase())) {
+                            (currentNodeUrl !== currentUrl))) {
                         const isUrl = HtmlUtil.isUrl(text);
                         text = !isUrl && (await CrawlerUtil.hrefValid(element, currentUrl)) ? await (await element.getProperty('href')).jsonValue() : text;
-                        if (!PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
+
+                        if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase()) &&
+                            !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
 
                             if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
                                 ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
                                 let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), puppeteer, currentUrl);
                                 edgesList.push(new Node(source, node));
-                                textBefore = text;
 
                             }
                         }
@@ -112,26 +111,28 @@ export default class CrawlerUtil {
                 await pageOrigin.screenshot({
                     path: path
                 });
+                item.proof.length > 0 ? FileUtil.deleteFile(item.proof) : '';
                 item.proof = path;
             }
         }
-        CrawlerUtil.checkIdentificationItens(itens);
+        CrawlerUtil.checkIdentificationItens(itens, await page.url());
         return itens;
     }
 
 
-    static async checkIdentificationItens(itens) {
+    static async checkIdentificationItens(itens, currentURL) {
         let sameIdentificationCount = 0
         for (let itemEvaluation of itens) {
-            if (itemEvaluation.found) {
-                sameIdentificationCount++;
+            if (itemEvaluation.found && itemEvaluation.pathSought === currentURL) {
+                
                 for (let item of itens) {
-                    if (item.found && item.name !== itemEvaluation.name) {
+                    if ((item.found && item.name !== itemEvaluation.name)) {
                         if (item.pathSought === itemEvaluation.pathSought) {
                             sameIdentificationCount++;
                         }
                     }
                 }
+                
                 if (sameIdentificationCount < itens.length) {
                     let tagsName = itemEvaluation.tagNameParents;
                     tagsName.push(itemEvaluation.tagName);
