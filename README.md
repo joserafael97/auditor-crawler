@@ -11,8 +11,25 @@ Nesse sentido, a organização das informações fiscais nos portais de transpar
 A pesquisa propõe como modelo base um Web Crawler que utiliza um grafo em forma de BFS para acessar e buscar as páginas web dos portais de transparência para identificar os critérios de transparência. 
 
 Para o melhor entendimento do algoritmo utilizado no modelo base, é necessário descrever todos os passsos anteriores ao início da execução do Crawler. Assim, a Figura abaixo apresenta com maior detalhe esse fluxo.
+
 ![modeloBase](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/modeloBase.png)
 
+*  **Data:** Coleções contendo metadados dos municípios da Paraíba, por exemplo Url do portal de transparência, prefeitura, e palavras chaves de busca e identificação dos critérios; 
+** ***Palavras chaves de busca :***:refere-se a termos utilizados para identificar ***urls, e elementos HTML clicáveis (buttons, input, a e etc.)*** que darão acesso à novas páginas/áreas relevantes considerando os critérios de transparência buscados. Um exemplo de palavras de busca é a coleção apresentada abaixo, que apresenta os termos para buscar o critério Despesa Orçamentária:
+
+```
+['despesas extras-orcamentarias', 'Consultar Despesas Extras-Orçamentárias','Consultar Despesas Extras','despesaextraorcamentaria.aspx','despesasextras', 'despesas', 'despesa com diarias', 'detalhamentos das despesas',  'consultar', 'pesquisar'];
+```
+
+** ***Palavras chaves de identificação :*** refere-se a termos utilizados para identificar os itens pertecentes aos critérios buscados. Em cada nova página/área é verificada a existência dos termos chaves para cada uns dos itens. Um exemplo de termos utilizados na busca dos itens do critério Despesa Orçamentária é apresentado abaixo. 
+
+```
+{
+    "valor": ['valor', 'empenhado(r$)'],
+    "codigo": ['codigo', 'cod. despesa'],
+    "nomenclatura": ['descricao', 'nome da despesa'],
+};
+```
 
 No projeto utilizamos como abordagem base um grafo com sua varredura na forma de uma BFS. A Figura a seguir apresenta um exemplo desse tipo de estrutura.
 
