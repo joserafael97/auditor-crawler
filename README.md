@@ -11,12 +11,7 @@ Nesse sentido, a organização das informações fiscais nos portais de transpar
 A pesquisa propõe como modelo base um Web Crawler que utiliza um grafo em forma de BFS para acessar e buscar as páginas web dos portais de transparência para identificar os critérios de transparência. 
 
 Para o melhor entendimento do algoritmo utilizado no modelo base, é necessário descrever todos os passsos anteriores ao início da execução do Crawler. Assim, a Figura abaixo apresenta com maior detalhe esse fluxo.
-
-<p align="center">
-
-
 ![modeloBase](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/modeloBase.png)
-</p>
 
 
 No projeto utilizamos como abordagem base um grafo com sua varredura na forma de uma BFS. A Figura a seguir apresenta um exemplo desse tipo de estrutura.
