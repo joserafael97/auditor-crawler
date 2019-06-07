@@ -12,6 +12,9 @@ A pesquisa propõe como modelo base um Web Crawler que utiliza um grafo em forma
 
 Para o melhor entendimento do algoritmo utilizado no modelo base, é necessário descrever todos os passsos anteriores ao início da execução do Crawler. Assim, a Figura abaixo apresenta com maior detalhe esse fluxo.
 
+<img align="left" width="100" height="100" src="https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/modeloBase.png">
+
+
 ![modeloBase](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/modeloBase.png)
 
 No projeto utilizamos como abordagem base um grafo com sua varredura na forma de uma BFS. A Figura a seguir apresenta um exemplo desse tipo de estrutura.
