@@ -10,7 +10,7 @@ A grande diversidade na forma de navegar e visualizar as informações fiscais n
 
 ## Breadth First Search  (BFS)
 
-Uma dos algoritmos mais utilizados para Web Crawler é a Breadth First Search, onde a partir nó inicial de um Grafo os demais nós são acessados numa busca em largura, partindo dos nós mais próximos ao nó inicial para os mais distantes, até que todos os nós sejam pecorridos, ou seja quanto menor o nível no grafo mais próximo ele estará do nó inicial (Raiz) e mais rápido ele será acessado. A Figura abaixo mostra um exemplo desse tipo de estrutura.
+Uma dos algoritmos mais utilizados para Web Crawler é o Breadth First Search, onde a partir nó inicial de um Grafo os demais nós são acessados numa busca em largura, partindo dos nós mais próximos ao nó inicial para os mais distantes, até que todos os nós sejam pecorridos, ou seja quanto menor o nível no grafo mais próximo ele estará do nó inicial (Raiz) e mais rápido ele será acessado. A Figura abaixo mostra um exemplo desse tipo de estrutura.
 
 ![bfs](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/bfs.png)
 
