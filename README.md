@@ -2,9 +2,11 @@
 
 # Auditor Crawler
 
-Este projeto tem como objetivo avaliar o desempenho de técnicas do estado da arte para Web Crawler e extração de conteúdos em páginas Web no contexto da automatização da avaliação de portais de transparência no estado da Paraíba.
+Este projeto tem como objetivo avaliar o desempenho de técnicas do estado da arte para Web Crawler e extração de conteúdos em páginas Web no contexto da automatização na avaliação de portais de transparência municipais do estado da Paraíba.
 
-Nesse sentido, a organização das informações fiscais nos portais de transparência são comumente agrupadas por critérios como Despesas, Receitas, Licitações, Folha de Pagamento entre outros. Nesse cenário, é possível encontrar uma grande heterogeneidade na forma de navegar e visualizar estas informações, não existindo uma padronização clara em seus layouts.
+Em cada portal de transparência é verificado a presença ou ausência dos critérios fiscais Despesas, Receitas, Licitações e Folha de Pagamento, utilizando com diretriz para a avaliação o [Índice de transparência Municipal](http://tce.pb.gov.br/indice-de-transparencia-publica).
+
+A grande diversidade na forma de navegar e visualizar as informações fiscais nesses sites torna o processo de avaliação automatizada da transparência uma tarefa não trivial, exigindo técnicas robustas a mudanças de layout, as diferentes estruturas Web e ao custo de tempo e processamento.
 
 ## Breadth First Search  (BFS)
 
