@@ -10,7 +10,13 @@ A grande diversidade na forma de navegar e visualizar as informações fiscais n
 
 ## Breadth First Search  (BFS)
 
-A pesquisa propõe como modelo base um Web Crawler que utiliza um grafo em forma de BFS para acessar e buscar as páginas web dos portais de transparência para identificar os critérios de transparência. 
+Uma dos algoritmos mais utilizados para Web Crawler é a Breadth First Search, onde a partir nó inicial de um Grafo os demais nós são acessados numa busca em largura, partindo dos nós mais próximos ao nó inicial para os mais distantes, até que todos os nós sejam pecorridos, ou seja quanto menor o nível no grafo mais próximo ele estará do nó inicial (Raiz) e mais rápido ele será acessado. A Figura abaixo mostra um exemplo desse tipo de estrutura.
+
+![bfs](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/bfs.png)
+
+
+
+O estudo propõe como modelo base um Web Crawler que utiliza um grafo em forma de BFS para acessar e buscar as páginas web dos portais de transparência para identificar os critérios de transparência. 
 
 Para o melhor entendimento do algoritmo utilizado no modelo base, é necessário descrever todos os passsos anteriores ao início da execução do Crawler. Assim, a Figura abaixo apresenta com maior detalhe esse fluxo.
 
@@ -51,7 +57,6 @@ Para inserção dessas informações iniciais em uma base de dados foram criados
 
 No projeto utilizamos como abordagem base um grafo com sua varredura na forma de uma BFS. A Figura a seguir apresenta um exemplo desse tipo de estrutura.
 
-![bfs](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/bfs.png)
 
 
 
