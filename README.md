@@ -48,7 +48,7 @@ Para inserção dessas informações em uma base de dados foram criados scripts 
 
 #### Normalization of keywords
 
-Na etapa de normalização das pavalavras chaves todos os termos de busca e identificação são normalizados, sendo removidos acentos, espaços em branco e convertendo todos as palavras em letras minúsculas (lowercase). Este processo tem o propósito de expandir a cobertura dos termos durante as buscas nos sites.  
+Na etapa de normalização das pavalavras chaves todos os termos de busca e identificação são normalizados, sendo removidos acentos, espaços em branco e convertendo todos as palavras em letras minúsculas (lowercase). Este processo tem como propósito de expandir a cobertura dos termos durante as buscas nos sites.  
 
 #### Creation of queries
 
