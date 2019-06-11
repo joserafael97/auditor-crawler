@@ -52,7 +52,7 @@ Na etapa de normalização das pavalavras chaves todos os termos de busca e iden
 
 #### Creation of queries
 
-
+Nesta etapa por meio dos termos chaves de busca e identificação, são criadas consultas utilizando a linguagem XPath (XML Path Language) que servirão para buscar links, componentes dinâmicos e identificar os critérios fiscais nos portais de transparência.   
 
 ## Breadth First Search  (BFS)
 
