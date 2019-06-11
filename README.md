@@ -10,11 +10,12 @@ A grande diversidade na forma de navegar e visualizar as informações fiscais n
 
 ## Pré-processamento
 
-Para o melhor entendimento do algoritmo utilizado no modelo base, é necessário descrever todos os passsos anteriores ao início da execução do Crawler. Assim, a Figura abaixo apresenta com maior detalhe esse fluxo.
+Para o melhor entendimento das técnicas utilizadas neste estudo, é necessário descrever os passsos que precedem a varredura dos portais de transparência. Assim, a Figura abaixo apresenta esse fluxo.
 
 ![modeloBase](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/modeloBase.png)
 
-* ***Data:*** Coleções contendo metadados dos municípios da Paraíba, por exemplo Url do portal de transparência, prefeitura, e palavras chaves de busca e identificação dos critérios; 
+#### Data
+São Coleções contendo metadados dos municípios da Paraíba, por exemplo Url do portal de transparência, prefeitura, e palavras chaves de busca e identificação dos critérios; 
 
 * ***Palavras chaves de busca :*** Refere-se a termos utilizados para identificar ***urls, e elementos HTML clicáveis***  (buttons, input, a e etc.) que darão acesso à novas páginas/áreas relevantes considerando os critérios de transparência buscados. Um exemplo de palavras de busca é a coleção apresentada abaixo, que apresenta os termos para buscar o critério Despesa Orçamentária: 
  ```
@@ -44,6 +45,13 @@ Para o melhor entendimento do algoritmo utilizado no modelo base, é necessário
 ```
 
 Para inserção dessas informações em uma base de dados foram criados scripts de dados. Estes podem ser encontrados no diretório [data](https://github.com/joserafael97/auditor-crawler/tree/master/data) do projeto.
+
+#### Normalization of keywords
+
+Na etapa de normalização das pavalavras chaves todos os termos de busca e identificação são normalizados, sendo removidos acentos, espaços em branco e convertendo todos as palavras em letras minúsculas (lowercase). Este processo tem o propósito de expandir a cobertura dos termos durante as buscas nos sites.  
+
+#### Creation of queries
+
 
 
 ## Breadth First Search  (BFS)
