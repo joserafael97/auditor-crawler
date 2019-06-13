@@ -72,11 +72,11 @@ a Figura abaixo é prosposta
 
 O detalhamento do das atividades do diagrama é apresentada abaixo:
 
-* ***Start Crawler:***  Diz respeito ao processo de inicialização do Crawler mostrado na seção runing deste documento;
+* ***Start Crawler:*** Diz respeito ao processo de inicialização do Crawler mostrado na seção runing deste documento;
 
-* ***Access Node (Access Web page):*** Esta atividade refere-se ao acesso de um novo nó no grafo. Um nó pode ser represento por uma nova URL a ser acessada ou um novo elemento a ser clicado;
+* ***Access Node (Access Web page):*** Esta atividade refere-se ao acesso de um novo nó no Grafo. Um nó pode ser representado por uma nova URL a ser acessada ou um novo elemento a ser clicado;
 
-* ***Create queries:*** Após a realização da atividade anterior, são criadas consultas para buscar identificar os itens do critério e identificar possíveis nós filhos;
+* ***Create queries:*** Após a realização da atividade anterior, são criadas consultas para buscar e identificar os itens do critério e econtrar nós filhos (urls e elementos clicáveis);
 
 * ***Search items:*** Com as consultas criadas, os itens do critério avaliado é buscado. Nesse processo alguns validações são aplicadas, como por exemplo verificar se o item encontrado está contido está em uma tabela ou uma lista. Caso todos itens buscados forem encontrados o processo de avaliação do critério é finalizado;
 
