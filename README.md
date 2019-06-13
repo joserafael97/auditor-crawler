@@ -62,35 +62,29 @@ Por representar de forma similar as estruturas de links contidas nos Web sites, 
 
 Nesse contexto, para o estudo o BFS será o algoritmo base para percorrer as páginas/áreas em busca dos critérios fiscais nos portais de transparência. Este algoritmo fazerá parte de um Crawler que servirá como modelo base durante os experimentos. 
 
-Durante a execução do Crawler, a separação do processo de busca e identificação dos critérios nos portais fiscais 
-garante melhores níveis de eficácia, devido a maior distinção
-das páginas/áreas acessadas por meio dos termos utilizados 
-em cada critério, evitando problemas como identificação de itens semelhantets em locais 
-pertecentes a outros critérios. Além disso, a idenpendência entre 
-os processos de avaliação dos critérios permite uma parelização entre os processos,
-que resulta no melhor aproveitamento dos recursos da disponíveis, 
-tornando mais eficiente a execução do Crawler.
+Durante a execução do Crawler, a separação do processo de busca e identificação dos critérios nos portais fiscais garante melhores níveis de eficácia, devido a maior distinção das páginas/áreas acessadas por meio dos termos utilizados 
+em cada critério, evitando problemas como a identificação de itens semelhantets em locais pertecentes a outros critérios. Além disso, a idenpendência entre os processos de avaliação dos critérios permite uma parelização entre os processos, resultando num melhor aproveitamento dos recursos da disponíveis, tornando mais eficiente a execução do Crawler.
 
 De modo a exemplificar o fluxo de execução do Crawler na avaliação de cada critério 
 a Figura abaixo é prosposta 
 
 ![luxo_bfs_avaliacao.png](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/fluxo_bfs_avaliacao.png)
 
-Start Crawler: Diz respeito ao processo de inicialização do Crawler mostrado na
+* ***Start Crawler:***  Diz respeito ao processo de inicialização do Crawler mostrado na
 seção runing deste documento
 
-Access Node (Access Web page): Esta atividade refere-se ao acesso de um novo nó no grafo.
+* ***Access Node (Access Web page):*** Esta atividade refere-se ao acesso de um novo nó no grafo.
 Um nó pode ser represento por uma nova URL a ser acessada ou um novo elemento a ser clicado.
 
-Create queries: Após a realização da atividade anterior, são criadas consultas para buscar
+* ***Create queries:*** Após a realização da atividade anterior, são criadas consultas para buscar
 identificar os itens do critério e identificar possíveis nós filhos;
 
-Search items: Com as consultas criadas, os itens do critério avaliado é buscado. 
+* ***Search items:*** Com as consultas criadas, os itens do critério avaliado é buscado. 
 Nesse processo alguns validações são aplicadas, como por exemplo verificar se o item encontrado está contido
 está em uma tabela ou uma lista. Caso todos itens buscados forem encontrados o processo
 de avaliação do critério é finalizado. 
 
-Search new Nodes: Caso todos os itens não sejam identificados, nesta atividade
+* ***Search new Nodes:*** Caso todos os itens não sejam identificados, nesta atividade
 é procurado novos nós para serem acessados (nós filhos do nó atual) podendo ser
 Uma URL ou um elemento HTMl clicável. Nesse sentido, caso novos nós filhos 
 não sejam encontrados e todos os nós já tenham sido percorridos o processo de avaliação
