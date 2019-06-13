@@ -62,7 +62,7 @@ Por representar de forma similar as estruturas de links contidas nos Web sites, 
 
 Nesse contexto, para o estudo o BFS será o algoritmo base para percorrer as páginas/áreas em busca dos critérios fiscais nos portais de transparência. Este algoritmo fazerá parte de um Crawler que servirá como modelo base durante os experimentos. 
 
-A separação do processo de busca e identificação dos critérios nos portais fiscais 
+Durante a execução do Crawler, a separação do processo de busca e identificação dos critérios nos portais fiscais 
 garante melhores níveis de eficácia, devido a maior distinção
 das páginas/áreas acessadas por meio dos termos utilizados 
 em cada critério, evitando problemas como identificação de itens semelhantets em locais 
