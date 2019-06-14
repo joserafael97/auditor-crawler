@@ -1,5 +1,5 @@
 const keywordSearchLicitacao = ['consultar licitacoes', 'Licitações Empenhadas', 'licitacao', 'licitacoes.aspx', 'acesso licitacoes',
-    'despesa com licitacao', 'Licitacao', 'Licitacoes', 'Licitações', 'Procedimentos Licitatórios', 'consultar'
+    'despesa com licitacao', 'Licitacao', 'Licitacoes', 'Licitações', 'Dados de Licitações', 'Procedimentos Licitatórios', 'consultar'
 ];
 
 const identificationKeyLicitacao = {
@@ -14,16 +14,16 @@ const identificationKeyLicitacao = {
         "data da homologacao",
         "data da publicacao", "dt. homologacao", "homologacao"
     ],
-    "valor": ["valor"],
-    "cnpj_cpf": ["cpf", "cnpj"],
+    "valor": ["valor", 'VALOR R$'],
+    "cnpj_cpf": ["cpf", "cnpj", 'CNPJ/CPF'],
     "edital": ["edital"],
     "nome_vencedores": ["fornecedor", "favorecido", "Participantes"],
     "nome_perdedores": ["participante", "participantes"],
-    "data_realizacao": ["assinatura", "abertura / realizacao", "data inicial"],
-    "setor_interessado": ["setor interessado", "reparticao/setor interessado:", "orgao"],
+    "data_realizacao": ["assinatura", 'DATA ASSINATURA', "abertura / realizacao", "data inicial"],
+    "setor_interessado": ["setor interessado", "reparticao/setor interessado:", "orgao", 'Objeto'],
     "integra": ["integra"],
     "termo_ratificacao": ["ratificacao", ],
-    "pregao": ["pregao", "pregao eletronico"],
+    "pregao": ["pregao", "pregao eletronico", "tipo", "modalidade", "categoria"],
     "aviso": ["edital", "publicacao", "aviso"],
     "licitado": ["licitado", "licitacao"]
 }

@@ -3,7 +3,7 @@ const keywordSearchDespExtraOrcamentaria = ['despesas extras-orcamentarias', 'Co
 ];
 
 const identificationKeyWordDespExtraOrcamentaria = {
-    "valor": ['valor', 'empenhado(r$)'],
+    "valor": ['valor', 'empenhado(r$)', 'VALOR ATÉ MÊS R$'],
     "codigo": ['codigo', 'cod. despesa'],
     "nomenclatura": ['descricao', 'nome da despesa'],
 };

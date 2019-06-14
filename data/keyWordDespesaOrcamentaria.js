@@ -6,7 +6,7 @@ const keywordSearchDespOrcamentaria = ['despesas', 'despesas orcamentaria', 'Con
 const identificationKeyWordDespOrcamentaria = {
     "funcao": ['funcao'],
     "sub_funcao": ['subfuncao', 'sub funcao'],
-    "orgao_or_uni_orcamentaria": ['orgao', 'unid. orcamentaria', 'UNIDADE ORÇAMENTÁRIA'],
+    "orgao_or_uni_orcamentaria": [],
     "programa": ['programa', 'descricao do programa', 'funcao programatica',
         'programa de governo'
     ],
@@ -34,6 +34,7 @@ const identificationKeyWordDespOrcamentaria = {
     "lic_modalidade": ['modalidade', 'modalidade aplicacao'],
     "lic_numero": ['nº licitacao', 'licitacao'],
     "lic_num_contrato": ['numero', 'historico'],
+    "nome": ['orgao', 'unid. orcamentaria', 'UNIDADE ORÇAMENTÁRIA', 'credor']
 };
 
 export {identificationKeyWordDespOrcamentaria};
