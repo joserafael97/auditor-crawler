@@ -10,15 +10,15 @@ const identificationKeyLicitacao = {
         "tipo do objeto"
     ],
     "modalidade_licitacao": ["tipo", "modalidade", "categoria"],
-    "data_publicacao_licitacao": ["data", "data publicacao", "data da homogacao",
+    "data_publicacao_licitacao": ["data publicacao", "data", "data da homogacao",
         "data da homologacao",
         "data da publicacao", "dt. homologacao", "homologacao"
     ],
     "valor": ["valor", 'VALOR R$'],
     "cnpj_cpf": ["cpf", "cnpj", 'CNPJ/CPF'],
     "edital": ["edital"],
-    "nome_vencedores": ["fornecedor", "favorecido", "Participantes"],
-    "nome_perdedores": ["participante", "participantes"],
+    "nome_vencedores": ["fornecedor", "favorecido", "Participantes", 'Status', 'propostas'],
+    "nome_perdedores": ["participante", "participantes", 'propostas'],
     "data_realizacao": ["assinatura", 'DATA ASSINATURA', "abertura / realizacao", "data inicial"],
     "setor_interessado": ["setor interessado", "reparticao/setor interessado:", "orgao", 'Objeto'],
     "integra": ["integra"],

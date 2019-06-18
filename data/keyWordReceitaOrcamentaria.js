@@ -4,7 +4,7 @@ const keywordSearchRecOrcamentaria = ['ORÇAMENTÁRIA', 'Receitas', 'receita-orc
 
 const identificationKeyWordRecOrcamentaria = {
     "uni_gestora": ['nome', 'unidade gestora', 'orgao', 'entidade', 'Nome Entidade',
-        'fonte de recurso'
+        'fonte de recurso', 'Entidade'
     ],
     "previsao": ['valor previsto(r$)', 'receita prevista', 'previsao de receitas',
         'Valor Previsto', 'Previsão',
@@ -19,7 +19,7 @@ const identificationKeyWordRecOrcamentaria = {
     "cat_economica": ['categoria da receita', 'receita l.o.a.', 'CATEGORIA ECONÔMICA'],
     "origem": ['origem dos recursos a conta', 'descricao da receita', 'nome',
         'descricao receita (STN)',
-        'Fonte Recurso', 'Fonte de Recurso', 'ORIGEM'
+        'Fonte Recurso', 'Fonte de Recurso', 'ORIGEM', 'Fonte do Recurso'
     ],
     "especie": ['especie'],
     "rubrica": ['rubrica'],
