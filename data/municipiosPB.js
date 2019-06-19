@@ -3,7 +3,6 @@
 const PUBLICSOFT = 'publicsoft'
 const ELMAR = 'elmar'
 const E_TICONS = 'e_ticons'
-const PORTAL_JOAO_PESSOA = 'portal_joao_pessoa'
 const NEW_SITES = 'new_sites'
 const INFO_PUBLIC = 'info_public'
 const PADRAO = 'padrao'
@@ -56,6 +55,15 @@ const counties = [
         empresas: [INFO_PUBLIC],
         cityHallUrl: 'http://www.esperanca.pb.gov.br',
         transparencyPortalUrl: 'http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
+        population: 0
+    }
+
+    {
+        name: 'João Pessoa',
+        codSepro: '2051',
+        empresas: [PORTAL_PROPRIO],
+        cityHallUrl:'http://www.joaopessoa.pb.gov.br',
+        transparencyPortalUrl: 'https://transparencia.joaopessoa.pb.gov.br',
         population: 0
     }
 ];
