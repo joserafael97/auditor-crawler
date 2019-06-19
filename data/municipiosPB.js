@@ -56,7 +56,7 @@ const counties = [
         cityHallUrl: 'http://www.esperanca.pb.gov.br',
         transparencyPortalUrl: 'http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
         population: 0
-    }
+    },
 
     {
         name: 'João Pessoa',
