@@ -80,12 +80,12 @@ export default class CrawlerUtil {
             : currentUrl.substring(currentUrl.lastIndexOf('/')) === '/' ? currentUrl + '#' : currentUrl + '/#';
 
         if (url !== undefined && (onclick !== null ||
-            (actuallyUrl === url || TextUtil.checkTextContainsInText('frameContent', url))) ) {
+            (actuallyUrl === url || TextUtil.checkTextContainsInText('frameContent', url)))) {
             return false
         }
 
-        return ((url !== undefined && HtmlUtil.isUrl(url))) ? true : 
-        url !== undefined && HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), url)) ? true : false;
+        return ((url !== undefined && HtmlUtil.isUrl(url))) ? true :
+            url !== undefined && HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), url)) ? true : false;
     }
 
 
@@ -195,7 +195,9 @@ export default class CrawlerUtil {
         const itensIdentificationItensQueries = await XpathUtil.createXpathsToIdentificationKeyWord(criterionName);
         let itens = [];
         for (let query of itensIdentificationItensQueries) {
-            itens.push(CrawlerUtil.createItem(query.getKeyWord(), query.getXpath(), query.getKeyWordsXpath()));
+            if (query.getKeyWord().length > 0) {
+                itens.push(CrawlerUtil.createItem(query.getKeyWord(), query.xpath, query.getKeyWordsXpath()));
+            }
         }
         return itens;
     }
