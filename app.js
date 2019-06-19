@@ -31,13 +31,13 @@ const logErrorAndExit = err => {
 
 
 const run = async (criterion, evaluation, root) => {
-    let itens = await Bfs.gaphBfs(root, null, [], criterion, evaluation, []).catch(logErrorAndExit)    
+    let itens = await Bfs.gaphBfs(root, null, [], criterion, evaluation, []).catch(logErrorAndExit)
     evaluation.dateEnd = new Date();
     const duration = evaluation.dateEnd.getTime() - evaluation.date.getTime();
     const delta = Math.abs(new Date() - evaluation.date) / 1000;
     const minutes = Math.floor(delta / 60) % 60;
-    
-    evaluation.duration = duration; 
+
+    evaluation.duration = duration;
     evaluation.durationMin = minutes;
     criterion.duration = duration;
     criterion.durationMin = minutes;
@@ -78,9 +78,10 @@ const init = async () => {
     });
 
     const element = new Element(evaluation.transparencyPortalUrl, null, null, null, null);
-    
+
     let root = new Node(element, [], [], false);
-    
+    process.setMaxListeners(0);
+
     let criterionDespesaOrc = CrawlerUtil.createCriterion('Despesa Orçamentária');
     let criterionDespesaExtra = CrawlerUtil.createCriterion('Despesa Extra Orçamentária');
     let criterionReceitaOrc = CrawlerUtil.createCriterion('Receita Orçamentária');
