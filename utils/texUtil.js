@@ -33,9 +33,9 @@ export default class TextUtil {
         for (const currentUrl of UrlsList){
             const host1 = HtmlUtil.extractHost(url1);
             const host2 = HtmlUtil.extractHost(currentUrl);
+            const uri1 = HtmlUtil.extractUri(url1).replace('/', '');
 
-            if (host1 === host2){
-                const uri1 = HtmlUtil.extractUri(url1).replace('/', '');
+            if (host1 === host2 && uri1.length > 0){
                 const uri2 = HtmlUtil.extractUri(currentUrl).replace('/', '');
                 if (StringSimilarity.compareTwoStrings(uri1, uri2) > 0.9){
                     return true;

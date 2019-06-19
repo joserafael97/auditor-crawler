@@ -52,10 +52,8 @@ export default class CrawlerUtil {
                             (currentNodeUrl !== currentUrl))) {
                         const isUrl = HtmlUtil.isUrl(text);
                         text = !isUrl && (await CrawlerUtil.hrefValid(element, currentUrl)) ? await (await element.getProperty('href')).jsonValue() : text;
-
                         if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase()) &&
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
-
                             if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
                                 ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
                                 let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), puppeteer, currentUrl);
@@ -77,12 +75,17 @@ export default class CrawlerUtil {
     static async hrefValid(element, currentUrl) {
         const url = await (await element.getProperty('href')).jsonValue();
         const onclick = await (await element.getProperty('onclick')).jsonValue();
-        if (onclick !== null || TextUtil.checkTextContainsInText('#', url)) {
+
+        const actuallyUrl = TextUtil.checkTextContainsInText('#', currentUrl) ? currentUrl
+            : currentUrl.substring(currentUrl.lastIndexOf('/')) === '/' ? currentUrl + '#' : currentUrl + '/#';
+
+        if (url !== undefined && (onclick !== null ||
+            (actuallyUrl === url || TextUtil.checkTextContainsInText('frameContent', url))) ) {
             return false
         }
 
-        return ((url !== undefined && HtmlUtil.isUrl(url)) && url !== currentUrl) ? true :
-            HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), url)) ? true : false;
+        return ((url !== undefined && HtmlUtil.isUrl(url))) ? true : 
+        url !== undefined && HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), url)) ? true : false;
     }
 
 
@@ -124,7 +127,7 @@ export default class CrawlerUtil {
         let sameIdentificationCount = 0
         for (let itemEvaluation of itens) {
             if (itemEvaluation.found && itemEvaluation.pathSought === currentURL) {
-                
+
                 for (let item of itens) {
                     if ((item.found && item.name !== itemEvaluation.name)) {
                         if (item.pathSought === itemEvaluation.pathSought) {
@@ -177,7 +180,6 @@ export default class CrawlerUtil {
         await page.evaluate((xpath) => {
             let element = document.evaluate(xpath, document, null, XPathResult.ANY_TYPE, null);
             var thisHeading = element.iterateNext();
-            console.log("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::",this.thisHeading.style);
             thisHeading.style.backgroundColor = '#4F0665'
             thisHeading.style.color = '#ffffff'
             return element;

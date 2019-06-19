@@ -37,12 +37,12 @@ export default class PuppeteerUtil {
                 '--disable-infobars',
                 '--test-type',
             ],
-            headless: true
+            headless: false
         });
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
         await mainPage.setViewport({
-            width: 1920,
+            width: 2920,
             // width: 1600,
             height: 3000
         });
