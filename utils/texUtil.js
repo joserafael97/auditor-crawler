@@ -94,7 +94,7 @@ export default class TextUtil {
             'Despesa Orçamentária': ['extra', 'elemento', 'favorecido', 'orgao', 'programatica', 'obras', 'passagens',  'transferencia', 'diarias', 'receitas', 'outras despesas','receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'restos a pagar'],
             'Receita Orçamentária': ['extra', 'divisorReceitaCompetencia','deducao', 'transferencias', 'transferencia', 'detalhado', 'receita de contribuicoes', 'receita de servicos', 'receita patrimonial', 'comparativo', 'restos a pagar', 'prevista', 'resumo geral', 'loalei','execucao','outras receitas', 'despesas','licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo'],
             'Receita Extra Orçamentária': [ 'transferencias','receitas orcamentarias','despesas', 'licitacao', 'licitacoes', 'despesa', 'orcamentarias', 'pessoal', 'restos a pagar', 'folha de pagamento', 'demonstrativo', 'outras receitas'],
-            'Licitação': ['extra', 'receitas', 'outras despesas','receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'consultar restos a pagar'],
+            'Licitação': ['extra', 'contratos', 'receitas', 'despesa', 'despesas','receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'consultar restos a pagar'],
             'Quadro Pessoal': ['extra', 'receitas', 'outras despesas','receita', 'licitacao', 'licitacoes', 'demonstrativo', 'consultar restos a pagar']
 
         };

@@ -64,7 +64,7 @@ EvaluationModel.findByCounty = async (countyName) => {
 }
 
 EvaluationModel.findLastByCounty = async (countyName) => {
-    return (await EvaluationModel.findOne({ county: countyName }, {}, { sort: { 'created_at' : -1 } }).populate({
+    return (await EvaluationModel.findOne({ county: countyName }, {}, { sort: { 'dateEnd' : -1 } }).populate({
         path: 'criterions',
         populate: {
             path: 'itens',
