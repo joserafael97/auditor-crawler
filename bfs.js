@@ -31,17 +31,18 @@ export default class Bfs {
         console.log("numPagesOpened: ", numPages);
         console.log("value: ", value);
         console.log("level: ", node.getLevel());
+
+
+
         try {
 
-            if ((node.getLevel() > 0 && !isUrl) || node.getSource().getIsExtractIframe()) {
+            if (node.getSource().getIsExtractIframe() && (await page.constructor.name) !== "Frame") {
                 await page.waitForNavigation().catch(e => void e);
                 page = await PuppeteerUtil.detectContext(page).catch(e => void e);
             }
 
             if (isUrl) {
                 await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
-                console.log("******************************URL ACESSADA**************************************");
-
             } else {
                 let element = node.getSource().getElement();
                 element = await PuppeteerUtil.selectElementPage(page, xpath, value);
@@ -53,9 +54,12 @@ export default class Bfs {
                 }
             }
 
-            if (!isUrl || node.getSource().getIsExtractIframe()){
-                page = await PuppeteerUtil.detectContext(page, xpath).catch(e => void e);
-                
+            if ((await page.constructor.name) !== "Frame") {
+                await page.waitFor(3000);
+            }
+
+            if ((!isUrl || node.getSource().getIsExtractIframe()) && (await page.constructor.name) !== "Frame") {
+                page = await PuppeteerUtil.detectContext(page).catch(e => void e);
             }
 
             if (node.getLevel() === 0) {
@@ -88,7 +92,6 @@ export default class Bfs {
             }
             return Bfs.gaphBfs(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens);
         }
-
 
         console.log("*********************close browser***********************************************");
         await puppeteer.getBrowser().close();

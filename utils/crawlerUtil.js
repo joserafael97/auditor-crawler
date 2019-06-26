@@ -29,7 +29,6 @@ export default class CrawlerUtil {
         const currentValue = node.getSource().getValue();
         const currentUrl = await page.url();
         const currentNodeUrl = node.getSource().getUrl();
-
         for (let queryElement of queryElements) {
             const elements = await page.$x(queryElement.getXpath());
             if (elements.length > 0) {
@@ -58,7 +57,8 @@ export default class CrawlerUtil {
                                 ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
 
                                 if (text.length > 0) {
-                                    let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), puppeteer, currentUrl, queryElement.getIsExtractIframe());
+                                    let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), 
+                                    puppeteer, currentUrl, (await page.constructor.name) === "Frame" || queryElement.getIsExtractIframe());
                                     edgesList.push(new Node(source, node));
                                 }
                             }

@@ -47,4 +47,9 @@ export default class Element {
     setUrl(url) {
         this.url = url;
     }
+
+
+    setIsExtractIframe(isExtractIframe) {
+        this.isExtractIframe = isExtractIframe;
+    }
 }

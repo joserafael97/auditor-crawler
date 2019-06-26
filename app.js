@@ -45,7 +45,7 @@ const run = async (criterion, evaluation, root) => {
     criterion = await Criterion.addCriterion(criterion, itens);
     await Evaluation.addEvaluationWithOneCriterion(evaluation, criterion)
 
-    console.log(criterion);
+    // console.log(criterion);
     console.log("============================================================================");
     console.log("Duration: ", minutes, ' min')
 };

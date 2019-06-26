@@ -42,8 +42,8 @@ export default class PuppeteerUtil {
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
         await mainPage.setViewport({
-            width: 1920	,
-            height: 1080
+            width: 1500,
+            height: 1000
             // height: 3000
         });
 
@@ -89,13 +89,27 @@ export default class PuppeteerUtil {
     }
 
     static async accessParent(page, parents) {
-        const nodeParent = parents[parents.length - 1];
-        if (!HtmlUtil.isUrl(nodeParent.getSource().getValue())) {
-            Promise.all([page.goto(nodeParent.getSource().getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
-        } else {
-            if (parents.length > 0) {
+
+        if (parents.length > 0) {
+            for (let edge of parents) {
+                console.log("parent: ****:", edge.getSource().value, ' level: ', edge.getLevel(), 'into Iframe: ', edge.getSource().getIsExtractIframe());
+            }
+
+            const nodeParent = parents[0];
+            if (HtmlUtil.isUrl(nodeParent.getSource().getValue())) {
+                Promise.all([page.goto(nodeParent.getSource().getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
+            } else {
+                const currentPage = page;
                 for (let parent of parents.reverse()) {
                     let source = parent.getSource();
+
+                    if (parent.getSource().getIsExtractIframe() && (await page.constructor.name) !== "Frame") {
+                        await page.waitForNavigation().catch(e => void e);
+                        page = await PuppeteerUtil.detectContext(page).catch(e => void e);
+                    }
+                    console.log("======================================instace========================", (await page.constructor.name) !== "Frame");
+
+
                     if (HtmlUtil.isUrl(source.getValue())) {
                         Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
                     } else {
@@ -104,6 +118,7 @@ export default class PuppeteerUtil {
                         await page.waitForNavigation().catch(e => void e);
                     }
                 }
+                page = currentPage;
             }
         }
     }
@@ -115,13 +130,12 @@ export default class PuppeteerUtil {
         const elements = await page.$x(xpath);
         if (elements.length > 0) {
             for (let element of elements) {
-
                 let text = await (await element.getProperty('textContent')).jsonValue();
-                const propertyHandleValue = await element.getProperty('value');
+                const propertyHandleValue = await (await element.getProperty('value')).jsonValue();
                 text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-
-                text = text.length > 0 ? text :
-                    TextUtil.normalizeText(TextUtil.removeWhiteSpace(await propertyHandleValue.jsonValue()));
+                text = text != undefined && text.length > 0 ? text :
+                    propertyHandleValue != undefined && propertyHandleValue.length > 0 ?
+                        TextUtil.normalizeText(TextUtil.removeWhiteSpace(propertyHandleValue)) : '';
                 if (text === searchValue) {
                     return element;
                 }
@@ -142,7 +156,7 @@ export default class PuppeteerUtil {
                 const value = node.getSource().getValue();
 
                 if ((node.getLevel() !== 0 &&
-                        currentNode.getSource().getValue() === node.getParent().getSource().getValue()) &&
+                    currentNode.getSource().getValue() === node.getParent().getSource().getValue()) &&
                     (node.getSource().getUrl() === currentUrl && value == text)) {
                     return true;
                 }
