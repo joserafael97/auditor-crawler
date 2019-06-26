@@ -54,9 +54,7 @@ export default class Bfs {
                 }
             }
 
-            if ((await page.constructor.name) !== "Frame") {
-                await page.waitFor(3000);
-            }
+            await page.waitFor(3000);
 
             if ((!isUrl || node.getSource().getIsExtractIframe()) && (await page.constructor.name) !== "Frame") {
                 page = await PuppeteerUtil.detectContext(page).catch(e => void e);

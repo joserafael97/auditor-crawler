@@ -91,10 +91,6 @@ export default class PuppeteerUtil {
     static async accessParent(page, parents) {
 
         if (parents.length > 0) {
-            for (let edge of parents) {
-                console.log("parent: ****:", edge.getSource().value, ' level: ', edge.getLevel(), 'into Iframe: ', edge.getSource().getIsExtractIframe());
-            }
-
             const nodeParent = parents[0];
             if (HtmlUtil.isUrl(nodeParent.getSource().getValue())) {
                 Promise.all([page.goto(nodeParent.getSource().getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
@@ -107,8 +103,6 @@ export default class PuppeteerUtil {
                         await page.waitForNavigation().catch(e => void e);
                         page = await PuppeteerUtil.detectContext(page).catch(e => void e);
                     }
-                    console.log("======================================instace========================", (await page.constructor.name) !== "Frame");
-
 
                     if (HtmlUtil.isUrl(source.getValue())) {
                         Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
