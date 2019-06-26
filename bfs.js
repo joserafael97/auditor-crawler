@@ -33,13 +33,15 @@ export default class Bfs {
         console.log("level: ", node.getLevel());
         try {
 
-            if (node.getLevel() > 0) {
+            if ((node.getLevel() > 0 && !isUrl) || node.getSource().getIsExtractIframe()) {
                 await page.waitForNavigation().catch(e => void e);
                 page = await PuppeteerUtil.detectContext(page).catch(e => void e);
             }
 
             if (isUrl) {
                 await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
+                console.log("******************************URL ACESSADA**************************************");
+
             } else {
                 let element = node.getSource().getElement();
                 element = await PuppeteerUtil.selectElementPage(page, xpath, value);
