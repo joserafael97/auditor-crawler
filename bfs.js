@@ -25,6 +25,7 @@ export default class Bfs {
         const xpath = node.getSource().getXpath();
         let changeUrl = false;
         let newCurrentURL = await page.url();
+        const currentURL = await page.url();
 
         console.log("********************************************************************");
         console.log("numPagesOpened: ", numPages);
@@ -34,7 +35,7 @@ export default class Bfs {
 
             if (node.getLevel() > 0) {
                 await page.waitForNavigation().catch(e => void e);
-                page = await PuppeteerUtil.detectContext(page, xpath).catch(e => void e);
+                page = await PuppeteerUtil.detectContext(page).catch(e => void e);
             }
 
             if (isUrl) {
@@ -42,15 +43,19 @@ export default class Bfs {
             } else {
                 let element = node.getSource().getElement();
                 element = await PuppeteerUtil.selectElementPage(page, xpath, value);
-                const currentURL = await page.url();
                 await element.click();
                 await page.waitForNavigation().catch(e => void e);
                 newCurrentURL = await page.url();
-                page = await PuppeteerUtil.detectContext(page, xpath).catch(e => void e);
                 if (currentURL !== newCurrentURL) {
                     changeUrl = true;
                 }
             }
+
+            if (!isUrl || node.getSource().getIsExtractIframe()){
+                page = await PuppeteerUtil.detectContext(page, xpath).catch(e => void e);
+                
+            }
+
             if (node.getLevel() === 0) {
                 node.getSource().setUrl((await page.url()));
             }

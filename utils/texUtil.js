@@ -100,7 +100,7 @@ export default class TextUtil {
         };
 
         const unusableCommumTerms = ["javascript", "transparencia.rn.gov.br", "css", "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
-            '.js', 'download', 'widget', ".zip", ".jpeg", ".rar", "noticia", "publicidade", "noticia", "pinterest.com", 'javascript',
+            '.js', 'download', 'widget', ".zip", ".jpeg", ".rar", "noticia", "publicidade", "noticia", "pinterest.com", 'javascript', 'wp-json', 'json'
         ];
 
         let unusableCommumTermsFinal = unusableTerms[criterionName];

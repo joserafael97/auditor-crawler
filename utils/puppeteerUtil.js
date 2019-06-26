@@ -37,14 +37,14 @@ export default class PuppeteerUtil {
                 '--disable-infobars',
                 '--test-type',
             ],
-            headless: true
+            headless: false
         });
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
         await mainPage.setViewport({
-            width: 2920,
-            // width: 1600,
-            height: 3000
+            width: 1920	,
+            height: 1080
+            // height: 3000
         });
 
         return new PuppeteerInstance(browser, [mainPage]);
@@ -66,7 +66,7 @@ export default class PuppeteerUtil {
 
     }
 
-    static async detectContext(page, xpath) {
+    static async detectContext(page) {
         if (await PuppeteerUtil.checkXpath(page, XPATHIFRAME)) {
             for (const frame of page.mainFrame().childFrames()) {
                 if (!TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, frame.url())) {

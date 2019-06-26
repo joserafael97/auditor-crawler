@@ -42,7 +42,7 @@ export default class CrawlerUtil {
                     if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                         text = HtmlUtil.isUrl(text) ? text :
                             HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), text)) ?
-                                urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
+                            urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
                     }
 
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
@@ -56,9 +56,11 @@ export default class CrawlerUtil {
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
                             if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
                                 ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
-                                let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), puppeteer, currentUrl);
-                                edgesList.push(new Node(source, node));
 
+                                if (text.length > 0) {
+                                    let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), puppeteer, currentUrl, queryElement.getIsExtractIframe());
+                                    edgesList.push(new Node(source, node));
+                                }
                             }
                         }
 
@@ -76,11 +78,11 @@ export default class CrawlerUtil {
         const url = await (await element.getProperty('href')).jsonValue();
         const onclick = await (await element.getProperty('onclick')).jsonValue();
 
-        const actuallyUrl = TextUtil.checkTextContainsInText('#', currentUrl) ? currentUrl
-            : currentUrl.substring(currentUrl.lastIndexOf('/')) === '/' ? currentUrl + '#' : currentUrl + '/#';
+        const actuallyUrl = TextUtil.checkTextContainsInText('#', currentUrl) ? currentUrl :
+            currentUrl.substring(currentUrl.lastIndexOf('/')) === '/' ? currentUrl + '#' : currentUrl + '/#';
 
         if (url !== undefined && (onclick !== null ||
-            (actuallyUrl === url || TextUtil.checkTextContainsInText('frameContent', url)))) {
+                (actuallyUrl === url || TextUtil.checkTextContainsInText('frameContent', url)))) {
             return false
         }
 

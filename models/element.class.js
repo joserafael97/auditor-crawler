@@ -3,14 +3,22 @@
 
 export default class Element {
 
-    constructor(value, element, xpath, typeElement, puppeteerInstance, url) {
+    constructor(value, element, xpath, typeElement, puppeteerInstance, url, isExtractIframe = false) {
         this.xpath = xpath;
         this.element = element;
         this.typeElement = typeElement;
         this.value = value;
         this.puppeteerInstance = puppeteerInstance;
         this.url = url;
+        this.isExtractIframe = isExtractIframe;
+
     }
+
+
+    getIsExtractIframe() {
+        return this.isExtractIframe;
+    }
+
 
     getXpath() {
         return this.xpath;
