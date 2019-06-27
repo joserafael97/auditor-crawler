@@ -19,7 +19,7 @@ export default class Node {
             while (!result.done) {
                 result = it.next();
             }
-            return result.treeLevel;
+            return result.treeLevel + 1;
         } else {
             return 0;
         }
@@ -59,6 +59,7 @@ export default class Node {
                     iterationCount++;
                     return result;
                 } else {
+                    sources.push(nodeActualy);
                     return {
                         treeLevel: iterationCount,
                         done: true,

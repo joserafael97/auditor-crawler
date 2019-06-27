@@ -39,7 +39,7 @@ export default class Bfs {
             }
 
             if (isUrl) {
-                await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e =>  void e)]);
+                await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
             } else {
                 let element = node.getSource().getElement();
                 element = await PuppeteerUtil.selectElementPage(page, xpath, value);
@@ -51,8 +51,6 @@ export default class Bfs {
                 }
             }
             await page.waitFor(3000);
-
-            console.log("::::::::::::::::::::::::::::::::::::::::::::::::::;page::::", (await page.constructor.name))
             if ((!isUrl || node.getSource().getIsExtractIframe()) && (await page.constructor.name) !== "Frame") {
                 page = await PuppeteerUtil.detectContext(page).catch(e => void e);
             }
@@ -60,6 +58,7 @@ export default class Bfs {
             if (node.getLevel() === 0) {
                 node.getSource().setUrl((await page.url()));
             }
+
             elementsAccessed.push(node);
             const elementsIdentify = []
             elementsIdentify.push.apply(elementsIdentify, elementsAccessed);

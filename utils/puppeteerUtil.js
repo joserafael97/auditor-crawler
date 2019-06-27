@@ -37,14 +37,13 @@ export default class PuppeteerUtil {
                 '--disable-infobars',
                 '--test-type',
             ],
-            headless: false
+            headless: true
         });
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
         await mainPage.setViewport({
-            width: 1920,
-            height: 1080
-            // height: 3000
+            width: 2000,
+            height: 3000
         });
 
         return new PuppeteerInstance(browser, [mainPage]);
@@ -89,7 +88,6 @@ export default class PuppeteerUtil {
     }
 
     static async accessParent(page, parents) {
-
         if (parents.length > 0) {
             const nodeParent = parents[0];
             if (HtmlUtil.isUrl(nodeParent.getSource().getValue())) {
@@ -98,8 +96,6 @@ export default class PuppeteerUtil {
                 const currentPage = page;
                 for (let parent of parents.reverse()) {
                     let source = parent.getSource();
-                    console.log("::::::::::::::::::::::::::::::::::::::::::::::::::;page::::", (await page.constructor.name))
-
                     if (HtmlUtil.isUrl(source.getValue())) {
                         Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
                     } else {
@@ -107,14 +103,8 @@ export default class PuppeteerUtil {
                             await page.waitForNavigation().catch(e => void e);
                             page = await PuppeteerUtil.detectContext(page).catch(e => void e);
                         }
-
-                        console.log("::::::::::::::::::::::::::::::::::::::::::::::::::;after page::::", (await page.constructor.name))
-                        console.log("::::::::::::::::::::::::::::::::::::::::::::::::::;source.getValue()::::", source.getValue())
-
                         let element = await PuppeteerUtil.selectElementPage(page, source.getXpath(), source.getValue());
                         await element.click().catch(e => void e);
-                        console.log("::::::::::::::::::::::::::::::::::::::::::::::::::;CLICK::::")
-
                         await page.waitForNavigation().catch(e => void e);
                     }
                 }
@@ -138,7 +128,7 @@ export default class PuppeteerUtil {
                 text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
                 text = text != undefined && text.length > 0 ? text :
                     propertyHandleValue != undefined && propertyHandleValue.length > 0 ?
-                    TextUtil.normalizeText(TextUtil.removeWhiteSpace(propertyHandleValue)) : '';
+                        TextUtil.normalizeText(TextUtil.removeWhiteSpace(propertyHandleValue)) : '';
                 if (text === searchValue) {
                     return element;
                 }
@@ -159,7 +149,7 @@ export default class PuppeteerUtil {
                 const value = node.getSource().getValue();
 
                 if ((node.getLevel() !== 0 &&
-                        currentNode.getSource().getValue() === node.getParent().getSource().getValue()) &&
+                    currentNode.getSource().getValue() === node.getParent().getSource().getValue()) &&
                     (node.getSource().getUrl() === currentUrl && value == text)) {
                     return true;
                 }
