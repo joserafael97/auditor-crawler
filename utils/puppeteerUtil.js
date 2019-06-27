@@ -98,7 +98,8 @@ export default class PuppeteerUtil {
                 const currentPage = page;
                 for (let parent of parents.reverse()) {
                     let source = parent.getSource();
-                    
+                    console.log("::::::::::::::::::::::::::::::::::::::::::::::::::;page::::", (await page.constructor.name))
+
                     if (HtmlUtil.isUrl(source.getValue())) {
                         Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
                     } else {
@@ -106,8 +107,14 @@ export default class PuppeteerUtil {
                             await page.waitForNavigation().catch(e => void e);
                             page = await PuppeteerUtil.detectContext(page).catch(e => void e);
                         }
+
+                        console.log("::::::::::::::::::::::::::::::::::::::::::::::::::;after page::::", (await page.constructor.name))
+                        console.log("::::::::::::::::::::::::::::::::::::::::::::::::::;source.getValue()::::", source.getValue())
+
                         let element = await PuppeteerUtil.selectElementPage(page, source.getXpath(), source.getValue());
                         await element.click().catch(e => void e);
+                        console.log("::::::::::::::::::::::::::::::::::::::::::::::::::;CLICK::::")
+
                         await page.waitForNavigation().catch(e => void e);
                     }
                 }

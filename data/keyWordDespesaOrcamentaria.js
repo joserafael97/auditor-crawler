@@ -7,7 +7,9 @@ const keywordSearchDespOrcamentaria = ['despesas', 'despesas orcamentaria', 'Con
 const identificationKeyWordDespOrcamentaria = {
     "funcao": ['funcao'],
     "sub_funcao": ['subfuncao', 'sub funcao'],
-    "orgao_or_uni_orcamentaria": [],
+    "orgao_or_uni_orcamentaria": ['ORGÃO', 'unidade orcamentaria', 'descricao do orgao',
+    'und. orcamentaria'],
+
     "programa": ['programa', 'descricao do programa', 'funcao programatica',
         'programa de governo'
     ],
