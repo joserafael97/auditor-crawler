@@ -33,7 +33,7 @@ export default class Bfs {
         console.log("level: ", node.getLevel());
 
         try {
-            if ((node.getParent() !== null && node.getParent().getSource().getIsExtractIframe()) && (await page.constructor.name) !== "Frame") {
+            if (node.getSource().getIsExtractIframe() && (await page.constructor.name) !== "Frame") {
                 await page.waitForNavigation().catch(e => void e);
                 page = await PuppeteerUtil.detectContext(page).catch(e => void e);
             }
