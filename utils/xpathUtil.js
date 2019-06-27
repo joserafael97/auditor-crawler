@@ -66,19 +66,19 @@ export default class XpathUtil {
         await CriterionKeyWord.findByName(criterionKeyWordName).then(function (criterionKeyWords) {
             for (let keyWord of criterionKeyWords.keywordSearch) {
                 keyWord = TextUtil.normalizeText(keyWord);
-                xpaths.push(new QueryElement('//*[contains({tagSearch},"{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
-                xpaths.push(new QueryElement('//*[contains({tagSearch},"{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
-                xpaths.push(new QueryElement('//*[{tagSearch}  = "{}"]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
-                xpaths.push(new QueryElement('//*[{tagSearch} = "{}"]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
-                xpaths.push(new QueryElement('//*[contains({tagSearch},"{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
-                xpaths.push(new QueryElement('//a[contains({tagSearch}, "{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
-                xpaths.push(new QueryElement('//*[contains({tagSearch}, "{}")]/parent::a/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
-                xpaths.push(new QueryElement('// *[{tagSearch} = "{}"]/following::td[1]//@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
-                xpaths.push(new QueryElement('//*[contains({tagSearch}, "{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
-                xpaths.push(new QueryElement('//div[contains({tagSearch},"{}")]/following::a[1]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT)); 
-                xpaths.push(new QueryElement('//span[contains({tagSearch},"{}")]/parent::*/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
-                xpaths.push(new QueryElement('//*[contains({tagSearch},"{}")]/parent::a/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT));
-                xpaths.push(new QueryElement('//*[contains(@src, {tagSearch})]/@src'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, [], true,));            
+                xpaths.push(new QueryElement('//*[contains({tagSearch},"{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
+                xpaths.push(new QueryElement('//*[contains({tagSearch},"{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
+                xpaths.push(new QueryElement('//*[{tagSearch}  = "{}"]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
+                xpaths.push(new QueryElement('//*[{tagSearch} = "{}"]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
+                xpaths.push(new QueryElement('//*[contains({tagSearch},"{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
+                xpaths.push(new QueryElement('//a[contains({tagSearch}, "{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
+                xpaths.push(new QueryElement('//*[contains({tagSearch}, "{}")]/parent::a/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
+                xpaths.push(new QueryElement('// *[{tagSearch} = "{}"]/following::td[1]//@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
+                xpaths.push(new QueryElement('//*[contains({tagSearch}, "{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
+                xpaths.push(new QueryElement('//div[contains({tagSearch},"{}")]/following::a[1]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch)); 
+                xpaths.push(new QueryElement('//span[contains({tagSearch},"{}")]/parent::*/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
+                xpaths.push(new QueryElement('//*[contains({tagSearch},"{}")]/parent::a/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
+                xpaths.push(new QueryElement('//*[contains(@src, {tagSearch})]/@src'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch, true));            
             
             
             }
@@ -104,7 +104,7 @@ export default class XpathUtil {
                         '//a[contains({tagSearch},"{}")]'.replace('{tagSearch}', XpathUtil.normalizeXpath('@onclick')).replace('{}', keyWord) + ' | ' +
                         '//a[contains({tagSearch},"{}")]'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord) + ' | ' +
                         '//*[contains({tagSearch},"{}")]/parent::a'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
-                        '//span[contains({tagSearch},"{}")]/parent::*'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTODYNAMICELEMENT)
+                        '//span[contains({tagSearch},"{}")]/parent::*'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTODYNAMICELEMENT, criterionKeyWords.keywordSearch)
                 );
             }
         });

@@ -19,7 +19,7 @@ export default class TextUtil {
 
     static checkTextContainsArray(array, text) {
         for (let index = 0; index < array.length; index++) {
-            const value = array[index].toLowerCase();
+            const value =  TextUtil.normalizeText(TextUtil.removeWhiteSpace(array[index]));
             if (text === value || text.includes(value)) {
                 return true;
             }
@@ -93,13 +93,13 @@ export default class TextUtil {
                 'demonstrativo', 'outras despesas', 'restos a pagar', ' por orgao', 'obras', 'diarias', 'passagens', 'transferencia', 'programatica', 'fornecedor',],
             'Despesa Orçamentária': ['extra', 'elemento', 'favorecido', 'orgao', 'programatica', 'obras', 'passagens',  'transferencia', 'diarias', 'receitas', 'outras despesas','receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'restos a pagar'],
             'Receita Orçamentária': ['extra', 'divisorReceitaCompetencia','deducao', 'transferencias', 'transferencia', 'detalhado', 'receita de contribuicoes', 'receita de servicos', 'receita patrimonial', 'comparativo', 'restos a pagar', 'prevista', 'resumo geral', 'loalei','execucao','outras receitas', 'despesas','licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo'],
-            'Receita Extra Orçamentária': [ 'transferencias','receitas orcamentarias','despesas', 'licitacao', 'licitacoes', 'despesa', 'orcamentarias', 'pessoal', 'restos a pagar', 'folha de pagamento', 'demonstrativo', 'outras receitas'],
+            'Receita Extra Orçamentária': [ 'transferencias','receitas orcamentarias','despesas', 'licitacao', 'licitacoes', 'despesa', 'pessoal', 'restos a pagar', 'folha de pagamento', 'demonstrativo', 'outras receitas'],
             'Licitação': ['extra', 'contratos', 'receitas', 'despesa', 'despesas','receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'consultar restos a pagar'],
             'Quadro Pessoal': ['extra', 'receitas', 'outras despesas','receita', 'licitacao', 'licitacoes', 'demonstrativo', 'consultar restos a pagar']
 
         };
 
-        const unusableCommumTerms = ["javascript", "transparencia.rn.gov.br", "css", "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
+        const unusableCommumTerms = ["javascript",  'tutorial', "transparencia.rn.gov.br", "css", "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
             '.js', 'download', 'widget', ".zip", ".jpeg", ".rar", "noticia", "publicidade", "noticia", "pinterest.com", 'javascript', 'wp-json', 'json'
         ];
 

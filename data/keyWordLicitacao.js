@@ -1,4 +1,4 @@
-const keywordSearchLicitacao = ['consultar licitacoes', 'Licitações Empenhadas', 'licitacao', 'licitacoes.aspx', 'acesso licitacoes',
+const keywordSearchLicitacao = ['consultar licitacoes', 'Consultar Licitações Empenhadas','Licitações Empenhadas', 'licitacao', 'licitacoes.aspx', 'acesso licitacoes',
     'despesa com licitacao', 'Licitacao', 'Licitacoes', 'Licitações', 'Dados de Licitações', 'Procedimentos Licitatórios', 'consultar', 'Pesquisar'
 ];
 
