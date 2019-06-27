@@ -89,12 +89,12 @@ const init = async () => {
     let criterionLicit = CrawlerUtil.createCriterion('Licitação');
     let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
-    // run(criterionDespesaOrc, evaluation, root);
-    // run(criterionDespesaExtra, evaluation, root);
-    // run(criterionReceitaExtra, evaluation, root);
-    // run(criterionReceitaOrc, evaluation, root);
+    run(criterionDespesaOrc, evaluation, root);
+    run(criterionDespesaExtra, evaluation, root);
+    run(criterionReceitaExtra, evaluation, root);
+    run(criterionReceitaOrc, evaluation, root);
     run(criterionLicit, evaluation, root);
-    // run(criterionPessoal, evaluation, root);
+    run(criterionPessoal, evaluation, root);
 
 }
 
