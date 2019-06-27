@@ -37,14 +37,14 @@ export default class PuppeteerUtil {
                 '--disable-infobars',
                 '--test-type',
             ],
-            headless: false
+            headless: true
         });
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
         await mainPage.setViewport({
-            width: 1500,
-            height: 1000
-            // height: 3000
+            width: 2000,
+            // height: 1080
+            height: 3000
         });
 
         return new PuppeteerInstance(browser, [mainPage]);
@@ -89,7 +89,7 @@ export default class PuppeteerUtil {
     }
 
     static async accessParent(page, parents) {
-
+       
         if (parents.length > 0) {
             const nodeParent = parents[0];
             if (HtmlUtil.isUrl(nodeParent.getSource().getValue())) {
@@ -98,12 +98,10 @@ export default class PuppeteerUtil {
                 const currentPage = page;
                 for (let parent of parents.reverse()) {
                     let source = parent.getSource();
-
                     if (parent.getSource().getIsExtractIframe() && (await page.constructor.name) !== "Frame") {
                         await page.waitForNavigation().catch(e => void e);
                         page = await PuppeteerUtil.detectContext(page).catch(e => void e);
                     }
-
                     if (HtmlUtil.isUrl(source.getValue())) {
                         Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
                     } else {

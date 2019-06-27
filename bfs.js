@@ -32,10 +32,7 @@ export default class Bfs {
         console.log("value: ", value);
         console.log("level: ", node.getLevel());
 
-
-
         try {
-
             if (node.getSource().getIsExtractIframe() && (await page.constructor.name) !== "Frame") {
                 await page.waitForNavigation().catch(e => void e);
                 page = await PuppeteerUtil.detectContext(page).catch(e => void e);
@@ -53,9 +50,7 @@ export default class Bfs {
                     changeUrl = true;
                 }
             }
-
             await page.waitFor(3000);
-
             if ((!isUrl || node.getSource().getIsExtractIframe()) && (await page.constructor.name) !== "Frame") {
                 page = await PuppeteerUtil.detectContext(page).catch(e => void e);
             }
@@ -72,13 +67,12 @@ export default class Bfs {
                 node = await CrawlerUtil.extractEdges(node, page, puppeteer, criterion.name, elementsIdentify);
                 itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
             }
-            page = currentPage;
             queue.push.apply(queue, node.getEdges());
             node.setResearched(true);
         } catch (e) {
             console.log("************click error*****************", e);
         }
-
+        page = currentPage;
         while (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
             for (let edge of queue) {
                 console.log("queue nodes: ****:", edge.getSource().value, ' level: ', edge.getLevel());

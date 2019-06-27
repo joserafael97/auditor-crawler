@@ -16,7 +16,7 @@ const identificationKeyWordRecOrcamentaria = {
         'Valor Arrecadado', 'Arrecadação'
     ],
     "lancado": ['valor lancado(r$)', 'valor', 'lançada'],
-    "cat_economica": ['categoria da receita', 'receita l.o.a.', 'CATEGORIA ECONÔMICA'],
+    "categoria_economica": ['categoria da receita', 'receita l.o.a.', 'CATEGORIA ECONÔMICA'],
     "origem": ['origem dos recursos a conta', 'descricao da receita', 'nome',
         'descricao receita (STN)',  'Descrição STN', 'Descrição',
         'Fonte Recurso', 'Fonte de Recurso', 'ORIGEM', 'Fonte do Recurso'
