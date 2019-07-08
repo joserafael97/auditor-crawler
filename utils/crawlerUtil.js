@@ -45,7 +45,8 @@ export default class CrawlerUtil {
                             urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
                     }
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                    if (TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))) &&
+                    if ((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))) 
+                    || !isNaN(text)) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
                             (currentNodeUrl !== currentUrl))) {
                         const isUrl = HtmlUtil.isUrl(text);

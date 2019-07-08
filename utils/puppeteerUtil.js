@@ -3,6 +3,7 @@
 import puppeteer from 'puppeteer';
 import TextUtil from '../utils/texUtil';
 import HtmlUtil from '../utils/htmlUtil';
+import StringSimilarity from 'string-similarity'
 import PuppeteerInstance from '../models/puppeteerInstance.class';
 import {
     XPATHIFRAME,
@@ -144,13 +145,20 @@ export default class PuppeteerUtil {
             edgesList !== null ? urlsList.push.apply(urlsList, TextUtil.getUrlsNodes(edgesList)) : urlsList;
             return TextUtil.similarityUrls(text, urlsList);
         } else {
+            let allNodes = [];
+            allNodes.push.apply(allNodes, arrayNodes)
+            allNodes.push.apply(allNodes, edgesList)
+            const isnum = /^\d+$/.test(text);
 
-            for (let node of arrayNodes) {
+
+            for (let node of allNodes) {
                 const value = node.getSource().getValue();
-
-                if ((node.getLevel() !== 0 &&
-                    currentNode.getSource().getValue() === node.getParent().getSource().getValue()) &&
-                    (node.getSource().getUrl() === currentUrl && value == text)) {
+                if (((node.getLevel() !== 0 &&
+                    currentNode.getSource().getValue() === node.getParent().getSource().getValue()) ||
+                    ((value == text) || 
+                    (isnum && StringSimilarity.compareTwoStrings(value.substring(value.length-4, value.length), text.substring(text.length-4, text.length)) > 0.6) || 
+                    (StringSimilarity.compareTwoStrings(value, text) > 0.95))) && 
+                    (node.getSource().getUrl() === currentUrl)) {
                     return true;
                 }
 

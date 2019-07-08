@@ -104,6 +104,7 @@ export default class XpathUtil {
                         '//a[contains({tagSearch},"{}")]'.replace('{tagSearch}', XpathUtil.normalizeXpath('@onclick')).replace('{}', keyWord) + ' | ' +
                         '//a[contains({tagSearch},"{}")]'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord) + ' | ' +
                         '//*[contains({tagSearch},"{}")]/parent::a'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
+                        '//a[contains({tagSearch},"{}")]/following::span'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
                         '//span[contains({tagSearch},"{}")]/parent::*'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTODYNAMICELEMENT, criterionKeyWords.keywordSearch)
                 );
             }
