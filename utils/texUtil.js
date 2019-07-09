@@ -44,14 +44,7 @@ export default class TextUtil {
                 if ((uri1.split('/').length - 1) > 0 && (uri2.split('/').length - 1) > 0) {
                     uri1 = uri1.split('/')[uri1.split('/').length - 2];
                     uri2 = uri2.split('/')[uri2.split('/').length - 2];
-                    console.log("=================SIM==================", StringSimilarity.compareTwoStrings(uri1, uri2));
-                    console.log("=================URI-01===================", uri1);
-                    console.log("=================URI-01===================", uri1.split('/')[uri1.split('/').length - 2]);
-                    console.log("=================URI-02===================", uri2)
-                    console.log("=================URI-02==================", uri2.split('/')[uri2.split('/').length - 2]);
                 }
-
-                console.log("**************************************************************************************************")
 
                 if (StringSimilarity.compareTwoStrings(uri1, uri2) > 0.95) {
                     return true;
@@ -115,7 +108,7 @@ export default class TextUtil {
 
         };
 
-        const unusableCommumTerms = ["javascript", 'filtro', 'xmlrpc', 'feed', 'tutorial', "pwd", "transparencia.rn.gov.br", "css", "recuperar-senha", "cadastro", '.xml', "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
+        const unusableCommumTerms = ["javascript", 'foot', 'token', 'maps','filtro', 'xmlrpc', 'feed', 'tutorial', "pwd", "transparencia.rn.gov.br", "css", "recuperar-senha", "cadastro", '.xml', "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
             '.js', 'download', 'widget', ".zip", ".jpeg", ".rar", "noticia", "publicidade", "noticia", "pinterest.com", 'javascript', 'wp-json', 'json'
         ];
 

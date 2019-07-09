@@ -42,15 +42,18 @@ export default class CrawlerUtil {
                     if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                         text = HtmlUtil.isUrl(text) ? text :
                             HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), text)) ?
-                            urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
+                                urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
                     }
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                    if ((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))) 
-                    || !isNaN(text)) &&
+
+                    if ((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text)))
+                        || (/^\d+$/.test(text))) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
                             (currentNodeUrl !== currentUrl))) {
                         const isUrl = HtmlUtil.isUrl(text);
+
                         text = !isUrl && (await CrawlerUtil.hrefValid(element, currentUrl)) ? await (await element.getProperty('href')).jsonValue() : text;
+
                         if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase()) &&
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
 
@@ -82,7 +85,7 @@ export default class CrawlerUtil {
             currentUrl.substring(currentUrl.lastIndexOf('/')) === '/' ? currentUrl + '#' : currentUrl + '/#';
 
         if (url !== undefined && (onclick !== null ||
-                (actuallyUrl === url || TextUtil.checkTextContainsInText('frameContent', url)))) {
+            (actuallyUrl === url || TextUtil.checkTextContainsInText('frameContent', url)))) {
             return false
         }
 

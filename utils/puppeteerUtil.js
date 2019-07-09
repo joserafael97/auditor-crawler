@@ -9,6 +9,7 @@ import {
     XPATHIFRAME,
     UNUSABLEIFRAMES
 } from '../utils/xpathUtil';
+import { is } from 'bluebird';
 
 
 
@@ -149,17 +150,27 @@ export default class PuppeteerUtil {
             allNodes.push.apply(allNodes, arrayNodes)
             allNodes.push.apply(allNodes, edgesList)
             const isnum = /^\d+$/.test(text);
+            const currentValue = currentNode.getSource().getValue();
 
+            if (isnum && (text.length < 5 || (text.includes(",") || text.includes('.'))) ){
+                return true;
+            }
 
             for (let node of allNodes) {
                 const value = node.getSource().getValue();
-                if (((node.getLevel() !== 0 &&
-                    currentNode.getSource().getValue() === node.getParent().getSource().getValue()) ||
-                    ((value == text) || 
-                    (isnum && StringSimilarity.compareTwoStrings(value.substring(value.length-4, value.length), text.substring(text.length-4, text.length)) > 0.6) || 
-                    (StringSimilarity.compareTwoStrings(value, text) > 0.95))) && 
-                    (node.getSource().getUrl() === currentUrl)) {
-                    return true;
+
+
+                if (node.getLevel() !== 0) {
+                    if ((HtmlUtil.isUrl(currentValue) && node.getSource().getUrl() === currentUrl)) {
+                        if (((currentValue === value || value == text) ||
+                            (isnum &&
+                                StringSimilarity.compareTwoStrings(value.substring(value.length - 4, value.length),
+                                    text.substring(text.length - 4, text.length)) > 0.6)) ||
+                            StringSimilarity.compareTwoStrings(value, text) > 0.95) {
+
+                            return true;
+                        }
+                    }
                 }
 
 
