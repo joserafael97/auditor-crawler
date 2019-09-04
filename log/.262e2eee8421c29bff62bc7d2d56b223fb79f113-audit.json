@@ -59,6 +59,21 @@
             "date": 1562591341090,
             "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Mo-07-yyyy",
             "hash": "3c15ecae92aef634505ab4dc54319ea9"
+        },
+        {
+            "date": 1562762903004,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..We-07-yyyy",
+            "hash": "5695e66e9b5e1b6622979e37663b362c"
+        },
+        {
+            "date": 1562863661612,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Th-07-yyyy",
+            "hash": "46acd8d0e9f82a333dda60455877b7d6"
+        },
+        {
+            "date": 1567629417456,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..We-09-yyyy",
+            "hash": "0c5b26ce7c2010ac3d7260b2de922307"
         }
     ]
 }
