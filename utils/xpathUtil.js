@@ -1,6 +1,6 @@
 'use strict';
 import CriterionKeyWord from '../models/criterionKeyWord.model'
-import TextUtil from './texUtil';
+import TextUtil from './textUtil';
 import QueryElement from '../models/queryElement.class'
 import { QUERYTODYNAMICELEMENT, QUERYTOSTATICCOMPONENT } from '../models/queryElement.class'
 

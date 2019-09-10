@@ -5,7 +5,7 @@ import CrawlerUtil from './utils/crawlerUtil';
 import HtmlUtil from './utils/htmlUtil';
 
 
-export default class Bfs {
+export default class BanditProcess {
 
     static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null) {
         if (puppeteer == null) {
@@ -68,20 +68,7 @@ export default class Bfs {
         } catch (e) {
             console.log("************click error*****************", e);
         }
-        page = currentPage;
-        
-        while (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
-            for (let edge of queue) {
-                console.log("queue nodes: ****:", edge.getSource().value, ' level: ', edge.getLevel());
-            }
-            const newNode = queue.shift();
-            if (newNode.getLevel() > 0 && !HtmlUtil.isUrl(newNode.getSource().getValue())) {
-                await page.waitForNavigation().catch(e => void e);
-                await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
-            }
-            return Bfs.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens);
-        }
-
+       
         console.log("*********************close browser***********************************************");
         await puppeteer.getBrowser().close();
 

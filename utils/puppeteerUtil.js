@@ -1,7 +1,7 @@
 'use-strict';
 
 import puppeteer from 'puppeteer';
-import TextUtil from '../utils/texUtil';
+import TextUtil from './textUtil';
 import HtmlUtil from '../utils/htmlUtil';
 import StringSimilarity from 'string-similarity'
 import PuppeteerInstance from '../models/puppeteerInstance.class';

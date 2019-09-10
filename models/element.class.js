@@ -11,14 +11,11 @@ export default class Element {
         this.puppeteerInstance = puppeteerInstance;
         this.url = url;
         this.isExtractIframe = isExtractIframe;
-
     }
-
 
     getIsExtractIframe() {
         return this.isExtractIframe;
     }
-
 
     getXpath() {
         return this.xpath;
@@ -47,7 +44,6 @@ export default class Element {
     setUrl(url) {
         this.url = url;
     }
-
 
     setIsExtractIframe(isExtractIframe) {
         this.isExtractIframe = isExtractIframe;

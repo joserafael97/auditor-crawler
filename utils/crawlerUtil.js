@@ -1,6 +1,6 @@
 'use strict';
 
-import TextUtil from '../utils/texUtil';
+import TextUtil from './textUtil';
 import XpathUtil from '../utils/xpathUtil';
 import HtmlUtil from '../utils/htmlUtil';
 import PuppeteerUtil from "../utils/puppeteerUtil";
@@ -10,7 +10,7 @@ import Item from '../models/item.model';
 import Criterion from '../models/criterion.model';
 import FileUtil from '../utils/fileUtil';
 
-import Node from '../models/bfs/node';
+import Node from '../models/node';
 
 import {
     QUERYTOSTATICCOMPONENT

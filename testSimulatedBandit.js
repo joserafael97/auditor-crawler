@@ -9,7 +9,7 @@ function simulate(algoClass, options, arms, horizon){
 
     const algo = new algoClass(options);
     let cumulativeReward = 0;
-    for (let t = 0 ; t < horizon; t ++){
+    for (let t = 0 ; t < horizon; t++){
         const i = algo.selectArm();
         const arm = arms[i];
         const reward = arm.pull();
