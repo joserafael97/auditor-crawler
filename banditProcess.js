@@ -68,7 +68,13 @@ export default class BanditProcess {
         } catch (e) {
             console.log("************click error*****************", e);
         }
-       
+        //train classifier with page crawled
+        //predict again nodes not crawled (url or componets js not acessed)
+
+        page = currentPage;
+
+        //select node with max score
+        // TODO
         console.log("*********************close browser***********************************************");
         await puppeteer.getBrowser().close();
 

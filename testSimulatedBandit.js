@@ -1,32 +1,26 @@
-import BernoulliArm from "./bernoulliArm";
-import EpsilonGreedy from "./epsilonGreedy";
+
+import { GaussianNB } from 'ml-naivebayes';
+import { Matrix } from 'ml-matrix';
 
 
-function simulate(algoClass, options, arms, horizon){
-    let chosenArms = Array(horizon).fill();
-    let rewards = Array(horizon).fill();
-    let cumulativeRewards = Array(horizon).fill();
+let weather=['Sunny','Sunny','Overcast','Rainy','Rainy','Rainy','Overcast','Sunny','Sunny',
+'Rainy','Sunny','Overcast','Overcast','Rainy'];
 
-    const algo = new algoClass(options);
-    let cumulativeReward = 0;
-    for (let t = 0 ; t < horizon; t++){
-        const i = algo.selectArm();
-        const arm = arms[i];
-        const reward = arm.pull();
-        algo.update(i, reward);
+// [['sunny', 'hot']] == 'yes'
 
-        chosenArms[t] = i;
-        rewards[t] = reward;
-        cumulativeReward += reward;
-        cumulativeRewards[t] = cumulativeReward;
-    }
+//features
+let weather_converted = [[2, 1, 1], [2, 1, 1], [0, 1, 0], [1, 2, 0], [1, 0, 0], [1, 0, 0], [0, 0, 0], [2, 2, 0], [2, 0, 0], [1, 2, 0], [2, 2, 0], [0, 2, 0], [0, 1, 0], [1, 2, 0]];
 
-    return {chosenArms, rewards, cumulativeRewards};
-}
+let temp=['Hot','Hot','Hot','Mild','Cool','Cool','Cool','Mild','Cool','Mild','Mild','Mild','Hot','Mild']
 
-const nArms = 5;
-let arms = Array(nArms).fill().map(_ => new BernoulliArm(Math.random() / 10))
-const results = simulate(EpsilonGreedy, {epsilon: .1, n: nArms}, arms, 100000)
+let play=['No','No','Yes','Yes','Yes','No','Yes','No','Yes','Yes','Yes','Yes','Yes','No']
 
+//label
+let play_converted = [0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0];
 
-console.log(results.chosenArms)
+var model = new GaussianNB();
+model.train(weather_converted, play_converted);
+
+var predictions = model.predict([[0, 1, 0]]);
+
+console.log("teste", predictions)

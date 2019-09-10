@@ -9,6 +9,7 @@ import Evaluation from '../models/evaluation.model';
 import Item from '../models/item.model';
 import Criterion from '../models/criterion.model';
 import FileUtil from '../utils/fileUtil';
+import FeaturesConst from '../consts/featuares';
 
 import Node from '../models/node';
 
