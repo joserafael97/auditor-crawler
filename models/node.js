@@ -9,6 +9,8 @@ export default class Node {
         this.edges = edges;
         this.parent = parent;
         this.researched = researched;
+        this.have_a_father_relevant = false;
+        this.have_brother_relevant = false;
     }
 
     getLevel() {
@@ -23,6 +25,22 @@ export default class Node {
         } else {
             return 0;
         }
+    }
+
+    setHaveAFatherRelevant( variable ){
+        this.have_a_father_relevant = variable;
+    }
+
+    getHaveAFatherRelevant() {
+        return this.have_a_father_relevant;
+    }
+
+    setHaveBrotherRelevant(variable) {
+        this.have_brother_relevant = variable;
+    }
+
+    getHaveBrotherRelevant() {
+        return this.have_brother_relevant;
     }
 
     getSourcesParents() {

@@ -3,6 +3,7 @@
 import PuppeteerUtil from "./utils/puppeteerUtil";
 import CrawlerUtil from './utils/crawlerUtil';
 import HtmlUtil from './utils/htmlUtil';
+import { GaussianNB } from 'ml-naivebayes';
 
 
 export default class BanditProcess {
@@ -65,9 +66,19 @@ export default class BanditProcess {
             }
             queue.push.apply(queue, node.getEdges());
             node.setResearched(true);
+
+            node.setHaveAFatherRelevant(true);
+            node.setHaveBrotherRelevant(true);
+        
         } catch (e) {
             console.log("************click error*****************", e);
         }
+
+        var model = new GaussianNB();
+        model.train([[1, 1], [0, 0]], [1, 0]);
+
+        var predictions = model.predict([[node.getHaveAFatherRelevant() ? 1 : 0, node.getHaveBrotherRelevant() ? 1 : 0]]);
+        console.log("teste", predictions)
         //train classifier with page crawled
         //predict again nodes not crawled (url or componets js not acessed)
 
