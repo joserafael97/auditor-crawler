@@ -79,6 +79,11 @@
             "date": 1568119300661,
             "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Tu-09-yyyy",
             "hash": "b38ab2dc45e6d444e599d80a65b9176c"
+        },
+        {
+            "date": 1568319592559,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Th-09-yyyy",
+            "hash": "ce3f5e8ed874a321377945757e8b5ea4"
         }
     ]
 }

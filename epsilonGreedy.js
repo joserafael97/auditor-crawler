@@ -3,19 +3,19 @@
 export default class EpsilonGreedy {
 
     constructor(n_arms, epsilon_decay) {
-        this.n = n;
-        this.decay = epsilon_decay;
-        this.counts = Array(n).fill(0);
-        this.values = Array(n).fill(0);
         this.n = n_arms
+        this.decay = epsilon_decay;
+        this.counts = Array(n_arms).fill(0);
+        this.values = Array(n_arms).fill(0);
     }
 
     chooseArm() {
-        randomValue = Math.random();
-        console.log("Math.random() = ", randomValue)
-        console.log("this.epsilon = ", this.epsilon)
-        
+        const randomValue = Math.random();
         const epsilon = this.getEpsilon();
+
+        console.log("Math.random() = ", randomValue)
+        console.log("epsilon = ", epsilon)
+        
 
         if (randomValue > epsilon) {
             //Exploit (use best arm)
@@ -28,7 +28,7 @@ export default class EpsilonGreedy {
 
     update(indexArm, reward){
         this.counts[indexArm] = this.counts[indexArm] + 1;
-        n = this.counts[indexArm];
+        const n = this.counts[indexArm];
         const value = this.values[indexArm];
         new_value = ((n - 1) / float(n)) * value + (1 / float(n)) * reward;
         this.values[indexArm] = new_value;
@@ -48,9 +48,8 @@ export default class EpsilonGreedy {
     }
 
     getEpsilon() {
-        total = this.counts.reduce((a, b) => a + b, 0)
-
-        newEpsilon = float(this.decay) / (total + float(this.decay))
+        const total = this.counts.reduce((a, b) => a + b, 0)
+        const newEpsilon = parseFloat(this.decay) / (total + parseFloat(this.decay))
         console.log("-------ep----", newEpsilon)
         return newEpsilon
     }

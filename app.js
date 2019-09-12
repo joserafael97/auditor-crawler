@@ -14,6 +14,8 @@ import CreateCountyMetaData from './db/createCountyMetaData'
 import CliParamUtil from './utils/cliParamUtil';
 import AproachType from './consts/aproachType'
 import BanditProcess from './banditProcess';
+import EpsilonGreedy from './epsilonGreedy';
+import { GaussianNB } from 'ml-naivebayes';
 
 //checar se o node URL encontrado tem como pai um xpath e não mudou a página (mesma URL). Caso isso seja verificado, a URL pode ser duplicada.
 //adicionar lista de termos não úteis
@@ -35,10 +37,10 @@ const run = async (criterion, evaluation, root) => {
     let itens = [];
 
     if (aproachSelected == AproachType.BFS || aproachSelected == '' || aproachSelected == "default") {
-        itens = await Bfs.initilize(root, null, [], criterion, evaluation, []).catch(logErrorAndExit)
+        itens = await Bfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
     } else if (aproachSelected == AproachType.BANDIT) {
         console.log("-------------------------------", "entrou no Bandit")
-        itens = await BanditProcess.initilize(root, null, [], criterion, evaluation, []).catch(logErrorAndExit)
+        itens = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1), []).catch(logErrorAndExit)
     }
 
     evaluation.dateEnd = new Date();

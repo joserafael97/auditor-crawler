@@ -4,11 +4,12 @@ import PuppeteerUtil from "./utils/puppeteerUtil";
 import CrawlerUtil from './utils/crawlerUtil';
 import HtmlUtil from './utils/htmlUtil';
 import { GaussianNB } from 'ml-naivebayes';
+import EpsilonGreedy from './epsilonGreedy';
 
 
 export default class BanditProcess {
 
-    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null) {
+    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, model, epsilonGreedyAlg, trainData = []) {
         if (puppeteer == null) {
             puppeteer = await PuppeteerUtil.createPuppetterInstance();
         }
@@ -69,12 +70,11 @@ export default class BanditProcess {
 
             node.setHaveAFatherRelevant(true);
             node.setHaveBrotherRelevant(true);
-        
+
         } catch (e) {
             console.log("************click error*****************", e);
         }
 
-        var model = new GaussianNB();
         model.train([[1, 1], [0, 0]], [1, 0]);
 
         var predictions = model.predict([[node.getHaveAFatherRelevant() ? 1 : 0, node.getHaveBrotherRelevant() ? 1 : 0]]);
@@ -86,6 +86,19 @@ export default class BanditProcess {
 
         //select node with max score
         // TODO
+
+        // while (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
+        // const newNode = queue.shift();
+
+        const index = epsilonGreedyAlg.chooseArm()
+        console.log("================", index)
+
+        // if (newNode.getLevel() > 0 && !HtmlUtil.isUrl(newNode.getSource().getValue())) {
+        //     await page.waitForNavigation().catch(e => void e);
+        //     await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
+        // }
+        // return BanditProcess.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, model);
+        // }
         console.log("*********************close browser***********************************************");
         await puppeteer.getBrowser().close();
 
