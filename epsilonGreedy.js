@@ -1,35 +1,37 @@
 'use-strict';
 
 export default class EpsilonGreedy {
-    
-    constructor ({epsilon, n}) {
-        this.epsilon = epsilon;
+
+    constructor(n_arms, epsilon_decay) {
         this.n = n;
-        
-        //init arrays with length n variable and 0 values
+        this.decay = epsilon_decay;
         this.counts = Array(n).fill(0);
-        this.values = Array(n).fill(0);    
+        this.values = Array(n).fill(0);
+        this.n = n_arms
     }
-    
-    selectArm(){
-        if (Math.random() > this.epsilon){
 
-            //todo computer score to node (urls, componentes acessíveis)
-            // TODO CODE
+    chooseArm() {
+        randomValue = Math.random();
+        console.log("Math.random() = ", randomValue)
+        console.log("this.epsilon = ", this.epsilon)
+        
+        const epsilon = this.getEpsilon();
 
-            //Select Index with max payoff 
+        if (randomValue > epsilon) {
+            //Exploit (use best arm)
             return this.values.indexOf(Math.max(...this.values));
-
-        }else{
-            //Select Index of randomly 
-            return this.randomIntFromRange(0, this.n)
+        } else {
+            //Explore (test all arms)
+            return this.randomIntFromRange(0, this.n);
         }
     }
 
-    update(i, reward) {
-        const n = ++this.counts[i];
-        const v = this.values[i];
-        this.values[i] = (v * (n - 1) + reward) / n
+    update(indexArm, reward){
+        this.counts[indexArm] = this.counts[indexArm] + 1;
+        n = this.counts[indexArm];
+        const value = this.values[indexArm];
+        new_value = ((n - 1) / float(n)) * value + (1 / float(n)) * reward;
+        this.values[indexArm] = new_value;
     }
 
     /**
@@ -41,8 +43,15 @@ export default class EpsilonGreedy {
      */
     randomIntFromRange(min, max) {
         min = Math.ceil(min);
-        max = Math.floor(max-1);
+        max = Math.floor(max - 1);
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
+    getEpsilon() {
+        total = this.counts.reduce((a, b) => a + b, 0)
+
+        newEpsilon = float(this.decay) / (total + float(this.decay))
+        console.log("-------ep----", newEpsilon)
+        return newEpsilon
+    }
 }
