@@ -17,7 +17,6 @@ export default class BanditProcess {
         let page = puppeteer.getFirstPage();
         const value = node.getSource().getValue();
         const currentPage = page;
-        const numPages = (await puppeteer.getBrowser().pages()).length;
         const isUrl = HtmlUtil.isUrl(value);
         const xpath = node.getSource().getXpath();
         let changeUrl = false;
@@ -25,7 +24,6 @@ export default class BanditProcess {
         const currentURL = await page.url();
 
         console.log("********************************************************************");
-        console.log("numPagesOpened: ", numPages);
         console.log("value: ", value);
         console.log("level: ", node.getLevel());
 
@@ -67,41 +65,24 @@ export default class BanditProcess {
             }
             queue.push.apply(queue, node.getEdges());
             node.setResearched(true);
-
-            node.setHaveAFatherRelevant(true);
-            node.setHaveBrotherRelevant(true);
-
         } catch (e) {
             console.log("************click error*****************", e);
         }
 
-        model.train([[1, 1], [0, 0]], [1, 0]);
-
-        var predictions = model.predict([[node.getHaveAFatherRelevant() ? 1 : 0, node.getHaveBrotherRelevant() ? 1 : 0]]);
-        console.log("teste", predictions)
-        //train classifier with page crawled
-        //predict again nodes not crawled (url or componets js not acessed)
-
+        // CLASSIFICATION
+        // 01. Retrain classifier with new result 
+        // 02. Predict all not acessed nodes with actually model
+        
         page = currentPage;
 
-        //select node with max score
-        // TODO
+        // BANDIT APROACH
+        // 01. Update reward
+        // 02. Select best or random Arm (Node in this case)
+        
+        // RETURN FUNCTION AGAIN WITH NODE SELECT
 
-        // while (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
-        // const newNode = queue.shift();
-
-        const index = epsilonGreedyAlg.chooseArm()
-        console.log("================", index)
-
-        // if (newNode.getLevel() > 0 && !HtmlUtil.isUrl(newNode.getSource().getValue())) {
-        //     await page.waitForNavigation().catch(e => void e);
-        //     await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
-        // }
-        // return BanditProcess.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, model);
-        // }
         console.log("*********************close browser***********************************************");
         await puppeteer.getBrowser().close();
-
         return itens;
     };
 
