@@ -26,6 +26,10 @@ export default class EpsilonGreedy {
         }
     }
 
+    updateNumArms(numArms){
+        this.n = numArms
+    }
+
     update(indexArm, reward){
         this.counts[indexArm] = this.counts[indexArm] + 1;
         const n = this.counts[indexArm];

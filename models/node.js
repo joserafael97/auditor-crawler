@@ -1,5 +1,6 @@
 'use strict';
 
+import FeaturesConst from '../consts/featuares';
 
 
 export default class Node {
@@ -9,8 +10,11 @@ export default class Node {
         this.edges = edges;
         this.parent = parent;
         this.researched = researched;
+        this.predictValue = 0;
         this.have_a_father_relevant = false;
         this.have_brother_relevant = false;
+        this.features = {
+        };
     }
 
     getLevel() {
@@ -27,7 +31,15 @@ export default class Node {
         }
     }
 
-    setHaveAFatherRelevant( variable ){
+    setFeatures(feat) {
+        this.features = feat;
+    }
+
+    getFeatures() {
+        return this.features
+    }
+
+    setHaveAFatherRelevant(variable) {
         this.have_a_father_relevant = variable;
     }
 
@@ -120,5 +132,13 @@ export default class Node {
 
     setEdgesList(edges) {
         this.edges = edges;
+    }
+
+    setPredictValue(value) {
+        this.predictValue = value;
+    }
+
+    getPredictValue() {
+        return this.predictValue;
     }
 }

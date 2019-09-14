@@ -69,6 +69,9 @@ export default class BanditProcess {
             console.log("************click error*****************", e);
         }
 
+        console.log("------------fit::::", node.getFeatures())
+
+
         // CLASSIFICATION
         // 01. Retrain classifier with new result 
         // 02. Predict all not acessed nodes with actually model

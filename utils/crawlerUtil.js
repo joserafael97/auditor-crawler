@@ -27,6 +27,7 @@ export default class CrawlerUtil {
         queryElements = queryElements.concat(queryElementDynamicComponents);
 
         let edgesList = [];
+        let result = node.getFeatures();
         const currentValue = node.getSource().getValue();
         const currentUrl = await page.url();
         const currentNodeUrl = node.getSource().getUrl();
@@ -73,6 +74,8 @@ export default class CrawlerUtil {
                 }
             }
         }
+        result[FeaturesConst.HAVE_A_FATHER_WITH_NEW_COMPONETS_EXTRACTED] = edgesList.length > 0 ? 1 : 0;
+        node.setFeatures(result)
         node.setEdgesList(edgesList);
         return node;
     };
@@ -97,6 +100,8 @@ export default class CrawlerUtil {
 
     static async identificationItens(criterionName, page, itensSearch = null, pageOrigin = page, evaluation, node) {
         let itens = itensSearch !== null ? itensSearch : await CrawlerUtil.initializeItens(criterionName);
+        let numberItensIdentify = 0;
+        let result = node.getFeatures();
 
         for (let item of itens) {
             const element = (await page.$x(item.xpath))[0];
@@ -122,8 +127,14 @@ export default class CrawlerUtil {
                 });
                 item.proof.length > 0 ? FileUtil.deleteFile(item.proof) : '';
                 item.proof = path;
+
+                numberItensIdentify = item.found ? numberItensIdentify + 1 : numberItensIdentify;
             }
         }
+        result[FeaturesConst.HAVE_A_FATHER_WITH_ONE_ITEM_CRITERIO] = numberItensIdentify == 1 ? 1 : 0;
+        result[FeaturesConst.HAVE_A_FATHER_WITH_TWO_ITEM_CRITERIO] = numberItensIdentify == 2 ? 1 : 0;
+        result[FeaturesConst.HAVE_A_FATHER_WITH_MORE_ITEM_CRITERIO] = numberItensIdentify > 1 ? 1 : 0;
+        node.setFeatures(result)
         CrawlerUtil.checkIdentificationItens(itens, await page.url());
         return itens;
     }
