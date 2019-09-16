@@ -40,7 +40,7 @@ const run = async (criterion, evaluation, root) => {
         itens = await Bfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
     } else if (aproachSelected == AproachType.BANDIT) {
         console.log("-------------------------------", "entrou no Bandit")
-        itens = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1), []).catch(logErrorAndExit)
+        itens = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1)).catch(logErrorAndExit)
     }
 
     evaluation.dateEnd = new Date();
@@ -101,11 +101,11 @@ const init = async () => {
     let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
     // run(criterionDespesaOrc, evaluation, root);
-    // run(criterionDespesaExtra, evaluation, root);
+    run(criterionDespesaExtra, evaluation, root);
     // run(criterionReceitaExtra, evaluation, root);
     // run(criterionReceitaOrc, evaluation, root);
     // run(criterionLicit, evaluation, root);
-    run(criterionPessoal, evaluation, root);
+    // run(criterionPessoal, evaluation, root);
 
 }
 

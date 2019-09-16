@@ -5,11 +5,12 @@ import CrawlerUtil from './utils/crawlerUtil';
 import HtmlUtil from './utils/htmlUtil';
 import { GaussianNB } from 'ml-naivebayes';
 import EpsilonGreedy from './epsilonGreedy';
+import FeaturesConst from './consts/featuares';
 
 
 export default class BanditProcess {
 
-    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, model, epsilonGreedyAlg, trainData = []) {
+    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, model, epsilonGreedyAlg, xTrain = [], yTrain = []) {
         if (puppeteer == null) {
             puppeteer = await PuppeteerUtil.createPuppetterInstance();
         }
@@ -69,20 +70,52 @@ export default class BanditProcess {
             console.log("************click error*****************", e);
         }
 
-        console.log("------------fit::::", node.getFeatures())
+        if (node.getLevel() > 0) {
+            console.log("==================:", node.getFeatures()[FeaturesConst.HAVE_URL_RELEVANT])
+
+            xTrain.push([
+                node.getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
+                node.getParent().getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
+                node.getParent().getFeatures()[FeaturesConst.HAVE_ONE_ITEM_CRITERIO],
+                node.getParent().getFeatures()[FeaturesConst.HAVE_TWO_ITEM_CRITERIO],
+                node.getParent().getFeatures()[FeaturesConst.HAVE_MORE_ITEM_CRITERIO],
+            ]);
+            yTrain.push(node.getFeatures()[FeaturesConst.RESULT]);
+            model.train(xTrain, yTrain);
+        } 
+
+        console.log("xtrain:", xTrain)
+        console.log("yTrain:", yTrain)
 
 
         // CLASSIFICATION
         // 01. Retrain classifier with new result 
         // 02. Predict all not acessed nodes with actually model
-        
+
         page = currentPage;
 
-        // BANDIT APROACH
-        // 01. Update reward
-        // 02. Select best or random Arm (Node in this case)
-        
-        // RETURN FUNCTION AGAIN WITH NODE SELECT
+        if (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
+
+            epsilonGreedyAlg.updateNumArms(queue.length);
+            const index = epsilonGreedyAlg.chooseArm();
+
+            console.log("index ======================== ", index)
+
+            const newNode = queue[index]
+            queue.splice(index, 1);
+
+            if (newNode.getLevel() > 0 && !HtmlUtil.isUrl(newNode.getSource().getValue())) {
+                await page.waitForNavigation().catch(e => void e);
+                await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
+            }
+            return BanditProcess.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, model, epsilonGreedyAlg, xTrain, yTrain);
+
+            // BANDIT APROACH
+            // 01. Update reward
+            // 02. Select best or random Arm (Node in this case)
+
+            // RETURN FUNCTION AGAIN WITH NODE SELECT
+        }
 
         console.log("*********************close browser***********************************************");
         await puppeteer.getBrowser().close();

@@ -31,6 +31,7 @@ export default class CrawlerUtil {
         const currentValue = node.getSource().getValue();
         const currentUrl = await page.url();
         const currentNodeUrl = node.getSource().getUrl();
+        result[FeaturesConst.HAVE_URL_RELEVANT] = TextUtil.checkUrlRelvant(currentUrl, criterionKeyWordName) ? 1 : 0;
 
         for (let queryElement of queryElements) {
             const elements = await page.$x(queryElement.getXpath());
@@ -74,7 +75,7 @@ export default class CrawlerUtil {
                 }
             }
         }
-        result[FeaturesConst.HAVE_A_FATHER_WITH_NEW_COMPONETS_EXTRACTED] = edgesList.length > 0 ? 1 : 0;
+        result[FeaturesConst.HAVE_NEW_COMPONETS_EXTRACTED] = edgesList.length > 0 ? 1 : 0;
         node.setFeatures(result)
         node.setEdgesList(edgesList);
         return node;
@@ -131,9 +132,10 @@ export default class CrawlerUtil {
                 numberItensIdentify = item.found ? numberItensIdentify + 1 : numberItensIdentify;
             }
         }
-        result[FeaturesConst.HAVE_A_FATHER_WITH_ONE_ITEM_CRITERIO] = numberItensIdentify == 1 ? 1 : 0;
-        result[FeaturesConst.HAVE_A_FATHER_WITH_TWO_ITEM_CRITERIO] = numberItensIdentify == 2 ? 1 : 0;
-        result[FeaturesConst.HAVE_A_FATHER_WITH_MORE_ITEM_CRITERIO] = numberItensIdentify > 1 ? 1 : 0;
+        result[FeaturesConst.RESULT] = numberItensIdentify > 0 ? 1 : 0;
+        result[FeaturesConst.HAVE_ONE_ITEM_CRITERIO] = numberItensIdentify == 1 ? 1 : 0;
+        result[FeaturesConst.HAVE_TWO_ITEM_CRITERIO] = numberItensIdentify == 2 ? 1 : 0;
+        result[FeaturesConst.HAVE_MORE_ITEM_CRITERIO] = numberItensIdentify > 1 ? 1 : 0;
         node.setFeatures(result)
         CrawlerUtil.checkIdentificationItens(itens, await page.url());
         return itens;

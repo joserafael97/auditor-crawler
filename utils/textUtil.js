@@ -13,7 +13,7 @@ export default class TextUtil {
         return text.replace(/(\r\n|\n|\r)/gm, '').replace(/ +(?= )/g, '').trim();
     }
 
-   
+
 
     static checkTextContainsArray(array, text) {
         for (let index = 0; index < array.length; index++) {
@@ -23,6 +23,17 @@ export default class TextUtil {
             }
 
         }
+        return false;
+    }
+
+    static checkUrlRelvant(urlPage, termosCriterion) {
+        const url1Isnum = /^\d+$/.test(urlPage);
+        let uri1 = !url1Isnum ? HtmlUtil.extractUri(urlPage).replace('/', '').replace(/[0-9]/g, '') : HtmlUtil.extractUri(urlPage).replace('/', '');
+
+        if (StringSimilarity.compareTwoStrings(uri1, termosCriterion) > 0.95 || TextUtil.checkTextContainsInText(termosCriterion, uri1)) {
+            return true;
+        }
+
         return false;
     }
 
@@ -37,7 +48,7 @@ export default class TextUtil {
             if (host1 === host2 && uri1.length > 0) {
                 const consturi2Isnum = /^\d+$/.test(currentUrl);
                 let uri2 = !consturi2Isnum ? HtmlUtil.extractUri(currentUrl).replace('/', '').replace(/[0-9]/g, '') : HtmlUtil.extractUri(currentUrl).replace('/', '');
-              
+
 
                 if ((uri1.split('/').length - 1) > 0 && (uri2.split('/').length - 1) > 0) {
                     uri1 = uri1.split('/')[uri1.split('/').length - 2];
@@ -106,7 +117,7 @@ export default class TextUtil {
 
         };
 
-        const unusableCommumTerms = ["javascript", 'foot', 'token', 'maps','filtro', 'xmlrpc', 'feed', 'tutorial', "pwd", "transparencia.rn.gov.br", "css", "recuperar-senha", "cadastro", '.xml', "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
+        const unusableCommumTerms = ["javascript", 'foot', 'token', 'maps', 'filtro', 'xmlrpc', 'feed', 'tutorial', "pwd", "transparencia.rn.gov.br", "css", "recuperar-senha", "cadastro", '.xml', "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
             '.js', 'download', 'widget', ".zip", ".jpeg", ".rar", "noticia", "publicidade", "noticia", "pinterest.com", 'javascript', 'wp-json', 'json'
         ];
 
