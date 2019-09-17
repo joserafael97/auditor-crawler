@@ -75,7 +75,6 @@ export default class CrawlerUtil {
                 }
             }
         }
-        result[FeaturesConst.HAVE_NEW_COMPONETS_EXTRACTED] = edgesList.length > 0 ? 1 : 0;
         node.setFeatures(result)
         node.setEdgesList(edgesList);
         return node;

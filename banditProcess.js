@@ -66,32 +66,29 @@ export default class BanditProcess {
             }
             queue.push.apply(queue, node.getEdges());
             node.setResearched(true);
-        } catch (e) {
-            console.log("************click error*****************", e);
-        }
 
-        if (node.getLevel() > 0) {
-            console.log("==================:", node.getFeatures()[FeaturesConst.HAVE_URL_RELEVANT])
-
-            xTrain.push([
+            if (node.getLevel() > 0) {
+                xTrain.push([
                 node.getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
                 node.getParent().getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
                 node.getParent().getFeatures()[FeaturesConst.HAVE_ONE_ITEM_CRITERIO],
                 node.getParent().getFeatures()[FeaturesConst.HAVE_TWO_ITEM_CRITERIO],
                 node.getParent().getFeatures()[FeaturesConst.HAVE_MORE_ITEM_CRITERIO],
-            ]);
-            yTrain.push(node.getFeatures()[FeaturesConst.RESULT]);
-            model.train(xTrain, yTrain);
-        } 
+                ]);
+                yTrain.push(node.getFeatures()[FeaturesConst.RESULT]);
+                model.train(xTrain, yTrain);
+            } 
 
-        console.log("xtrain:", xTrain)
-        console.log("yTrain:", yTrain)
+            console.log("xtrain:", xTrain)
+            console.log("yTrain:", yTrain)
+        } catch (e) {
+            console.log("************click error*****************", e);
+        }
 
-
+       
         // CLASSIFICATION
         // 01. Retrain classifier with new result 
-        // 02. Predict all not acessed nodes with actually model
-
+ 
         page = currentPage;
 
         if (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
