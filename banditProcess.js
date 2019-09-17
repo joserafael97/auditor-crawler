@@ -6,6 +6,7 @@ import HtmlUtil from './utils/htmlUtil';
 import { GaussianNB } from 'ml-naivebayes';
 import EpsilonGreedy from './epsilonGreedy';
 import FeaturesConst from './consts/featuares';
+import TextUtil from "./utils/textUtil";
 
 
 export default class BanditProcess {
@@ -64,32 +65,33 @@ export default class BanditProcess {
                 node = await CrawlerUtil.extractEdges(node, page, puppeteer, criterion.name, elementsIdentify);
                 itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
             }
+
             queue.push.apply(queue, node.getEdges());
             node.setResearched(true);
 
-            if (node.getLevel() > 0) {
-                xTrain.push([
-                node.getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
-                node.getParent().getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
-                node.getParent().getFeatures()[FeaturesConst.HAVE_ONE_ITEM_CRITERIO],
-                node.getParent().getFeatures()[FeaturesConst.HAVE_TWO_ITEM_CRITERIO],
-                node.getParent().getFeatures()[FeaturesConst.HAVE_MORE_ITEM_CRITERIO],
-                ]);
-                yTrain.push(node.getFeatures()[FeaturesConst.RESULT]);
-                model.train(xTrain, yTrain);
-            } 
 
-            console.log("xtrain:", xTrain)
-            console.log("yTrain:", yTrain)
+            if (node.getLevel()) {
+                BanditProcess.trainModel(node, xTrain, yTrain, model);
+            }
+
+
+
         } catch (e) {
             console.log("************click error*****************", e);
         }
 
-       
+        for (let edge of queue) {
+            console.log("queue nodes: ****:", edge.getSource().value, ' level: ', edge.getLevel());
+        }
+
+
         // CLASSIFICATION
         // 01. Retrain classifier with new result 
- 
+
         page = currentPage;
+
+        console.log("xtrain:", xTrain)
+        console.log("yTrain:", yTrain)
 
         if (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
 
@@ -112,11 +114,49 @@ export default class BanditProcess {
             // 02. Select best or random Arm (Node in this case)
 
             // RETURN FUNCTION AGAIN WITH NODE SELECT
+        } else {
+            BanditProcess.trainModelActuallyNode(node, xTrain, yTrain, model);
         }
 
         console.log("*********************close browser***********************************************");
+        console.log("xtrain:", xTrain)
+        console.log("yTrain:", yTrain)
         await puppeteer.getBrowser().close();
         return itens;
     };
+
+    static trainModel(node, xTrain, yTrain, model) {
+        const newTrain = [
+            node.getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
+            node.getParent().getFeatures()[FeaturesConst.HAVE_CRITERION_TERM_IN_PAGE],
+            node.getParent().getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
+            node.getParent().getFeatures()[FeaturesConst.HAVE_ONE_ITEM_CRITERIO],
+            node.getParent().getFeatures()[FeaturesConst.HAVE_TWO_ITEM_CRITERIO],
+            node.getParent().getFeatures()[FeaturesConst.HAVE_MORE_ITEM_CRITERIO],
+        ]
+
+        if (!TextUtil.checkArrayContainsInListArrays(xTrain, newTrain)) {
+            xTrain.push(newTrain);
+            yTrain.push(node.getFeatures()[FeaturesConst.RESULT]);
+            model.train(xTrain, yTrain);
+        }
+    }
+
+    static trainModelActuallyNode(node, xTrain, yTrain, model) {
+        const newTrain = [
+            node.getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
+            node.getParent().getFeatures()[FeaturesConst.HAVE_CRITERION_TERM_IN_PAGE],
+            node.getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
+            node.getFeatures()[FeaturesConst.HAVE_ONE_ITEM_CRITERIO],
+            node.getFeatures()[FeaturesConst.HAVE_TWO_ITEM_CRITERIO],
+            node.getFeatures()[FeaturesConst.HAVE_MORE_ITEM_CRITERIO],
+        ]
+
+        if (!TextUtil.checkArrayContainsInListArrays(xTrain, newTrain)) {
+            xTrain.push(newTrain);
+            yTrain.push(node.getFeatures()[FeaturesConst.RESULT]);
+            model.train(xTrain, yTrain);
+        }
+    }
 
 }

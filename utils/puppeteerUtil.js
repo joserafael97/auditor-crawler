@@ -44,8 +44,8 @@ export default class PuppeteerUtil {
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
         await mainPage.setViewport({
-            width: 2000,
-            height: 3000
+            width: 1400,
+            height: 900
         });
 
         return new PuppeteerInstance(browser, [mainPage]);

@@ -132,9 +132,12 @@ export default class CrawlerUtil {
             }
         }
         result[FeaturesConst.RESULT] = numberItensIdentify > 0 ? 1 : 0;
-        result[FeaturesConst.HAVE_ONE_ITEM_CRITERIO] = numberItensIdentify == 1 ? 1 : 0;
-        result[FeaturesConst.HAVE_TWO_ITEM_CRITERIO] = numberItensIdentify == 2 ? 1 : 0;
-        result[FeaturesConst.HAVE_MORE_ITEM_CRITERIO] = numberItensIdentify > 1 ? 1 : 0;
+        result[FeaturesConst.HAVE_ONE_ITEM_CRITERIO] = numberItensIdentify === 1 ? 1 : 0;
+        result[FeaturesConst.HAVE_TWO_ITEM_CRITERIO] = numberItensIdentify === 2 ? 1 : 0;
+        result[FeaturesConst.HAVE_MORE_ITEM_CRITERIO] = numberItensIdentify > 2 ? 1 : 0;
+        const valid = await CrawlerUtil.CheckCriterionTermExistsInPage(criterionName, node, page)
+        result[FeaturesConst.HAVE_CRITERION_TERM_IN_PAGE] = valid ? 1 : 0;
+
         node.setFeatures(result)
         CrawlerUtil.checkIdentificationItens(itens, await page.url());
         return itens;
@@ -218,6 +221,25 @@ export default class CrawlerUtil {
             }
         }
         return itens;
+    }
+
+    static async CheckCriterionTermExistsInPage(criterionName, node, page) {
+        const queryElement = XpathUtil.createXpathsToIdentifyPage(criterionName);
+
+        const elements = await page.$x(queryElement.getXpath());
+        if (elements.length > 0) {
+            for (let element of elements) {
+                let text = await (await element.getProperty('textContent')).jsonValue();
+                text = TextUtil.normalizeText(text);
+                for (const term of queryElement.getKeyWordsXpath()){
+                    if (TextUtil.checkTextContainsInText(text, term) || TextUtil.checkTextContainsInText(term, text) || 
+                    TextUtil.similarityTwoString(text, term))
+                        return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     static createCriterion(criterionName) {

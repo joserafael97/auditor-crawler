@@ -26,6 +26,10 @@ export default class TextUtil {
         return false;
     }
 
+    static similarityTwoString(string01, string02) {
+        return StringSimilarity.compareTwoStrings(string01, string02) > 0.95;
+    }
+
     static checkUrlRelvant(urlPage, termosCriterion) {
         const url1Isnum = /^\d+$/.test(urlPage);
         let uri1 = !url1Isnum ? HtmlUtil.extractUri(urlPage).replace('/', '').replace(/[0-9]/g, '') : HtmlUtil.extractUri(urlPage).replace('/', '');
@@ -35,6 +39,25 @@ export default class TextUtil {
         }
 
         return false;
+    }
+
+    static checkEqualsArrays(array01, array02) {
+        if (JSON.stringify(array01) == JSON.stringify(array02)) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    static checkArrayContainsInListArrays(arrayList, array02) {
+        for (const array01 of arrayList) {
+            if (TextUtil.checkEqualsArrays(array01, array02)) {
+                return true;
+            }
+
+        }
+        return false;
+
     }
 
     static similarityUrls(url1, UrlsList) {
@@ -107,7 +130,7 @@ export default class TextUtil {
 
     static validateItemSearch(criterionName) {
         const unusableTerms = {
-            'Despesa Extra Orçamentária': ['despesa orcamentaria', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',
+            'Despesa Extra Orçamentária': ['despesa orcamentaria', 'empenho', 'servicos', 'locomocao', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',
                 'demonstrativo', 'outras despesas', 'restos a pagar', ' por orgao', 'obras', 'diarias', 'passagens', 'transferencia', 'programatica', 'fornecedor',],
             'Despesa Orçamentária': ['extra', 'elemento', 'favorecido', 'orgao', 'programatica', 'obras', 'passagens', 'transferencia', 'diarias', 'receitas', 'outras despesas', 'receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'restos a pagar'],
             'Receita Orçamentária': ['extra', 'divisorReceitaCompetencia', 'deducao', 'transferencias', 'transferencia', 'detalhado', 'receita de contribuicoes', 'receita de servicos', 'receita patrimonial', 'comparativo', 'restos a pagar', 'prevista', 'resumo geral', 'loalei', 'execucao', 'outras receitas', 'despesas', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo'],

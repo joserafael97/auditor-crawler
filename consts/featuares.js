@@ -8,5 +8,8 @@ module.exports  = {
     HAVE_BROTHER_RELEVANT_02: "have_brother_relevant_02",
     HAVE_BROTHER_RELEVANT_03: "have_brother_relevant_03",
 
+    HAVE_CRITERION_TERM_IN_PAGE: "have_criterion_term_in_page",
+
+
     RESULT: "result"
 }
