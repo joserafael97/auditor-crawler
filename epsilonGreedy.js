@@ -34,7 +34,7 @@ export default class EpsilonGreedy {
         this.counts[indexArm] = this.counts[indexArm] + 1;
         const n = this.counts[indexArm];
         const value = this.values[indexArm];
-        new_value = ((n - 1) / float(n)) * value + (1 / float(n)) * reward;
+        const new_value = ((n - 1) / parseFloat(n)) * value + (1 / parseFloat(n)) * reward;
         this.values[indexArm] = new_value;
     }
 

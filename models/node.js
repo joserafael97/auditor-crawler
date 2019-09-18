@@ -10,9 +10,7 @@ export default class Node {
         this.edges = edges;
         this.parent = parent;
         this.researched = researched;
-        this.predictValue = 0;
-        this.have_a_father_relevant = false;
-        this.have_brother_relevant = false;
+        this.relevant = false;
         this.features = {
         };
     }
@@ -39,22 +37,7 @@ export default class Node {
         return this.features
     }
 
-    setHaveAFatherRelevant(variable) {
-        this.have_a_father_relevant = variable;
-    }
-
-    getHaveAFatherRelevant() {
-        return this.have_a_father_relevant;
-    }
-
-    setHaveBrotherRelevant(variable) {
-        this.have_brother_relevant = variable;
-    }
-
-    getHaveBrotherRelevant() {
-        return this.have_brother_relevant;
-    }
-
+   
     getSourcesParents() {
         if (this.parent !== null) {
             let it = this.accessParents(this.parent);
@@ -134,11 +117,11 @@ export default class Node {
         this.edges = edges;
     }
 
-    setPredictValue(value) {
-        this.predictValue = value;
+    setRelevant(value) {
+        this.relevant = value;
     }
 
-    getPredictValue() {
-        return this.predictValue;
+    getRelevant() {
+        return this.relevant;
     }
 }

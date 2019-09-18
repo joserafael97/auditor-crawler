@@ -11,7 +11,7 @@ import TextUtil from "./utils/textUtil";
 
 export default class BanditProcess {
 
-    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, model, epsilonGreedyAlg, xTrain = [], yTrain = []) {
+    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, model, epsilonGreedyAlg, xTrain = [], yTrain = [], actuallyIndex = 0) {
         if (puppeteer == null) {
             puppeteer = await PuppeteerUtil.createPuppetterInstance();
         }
@@ -64,17 +64,13 @@ export default class BanditProcess {
             if (!changeUrl || (changeUrl && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, newCurrentURL, node, newCurrentURL))) {
                 node = await CrawlerUtil.extractEdges(node, page, puppeteer, criterion.name, elementsIdentify);
                 itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
-            }
 
+                // if (node.getLevel() !== 0) {
+                //     model = BanditProcess.trainModel(node, xTrain, yTrain, model);
+                // }
+            }
             queue.push.apply(queue, node.getEdges());
             node.setResearched(true);
-
-
-            if (node.getLevel()) {
-                BanditProcess.trainModel(node, xTrain, yTrain, model);
-            }
-
-
 
         } catch (e) {
             console.log("************click error*****************", e);
@@ -83,7 +79,6 @@ export default class BanditProcess {
         for (let edge of queue) {
             console.log("queue nodes: ****:", edge.getSource().value, ' level: ', edge.getLevel());
         }
-
 
         // CLASSIFICATION
         // 01. Retrain classifier with new result 
@@ -96,10 +91,16 @@ export default class BanditProcess {
         if (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
 
             epsilonGreedyAlg.updateNumArms(queue.length);
+           
+            if (node.getLevel() > 2) {
+                epsilonGreedyAlg.update(actuallyIndex, node.getFeatures()[FeaturesConst.RESULT])
+                console.log("ganho ==============", epsilonGreedyAlg.values)
+            }
+
             const index = epsilonGreedyAlg.chooseArm();
+            actuallyIndex = index;
 
             console.log("index ======================== ", index)
-
             const newNode = queue[index]
             queue.splice(index, 1);
 
@@ -107,15 +108,15 @@ export default class BanditProcess {
                 await page.waitForNavigation().catch(e => void e);
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
             }
-            return BanditProcess.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, model, epsilonGreedyAlg, xTrain, yTrain);
+
+            return BanditProcess.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, model, epsilonGreedyAlg, xTrain, yTrain, actuallyIndex);
+
 
             // BANDIT APROACH
             // 01. Update reward
             // 02. Select best or random Arm (Node in this case)
 
             // RETURN FUNCTION AGAIN WITH NODE SELECT
-        } else {
-            BanditProcess.trainModelActuallyNode(node, xTrain, yTrain, model);
         }
 
         console.log("*********************close browser***********************************************");
@@ -140,6 +141,8 @@ export default class BanditProcess {
             yTrain.push(node.getFeatures()[FeaturesConst.RESULT]);
             model.train(xTrain, yTrain);
         }
+        return model;
+
     }
 
     static trainModelActuallyNode(node, xTrain, yTrain, model) {
@@ -152,11 +155,11 @@ export default class BanditProcess {
             node.getFeatures()[FeaturesConst.HAVE_MORE_ITEM_CRITERIO],
         ]
 
-        if (!TextUtil.checkArrayContainsInListArrays(xTrain, newTrain)) {
-            xTrain.push(newTrain);
-            yTrain.push(node.getFeatures()[FeaturesConst.RESULT]);
-            model.train(xTrain, yTrain);
-        }
+        xTrain.push(newTrain);
+        yTrain.push(node.getFeatures()[FeaturesConst.RESULT]);
+        model.train(xTrain, yTrain);
+
+        return model;
     }
 
 }
