@@ -31,6 +31,8 @@ export default class BanditProcess {
         console.log("level: ", node.getLevel());
 
         try {
+
+
             if (node.getSource().getIsExtractIframe() && (await page.constructor.name) !== "Frame") {
                 await page.waitForNavigation().catch(e => void e);
                 page = await PuppeteerUtil.detectContext(page).catch(e => void e);
@@ -38,6 +40,14 @@ export default class BanditProcess {
 
             if (isUrl) {
                 await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
+
+                if (node.getLevel() === 0) {
+                    await page.waitFor(3000);
+                    const [button] = await page.$x("//button[contains(., 'Aceitar')]");
+                    if (button) {
+                        await button.click();
+                    }
+                }
             } else {
                 let element = node.getSource().getElement();
                 element = await PuppeteerUtil.selectElementPage(page, xpath, value);
@@ -49,11 +59,13 @@ export default class BanditProcess {
                 }
             }
             await page.waitFor(3000);
+
             if ((!isUrl || node.getSource().getIsExtractIframe()) && (await page.constructor.name) !== "Frame") {
                 page = await PuppeteerUtil.detectContext(page).catch(e => void e);
             }
 
             if (node.getLevel() === 0) {
+                await page.waitFor(3000);
                 node.getSource().setUrl((await page.url()));
             }
 
@@ -90,13 +102,13 @@ export default class BanditProcess {
         console.log("yTrain:", yTrain)
 
         if (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
-           
-            epsilonGreedyAlg.updateNumArms(queue.length);           
-           
+
+            epsilonGreedyAlg.updateNumArms(queue.length);
+
             if (node.getLevel() > 1 && lengthQueueBefore < queue.length) {
-                for (let i = lengthQueueBefore; i < queue.length; i++){
-                    console.log("========================ganho::", queue[i].getMaxReward())
-                    epsilonGreedyAlg.update(i, queue[i].getMaxReward())
+                for (let i = lengthQueueBefore; i < queue.length; i++) {
+                    if (queue[i].getMaxReward() > 0)
+                        epsilonGreedyAlg.update(i, queue[i].getMaxReward())
                 }
                 console.log("ganho ==============", epsilonGreedyAlg.values)
             }
@@ -108,7 +120,7 @@ export default class BanditProcess {
             queue.splice(index, 1);
             epsilonGreedyAlg.values.splice(index, 1);
             epsilonGreedyAlg.counts.splice(index, 1);
-            
+
             if (newNode.getLevel() > 0 && !HtmlUtil.isUrl(newNode.getSource().getValue())) {
                 await page.waitForNavigation().catch(e => void e);
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());

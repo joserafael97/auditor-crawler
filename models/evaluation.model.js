@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import County from '../models/county.model'
 import Item from '../models/item.model';
 import Criterion from '../models/criterion.model';
+import AproachTypeConst from '../consts/aproachType';
 
 const EvaluationSchema = mongoose.Schema({
     date: {
@@ -36,7 +37,12 @@ const EvaluationSchema = mongoose.Schema({
     criterions: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Criterion'
-    }]
+    }],
+    aproach: {
+        type: String,
+        required: true,
+        enum: AproachTypeConst.ALLAPROACH,
+    },
 }, {
     collection: 'Evaluation'
 });

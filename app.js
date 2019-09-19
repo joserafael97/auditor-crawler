@@ -16,6 +16,7 @@ import AproachType from './consts/aproachType'
 import BanditProcess from './banditProcess';
 import EpsilonGreedy from './epsilonGreedy';
 import { GaussianNB } from 'ml-naivebayes';
+import Dfs from './dfs';
 
 //checar se o node URL encontrado tem como pai um xpath e não mudou a página (mesma URL). Caso isso seja verificado, a URL pode ser duplicada.
 //adicionar lista de termos não úteis
@@ -37,10 +38,17 @@ const run = async (criterion, evaluation, root) => {
     let itens = [];
 
     if (aproachSelected == AproachType.BFS || aproachSelected == '' || aproachSelected == "default") {
+        console.log("-------------------------------", AproachType.BFS)
+        evaluation.aproach = AproachType.BFS
         itens = await Bfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
     } else if (aproachSelected == AproachType.BANDIT) {
-        console.log("-------------------------------", "entrou no Bandit")
+        console.log("-------------------------------", AproachType.BANDIT)
+        evaluation.aproach = AproachType.BANDIT
         itens = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(40, 0.1)).catch(logErrorAndExit)
+    } else if (aproachSelected == AproachType.DFS) {
+        console.log("-------------------------------", AproachType.DFS)
+        evaluation.aproach = AproachType.DFS
+        itens = await Dfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
     }
 
     evaluation.dateEnd = new Date();
@@ -100,12 +108,12 @@ const init = async () => {
     let criterionLicit = CrawlerUtil.createCriterion('Licitação');
     let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
-    // run(criterionDespesaOrc, evaluation, root);
-    // run(criterionDespesaExtra, evaluation, root);
-    // run(criterionReceitaExtra, evaluation, root);
-    // run(criterionReceitaOrc, evaluation, root);
+    run(criterionDespesaOrc, evaluation, root);
+    run(criterionDespesaExtra, evaluation, root);
+    run(criterionReceitaExtra, evaluation, root);
+    run(criterionReceitaOrc, evaluation, root);
     run(criterionLicit, evaluation, root);
-    // run(criterionPessoal, evaluation, root);
+    run(criterionPessoal, evaluation, root);
 
 }
 
