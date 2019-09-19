@@ -106,7 +106,9 @@ export default class BanditProcess {
 
             const newNode = queue[index]
             queue.splice(index, 1);
-
+            epsilonGreedyAlg.values.splice(index, 1);
+            epsilonGreedyAlg.counts.splice(index, 1);
+            
             if (newNode.getLevel() > 0 && !HtmlUtil.isUrl(newNode.getSource().getValue())) {
                 await page.waitForNavigation().catch(e => void e);
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
