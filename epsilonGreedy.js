@@ -15,7 +15,7 @@ export default class EpsilonGreedy {
 
         console.log("Math.random() = ", randomValue)
         console.log("epsilon = ", epsilon)
-        
+
 
         if (randomValue > epsilon) {
             //Exploit (use best arm)
@@ -26,11 +26,11 @@ export default class EpsilonGreedy {
         }
     }
 
-    updateNumArms(numArms){
+    updateNumArms(numArms) {
         this.n = numArms
     }
 
-    update(indexArm, reward){
+    update(indexArm, reward) {
         this.counts[indexArm] = this.counts[indexArm] + 1;
         const n = this.counts[indexArm];
         const value = this.values[indexArm];
@@ -56,5 +56,24 @@ export default class EpsilonGreedy {
         const newEpsilon = parseFloat(this.decay) / (total + parseFloat(this.decay))
         console.log("-------ep----", newEpsilon)
         return newEpsilon
+    }
+
+
+    selectRandomNode(node, queue, index) {
+        if (node.getEdges().length > 0) {
+            const newNode = node.getEdges()[this.randomIntFromRange(0, node.getEdges().length)]
+
+            for (let i = 0; i < queue.length; i++) {
+                if (queue[i] === newNode) {
+                    queue.splice(index, 1);
+                    return newNode
+                }
+            }           
+        }else{
+            this.update(index, 0);
+            this.node.setRewardValue(0)
+            console.log("this.values:;;", this.values)
+            return this.selectRandomNode(elementsAccessed[this.chooseArm()], queue, index, elementsAccessed)
+        }
     }
 }

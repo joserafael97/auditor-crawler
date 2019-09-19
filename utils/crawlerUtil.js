@@ -132,6 +132,7 @@ export default class CrawlerUtil {
             }
         }
         result[FeaturesConst.RESULT] = numberItensIdentify > 0 ? 1 : 0;
+        node.setRewardValue(numberItensIdentify > 0 ? 1 : 0);
         result[FeaturesConst.HAVE_ONE_ITEM_CRITERIO] = numberItensIdentify === 1 ? 1 : 0;
         result[FeaturesConst.HAVE_TWO_ITEM_CRITERIO] = numberItensIdentify === 2 ? 1 : 0;
         result[FeaturesConst.HAVE_MORE_ITEM_CRITERIO] = numberItensIdentify > 2 ? 1 : 0;

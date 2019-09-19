@@ -24,6 +24,7 @@ export default class BanditProcess {
         let changeUrl = false;
         let newCurrentURL = await page.url();
         const currentURL = await page.url();
+        const lengthQueueBefore = queue.length;
 
         console.log("********************************************************************");
         console.log("value: ", value);
@@ -89,18 +90,20 @@ export default class BanditProcess {
         console.log("yTrain:", yTrain)
 
         if (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
-
-            epsilonGreedyAlg.updateNumArms(queue.length);
            
-            if (node.getLevel() > 2) {
-                epsilonGreedyAlg.update(actuallyIndex, node.getFeatures()[FeaturesConst.RESULT])
+            epsilonGreedyAlg.updateNumArms(queue.length);           
+           
+            if (node.getLevel() > 1 && lengthQueueBefore < queue.length) {
+                for (let i = lengthQueueBefore; i < queue.length; i++){
+                    console.log("========================ganho::", queue[i].getMaxReward())
+                    epsilonGreedyAlg.update(i, queue[i].getMaxReward())
+                }
                 console.log("ganho ==============", epsilonGreedyAlg.values)
             }
 
             const index = epsilonGreedyAlg.chooseArm();
-            actuallyIndex = index;
-
             console.log("index ======================== ", index)
+
             const newNode = queue[index]
             queue.splice(index, 1);
 

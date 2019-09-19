@@ -10,7 +10,7 @@ export default class Node {
         this.edges = edges;
         this.parent = parent;
         this.researched = researched;
-        this.relevant = false;
+        this.rewardValue = 0;
         this.features = {
         };
     }
@@ -50,6 +50,52 @@ export default class Node {
         } else {
             return [];
         }
+    }
+
+    getMaxReward() {
+        if (this.parent !== null) {
+            let it = this.maxReward(this.parent);
+            let result = it.next();
+
+            while (!result.done) {
+                result = it.next();
+            }
+            const reward = result.maxReward
+            return reward;
+        } else {
+            return 0;
+        }
+    }
+
+    maxReward(node) {
+        let nodeActualy = node;
+
+        let iterationCount = 0;
+        let maxReward = 0;
+
+        const rangeIterator = {
+            next: function () {
+                let result;
+                if (nodeActualy.parent !== undefined && nodeActualy.parent !== null) {
+                    result = {
+                        treeLevel: iterationCount,
+                        done: false,
+                    }
+                    nodeActualy = nodeActualy.getParent();
+                    iterationCount++;
+                    maxReward = maxReward + nodeActualy.rewardValue;
+                    return result;
+                } else {
+                    return {
+                        treeLevel: iterationCount,
+                        done: true,
+                        maxReward: maxReward
+                    }
+                }
+
+            }
+        };
+        return rangeIterator;
     }
 
     accessParents(node) {
@@ -117,11 +163,11 @@ export default class Node {
         this.edges = edges;
     }
 
-    setRelevant(value) {
-        this.relevant = value;
+    setRewardValue(value) {
+        this.rewardValue = value;
     }
 
-    getRelevant() {
-        return this.relevant;
+    getRewardValue() {
+        return this.rewardValue;
     }
 }
