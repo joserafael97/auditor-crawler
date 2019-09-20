@@ -74,6 +74,10 @@ Nesse contexto, para o estudo o BFS será o algoritmo base para percorrer as pá
 
 TODO
 
+## Epsilon Greedy
+
+TODO
+
 ## Flow 
 
 Durante a execução do Crawler, a separação do processo de busca e identificação dos critérios nos portais fiscais garante melhores níveis de eficácia, devido a maior distinção das páginas/áreas acessadas por meio dos termos utilizados 
@@ -119,7 +123,7 @@ A estrutura de diretórios do projeto está descrita abaixo
 
 ### Prerequisites
 
-Para a execução do projeto é necessário a instalação das seguintes bibliotecas 
+Para a execução do projeto é necessário a instalação das seguintes ferramentas 
 
 * [Node](https://nodejs.org/en/download/)
 * [NPM](https://www.npmjs.com/get-npm)
