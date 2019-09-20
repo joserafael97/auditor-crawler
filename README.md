@@ -11,7 +11,7 @@ Em cada portal de transparência é verificado a presença ou ausência dos crit
 * Lidar com a grande diversidade e falta de padronização na forma de navegar, na criação das URLs e na forma de disponibilizar e visualizar as informações fiscais nos sites de transparência [W3C](https://www.w3.org/TR/dwbp/#metadata);
 * Gerenciar o processamento e acesso componentes dinâmicos;
 * Gerenciar sessões temporárias em portais de empresas que atendem mais de um munípio no mesmo domínio; 
-* A grande variação entre termos de acesso e identificação dos critérios nos portais
+* Lidar com a grande variação entre termos de acesso e identificação dos critérios nos portais
 
 ## Pré-processamento
 
