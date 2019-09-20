@@ -17,25 +17,6 @@ Para o melhor entendimento das técnicas utilizadas neste estudo, é necessário
 #### Data
 São Coleções contendo metadados dos municípios da Paraíba, por exemplo Url do portal de transparência, prefeitura e palavras chaves de busca e identificação dos critérios. 
 
- ```
- const counties = [
-
-   {
-           name: 'Campina Grande',
-           codSepro: '1981',
-           empresas: [PUBLICSOFT, ALFA_CONSULTORIA],
-           cityHallUrl: 'http://campinagrande.pb.gov.br',
-           transparencyPortalUrl: 'http://transparencia.campinagrande.pb.gov.br',
-           population: 0
-    },
-
-    ...
-    ...all counties
-    ...
- 
- ]
-```
-
 * ***Palavras chaves de busca :*** Refere-se a termos utilizados para identificar ***urls, e elementos HTML clicáveis***  (buttons, input, a e etc.) que darão acesso à novas páginas/áreas relevantes considerando os critérios de transparência buscados. Um exemplo de palavras de busca é a coleção apresentada abaixo, que apresenta os termos para buscar o critério Despesa Orçamentária: 
  ```
 ['despesas extras-orcamentarias', 'Consultar Despesas Extras-Orçamentárias','Consultar Despesas Extras','despesaextraorcamentaria.aspx','despesasextras', 'despesas', 'despesa com diarias', 'detalhamentos das despesas',  'consultar', 'pesquisar'];
@@ -50,7 +31,7 @@ São Coleções contendo metadados dos municípios da Paraíba, por exemplo Url 
     "nomenclatura": ['descricao', 'nome da despesa'],
 };
 ```
-* ***Metadados dos municípios da Paraíba:*** Refere-se a informações básicas dos municípios como URL da prefeitura, portal da transparência, empresa que fornece o portal. Um exemplo de um metadado dos municípios é apresentado abaixo:
+* ***Metadados dos municípios da Paraíba:*** Refere-se a informações básicas dos municípios como URL da prefeitura, portal da transparência, empresa que fornece o portal. Um exemplo de um metadado dos municípios é apresentado abaixo ([complete file](https://github.com/joserafael97/auditor-crawler/blob/master/data/municipiosPB.js)):
 
 ```
  {
@@ -62,6 +43,7 @@ São Coleções contendo metadados dos municípios da Paraíba, por exemplo Url 
     population: 0
   }
 ```
+
 
 Para inserção dessas informações em uma base de dados foram criados scripts de dados. Estes podem ser encontrados no diretório [data](https://github.com/joserafael97/auditor-crawler/tree/master/data) do projeto.
 
@@ -100,8 +82,6 @@ O detalhamento do das atividades do diagrama é apresentada abaixo:
 * ***Search items:*** Com as consultas criadas, os itens do critério avaliado é buscado. Nesse processo alguns validações são aplicadas, como por exemplo verificar se o item encontrado está contido está em uma tabela ou uma lista. Caso todos itens buscados forem encontrados o processo de avaliação do critério é finalizado;
 
 * ***Search new Nodes:*** Caso todos os itens não sejam identificados, nesta atividade é procurado novos nós para serem acessados (nós filhos do nó atual) podendo ser uma URL ou um elemento HTMl clicável. Nesse sentido, caso novos nós filhos não sejam encontrados e todos os nós já tenham sido percorridos o processo de avaliação do critério é finalizado.
-
-
 
 ## Getting Started
 Este projeto foi desenvolvido sobre a linguagem Javascript com a ferramenta [Puppeteer](https://github.com/GoogleChrome/puppeteer) para criação de Crawlers.
@@ -145,8 +125,11 @@ npm install
 ### Run Crawler
 
 ```
-npm start county="Ouro Velho"
+npm start county="Santa Rita" aproach="bandit"
+
 ```
+* ***County:*** deve ser informar o nome do município ao qual deseja avaliar;
+* ***Aproach:*** deve ser informar a abordagem a ser utilizada durante a execução, podendo ser ***bfs***, ***dfs*** ou ***bandit***. Caso a abordagem não seja informada a opção bfs é utilizada.
 
 ### Run Rest Api
 
@@ -158,3 +141,5 @@ node_modules/.bin/babel-node api.js
 ## Authors
 
 * **José Remígio** - *Initial work* - [José Remígio](https://github.com/joserafael97)
+
+## [License MIT](https://github.com/joserafael97/auditor-crawler/blob/master/LICENSE)
