@@ -2,7 +2,7 @@
 
 # Auditor Crawler
 
-Este projeto tem como objetivo avaliar o desempenho de técnicas do estado da arte para Web Crawler e extração de conteúdos em páginas Web no contexto da automatização na avaliação de portais de transparência municipais do estado da Paraíba.
+Este projeto tem como objetivo avaliar e aplicar técnicas do estado da arte para Web Crawler e extração de conteúdos em páginas Web no contexto da automatização na avaliação de portais de transparência municipais do estado da Paraíba.
 
 Em cada portal de transparência é verificado a presença ou ausência dos critérios fiscais como Despesas, Receitas, Licitações e Folha de Pagamento, utilizando com diretriz para a avaliação o [Índice de transparência Municipal](http://tce.pb.gov.br/indice-de-transparencia-publica).
 
@@ -15,7 +15,26 @@ Para o melhor entendimento das técnicas utilizadas neste estudo, é necessário
 ![modeloBase](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/modeloBase.png)
 
 #### Data
-São Coleções contendo metadados dos municípios da Paraíba, por exemplo Url do portal de transparência, prefeitura e palavras chaves de busca e identificação dos critérios; 
+São Coleções contendo metadados dos municípios da Paraíba, por exemplo Url do portal de transparência, prefeitura e palavras chaves de busca e identificação dos critérios. 
+
+ ```
+ const counties = [
+
+   {
+           name: 'Campina Grande',
+           codSepro: '1981',
+           empresas: [PUBLICSOFT, ALFA_CONSULTORIA],
+           cityHallUrl: 'http://campinagrande.pb.gov.br',
+           transparencyPortalUrl: 'http://transparencia.campinagrande.pb.gov.br',
+           population: 0
+    },
+
+    ...
+    ...all counties
+    ...
+ 
+ ]
+```
 
 * ***Palavras chaves de busca :*** Refere-se a termos utilizados para identificar ***urls, e elementos HTML clicáveis***  (buttons, input, a e etc.) que darão acesso à novas páginas/áreas relevantes considerando os critérios de transparência buscados. Um exemplo de palavras de busca é a coleção apresentada abaixo, que apresenta os termos para buscar o critério Despesa Orçamentária: 
  ```
