@@ -6,19 +6,14 @@ Este projeto tem como objetivo avaliar e aplicar técnicas do estado da arte par
 
 Em cada portal de transparência é verificado a presença ou ausência dos critérios fiscais como Despesas, Receitas, Licitações e Folha de Pagamento, utilizando com diretriz para a avaliação o [Índice de transparência Municipal](http://tce.pb.gov.br/indice-de-transparencia-publica).
 
-A grande diversidade na forma de navegar e visualizar as informações fiscais nesses sites torna o processo de avaliação automatizada da transparência uma tarefa não trivial, exigindo técnicas robustas a mudanças de layout, as diferentes estruturas Web e ao custo de tempo e processamento.
-
 ## Desafios
-https://www.w3.org/TR/dwbp/#metadata
 
-* A grande diversidade na forma de navegar e visualizar as informações fiscais nos portais de transparência;
-* A existência de portais de transparência com sessões temporárias que identificam os municípios e adequam as informações fiscais apresentadas; 
-* A grande variação entre termos utilizados nos portais
-
-
+* Lidar com a grande diversidade e falta de padronização na forma de navegar, na criação das URLs e na forma de disponibilizar e visualizar as informações fiscais nos sites de transparência [W3C](https://www.w3.org/TR/dwbp/#metadata);
+* Gerenciar o processamento e acesso componentes dinâmicos;
+* Gerenciar sessões temporárias em portais de empresas que atendem mais de um munípio no mesmo domínio; 
+* A grande variação entre termos de acesso e identificação dos critérios nos portais
 
 ## Pré-processamento
-
 
 Para o melhor entendimento das técnicas utilizadas neste estudo, é necessário descrever os passos que precedem a varredura dos portais de transparência. Assim, a Figura abaixo apresenta esse fluxo.
 
