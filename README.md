@@ -70,12 +70,14 @@ Por representar de forma similar as estruturas de links contidas nos Web sites, 
 
 Nesse contexto, para o estudo o BFS será o algoritmo base para percorrer as páginas/áreas em busca dos critérios fiscais nos portais de transparência. Este algoritmo fazerá parte de um Crawler que servirá como modelo base durante os experimentos. 
 
-Durante a execução do Crawler, a separação do processo de busca e identificação dos critérios nos portais fiscais garante melhores níveis de eficácia, devido a maior distinção das páginas/áreas acessadas por meio dos termos utilizados 
-em cada critério, evitando problemas como a identificação de itens semelhantets em locais pertecentes a outros critérios. Além disso, a idenpendência entre os processos de avaliação dos critérios permite uma parelização entre eles, resultando num melhor aproveitamento dos recursos da disponíveis, tornando mais eficiente a execução.
-
 ## Deep First Search  (DFS)
 
 TODO
+
+## Flow 
+
+Durante a execução do Crawler, a separação do processo de busca e identificação dos critérios nos portais fiscais garante melhores níveis de eficácia, devido a maior distinção das páginas/áreas acessadas por meio dos termos utilizados 
+em cada critério, evitando problemas como a identificação de itens semelhantets em locais pertecentes a outros critérios. Além disso, a idenpendência entre os processos de avaliação dos critérios permite uma parelização entre eles, resultando num melhor aproveitamento dos recursos da disponíveis, tornando mais eficiente a execução.
 
 De modo a exemplificar o fluxo de execução do Crawler na avaliação de cada critério 
 a Figura abaixo é prosposta 
@@ -121,6 +123,7 @@ Para a execução do projeto é necessário a instalação das seguintes bibliot
 
 * [Node](https://nodejs.org/en/download/)
 * [NPM](https://www.npmjs.com/get-npm)
+* [MongoDB](https://www.mongodb.com/)
 
 ### Installing
 
