@@ -47,17 +47,24 @@ São Coleções contendo metadados dos municípios da Paraíba, por exemplo Url 
 
 Para inserção dessas informações em uma base de dados foram criados scripts de dados. Estes podem ser encontrados no diretório [data](https://github.com/joserafael97/auditor-crawler/tree/master/data) do projeto.
 
+TODO implementar end-point para colocar novas palavras ou atualizar existentes no banco;
+
 #### Normalization of keywords
 
-Na etapa de normalização das pavalavras chaves todos os termos de busca e identificação são normalizados, sendo removidos acentos, espaços em branco e convertendo todos as palavras em letras minúsculas (lowercase). Este processo tem como propósito expandir a cobertura dos termos durante as buscas nos sites.  
+Na etapa de normalização das pavalavras chaves todos os termos de busca e identificação são normalizados, sendo removidos acentos, espaços em branco e convertendo todos as palavras em letras minúsculas (lowercase). Este processo tem como propósito expandir a cobertura dos termos durante as buscas nos sites. 
+
+TODO exemplificar psedo code talvez com exemplo a normalizada com input e output
 
 #### Creation of queries
 
-Nesta etapa por meio dos termos chaves de busca e identificação são criadas consultas utilizando a linguagem XPath (XML Path Language) que servirão para buscar links, componentes dinâmicos e identificar os critérios fiscais nos portais de transparência.   
+Nesta etapa por meio dos termos chaves de busca e identificação são criadas consultas utilizando a linguagem XPath (XML Path Language) que servirão para buscar links, componentes dinâmicos e identificar os critérios fiscais nos portais de transparência. 
+
+TODO explicar sobre a normalização dos xpaths e falar sobre a falta de suporte das novas versões do xpath 
+TODO mostrar exemplo de xpath
 
 ## Breadth First Search  (BFS)
 
-Por representar de forma similar as estruturas de links contidas nos Web sites, o Breadth First Search é um dos algoritmos mais utilizados para Web Crawler, onde a partir de um nó inicial em um Grafo os demais nós são acessados numa busca em largura, partindo dos nós mais próximos ao nó inicial para os mais distantes, até que todos os nós sejam pecorridos. Em resumo, quanto menor o nível do nó no Grafo mais próximo ele estará do nó inicial (Raiz) e mais rápido ele será acessado. A Figura abaixo mostra um exemplo desse tipo de estrutura, os números representam a ordem que nós deverão ser acessados.
+Por representar de forma similar as estruturas de links contidas nos Web sites, o Breadth First Search é um dos algoritmos mais utilizados para Web Crawler, onde a partir de um nó inicial os demais nós são acessados numa busca em largura, partindo dos nós mais próximos ao nó inicial para os mais distantes, até que todos os nós sejam pecorridos. Em resumo, quanto menor o nível do nó mais próximo ele estará do nó inicial (Raiz) e mais rápido ele será acessado. A Figura abaixo mostra um exemplo desse tipo de estrutura, os números representam a ordem que nós deverão ser acessados.
 
 ![bfs](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/bfs.png)
 
@@ -65,6 +72,10 @@ Nesse contexto, para o estudo o BFS será o algoritmo base para percorrer as pá
 
 Durante a execução do Crawler, a separação do processo de busca e identificação dos critérios nos portais fiscais garante melhores níveis de eficácia, devido a maior distinção das páginas/áreas acessadas por meio dos termos utilizados 
 em cada critério, evitando problemas como a identificação de itens semelhantets em locais pertecentes a outros critérios. Além disso, a idenpendência entre os processos de avaliação dos critérios permite uma parelização entre eles, resultando num melhor aproveitamento dos recursos da disponíveis, tornando mais eficiente a execução.
+
+## Deep First Search  (DFS)
+
+TODO
 
 De modo a exemplificar o fluxo de execução do Crawler na avaliação de cada critério 
 a Figura abaixo é prosposta 
@@ -126,8 +137,9 @@ npm install
 
 ```
 npm start county="Santa Rita" aproach="bandit"
-
 ```
+Os parâmetros apresentados são descritos com mais detalhes abaixo: 
+
 * ***County:*** deve ser informar o nome do município ao qual deseja avaliar;
 * ***Aproach:*** deve ser informar a abordagem a ser utilizada durante a execução, podendo ser ***bfs***, ***dfs*** ou ***bandit***. Caso a abordagem não seja informada a opção bfs é utilizada.
 
@@ -142,4 +154,4 @@ node_modules/.bin/babel-node api.js
 
 * **José Remígio** - *Initial work* - [José Remígio](https://github.com/joserafael97)
 
-## [License MIT](https://github.com/joserafael97/auditor-crawler/blob/master/LICENSE)
+[***License MIT***](https://github.com/joserafael97/auditor-crawler/blob/master/LICENSE)
