@@ -8,16 +8,17 @@ Em cada portal de transparência é verificado a presença ou ausência dos crit
 
 A grande diversidade na forma de navegar e visualizar as informações fiscais nesses sites torna o processo de avaliação automatizada da transparência uma tarefa não trivial, exigindo técnicas robustas a mudanças de layout, as diferentes estruturas Web e ao custo de tempo e processamento.
 
-# Desafios
-TODO falar da navegabilidade da falta de padronização de URLs e layouts
-TODO Falar da sessões que compõe alguns tipos de portais de transparência
-TODo falar de barreiras impostas que dificultam automatizar o processo
-TODO falar da variedade de palavras diferentes e uso de termos genéricos
-TODO falar 
-TODO mostrar exemplos destas complexidades nos portais
+## Desafios
+https://www.w3.org/TR/dwbp/#metadata
+
+* A grande diversidade na forma de navegar e visualizar as informações fiscais nos portais de transparência;
+* A existência de portais de transparência com sessões temporárias que identificam os municípios e adequam as informações fiscais apresentadas; 
+* A grande variação entre termos utilizados nos portais
+
 
 
 ## Pré-processamento
+
 
 Para o melhor entendimento das técnicas utilizadas neste estudo, é necessário descrever os passos que precedem a varredura dos portais de transparência. Assim, a Figura abaixo apresenta esse fluxo.
 
