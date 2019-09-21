@@ -58,6 +58,10 @@ TODO implementar end-point para colocar novas palavras ou atualizar existentes n
 
 Na etapa de normalização das pavalavras chaves todos os termos de busca e identificação são normalizados, sendo removidos acentos, espaços em branco e convertendo todos as palavras em letras minúsculas (lowercase). Este processo tem como propósito expandir a cobertura dos termos durante as buscas nos sites. 
 
+Novas atualizações da especificações foram lancadas, no entanto a maioria das linguagens e ferramentas ainda adotam como principal especificação de implementação o xpath 1.0. Neste contexto, o xpath 1.0 não possui suporte para normalização das consultas.
+
+
+
 TODO exemplificar psedo code talvez com exemplo a normalizada com input e output
 
 #### Creation of queries
