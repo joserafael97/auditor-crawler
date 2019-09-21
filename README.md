@@ -58,18 +58,26 @@ TODO implementar end-point para colocar novas palavras ou atualizar existentes n
 
 Na etapa de normalização das pavalavras chaves todos os termos de busca e identificação são normalizados, sendo removidos acentos, espaços em branco e convertendo todos as palavras em letras minúsculas (lowercase). Este processo tem como propósito expandir a cobertura dos termos durante as buscas nos sites. 
 
-Novas atualizações da especificações foram lancadas, no entanto a maioria das linguagens e ferramentas ainda adotam como principal especificação de implementação o xpath 1.0. Neste contexto, o xpath 1.0 não possui suporte para normalização das consultas.
-
-
 
 TODO exemplificar psedo code talvez com exemplo a normalizada com input e output
 
 #### Creation of queries
 
-Nesta etapa por meio dos termos chaves de busca e identificação são criadas consultas utilizando a linguagem XPath (XML Path Language) que servirão para buscar links, componentes dinâmicos e identificar os critérios fiscais nos portais de transparência. 
+Nesta etapa por meio dos termos chaves de busca e identificação são criadas consultas utilizando a linguagem XPath (XML Path Language) que servirão para buscar links, componentes dinâmicos e identificar os critérios fiscais nos portais de transparência.
 
-TODO explicar sobre a normalização dos xpaths e falar sobre a falta de suporte das novas versões do xpath 
-TODO mostrar exemplo de xpath
+Um dos desafios dessa etapa é fornecer consultas que possam ser reutilizadas em buscas por critérios fiscais em todos as páginas e sites. Para isso, por meio de um estudo empírico foi optado pela construção de consultas com o foco principal nos termos de buscas sem utilização de atributos únicos de cada site como classes css e ids de elementos html.  
+
+No que diz respeito aos xpaths, novas atualizações das especificações foram lançadas, porém a maioria das linguagens e ferramentas  adotam como principal especificação de implementação o xpath 1.0. Nesse contexto, a atual versão do Xpath utilizada pelo Puppeteer não oferece suporte a qualquer tipo de normalização dos xpaths, o que dificulta a cobertura de termos de busca nas páginas web. Como forma de reduzir o impacto da falta de normalização, foram criadas manualmente sequências de caracteres que traduzem um caracter para outro e aplicadas a função translate do xpath. Abaixo é mostrado como os caracteres foram traduzidos, por exempo ***ã*** foi traduzido para ***a***, ou seja, se na página existir um termo com o caractere ***ã*** com um xpath contendo ***a*** é possível identificá-lo.
+
+```
+"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ" = "abcdefghijklmnopqrstuvwxyzc"
+"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç" = "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"
+":-º°" = ""
+```
+
+Nesse sentido, utilizando a palavra de busca ***despesa orcamentaria*** (previamente normalizada pelo processo descrito anteriormente) a função permite mapear o termo para identificar termos na página web como ***DESPESA-ORÇAMENTÁRIA***, ***DESPESA ORÇAMENTÁRIA***, ***despesa orçamentária*** e etc.
+
+Outro ponto analisado foi... FALAR DOS XP DE BUSCA E IDENTIFICACACAO e das FUNÇOES DE BUSCAS URL E COMPONENTES DINÂMICOS
 
 ## Breadth First Search  (BFS)
 
