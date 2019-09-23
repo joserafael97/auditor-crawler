@@ -22,7 +22,8 @@ Para o melhor entendimento das técnicas utilizadas neste estudo, é necessário
 #### Data
 São Coleções contendo metadados dos municípios da Paraíba, por exemplo Url do portal de transparência, prefeitura e palavras chaves de busca e identificação dos critérios. 
 
-* ***Palavras chaves de busca :*** Refere-se a termos utilizados para identificar ***urls, e elementos HTML clicáveis***  (buttons, input, a e etc.) que darão acesso à novas páginas/áreas relevantes considerando os critérios de transparência buscados. Um exemplo de palavras de busca é a coleção apresentada abaixo, que apresenta os termos para buscar o critério Despesa Orçamentária: 
+
+* ***Palavras chaves de busca :*** Refere-se a termos utilizados para identificar ***urls***, e ***elementos dinâmicos clicáveis***  (button, input, a e etc.) que darão acesso à novas páginas/áreas relevantes considerando os critérios de transparência buscados. Um exemplo de palavras de busca é a coleção apresentada abaixo, que apresenta os termos para buscar o critério Despesa Orçamentária: 
  ```
 ['despesas extras-orcamentarias', 'Consultar Despesas Extras-Orçamentárias','Consultar Despesas Extras','despesaextraorcamentaria.aspx','despesasextras', 'despesas', 'despesa com diarias', 'detalhamentos das despesas',  'consultar', 'pesquisar'];
 ```
@@ -52,24 +53,21 @@ São Coleções contendo metadados dos municípios da Paraíba, por exemplo Url 
 
 Para inserção dessas informações em uma base de dados foram criados scripts de dados. Estes podem ser encontrados no diretório [data](https://github.com/joserafael97/auditor-crawler/tree/master/data) do projeto.
 
-TODO implementar end-point para colocar novas palavras ou atualizar existentes no banco;
+Na seção de Running deste documento é apresentado como atualizar e remover termos chaves de busca e identificação dos critérios.
 
 #### Normalization of keywords
 
-Na etapa de normalização das pavalavras chaves todos os termos de busca e identificação são normalizados, sendo removidos acentos, espaços em branco e convertendo todos as palavras em letras minúsculas (lowercase). Este processo tem como propósito expandir a cobertura dos termos durante as buscas nos sites. 
-
-
-TODO exemplificar psedo code talvez com exemplo a normalizada com input e output
+Na etapa de normalização das palavras chaves todos os termos de busca e identificação são normalizados, sendo removidos acentos, espaços em branco e convertendo todos as palavras em letras minúsculas (lowercase). Este processo tem como propósito expandir a cobertura dos termos durante as buscas nos sites. Por exemplo o termo ***Depesa extra-Orçamentária*** e transformado em ***despesa extra orcamentaria***.
 
 #### Creation of queries
 
 Nesta etapa por meio dos termos chaves de busca e identificação são criadas consultas utilizando a linguagem XPath (XML Path Language) que servirão para buscar links, componentes dinâmicos e identificar os critérios fiscais nos portais de transparência.
 
-Um dos desafios dessa etapa é fornecer consultas que possam ser reutilizadas em buscas por critérios fiscais em todos as páginas e sites. Para isso, por meio de um estudo empírico foi optado pela construção de consultas com o foco principal nos termos de buscas sem o uso de atributos específicos de cada site como classes css e ids de elementos html.  
+Um dos desafios desse processo é fornecer consultas que possam ser reutilizadas em buscas por critérios fiscais em todos as páginas e sites. Para isso, por meio de um estudo empírico foi optado pela construção de consultas com o foco principal nos termos de buscas sem o uso de atributos específicos de cada site como classes css e ids de elementos html.  
 
 Além disso, foram analisadas novas formas de expandir a cobertura dos termos nas páginas web por meio dos xpaths, nesse sentido a sintaxe deve conseguir intepretar as palavras normalizadas (etapa mostrada anteriormente) para identificar termos que tenham o mesmo sentido e possuem diferentes grafias, como por exemplo palavras case sensitive ou acentuadas. Neste contexto, novas versões do Xpath (2 á 3) possuem algumas funções úteis para normalização como transformação dos textos das páginas em lowercase e uppercase nativas, porém a maioria das linguagens e ferramentas como o próprio Puppeteer ainda adotam como principal especificação na implementação o Xpath 1.0, a qual não oferece suporte a qualquer tipo de normalização nativa dos xpaths
 
-Como forma de reduzir o impacto da falta de suporte a termos normalizados pelas consultas, foram criadas manualmente sequências de caracteres que traduzem um caracter para outro que são posteriormente aplicadas à função translate do Xpath. Abaixo é mostrado como os caracteres foram traduzidos, por exempo ***ã*** foi traduzido para ***a***, ou seja, se na página existir um termo com o caractere ***ã*** com um xpath contendo ***a*** é possível identificá-lo.
+Como forma de reduzir o impacto da falta de suporte aos termos normalizados pelas consultas, foram criadas manualmente sequências de caracteres que traduzem um caracter para outro que são posteriormente aplicadas à função translate do Xpath. Abaixo é mostrado como os caracteres foram traduzidos, por exempo ***ã*** foi traduzido para ***a***, ou seja, se na página existir um termo com o caractere ***ã*** com um xpath contendo ***a*** é possível identificá-lo.
 
 ```
 "ABCDEFGHIJKLMNOPQRSTUVWXYZÇ" = "abcdefghijklmnopqrstuvwxyzc"
@@ -78,6 +76,7 @@ Como forma de reduzir o impacto da falta de suporte a termos normalizados pelas 
 ```
 Dessa forma, utilizando a palavra de busca ou identificação ***despesa orcamentaria*** (previamente normalizada pelo processo descrito anteriormente) a função permite mapear o termo para identificar termos na página web como ***DESPESA-ORÇAMENTÁRIA***, ***DESPESA ORÇAMENTÁRIA***, ***despesa orçamentária*** e etc.
 
+Durante a elaboração dos xpaths 3 tipo de consultas são criadas as ***para buscar URLs**, ***para buscar componentes dinâmicos clicáveis*** e ***para identificar os itens do critério buscado**. 
 
 ```
 //*[contains(translate(translate(translate(normalize-space(@href),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", ""),"extra orcamentaria")]/@href
