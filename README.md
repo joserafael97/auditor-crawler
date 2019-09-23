@@ -6,6 +6,13 @@ Este projeto tem como objetivo avaliar e aplicar técnicas do estado da arte par
 
 Em cada portal de transparência é verificado a presença ou ausência dos critérios fiscais como Despesas, Receitas, Licitações e Folha de Pagamento, utilizando com diretriz para a avaliação o [Índice de transparência Municipal](http://tce.pb.gov.br/indice-de-transparencia-publica).
 
+## Conceitos Importantes
+
+* ***Critério***: conjunto de itens fiscais que representam um conceito fiscal como Despesa Orçamentária, Despesa Extra-Orçamentá, Receita Orçamentária e etc;
+* ***Item***: São atribuitos que formam o critério por exemplo os itens ***nome***, ***salário***, ***cpf*** e ***tipo do cargo*** fazem parte do critério Quadro Pessoa;
+* ***Componentes dinâmicos***: São elemenetos HTML que não possuem a propriedade Href com uma url válida, mas que são interagíveis como ***buttons***, ***div***, ***span*** e etc;
+* ***Nó ou Node***: São representações unificadas de URLs ou componentes dinâmicos clicáveis considerando o conceito de árvores utilizada no ambiente de sites web. 
+
 ## Desafios
 
 * Lidar com a grande diversidade e falta de padronização na forma de navegar, na criação das URLs e na forma de disponibilizar e visualizar as informações fiscais nos sites de transparência [W3C](https://www.w3.org/TR/dwbp/#metadata);
@@ -76,7 +83,7 @@ Como forma de reduzir o impacto da falta de suporte aos termos normalizados pela
 ```
 Dessa forma, utilizando a palavra de busca ou identificação ***despesa orcamentaria*** (previamente normalizada pelo processo descrito anteriormente) a função permite mapear o termo para identificar termos na página web como ***DESPESA-ORÇAMENTÁRIA***, ***DESPESA ORÇAMENTÁRIA***, ***despesa orçamentária*** e etc.
 
-Durante a elaboração dos xpaths 3 tipos de consultas são criadas as ***para buscar URLs**, ***para buscar componentes dinâmicos clicáveis*** e ***para identificar os itens do critério buscado**. 
+Durante a elaboração dos xpaths 3 tipos de consultas são criadas as ***para buscar URLs***, ***para buscar componentes dinâmicos clicáveis*** e ***para identificar os itens do critério buscado***. 
 
 No que refere a busca por urls, os xpaths são criados para cada termo individuamente, onde são consideradas ***todas tags HTML*** (representado por ***//**** na consulta) que contenham o atributo ***href*** nas buscas. Um exemplo deste tipo de xpath é apresentado abaixo:
 
