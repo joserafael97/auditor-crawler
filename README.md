@@ -10,7 +10,7 @@ Em cada portal de transparência é verificado a presença ou ausência dos crit
 
 * ***Critério***: conjunto de itens fiscais que representam um conceito fiscal como Despesa Orçamentária, Despesa Extra-Orçamentá, Receita Orçamentária e etc;
 * ***Item***: São atribuitos que formam o critério por exemplo os itens ***nome***, ***salário***, ***cpf*** e ***tipo do cargo*** fazem parte do critério Quadro Pessoa;
-* ***Componentes dinâmicos***: São elemenetos HTML que não possuem a propriedade Href com uma url válida, mas que são interagíveis como ***buttons***, ***div***, ***span*** e etc;
+* ***Componentes dinâmicos***: São elementos HTML que não possuem a propriedade Href com uma url válida, mas que são interagíveis como ***buttons***, ***div***, ***span*** e etc;
 * ***Nó ou Node***: São representações unificadas de URLs ou componentes dinâmicos clicáveis considerando o conceito de árvores utilizada no ambiente de sites web. 
 
 ## Desafios
