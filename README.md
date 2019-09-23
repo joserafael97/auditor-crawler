@@ -6,6 +6,11 @@ Este projeto tem como objetivo avaliar e aplicar técnicas do estado da arte par
 
 Em cada portal de transparência é verificado a presença ou ausência dos critérios fiscais como Despesas, Receitas, Licitações e Folha de Pagamento, utilizando com diretriz para a avaliação o [Índice de transparência Municipal](http://tce.pb.gov.br/indice-de-transparencia-publica).
 
+## Relevância
+Incentivar a ampliação do acesso a informações fiscais acessíveis a toda a sociedade, considerando todos os tipos de usuáios.
+ 
+O mecanismo de fiscalização proposto neste trabalho objetiva estimular as entidades municipais a divulgarem em seus portais suas informações fiscais de forma acessível a qualquer público.
+
 ## Conceitos Importantes
 
 * ***Critério***: conjunto de itens fiscais que representam um conceito fiscal como Despesa Orçamentária, Despesa Extra-Orçamentá, Receita Orçamentária e etc;
