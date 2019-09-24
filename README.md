@@ -20,14 +20,14 @@ O mecanismo de fiscalização proposto neste trabalho objetiva estimular as enti
 
 ## Desafios
 
-* Lidar com a grande diversidade e falta de padronização na forma de navegar, na criação das URLs e na forma de disponibilizar e visualizar as informações fiscais nos sites de transparência [W3C](https://www.w3.org/TR/dwbp/#metadata);
+* Lidar com a grande diversidade e a falta de padronização na forma de navegar, na criação das URLs e na forma de disponibilizar e visualizar as informações fiscais nos sites de transparência [W3C](https://www.w3.org/TR/dwbp/#metadata);
 * Gerenciar o processamento e acesso componentes dinâmicos;
-* Gerenciar sessões temporárias em portais de empresas que atendem mais de um munípio no mesmo domínio; 
+* Gerenciar sessões temporárias em portais de empresas que atendem mais de um município no mesmo domínio; 
 * Lidar com a grande variação entre termos de acesso e identificação dos critérios nos portais
 
 ## Pré-processamento
 
-Para o melhor entendimento das técnicas utilizadas neste estudo, é necessário descrever os passos que precedem a varredura dos portais de transparência. Assim, a Figura abaixo apresenta esse fluxo.
+Para o melhor entendimento das técnicas utilizadas neste estudo, é necessário descrever os passos que precedem a varredura dos portais de transparência. Assim, a Figura abaixo apresenta este fluxo.
 
 ![modeloBase](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/modeloBase.png)
 
