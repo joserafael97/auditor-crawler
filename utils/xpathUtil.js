@@ -49,6 +49,10 @@ export default class XpathUtil {
                 xpaths.push(new QueryElement('//*[{}]'.replace('{}', condicao), item, QUERYTODYNAMICELEMENT, criterionKeyWords.itens[index].identificationKeyWord));
             }
         });
+
+        console.log("========createXpathsToIdentificationKeyWord======", xpaths)
+
+
         return xpaths
     }
 
@@ -84,6 +88,9 @@ export default class XpathUtil {
             }
         });
 
+        console.log("========createXpathsToExtractUrls======", xpaths)
+
+
         return xpaths
     }
 
@@ -109,6 +116,8 @@ export default class XpathUtil {
                 );
             }
         });
+
+        console.log("========createXpathsToExtractDynamicComponents======", xpaths)
         return xpaths;
     }
 
