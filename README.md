@@ -4,10 +4,10 @@
 
 Este projeto tem como objetivo avaliar e aplicar técnicas do estado da arte para Web Crawler e extração de conteúdos em páginas Web no contexto da automatização na avaliação de portais de transparência municipais do estado da Paraíba.
 
-Em cada portal de transparência é verificado a presença ou ausência dos critérios fiscais como Despesas, Receitas, Licitações e Folha de Pagamento, utilizando com diretriz para a avaliação o [Índice de transparência Municipal](http://tce.pb.gov.br/indice-de-transparencia-publica).
+Em cada portal de transparência é verificado a presença ou ausência de critérios fiscais como Despesas, Receitas, Licitações e Folha de Pagamento, utilizando com diretriz para a avaliação o [Índice de transparência Municipal](http://tce.pb.gov.br/indice-de-transparencia-publica).
 
 ## Relevância
-Incentivar a ampliação do acesso a informações fiscais acessíveis a toda a sociedade, considerando todos os tipos de usuáios.
+Incentivar a ampliação do acesso a informações fiscais a toda a sociedade, considerando todos os tipos de usuáios.
  
 O mecanismo de fiscalização proposto neste trabalho objetiva estimular as entidades municipais a divulgarem em seus portais suas informações fiscais de forma acessível a qualquer público.
 
