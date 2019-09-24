@@ -137,15 +137,15 @@ a Figura abaixo é prosposta
 
 O detalhamento das atividades do diagrama é apresentada abaixo:
 
-* ***Start Crawler:*** Diz respeito ao processo de inicialização do Crawler mostrado na seção runing deste documento;
+* ***Start Crawler:*** Diz respeito ao processo de inicialização do Crawler mostrado na seção Running deste documento. Nesta etapa, a varredura de cada critério é iniciada de forma paralela;
 
-* ***Access Node (Access Web page):*** Esta atividade refere-se ao acesso de um novo nó no Grafo. Um nó pode ser representado por uma nova URL a ser acessada ou um novo elemento a ser clicado;
+* ***Access Node (Access Web page):*** Esta atividade refere-se ao acesso de um novo nó. Um nó pode ser representado por uma nova URL a ser acessada ou um novo elemento a ser clicado;
 
-* ***Create queries:*** Após a realização da atividade anterior, são criadas consultas para buscar e identificar os itens do critério e econtrar nós filhos (urls e elementos clicáveis);
+* ***Create queries:*** Após a realização da atividade anterior, são criadas consultas para buscar e identificar os itens do critério e encontrar nós filhos (urls e elementos clicáveis);
 
-* ***Search items:*** Com as consultas criadas, os itens do critério avaliado é buscado. Nesse processo alguns validações são aplicadas, como por exemplo verificar se o item encontrado está contido está em uma tabela ou uma lista. Caso todos itens buscados forem encontrados o processo de avaliação do critério é finalizado;
+* ***Search items:*** Com as consultas criadas, os itens do critério avaliado são buscados. Neste processo alguns validações são aplicadas, como por exemplo verificar se o item encontrado está contido está em uma tabela ou uma lista. Caso todos itens buscados forem encontrados o processo de avaliação do critério é finalizado;
 
-* ***Search new Nodes:*** Caso todos os itens não sejam identificados, nesta atividade é procurado novos nós para serem acessados (nós filhos do nó atual) podendo ser uma URL ou um elemento HTMl clicável. Nesse sentido, caso novos nós filhos não sejam encontrados e todos os nós já tenham sido percorridos o processo de avaliação do critério é finalizado.
+* ***Search new Nodes:*** Caso todos os itens não sejam identificados, o crawler prossegue com a atividade de procurar novos nós para serem acessados (nós filhos do nó atual) podendo ser uma URL ou um elemento HTMl clicável. No processo são aplicadas validações aos novos elementos encontrados, verificando a duplicidade de elementos e se eles são relevantes para o critério buscado, evitando possíveis ruídos nas buscas como elementos que dão acesso a páginas de critérios semelhantes como entre Receita Orçamentária e Receita Extra-Orçamentária. Por fim, caso novos nós filhos não sejam encontrados e todos os nós já tenham sido percorridos o processo de avaliação do critério é finalizado.
 
 ## Getting Started
 Este projeto foi desenvolvido sobre a linguagem Javascript com a ferramenta [Puppeteer](https://github.com/GoogleChrome/puppeteer) para criação de Crawlers.
