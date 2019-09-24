@@ -6,6 +6,8 @@ Este projeto tem como objetivo avaliar e aplicar técnicas do estado da arte par
 
 Em cada portal de transparência é verificado a presença ou ausência de critérios fiscais como Despesas, Receitas, Licitações e Folha de Pagamento, utilizando com diretriz para a avaliação o [Índice de transparência Municipal](http://tce.pb.gov.br/indice-de-transparencia-publica).
 
+A grande diversidade na forma de navegar e visualizar as informações fiscais nesses sites torna o processo de avaliação automatizada da transparência uma tarefa não trivial, exigindo técnicas robustas a mudanças de layout, as diferentes estruturas Web e ao custo de tempo e processamento.
+
 ## Relevância
 Incentivar a ampliação do acesso a informações fiscais a toda a sociedade, considerando todos os tipos de usuáios.
  
