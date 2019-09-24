@@ -9,8 +9,6 @@ Em cada portal de transparência é verificado a presença ou ausência de crit�
 A grande diversidade na forma de navegar e visualizar as informações fiscais nesses sites torna o processo de avaliação automatizada da transparência uma tarefa não trivial, exigindo técnicas robustas a mudanças de layout, as diferentes estruturas Web e ao custo de tempo e processamento.
 
 ## Relevância
-Incentivar a ampliação do acesso a informações fiscais a toda a sociedade, considerando todos os tipos de usuáios.
- 
 O mecanismo de fiscalização proposto neste trabalho objetiva estimular as entidades municipais a divulgarem em seus portais suas informações fiscais de forma acessível a qualquer público.
 
 ## Conceitos Importantes
