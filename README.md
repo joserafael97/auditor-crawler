@@ -29,7 +29,7 @@ O mecanismo de fiscalização proposto neste trabalho objetiva estimular as enti
 
 ## Pré-processamento
 
-Para o melhor entendimento das técnicas utilizadas neste estudo, é necessário descrever os passos que precedem a varredura dos portais de transparência. Assim, a Figura abaixo apresenta este fluxo.
+Para o melhor entendimento das técnicas utilizadas neste estudo, é necessário entender os passos que precedem a varredura dos portais de transparência. Desta forma, a Figura abaixo apresenta com detalhes estes procedimentos.
 
 ![modeloBase](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/modeloBase.png)
 
