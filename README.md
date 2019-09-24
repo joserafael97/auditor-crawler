@@ -35,12 +35,12 @@ Para o melhor entendimento das técnicas utilizadas neste estudo, é necessário
 São Coleções contendo metadados dos municípios da Paraíba, por exemplo Url do portal de transparência, prefeitura e palavras chaves de busca e identificação dos critérios. 
 
 
-* ***Palavras chaves de busca :*** Refere-se a termos utilizados para identificar ***urls***, e ***elementos dinâmicos clicáveis***  (button, input, a e etc.) que darão acesso à novas páginas/áreas relevantes considerando os critérios de transparência buscados. Um exemplo de palavras de busca é a coleção apresentada abaixo, que apresenta os termos para buscar o critério Despesa Orçamentária: 
+* ***Palavras chaves de busca :*** Refere-se a termos utilizados para identificar ***urls*** e ***elementos dinâmicos clicáveis***  (button, input, a e etc.) que darão acesso à novas páginas/áreas relevantes considerando o critério de transparência buscado. Um exemplo de palavras de busca é a coleção apresentada abaixo, que expõe os termos para buscar Despesa Orçamentária nas páginas: 
  ```
 ['despesas extras-orcamentarias', 'Consultar Despesas Extras-Orçamentárias','Consultar Despesas Extras','despesaextraorcamentaria.aspx','despesasextras', 'despesas', 'despesa com diarias', 'detalhamentos das despesas',  'consultar', 'pesquisar'];
 ```
 
-* ***Palavras chaves de identificação :*** Refere-se a termos utilizados para identificar os itens pertecentes aos critérios buscados. Em cada nova página/área é verificada a existência dos termos chaves para cada uns dos itens. Um exemplo de termos utilizados na busca dos itens do critério Despesa Orçamentária é apresentado abaixo. 
+* ***Palavras chaves de identificação :*** Refere-se a termos utilizados para identificar os itens pertecentes ao critério buscado. Em cada nova página/área é verificada a existência dos termos chaves para cada uns dos itens. Abaixo e mostrado um exemplo de termos utilizados na identificação do critério Despesa Extra Orçamentária. 
     
 ```
 {
@@ -49,7 +49,7 @@ São Coleções contendo metadados dos municípios da Paraíba, por exemplo Url 
     "nomenclatura": ['descricao', 'nome da despesa'],
 };
 ```
-* ***Metadados dos municípios da Paraíba:*** Refere-se a informações básicas dos municípios como URL da prefeitura, portal da transparência, empresa que fornece o portal. Um exemplo de um metadado dos municípios é apresentado abaixo ([complete file](https://github.com/joserafael97/auditor-crawler/blob/master/data/municipiosPB.js)):
+* ***Metadados dos municípios da Paraíba:*** Refere-se a informações básicas dos municípios como, por exemplo, a URL da prefeitura, a URL do portal da transparência e a empresa(s) fonecedora(s) do portal transparência. Um exemplo dos metadados dos municípios é apresentado abaixo ([complete file](https://github.com/joserafael97/auditor-crawler/blob/master/data/municipiosPB.js)):
 
 ```
  {
