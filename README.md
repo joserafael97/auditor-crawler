@@ -15,6 +15,9 @@ O mecanismo de fiscalização proposto neste trabalho objetiva estimular as enti
 
 * ***Critério***: Conjunto de itens fiscais que representam um conceito fiscal como, por exemplo, Despesa Orçamentária, Despesa Extra-Orçamentá, Receita Orçamentária e etc;
 * ***Item***: São atributos que formam o critério, por exemplo os itens ***nome***, ***salário***, ***cpf*** e ***tipo do cargo*** fazem parte do critério Quadro Pessoa;
+
+<img src="https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/quador-pessoal-santa-rita.png " alt="componente Dinâmico" width="600" height="300" style="padding-left: 50px">
+
 * ***Componentes dinâmicos***: São elementos HTML que não possuem a propriedade Href com uma url válida, mas que são interagíveis nas páginas Web como ***buttons***, ***div***, ***span*** e etc. Abaixo é apresentado um fluxo de acesso ao critério Despesa Orçamentária com interações em componentes dinâmicos clicáveis:
 
 <img src="https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/jampa-despesa.gif" alt="componente Dinâmico" width="600" height="300" style="padding-left: 50px">
