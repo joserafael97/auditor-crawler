@@ -40,7 +40,7 @@ São Coleções contendo metadados dos municípios da Paraíba, por exemplo Url 
 ['despesas extras-orcamentarias', 'Consultar Despesas Extras-Orçamentárias','Consultar Despesas Extras','despesaextraorcamentaria.aspx','despesasextras', 'despesas', 'despesa com diarias', 'detalhamentos das despesas',  'consultar', 'pesquisar'];
 ```
 
-* ***Palavras chaves de identificação :*** Refere-se a termos utilizados para identificar os itens pertecentes ao critério buscado. Em cada nova página/área é verificada a existência dos termos chaves para cada uns dos itens. Abaixo e mostrado um exemplo de termos utilizados na identificação do critério Despesa Extra Orçamentária. 
+* ***Palavras chaves de identificação :*** Refere-se à termos utilizados para identificar os itens pertecentes ao critério buscado. Em cada nova página/área é verificada a existência dos termos chaves para cada uns dos itens. Abaixo e mostrado um exemplo de termos utilizados na identificação do critério Despesa Extra Orçamentária. 
     
 ```
 {
@@ -65,7 +65,7 @@ São Coleções contendo metadados dos municípios da Paraíba, por exemplo Url 
 
 Para inserção dessas informações em uma base de dados foram criados scripts de dados. Estes podem ser encontrados no diretório [data](https://github.com/joserafael97/auditor-crawler/tree/master/data) do projeto.
 
-Na seção de Running deste documento é apresentado como atualizar e remover termos chaves de busca e identificação dos critérios.
+Na seção de Running deste documento é mostrado como atualizar e remover os termos chaves de busca e identificação.
 
 #### Normalization of keywords
 
