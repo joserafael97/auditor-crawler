@@ -50,9 +50,6 @@ export default class XpathUtil {
             }
         });
 
-        console.log("========createXpathsToIdentificationKeyWord======", xpaths)
-
-
         return xpaths
     }
 
@@ -88,9 +85,6 @@ export default class XpathUtil {
             }
         });
 
-        console.log("========createXpathsToExtractUrls======", xpaths)
-
-
         return xpaths
     }
 
@@ -117,7 +111,6 @@ export default class XpathUtil {
             }
         });
 
-        console.log("========createXpathsToExtractDynamicComponents======", xpaths)
         return xpaths;
     }
 

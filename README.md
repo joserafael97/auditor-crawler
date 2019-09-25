@@ -1,5 +1,4 @@
 
-
 # Auditor Crawler
 
 Este projeto tem como objetivo avaliar e aplicar técnicas do estado da arte para Web Crawler e extração de conteúdos em páginas Web no contexto da automatização na avaliação de portais de transparência municipais do estado da Paraíba.
@@ -9,6 +8,7 @@ Em cada portal de transparência é verificado a presença ou ausência de crit�
 A grande diversidade na forma de navegar e visualizar as informações fiscais nesses sites torna o processo de avaliação automatizada da transparência uma tarefa não trivial, exigindo técnicas robustas a mudanças de layout, as diferentes estruturas Web e ao custo de tempo e processamento.
 
 ## Relevância
+
 O mecanismo de fiscalização proposto neste trabalho objetiva estimular as entidades municipais a divulgarem em seus portais suas informações fiscais de forma acessível a qualquer público.
 
 ## Conceitos Importantes
@@ -21,7 +21,6 @@ O mecanismo de fiscalização proposto neste trabalho objetiva estimular as enti
 * ***Componentes dinâmicos***: São elementos HTML que não possuem a propriedade Href com uma url válida, mas que são interagíveis nas páginas Web como ***buttons***, ***div***, ***span*** e etc. Abaixo é apresentado um fluxo de acesso ao critério Despesa Orçamentária com interações em componentes dinâmicos clicáveis:
 
 <img src="https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/jampa-despesa.gif" alt="componente Dinâmico" width="600" height="300" style="padding-left: 180px">
-
 
 * ***Nó ou Node***: São representações unificadas de URLs ou componentes dinâmicos clicáveis que consideram o mapeamento de sites em forma de árvores. 
 
@@ -39,16 +38,17 @@ Para o melhor entendimento das técnicas utilizadas neste estudo, é necessário
 ![modeloBase](https://raw.githubusercontent.com/joserafael97/auditor-crawler/master/resources/modeloBase.png)
 
 #### Data
+
 São Coleções contendo metadados dos municípios da Paraíba, por exemplo Url do portal de transparência, prefeitura e palavras chaves de busca e identificação dos critérios. 
 
-
 * ***Palavras chaves de busca :*** Refere-se a termos utilizados para identificar ***urls*** e ***elementos dinâmicos clicáveis***  (button, input, a e etc.) que darão acesso à novas páginas/áreas relevantes considerando o critério de transparência buscado. Um exemplo de palavras de busca é a coleção apresentada abaixo, que expõe os termos para buscar Despesa Orçamentária nas páginas: 
+
  ```
 ['despesas extras-orcamentarias', 'Consultar Despesas Extras-Orçamentárias','Consultar Despesas Extras','despesaextraorcamentaria.aspx','despesasextras', 'despesas', 'despesa com diarias', 'detalhamentos das despesas',  'consultar', 'pesquisar'];
 ```
 
-* ***Palavras chaves de identificação :*** Refere-se a termos utilizados para identificar os itens pertecentes ao critério buscado. Em cada nova página/área é verificada a existência dos termos chaves para cada uns dos itens. Abaixo e mostrado um exemplo de termos utilizados na identificação do critério Despesa Extra Orçamentária. 
-    
+* ***Palavras chaves de identificação :*** Refere-se a termos utilizados para identificar os itens pertecentes ao critério buscado. Em cada nova página/área é verificada a existência dos termos chaves para cada uns dos itens. Abaixo e mostrado um exemplo de termos utilizados na identificação do critério Despesa Extra Orçamentária.
+
 ```
 {
     "valor": ['valor', 'empenhado(r$)'],
@@ -56,6 +56,7 @@ São Coleções contendo metadados dos municípios da Paraíba, por exemplo Url 
     "nomenclatura": ['descricao', 'nome da despesa'],
 };
 ```
+
 * ***Metadados dos municípios da Paraíba:*** Refere-se a informações básicas dos municípios como, por exemplo, a URL da prefeitura, a URL do portal da transparência e a empresa(s) fonecedora(s) do portal transparência. Um exemplo dos metadados dos municípios é apresentado abaixo ([complete file](https://github.com/joserafael97/auditor-crawler/blob/master/data/municipiosPB.js)):
 
 ```
@@ -68,7 +69,6 @@ São Coleções contendo metadados dos municípios da Paraíba, por exemplo Url 
     population: 0
   }
 ```
-
 
 Para inserção dessas informações em uma base de dados foram criados scripts de dados. Estes podem ser encontrados no diretório [data](https://github.com/joserafael97/auditor-crawler/tree/master/data) do projeto.
 
@@ -93,6 +93,7 @@ Como forma de reduzir o impacto da falta de suporte aos termos normalizados pela
 "ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç" = "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"
 ":-º°" = ""
 ```
+
 Dessa forma, utilizando a palavra de busca ou identificação ***despesa orcamentaria*** (previamente normalizada pelo processo descrito anteriormente) a função permite mapear o termo para identificar termos na página web como ***DESPESA-ORÇAMENTÁRIA***, ***DESPESA ORÇAMENTÁRIA***, ***despesa orçamentária*** e etc.
 
 Durante a elaboração dos xpaths 3 tipos de consultas são criadas as ***para buscar URLs***, ***para buscar componentes dinâmicos clicáveis*** e ***para identificar os itens do critério buscado***. 
@@ -108,6 +109,7 @@ Da mesma forma os xpaths de busca por ***componentes dinâmicos clicáveis*** s�
 ```
 //div[contains(translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", ""),"extraorcamentaria")]/following::a[1] | //button[contains(translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", ""),"extraorcamentaria")] | //input[contains(translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", ""),"extraorcamentaria")] | //input[contains(translate(translate(translate(normalize-space(@value),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", ""),"extraorcamentaria")] | //a[contains(translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", ""),"extraorcamentaria")] | //input[contains(translate(translate(translate(normalize-space(@onclick),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", ""),"extraorcamentaria")] | //input[contains(translate(translate(translate(normalize-space(@id),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", ""),"extraorcamentaria")] | //a[contains(translate(translate(translate(normalize-space(@title),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", ""),"extraorcamentaria")] | //a[contains(translate(translate(translate(normalize-space(@onclick),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", ""),"extraorcamentaria")] | //a[contains(translate(translate(translate(normalize-space(@href),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", ""),"extraorcamentaria")] | //*[contains(translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", ""),"extraorcamentaria")]/parent::a | //a[contains(translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", ""),"extraorcamentaria")]/following::span | //span[contains(translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", ""),"extraorcamentaria")]/parent::*
 ```
+
 Com outro objetivo, os xpaths ***para identificar itens*** são criados para identificar e retornar textos das página web que representam os itens do critério buscado. Cada item pode ter 1 ou n variações de termos para representá-lo durante a busca. Um exemplo deste tipo de xpath é mostrado abaixo:
 
 ```
@@ -115,7 +117,6 @@ Com outro objetivo, os xpaths ***para identificar itens*** são criados para ide
 ```
 
 Todos os tipos de xpaths são criados por funções presentes na classe [xpathUtil.js](https://github.com/joserafael97/auditor-crawler/blob/master/utils/xpathUtil.js) existente dentro do módulo ***util*** do projeto
-
 
 ## Breadth First Search  (BFS)
 
@@ -133,7 +134,7 @@ TODO
 
 TODO
 
-## Flow 
+## Flow
 
 Durante a execução do Crawler, a separação do processo de busca e identificação dos critérios nos portais fiscais garante melhores níveis de eficácia, devido a maior distinção das páginas/áreas acessadas por meio dos termos utilizados em cada critério, evitando problemas como a identificação de itens semelhantets em locais pertecentes a outros critérios. Além disso, a idenpendência entre os processos de avaliação dos critérios permite uma parelização entre eles, resultando num melhor aproveitamento dos recursos disponíveis, tornando mais eficiente a execução.
 
@@ -155,9 +156,11 @@ O detalhamento das atividades do diagrama é apresentada abaixo:
 * ***Search new Nodes:*** Caso todos os itens não sejam identificados, o crawler prossegue com a atividade de procurar novos nós para serem acessados (nós filhos do nó atual) podendo ser uma URL ou um elemento HTMl clicável. No processo são aplicadas validações aos novos elementos encontrados, verificando a duplicidade de elementos e se eles são relevantes para o critério buscado, evitando possíveis ruídos nas buscas como elementos que dão acesso a páginas de critérios semelhantes como entre Receita Orçamentária e Receita Extra-Orçamentária. Por fim, caso novos nós filhos não sejam encontrados e todos os nós já tenham sido percorridos o processo de avaliação do critério é finalizado.
 
 ## Getting Started
+
 Este projeto foi desenvolvido sobre a linguagem Javascript com a ferramenta [Puppeteer](https://github.com/GoogleChrome/puppeteer) para criação de Crawlers.
 
 ### Estructure
+
 A estrutura de diretórios do projeto está descrita abaixo 
 
 ```bash
@@ -191,15 +194,15 @@ Para instalação das bibliotecas execute o comando abaixo dentro do diretório 
 npm install
 ```
 
-## Running 
-
+## Running
 
 ### Run Crawler
 
 ```
 npm start county="Santa Rita" aproach="bandit"
 ```
-Os parâmetros apresentados são descritos com mais detalhes abaixo: 
+
+Os parâmetros apresentados são descritos com mais detalhes abaixo:
 
 * ***County:*** Deve ser informar o nome do município ao qual deseja avaliar;
 * ***Aproach:*** Deve ser informar a abordagem a ser utilizada durante a execução, podendo ser ***bfs***, ***dfs*** ou ***bandit***. Caso a abordagem não seja informada a opção bfs é utilizada.
@@ -207,8 +210,7 @@ Os parâmetros apresentados são descritos com mais detalhes abaixo:
 ### Run Rest Api
 
 ```
-node_modules/.bin/babel-node api.js
-
+node_modules/.bin/babel-node api/server.js
 ```
 
 ## Authors
