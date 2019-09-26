@@ -121,6 +121,7 @@ export default class PuppeteerUtil {
     static async selectElementPage(page, xpath, searchValue) {
 
         await page.waitForNavigation().catch(e => void e);
+        await page.waitFor(3000);
         const elements = await page.$x(xpath);
         if (elements.length > 0) {
             for (let element of elements) {
@@ -151,7 +152,7 @@ export default class PuppeteerUtil {
             const isnum = /^\d+$/.test(text);
             const currentValue = currentNode.getSource().getValue();
 
-            if (isnum && (text.length < 5 || (text.includes(",") || text.includes('.'))) ){
+            if (isnum) {
                 return true;
             }
 
@@ -161,7 +162,7 @@ export default class PuppeteerUtil {
 
                 if (node.getLevel() !== 0) {
                     if ((HtmlUtil.isUrl(currentValue) && node.getSource().getUrl() === currentUrl)) {
-                        if (((currentValue === value || value == text) ||
+                        if (((currentValue === value || value === text) ||
                             (isnum &&
                                 StringSimilarity.compareTwoStrings(value.substring(value.length - 4, value.length),
                                     text.substring(text.length - 4, text.length)) > 0.6)) ||
