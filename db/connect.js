@@ -10,7 +10,12 @@ const connectToDb = async () => {
     let dbPort = config.dbPort;
     let dbName = config.dbName;
     try {
-        Mongoose.connect(`mongodb://${dbHost}:${dbPort}/${dbName}`, { useNewUrlParser: true });
+        Mongoose.set('useNewUrlParser', true);
+        Mongoose.set('useFindAndModify', false);
+        Mongoose.set('useCreateIndex', true);
+        Mongoose.set('useUnifiedTopology', true);
+
+        Mongoose.connect(`mongodb://${dbHost}:${dbPort}/${dbName}`);
         logger.info('Connected to mongo!!!');
     }
     catch (err) {
