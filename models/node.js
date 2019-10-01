@@ -54,6 +54,7 @@ export default class Node {
 
     getMaxReward() {
         if (this.parent !== null) {
+            this.updateParentsReward();
             let it = this.maxReward(this);
             let result = it.next();
 
