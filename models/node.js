@@ -54,7 +54,7 @@ export default class Node {
 
     getMaxReward() {
         if (this.parent !== null) {
-            let it = this.maxReward(this.parent);
+            let it = this.maxReward(this);
             let result = it.next();
 
             while (!result.done) {
@@ -65,6 +65,50 @@ export default class Node {
         } else {
             return 0;
         }
+    }
+
+
+    updateParentsReward() {
+        if (this.parent !== null) {
+            let it = this.parentsReward(this);
+            let result = it.next();
+
+            while (!result.done) {
+                result = it.next();
+            }
+            const reward = result.maxReward
+            return reward;
+        } else {
+            return 0;
+        }
+    }
+
+    parentsReward(node) {
+        let nodeActualy = node;
+        let iterationCount = 0;
+
+        const rangeIterator = {
+            next: function () {
+                let result;
+                if (nodeActualy.parent !== undefined && nodeActualy.parent !== null) {
+                    result = {
+                        treeLevel: iterationCount,
+                        done: false,
+                    }
+                    nodeActualy = nodeActualy.getParent();
+                    nodeActualy.setRewardValue(node.rewardValue == 1 ? 1 : 0);
+                    iterationCount++;
+                    return result;
+                } else {
+                    return {
+                        treeLevel: iterationCount,
+                        done: true,
+                    }
+                }
+
+            }
+        };
+        return rangeIterator;
     }
 
     maxReward(node) {

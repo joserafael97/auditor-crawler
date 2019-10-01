@@ -44,7 +44,7 @@ const run = async (criterion, evaluation, root) => {
     } else if (aproachSelected == AproachType.BANDIT) {
         console.log("-------------------------------", AproachType.BANDIT)
         evaluation.aproach = AproachType.BANDIT
-        itens = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(40, 0.1)).catch(logErrorAndExit)
+        itens = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1)).catch(logErrorAndExit)
     } else if (aproachSelected == AproachType.DFS) {
         console.log("-------------------------------", AproachType.DFS)
         evaluation.aproach = AproachType.DFS
@@ -108,12 +108,12 @@ const init = async () => {
     let criterionLicit = CrawlerUtil.createCriterion('Licitação');
     let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
-    run(criterionDespesaOrc, evaluation, root);
-    run(criterionDespesaExtra, evaluation, root);
-    run(criterionReceitaExtra, evaluation, root);
+    // run(criterionDespesaOrc, evaluation, root);
+    // run(criterionDespesaExtra, evaluation, root);
+    // run(criterionReceitaExtra, evaluation, root);
     run(criterionReceitaOrc, evaluation, root);
-    run(criterionLicit, evaluation, root);
-    run(criterionPessoal, evaluation, root);
+    // run(criterionLicit, evaluation, root);
+    // run(criterionPessoal, evaluation, root);
 
 }
 
