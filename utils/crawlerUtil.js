@@ -1,6 +1,6 @@
 'use strict';
 
-import TextUtil from '../utils/texUtil';
+import TextUtil from './textUtil';
 import XpathUtil from '../utils/xpathUtil';
 import HtmlUtil from '../utils/htmlUtil';
 import PuppeteerUtil from "../utils/puppeteerUtil";
@@ -9,8 +9,9 @@ import Evaluation from '../models/evaluation.model';
 import Item from '../models/item.model';
 import Criterion from '../models/criterion.model';
 import FileUtil from '../utils/fileUtil';
+import FeaturesConst from '../consts/featuares';
 
-import Node from '../models/bfs/node';
+import Node from '../models/node';
 
 import {
     QUERYTOSTATICCOMPONENT
@@ -26,9 +27,11 @@ export default class CrawlerUtil {
         queryElements = queryElements.concat(queryElementDynamicComponents);
 
         let edgesList = [];
+        let result = node.getFeatures();
         const currentValue = node.getSource().getValue();
         const currentUrl = await page.url();
         const currentNodeUrl = node.getSource().getUrl();
+        result[FeaturesConst.HAVE_URL_RELEVANT] = TextUtil.checkUrlRelvant(currentUrl, criterionKeyWordName) ? 1 : 0;
 
         for (let queryElement of queryElements) {
             const elements = await page.$x(queryElement.getXpath());
@@ -42,14 +45,18 @@ export default class CrawlerUtil {
                     if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                         text = HtmlUtil.isUrl(text) ? text :
                             HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), text)) ?
-                            urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
+                                urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
                     }
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                    if (TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))) &&
+
+                    if ((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text)))
+                        || (/^\d+$/.test(text))) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
                             (currentNodeUrl !== currentUrl))) {
                         const isUrl = HtmlUtil.isUrl(text);
+
                         text = !isUrl && (await CrawlerUtil.hrefValid(element, currentUrl)) ? await (await element.getProperty('href')).jsonValue() : text;
+
                         if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase()) &&
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
 
@@ -68,6 +75,7 @@ export default class CrawlerUtil {
                 }
             }
         }
+        node.setFeatures(result)
         node.setEdgesList(edgesList);
         return node;
     };
@@ -81,7 +89,7 @@ export default class CrawlerUtil {
             currentUrl.substring(currentUrl.lastIndexOf('/')) === '/' ? currentUrl + '#' : currentUrl + '/#';
 
         if (url !== undefined && (onclick !== null ||
-                (actuallyUrl === url || TextUtil.checkTextContainsInText('frameContent', url)))) {
+            (actuallyUrl === url || TextUtil.checkTextContainsInText('frameContent', url)))) {
             return false
         }
 
@@ -92,6 +100,8 @@ export default class CrawlerUtil {
 
     static async identificationItens(criterionName, page, itensSearch = null, pageOrigin = page, evaluation, node) {
         let itens = itensSearch !== null ? itensSearch : await CrawlerUtil.initializeItens(criterionName);
+        let numberItensIdentify = 0;
+        let result = node.getFeatures();
 
         for (let item of itens) {
             const element = (await page.$x(item.xpath))[0];
@@ -117,8 +127,19 @@ export default class CrawlerUtil {
                 });
                 item.proof.length > 0 ? FileUtil.deleteFile(item.proof) : '';
                 item.proof = path;
+
+                numberItensIdentify = item.found ? numberItensIdentify + 1 : numberItensIdentify;
             }
         }
+        result[FeaturesConst.RESULT] = numberItensIdentify > 0 ? 1 : 0;
+        node.setRewardValue(numberItensIdentify > 0 ? 1 : 0);
+        result[FeaturesConst.HAVE_ONE_ITEM_CRITERIO] = numberItensIdentify === 1 ? 1 : 0;
+        result[FeaturesConst.HAVE_TWO_ITEM_CRITERIO] = numberItensIdentify === 2 ? 1 : 0;
+        result[FeaturesConst.HAVE_MORE_ITEM_CRITERIO] = numberItensIdentify > 2 ? 1 : 0;
+        const valid = await CrawlerUtil.CheckCriterionTermExistsInPage(criterionName, node, page)
+        result[FeaturesConst.HAVE_CRITERION_TERM_IN_PAGE] = valid ? 1 : 0;
+
+        node.setFeatures(result)
         CrawlerUtil.checkIdentificationItens(itens, await page.url());
         return itens;
     }
@@ -201,6 +222,25 @@ export default class CrawlerUtil {
             }
         }
         return itens;
+    }
+
+    static async CheckCriterionTermExistsInPage(criterionName, node, page) {
+        const queryElement = XpathUtil.createXpathsToIdentifyPage(criterionName);
+
+        const elements = await page.$x(queryElement.getXpath());
+        if (elements.length > 0) {
+            for (let element of elements) {
+                let text = await (await element.getProperty('textContent')).jsonValue();
+                text = TextUtil.normalizeText(text);
+                for (const term of queryElement.getKeyWordsXpath()){
+                    if (TextUtil.checkTextContainsInText(text, term) || TextUtil.checkTextContainsInText(term, text) || 
+                    TextUtil.similarityTwoString(text, term))
+                        return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     static createCriterion(criterionName) {

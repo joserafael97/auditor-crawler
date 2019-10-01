@@ -5,7 +5,7 @@ import CrawlerUtil from './utils/crawlerUtil';
 import HtmlUtil from './utils/htmlUtil';
 
 
-export default class Bfs {
+export default class Dfs {
 
     static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null) {
         if (puppeteer == null) {
@@ -81,12 +81,14 @@ export default class Bfs {
             for (let edge of queue) {
                 console.log("queue nodes: ****:", edge.getSource().value, ' level: ', edge.getLevel());
             }
-            const newNode = queue.shift();
+            const newNode = queue[queue.length - 1];
+            queue.splice(queue.length - 1, 1);
+
             if (newNode.getLevel() > 0 && !HtmlUtil.isUrl(newNode.getSource().getValue())) {
                 await page.waitForNavigation().catch(e => void e);
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
             }
-            return Bfs.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens);
+            return Dfs.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens);
         }
 
         console.log("*********************close browser***********************************************");

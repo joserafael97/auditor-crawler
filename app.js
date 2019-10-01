@@ -1,20 +1,22 @@
 'use strict';
 
 import connectToDb from './db/connect'
-import {
-    CONTAINSTYPESEARCH
-} from './utils/xpathUtil'
 import CrawlerUtil from './utils/crawlerUtil';
-import TextUtil from './utils/texUtil';
 import Criterion from './models/criterion.model'
 import Evaluation from './models/evaluation.model'
 import Bfs from './bfs'
 import Element from './models/element.class'
-import Node from './models/bfs/node';
+import Node from './models/node';
 import CriterionKeyWord from './models/criterionKeyWord.model'
 import CreateKeyWord from './db/createKeyWord'
 import County from './models/county.model'
 import CreateCountyMetaData from './db/createCountyMetaData'
+import CliParamUtil from './utils/cliParamUtil';
+import AproachType from './consts/aproachType'
+import BanditProcess from './banditProcess';
+import EpsilonGreedy from './epsilonGreedy';
+import { GaussianNB } from 'ml-naivebayes';
+import Dfs from './dfs';
 
 //checar se o node URL encontrado tem como pai um xpath e não mudou a página (mesma URL). Caso isso seja verificado, a URL pode ser duplicada.
 //adicionar lista de termos não úteis
@@ -31,7 +33,24 @@ const logErrorAndExit = err => {
 
 
 const run = async (criterion, evaluation, root) => {
-    let itens = await Bfs.gaphBfs(root, null, [], criterion, evaluation, []).catch(logErrorAndExit)
+
+    const aproachSelected = CliParamUtil.aproachParamExtract(process.argv.slice(3)[0])
+    let itens = [];
+
+    if (aproachSelected == AproachType.BFS || aproachSelected == '' || aproachSelected == "default") {
+        console.log("-------------------------------", AproachType.BFS)
+        evaluation.aproach = AproachType.BFS
+        itens = await Bfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
+    } else if (aproachSelected == AproachType.BANDIT) {
+        console.log("-------------------------------", AproachType.BANDIT)
+        evaluation.aproach = AproachType.BANDIT
+        itens = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(40, 0.1)).catch(logErrorAndExit)
+    } else if (aproachSelected == AproachType.DFS) {
+        console.log("-------------------------------", AproachType.DFS)
+        evaluation.aproach = AproachType.DFS
+        itens = await Dfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
+    }
+
     evaluation.dateEnd = new Date();
     const duration = evaluation.dateEnd.getTime() - evaluation.date.getTime();
     const delta = Math.abs(new Date() - evaluation.date) / 1000;
@@ -68,7 +87,7 @@ const initColletions = async () => {
 
 const init = async () => {
     await initColletions();
-    const county = await County.findByName(TextUtil.countyParamExtract(process.argv.slice(2)[0]));
+    const county = await County.findByName(CliParamUtil.countyParamExtract(process.argv.slice(2)[0]));
 
     let evaluation = Evaluation({
         date: new Date(),

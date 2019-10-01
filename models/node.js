@@ -1,5 +1,6 @@
 'use strict';
 
+import FeaturesConst from '../consts/featuares';
 
 
 export default class Node {
@@ -9,6 +10,9 @@ export default class Node {
         this.edges = edges;
         this.parent = parent;
         this.researched = researched;
+        this.rewardValue = 0;
+        this.features = {
+        };
     }
 
     getLevel() {
@@ -25,6 +29,15 @@ export default class Node {
         }
     }
 
+    setFeatures(feat) {
+        this.features = feat;
+    }
+
+    getFeatures() {
+        return this.features
+    }
+
+   
     getSourcesParents() {
         if (this.parent !== null) {
             let it = this.accessParents(this.parent);
@@ -37,6 +50,52 @@ export default class Node {
         } else {
             return [];
         }
+    }
+
+    getMaxReward() {
+        if (this.parent !== null) {
+            let it = this.maxReward(this.parent);
+            let result = it.next();
+
+            while (!result.done) {
+                result = it.next();
+            }
+            const reward = result.maxReward
+            return reward;
+        } else {
+            return 0;
+        }
+    }
+
+    maxReward(node) {
+        let nodeActualy = node;
+
+        let iterationCount = 0;
+        let maxReward = 0;
+
+        const rangeIterator = {
+            next: function () {
+                let result;
+                if (nodeActualy.parent !== undefined && nodeActualy.parent !== null) {
+                    result = {
+                        treeLevel: iterationCount,
+                        done: false,
+                    }
+                    nodeActualy = nodeActualy.getParent();
+                    iterationCount++;
+                    maxReward = maxReward + nodeActualy.rewardValue;
+                    return result;
+                } else {
+                    return {
+                        treeLevel: iterationCount,
+                        done: true,
+                        maxReward: maxReward
+                    }
+                }
+
+            }
+        };
+        return rangeIterator;
     }
 
     accessParents(node) {
@@ -102,5 +161,13 @@ export default class Node {
 
     setEdgesList(edges) {
         this.edges = edges;
+    }
+
+    setRewardValue(value) {
+        this.rewardValue = value;
+    }
+
+    getRewardValue() {
+        return this.rewardValue;
     }
 }

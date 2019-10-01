@@ -1,6 +1,6 @@
 'use strict';
 import CriterionKeyWord from '../models/criterionKeyWord.model'
-import TextUtil from './texUtil';
+import TextUtil from './textUtil';
 import QueryElement from '../models/queryElement.class'
 import { QUERYTODYNAMICELEMENT, QUERYTOSTATICCOMPONENT } from '../models/queryElement.class'
 
@@ -49,6 +49,7 @@ export default class XpathUtil {
                 xpaths.push(new QueryElement('//*[{}]'.replace('{}', condicao), item, QUERYTODYNAMICELEMENT, criterionKeyWords.itens[index].identificationKeyWord));
             }
         });
+
         return xpaths
     }
 
@@ -75,12 +76,12 @@ export default class XpathUtil {
                 xpaths.push(new QueryElement('//*[contains({tagSearch}, "{}")]/parent::a/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
                 xpaths.push(new QueryElement('// *[{tagSearch} = "{}"]/following::td[1]//@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
                 xpaths.push(new QueryElement('//*[contains({tagSearch}, "{}")]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
-                xpaths.push(new QueryElement('//div[contains({tagSearch},"{}")]/following::a[1]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch)); 
+                xpaths.push(new QueryElement('//div[contains({tagSearch},"{}")]/following::a[1]/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
                 xpaths.push(new QueryElement('//span[contains({tagSearch},"{}")]/parent::*/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
                 xpaths.push(new QueryElement('//*[contains({tagSearch},"{}")]/parent::a/@href'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch));
-                xpaths.push(new QueryElement('//*[contains(@src, {tagSearch})]/@src'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch, true));            
-            
-            
+                xpaths.push(new QueryElement('//*[contains(@src, {tagSearch})]/@src'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTOSTATICCOMPONENT, criterionKeyWords.keywordSearch, true));
+
+
             }
         });
 
@@ -104,10 +105,41 @@ export default class XpathUtil {
                         '//a[contains({tagSearch},"{}")]'.replace('{tagSearch}', XpathUtil.normalizeXpath('@onclick')).replace('{}', keyWord) + ' | ' +
                         '//a[contains({tagSearch},"{}")]'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord) + ' | ' +
                         '//*[contains({tagSearch},"{}")]/parent::a'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
+                        '//a[contains({tagSearch},"{}")]/following::span'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
                         '//span[contains({tagSearch},"{}")]/parent::*'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTODYNAMICELEMENT, criterionKeyWords.keywordSearch)
                 );
             }
         });
+
+        return xpaths;
+    }
+
+
+    static createXpathsToIdentifyPage(criterionKeyWordName) {
+        criterionKeyWordName = criterionKeyWordName  === "Licitação" ? "licitac" : criterionKeyWordName;
+        let xpaths = [];
+        let terms = [];
+        if (criterionKeyWordName.indexOf(' ') >= 0) {
+            terms = criterionKeyWordName.split(" ");
+
+            terms.push(criterionKeyWordName)
+            if (terms.length < 3) {
+                return new QueryElement('//*[contains({tagSearch},"{}")]/text()'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', TextUtil.normalizeText(criterionKeyWordName)) + ' | ' +
+                    '//*[contains({tagSearch},"{}")]/text()'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', TextUtil.normalizeText(terms[0])) + ' | ' +
+                    '//*[contains({tagSearch},"{}")]/text()'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', TextUtil.normalizeText(terms[1])), criterionKeyWordName, QUERYTODYNAMICELEMENT, terms)
+
+
+            } else {
+                return new QueryElement('//*[contains({tagSearch},"{}")]/text()'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', TextUtil.normalizeText(criterionKeyWordName)) + ' | ' +
+                    '//*[contains({tagSearch},"{}")]/text()'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', TextUtil.normalizeText(terms[0])) + ' | ' +
+                    '//*[contains({tagSearch},"{}")]/text()'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', TextUtil.normalizeText(terms[1] + " " + terms[2])) + ' | ' +
+                    '//*[contains({tagSearch},"{}")]/text()'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', TextUtil.normalizeText(terms[1])), criterionKeyWordName, QUERYTODYNAMICELEMENT, terms)
+
+            }
+        } else {
+            return new QueryElement('//*[contains({tagSearch},"{}")]/text()'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', TextUtil.normalizeText(criterionKeyWordName)), criterionKeyWordName, QUERYTODYNAMICELEMENT, [criterionKeyWordName])
+        }
+
         return xpaths;
     }
 

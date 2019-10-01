@@ -49,6 +49,56 @@
             "date": 1561661219841,
             "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Th-06-yyyy",
             "hash": "98277b2f46d093227bb9771904b1414a"
+        },
+        {
+            "date": 1562076477289,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Tu-07-yyyy",
+            "hash": "99421ec13a9fddf34cd1510f9eca5994"
+        },
+        {
+            "date": 1562591341090,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Mo-07-yyyy",
+            "hash": "3c15ecae92aef634505ab4dc54319ea9"
+        },
+        {
+            "date": 1562762903004,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..We-07-yyyy",
+            "hash": "5695e66e9b5e1b6622979e37663b362c"
+        },
+        {
+            "date": 1562863661612,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Th-07-yyyy",
+            "hash": "46acd8d0e9f82a333dda60455877b7d6"
+        },
+        {
+            "date": 1567629417456,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..We-09-yyyy",
+            "hash": "0c5b26ce7c2010ac3d7260b2de922307"
+        },
+        {
+            "date": 1568119300661,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Tu-09-yyyy",
+            "hash": "b38ab2dc45e6d444e599d80a65b9176c"
+        },
+        {
+            "date": 1568319592559,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Th-09-yyyy",
+            "hash": "ce3f5e8ed874a321377945757e8b5ea4"
+        },
+        {
+            "date": 1568400962330,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Fr-09-yyyy",
+            "hash": "32d77d823d1f5808b5284e8a12b720ff"
+        },
+        {
+            "date": 1568470045475,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Sa-09-yyyy",
+            "hash": "ee89b388d15a0b934bcc241d5c89e53b"
+        },
+        {
+            "date": 1568653547570,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Mo-09-yyyy",
+            "hash": "09c49459a542e96a9e196fddb431802a"
         }
     ]
 }
