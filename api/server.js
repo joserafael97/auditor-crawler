@@ -1,9 +1,13 @@
 import express from 'express';
 import evaluationRoutes from './routes/evaluation.route'
 import connectToDb from '../db/connect'
-
+import bodyParser  from 'body-parser'
 
 const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false })); 
+app.use(bodyParser.json()); 
+
 connectToDb();
 
 app.all("/*", function (req, res, next) {

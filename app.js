@@ -18,11 +18,6 @@ import EpsilonGreedy from './epsilonGreedy';
 import { GaussianNB } from 'ml-naivebayes';
 import Dfs from './dfs';
 
-//checar se o node URL encontrado tem como pai um xpath e não mudou a página (mesma URL). Caso isso seja verificado, a URL pode ser duplicada.
-//adicionar lista de termos não úteis
-//alimentar palavras não úteis para despesas Extra. 
-//Posso afirmar se a partir de clicar num xpath não pode existir uma URL nova caso após clicar a URL atual não mude? 
-
 connectToDb();
 
 const logErrorAndExit = err => {
@@ -64,7 +59,6 @@ const run = async (criterion, evaluation, root) => {
     criterion = await Criterion.addCriterion(criterion, itens);
     await Evaluation.addEvaluationWithOneCriterion(evaluation, criterion)
 
-    // console.log(criterion);
     console.log("============================================================================");
     console.log("Duration: ", minutes, ' min')
 };
@@ -108,11 +102,11 @@ const init = async () => {
     let criterionLicit = CrawlerUtil.createCriterion('Licitação');
     let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
-    run(criterionDespesaOrc, evaluation, root);
-    run(criterionDespesaExtra, evaluation, root);
-    run(criterionReceitaExtra, evaluation, root);
-    run(criterionReceitaOrc, evaluation, root);
-    run(criterionLicit, evaluation, root);
+  //// // run(criterionDespesaOrc, evaluation, root);//
+// //  // run(criterionDespesaExtra, evaluation, root);//
+    //run(criterionReceitaExtra, evaluation, root);
+//    run(criterionReceitaOrc, evaluation, root);
+  //  run(criterionLicit, evaluation, root);
     run(criterionPessoal, evaluation, root);
 
 }
