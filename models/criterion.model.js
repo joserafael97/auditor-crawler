@@ -29,10 +29,10 @@ CriterionModel.getAll = () => {
 }
 
 CriterionModel.addCriterion = async (criterionToAdd, itens) => {
+    console.log("itens", itens)
     for (const item of itens) {
         try {
             await item.save();
-            console.log(item)
             criterionToAdd.itens.push(item);
         } catch (err) {
         }

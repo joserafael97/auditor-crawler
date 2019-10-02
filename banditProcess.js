@@ -31,8 +31,6 @@ export default class BanditProcess {
         console.log("level: ", node.getLevel());
 
         try {
-
-
             if (node.getSource().getIsExtractIframe() && (await page.constructor.name) !== "Frame") {
                 await page.waitForNavigation().catch(e => void e);
                 page = await PuppeteerUtil.detectContext(page).catch(e => void e);
@@ -41,12 +39,16 @@ export default class BanditProcess {
             if (isUrl) {
                 await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
 
-                if (node.getLevel() === 0) {
-                    await page.waitFor(3000);
-                    const [button] = await page.$x("//button[contains(., 'Aceitar')]");
-                    if (button) {
-                        await button.click();
+                try {
+                    if (node.getLevel() === 0) {
+                        await page.waitFor(3000);
+                        const [button] = await page.$x("//*[contains(., 'Aceitar')]");
+                        if (button) {
+                            await button.click();
+                        }
                     }
+                } catch (e) {
+                    console.log("************button Aceitar not clicked*****************", e);
                 }
             } else {
                 let element = node.getSource().getElement();
@@ -77,10 +79,6 @@ export default class BanditProcess {
             if (!changeUrl || (changeUrl && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, newCurrentURL, node, newCurrentURL))) {
                 node = await CrawlerUtil.extractEdges(node, page, puppeteer, criterion.name, elementsIdentify);
                 itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
-
-                // if (node.getLevel() !== 0) {
-                //     model = BanditProcess.trainModel(node, xTrain, yTrain, model);
-                // }
             }
             queue.push.apply(queue, node.getEdges());
             node.setResearched(true);
@@ -92,14 +90,7 @@ export default class BanditProcess {
         for (let edge of queue) {
             console.log("queue nodes: ****:", edge.getSource().value, ' level: ', edge.getLevel());
         }
-
-        // CLASSIFICATION
-        // 01. Retrain classifier with new result 
-
         page = currentPage;
-
-        console.log("xtrain:", xTrain)
-        console.log("yTrain:", yTrain)
 
         if (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
 
@@ -107,6 +98,7 @@ export default class BanditProcess {
 
             if (node.getLevel() > 1 && lengthQueueBefore < queue.length) {
                 for (let i = lengthQueueBefore; i < queue.length; i++) {
+                    console.log("==============queue[i].getMaxReward() =", queue[i].getMaxReward())
                     if (queue[i].getMaxReward() > 0)
                         epsilonGreedyAlg.update(i, queue[i].getMaxReward())
                 }
@@ -137,9 +129,10 @@ export default class BanditProcess {
         }
 
         console.log("*********************close browser***********************************************");
-        console.log("xtrain:", xTrain)
-        console.log("yTrain:", yTrain)
-        await puppeteer.getBrowser().close();
+        if (itens === null)
+            itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
+
+        await puppeteer.getBrowser().close()
         return itens;
     };
 
