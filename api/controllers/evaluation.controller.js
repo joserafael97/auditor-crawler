@@ -38,6 +38,25 @@ module.exports = {
 
     },
 
+
+        /**
+     * .
+     * @returns {Evaluation[]}
+     */
+    getAllLastEvaluation: async (req, res, next) => {
+        Evaluation.findAllLast().then((evaluations) => {
+            if (!evaluations) {
+                res.status(404).send({
+                    'message': 'evaluations not found'
+                });
+            }
+            res.status(200).send(evaluations);
+        });
+        
+
+    },
+
+
     /**
      * .
      * @returns {Evaluation[]}

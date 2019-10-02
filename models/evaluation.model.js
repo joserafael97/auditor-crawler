@@ -69,8 +69,24 @@ EvaluationModel.findByCounty = async (countyName) => {
     }).exec());
 }
 
+EvaluationModel.findAllLast = async () => {
+    let counties = await EvaluationModel.distinct('county')
+
+    console.log("=============", counties);
+
+    return (await EvaluationModel.find({$or: [{ "county": { "$in": counties } }]}, 
+    { sort: { 'dateEnd': -1 } }).
+        populate({
+            path: 'criterions',
+            populate: {
+                path: 'itens',
+                model: 'Item'
+            }
+        }).exec());
+}
+
 EvaluationModel.findLastByCounty = async (countyName) => {
-    return (await EvaluationModel.findOne({ county: countyName }, {}, { sort: { 'dateEnd' : -1 } }).populate({
+    return (await EvaluationModel.findOne({ county: countyName }, {}, { sort: { 'dateEnd': -1 } }).populate({
         path: 'criterions',
         populate: {
             path: 'itens',
