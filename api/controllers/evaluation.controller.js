@@ -56,6 +56,23 @@ module.exports = {
 
     },
 
+    /**
+    * .
+    * @returns {Evaluation[]}
+    */
+    getAllLastEvaluationByAproach: async (req, res, next) => {
+        Evaluation.findAllLastByAproach(req.params.aproach).then((evaluations) => {
+            if (!evaluations) {
+                res.status(404).send({
+                    'message': 'evaluations not found'
+                });
+            }
+            res.status(200).send(evaluations);
+        });
+
+
+    },
+
 
     /**
      * .
