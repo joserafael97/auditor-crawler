@@ -89,6 +89,27 @@ EvaluationModel.findAllLast = async () => {
     return evaluations;
 }
 
+EvaluationModel.findAllLastByAproach = async (aproachName) => {
+
+    let counties = await EvaluationModel.distinct('county')
+    let evaluations = [];
+
+    for (let countyName of counties) {
+        let evaluation = (await EvaluationModel.findOne({ county: countyName, aproach: aproachName }, {}, { sort: { 'dateEnd': -1 } }).populate({
+            path: 'criterions',
+            populate: {
+                path: 'itens',
+                model: 'Item'
+            }
+        }).exec());
+
+        evaluations.push(evaluation);
+    }
+
+
+    return evaluations;
+}
+
 EvaluationModel.findLastByCounty = async (countyName) => {
     return (await EvaluationModel.findOne({ county: countyName }, {}, { sort: { 'dateEnd': -1 } }).populate({
         path: 'criterions',
