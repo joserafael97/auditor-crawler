@@ -92,6 +92,9 @@ export default class Dfs {
         }
 
         console.log("*********************close browser***********************************************");
+        if (itens === null)
+            itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
+
         await puppeteer.getBrowser().close();
 
         return itens;

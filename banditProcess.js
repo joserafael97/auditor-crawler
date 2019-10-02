@@ -39,12 +39,16 @@ export default class BanditProcess {
             if (isUrl) {
                 await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
 
-                if (node.getLevel() === 0) {
-                    await page.waitFor(3000);
-                    const [button] = await page.$x("//button[contains(., 'Aceitar')]");
-                    if (button) {
-                        await button.click();
+                try {
+                    if (node.getLevel() === 0) {
+                        await page.waitFor(3000);
+                        const [button] = await page.$x("//*[contains(., 'Aceitar')]");
+                        if (button) {
+                            await button.click();
+                        }
                     }
+                } catch (e) {
+                    console.log("************button Aceitar not clicked*****************", e);
                 }
             } else {
                 let element = node.getSource().getElement();
@@ -125,9 +129,10 @@ export default class BanditProcess {
         }
 
         console.log("*********************close browser***********************************************");
-        console.log("xtrain:", xTrain)
-        console.log("yTrain:", yTrain)
-        await puppeteer.getBrowser().close();
+        if (itens === null)
+            itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
+
+        await puppeteer.getBrowser().close()
         return itens;
     };
 
