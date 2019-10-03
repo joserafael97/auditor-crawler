@@ -91,7 +91,7 @@ export default class Node {
         const rangeIterator = {
             next: function () {
                 let result;
-                if (nodeActualy.parent !== undefined && nodeActualy.parent !== null) {
+                if (nodeActualy.parent !== undefined && (nodeActualy.parent !== null && nodeActualy.getLevel() > 0)) {
                     result = {
                         treeLevel: iterationCount,
                         done: false,

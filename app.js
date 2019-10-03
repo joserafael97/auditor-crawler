@@ -18,14 +18,13 @@ import EpsilonGreedy from './epsilonGreedy';
 import { GaussianNB } from 'ml-naivebayes';
 import Dfs from './dfs';
 
-connectToDb();
 
 const logErrorAndExit = err => {
     console.log(err);
     process.exit();
 };
 
-
+let moogoseInstace = null;
 
 const run = async (criterion, evaluation, root) => {
 
@@ -79,7 +78,10 @@ const initColletions = async () => {
 }
 
 
-const init = async () => {
+
+const startCrawler = async () => {
+    moogoseInstace = await connectToDb();
+
     await initColletions();
     const county = await County.findByName(CliParamUtil.countyParamExtract(process.argv.slice(2)[0]));
 
@@ -102,13 +104,22 @@ const init = async () => {
     let criterionLicit = CrawlerUtil.createCriterion('Licitação');
     let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
-    run(criterionDespesaOrc, evaluation, root);
-    run(criterionDespesaExtra, evaluation, root);
-    run(criterionReceitaExtra, evaluation, root);
-    run(criterionReceitaOrc, evaluation, root);
-    run(criterionLicit, evaluation, root);
-    run(criterionPessoal, evaluation, root);
+    Promise.all([
+        run(criterionDespesaOrc, evaluation, root),
+        run(criterionDespesaExtra, evaluation, root),
+        run(criterionReceitaExtra, evaluation, root),
+        run(criterionReceitaOrc, evaluation, root),
+        run(criterionLicit, evaluation, root),
+        run(criterionPessoal, evaluation, root)
+    ]
+    ).then((result) => {
+        console.log("testando =======================================================================================================");
+        moogoseInstace.connection.close(function(){
+            process.exit(0);
+        })
+    });
 
 }
 
-init();
+
+startCrawler();
