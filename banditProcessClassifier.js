@@ -9,9 +9,9 @@ import FeaturesConst from './consts/featuares';
 import TextUtil from "./utils/textUtil";
 
 
-export default class BanditProcess {
+export default class BanditProcessClassifier {
 
-    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, epsilonGreedyAlg, actuallyIndex = 0) {
+    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, model, epsilonGreedyAlg, xTrain = [], yTrain = [], actuallyIndex = 0) {
         if (puppeteer == null) {
             puppeteer = await PuppeteerUtil.createPuppetterInstance();
         }
@@ -116,7 +116,7 @@ export default class BanditProcess {
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
             }
 
-            return BanditProcess.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, epsilonGreedyAlg, actuallyIndex);
+            return BanditProcess.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, model, epsilonGreedyAlg, xTrain, yTrain, actuallyIndex);
 
         }
 
@@ -128,5 +128,40 @@ export default class BanditProcess {
         return itens;
     };
 
+    static trainModel(node, xTrain, yTrain, model) {
+        const newTrain = [
+            node.getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
+            node.getParent().getFeatures()[FeaturesConst.HAVE_CRITERION_TERM_IN_PAGE],
+            node.getParent().getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
+            node.getParent().getFeatures()[FeaturesConst.HAVE_ONE_ITEM_CRITERIO],
+            node.getParent().getFeatures()[FeaturesConst.HAVE_TWO_ITEM_CRITERIO],
+            node.getParent().getFeatures()[FeaturesConst.HAVE_MORE_ITEM_CRITERIO],
+        ]
+
+        if (!TextUtil.checkArrayContainsInListArrays(xTrain, newTrain)) {
+            xTrain.push(newTrain);
+            yTrain.push(node.getFeatures()[FeaturesConst.RESULT]);
+            model.train(xTrain, yTrain);
+        }
+        return model;
+
+    }
+
+    static trainModelActuallyNode(node, xTrain, yTrain, model) {
+        const newTrain = [
+            node.getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
+            node.getParent().getFeatures()[FeaturesConst.HAVE_CRITERION_TERM_IN_PAGE],
+            node.getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
+            node.getFeatures()[FeaturesConst.HAVE_ONE_ITEM_CRITERIO],
+            node.getFeatures()[FeaturesConst.HAVE_TWO_ITEM_CRITERIO],
+            node.getFeatures()[FeaturesConst.HAVE_MORE_ITEM_CRITERIO],
+        ]
+
+        xTrain.push(newTrain);
+        yTrain.push(node.getFeatures()[FeaturesConst.RESULT]);
+        model.train(xTrain, yTrain);
+
+        return model;
+    }
 
 }

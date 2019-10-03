@@ -33,15 +33,15 @@ const run = async (criterion, evaluation, root) => {
     let itens = [];
 
     if (aproachSelected == AproachType.BFS || aproachSelected == '' || aproachSelected == "default") {
-        console.log("-------------------------------", AproachType.BFS)
+        console.log("-------------------------------AproachType: ", AproachType.BFS)
         evaluation.aproach = AproachType.BFS
         itens = await Bfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
     } else if (aproachSelected == AproachType.BANDIT) {
-        console.log("-------------------------------", AproachType.BANDIT)
+        console.log("-------------------------------AproachType: ", AproachType.BANDIT)
         evaluation.aproach = AproachType.BANDIT
         itens = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1)).catch(logErrorAndExit)
     } else if (aproachSelected == AproachType.DFS) {
-        console.log("-------------------------------", AproachType.DFS)
+        console.log("-------------------------------AproachType: ", AproachType.DFS)
         evaluation.aproach = AproachType.DFS
         itens = await Dfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
     }
