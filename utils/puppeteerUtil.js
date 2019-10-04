@@ -39,7 +39,7 @@ export default class PuppeteerUtil {
                 '--disable-infobars',
                 '--test-type',
             ],
-            headless: true
+            headless: false
         });
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
