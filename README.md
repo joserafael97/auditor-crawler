@@ -157,7 +157,7 @@ O detalhamento das atividades do diagrama é apresentada abaixo:
 
 ## Avaliação dos Resultados
 
-Os resultados obtidos pelo 
+TODO
 
 ### Gabaritos
 
@@ -173,6 +173,7 @@ Com objetivo de comparar o desempenho do crawler na avaliação da transparênci
 Na elaboração dos gabaritos cada item registrado é classificado manualmente, atribuindo na coluna encontrado o valor ***TRUE*** caso a presença no portal seja confirmada e ***FALSE*** caso contrário. Além disso, é registrada a localização onde cada item foi identificado, assegurando a corretude da informação durante a comparação entre o gabarito e os resultados do crawler. 
 
 ### Métricas
+TODO
 
 ***Recall*** tem o proposito de medir a capacidade do crawler em identificar todos os itens presentes nos portais de transparência. Abaixo é apresentada sua fórmula:
 
