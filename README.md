@@ -155,6 +155,25 @@ O detalhamento das atividades do diagrama é apresentada abaixo:
 
 * ***Search new Nodes:*** Caso todos os itens não sejam identificados, o crawler prossegue com a atividade de procurar novos nós para serem acessados (nós filhos do nó atual) podendo ser uma URL ou um elemento HTMl clicável. No processo são aplicadas validações aos novos elementos encontrados, verificando a duplicidade de elementos e se eles são relevantes para o critério buscado, evitando possíveis ruídos nas buscas como elementos que dão acesso a páginas de critérios semelhantes como entre Receita Orçamentária e Receita Extra-Orçamentária. Por fim, caso novos nós filhos não sejam encontrados e todos os nós já tenham sido percorridos o processo de avaliação do critério é finalizado.
 
+## Avaliação dos Resultados
+
+Os resultados obtidos pelo 
+
+### Gabaritos
+
+| municipio     | criterio                    | item          |  encontrado      |local_encontrado  | local_encontrado_2       |
+| ------------- | ----------------------------| ------------- |  --------------- |----------------- | -------------------------|                                                     
+| Santa Rita    | Receita Extra Orçamentária  | valor         | TRUE      |http://siteseticons.com.br/portal/faces/pages/receita/extra/inicio.xhtml	 |                          | 
+| Santa Rita    | Receita Extra Orçamentária  | codigo         | TRUE      |http://siteseticons.com.br/portal/faces/pages/receita/extra/inicio.xhtml	 |                          | 
+| Santa Rita    | Receita Extra Orçamentária  | nomenclatura         | TRUE      |http://siteseticons.com.br/portal/faces/pages/receita/extra/inicio.xhtml	 |                          | 
+
+### Métricas
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{200}&space;\large&space;Recall&space;=&space;\frac{TP}{TP&space;&plus;&space;FN}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{200}&space;\large&space;Recall&space;=&space;\frac{TP}{TP&space;&plus;&space;FN}" title="\large Recall = \frac{TP}{TP + FN}" /></a>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{200}&space;\large&space;Precision&space;=&space;\frac{TP}{TP&space;&plus;&space;FP}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{200}&space;\large&space;Precision&space;=&space;\frac{TP}{TP&space;&plus;&space;FP}" title="\large Precision = \frac{TP}{TP + FP}" /></a>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{200}&space;\large&space;F1_{score}&space;=&space;2&space;*&space;\frac{Precision&space;*&space;Recall}{Precision&space;&plus;&space;Recall}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{200}&space;\large&space;F1_{score}&space;=&space;2&space;*&space;\frac{Precision&space;*&space;Recall}{Precision&space;&plus;&space;Recall}" title="\large F1_{score} = 2 * \frac{Precision * Recall}{Precision + Recall}" /></a>
+
 ## Getting Started
 
 Este projeto foi desenvolvido sobre a linguagem Javascript com a ferramenta [Puppeteer](https://github.com/GoogleChrome/puppeteer) para criação de Crawlers.
