@@ -161,18 +161,41 @@ Os resultados obtidos pelo
 
 ### Gabaritos
 
+Com objetivo de comparar o desempenho do crawler na avaliação da transparência municipal, os gabaritos registram a presença ou ausência dos itens de cada critério nos diferentes sites de transparência. A Tabela abaixo apresenta um exemplo do registro do gabarito para os itens do critério Receita Extra Orçamentária no portal do município de Santa Rita:
+
+
 | municipio     | criterio                    | item          |  encontrado      |local_encontrado  | local_encontrado_2       |
 | ------------- | ----------------------------| ------------- |  --------------- |----------------- | -------------------------|                                                     
 | Santa Rita    | Receita Extra Orçamentária  | valor         | TRUE      |http://siteseticons.com.br/portal/faces/pages/receita/extra/inicio.xhtml	 |                          | 
 | Santa Rita    | Receita Extra Orçamentária  | codigo         | TRUE      |http://siteseticons.com.br/portal/faces/pages/receita/extra/inicio.xhtml	 |                          | 
 | Santa Rita    | Receita Extra Orçamentária  | nomenclatura         | TRUE      |http://siteseticons.com.br/portal/faces/pages/receita/extra/inicio.xhtml	 |                          | 
 
+Na elaboração dos gabaritos cada item registrado é classificado manualmente, atribuindo na coluna encontrado o valor ***TRUE*** caso a presença no portal seja confirmada e ***FALSE*** caso contrário. Além disso, é registrada a localização onde cada item foi identificado, assegurando a corretude da informação durante a comparação entre o gabarito e os resultados do crawler. 
+
 ### Métricas
+
+***Recall*** tem o proposito de medir a capacidade do crawler em identificar todos os itens presentes nos portais de transparência. Abaixo é apresentada sua fórmula:
+
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{200}&space;\large&space;Recall&space;=&space;\frac{TP}{TP&space;&plus;&space;FN}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{200}&space;\large&space;Recall&space;=&space;\frac{TP}{TP&space;&plus;&space;FN}" title="\large Recall = \frac{TP}{TP + FN}" /></a>
+
+* ***TP*** são os verdadeiros positivos (true positive) que representam o número de itens (nome, CPF, salário de quadro pessoal por exemplo) identificados corretamente como presentes e localizados em locais válidos pelo gabarito;
+
+* ***FN*** são os falsos negativos (false negative) que representam o número de itens identificados incorretamente como ausentes na avaliação do crawler.
+
+***Precision*** tem o objetivo de medir o nível de acerto nos itens identificados com presente durante os experimentos; 
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{200}&space;\large&space;Precision&space;=&space;\frac{TP}{TP&space;&plus;&space;FP}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{200}&space;\large&space;Precision&space;=&space;\frac{TP}{TP&space;&plus;&space;FP}" title="\large Precision = \frac{TP}{TP + FP}" /></a>
 
+* ***TP*** são os verdadeiros positivos (true positive) que representam o número de itens (nome, CPF, salário de quadro pessoal por exemplo) identificados corretamente como presentes e localizados em locais válidos pelo gabarito;
+
+* ***FP*** são os falsos positivos (false positive) que representam o número de itens identificados incorretamente como presente durante avaliação do crawler.
+
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\dpi{200}&space;\large&space;F1_{score}&space;=&space;2&space;*&space;\frac{Precision&space;*&space;Recall}{Precision&space;&plus;&space;Recall}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;\dpi{200}&space;\large&space;F1_{score}&space;=&space;2&space;*&space;\frac{Precision&space;*&space;Recall}{Precision&space;&plus;&space;Recall}" title="\large F1_{score} = 2 * \frac{Precision * Recall}{Precision + Recall}" /></a>
+
+***F1-score*** é proposto com o objetivo de medir a harmonia entre os valores de  Precision  e Recall;
+
+* ***Precision*** é o valor resultante do cálculo apresentado na função de Precision;
+* ***Recall*** é o valor resultante do cálculo apresentado na função de Recall.
 
 ## Getting Started
 
