@@ -205,6 +205,7 @@ De acordo com os resultados obtidos nos gabaritos e avaliações do crawler fora
 
 No que diz respeito a eficiência do crawler foram utilizados a medição número de ***Nós acessados*** (URLs, Componentes clicáveis) e o consumo de ***CPU***, ***Memória RAM*** e ***Internet***.
 
+Obs: toda a análise dos resultados foi realizada pelo projeto [https://github.com/joserafael97/analyze-auditor-crawlers](https://github.com/joserafael97/analyze-auditor-crawlers)
 
 ## Experimentos
 TODO
