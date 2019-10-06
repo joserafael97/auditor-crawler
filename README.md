@@ -157,7 +157,7 @@ O detalhamento das atividades do diagrama é apresentada abaixo:
 
 ## Avaliação dos Resultados
 
-TODO
+Para análise da ***eficácia*** e ***eficiência*** do crawler durante as avaliações fiscais foram propostas algumas métricas e abordagens apresentadas nesta seção.
 
 ### Gabaritos
 
@@ -170,10 +170,15 @@ Com objetivo de comparar o desempenho do crawler na avaliação da transparênci
 | Santa Rita    | Receita Extra Orçamentária  | codigo         | TRUE      |http://siteseticons.com.br/portal/faces/pages/receita/extra/inicio.xhtml	 |                          | 
 | Santa Rita    | Receita Extra Orçamentária  | nomenclatura         | TRUE      |http://siteseticons.com.br/portal/faces/pages/receita/extra/inicio.xhtml	 |                          | 
 
-Na elaboração dos gabaritos cada item registrado é classificado manualmente, atribuindo na coluna encontrado o valor ***TRUE*** caso a presença no portal seja confirmada e ***FALSE*** caso contrário. Além disso, é registrada a localização onde cada item foi identificado, assegurando a corretude da informação durante a comparação entre o gabarito e os resultados do crawler. 
+Na elaboração dos gabaritos cada item registrado é classificado manualmente, atribuindo na coluna encontrado o valor ***TRUE*** caso a presença no portal seja confirmada e ***FALSE*** caso contrário. Além disso, é registrada a localização onde cada item foi identificado, assegurando a corretude da informação durante a comparação entre o gabarito e os resultados do crawler.
+
+Nesse cenário, devido a dificuldade na elaboração manual de gabaritos para todos 223 municípios do estado da Paraíba foi optado pelo uso de amostra significativa, considerando o número de fornecedores de portais no estado e possíveis mesclagens existentes.
+
+TODO explicar a amostra.
 
 ### Métricas
-TODO
+
+De acordo com os resultados obtidos nos gabaritos e avaliações do crawler foram aplicadas as seguintes métricas para avaliar a eficácia da solução proposta nesta pesquisa:
 
 ***Recall*** tem o proposito de medir a capacidade do crawler em identificar todos os itens presentes nos portais de transparência. Abaixo é apresentada sua fórmula:
 
@@ -197,6 +202,19 @@ TODO
 
 * ***Precision*** é o valor resultante do cálculo apresentado na função de Precision;
 * ***Recall*** é o valor resultante do cálculo apresentado na função de Recall.
+
+No que diz respeito a eficiência do crawler foram utilizados a medição número de ***Nós acessados*** (URLs, Componentes clicáveis) e o consumo de ***CPU***, ***Memória RAM*** e ***Internet***.
+
+
+## Experimentos
+TODO
+
+## Environment
+TODO
+
+## Resultados
+TODO
+
 
 ## Getting Started
 
