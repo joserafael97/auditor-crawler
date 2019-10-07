@@ -31,28 +31,37 @@ const run = async (criterion, evaluation, root) => {
 
     const aproachSelected = CliParamUtil.aproachParamExtract(process.argv.slice(3)[0])
     let itens = [];
+    let resultEvaliation = null;
 
     if (aproachSelected == AproachType.BFS || aproachSelected == '' || aproachSelected == "default") {
         console.log("-------------------------------AproachType: ", AproachType.BFS)
         evaluation.aproach = AproachType.BFS
-        itens = await Bfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
+        resultEvaliation = await Bfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
+        itens = resultEvaliation.itens;
+        criterion.contNodeNumberAccess = resultEvaliation.contNodeNumber
+
+    
     } else if (aproachSelected == AproachType.BANDIT) {
         console.log("-------------------------------AproachType: ", AproachType.BANDIT)
         evaluation.aproach = AproachType.BANDIT
         const classifierCli = CliParamUtil.classifierParamExtract(process.argv.slice(4)[0])
 
         if (classifierCli === 'naivebayes' ){
-            itens = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1), [], []).catch(logErrorAndExit)
+            resultEvaliation = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1), [], []).catch(logErrorAndExit)
 
         }else {
-            itens = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null,  new EpsilonGreedy(10000, 0.1)).catch(logErrorAndExit)
-
+            resultEvaliation = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null,  new EpsilonGreedy(10000, 0.1)).catch(logErrorAndExit)
         }
+
+        itens = resultEvaliation.itens;
+        criterion.contNodeNumberAccess = resultEvaliation.contNodeNumber
 
     } else if (aproachSelected == AproachType.DFS) {
         console.log("-------------------------------AproachType: ", AproachType.DFS)
         evaluation.aproach = AproachType.DFS
-        itens = await Dfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
+        resultEvaliation = await Dfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
+        itens = resultEvaliation.itens;
+        criterion.contNodeNumberAccess = resultEvaliation.contNodeNumber
     }
 
     evaluation.dateEnd = new Date();
@@ -115,12 +124,12 @@ const startCrawler = async () => {
     let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
     Promise.all([
-        // run(criterionDespesaOrc, evaluation, root),
+        run(criterionDespesaOrc, evaluation, root),
         run(criterionDespesaExtra, evaluation, root),
-        // run(criterionReceitaExtra, evaluation, root),
-        // run(criterionReceitaOrc, evaluation, root),
-        // run(criterionLicit, evaluation, root),
-        // run(criterionPessoal, evaluation, root)
+        run(criterionReceitaExtra, evaluation, root),
+        run(criterionReceitaOrc, evaluation, root),
+        run(criterionLicit, evaluation, root),
+        run(criterionPessoal, evaluation, root)
     ]
     ).then((result) => {
         console.log("testando =======================================================================================================");

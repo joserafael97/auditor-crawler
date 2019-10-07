@@ -11,7 +11,7 @@ import TextUtil from "./utils/textUtil";
 
 export default class BanditProcess {
 
-    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, epsilonGreedyAlg, actuallyIndex = 0, contNodeNumber = 0) {
+    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, epsilonGreedyAlg, actuallyIndex = 0, contNodeNumber = 1) {
         if (puppeteer == null) {
             puppeteer = await PuppeteerUtil.createPuppetterInstance();
         }
@@ -116,7 +116,7 @@ export default class BanditProcess {
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
             }
 
-            return BanditProcess.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, epsilonGreedyAlg, actuallyIndex, contNodeNumber++);
+            return BanditProcess.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, epsilonGreedyAlg, actuallyIndex, ++contNodeNumber);
 
         }
 
@@ -125,7 +125,7 @@ export default class BanditProcess {
             itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
 
         await puppeteer.getBrowser().close()
-        return itens;
+        return {"itens": itens, "contNodeNumber": contNodeNumber};
     };
 
 

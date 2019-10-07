@@ -12,7 +12,7 @@ import XpathUtil from "./utils/xpathUtil";
 
 export default class BanditProcessClassifier {
 
-    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, model, epsilonGreedyAlg, xTrain = [], yTrain = [], actuallyIndex = 0) {
+    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, model, epsilonGreedyAlg, xTrain = [], yTrain = [], actuallyIndex = 0, contNodeNumber = 1) {
         if (puppeteer == null) {
             puppeteer = await PuppeteerUtil.createPuppetterInstance();
         }
@@ -116,9 +116,7 @@ export default class BanditProcessClassifier {
                 await page.waitForNavigation().catch(e => void e);
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
             }
-
-            return BanditProcessClassifier.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, model, epsilonGreedyAlg, xTrain, yTrain, actuallyIndex++);
-
+            return BanditProcessClassifier.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, model, epsilonGreedyAlg, xTrain, yTrain, actuallyIndex++, ++contNodeNumber);
         }
 
         console.log("*********************close browser***********************************************");
@@ -126,7 +124,7 @@ export default class BanditProcessClassifier {
             itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
 
         await puppeteer.getBrowser().close()
-        return itens;
+        return {"itens": itens, "contNodeNumber": contNodeNumber};
     };
 
     static trainModel(node, xTrain, yTrain, model) {
