@@ -44,7 +44,11 @@ export default class BanditProcess {
                         await page.waitFor(3000);
                         const [button] = await page.$x("//*[contains(., 'Aceitar')]");
                         if (button) {
-                            await button.click();
+                            try {
+                                await button.click();
+                            } catch (e) {
+                                console.log("************not button aceitar*****************", e);
+                            }
                         }
                     }
                 } catch (e) {

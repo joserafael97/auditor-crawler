@@ -39,7 +39,11 @@ export default class Dfs {
                     await page.waitFor(3000);
                     const [button] = await page.$x("//button[contains(., 'Aceitar')]");
                     if (button) {
-                        await button.click();
+                        try {
+                            await button.click();
+                        } catch (e) {
+                            console.log("************not button aceitar*****************", e);
+                        }
                     }
                 }
             } else {
