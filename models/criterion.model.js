@@ -15,6 +15,10 @@ const CriterionSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    contNodeNumberAccess: {
+        type: Number,
+        required: true
+    },
     itens: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Item'

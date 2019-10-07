@@ -17,6 +17,7 @@ import BanditProcess from './banditProcess';
 import EpsilonGreedy from './epsilonGreedy';
 import { GaussianNB } from 'ml-naivebayes';
 import Dfs from './dfs';
+import BanditProcessClassifier from './banditProcessClassifier';
 
 
 const logErrorAndExit = err => {
@@ -30,19 +31,37 @@ const run = async (criterion, evaluation, root) => {
 
     const aproachSelected = CliParamUtil.aproachParamExtract(process.argv.slice(3)[0])
     let itens = [];
+    let resultEvaliation = null;
 
     if (aproachSelected == AproachType.BFS || aproachSelected == '' || aproachSelected == "default") {
         console.log("-------------------------------AproachType: ", AproachType.BFS)
         evaluation.aproach = AproachType.BFS
-        itens = await Bfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
+        resultEvaliation = await Bfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
+        itens = resultEvaliation.itens;
+        criterion.contNodeNumberAccess = resultEvaliation.contNodeNumber
+
+    
     } else if (aproachSelected == AproachType.BANDIT) {
         console.log("-------------------------------AproachType: ", AproachType.BANDIT)
         evaluation.aproach = AproachType.BANDIT
-        itens = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(10000, 0.1)).catch(logErrorAndExit)
+        const classifierCli = CliParamUtil.classifierParamExtract(process.argv.slice(4)[0])
+
+        if (classifierCli === 'naivebayes' ){
+            resultEvaliation = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1), [], []).catch(logErrorAndExit)
+
+        }else {
+            resultEvaliation = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null,  new EpsilonGreedy(10000, 0.1)).catch(logErrorAndExit)
+        }
+
+        itens = resultEvaliation.itens;
+        criterion.contNodeNumberAccess = resultEvaliation.contNodeNumber
+
     } else if (aproachSelected == AproachType.DFS) {
         console.log("-------------------------------AproachType: ", AproachType.DFS)
         evaluation.aproach = AproachType.DFS
-        itens = await Dfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
+        resultEvaliation = await Dfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
+        itens = resultEvaliation.itens;
+        criterion.contNodeNumberAccess = resultEvaliation.contNodeNumber
     }
 
     evaluation.dateEnd = new Date();

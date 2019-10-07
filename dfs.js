@@ -7,7 +7,7 @@ import HtmlUtil from './utils/htmlUtil';
 
 export default class Dfs {
 
-    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null) {
+    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, contNodeNumber = 1) {
         if (puppeteer == null) {
             puppeteer = await PuppeteerUtil.createPuppetterInstance();
         }
@@ -92,7 +92,7 @@ export default class Dfs {
                 await page.waitForNavigation().catch(e => void e);
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
             }
-            return Dfs.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens);
+            return Dfs.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, ++contNodeNumber);
         }
 
         console.log("*********************close browser***********************************************");
@@ -101,7 +101,7 @@ export default class Dfs {
 
         await puppeteer.getBrowser().close();
 
-        return itens;
+        return {"itens": itens, "contNodeNumber": contNodeNumber};
     };
 
 }
