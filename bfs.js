@@ -7,7 +7,7 @@ import HtmlUtil from './utils/htmlUtil';
 
 export default class Bfs {
 
-    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null) {
+    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, contNodeNumber = 0) {
         if (puppeteer == null) {
             puppeteer = await PuppeteerUtil.createPuppetterInstance();
         }
@@ -90,7 +90,7 @@ export default class Bfs {
                 await page.waitForNavigation().catch(e => void e);
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
             }
-            return Bfs.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens);
+            return Bfs.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, contNodeNumber++);
         }
 
         console.log("*********************close browser***********************************************");

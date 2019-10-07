@@ -7,6 +7,7 @@ import { GaussianNB } from 'ml-naivebayes';
 import EpsilonGreedy from './epsilonGreedy';
 import FeaturesConst from './consts/featuares';
 import TextUtil from "./utils/textUtil";
+import XpathUtil from "./utils/xpathUtil";
 
 
 export default class BanditProcessClassifier {
@@ -38,17 +39,16 @@ export default class BanditProcessClassifier {
 
             if (isUrl) {
                 await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
-
-                try {
-                    if (node.getLevel() === 0) {
-                        await page.waitFor(3000);
-                        const [button] = await page.$x("//*[contains(., 'Aceitar')]");
-                        if (button) {
+                if (node.getLevel() === 0) {
+                    await page.waitFor(3000);
+                    const [button] = await page.$x("//*[contains(., 'Aceitar')]");
+                    if (button) {
+                        try {
                             await button.click();
+                        } catch (e) {
+                            console.log("************button Aceitar not clicked*****************", e);
                         }
                     }
-                } catch (e) {
-                    console.log("************button Aceitar not clicked*****************", e);
                 }
             } else {
                 let element = node.getSource().getElement();
@@ -77,9 +77,10 @@ export default class BanditProcessClassifier {
             elementsIdentify.push.apply(elementsIdentify, queue);
 
             if (!changeUrl || (changeUrl && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, newCurrentURL, node, newCurrentURL))) {
-                node = await CrawlerUtil.extractEdges(node, page, puppeteer, criterion.name, elementsIdentify);
+                node = await CrawlerUtil.extractEdgesWithKeyWordCriterion(node, page, puppeteer, criterion.name, elementsIdentify);
                 itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
             }
+
             queue.push.apply(queue, node.getEdges());
             node.setResearched(true);
 
@@ -93,7 +94,7 @@ export default class BanditProcessClassifier {
         page = currentPage;
 
         if (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
-
+            console.log("==========", epsilonGreedyAlg)
             epsilonGreedyAlg.updateNumArms(queue.length);
 
             if (node.getLevel() > 1 && lengthQueueBefore < queue.length) {
@@ -116,7 +117,7 @@ export default class BanditProcessClassifier {
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
             }
 
-            return BanditProcess.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, model, epsilonGreedyAlg, xTrain, yTrain, actuallyIndex);
+            return BanditProcessClassifier.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, model, epsilonGreedyAlg, xTrain, yTrain, actuallyIndex++);
 
         }
 

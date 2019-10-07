@@ -7,4 +7,8 @@ export default class CliParamUtil {
     static aproachParamExtract(param) {
         return param.replace('aproach=', '').trim()
     }
+
+    static classifierParamExtract(param) {
+        return param.replace('classifier=', '').trim()
+    }
 }

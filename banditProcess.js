@@ -11,7 +11,7 @@ import TextUtil from "./utils/textUtil";
 
 export default class BanditProcess {
 
-    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, epsilonGreedyAlg, actuallyIndex = 0) {
+    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, epsilonGreedyAlg, actuallyIndex = 0, contNodeNumber = 0) {
         if (puppeteer == null) {
             puppeteer = await PuppeteerUtil.createPuppetterInstance();
         }
@@ -38,22 +38,18 @@ export default class BanditProcess {
 
             if (isUrl) {
                 await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
-
-                try {
-                    if (node.getLevel() === 0) {
-                        await page.waitFor(3000);
-                        const [button] = await page.$x("//*[contains(., 'Aceitar')]");
-                        if (button) {
-                            try {
-                                await button.click();
-                            } catch (e) {
-                                console.log("************not button aceitar*****************", e);
-                            }
+                if (node.getLevel() === 0) {
+                    await page.waitFor(3000);
+                    const [button] = await page.$x("//*[contains(., 'Aceitar')]");
+                    if (button) {
+                        try {
+                            await button.click();
+                        } catch (e) {
+                            console.log("************not button aceitar*****************", e);
                         }
                     }
-                } catch (e) {
-                    console.log("************button Aceitar not clicked*****************", e);
                 }
+
             } else {
                 let element = node.getSource().getElement();
                 element = await PuppeteerUtil.selectElementPage(page, xpath, value);
@@ -120,7 +116,7 @@ export default class BanditProcess {
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
             }
 
-            return BanditProcess.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, epsilonGreedyAlg, actuallyIndex);
+            return BanditProcess.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, epsilonGreedyAlg, actuallyIndex, contNodeNumber++);
 
         }
 

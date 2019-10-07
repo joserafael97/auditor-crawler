@@ -17,6 +17,7 @@ import BanditProcess from './banditProcess';
 import EpsilonGreedy from './epsilonGreedy';
 import { GaussianNB } from 'ml-naivebayes';
 import Dfs from './dfs';
+import BanditProcessClassifier from './banditProcessClassifier';
 
 
 const logErrorAndExit = err => {
@@ -38,7 +39,16 @@ const run = async (criterion, evaluation, root) => {
     } else if (aproachSelected == AproachType.BANDIT) {
         console.log("-------------------------------AproachType: ", AproachType.BANDIT)
         evaluation.aproach = AproachType.BANDIT
-        itens = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(10000, 0.1)).catch(logErrorAndExit)
+        const classifierCli = CliParamUtil.classifierParamExtract(process.argv.slice(4)[0])
+
+        if (classifierCli === 'naivebayes' ){
+            itens = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1), [], []).catch(logErrorAndExit)
+
+        }else {
+            itens = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null,  new EpsilonGreedy(10000, 0.1)).catch(logErrorAndExit)
+
+        }
+
     } else if (aproachSelected == AproachType.DFS) {
         console.log("-------------------------------AproachType: ", AproachType.DFS)
         evaluation.aproach = AproachType.DFS
@@ -105,12 +115,12 @@ const startCrawler = async () => {
     let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
     Promise.all([
-        run(criterionDespesaOrc, evaluation, root),
+        // run(criterionDespesaOrc, evaluation, root),
         run(criterionDespesaExtra, evaluation, root),
-        run(criterionReceitaExtra, evaluation, root),
-        run(criterionReceitaOrc, evaluation, root),
-        run(criterionLicit, evaluation, root),
-        run(criterionPessoal, evaluation, root)
+        // run(criterionReceitaExtra, evaluation, root),
+        // run(criterionReceitaOrc, evaluation, root),
+        // run(criterionLicit, evaluation, root),
+        // run(criterionPessoal, evaluation, root)
     ]
     ).then((result) => {
         console.log("testando =======================================================================================================");

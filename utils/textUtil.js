@@ -26,6 +26,20 @@ export default class TextUtil {
         return false;
     }
 
+    static extractTermsCriterionName(criterionKeyWordName) {
+        criterionKeyWordName = criterionKeyWordName === "Licitação" ? "licitac" : criterionKeyWordName;
+        let terms = [];
+
+        if (criterionKeyWordName.indexOf(' ') >= 0) {
+            terms = criterionKeyWordName.split(" ");
+        }
+        
+        terms.push(criterionKeyWordName)
+
+        return terms;
+
+    } 
+
     static similarityTwoString(string01, string02) {
         return StringSimilarity.compareTwoStrings(string01, string02) > 0.95;
     }
