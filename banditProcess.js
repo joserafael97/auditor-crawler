@@ -7,6 +7,7 @@ import { GaussianNB } from 'ml-naivebayes';
 import EpsilonGreedy from './epsilonGreedy';
 import FeaturesConst from './consts/featuares';
 import TextUtil from "./utils/textUtil";
+import logger from './core/logger/app-logger'
 
 
 export default class BanditProcess {
@@ -17,74 +18,18 @@ export default class BanditProcess {
         }
 
         let page = puppeteer.getFirstPage();
-        const value = node.getSource().getValue();
         const currentPage = page;
-        const isUrl = HtmlUtil.isUrl(value);
-        const xpath = node.getSource().getXpath();
-        let changeUrl = false;
-        let newCurrentURL = await page.url();
-        const currentURL = await page.url();
         const lengthQueueBefore = queue.length;
 
-        console.log("********************************************************************");
-        console.log("value: ", value);
-        console.log("level: ", node.getLevel());
-
         try {
-            if (node.getSource().getIsExtractIframe() && (await page.constructor.name) !== "Frame") {
-                await page.waitForNavigation().catch(e => void e);
-                page = await PuppeteerUtil.detectContext(page).catch(e => void e);
-            }
-
-            if (isUrl) {
-                await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
-                if (node.getLevel() === 0) {
-                    await page.waitFor(3000);
-                    const [button] = await page.$x("//*[contains(., 'Aceitar')]");
-                    if (button) {
-                        try {
-                            await button.click();
-                        } catch (e) {
-                            console.log("************not button aceitar*****************", e);
-                        }
-                    }
-                }
-
-            } else {
-                let element = node.getSource().getElement();
-                element = await PuppeteerUtil.selectElementPage(page, xpath, value);
-                await element.click();
-                await page.waitForNavigation().catch(e => void e);
-                newCurrentURL = await page.url();
-                if (currentURL !== newCurrentURL) {
-                    changeUrl = true;
-                }
-            }
-            await page.waitFor(3000);
-
-            if ((!isUrl || node.getSource().getIsExtractIframe()) && (await page.constructor.name) !== "Frame") {
-                page = await PuppeteerUtil.detectContext(page).catch(e => void e);
-            }
-
-            if (node.getLevel() === 0) {
-                await page.waitFor(3000);
-                node.getSource().setUrl((await page.url()));
-            }
-
-            elementsAccessed.push(node);
-            const elementsIdentify = []
-            elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
-            elementsIdentify.push.apply(elementsIdentify, queue);
-
-            if (!changeUrl || (changeUrl && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, newCurrentURL, node, newCurrentURL))) {
-                node = await CrawlerUtil.extractEdges(node, page, puppeteer, criterion.name, elementsIdentify);
-                itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
-            }
-            queue.push.apply(queue, node.getEdges());
-            node.setResearched(true);
+            const nodeCrawledResult = await CrawlerUtil.crawlerNode(criterion, evaluation, node, page, elementsAccessed, itens, queue);
+            queue = nodeCrawledResult.queue;
+            node = nodeCrawledResult.node;
+            elementsAccessed = nodeCrawledResult.elementsAccessed;
+            itens = nodeCrawledResult.itens;
 
         } catch (e) {
-            console.log("************click error*****************", e);
+            logger.warn("Click error: ", e);
         }
 
         for (let edge of queue) {
@@ -104,7 +49,6 @@ export default class BanditProcess {
             }
 
             const index = epsilonGreedyAlg.chooseArm();
-            console.log("index ======================== ", index)
 
             const newNode = queue[index]
             queue.splice(index, 1);
@@ -120,12 +64,14 @@ export default class BanditProcess {
 
         }
 
-        console.log("*********************close browser***********************************************");
         if (itens === null)
             itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
 
+        logger.info("Close Puppeteer ...");
         await puppeteer.getBrowser().close()
-        return {"itens": itens, "contNodeNumber": contNodeNumber};
+
+        logger.info("Returnin Criterion: " + criterion.name);
+        return { "itens": itens, "contNodeNumber": contNodeNumber };
     };
 
 

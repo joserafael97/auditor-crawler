@@ -3,12 +3,11 @@
 
 export default class Element {
 
-    constructor(value, element, xpath, typeElement, puppeteerInstance, url, isExtractIframe = false) {
+    constructor(value, element, xpath, typeElement, url, isExtractIframe = false) {
         this.xpath = xpath;
         this.element = element;
         this.typeElement = typeElement;
         this.value = value;
-        this.puppeteerInstance = puppeteerInstance;
         this.url = url;
         this.isExtractIframe = isExtractIframe;
     }
@@ -33,9 +32,6 @@ export default class Element {
         return this.value;
     }
 
-    getPuppeteerInstance() {
-        return this.puppeteerInstance;
-    }
 
     getUrl() {
         return this.url;
