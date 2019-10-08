@@ -22,8 +22,9 @@ import logger from './core/logger/app-logger'
 
 
 const logErrorAndExit = err => {
-    console.log(err);
+    logger.error(err);
     process.exit();
+
 };
 
 let moogoseInstace = null;
