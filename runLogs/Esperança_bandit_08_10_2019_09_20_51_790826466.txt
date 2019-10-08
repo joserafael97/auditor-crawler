@@ -1,0 +1,435 @@
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/experiment-01/auditor-crawler
+> babel-node app.js "county=Esperança" "aproach=bandit"
+
+{"message":"Connected to mongo!!!","level":"info"}
+-------------------------------AproachType:  bandit
+-------------------------------AproachType:  bandit
+-------------------------------AproachType:  bandit
+-------------------------------AproachType:  bandit
+-------------------------------AproachType:  bandit
+-------------------------------AproachType:  bandit
+********************************************************************
+value:  http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175
+level:  0
+********************************************************************
+value:  http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175
+level:  0
+********************************************************************
+value:  http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175
+level:  0
+********************************************************************
+value:  http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175
+level:  0
+********************************************************************
+value:  http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175
+level:  0
+********************************************************************
+value:  http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175
+level:  0
+*********************close browser***********************************************
+*********************close browser***********************************************
+*********************close browser***********************************************
+itens [ { keywordsXpath: [ 'valor', 'valor(r$)', 'valor total', 'Valor Até Mês R$' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f480546da25d7ebe6f1,
+    name: 'valor',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor total" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor ate mes r$"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'codigo', 'receita' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f480546da25d7ebe6f2,
+    name: 'codigo',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "codigo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "receita"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'descricao', 'descricao da receita' ],
+    tagNameParents: [ 'span', 'span', 'span' ],
+    textParents:
+     [ '\n                                                <span class="thumb-info-inner">Descrição</span>\n                                                <span class="thumb-info-inner">Valores</span>\n                                                <span class="thumb-info-inner">Tipos</span>\n                                                <span class="thumb-info-type">Clique aqui</span>\n                                            ',
+       '\n                                            <img src="Artes/mais-claros/Licitacao.jpg" class="img-responsive" alt="">\n                                            <span class="thumb-info-title">\n                                                <span class="thumb-info-inner">Descrição</span>\n                                                <span class="thumb-info-inner">Valores</span>\n                                                <span class="thumb-info-inner">Tipos</span>\n                                                <span class="thumb-info-type">Clique aqui</span>\n                                            </span>\n                                            <span class="thumb-info-action">\n                                                \n                                            </span>\n                                        ' ],
+    _id: 5d9c7f480546da25d7ebe6f3,
+    name: 'nomenclatura',
+    found: true,
+    foundText: 'descricao',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao da receita"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
+    proof:
+     './proof/Esperança/2019-10-08T12:20:55.041Z/Receita Extra Orçamentária/Receita Extra Orçamentária-nomenclatura-level-0-Tue Oct 08 2019 09:21:28 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Descrição',
+    valid: false,
+    tagName: 'span' } ]
+itens [ { keywordsXpath:
+     [ 'numero da licitacao',
+       'nº licitacao',
+       'numero',
+       'processo',
+       'numero',
+       'N° Processo' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4a0546da25d7ebe6f4,
+    name: 'numero_licitacao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "numero da licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "n licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "numero" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "processo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "numero" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "n processo"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'Objeto',
+       'Objeto da Licitação',
+       'descricao do objeto',
+       'objeto resumido',
+       'tipo do objeto' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4a0546da25d7ebe6f5,
+    name: 'objeto_licitacao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "objeto" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "objeto da licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao do objeto" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "objeto resumido" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo do objeto"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'tipo', 'modalidade', 'categoria' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4a0546da25d7ebe6f6,
+    name: 'modalidade_licitacao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "modalidade" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "categoria"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'data publicacao',
+       'data',
+       'data da homogacao',
+       'data da homologacao',
+       'Publicação',
+       'data da publicacao',
+       'dt. homologacao',
+       'homologacao' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4a0546da25d7ebe6f7,
+    name: 'data_publicacao_licitacao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data publicacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data da homogacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data da homologacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "publicacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data da publicacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "dt. homologacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "homologacao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'valor', 'VALOR R$' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4a0546da25d7ebe6f8,
+    name: 'valor',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor r$"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'cpf', 'cnpj', 'CNPJ/CPF', 'CPF/CNPJ' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4a0546da25d7ebe6f9,
+    name: 'cnpj_cpf',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cpf" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cnpj" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cnpj/cpf" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cpf/cnpj"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'edital' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4a0546da25d7ebe6fa,
+    name: 'edital',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "edital"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'fornecedor',
+       'favorecido',
+       'Participantes',
+       'Status',
+       'propostas' ],
+    tagNameParents: [ 'span', 'span', 'span' ],
+    textParents:
+     [ '\n                                    <span class="thumb-info-inner">Despesa por</span>\n                                    <span class="thumb-info-inner">Favorecido</span>\n                                    <span class="thumb-info-type">Clique aqui</span>\n                                ',
+       '\n                                <img src="Artes/mais-claros/DespFavorecido.jpg" class="img-responsive" alt="">\n                                <span class="thumb-info-title">\n                                    <span class="thumb-info-inner">Despesa por</span>\n                                    <span class="thumb-info-inner">Favorecido</span>\n                                    <span class="thumb-info-type">Clique aqui</span>\n                                </span>\n                                <span class="thumb-info-action">\n                                    \n                                </span>\n                            ' ],
+    _id: 5d9c7f4a0546da25d7ebe6fb,
+    name: 'nome_vencedores',
+    found: true,
+    foundText: 'favorecido',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "fornecedor" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "favorecido" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "participantes" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "status" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "propostas"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
+    proof:
+     './proof/Esperança/2019-10-08T12:20:55.041Z/Licitação/Licitação-nome_vencedores-level-0-Tue Oct 08 2019 09:21:30 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Favorecido',
+    valid: false,
+    tagName: 'span' },
+  { keywordsXpath: [ 'participante', 'participantes', 'propostas' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4a0546da25d7ebe6fc,
+    name: 'nome_perdedores',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "participante" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "participantes" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "propostas"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'assinatura',
+       'DATA ASSINATURA',
+       'abertura / realizacao',
+       'data inicial' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4a0546da25d7ebe6fd,
+    name: 'data_realizacao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "assinatura" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data assinatura" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "abertura / realizacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data inicial"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'setor interessado', 'reparticao/setor interessado:', 'orgao' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4a0546da25d7ebe6fe,
+    name: 'setor_interessado',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "setor interessado" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "reparticao/setor interessado" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "orgao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'integra' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4a0546da25d7ebe6ff,
+    name: 'integra',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "integra"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'ratificacao' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4a0546da25d7ebe700,
+    name: 'termo_ratificacao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "ratificacao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'pregao', 'pregao eletronico' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4a0546da25d7ebe701,
+    name: 'pregao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "pregao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "pregao eletronico"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'edital', 'publicacao', 'aviso' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4a0546da25d7ebe702,
+    name: 'aviso',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "edital" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "publicacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "aviso"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'licitado', 'licitacao' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4a0546da25d7ebe703,
+    name: 'licitado',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "licitado" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "licitacao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' } ]
+itens [ { keywordsXpath: [ 'nome' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4f0546da25d7ebe704,
+    name: 'nome',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nome"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'cpf' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4f0546da25d7ebe705,
+    name: 'cpf',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cpf"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'cargo' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4f0546da25d7ebe706,
+    name: 'cargo',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cargo"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'tipo do ato',
+       'secretaria',
+       'tipo cargo',
+       'regime',
+       'tipo',
+       'Tipo de Contratação' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4f0546da25d7ebe707,
+    name: 'tipo_cargo',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo do ato" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "secretaria" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo cargo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "regime" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo de contratacao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'salario',
+       'Total Vantagem*',
+       'sal. base',
+       'liquido',
+       'valor liquido' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9c7f4f0546da25d7ebe708,
+    name: 'salario_cargo',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "salario" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "total vantagem*" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "sal. base" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "liquido" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor liquido"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' } ]
+============================================================================
+Duration:  0  min
+============================================================================
+Duration:  0  min
+============================================================================
+Duration:  0  min
+queue nodes: ****: http://www.transparenciaativa.com.br/TipoDespesa.aspx  level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/DespesaPrevista.aspx  level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/DespesaPorElemento.aspx  level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/DespesaPorOrgao.aspx  level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/DespesaPorFavorecido.aspx  level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/DespesaExtraOrcamentaria.aspx  level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/Artes/mais-claros/Despesa.jpg  level:  1
+queue nodes: ****: extras  level:  1
+queue nodes: ****: despesas  level:  1
+========== undefined
+TypeError: Cannot read property 'updateNumArms' of undefined
+    at Function.initilize (/home/rafaelfeitosa/workspace/MSC/experiment-01/auditor-crawler/banditProcessClassifier.js:98:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)

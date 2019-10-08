@@ -44,14 +44,14 @@ const run = async (criterion, evaluation, root) => {
     } else if (aproachSelected == AproachType.BANDIT) {
         console.log("-------------------------------AproachType: ", AproachType.BANDIT)
         evaluation.aproach = AproachType.BANDIT
-        const classifierCli = CliParamUtil.classifierParamExtract(process.argv.slice(4)[0])
+        //const classifierCli = CliParamUtil.classifierParamExtract(process.argv.slice(4)[0])
 
-        if (classifierCli === 'naivebayes' ){
-            resultEvaliation = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1), [], []).catch(logErrorAndExit)
+        // if (classifierCli === 'naivebayes' ){
+        //     resultEvaliation = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1), [], []).catch(logErrorAndExit)
 
-        }else {
-            resultEvaliation = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null,  new EpsilonGreedy(10000, 0.1)).catch(logErrorAndExit)
-        }
+        // }else {
+        resultEvaliation = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null,  new EpsilonGreedy(10000, 0.1)).catch(logErrorAndExit)
+        // }
 
         itens = resultEvaliation.itens;
         criterion.contNodeNumberAccess = resultEvaliation.contNodeNumber

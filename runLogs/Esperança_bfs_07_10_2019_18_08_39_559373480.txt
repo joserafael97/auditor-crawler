@@ -1,0 +1,1313 @@
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/experiment-01/auditor-crawler
+> babel-node app.js "county=Esperança" "aproach=bfs"
+
+{"message":"Connected to mongo!!!","level":"info"}
+-------------------------------AproachType:  bfs
+-------------------------------AproachType:  bfs
+-------------------------------AproachType:  bfs
+-------------------------------AproachType:  bfs
+-------------------------------AproachType:  bfs
+-------------------------------AproachType:  bfs
+********************************************************************
+numPagesOpened:  1
+value:  http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175
+level:  0
+********************************************************************
+numPagesOpened:  1
+value:  http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175
+level:  0
+********************************************************************
+numPagesOpened:  1
+value:  http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175
+level:  0
+********************************************************************
+numPagesOpened:  1
+value:  http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175
+level:  0
+********************************************************************
+numPagesOpened:  1
+value:  http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175
+level:  0
+********************************************************************
+numPagesOpened:  1
+value:  http://www.transparenciaativa.com.br/Principal.aspx?Entidade=175
+level:  0
+queue nodes: ****: http://www.transparenciaativa.com.br/ReceitaExtraOrcamentaria.aspx  level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/TipoReceita.aspx  level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/ReceitaTransferencia.aspx  level:  1
+********************************************************************
+numPagesOpened:  1
+value:  http://www.transparenciaativa.com.br/ReceitaExtraOrcamentaria.aspx
+level:  1
+*********************close browser***********************************************
+itens [ { keywordsXpath: [ 'nome' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9dd0afb0a173501dde2,
+    name: 'nome',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nome"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'cpf' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9dd0afb0a173501dde3,
+    name: 'cpf',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cpf"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'cargo' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9dd0afb0a173501dde4,
+    name: 'cargo',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cargo"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'tipo do ato',
+       'secretaria',
+       'tipo cargo',
+       'regime',
+       'tipo',
+       'Tipo de Contratação' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9dd0afb0a173501dde5,
+    name: 'tipo_cargo',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo do ato" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "secretaria" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo cargo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "regime" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo de contratacao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'salario',
+       'Total Vantagem*',
+       'sal. base',
+       'liquido',
+       'valor liquido' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9dd0afb0a173501dde6,
+    name: 'salario_cargo',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "salario" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "total vantagem*" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "sal. base" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "liquido" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor liquido"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' } ]
+============================================================================
+Duration:  2  min
+queue nodes: ****: http://www.transparenciaativa.com.br/Artes/mais-claros/Receita.jpg  level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/TipoReceita.aspx  level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/Receita2018.aspx  level:  1
+********************************************************************
+numPagesOpened:  1
+value:  http://www.transparenciaativa.com.br/Artes/mais-claros/Receita.jpg
+level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/TipoDespesa.aspx  level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx  level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/Licitacoes.aspx  level:  1
+queue nodes: ****: despesas  level:  1
+********************************************************************
+numPagesOpened:  1
+value:  https://www.transparenciaativa.com.br/TipoDespesa.aspx
+level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/TipoDespesa.aspx  level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx  level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/Licitacoes.aspx  level:  1
+queue nodes: ****: despesas  level:  1
+********************************************************************
+numPagesOpened:  1
+value:  https://www.transparenciaativa.com.br/TipoDespesa.aspx
+level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/TipoDespesa.aspx  level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx  level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/Licitacoes.aspx  level:  1
+queue nodes: ****: despesas  level:  1
+********************************************************************
+numPagesOpened:  1
+value:  https://www.transparenciaativa.com.br/TipoDespesa.aspx
+level:  1
+*********************close browser***********************************************
+itens [ { keywordsXpath: [ 'valor', 'valor(r$)', 'valor total', 'Valor Até Mês R$' ],
+    tagNameParents: [ 'td', 'tr', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewRecExtra\',\'Sort$ValorTotal\')" style="color:White;">Valor Total</a>',
+       '\n\t\t\t<td>Processo Completo</td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewRecExtra\',\'Sort$chave\')" style="color:White;">Código</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewRecExtra\',\'Sort$DescricaoPContas\')" style="color:White;">Descrição</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewRecExtra\',\'Sort$ValorTotal\')" style="color:White;">Valor Total</a></td>\n\t\t' ],
+    _id: 5d9ba9d80afb0a173501dddf,
+    name: 'valor',
+    found: true,
+    foundText: 'valor total',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor total" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor ate mes r$"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/ReceitaExtraOrcamentaria.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Receita Extra Orçamentária/Receita Extra Orçamentária-valor-level-1-Mon Oct 07 2019 18:11:14 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Valor Total',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'codigo', 'receita' ],
+    tagNameParents: [ 'td', 'tr' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewRecExtra\',\'Sort$chave\')" style="color:White;">Código</a>',
+       '\n\t\t\t<td>Processo Completo</td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewRecExtra\',\'Sort$chave\')" style="color:White;">Código</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewRecExtra\',\'Sort$DescricaoPContas\')" style="color:White;">Descrição</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewRecExtra\',\'Sort$ValorTotal\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Valor Total</a></td>\n\t\t' ],
+    _id: 5d9ba9d80afb0a173501dde0,
+    name: 'codigo',
+    found: true,
+    foundText: 'codigo',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "codigo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "receita"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/ReceitaExtraOrcamentaria.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Receita Extra Orçamentária/Receita Extra Orçamentária-codigo-level-1-Mon Oct 07 2019 18:11:15 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Código',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'descricao', 'descricao da receita' ],
+    tagNameParents: [ 'td', 'tr' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewRecExtra\',\'Sort$DescricaoPContas\')" style="color:White;">Descrição</a>',
+       '\n\t\t\t<td>Processo Completo</td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewRecExtra\',\'Sort$chave\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Código</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewRecExtra\',\'Sort$DescricaoPContas\')" style="color:White;">Descrição</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewRecExtra\',\'Sort$ValorTotal\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Valor Total</a></td>\n\t\t' ],
+    _id: 5d9ba9d80afb0a173501dde1,
+    name: 'nomenclatura',
+    found: true,
+    foundText: 'descricao',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao da receita"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/ReceitaExtraOrcamentaria.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Receita Extra Orçamentária/Receita Extra Orçamentária-nomenclatura-level-1-Mon Oct 07 2019 18:11:16 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Descrição',
+    valid: true,
+    tagName: 'a' } ]
+============================================================================
+Duration:  2  min
+queue nodes: ****: https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx  level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/Licitacoes.aspx  level:  1
+queue nodes: ****: despesas  level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/DespesaExtraOrcamentaria.aspx  level:  2
+queue nodes: ****: https://www.transparenciaativa.com.br/DespesaPorOrgao.aspx  level:  2
+queue nodes: ****: https://www.transparenciaativa.com.br/DespesaPorFavorecido.aspx  level:  2
+********************************************************************
+numPagesOpened:  1
+value:  https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx
+level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx  level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/Licitacoes.aspx  level:  1
+queue nodes: ****: despesas  level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/DespesasComLicitacoes.aspx  level:  2
+********************************************************************
+numPagesOpened:  1
+value:  https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx
+level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/TipoReceita.aspx  level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/Receita2018.aspx  level:  1
+********************************************************************
+numPagesOpened:  1
+value:  http://www.transparenciaativa.com.br/TipoReceita.aspx
+level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx  level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/Licitacoes.aspx  level:  1
+queue nodes: ****: despesas  level:  1
+********************************************************************
+numPagesOpened:  1
+value:  https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx
+level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/Licitacoes.aspx  level:  1
+queue nodes: ****: despesas  level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/DespesaExtraOrcamentaria.aspx  level:  2
+queue nodes: ****: https://www.transparenciaativa.com.br/DespesaPorOrgao.aspx  level:  2
+queue nodes: ****: https://www.transparenciaativa.com.br/DespesaPorFavorecido.aspx  level:  2
+********************************************************************
+numPagesOpened:  1
+value:  https://www.transparenciaativa.com.br/Licitacoes.aspx
+level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/Receita2018.aspx  level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/Receitastn.aspx  level:  2
+********************************************************************
+numPagesOpened:  1
+value:  http://www.transparenciaativa.com.br/Receita2018.aspx
+level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/Licitacoes.aspx  level:  1
+queue nodes: ****: despesas  level:  1
+********************************************************************
+numPagesOpened:  1
+value:  https://www.transparenciaativa.com.br/Licitacoes.aspx
+level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/Licitacoes.aspx  level:  1
+queue nodes: ****: despesas  level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/DespesasComLicitacoes.aspx  level:  2
+********************************************************************
+numPagesOpened:  1
+value:  https://www.transparenciaativa.com.br/Licitacoes.aspx
+level:  1
+queue nodes: ****: despesas  level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/DespesaExtraOrcamentaria.aspx  level:  2
+queue nodes: ****: https://www.transparenciaativa.com.br/DespesaPorOrgao.aspx  level:  2
+queue nodes: ****: https://www.transparenciaativa.com.br/DespesaPorFavorecido.aspx  level:  2
+queue nodes: ****: http://www.transparenciaativa.com.br/Receitastn.aspx  level:  2
+queue nodes: ****: https://www.transparenciaativa.com.br/ReceitaSTN.aspx?Entidade=175&Ano=2017  level:  2
+queue nodes: ****: http://www.transparenciaativa.com.br/DetalhesReceita.aspx?receita=11130311  level:  2
+********************************************************************
+numPagesOpened:  1
+value:  http://www.transparenciaativa.com.br/Receitastn.aspx
+level:  2
+queue nodes: ****: despesas  level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/DespesasComLicitacoes.aspx  level:  2
+queue nodes: ****: despesas  level:  1
+queue nodes: ****: https://www.transparenciaativa.com.br/ReceitaSTN.aspx?Entidade=175&Ano=2017  level:  2
+queue nodes: ****: http://www.transparenciaativa.com.br/DetalhesReceita.aspx?receita=11130311  level:  2
+********************************************************************
+numPagesOpened:  1
+value:  https://www.transparenciaativa.com.br/ReceitaSTN.aspx?Entidade=175&Ano=2017
+level:  2
+queue nodes: ****: http://www.transparenciaativa.com.br/DetalhesReceita.aspx?receita=11130311  level:  2
+********************************************************************
+numPagesOpened:  1
+value:  http://www.transparenciaativa.com.br/DetalhesReceita.aspx?receita=11130311
+level:  2
+********************************************************************
+numPagesOpened:  1
+value:  despesas
+level:  1
+*********************close browser***********************************************
+itens [ { keywordsXpath:
+     [ 'nome',
+       'unidade gestora',
+       'orgao',
+       'entidade',
+       'Nome Entidade',
+       'fonte de recurso',
+       'Entidade' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9e80afb0a173501dded,
+    name: 'uni_gestora',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nome" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "unidade gestora" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "orgao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "entidade" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nome entidade" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "fonte de recurso" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "entidade"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'valor previsto(r$)',
+       'receita prevista',
+       'previsao de receitas',
+       'Valor Previsto',
+       'Previsão',
+       'prevista' ],
+    tagNameParents: [ 'td', 'tr', 'a', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$Receita Prevista\')" style="color:White;">Receita Prevista</a>',
+       '\n\t\t\t<td>Processo Completo</td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$Cod_Stn\')" style="color:White;">Código STN</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$DescricaoStn\')" style="color:White;">Descrição</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$Receita Prevista\')" style="color:White;">Receita Prevista</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$PrevistaDeduzida\')" style="color:White;">Prevista Deduzida</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$ValorDaReceita\')" style="color:White;">Receita Arrecadada</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$DeducaodaReceita\')" style="color:White;">Dedução da Receita</a></td>\n\t\t' ],
+    _id: 5d9ba9e80afb0a173501ddee,
+    name: 'previsao',
+    found: true,
+    foundText: 'receita prevista',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor previsto(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "receita prevista" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "previsao de receitas" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor previsto" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "previsao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "prevista"]',
+    pathSought: 'https://www.transparenciaativa.com.br/Receita2018.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Receita Orçamentária/Receita Orçamentária-previsao-level-1-Mon Oct 07 2019 18:12:29 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Receita Prevista',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath:
+     [ 'valor arrecadado(r$)',
+       'receita arrecadada',
+       'realizada ate o mes',
+       'Arrecadada',
+       'arrecadado ate o momento',
+       'arrecadacao de receitas',
+       'Valor Arrecadado',
+       'Arrecadação' ],
+    tagNameParents: [ 'td', 'tr', 'a', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$ValorDaReceita\')" style="color:White;">Receita Arrecadada</a>',
+       '\n\t\t\t<td>Processo Completo</td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$Cod_Stn\')" style="color:White;">Código STN</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$DescricaoStn\')" style="color:White;">Descrição</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$Receita Prevista\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Receita Prevista</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$PrevistaDeduzida\')" style="color:White;">Prevista Deduzida</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$ValorDaReceita\')" style="color:White;">Receita Arrecadada</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$DeducaodaReceita\')" style="color:White;">Dedução da Receita</a></td>\n\t\t' ],
+    _id: 5d9ba9e80afb0a173501ddef,
+    name: 'arrecadacao',
+    found: true,
+    foundText: 'receita arrecadada',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor arrecadado(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "receita arrecadada" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "realizada ate o mes" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "arrecadada" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "arrecadado ate o momento" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "arrecadacao de receitas" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor arrecadado" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "arrecadacao"]',
+    pathSought: 'https://www.transparenciaativa.com.br/Receita2018.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Receita Orçamentária/Receita Orçamentária-arrecadacao-level-1-Mon Oct 07 2019 18:12:31 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Receita Arrecadada',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'valor lancado(r$)', 'valor', 'lançada' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9e80afb0a173501ddf0,
+    name: 'lancado',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor lancado(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "lancada"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'categoria da receita',
+       'receita l.o.a.',
+       'CATEGORIA ECONÔMICA' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9e80afb0a173501ddf1,
+    name: 'categoria_economica',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "categoria da receita" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "receita l.o.a." or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "categoria economica"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'origem dos recursos a conta',
+       'descricao da receita',
+       'nome',
+       'descricao receita (STN)',
+       'Descrição STN',
+       'Descrição',
+       'Fonte Recurso',
+       'Fonte de Recurso',
+       'ORIGEM',
+       'Fonte do Recurso' ],
+    tagNameParents: [ 'td', 'tr', 'a', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$DescricaoStn\')" style="color:White;">Descrição</a>',
+       '\n\t\t\t<td>Processo Completo</td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$Cod_Stn\')" style="color:White;">Código STN</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$DescricaoStn\')" style="color:White;">Descrição</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$Receita Prevista\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Receita Prevista</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$PrevistaDeduzida\')" style="color:White;">Prevista Deduzida</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$ValorDaReceita\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Receita Arrecadada</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView3\',\'Sort$DeducaodaReceita\')" style="color:White;">Dedução da Receita</a></td>\n\t\t' ],
+    _id: 5d9ba9e80afb0a173501ddf2,
+    name: 'origem',
+    found: true,
+    foundText: 'descricao',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "origem dos recursos a conta" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao da receita" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nome" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao receita (stn)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao stn" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "fonte recurso" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "fonte de recurso" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "origem" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "fonte do recurso"]',
+    pathSought: 'https://www.transparenciaativa.com.br/Receita2018.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Receita Orçamentária/Receita Orçamentária-origem-level-1-Mon Oct 07 2019 18:12:33 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Descrição',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'especie' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9e80afb0a173501ddf3,
+    name: 'especie',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "especie"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'rubrica' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9e80afb0a173501ddf4,
+    name: 'rubrica',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "rubrica"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'alinea' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9e80afb0a173501ddf5,
+    name: 'alinea',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "alinea"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'subalinea', 'sub alinea' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9e80afb0a173501ddf6,
+    name: 'sub_alinea',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "subalinea" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "sub alinea"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' } ]
+============================================================================
+Duration:  4  min
+********************************************************************
+numPagesOpened:  1
+value:  despesas
+level:  1
+********************************************************************
+numPagesOpened:  1
+value:  despesas
+level:  1
+queue nodes: ****: http://www.transparenciaativa.com.br/DespesaExtraOrcamentaria.aspx  level:  2
+queue nodes: ****: https://www.transparenciaativa.com.br/DespesaPorOrgao.aspx  level:  2
+queue nodes: ****: https://www.transparenciaativa.com.br/DespesaPorFavorecido.aspx  level:  2
+********************************************************************
+numPagesOpened:  1
+value:  http://www.transparenciaativa.com.br/DespesaExtraOrcamentaria.aspx
+level:  2
+queue nodes: ****: http://www.transparenciaativa.com.br/DespesasComLicitacoes.aspx  level:  2
+********************************************************************
+numPagesOpened:  1
+value:  http://www.transparenciaativa.com.br/DespesasComLicitacoes.aspx
+level:  2
+*********************close browser***********************************************
+itens [ { keywordsXpath: [ 'valor', 'empenhado(r$)', 'VALOR ATÉ MÊS R$' ],
+    tagNameParents: [ 'td', 'tr', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$Valor\')" style="color:White;">Valor</a>',
+       '\n\t\t\t<td>Mais Informações</td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$Numero\')" style="color:White;">Número da Licitação</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DtHomologacao\')" style="color:White;">Data da Homogação</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DescricaoDoObjeto\')" style="color:White;">Objeto</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$TipoDoObjeto\')" style="color:White;">Tipo</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DescricaoDoTipo\')" style="color:White;">Descrição</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$Valor\')" style="color:White;">Valor</a></td>\n\t\t' ],
+    _id: 5d9ba9ed0afb0a173501ddf7,
+    name: 'valor',
+    found: true,
+    foundText: 'valor',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "empenhado(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor ate mes r$"]',
+    pathSought: 'https://www.transparenciaativa.com.br/Licitacoes.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Extra Orçamentária/Despesa Extra Orçamentária-valor-level-1-Mon Oct 07 2019 18:12:26 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Valor',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'codigo', 'cod. despesa' ],
+    tagNameParents: [ 'th', 'tr', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewDespExtraDetalhada\',\'Sort$CHAVE\')" style="color:White;">Código</a>',
+       '\n\t\t\t<th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewDespExtraDetalhada\',\'Sort$CHAVE\')" style="color:White;">Código</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewDespExtraDetalhada\',\'Sort$DATAMOV\')" style="color:White;">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewDespExtraDetalhada\',\'Sort$FORNECEDOR\')" style="color:White;">Fornecedor</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewDespExtraDetalhada\',\'Sort$HISTORICO\')" style="color:White;">Histórico</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewDespExtraDetalhada\',\'Sort$MMAA\')" style="color:White;">Competência</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewDespExtraDetalhada\',\'Sort$DescricaoPContas\')" style="color:White;">Descrição</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewDespExtraDetalhada\',\'Sort$DescricaoLancamento\')" style="color:White;">Tipo do Lançamento</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridViewDespExtraDetalhada\',\'Sort$ValorFormatado\')" style="color:White;">Valor</a></th>\n\t\t' ],
+    _id: 5d9ba9ed0afb0a173501ddf8,
+    name: 'codigo',
+    found: true,
+    foundText: 'codigo',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "codigo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cod. despesa"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/DespesaExtraDetalhada.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Extra Orçamentária/Despesa Extra Orçamentária-codigo-level-2-Mon Oct 07 2019 18:13:50 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Código',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'descricao', 'nome da despesa' ],
+    tagNameParents: [ 'td', 'tr', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DescricaoDoTipo\')" style="color:White;">Descrição</a>',
+       '\n\t\t\t<td>Mais Informações</td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$Numero\')" style="color:White;">Número da Licitação</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DtHomologacao\')" style="color:White;">Data da Homogação</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DescricaoDoObjeto\')" style="color:White;">Objeto</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$TipoDoObjeto\')" style="color:White;">Tipo</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DescricaoDoTipo\')" style="color:White;">Descrição</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$Valor\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Valor</a></td>\n\t\t' ],
+    _id: 5d9ba9ed0afb0a173501ddf9,
+    name: 'nomenclatura',
+    found: true,
+    foundText: 'descricao',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nome da despesa"]',
+    pathSought: 'https://www.transparenciaativa.com.br/Licitacoes.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Extra Orçamentária/Despesa Extra Orçamentária-nomenclatura-level-1-Mon Oct 07 2019 18:12:27 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Descrição',
+    valid: true,
+    tagName: 'a' } ]
+============================================================================
+Duration:  5  min
+*********************close browser***********************************************
+itens [ { keywordsXpath:
+     [ 'numero da licitacao',
+       'nº licitacao',
+       'numero',
+       'processo',
+       'numero',
+       'N° Processo' ],
+    tagNameParents: [ 'td', 'tr', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$Numero\')" style="color:White;">Número da Licitação</a>',
+       '\n\t\t\t<td>Mais Informações</td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$Numero\')" style="color:White;">Número da Licitação</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DtHomologacao\')" style="color:White;">Data da Homogação</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DescricaoDoObjeto\')" style="color:White;">Objeto</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$TipoDoObjeto\')" style="color:White;">Tipo</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DescricaoDoTipo\')" style="color:White;">Descrição</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$Valor\')" style="color:White;">Valor</a></td>\n\t\t' ],
+    _id: 5d9ba9ed0afb0a173501ddfa,
+    name: 'numero_licitacao',
+    found: true,
+    foundText: 'numero da licitacao',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "numero da licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "n licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "numero" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "processo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "numero" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "n processo"]',
+    pathSought: 'https://www.transparenciaativa.com.br/Licitacoes.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Licitação/Licitação-numero_licitacao-level-1-Mon Oct 07 2019 18:12:36 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Número da Licitação',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath:
+     [ 'Objeto',
+       'Objeto da Licitação',
+       'descricao do objeto',
+       'objeto resumido',
+       'tipo do objeto' ],
+    tagNameParents: [ 'td', 'tr', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DescricaoDoObjeto\')" style="color:White;">Objeto</a>',
+       '\n\t\t\t<td>Mais Informações</td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$Numero\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Número da Licitação</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DtHomologacao\')" style="color:White;">Data da Homogação</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DescricaoDoObjeto\')" style="color:White;">Objeto</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$TipoDoObjeto\')" style="color:White;">Tipo</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DescricaoDoTipo\')" style="color:White;">Descrição</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$Valor\')" style="color:White;">Valor</a></td>\n\t\t' ],
+    _id: 5d9ba9ed0afb0a173501ddfb,
+    name: 'objeto_licitacao',
+    found: true,
+    foundText: 'objeto',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "objeto" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "objeto da licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao do objeto" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "objeto resumido" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo do objeto"]',
+    pathSought: 'https://www.transparenciaativa.com.br/Licitacoes.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Licitação/Licitação-objeto_licitacao-level-1-Mon Oct 07 2019 18:12:37 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Objeto',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'tipo', 'modalidade', 'categoria' ],
+    tagNameParents: [ 'td', 'tr', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$TipoDoObjeto\')" style="color:White;">Tipo</a>',
+       '\n\t\t\t<td>Mais Informações</td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$Numero\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Número da Licitação</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DtHomologacao\')" style="color:White;">Data da Homogação</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DescricaoDoObjeto\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Objeto</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$TipoDoObjeto\')" style="color:White;">Tipo</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DescricaoDoTipo\')" style="color:White;">Descrição</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$Valor\')" style="color:White;">Valor</a></td>\n\t\t' ],
+    _id: 5d9ba9ed0afb0a173501ddfc,
+    name: 'modalidade_licitacao',
+    found: true,
+    foundText: 'tipo',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "modalidade" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "categoria"]',
+    pathSought: 'https://www.transparenciaativa.com.br/Licitacoes.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Licitação/Licitação-modalidade_licitacao-level-1-Mon Oct 07 2019 18:12:38 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Tipo',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath:
+     [ 'data publicacao',
+       'data',
+       'data da homogacao',
+       'data da homologacao',
+       'Publicação',
+       'data da publicacao',
+       'dt. homologacao',
+       'homologacao' ],
+    tagNameParents: [ 'th', 'tr', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color:White;">Data</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color:White;">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color:White;">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color:White;">Órgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color:White;">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_SF\')" style="color:White;">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color:White;">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_A\')" style="color:White;">Ação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ClassificacaoNDesp\')" style="color:White;">Classificação da despesa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color:White;">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color:White;">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ed0afb0a173501ddfd,
+    name: 'data_publicacao_licitacao',
+    found: true,
+    foundText: 'data',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data publicacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data da homogacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data da homologacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "publicacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data da publicacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "dt. homologacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "homologacao"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Licitação/Licitação-data_publicacao_licitacao-level-1-Mon Oct 07 2019 18:12:17 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Data',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'valor', 'VALOR R$' ],
+    tagNameParents: [ 'td', 'tr' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$Valor\')" style="color:White;">Valor</a>',
+       '\n\t\t\t<td>Mais Informações</td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$Numero\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Número da Licitação</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DtHomologacao\')" style="color:White;">Data da Homogação</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DescricaoDoObjeto\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Objeto</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$TipoDoObjeto\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Tipo</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$DescricaoDoTipo\')" style="color:White;">Descrição</a></td><td><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView1\',\'Sort$Valor\')" style="color:White;">Valor</a></td>\n\t\t' ],
+    _id: 5d9ba9ed0afb0a173501ddfe,
+    name: 'valor',
+    found: true,
+    foundText: 'valor',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor r$"]',
+    pathSought: 'https://www.transparenciaativa.com.br/Licitacoes.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Licitação/Licitação-valor-level-1-Mon Oct 07 2019 18:12:39 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Valor',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'cpf', 'cnpj', 'CNPJ/CPF', 'CPF/CNPJ' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9ed0afb0a173501ddff,
+    name: 'cnpj_cpf',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cpf" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cnpj" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cnpj/cpf" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cpf/cnpj"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'edital' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9ed0afb0a173501de00,
+    name: 'edital',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "edital"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'fornecedor',
+       'favorecido',
+       'Participantes',
+       'Status',
+       'propostas' ],
+    tagNameParents: [ 'span', 'span', 'span' ],
+    textParents:
+     [ '\n                                    <span class="thumb-info-inner">Despesa por</span>\n                                    <span class="thumb-info-inner">Favorecido</span>\n                                    <span class="thumb-info-type">Clique aqui</span>\n                                ',
+       '\n                                <img src="Artes/mais-claros/DespFavorecido.jpg" class="img-responsive" alt="">\n                                <span class="thumb-info-title">\n                                    <span class="thumb-info-inner">Despesa por</span>\n                                    <span class="thumb-info-inner">Favorecido</span>\n                                    <span class="thumb-info-type">Clique aqui</span>\n                                </span>\n                                <span class="thumb-info-action">\n                                    \n                                </span>\n                            ' ],
+    _id: 5d9ba9ed0afb0a173501de01,
+    name: 'nome_vencedores',
+    found: true,
+    foundText: 'favorecido',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "fornecedor" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "favorecido" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "participantes" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "status" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "propostas"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/Principal.aspx?Entidade=175',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Licitação/Licitação-nome_vencedores-level-0-Mon Oct 07 2019 18:11:09 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Favorecido',
+    valid: false,
+    tagName: 'span' },
+  { keywordsXpath: [ 'participante', 'participantes', 'propostas' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9ed0afb0a173501de02,
+    name: 'nome_perdedores',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "participante" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "participantes" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "propostas"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'assinatura',
+       'DATA ASSINATURA',
+       'abertura / realizacao',
+       'data inicial' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9ed0afb0a173501de03,
+    name: 'data_realizacao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "assinatura" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data assinatura" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "abertura / realizacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data inicial"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'setor interessado', 'reparticao/setor interessado:', 'orgao' ],
+    tagNameParents: [ 'th', 'tr', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color:White;">Órgão</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color:White;">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color:White;">Órgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color:White;">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_SF\')" style="color:White;">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color:White;">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_A\')" style="color:White;">Ação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ClassificacaoNDesp\')" style="color:White;">Classificação da despesa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color:White;">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color:White;">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ed0afb0a173501de04,
+    name: 'setor_interessado',
+    found: true,
+    foundText: 'orgao',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "setor interessado" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "reparticao/setor interessado" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "orgao"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Licitação/Licitação-setor_interessado-level-1-Mon Oct 07 2019 18:12:18 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Órgão',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'integra' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9ed0afb0a173501de05,
+    name: 'integra',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "integra"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'ratificacao' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9ed0afb0a173501de06,
+    name: 'termo_ratificacao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "ratificacao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'pregao', 'pregao eletronico' ],
+    tagNameParents: [ 'select', 'div' ],
+    textParents:
+     [ '\n\t<option value="13"></option>\n\t<option value="12">Adesão a Registro de Preço                        </option>\n\t<option value="01">Concorrência                                      </option>\n\t<option value="03">Convite                                           </option>\n\t<option value="07">Dispensa Por Outro Motivos                        </option>\n\t<option value="06">Dispensa Por Valor                                </option>\n\t<option value="08">Inexigível                                        </option>\n\t<option value="10">Pregão Eletrônico                                 </option>\n\t<option value="11">Pregão Presencial                                 </option>\n\t<option value="02">Tomada de Preço                                   </option>\n\n',
+       '\n                                        <select name="ctl00$MainContent$DropDownListPorTipo" id="MainContent_DropDownListPorTipo" class="bt-ComboboxFiltro">\n\t<option value="13"></option>\n\t<option value="12">Adesão a Registro de Preço                        </option>\n\t<option value="01">Concorrência                                      </option>\n\t<option value="03">Convite                                           </option>\n\t<option value="07">Dispensa Por Outro Motivos                        </option>\n\t<option value="06">Dispensa Por Valor                                </option>\n\t<option value="08">Inexigível                                        </option>\n\t<option value="10">Pregão Eletrônico                                 </option>\n\t<option value="11">Pregão Presencial                                 </option>\n\t<option value="02">Tomada de Preço                                   </option>\n\n</select>' ],
+    _id: 5d9ba9ed0afb0a173501de07,
+    name: 'pregao',
+    found: true,
+    foundText: 'pregao eletronico',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "pregao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "pregao eletronico"]',
+    pathSought: 'https://www.transparenciaativa.com.br/Licitacoes.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Licitação/Licitação-pregao-level-1-Mon Oct 07 2019 18:12:40 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Pregão Eletrônico                                 ',
+    valid: true,
+    tagName: 'option' },
+  { keywordsXpath: [ 'edital', 'publicacao', 'aviso' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9ed0afb0a173501de08,
+    name: 'aviso',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "edital" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "publicacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "aviso"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'licitado', 'licitacao' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9ed0afb0a173501de09,
+    name: 'licitado',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "licitado" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "licitacao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' } ]
+============================================================================
+Duration:  5  min
+queue nodes: ****: http://www.transparenciaativa.com.br/detalhesEmpenho.aspx?nemp=3890  level:  3
+********************************************************************
+numPagesOpened:  1
+value:  http://www.transparenciaativa.com.br/detalhesEmpenho.aspx?nemp=3890
+level:  3
+*********************close browser***********************************************
+itens [ { keywordsXpath: [ 'funcao' ],
+    tagNameParents: [ 'th', 'tr', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color:White;">Função</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color:White;">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color:White;">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color:White;">Órgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color:White;">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_SF\')" style="color:White;">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color:White;">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_A\')" style="color:White;">Ação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ClassificacaoNDesp\')" style="color:White;">Classificação da despesa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color:White;">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color:White;">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ee0afb0a173501de0a,
+    name: 'funcao',
+    found: true,
+    foundText: 'funcao',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "funcao"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-funcao-level-1-Mon Oct 07 2019 18:12:12 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Função',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'subfuncao', 'sub funcao' ],
+    tagNameParents: [ 'th', 'tr', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_SF\')" style="color:White;">SubFunção</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color:White;">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color:White;">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color:White;">Órgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_SF\')" style="color:White;">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color:White;">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_A\')" style="color:White;">Ação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ClassificacaoNDesp\')" style="color:White;">Classificação da despesa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color:White;">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color:White;">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ee0afb0a173501de0b,
+    name: 'sub_funcao',
+    found: true,
+    foundText: 'subfuncao',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "subfuncao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "sub funcao"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-sub_funcao-level-1-Mon Oct 07 2019 18:12:13 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'SubFunção',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath:
+     [ 'ORGÃO',
+       'unidade orcamentaria',
+       'descricao do orgao',
+       'und. orcamentaria' ],
+    tagNameParents: [ 'th', 'tr' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color:White;">Órgão</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color:White;">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color:White;">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color:White;">Órgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_SF\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color:White;">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_A\')" style="color:White;">Ação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ClassificacaoNDesp\')" style="color:White;">Classificação da despesa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color:White;">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color:White;">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ee0afb0a173501de0c,
+    name: 'orgao_or_uni_orcamentaria',
+    found: true,
+    foundText: 'orgao',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "orgao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "unidade orcamentaria" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao do orgao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "und. orcamentaria"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-orgao_or_uni_orcamentaria-level-1-Mon Oct 07 2019 18:12:15 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Órgão',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath:
+     [ 'programa',
+       'descricao do programa',
+       'funcao programatica',
+       'programa de governo' ],
+    tagNameParents: [ 'th', 'tr' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color:White;">Programa</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color:White;">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color:White;">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Órgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_SF\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color:White;">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_A\')" style="color:White;">Ação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ClassificacaoNDesp\')" style="color:White;">Classificação da despesa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color:White;">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color:White;">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ee0afb0a173501de0d,
+    name: 'programa',
+    found: true,
+    foundText: 'programa',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "programa" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao do programa" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "funcao programatica" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "programa de governo"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-programa-level-1-Mon Oct 07 2019 18:12:16 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Programa',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'categoria economica', 'cat.economica' ],
+    tagNameParents: [ 'tr', 'tbody', 'td' ],
+    textParents:
+     [ '\n\t\t\t<td style="color:Black;font-weight:bold;">Categoria Econômica</td><td style="color:Black;">3 - Despesas Correntes</td>\n\t\t',
+       '<tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Empenho</td><td style="color:Black;">3890</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Mês</td><td style="color:Black;">10</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Ano</td><td style="color:Black;">2019</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Data</td><td style="color:Black;">04/10/2019</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Órgao</td><td style="color:Black;">02007</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Órgão</td><td style="color:Black;">SECRETARIA DE EDUCACAO                            </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Função</td><td style="color:Black;">12</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Função</td><td style="color:Black;">EDUCAÇÃO                                          </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">SubFunção</td><td style="color:Black;">361</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Subfunção</td><td style="color:Black;">ENSINO FUNDAMENTAL                                </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Programa</td><td style="color:Black;">1003</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Programa</td><td style="color:Black;">GARANTIR O ACESSO A EDUCAÇÃO (EDUCAÇÃO DE QUALIDAD</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Ação</td><td style="color:Black;">2014</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Ação</td><td style="color:Black;">MANUTENCAO DAS ATIVIDADES COM FUNDEB 40%          </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Natureza da Despesa</td><td style="color:Black;">3390360000</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Natureza da Despesa</td><td style="color:Black;">3 - Outras Despesas Correntes</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Categoria Econômica</td><td style="color:Black;">3 - Despesas Correntes</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Modalidade Aplicação</td><td style="color:Black;">90 - Aplicações Diretas</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Elemento de Depesa</td><td style="color:Black;">36 - Outros Serviços de Terceiros – Pessoa Física</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Fonte</td><td style="color:Black;">113</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Fonte</td><td style="color:Black;">Transferências do FUNDEB 40%                      </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Subelemento</td><td style="color:Black;">95</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Subelemento</td><td style="color:Black;">LOCAÇÃO DE VEÍCULOS                               </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Valor</td><td style="color:Black;">R$ 3.200,00</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Obra</td><td style="color:Black;">N</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Bens</td><td style="color:Black;">N</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Licitação</td><td style="color:Black;">000062018</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Tipo da Licitação</td><td style="color:Black;">11</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Educação</td><td style="color:Black;">&nbsp;</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Saúde</td><td style="color:Black;">&nbsp;</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Histórico</td><td style="color:Black;">VALOR QUE ORA SE EMPENHA CORRESPONDENTE AOS SERVIÇOS DE LOCAÇÃO DE VEICULO PARA TRANSPORTE DE ESTUDANTES UNIVERSITARIOS DAS COMUNIDADES DE CAPEBA COM DESTINO A SEDE DO MUNICIPIO DE ESPERANÇA NO MES DE SETEMBRO DE 2019                                      </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Fornecedor</td><td style="color:Black;">JORGE DE ANDRADE</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">CPF/CNPJ</td><td style="color:Black;">00005687889400</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Situação</td><td style="color:Black;">Não Anulado</td>\n\t\t</tr>\n\t' ],
+    _id: 5d9ba9ee0afb0a173501de0e,
+    name: 'categoria_economica',
+    found: true,
+    foundText: 'categoria economica',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "categoria economica" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cat.economica"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/detalhesEmpenho.aspx?nemp=3890',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-categoria_economica-level-3-Mon Oct 07 2019 18:14:05 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Categoria Econômica',
+    valid: true,
+    tagName: 'td' },
+  { keywordsXpath:
+     [ 'acao',
+       'classificacao',
+       'acao de governoNatuirezValor ',
+       'acao de governo' ],
+    tagNameParents: [ 'th', 'tr' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_A\')" style="color:White;">Ação</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color:White;">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color:White;">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Órgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_SF\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_A\')" style="color:White;">Ação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ClassificacaoNDesp\')" style="color:White;">Classificação da despesa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color:White;">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color:White;">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ee0afb0a173501de0f,
+    name: 'acao',
+    found: true,
+    foundText: 'acao',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "acao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "classificacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "acao de governonatuirezvalor " or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "acao de governo"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-acao-level-1-Mon Oct 07 2019 18:12:17 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Ação',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath:
+     [ 'nat. desp.',
+       'natureza',
+       'natureza',
+       'descricao da natureza da despesa',
+       'natureza da despesa' ],
+    tagNameParents: [ 'th', 'tr', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_ND\')" style="color:White;">Nat. Desp.</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color:White;">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color:White;">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color:White;">Orgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Licitacao\')" style="color:White;">Licitação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_Ft\')" style="color:White;">Fonte</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color:White;">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_Sf\')" style="color:White;">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color:White;">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_ND\')" style="color:White;">Nat. Desp.</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color:White;">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color:White;">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ee0afb0a173501de10,
+    name: 'natureza_despesa',
+    found: true,
+    foundText: 'nat. desp.',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nat. desp." or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "natureza" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "natureza" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao da natureza da despesa" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "natureza da despesa"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/DespesasComLicitacoes.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-natureza_despesa-level-2-Mon Oct 07 2019 18:13:57 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Nat. Desp.',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath:
+     [ 'modalidade', 'tipo da licitacao', 'modalidade de aplicacao' ],
+    tagNameParents: [ 'tr', 'tbody', 'td' ],
+    textParents:
+     [ '\n\t\t\t<td style="color:Black;font-weight:bold;">Tipo da Licitação</td><td style="color:Black;">11</td>\n\t\t',
+       '<tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Empenho</td><td style="color:Black;">3890</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Mês</td><td style="color:Black;">10</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Ano</td><td style="color:Black;">2019</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Data</td><td style="color:Black;">04/10/2019</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Órgao</td><td style="color:Black;">02007</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Órgão</td><td style="color:Black;">SECRETARIA DE EDUCACAO                            </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Função</td><td style="color:Black;">12</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Função</td><td style="color:Black;">EDUCAÇÃO                                          </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">SubFunção</td><td style="color:Black;">361</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Subfunção</td><td style="color:Black;">ENSINO FUNDAMENTAL                                </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Programa</td><td style="color:Black;">1003</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Programa</td><td style="color:Black;">GARANTIR O ACESSO A EDUCAÇÃO (EDUCAÇÃO DE QUALIDAD</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Ação</td><td style="color:Black;">2014</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Ação</td><td style="color:Black;">MANUTENCAO DAS ATIVIDADES COM FUNDEB 40%          </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Natureza da Despesa</td><td style="color:Black;">3390360000</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Natureza da Despesa</td><td style="color:Black;">3 - Outras Despesas Correntes</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Categoria Econômica</td><td style="color:Black;">3 - Despesas Correntes</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Modalidade Aplicação</td><td style="color:Black;">90 - Aplicações Diretas</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Elemento de Depesa</td><td style="color:Black;">36 - Outros Serviços de Terceiros – Pessoa Física</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Fonte</td><td style="color:Black;">113</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Fonte</td><td style="color:Black;">Transferências do FUNDEB 40%                      </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Subelemento</td><td style="color:Black;">95</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Subelemento</td><td style="color:Black;">LOCAÇÃO DE VEÍCULOS                               </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Valor</td><td style="color:Black;">R$ 3.200,00</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Obra</td><td style="color:Black;">N</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Bens</td><td style="color:Black;">N</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Licitação</td><td style="color:Black;">000062018</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Tipo da Licitação</td><td style="color:Black;">11</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Educação</td><td style="color:Black;">&nbsp;</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Saúde</td><td style="color:Black;">&nbsp;</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Histórico</td><td style="color:Black;">VALOR QUE ORA SE EMPENHA CORRESPONDENTE AOS SERVIÇOS DE LOCAÇÃO DE VEICULO PARA TRANSPORTE DE ESTUDANTES UNIVERSITARIOS DAS COMUNIDADES DE CAPEBA COM DESTINO A SEDE DO MUNICIPIO DE ESPERANÇA NO MES DE SETEMBRO DE 2019                                      </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Fornecedor</td><td style="color:Black;">JORGE DE ANDRADE</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">CPF/CNPJ</td><td style="color:Black;">00005687889400</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Situação</td><td style="color:Black;">Não Anulado</td>\n\t\t</tr>\n\t' ],
+    _id: 5d9ba9ee0afb0a173501de11,
+    name: 'modalidade',
+    found: true,
+    foundText: 'tipo da licitacao',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "modalidade" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo da licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "modalidade de aplicacao"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/detalhesEmpenho.aspx?nemp=3890',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-modalidade-level-3-Mon Oct 07 2019 18:14:06 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Tipo da Licitação',
+    valid: true,
+    tagName: 'td' },
+  { keywordsXpath:
+     [ 'elemento',
+       'classificacao',
+       'elemento de depesa',
+       'elemento da despesa' ],
+    tagNameParents: [ 'tr', 'tbody', 'td' ],
+    textParents:
+     [ '\n\t\t\t<td style="color:Black;font-weight:bold;">Elemento de Depesa</td><td style="color:Black;">36 - Outros Serviços de Terceiros – Pessoa Física</td>\n\t\t',
+       '<tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Empenho</td><td style="color:Black;">3890</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Mês</td><td style="color:Black;">10</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Ano</td><td style="color:Black;">2019</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Data</td><td style="color:Black;">04/10/2019</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Órgao</td><td style="color:Black;">02007</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Órgão</td><td style="color:Black;">SECRETARIA DE EDUCACAO                            </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Função</td><td style="color:Black;">12</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Função</td><td style="color:Black;">EDUCAÇÃO                                          </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">SubFunção</td><td style="color:Black;">361</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Subfunção</td><td style="color:Black;">ENSINO FUNDAMENTAL                                </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Programa</td><td style="color:Black;">1003</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Programa</td><td style="color:Black;">GARANTIR O ACESSO A EDUCAÇÃO (EDUCAÇÃO DE QUALIDAD</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Ação</td><td style="color:Black;">2014</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Ação</td><td style="color:Black;">MANUTENCAO DAS ATIVIDADES COM FUNDEB 40%          </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Natureza da Despesa</td><td style="color:Black;">3390360000</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Natureza da Despesa</td><td style="color:Black;">3 - Outras Despesas Correntes</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Categoria Econômica</td><td style="color:Black;">3 - Despesas Correntes</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Modalidade Aplicação</td><td style="color:Black;">90 - Aplicações Diretas</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Elemento de Depesa</td><td style="color:Black;">36 - Outros Serviços de Terceiros – Pessoa Física</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Fonte</td><td style="color:Black;">113</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Fonte</td><td style="color:Black;">Transferências do FUNDEB 40%                      </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Subelemento</td><td style="color:Black;">95</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Subelemento</td><td style="color:Black;">LOCAÇÃO DE VEÍCULOS                               </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Valor</td><td style="color:Black;">R$ 3.200,00</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Obra</td><td style="color:Black;">N</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Bens</td><td style="color:Black;">N</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Licitação</td><td style="color:Black;">000062018</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Tipo da Licitação</td><td style="color:Black;">11</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Educação</td><td style="color:Black;">&nbsp;</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Saúde</td><td style="color:Black;">&nbsp;</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Histórico</td><td style="color:Black;">VALOR QUE ORA SE EMPENHA CORRESPONDENTE AOS SERVIÇOS DE LOCAÇÃO DE VEICULO PARA TRANSPORTE DE ESTUDANTES UNIVERSITARIOS DAS COMUNIDADES DE CAPEBA COM DESTINO A SEDE DO MUNICIPIO DE ESPERANÇA NO MES DE SETEMBRO DE 2019                                      </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Fornecedor</td><td style="color:Black;">JORGE DE ANDRADE</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">CPF/CNPJ</td><td style="color:Black;">00005687889400</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Situação</td><td style="color:Black;">Não Anulado</td>\n\t\t</tr>\n\t' ],
+    _id: 5d9ba9ee0afb0a173501de12,
+    name: 'elemento',
+    found: true,
+    foundText: 'elemento de depesa',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "elemento" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "classificacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "elemento de depesa" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "elemento da despesa"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/detalhesEmpenho.aspx?nemp=3890',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-elemento-level-3-Mon Oct 07 2019 18:14:06 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Elemento de Depesa',
+    valid: true,
+    tagName: 'td' },
+  { keywordsXpath: [ 'empenho', 'numero', 'Ficha' ],
+    tagNameParents: [ 'th', 'tr' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color:White;">Empenho</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color:White;">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color:White;">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Órgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_SF\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_A\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Ação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ClassificacaoNDesp\')" style="color:White;">Classificação da despesa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color:White;">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color:White;">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ee0afb0a173501de13,
+    name: 'emp_numero',
+    found: true,
+    foundText: 'empenho',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "empenho" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "numero" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "ficha"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-emp_numero-level-1-Mon Oct 07 2019 18:12:19 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Empenho',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'data' ],
+    tagNameParents: [ 'th', 'tr' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color:White;">Data</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color:White;">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Órgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_SF\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_A\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Ação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ClassificacaoNDesp\')" style="color:White;">Classificação da despesa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color:White;">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color:White;">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ee0afb0a173501de14,
+    name: 'emp_data',
+    found: true,
+    foundText: 'data',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-emp_data-level-1-Mon Oct 07 2019 18:12:20 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Data',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'cpf/cnpj', 'cpf', 'cnpj' ],
+    tagNameParents: [ 'tr', 'tbody' ],
+    textParents:
+     [ '\n\t\t\t<td style="color:Black;font-weight:bold;">CPF/CNPJ</td><td style="color:Black;">00005687889400</td>\n\t\t',
+       '<tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Empenho</td><td style="color:Black;">3890</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Mês</td><td style="color:Black;">10</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Ano</td><td style="color:Black;">2019</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Data</td><td style="color:Black;">04/10/2019</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Órgao</td><td style="color:Black;">02007</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Órgão</td><td style="color:Black;">SECRETARIA DE EDUCACAO                            </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Função</td><td style="color:Black;">12</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Função</td><td style="color:Black;">EDUCAÇÃO                                          </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">SubFunção</td><td style="color:Black;">361</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Subfunção</td><td style="color:Black;">ENSINO FUNDAMENTAL                                </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Programa</td><td style="color:Black;">1003</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Programa</td><td style="color:Black;">GARANTIR O ACESSO A EDUCAÇÃO (EDUCAÇÃO DE QUALIDAD</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Ação</td><td style="color:Black;">2014</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Ação</td><td style="color:Black;">MANUTENCAO DAS ATIVIDADES COM FUNDEB 40%          </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Natureza da Despesa</td><td style="color:Black;">3390360000</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Natureza da Despesa</td><td style="color:Black;">3 - Outras Despesas Correntes</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Categoria Econômica</td><td style="color:Black;">3 - Despesas Correntes</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Modalidade Aplicação</td><td style="color:Black;">90 - Aplicações Diretas</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Elemento de Depesa</td><td style="color:Black;">36 - Outros Serviços de Terceiros – Pessoa Física</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Fonte</td><td style="color:Black;">113</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Fonte</td><td style="color:Black;">Transferências do FUNDEB 40%                      </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Subelemento</td><td style="color:Black;">95</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Subelemento</td><td style="color:Black;">LOCAÇÃO DE VEÍCULOS                               </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Valor</td><td style="color:Black;">R$ 3.200,00</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Obra</td><td style="color:Black;">N</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Bens</td><td style="color:Black;">N</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Licitação</td><td style="color:Black;">000062018</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Tipo da Licitação</td><td style="color:Black;">11</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Educação</td><td style="color:Black;">&nbsp;</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Saúde</td><td style="color:Black;">&nbsp;</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Histórico</td><td style="color:Black;">VALOR QUE ORA SE EMPENHA CORRESPONDENTE AOS SERVIÇOS DE LOCAÇÃO DE VEICULO PARA TRANSPORTE DE ESTUDANTES UNIVERSITARIOS DAS COMUNIDADES DE CAPEBA COM DESTINO A SEDE DO MUNICIPIO DE ESPERANÇA NO MES DE SETEMBRO DE 2019                                      </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Fornecedor</td><td style="color:Black;">JORGE DE ANDRADE</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">CPF/CNPJ</td><td style="color:Black;">00005687889400</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Situação</td><td style="color:Black;">Não Anulado</td>\n\t\t</tr>\n\t' ],
+    _id: 5d9ba9ee0afb0a173501de15,
+    name: 'emp_cnpj_cpf',
+    found: true,
+    foundText: 'cpf/cnpj',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cpf/cnpj" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cpf" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cnpj"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/detalhesEmpenho.aspx?nemp=3890',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-emp_cnpj_cpf-level-3-Mon Oct 07 2019 18:14:07 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'CPF/CNPJ',
+    valid: true,
+    tagName: 'td' },
+  { keywordsXpath:
+     [ 'tipo da licitacao',
+       'nº licitacao',
+       'licitacao',
+       'nº. da licitacao' ],
+    tagNameParents: [ 'th', 'tr', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Licitacao\')" style="color:White;">Licitação</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color:White;">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color:White;">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color:White;">Orgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Licitacao\')" style="color:White;">Licitação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_Ft\')" style="color:White;">Fonte</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color:White;">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_Sf\')" style="color:White;">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color:White;">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_ND\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Nat. Desp.</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color:White;">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color:White;">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ee0afb0a173501de16,
+    name: 'emp_indicacao_licitacao',
+    found: true,
+    foundText: 'licitacao',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo da licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "n licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "n. da licitacao"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/DespesasComLicitacoes.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-emp_indicacao_licitacao-level-2-Mon Oct 07 2019 18:13:57 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Licitação',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'valor', 'valor empenhado(r$)', 'valor empenhado' ],
+    tagNameParents: [ 'th', 'tr' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color:White;">Valor Empenhado</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Órgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_SF\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_A\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Ação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ClassificacaoNDesp\')" style="color:White;">Classificação da despesa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color:White;">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color:White;">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ee0afb0a173501de17,
+    name: 'emp_valor',
+    found: true,
+    foundText: 'valor empenhado',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor empenhado(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor empenhado"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-emp_valor-level-1-Mon Oct 07 2019 18:12:21 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Valor Empenhado',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'valor Fixado(r$)', 'valor empenhado' ],
+    tagNameParents: [ 'th', 'tr' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Valor Empenhado</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Órgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_SF\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_A\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Ação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ClassificacaoNDesp\')" style="color:White;">Classificação da despesa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color:White;">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ee0afb0a173501de18,
+    name: 'valor_fixado',
+    found: true,
+    foundText: 'valor empenhado',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor fixado(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor empenhado"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-valor_fixado-level-1-Mon Oct 07 2019 18:12:22 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Valor Empenhado',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'valor liquidado(r$)', 'valor liquidado' ],
+    tagNameParents: [ 'th', 'tr' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color:White;">Valor Liquidado</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Órgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_SF\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_A\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Ação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ClassificacaoNDesp\')" style="color:White;">Classificação da despesa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color:White;">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ee0afb0a173501de19,
+    name: 'valor_liquidado',
+    found: true,
+    foundText: 'valor liquidado',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor liquidado(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor liquidado"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-valor_liquidado-level-1-Mon Oct 07 2019 18:12:23 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Valor Liquidado',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'valor pago(R$)', 'valor pago' ],
+    tagNameParents: [ 'th', 'tr' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Órgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_SF\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_A\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Ação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ClassificacaoNDesp\')" style="color:White;">Classificação da despesa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ee0afb0a173501de1a,
+    name: 'valor_pago',
+    found: true,
+    foundText: 'valor pago',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor pago(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor pago"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-valor_pago-level-1-Mon Oct 07 2019 18:12:25 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Valor Pago',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'dt. pag. ultima parcela.' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9ee0afb0a173501de1b,
+    name: 'lic_data_pag_ultima',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "dt. pag. ultima parcela."]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'tipo do objeto' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5d9ba9ee0afb0a173501de1c,
+    name: 'lic_obj_servico',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo do objeto"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'elemento',
+       'sub-elemento',
+       'subelemento',
+       'subelemento da despesa' ],
+    tagNameParents: [ 'tr', 'tbody' ],
+    textParents:
+     [ '\n\t\t\t<td style="color:Black;font-weight:bold;">Subelemento</td><td style="color:Black;">95</td>\n\t\t',
+       '<tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Empenho</td><td style="color:Black;">3890</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Mês</td><td style="color:Black;">10</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Ano</td><td style="color:Black;">2019</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Data</td><td style="color:Black;">04/10/2019</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Órgao</td><td style="color:Black;">02007</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Órgão</td><td style="color:Black;">SECRETARIA DE EDUCACAO                            </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Função</td><td style="color:Black;">12</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Função</td><td style="color:Black;">EDUCAÇÃO                                          </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">SubFunção</td><td style="color:Black;">361</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Subfunção</td><td style="color:Black;">ENSINO FUNDAMENTAL                                </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Programa</td><td style="color:Black;">1003</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Programa</td><td style="color:Black;">GARANTIR O ACESSO A EDUCAÇÃO (EDUCAÇÃO DE QUALIDAD</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Ação</td><td style="color:Black;">2014</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Ação</td><td style="color:Black;">MANUTENCAO DAS ATIVIDADES COM FUNDEB 40%          </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Natureza da Despesa</td><td style="color:Black;">3390360000</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Natureza da Despesa</td><td style="color:Black;">3 - Outras Despesas Correntes</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Categoria Econômica</td><td style="color:Black;">3 - Despesas Correntes</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Modalidade Aplicação</td><td style="color:Black;">90 - Aplicações Diretas</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Elemento de Depesa</td><td style="color:Black;">36 - Outros Serviços de Terceiros – Pessoa Física</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Fonte</td><td style="color:Black;">113</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Fonte</td><td style="color:Black;">Transferências do FUNDEB 40%                      </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Subelemento</td><td style="color:Black;">95</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Subelemento</td><td style="color:Black;">LOCAÇÃO DE VEÍCULOS                               </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Valor</td><td style="color:Black;">R$ 3.200,00</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Obra</td><td style="color:Black;">N</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Bens</td><td style="color:Black;">N</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Licitação</td><td style="color:Black;">000062018</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Tipo da Licitação</td><td style="color:Black;">11</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Educação</td><td style="color:Black;">&nbsp;</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Saúde</td><td style="color:Black;">&nbsp;</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Histórico</td><td style="color:Black;">VALOR QUE ORA SE EMPENHA CORRESPONDENTE AOS SERVIÇOS DE LOCAÇÃO DE VEICULO PARA TRANSPORTE DE ESTUDANTES UNIVERSITARIOS DAS COMUNIDADES DE CAPEBA COM DESTINO A SEDE DO MUNICIPIO DE ESPERANÇA NO MES DE SETEMBRO DE 2019                                      </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Fornecedor</td><td style="color:Black;">JORGE DE ANDRADE</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">CPF/CNPJ</td><td style="color:Black;">00005687889400</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Situação</td><td style="color:Black;">Não Anulado</td>\n\t\t</tr>\n\t' ],
+    _id: 5d9ba9ee0afb0a173501de1d,
+    name: 'sub_elemento',
+    found: true,
+    foundText: 'subelemento',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "elemento" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "subelemento" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "subelemento" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "subelemento da despesa"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/detalhesEmpenho.aspx?nemp=3890',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-sub_elemento-level-3-Mon Oct 07 2019 18:14:08 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Subelemento',
+    valid: true,
+    tagName: 'td' },
+  { keywordsXpath: [ 'modalidade', 'modalidade aplicacao' ],
+    tagNameParents: [ 'tr', 'tbody' ],
+    textParents:
+     [ '\n\t\t\t<td style="color:Black;font-weight:bold;">Modalidade Aplicação</td><td style="color:Black;">90 - Aplicações Diretas</td>\n\t\t',
+       '<tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Empenho</td><td style="color:Black;">3890</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Mês</td><td style="color:Black;">10</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Ano</td><td style="color:Black;">2019</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Data</td><td style="color:Black;">04/10/2019</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Órgao</td><td style="color:Black;">02007</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Órgão</td><td style="color:Black;">SECRETARIA DE EDUCACAO                            </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Função</td><td style="color:Black;">12</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Função</td><td style="color:Black;">EDUCAÇÃO                                          </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">SubFunção</td><td style="color:Black;">361</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Subfunção</td><td style="color:Black;">ENSINO FUNDAMENTAL                                </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Programa</td><td style="color:Black;">1003</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Programa</td><td style="color:Black;">GARANTIR O ACESSO A EDUCAÇÃO (EDUCAÇÃO DE QUALIDAD</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Ação</td><td style="color:Black;">2014</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Ação</td><td style="color:Black;">MANUTENCAO DAS ATIVIDADES COM FUNDEB 40%          </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Natureza da Despesa</td><td style="color:Black;">3390360000</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Natureza da Despesa</td><td style="color:Black;">3 - Outras Despesas Correntes</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Categoria Econômica</td><td style="color:Black;">3 - Despesas Correntes</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Modalidade Aplicação</td><td style="color:Black;">90 - Aplicações Diretas</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Elemento de Depesa</td><td style="color:Black;">36 - Outros Serviços de Terceiros – Pessoa Física</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Fonte</td><td style="color:Black;">113</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Fonte</td><td style="color:Black;">Transferências do FUNDEB 40%                      </td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Subelemento</td><td style="color:Black;">95</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Subelemento</td><td style="color:Black;">LOCAÇÃO DE VEÍCULOS                               </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Valor</td><td style="color:Black;">R$ 3.200,00</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Obra</td><td style="color:Black;">N</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Bens</td><td style="color:Black;">N</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Licitação</td><td style="color:Black;">000062018</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Tipo da Licitação</td><td style="color:Black;">11</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Educação</td><td style="color:Black;">&nbsp;</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Saúde</td><td style="color:Black;">&nbsp;</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Histórico</td><td style="color:Black;">VALOR QUE ORA SE EMPENHA CORRESPONDENTE AOS SERVIÇOS DE LOCAÇÃO DE VEICULO PARA TRANSPORTE DE ESTUDANTES UNIVERSITARIOS DAS COMUNIDADES DE CAPEBA COM DESTINO A SEDE DO MUNICIPIO DE ESPERANÇA NO MES DE SETEMBRO DE 2019                                      </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Fornecedor</td><td style="color:Black;">JORGE DE ANDRADE</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">CPF/CNPJ</td><td style="color:Black;">00005687889400</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Situação</td><td style="color:Black;">Não Anulado</td>\n\t\t</tr>\n\t' ],
+    _id: 5d9ba9ee0afb0a173501de1e,
+    name: 'lic_modalidade',
+    found: true,
+    foundText: 'modalidade aplicacao',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "modalidade" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "modalidade aplicacao"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/detalhesEmpenho.aspx?nemp=3890',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-lic_modalidade-level-3-Mon Oct 07 2019 18:14:08 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Modalidade Aplicação',
+    valid: true,
+    tagName: 'td' },
+  { keywordsXpath: [ 'nº licitacao', 'licitacao' ],
+    tagNameParents: [ 'th', 'tr', 'a' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Licitacao\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Licitação</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color:White;">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color:White;">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color:White;">Orgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Licitacao\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Licitação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_Ft\')" style="color:White;">Fonte</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color:White;">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_Sf\')" style="color:White;">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color:White;">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_ND\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Nat. Desp.</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color:White;">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color:White;">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color:White;">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ee0afb0a173501de1f,
+    name: 'lic_numero',
+    found: true,
+    foundText: 'licitacao',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "n licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "licitacao"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/DespesasComLicitacoes.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-lic_numero-level-2-Mon Oct 07 2019 18:13:58 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Licitação',
+    valid: true,
+    tagName: 'a' },
+  { keywordsXpath: [ 'numero', 'historico' ],
+    tagNameParents: [ 'tr', 'tbody' ],
+    textParents:
+     [ '\n\t\t\t<td style="color:Black;font-weight:bold;">Histórico</td><td style="color:Black;">VALOR QUE ORA SE EMPENHA CORRESPONDENTE AOS SERVIÇOS DE LOCAÇÃO DE VEICULO PARA TRANSPORTE DE ESTUDANTES UNIVERSITARIOS DAS COMUNIDADES DE CAPEBA COM DESTINO A SEDE DO MUNICIPIO DE ESPERANÇA NO MES DE SETEMBRO DE 2019                                      </td>\n\t\t',
+       '<tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Empenho</td><td style="color:Black;">3890</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Mês</td><td style="color:Black;">10</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Ano</td><td style="color:Black;">2019</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Data</td><td style="color:Black;">04/10/2019</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Órgao</td><td style="color:Black;">02007</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Órgão</td><td style="color:Black;">SECRETARIA DE EDUCACAO                            </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Função</td><td style="color:Black;">12</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Função</td><td style="color:Black;">EDUCAÇÃO                                          </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">SubFunção</td><td style="color:Black;">361</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Subfunção</td><td style="color:Black;">ENSINO FUNDAMENTAL                                </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Programa</td><td style="color:Black;">1003</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Programa</td><td style="color:Black;">GARANTIR O ACESSO A EDUCAÇÃO (EDUCAÇÃO DE QUALIDAD</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Ação</td><td style="color:Black;">2014</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Ação</td><td style="color:Black;">MANUTENCAO DAS ATIVIDADES COM FUNDEB 40%          </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Natureza da Despesa</td><td style="color:Black;">3390360000</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Natureza da Despesa</td><td style="color:Black;">3 - Outras Despesas Correntes</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Categoria Econômica</td><td style="color:Black;">3 - Despesas Correntes</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Modalidade Aplicação</td><td style="color:Black;">90 - Aplicações Diretas</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Elemento de Depesa</td><td style="color:Black;">36 - Outros Serviços de Terceiros – Pessoa Física</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Fonte</td><td style="color:Black;">113</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição da Fonte</td><td style="color:Black;">Transferências do FUNDEB 40%                      </td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Subelemento</td><td style="color:Black;">95</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Descrição do Subelemento</td><td style="color:Black;">LOCAÇÃO DE VEÍCULOS                               </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Valor</td><td style="color:Black;">R$ 3.200,00</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Obra</td><td style="color:Black;">N</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Bens</td><td style="color:Black;">N</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Licitação</td><td style="color:Black;">000062018</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">Tipo da Licitação</td><td style="color:Black;">11</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Educação</td><td style="color:Black;">&nbsp;</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Saúde</td><td style="color:Black;">&nbsp;</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Histórico</td><td style="color:Black;">VALOR QUE ORA SE EMPENHA CORRESPONDENTE AOS SERVIÇOS DE LOCAÇÃO DE VEICULO PARA TRANSPORTE DE ESTUDANTES UNIVERSITARIOS DAS COMUNIDADES DE CAPEBA COM DESTINO A SEDE DO MUNICIPIO DE ESPERANÇA NO MES DE SETEMBRO DE 2019                                      </td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Fornecedor</td><td style="color:Black;">JORGE DE ANDRADE</td>\n\t\t</tr><tr>\n\t\t\t<td style="color: rgb(255, 255, 255); font-weight: bold; background-color: rgb(79, 6, 101);">CPF/CNPJ</td><td style="color:Black;">00005687889400</td>\n\t\t</tr><tr>\n\t\t\t<td style="color:Black;font-weight:bold;">Situação</td><td style="color:Black;">Não Anulado</td>\n\t\t</tr>\n\t' ],
+    _id: 5d9ba9ee0afb0a173501de20,
+    name: 'lic_num_contrato',
+    found: true,
+    foundText: 'historico',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "numero" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "historico"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/detalhesEmpenho.aspx?nemp=3890',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-lic_num_contrato-level-3-Mon Oct 07 2019 18:14:09 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Histórico',
+    valid: true,
+    tagName: 'td' },
+  { keywordsXpath:
+     [ 'orgao',
+       'unid. orcamentaria',
+       'UNIDADE ORÇAMENTÁRIA',
+       'credor' ],
+    tagNameParents: [ 'th', 'tr' ],
+    textParents:
+     [ '<a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Órgão</a>',
+       '\n\t\t\t<th scope="col">Processo Completo</th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Nemp\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Empenho</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Data\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Data</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_O\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Órgão</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Fornecedor\')" style="color:White;">Fornecedor/Favorecido</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_F\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Função</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_SF\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">SubFunção</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_P\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Programa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Desc_A\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Ação</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ClassificacaoNDesp\')" style="color:White;">Classificação da despesa</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$Valor\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Valor Empenhado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorLiquidado\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Valor Liquidado</a></th><th scope="col"><a href="javascript:__doPostBack(\'ctl00$MainContent$GridView2\',\'Sort$ValorPago\')" style="color: rgb(255, 255, 255); background-color: rgb(79, 6, 101);">Valor Pago</a></th>\n\t\t' ],
+    _id: 5d9ba9ee0afb0a173501de21,
+    name: 'nome',
+    found: true,
+    foundText: 'orgao',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "orgao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "unid. orcamentaria" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "unidade orcamentaria" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "credor"]',
+    pathSought:
+     'https://www.transparenciaativa.com.br/EmpenhosPorFuncional.aspx',
+    proof:
+     './proof/Esperança/2019-10-07T21:08:42.741Z/Despesa Orçamentária/Despesa Orçamentária-nome-level-1-Mon Oct 07 2019 18:12:26 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Órgão',
+    valid: true,
+    tagName: 'a' } ]
+============================================================================
+Duration:  5  min
+testando =======================================================================================================

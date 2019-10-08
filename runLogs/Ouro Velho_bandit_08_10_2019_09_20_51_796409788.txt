@@ -1,0 +1,36 @@
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/experiment-01/auditor-crawler
+> babel-node app.js "county=Ouro Velho" "aproach=bandit"
+
+{"message":"Connected to mongo!!!","level":"info"}
+-------------------------------AproachType:  bandit
+-------------------------------AproachType:  bandit
+-------------------------------AproachType:  bandit
+-------------------------------AproachType:  bandit
+-------------------------------AproachType:  bandit
+-------------------------------AproachType:  bandit
+********************************************************************
+value:  http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB
+level:  0
+********************************************************************
+value:  http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB
+level:  0
+********************************************************************
+value:  http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB
+level:  0
+********************************************************************
+value:  http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB
+level:  0
+********************************************************************
+value:  http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB
+level:  0
+********************************************************************
+value:  http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=O5w=&uf=PB
+level:  0
+queue nodes: ****: licitacoes empenhadas  level:  1
+queue nodes: ****: editais e documentos de licitacao  level:  1
+queue nodes: ****: licitacoes  level:  1
+========== undefined
+TypeError: Cannot read property 'updateNumArms' of undefined
+    at Function.initilize (/home/rafaelfeitosa/workspace/MSC/experiment-01/auditor-crawler/banditProcessClassifier.js:98:30)
+    at process._tickCallback (internal/process/next_tick.js:68:7)

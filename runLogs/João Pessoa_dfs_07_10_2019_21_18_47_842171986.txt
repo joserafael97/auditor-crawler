@@ -1,0 +1,22 @@
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/experiment-01/auditor-crawler
+> babel-node app.js "county=João Pessoa" "aproach=dfs"
+
+{"message":"Connected to mongo!!!","level":"info"}
+-------------------------------AproachType:  dfs
+-------------------------------AproachType:  dfs
+-------------------------------AproachType:  dfs
+-------------------------------AproachType:  dfs
+-------------------------------AproachType:  dfs
+-------------------------------AproachType:  dfs
+Error: Failed to launch chrome!
+Inconsistency detected by ld.so: dl-tls.c: 493: _dl_allocate_tls_init: Assertion `listp->slotinfo[cnt].gen <= GL(dl_tls_generation)' failed!
+
+
+TROUBLESHOOTING: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
+
+    at onClose (/home/rafaelfeitosa/workspace/MSC/experiment-01/auditor-crawler/node_modules/puppeteer/lib/Launcher.js:348:14)
+    at ChildProcess.helper.addEventListener (/home/rafaelfeitosa/workspace/MSC/experiment-01/auditor-crawler/node_modules/puppeteer/lib/Launcher.js:338:60)
+    at ChildProcess.emit (events.js:203:15)
+    at ChildProcess.EventEmitter.emit (domain.js:448:20)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:248:12)
