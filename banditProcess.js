@@ -70,7 +70,7 @@ export default class BanditProcess {
         logger.info("Close Puppeteer ...");
         await puppeteer.getBrowser().close()
 
-        logger.info("Returnin Criterion: " + criterion.name);
+        logger.info("Returning Criterion: " + criterion.name);
         return { "itens": itens, "contNodeNumber": contNodeNumber };
     };
 

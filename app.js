@@ -33,11 +33,11 @@ const run = async (criterion, evaluation, root) => {
 
     const aproachSelected = CliParamUtil.aproachParamExtract(process.argv.slice(3)[0])
     let itens = [];
-    let resultEvaliation = await selectAproachToRun(aproachSelected, root, criterion, evaluation, itens);
+    let resultEvaluation = await selectAproachToRun(aproachSelected, root, criterion, evaluation, itens);
 
-    itens = resultEvaliation.itens;
-    criterion = resultEvaliation.criterion;
-    evaluation = resultEvaliation.evaluation;
+    itens = resultEvaluation.itens;
+    criterion = resultEvaluation.criterion;
+    evaluation = resultEvaluation.evaluation;
 
     evaluation.dateEnd = new Date();
     const duration = evaluation.dateEnd.getTime() - evaluation.date.getTime();
@@ -52,7 +52,7 @@ const run = async (criterion, evaluation, root) => {
     criterion = await Criterion.addCriterion(criterion, itens);
     await Evaluation.addEvaluationWithOneCriterion(evaluation, criterion)
     
-    logger.info("Duration in minutes in crawler proccess criterion " + criterion.name + " was:", minutes, ' min')
+    logger.info("Duration in minutes in crawler proccess criterion " + criterion.name + " was: " + minutes +  ' min')
 
 };
 
@@ -60,12 +60,14 @@ const run = async (criterion, evaluation, root) => {
 const selectAproachToRun = async (aproachSelected, root, criterion, evaluation, itens) => {
     
     let classifierCli = '';
+    let resultCrawlingCriterion = null;
 
     logger.info("AproachType: " + aproachSelected);
 
+
     if (aproachSelected == AproachType.BFS || aproachSelected == '' || aproachSelected == "default") {
         evaluation.aproach = AproachType.BFS
-        resultEvaliation = await Bfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
+        resultCrawlingCriterion = await Bfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
 
     } else if (aproachSelected == AproachType.BANDIT) {
         evaluation.aproach = AproachType.BANDIT
@@ -77,21 +79,20 @@ const selectAproachToRun = async (aproachSelected, root, criterion, evaluation, 
         logger.info("Classier: " + classifierCli);
 
         if (classifierCli === 'naivebayes') {
-            
-            resultEvaliation = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1), [], []).catch(logErrorAndExit)
+            resultCrawlingCriterion = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1), [], []).catch(logErrorAndExit)
 
         } else {
-            resultEvaliation = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(10000, 0.1)).catch(logErrorAndExit)
+            resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(10000, 0.1)).catch(logErrorAndExit)
         }
         
        
     } else if (aproachSelected == AproachType.DFS) {
         evaluation.aproach = AproachType.DFS
-        resultEvaliation = await Dfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
+        resultCrawlingCriterion = await Dfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
     }
 
-    itens = resultEvaliation.itens;
-    criterion.contNodeNumberAccess = resultEvaliation.contNodeNumber
+    itens = resultCrawlingCriterion.itens;
+    criterion.contNodeNumberAccess = resultCrawlingCriterion.contNodeNumber
     
     return {'itens': itens, 'criterion': criterion, 'evaluation': evaluation};
 }
