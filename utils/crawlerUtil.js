@@ -43,11 +43,14 @@ export default class CrawlerUtil {
         const currentURL = await page.url();
         const currentPage = page;
 
-        logger.info("********************************************************************");
-        logger.info("value: ", value);
-        logger.info("level: ", node.getLevel());
+        console.log("===================================================================");
+        logger.info("node value: " + value);
+        logger.info("node level: " + node.getLevel());
+        logger.info("current page: " + (await page.constructor.name));
+        logger.info("node extracted in Frame: " + node.getSource().getIsExtractIframe());
+        console.log("===================================================================");
 
-        if (node.getSource().getIsExtractIframe() && (await page.constructor.name) !== "Frame") {
+        if (node.getSource().getIsExtractIframe()) {
             await page.waitForNavigation().catch(e => void e);
             page = await PuppeteerUtil.detectContext(page).catch(e => void e);
         }
@@ -75,10 +78,33 @@ export default class CrawlerUtil {
                 changeUrl = true;
             }
         }
+
         await page.waitFor(3000);
 
-        if ((!isUrl || node.getSource().getIsExtractIframe()) && (await page.constructor.name) !== "Frame") {
-            page = await PuppeteerUtil.detectContext(page).catch(e => void e);
+        const elementsIdentify = []
+        elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
+        elementsIdentify.push.apply(elementsIdentify, queue);
+
+        //before search iframe
+        if (!changeUrl || (changeUrl && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, newCurrentURL, node, newCurrentURL))) {
+            node = await CrawlerUtil.extractEdges(node, page, criterion.name, elementsIdentify, withOutSearchKeyWord);
+            itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
+        }
+
+        logger.info("page: " + page);
+
+        if ((await page.constructor.name) !== "Frame") {
+
+            page = (await PuppeteerUtil.detectContext(page).catch(e => void e));
+            logger.info("page after: " + page);
+
+            logger.info("(await page.constructor.name): " + (await page.constructor.name));
+
+            //after search iframe
+            if (!changeUrl || (changeUrl && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, newCurrentURL, node, newCurrentURL))) {
+                node = await CrawlerUtil.extractEdges(node, page, criterion.name, elementsIdentify, withOutSearchKeyWord);
+                itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
+            }
         }
 
         if (node.getLevel() === 0) {
@@ -86,14 +112,7 @@ export default class CrawlerUtil {
             node.getSource().setUrl((await page.url()));
         }
 
-        const elementsIdentify = []
-        elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
-        elementsIdentify.push.apply(elementsIdentify, queue);
 
-        if (!changeUrl || (changeUrl && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, newCurrentURL, node, newCurrentURL))) {
-            node = await CrawlerUtil.extractEdges(node, page, criterion.name, elementsIdentify, withOutSearchKeyWord);
-            itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
-        }
 
         queue.push.apply(queue, node.getEdges());
         node.setResearched(true);

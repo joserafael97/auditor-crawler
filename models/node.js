@@ -37,7 +37,7 @@ export default class Node {
         return this.features
     }
 
-   
+
     getSourcesParents() {
         if (this.parent !== null) {
             let it = this.accessParents(this.parent);
@@ -205,7 +205,7 @@ export default class Node {
     }
 
     setEdgesList(edges) {
-        this.edges = edges;
+        this.edges.push.apply(this.edges, edges);
     }
 
     setRewardValue(value) {

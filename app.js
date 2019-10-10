@@ -52,7 +52,7 @@ const run = async (criterion, evaluation, root) => {
     criterion = await Criterion.addCriterion(criterion, itens);
     await Evaluation.addEvaluationWithOneCriterion(evaluation, criterion)
     
-    logger.info("Duration in minutes in crawler proccess criterion " + criterion.name + " was: " + minutes +  ' min')
+    logger.info("Duration in crawling proccess for the criterion " + criterion.name + " was: " + minutes +  ' min')
 
 };
 
