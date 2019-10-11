@@ -92,13 +92,8 @@ export default class CrawlerUtil {
         }
 
         if ((await page.constructor.name) !== "Frame") {
-
-            page = (await PuppeteerUtil.detectContext(page).catch(e => void e));
-            logger.info("page after: " + page);
-
-            logger.info("(await page.constructor.name): " + (await page.constructor.name));
-            
-            if ((await page.constructor.name) !== "Frame") {
+            page = (await PuppeteerUtil.detectContext(page).catch(e => void e));            
+            if ((await page.constructor.name) === "Frame") {
               
                 elementsIdentify = []
                 elementsIdentify.push.apply(elementsIdentify, elementsAccessed);

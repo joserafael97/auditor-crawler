@@ -33,12 +33,12 @@ export default class TextUtil {
         if (criterionKeyWordName.indexOf(' ') >= 0) {
             terms = criterionKeyWordName.split(" ");
         }
-        
+
         terms.push(criterionKeyWordName)
 
         return terms;
 
-    } 
+    }
 
     static similarityTwoString(string01, string02) {
         return StringSimilarity.compareTwoStrings(string01, string02) > 0.95;
@@ -74,9 +74,16 @@ export default class TextUtil {
 
     }
 
-    static similarityUrls(url1, UrlsList) {
+    static similarityUrls(url1, UrlsList, similarityValue = 0.95) {
+
+        url1 = url1.substr(url1.length - 1) === "/" ? url1.slice(0, -1) : url1;
 
         for (const currentUrl of UrlsList) {
+
+            if ((StringSimilarity.compareTwoStrings(currentUrl, url1) > similarityValue)) {
+                return true;
+            }
+
             const host1 = HtmlUtil.extractHost(url1);
             const host2 = HtmlUtil.extractHost(currentUrl);
             const url1Isnum = /^\d+$/.test(url1);
@@ -92,11 +99,11 @@ export default class TextUtil {
                     uri2 = uri2.split('/')[uri2.split('/').length - 2];
                 }
 
-                if (StringSimilarity.compareTwoStrings(uri1, uri2) > 0.95) {
+                if (StringSimilarity.compareTwoStrings(uri1, uri2) > similarityValue) {
                     return true;
                 }
             } else {
-                if (StringSimilarity.compareTwoStrings(url1, currentUrl) > 0.95) {
+                if (StringSimilarity.compareTwoStrings(url1, currentUrl) > similarityValue) {
                     return true;
                 }
 
