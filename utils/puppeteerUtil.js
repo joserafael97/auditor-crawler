@@ -39,7 +39,7 @@ export default class PuppeteerUtil {
                 '--disable-infobars',
                 '--test-type',
             ],
-            headless: true
+            headless: false
         });
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
@@ -67,10 +67,16 @@ export default class PuppeteerUtil {
 
     }
 
-    static async detectContext(page) {
+    static async detectContext(page, urls = [], node = null) {
         if (await PuppeteerUtil.checkXpath(page, XPATHIFRAME)) {
             for (const frame of page.mainFrame().childFrames()) {
-                if (!TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, frame.url())) {
+                const urlFrame = await frame.url();
+                let validation = true;
+               
+                if (node !== null && urls.length > 0 && PuppeteerUtil.checkDuplicateNode(urls, urlFrame, node, urlFrame)){
+                    validation = false;
+                }
+                if (validation && !TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, urlFrame)) {
                     return frame;
                 }
             }

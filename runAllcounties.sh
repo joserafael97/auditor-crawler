@@ -1,4 +1,4 @@
-aproach="bandit"
+aproach="bfs"
 
 counties=(
     "Esperança"

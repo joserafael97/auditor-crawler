@@ -51,14 +51,14 @@ const run = async (criterion, evaluation, root) => {
 
     criterion = await Criterion.addCriterion(criterion, itens);
     await Evaluation.addEvaluationWithOneCriterion(evaluation, criterion)
-    
-    logger.info("Duration in crawling proccess for the criterion " + criterion.name + " was: " + minutes +  ' min')
+
+    logger.info("Duration in crawling proccess for the criterion " + criterion.name + " was: " + minutes + ' min')
 
 };
 
 
 const selectAproachToRun = async (aproachSelected, root, criterion, evaluation, itens) => {
-    
+
     let classifierCli = '';
     let resultCrawlingCriterion = null;
 
@@ -84,8 +84,8 @@ const selectAproachToRun = async (aproachSelected, root, criterion, evaluation, 
         } else {
             resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(10000, 0.1)).catch(logErrorAndExit)
         }
-        
-       
+
+
     } else if (aproachSelected == AproachType.DFS) {
         evaluation.aproach = AproachType.DFS
         resultCrawlingCriterion = await Dfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
@@ -93,8 +93,8 @@ const selectAproachToRun = async (aproachSelected, root, criterion, evaluation, 
 
     itens = resultCrawlingCriterion.itens;
     criterion.contNodeNumberAccess = resultCrawlingCriterion.contNodeNumber
-    
-    return {'itens': itens, 'criterion': criterion, 'evaluation': evaluation};
+
+    return { 'itens': itens, 'criterion': criterion, 'evaluation': evaluation };
 }
 
 const initColletions = async () => {
@@ -146,6 +146,7 @@ const startCrawler = async () => {
         run(criterionReceitaOrc, evaluation, root),
         run(criterionLicit, evaluation, root),
         run(criterionPessoal, evaluation, root)
+
     ]).then((result) => {
         moogoseInstace.connection.close(function () {
             console.log("Finished process, crawling finalized");
