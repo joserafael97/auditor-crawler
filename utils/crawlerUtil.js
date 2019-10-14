@@ -11,6 +11,10 @@ import Criterion from '../models/criterion.model';
 import FileUtil from '../utils/fileUtil';
 import FeaturesConst from '../consts/featuares';
 import logger from '../core/logger/app-logger'
+import {
+    XPATHIFRAME,
+    UNUSABLEIFRAMES
+} from '../utils/xpathUtil';
 
 import Node from '../models/node';
 
@@ -50,7 +54,7 @@ export default class CrawlerUtil {
         logger.info("node extracted in Frame: " + node.getSource().getIsExtractIframe());
         console.log("===================================================================");
 
-        if (node.getSource().getIsExtractIframe()) {
+        if (node.getSource().getIsExtractIframe() && !isUrl) {
             await page.waitForNavigation().catch(e => void e);
             page = await PuppeteerUtil.detectContext(page).catch(e => void e);
         }
@@ -85,41 +89,62 @@ export default class CrawlerUtil {
         elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
         elementsIdentify.push.apply(elementsIdentify, queue);
 
-        //before search iframe
+        node = await CrawlerUtil.extractIframesUrl(node, page, elementsIdentify);
+        queue.push.apply(queue, node.getEdges());
+        node.edges = [];
+
+        elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
+        elementsIdentify.push.apply(elementsIdentify, queue);
+
+        if ((await page.constructor.name) !== "Frame") {
+            page = (await PuppeteerUtil.detectContext(page, elementsIdentify, node).catch(e => void e));
+        }
+
         if (!changeUrl || (changeUrl && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, newCurrentURL, node, newCurrentURL))) {
             node = await CrawlerUtil.extractEdges(node, page, criterion.name, elementsIdentify, withOutSearchKeyWord);
             itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
         }
 
-        if ((await page.constructor.name) !== "Frame") {
-            page = (await PuppeteerUtil.detectContext(page, elementsIdentify, node).catch(e => void e));            
-            if ((await page.constructor.name) === "Frame") {
-              
-                elementsIdentify = []
-                elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
-                elementsIdentify.push.apply(elementsIdentify, queue);
-
-                //after search iframe
-                if (!changeUrl || (changeUrl && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, newCurrentURL, node, newCurrentURL))) {
-                    node = await CrawlerUtil.extractEdges(node, page, criterion.name, elementsIdentify, withOutSearchKeyWord);
-                    itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
-                }
-            }
-        }
 
         if (node.getLevel() === 0) {
             await page.waitFor(3000);
             node.getSource().setUrl((await page.url()));
         }
-
-
-
         queue.push.apply(queue, node.getEdges());
         node.setResearched(true);
         elementsAccessed.push(node);
 
         return { "node": node, "queue": queue, "elementsAccessed": elementsAccessed, "itens": itens };
     }
+
+    static async extractIframesUrl(node, page, elementsIdentify) {
+
+        let queryIframe = XpathUtil.createXpathToExtractIframe();
+        let edgesList = [];
+        const currentUrl = await page.url();
+        const elements = await page.$x(queryIframe.getXpath());
+
+        if (elements.length > 0) {
+            for (let element of elements) {
+                let text = await (await element.getProperty('textContent')).jsonValue();
+                elementsIdentify.push.apply(elementsIdentify, edgesList);
+
+                if ((HtmlUtil.isUrl(text) && !TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, text)) &&
+                    !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
+
+                    let source = new Element(text, element, queryIframe.getXpath(), queryIframe.getTypeQuery(), currentUrl, (await page.constructor.name) === "Frame" || queryIframe.getIsExtractIframe());
+                    edgesList.push(new Node(source, node));
+
+                }
+
+            }
+        }
+
+
+        node.setEdgesList(edgesList);
+        return node;
+    }
+
 
     static async extractEdges(node, page, criterionKeyWordName, elementsIdentify, withOutSearchKeyWord = false) {
 

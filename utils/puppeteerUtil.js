@@ -39,13 +39,13 @@ export default class PuppeteerUtil {
                 '--disable-infobars',
                 '--test-type',
             ],
-            headless: true
+            headless: false
         });
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
         await mainPage.setViewport({
-            width: 2000,
-            height: 3000
+            width: 1500,
+            height: 1000
         });
 
         return new PuppeteerInstance(browser, [mainPage]);
@@ -70,12 +70,12 @@ export default class PuppeteerUtil {
     static async detectContext(page, urls = [], node = null) {
         if (await PuppeteerUtil.checkXpath(page, XPATHIFRAME)) {
             for (const frame of page.mainFrame().childFrames()) {
-                const urlFrame = await frame.url();
-                let validation = true;
-               
+                let urlFrame = await frame.url();
+                let validation = true;               
                 if (node !== null && urls.length > 0 && PuppeteerUtil.checkDuplicateNode(urls, urlFrame, node, urlFrame)){
                     validation = false;
                 }
+               
                 if (validation && !TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, urlFrame)) {
                     return frame;
                 }

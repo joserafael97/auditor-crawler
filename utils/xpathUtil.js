@@ -120,6 +120,11 @@ export default class XpathUtil {
     }
 
 
+    static createXpathToExtractIframe() {
+        return new QueryElement('//iframe/@src', '', QUERYTOSTATICCOMPONENT, [], true);
+    }
+
+
     static async createXpathsToExtractDynamicComponents(criterionKeyWordName) {
         let xpaths = [];
         await CriterionKeyWord.findByName(criterionKeyWordName).then(function (criterionKeyWords) {
@@ -132,7 +137,7 @@ export default class XpathUtil {
         return xpaths;
     }
 
-    static addGenericTerms(terms ) {
+    static addGenericTerms(terms) {
         terms.push(CONSULTAR);
         terms.push(PESQUISAR);
         terms.push(ACESSAR);

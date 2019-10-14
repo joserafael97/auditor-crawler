@@ -75,7 +75,6 @@ export default class TextUtil {
     }
 
     static similarityUrls(url1, UrlsList, similarityValue = 0.95) {
-
         url1 = url1.substr(url1.length - 1) === "/" ? url1.slice(0, -1) : url1;
 
         for (const currentUrl of UrlsList) {
