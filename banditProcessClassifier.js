@@ -53,7 +53,8 @@ export default class BanditProcessClassifier {
 
             const index = epsilonGreedyAlg.chooseArm();
             console.log("index ======================== ", index)
-
+            console.log("features ======================== ", node.features)
+            
             const newNode = queue[index]
             queue.splice(index, 1);
             epsilonGreedyAlg.values.splice(index, 1);

@@ -68,6 +68,14 @@ export default class Node {
         }
     }
 
+    initializeFeatures(){
+        this.features[FeaturesConst.ONE_ITEM_CRITERIO] = 0;
+        this.features[FeaturesConst.MORE_ITEM_CRITERIO] = 0;
+        this.features[FeaturesConst.TERM_CRITERION] = 0;
+        this.features[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT] = 0;
+        this.features[FeaturesConst.URL_RELEVANT] = 0;
+    }
+
 
     updateParentsReward() {
         if (this.parent !== null) {

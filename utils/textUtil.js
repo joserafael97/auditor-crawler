@@ -14,7 +14,6 @@ export default class TextUtil {
     }
 
 
-
     static checkTextContainsArray(array, text) {
         for (let index = 0; index < array.length; index++) {
             const value = array[index] === 'Graficos' ? array[index] : TextUtil.normalizeText(TextUtil.removeWhiteSpace(array[index]));
@@ -44,12 +43,11 @@ export default class TextUtil {
         return StringSimilarity.compareTwoStrings(string01, string02) > 0.95;
     }
 
-    static checkUrlRelvant(urlPage, termosCriterion) {
-        const url1Isnum = /^\d+$/.test(urlPage);
-        let uri1 = !url1Isnum ? HtmlUtil.extractUri(urlPage).replace('/', '').replace(/[0-9]/g, '') : HtmlUtil.extractUri(urlPage).replace('/', '');
-
-        if (StringSimilarity.compareTwoStrings(uri1, termosCriterion) > 0.95 || TextUtil.checkTextContainsInText(termosCriterion, uri1)) {
-            return true;
+    static checkUrlRelvant(urlPage, criterionName) {
+        for (const term in TextUtil.extractTermsCriterionName(criterionName)) {
+            if (TextUtil.checkTextContainsInText(term, urlPage)) {
+                return true;
+            }
         }
 
         return false;
@@ -119,7 +117,7 @@ export default class TextUtil {
             TextUtil.checkTextContainsArray(tagNameParents, 'th') ? true :
                 TextUtil.checkTextContainsArray(tagNameParents, 'thead') ? true :
                     TextUtil.checkTextContainsArray(tagNameParents, 'tr') ? true :
-                        TextUtil.checkTextContainsArray(tagNameParents, 'li') ? true : 
+                        TextUtil.checkTextContainsArray(tagNameParents, 'li') ? true :
                             TextUtil.checkTextContainsArray(tagNameParents, 'span') ? true : false
 
 
@@ -152,7 +150,7 @@ export default class TextUtil {
 
     static validateItemSearch(criterionName) {
         const unusableTerms = {
-            'Despesa Extra Orçamentária': ['sagresonline.tce.pb.gov.br','despesa orcamentaria', 'empenho', 'servicos', 'locomocao', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',
+            'Despesa Extra Orçamentária': ['sagresonline.tce.pb.gov.br', 'despesa orcamentaria', 'empenho', 'servicos', 'locomocao', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',
                 'demonstrativo', 'outras despesas', 'restos a pagar', ' por orgao', 'obras', 'diarias', 'passagens', 'transferencia', 'programatica', 'fornecedor',],
             'Despesa Orçamentária': ['sagresonline.tce.pb.gov.br', 'extra', 'elemento', 'favorecido', 'orgao', 'programatica', 'obras', 'passagens', 'transferencia', 'diarias', 'receitas', 'outras despesas', 'receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'restos a pagar'],
             'Receita Orçamentária': ['sagresonline.tce.pb.gov.br', 'extra', 'divisorReceitaCompetencia', 'deducao', 'transferencias', 'transferencia', 'detalhado', 'receita de contribuicoes', 'receita de servicos', 'receita patrimonial', 'comparativo', 'restos a pagar', 'prevista', 'resumo geral', 'loalei', 'execucao', 'outras receitas', 'despesas', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo'],

@@ -46,6 +46,7 @@ export default class CrawlerUtil {
         let newCurrentURL = await page.url();
         const currentURL = await page.url();
         const currentPage = page;
+        node.initializeFeatures();
 
         console.log("===================================================================");
         logger.info("node value: " + value);
@@ -89,9 +90,9 @@ export default class CrawlerUtil {
         elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
         elementsIdentify.push.apply(elementsIdentify, queue);
 
-        node = await CrawlerUtil.extractIframesUrl(node, page, elementsIdentify);
+        node = await CrawlerUtil.extractIframesUrl(node, page, elementsIdentify, criterion.name);
         queue.push.apply(queue, node.getEdges());
-        node.edges = [];
+        const iframesUrlNodes = node.getEdges()
 
         elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
         elementsIdentify.push.apply(elementsIdentify, queue);
@@ -110,18 +111,22 @@ export default class CrawlerUtil {
             node.getSource().setUrl((await page.url()));
         }
         queue.push.apply(queue, node.getEdges());
+        node.edges.push.apply(node.edges, iframesUrlNodes);
+
         node.setResearched(true);
         elementsAccessed.push(node);
 
         return { "node": node, "queue": queue, "elementsAccessed": elementsAccessed, "itens": itens };
     }
 
-    static async extractIframesUrl(node, page, elementsIdentify) {
+    static async extractIframesUrl(node, page, elementsIdentify, criterionKeyWordName) {
 
         let queryIframe = XpathUtil.createXpathToExtractIframe();
         let edgesList = [];
         const currentUrl = await page.url();
         const elements = await page.$x(queryIframe.getXpath());
+        let result = node.getFeatures();
+        result[FeaturesConst.URL_RELEVANT] = TextUtil.checkUrlRelvant(currentUrl, criterionKeyWordName) ? 1 : 0;
 
         if (elements.length > 0) {
             for (let element of elements) {
@@ -138,8 +143,8 @@ export default class CrawlerUtil {
 
             }
         }
-
-
+        result[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT] = edgesList.length > 1 ? 1 : 0;
+        node.setFeatures(result)
         node.setEdgesList(edgesList);
         return node;
     }
@@ -147,11 +152,11 @@ export default class CrawlerUtil {
 
     static async extractEdges(node, page, criterionKeyWordName, elementsIdentify, withOutSearchKeyWord = false) {
 
-        let queryElements = await (withOutSearchKeyWord ? XpathUtil.createXpathsToExtractUrls(criterionKeyWordName) :
+        let queryElements = await (!withOutSearchKeyWord ? XpathUtil.createXpathsToExtractUrls(criterionKeyWordName) :
             XpathUtil.createXpathsToExtractUrlsByCriterion(criterionKeyWordName));
 
-        const queryElementDynamicComponents = await (withOutSearchKeyWord ? XpathUtil.createXpathsToExtractDynamicComponents(criterionKeyWordName) :
-            XpathUtil.createXpathsToExtractDynamicComponents(criterionKeyWordName));
+        const queryElementDynamicComponents = await (!withOutSearchKeyWord ? XpathUtil.createXpathsToExtractDynamicComponents(criterionKeyWordName) :
+            XpathUtil.createXpathsToExtractDynamicComponentsByCriterion(criterionKeyWordName));
 
         queryElements = queryElements.concat(queryElementDynamicComponents);
 
@@ -160,7 +165,7 @@ export default class CrawlerUtil {
         const currentValue = node.getSource().getValue();
         const currentUrl = await page.url();
         const currentNodeUrl = node.getSource().getUrl();
-        result[FeaturesConst.HAVE_URL_RELEVANT] = TextUtil.checkUrlRelvant(currentUrl, criterionKeyWordName) ? 1 : 0;
+        result[FeaturesConst.URL_RELEVANT] = TextUtil.checkUrlRelvant(currentUrl, criterionKeyWordName) ? 1 : 0;
 
         for (let queryElement of queryElements) {
             const elements = await page.$x(queryElement.getXpath());
@@ -203,6 +208,8 @@ export default class CrawlerUtil {
                 }
             }
         }
+
+        result[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT] = edgesList.length > 1 ? 1 : 0;
         node.setFeatures(result)
         node.setEdgesList(edgesList);
         return node;
@@ -254,17 +261,14 @@ export default class CrawlerUtil {
                 });
                 item.proof.length > 0 ? FileUtil.deleteFile(item.proof) : '';
                 item.proof = path;
-
-                numberItensIdentify = item.found ? numberItensIdentify + 1 : numberItensIdentify;
+                numberItensIdentify = (item.found && item.valid) ? numberItensIdentify + 1 : numberItensIdentify;
             }
         }
-        result[FeaturesConst.RESULT] = numberItensIdentify > 0 ? 1 : 0;
         node.setRewardValue(numberItensIdentify > 0 ? 1 : 0);
-        result[FeaturesConst.HAVE_ONE_ITEM_CRITERIO] = numberItensIdentify === 1 ? 1 : 0;
-        result[FeaturesConst.HAVE_TWO_ITEM_CRITERIO] = numberItensIdentify === 2 ? 1 : 0;
-        result[FeaturesConst.HAVE_MORE_ITEM_CRITERIO] = numberItensIdentify > 2 ? 1 : 0;
-        const valid = await CrawlerUtil.CheckCriterionTermExistsInPage(criterionName, node, page)
-        result[FeaturesConst.HAVE_CRITERION_TERM_IN_PAGE] = valid ? 1 : 0;
+        result[FeaturesConst.ONE_ITEM_CRITERIO] = numberItensIdentify === 1 ? 1 : 0;
+        result[FeaturesConst.MORE_ITEM_CRITERIO] = numberItensIdentify > 1 ? 1 : 0;
+        result[FeaturesConst.TERM_CRITERION] = 
+        (await CrawlerUtil.CheckCriterionTermExistsInPage(criterionName, node, page)) ? 1 : 0;
 
         node.setFeatures(result)
         CrawlerUtil.checkIdentificationItens(itens, await page.url());
@@ -358,6 +362,7 @@ export default class CrawlerUtil {
         if (elements.length > 0) {
             for (let element of elements) {
                 let text = await (await element.getProperty('textContent')).jsonValue();
+                // console.log("=========texte in CheckCriterionTermExistsInPage", text)
                 text = TextUtil.normalizeText(text);
                 for (const term of queryElement.getKeyWordsXpath()) {
                     if (TextUtil.checkTextContainsInText(text, term) || TextUtil.checkTextContainsInText(term, text) ||
