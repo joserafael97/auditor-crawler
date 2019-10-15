@@ -140,12 +140,12 @@ const startCrawler = async () => {
     let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
     Promise.all([
-        // run(criterionDespesaOrc, evaluation, root),
-        // run(criterionDespesaExtra, evaluation, root),
+        run(criterionDespesaOrc, evaluation, root),
+        run(criterionDespesaExtra, evaluation, root),
         run(criterionReceitaExtra, evaluation, root),
-        // run(criterionReceitaOrc, evaluation, root),
-        // run(criterionLicit, evaluation, root),
-        // run(criterionPessoal, evaluation, root)
+        run(criterionReceitaOrc, evaluation, root),
+        run(criterionLicit, evaluation, root),
+        run(criterionPessoal, evaluation, root)
 
     ]).then((result) => {
         moogoseInstace.connection.close(function () {
