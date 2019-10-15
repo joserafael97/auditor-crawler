@@ -105,7 +105,6 @@ export default class CrawlerUtil {
             itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
         }
 
-
         if (node.getLevel() === 0) {
             await page.waitFor(3000);
             node.getSource().setUrl((await page.url()));
