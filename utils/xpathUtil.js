@@ -133,7 +133,6 @@ export default class XpathUtil {
                 xpaths.push(queryElement);
             }
         });
-
         return xpaths;
     }
 
@@ -159,6 +158,7 @@ export default class XpathUtil {
     }
 
     static createXpathQuery(keyWord, terms) {
+        keyWord = TextUtil.normalizeText(keyWord);
         return new QueryElement('//div[contains({tagSearch},"{}")]/following::a[1]'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
             '//button[contains({tagSearch},"{}")]'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
             '//input[contains({tagSearch},"{}")]'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +

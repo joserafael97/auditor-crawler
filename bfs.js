@@ -28,7 +28,6 @@ export default class Bfs {
         }
 
         page = currentPage;
-
         while (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
             logger.info("Criterion: " + criterion.name);
             for (let edge of queue) {

@@ -1,5 +1,5 @@
 const keywordSearchPessoal = ['folha de pagamento', 'Pessoal', 'Folha de Pessoal', 'Despesas com Servidores', 'TipoServidor','folhapag', 
-'quadro pessoal', 'Folha Pagamento', 'Servidores', 'consultar', 'Acessar', 'Pesquisar'];
+'quadro pessoal', 'Folha Pagamento', 'Servidores', 'consultar', 'Acessar', 'Pesquisar', "/"+new Date().getFullYear(),];
 
 
 const identificationKeyWordPessoal = {

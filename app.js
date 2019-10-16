@@ -22,7 +22,6 @@ import logger from './core/logger/app-logger'
 
 
 const logErrorAndExit = err => {
-    console.log("==============", err)
     logger.error(err);
     process.exit();
 
@@ -45,6 +44,7 @@ const run = async (criterion, evaluation, root) => {
     const duration = evaluation.dateEnd.getTime() - evaluation.date.getTime();
     const delta = Math.abs(new Date() - evaluation.date) / 1000;
     const minutes = Math.floor(delta / 60) % 60;
+    evaluation.dateEnd = evaluation.dateEnd.getTime();
 
     evaluation.duration = duration;
     evaluation.durationMin = minutes;
@@ -142,8 +142,8 @@ const startCrawler = async () => {
     let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
     Promise.all([
-        // run(criterionDespesaOrc, evaluation, root),
-        run(criterionDespesaExtra, evaluation, root),
+        run(criterionDespesaOrc, evaluation, root),
+        // run(criterionDespesaExtra, evaluation, root),
         // run(criterionReceitaExtra, evaluation, root),
         // run(criterionReceitaOrc, evaluation, root),
         // run(criterionLicit, evaluation, root),

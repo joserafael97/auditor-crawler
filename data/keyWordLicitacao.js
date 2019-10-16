@@ -1,5 +1,5 @@
 const keywordSearchLicitacao = ['consultar licitacoes', 'Dados de Licitações', 'Consultar Licitações Empenhadas','Licitações Empenhadas', 'licitacao', 'licitacoes.aspx', 'acesso licitacoes',
-    'despesa com licitacao', 'Licitacao', 'Licitacoes', 'Licitações', 'Dados de Licitações', 'detalharLicitacao' ,'Procedimentos Licitatórios', 'consultar', 'Pesquisar'
+    'despesa com licitacao', 'Licitacao', 'Licitacoes', 'Licitações', 'Dados de Licitações', 'detalharLicitacao' ,'Procedimentos Licitatórios', 'consultar', 'Pesquisar', "/"+new Date().getFullYear(),
 ];
 
 const identificationKeyLicitacao = {

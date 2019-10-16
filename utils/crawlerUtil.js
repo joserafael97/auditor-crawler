@@ -172,9 +172,13 @@ export default class CrawlerUtil {
             if (elements.length > 0) {
                 for (let element of elements) {
                     let text = await (await element.getProperty('textContent')).jsonValue();
+
                     const value = await (await element.getProperty('value')).jsonValue();
+
                     text = TextUtil.normalizeText(TextUtil.removeWhiteSpace(text)).length > 0 ? text :
                         (value !== undefined && value.length > 0) ? value : '';
+
+
 
                     if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                         text = HtmlUtil.isUrl(text) ? text :
@@ -182,6 +186,7 @@ export default class CrawlerUtil {
                                 urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
                     }
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+                    console.log("================================================*****************", text)
 
                     if ((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text)))
                         || (/^\d+$/.test(text))) &&
@@ -190,13 +195,16 @@ export default class CrawlerUtil {
                         const isUrl = HtmlUtil.isUrl(text);
 
                         text = !isUrl && (await CrawlerUtil.hrefValid(element, currentUrl)) ? await (await element.getProperty('href')).jsonValue() : text;
+                        elementsIdentify.push.apply(elementsIdentify, edgesList);
+                        console.log("=============2===================================*****************", text)
 
                         if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase()) &&
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
 
                             if ((edgesList.filter((n) => n.getSource().getValue() === text)[0]) === undefined &&
                                 ((node.getSourcesParents().filter((n) => n.getSource().getValue() === text)[0]) === undefined)) {
-                                if (text.length > 0) {
+                                if ( (text.length > 0 && HtmlUtil.isUrl(text)) ||
+                                 ( (text.length > 0 && !HtmlUtil.isUrl(text)) && text.length < 200) ) {
                                     let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), currentUrl, (await page.constructor.name) === "Frame" || queryElement.getIsExtractIframe());
                                     edgesList.push(new Node(source, node));
                                 }
@@ -208,7 +216,6 @@ export default class CrawlerUtil {
                 }
             }
         }
-
         result[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT] = edgesList.length > 1 ? 1 : 0;
         node.setFeatures(result)
         node.setEdgesList(edgesList);
@@ -267,8 +274,8 @@ export default class CrawlerUtil {
         node.setRewardValue(numberItensIdentify > 0 ? 1 : 0);
         result[FeaturesConst.ONE_ITEM_CRITERIO] = numberItensIdentify === 1 ? 1 : 0;
         result[FeaturesConst.MORE_ITEM_CRITERIO] = numberItensIdentify > 1 ? 1 : 0;
-        result[FeaturesConst.TERM_CRITERION] = 
-        (await CrawlerUtil.CheckCriterionTermExistsInPage(criterionName, node, page)) ? 1 : 0;
+        result[FeaturesConst.TERM_CRITERION] =
+            (await CrawlerUtil.CheckCriterionTermExistsInPage(criterionName, node, page)) ? 1 : 0;
 
         node.setFeatures(result)
         CrawlerUtil.checkIdentificationItens(itens, await page.url());
