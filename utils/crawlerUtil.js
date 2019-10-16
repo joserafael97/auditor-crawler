@@ -362,7 +362,6 @@ export default class CrawlerUtil {
         if (elements.length > 0) {
             for (let element of elements) {
                 let text = await (await element.getProperty('textContent')).jsonValue();
-                // console.log("=========texte in CheckCriterionTermExistsInPage", text)
                 text = TextUtil.normalizeText(text);
                 for (const term of queryElement.getKeyWordsXpath()) {
                     if (TextUtil.checkTextContainsInText(text, term) || TextUtil.checkTextContainsInText(term, text) ||

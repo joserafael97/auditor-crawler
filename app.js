@@ -22,11 +22,13 @@ import logger from './core/logger/app-logger'
 
 
 const logErrorAndExit = err => {
+    console.log("==============", err)
     logger.error(err);
     process.exit();
 
 };
 
+let trainModel = [];
 let moogoseInstace = null;
 
 const run = async (criterion, evaluation, root) => {
@@ -79,7 +81,7 @@ const selectAproachToRun = async (aproachSelected, root, criterion, evaluation, 
         logger.info("Classier: " + classifierCli);
 
         if (classifierCli === 'naivebayes') {
-            resultCrawlingCriterion = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1), [], []).catch(logErrorAndExit)
+            resultCrawlingCriterion = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1), [], [], 0, 1, trainModel).catch(logErrorAndExit)
 
         } else {
             resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(10000, 0.1)).catch(logErrorAndExit)
@@ -140,12 +142,12 @@ const startCrawler = async () => {
     let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
     Promise.all([
-        run(criterionDespesaOrc, evaluation, root),
+        // run(criterionDespesaOrc, evaluation, root),
         run(criterionDespesaExtra, evaluation, root),
-        run(criterionReceitaExtra, evaluation, root),
-        run(criterionReceitaOrc, evaluation, root),
-        run(criterionLicit, evaluation, root),
-        run(criterionPessoal, evaluation, root)
+        // run(criterionReceitaExtra, evaluation, root),
+        // run(criterionReceitaOrc, evaluation, root),
+        // run(criterionLicit, evaluation, root),
+        // run(criterionPessoal, evaluation, root)
 
     ]).then((result) => {
         moogoseInstace.connection.close(function () {
