@@ -215,7 +215,8 @@ TODO
 
 ## Resultados
 TODO
-
+### Provas
+TODO Falar sobre os prints salvos para validação
 
 ## Getting Started
 
