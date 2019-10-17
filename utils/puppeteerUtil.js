@@ -168,19 +168,11 @@ export default class PuppeteerUtil {
                 value = /^\d{2,20}(\/)\d{4}$/.test(value) ? value.substring(value.length - 4, value.length) : value;
 
                 if (node.getLevel() !== 0) {
-                    console.log("-vvvalue-", value)
-                    console.log("-text-", text)
-                    console.log("-StringSimilarity.compareTwoStrings(value, text): ", StringSimilarity.compareTwoStrings(value, text))
-                    console.log("-text-", text)
-                    console.log("node.getSource().getUrl() === currentUrl: ", node.getSource().getUrl() === currentUrl)
-
-
                     if (node.getSource().getUrl() === currentUrl) {
                         if (((currentValue === value || value === text) ||
                             ((isnum &&
                                 StringSimilarity.compareTwoStrings(value.substring(value.length - 4, value.length),
                                     text.substring(text.length - 4, text.length)) > 0.6))) || StringSimilarity.compareTwoStrings(value, text) > 0.95) {
-                            console.log("true ===================")
                             return true;
                         }
                     }
