@@ -43,7 +43,7 @@ export default class BanditProcessClassifier {
         if (node.getLevel() > 0) {
 
             let newData = {};
-
+            newData[FeaturesConst.URL_RELEVANT] = node.getParent().getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO];
             newData[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT_PARENT] = node.getParent().getFeatures()[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT];
             newData[FeaturesConst.URL_RELEVANT_PARENT] = node.getParent().getFeatures()[FeaturesConst.URL_RELEVANT];
             newData[FeaturesConst.TERM_CRITERION_PARENT] = node.getParent().getFeatures()[FeaturesConst.TERM_CRITERION];
@@ -69,7 +69,10 @@ export default class BanditProcessClassifier {
             console.log("index ======================== ", index)
             console.log("features ======================== ", trainModel)
 
-            const newNode = queue[index]
+            let newNode = queue[index]
+            newNode.getFeatures()[FeaturesConst.URL_RELEVANT] = TextUtil.checkUrlRelvant(node.getSource().getUrl(), criterion.name) ? 1 : 0;
+            console.log("featuare init new node ======================== ", newNode.getFeatures());
+
             queue.splice(index, 1);
             epsilonGreedyAlg.values.splice(index, 1);
             epsilonGreedyAlg.counts.splice(index, 1);
@@ -88,7 +91,7 @@ export default class BanditProcessClassifier {
         await puppeteer.getBrowser().close()
 
         logger.info("Returnin Criterion: " + criterion.name);
-        return { "itens": itens, "contNodeNumber": contNodeNumber };
+        return { "itens": itens, "contNodeNumber": contNodeNumber,  "trainModel": trainModel};
 
 
         logger.info("TRAIN: " + trainModel);

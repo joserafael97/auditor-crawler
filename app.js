@@ -94,7 +94,11 @@ const selectAproachToRun = async (aproachSelected, root, criterion, evaluation, 
     }
 
     itens = resultCrawlingCriterion.itens;
-    criterion.contNodeNumberAccess = resultCrawlingCriterion.contNodeNumber
+    criterion.contNodeNumberAccess = resultCrawlingCriterion.contNodeNumber;
+    trainModel = resultCrawlingCriterion.trainModel;
+
+    await (new ObjectsToCsv(trainModel).toDisk('./test.csv', { append: true }));
+
 
     return { 'itens': itens, 'criterion': criterion, 'evaluation': evaluation };
 }
