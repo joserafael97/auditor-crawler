@@ -71,11 +71,11 @@ export default class PuppeteerUtil {
         if (await PuppeteerUtil.checkXpath(page, XPATHIFRAME)) {
             for (const frame of page.mainFrame().childFrames()) {
                 let urlFrame = await frame.url();
-                let validation = true;               
-                if (node !== null && urls.length > 0 && PuppeteerUtil.checkDuplicateNode(urls, urlFrame, node, urlFrame)){
+                let validation = true;
+                if (node !== null && urls.length > 0 && PuppeteerUtil.checkDuplicateNode(urls, urlFrame, node, urlFrame)) {
                     validation = false;
                 }
-               
+
                 if (validation && !TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, urlFrame)) {
                     return frame;
                 }
@@ -156,6 +156,7 @@ export default class PuppeteerUtil {
             allNodes.push.apply(allNodes, arrayNodes)
             allNodes.push.apply(allNodes, edgesList)
             const isnum = /^\d+$/.test(text);
+            text = /^\d{2,20}(\/)\d{4}$/.test(text) ? text.substring(text.length - 4, text.length) : text;
             const currentValue = currentNode.getSource().getValue();
 
             if (isnum) {
@@ -163,17 +164,23 @@ export default class PuppeteerUtil {
             }
 
             for (let node of allNodes) {
-                const value = node.getSource().getValue();
-
+                let value = node.getSource().getValue();
+                value = /^\d{2,20}(\/)\d{4}$/.test(value) ? value.substring(value.length - 4, value.length) : value;
 
                 if (node.getLevel() !== 0) {
-                    if ((HtmlUtil.isUrl(currentValue) && node.getSource().getUrl() === currentUrl)) {
-                        if (((currentValue === value || value === text) ||
-                            (isnum &&
-                                StringSimilarity.compareTwoStrings(value.substring(value.length - 4, value.length),
-                                    text.substring(text.length - 4, text.length)) > 0.6)) ||
-                            StringSimilarity.compareTwoStrings(value, text) > 0.95) {
+                    console.log("-vvvalue-", value)
+                    console.log("-text-", text)
+                    console.log("-StringSimilarity.compareTwoStrings(value, text): ", StringSimilarity.compareTwoStrings(value, text))
+                    console.log("-text-", text)
+                    console.log("node.getSource().getUrl() === currentUrl: ", node.getSource().getUrl() === currentUrl)
 
+
+                    if (node.getSource().getUrl() === currentUrl) {
+                        if (((currentValue === value || value === text) ||
+                            ((isnum &&
+                                StringSimilarity.compareTwoStrings(value.substring(value.length - 4, value.length),
+                                    text.substring(text.length - 4, text.length)) > 0.6))) || StringSimilarity.compareTwoStrings(value, text) > 0.95) {
+                            console.log("true ===================")
                             return true;
                         }
                     }

@@ -1,6 +1,6 @@
 const keywordSearchDespOrcamentaria = ['despesas', 'despesas orcamentaria', 'Consultar Despesas Orçamentárias', 'despesa com licitacao',
     'despesa por elemento', 'despesa por orgao', 'despesa por favorecido', 'despesa por funcional programatica', 'despesa por transferencia', 'consultar', 
-    'detalhesEmpenho', 'Pesquisar', "/"+new Date().getFullYear(),
+    'detalhesEmpenho', 'Pesquisar', "Ordem de Pagamento", "/"+new Date().getFullYear(),
 ];
 
 

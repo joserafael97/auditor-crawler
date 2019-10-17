@@ -186,18 +186,15 @@ export default class CrawlerUtil {
                                 urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
                     }
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                    console.log("================================================*****************", text)
 
                     if ((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text)))
                         || (/^\d+$/.test(text))) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
                             (currentNodeUrl !== currentUrl))) {
                         const isUrl = HtmlUtil.isUrl(text);
-
                         text = !isUrl && (await CrawlerUtil.hrefValid(element, currentUrl)) ? await (await element.getProperty('href')).jsonValue() : text;
                         elementsIdentify.push.apply(elementsIdentify, edgesList);
-                        console.log("=============2===================================*****************", text)
-
+                        
                         if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase()) &&
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
 
@@ -229,13 +226,13 @@ export default class CrawlerUtil {
         const actuallyUrl = TextUtil.checkTextContainsInText('#', currentUrl) ? currentUrl :
             currentUrl.substring(currentUrl.lastIndexOf('/')) === '/' ? currentUrl + '#' : currentUrl + '/#';
 
-        if (url !== undefined && (onclick !== null ||
+        if ((url !== undefined && url.length > 0) && ((onclick !== null && onclick.length > 0) ||
             (actuallyUrl === url || TextUtil.checkTextContainsInText('frameContent', url)))) {
             return false
         }
 
-        return ((url !== undefined && HtmlUtil.isUrl(url))) ? true :
-            url !== undefined && HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), url)) ? true : false;
+        return (((url !== undefined && url.length > 0) && HtmlUtil.isUrl(url))) ? true :
+        (url !== undefined && url.length > 0) && HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), url)) ? true : false;
     }
 
 
