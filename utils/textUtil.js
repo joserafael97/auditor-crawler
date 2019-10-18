@@ -17,6 +17,7 @@ export default class TextUtil {
     static checkTextContainsArray(array, text) {
         for (let index = 0; index < array.length; index++) {
             const value = array[index] === 'Graficos' ? array[index] : TextUtil.normalizeText(TextUtil.removeWhiteSpace(array[index]));
+            text = text.toLowerCase();
             if (text === value || text.includes(value)) {
                 return true;
             }

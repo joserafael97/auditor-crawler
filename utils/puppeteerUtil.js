@@ -168,7 +168,9 @@ export default class PuppeteerUtil {
                 value = /^\d{2,20}(\/)\d{4}$/.test(value) ? value.substring(value.length - 4, value.length) : value;
 
                 if (node.getLevel() !== 0) {
-                    if (node.getSource().getUrl() === currentUrl) {
+            
+                    if (node.getSource().getUrl() === currentUrl && (currentNode.getLevel() + 1) === node.getLevel()) {
+
                         if (((currentValue === value || value === text) ||
                             ((isnum &&
                                 StringSimilarity.compareTwoStrings(value.substring(value.length - 4, value.length),
