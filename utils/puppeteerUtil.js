@@ -168,11 +168,6 @@ export default class PuppeteerUtil {
                 value = /^\d{2,20}(\/)\d{4}$/.test(value) ? value.substring(value.length - 4, value.length) : value;
 
                 if (node.getLevel() !== 0) {
-                    console.log('=======text:', text);
-                    console.log('=======value:', value);
-                    console.log('=======currentValue:', currentUrl)
-                    console.log('=======node.getSource().getUrl():', node.getSource().getUrl())
-
                     if (node.getSource().getUrl() === currentUrl) {
                         if (((currentValue === value || value === text) ||
                             ((isnum &&

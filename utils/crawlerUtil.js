@@ -46,7 +46,6 @@ export default class CrawlerUtil {
         let newCurrentURL = await page.url();
         const currentURL = await page.url();
         const currentPage = page;
-        node.initializeFeatures();
 
         console.log("===================================================================");
         logger.info("node value: " + value);

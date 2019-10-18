@@ -19,9 +19,11 @@ import { GaussianNB } from 'ml-naivebayes';
 import Dfs from './dfs';
 import BanditProcessClassifier from './banditProcessClassifier';
 import logger from './core/logger/app-logger'
+import ObjectsToCsv from 'objects-to-csv';
 
 
 const logErrorAndExit = err => {
+    console.log(err)
     logger.error(err);
     process.exit();
 
@@ -95,10 +97,9 @@ const selectAproachToRun = async (aproachSelected, root, criterion, evaluation, 
 
     itens = resultCrawlingCriterion.itens;
     criterion.contNodeNumberAccess = resultCrawlingCriterion.contNodeNumber;
-    trainModel = resultCrawlingCriterion.trainModel;
+    trainModel = resultCrawlingCriterion.trainModel !== undefined ? trainModel.concat(resultCrawlingCriterion.trainModel) : trainModel;
 
     await (new ObjectsToCsv(trainModel).toDisk('./test.csv', { append: true }));
-
 
     return { 'itens': itens, 'criterion': criterion, 'evaluation': evaluation };
 }
@@ -152,6 +153,7 @@ const startCrawler = async () => {
         run(criterionReceitaOrc, evaluation, root),
         run(criterionLicit, evaluation, root),
         run(criterionPessoal, evaluation, root)
+    
 
     ]).then((result) => {
         moogoseInstace.connection.close(function () {

@@ -22,6 +22,7 @@ export default class BanditProcessClassifier {
         let page = puppeteer.getFirstPage();
         const currentPage = page;
         const lengthQueueBefore = queue.length;
+        node.initializeFeatures();
 
         try {
             const nodeCrawledResult = await CrawlerUtil.crawlerNode(criterion, evaluation, node, page, elementsAccessed, itens, queue, true);
@@ -67,8 +68,6 @@ export default class BanditProcessClassifier {
 
             const index = epsilonGreedyAlg.chooseArm();
             console.log("index ======================== ", index)
-            console.log("features ======================== ", trainModel)
-
             let newNode = queue[index]
             newNode.getFeatures()[FeaturesConst.URL_RELEVANT] = TextUtil.checkUrlRelvant(node.getSource().getUrl(), criterion.name) ? 1 : 0;
             console.log("featuare init new node ======================== ", newNode.getFeatures());
@@ -92,9 +91,6 @@ export default class BanditProcessClassifier {
 
         logger.info("Returnin Criterion: " + criterion.name);
         return { "itens": itens, "contNodeNumber": contNodeNumber,  "trainModel": trainModel};
-
-
-        logger.info("TRAIN: " + trainModel);
 
     };
 
