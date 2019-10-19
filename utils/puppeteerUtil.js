@@ -39,13 +39,13 @@ export default class PuppeteerUtil {
                 '--disable-infobars',
                 '--test-type',
             ],
-            headless: true
+            headless: false
         });
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
         await mainPage.setViewport({
-            width: 3000,
-            height: 2000
+            width: 1500,
+            height: 1000
         });
 
         return new PuppeteerInstance(browser, [mainPage]);
@@ -156,16 +156,17 @@ export default class PuppeteerUtil {
             allNodes.push.apply(allNodes, arrayNodes)
             allNodes.push.apply(allNodes, edgesList)
             const isnum = /^\d+$/.test(text);
-            text = /^\d{2,20}(\/)\d{4}$/.test(text) ? text.substring(text.length - 4, text.length) : text;
+            let isDate = /\d{ 2 } (\/)\d{2}(\/)\d{4}/.test(text);
+            text = (/\d{2,20}(\/)\d{4}/.test(text)) && !isDate ? text.substring(text.length - 4, text.length) : text;
             const currentValue = currentNode.getSource().getValue();
 
-            if (isnum) {
+            if (isnum || isDate) {
                 return true;
             }
 
             for (let node of allNodes) {
                 let value = node.getSource().getValue();
-                value = /^\d{2,20}(\/)\d{4}$/.test(value) ? value.substring(value.length - 4, value.length) : value;
+                value = (/\d{2,20}(\/)\d{4}/.test(text)) && !(/\d{ 2 } (\/)\d{2}(\/)\d{4}/.test(text)) ? value.substring(value.length - 4, value.length) : value;
 
                 if (node.getLevel() !== 0) {
             

@@ -106,7 +106,7 @@ export default class CrawlerUtil {
         }
 
         if (node.getLevel() === 0) {
-            await page.waitFor(3000);
+            await page.waitFor(6000);
             node.getSource().setUrl((await page.url()));
         }
         queue.push.apply(queue, node.getEdges());
@@ -195,7 +195,7 @@ export default class CrawlerUtil {
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
 
                             if ((text.length > 0 && HtmlUtil.isUrl(text)) ||
-                                ((text.length > 0 && !HtmlUtil.isUrl(text)) && text.length < 200)) {
+                                ((text.length > 0 && !HtmlUtil.isUrl(text)) && text.length < 120)) {
                                 let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), currentUrl, (await page.constructor.name) === "Frame" || queryElement.getIsExtractIframe());
                                 edgesList.push(new Node(source, node));
                             }

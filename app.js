@@ -148,11 +148,11 @@ const startCrawler = async () => {
 
     Promise.all([
         run(criterionDespesaOrc, evaluation, root),
-        run(criterionDespesaExtra, evaluation, root),
-        run(criterionReceitaExtra, evaluation, root),
-        run(criterionReceitaOrc, evaluation, root),
-        run(criterionLicit, evaluation, root),
-        run(criterionPessoal, evaluation, root)
+        // run(criterionDespesaExtra, evaluation, root),
+        // run(criterionReceitaExtra, evaluation, root),
+        // run(criterionReceitaOrc, evaluation, root),
+        // run(criterionLicit, evaluation, root),
+        // run(criterionPessoal, evaluation, root)
     
 
     ]).then((result) => {
