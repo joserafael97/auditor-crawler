@@ -9,7 +9,7 @@ A grande diversidade na forma de navegar e visualizar as informações fiscais n
 
 ## Relevância
 
-O mecanismo de fiscalização proposto neste trabalho objetiva estimular as entidades municipais a divulgarem em seus portais suas informações fiscais de forma acessível a qualquer público.
+O mecanismo de fiscalização proposto neste trabalho objetiva estimular as entidades municipais a divulgarem em seus portais de transparência suas informações fiscais de forma acessível a qualquer público.
 
 ## Conceitos Importantes
 
