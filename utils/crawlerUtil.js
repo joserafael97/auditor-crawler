@@ -37,7 +37,7 @@ export default class CrawlerUtil {
      * @param {[Item]} itens - list itens criterion.
      * @param {[Node]} queue - list nodes note accessed.
      */
-    static async crawlerNode(criterion, evaluation, node, page, elementsAccessed, itens, queue, withOutSearchKeyWord = false) {
+    static async crawlerNode(criterion, evaluation, node, page, puppeteer, elementsAccessed, itens, queue, withOutSearchKeyWord = false) {
 
         const xpath = node.getSource().getXpath();
         const value = node.getSource().getValue();
@@ -46,6 +46,10 @@ export default class CrawlerUtil {
         let newCurrentURL = await page.url();
         const currentURL = await page.url();
         const currentPage = page;
+        page.setMaxListeners(Infinity);
+        page._frameManager.setMaxListeners(Infinity);
+        page._frameManager._networkManager.setMaxListeners(Infinity);
+        page._client.setMaxListeners(Infinity)
 
         console.log("===================================================================");
         logger.info("node value: " + value);
@@ -77,6 +81,14 @@ export default class CrawlerUtil {
             element = await PuppeteerUtil.selectElementPage(page, xpath, value);
             await element.click();
             await page.waitForNavigation().catch(e => void e);
+
+            const pages = await puppeteer.getBrowser().pages()
+
+            if (pages.length > 1) {
+                await Promise.all([page.goto((await pages[pages.length - 1].url())).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
+                await pages[pages.length - 1].close();
+            }
+
             newCurrentURL = await page.url();
             if (currentURL !== newCurrentURL) {
                 changeUrl = true;
@@ -86,29 +98,37 @@ export default class CrawlerUtil {
         await page.waitFor(3000);
 
         let elementsIdentify = []
-        elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
-        elementsIdentify.push.apply(elementsIdentify, queue);
-
-        node = await CrawlerUtil.extractIframesUrl(node, page, elementsIdentify, criterion.name);
-        queue.push.apply(queue, node.getEdges());
-        const iframesUrlNodes = node.getEdges()
-
-        elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
-        elementsIdentify.push.apply(elementsIdentify, queue);
+        let iframesUrlNodes = []
 
         if ((await page.constructor.name) !== "Frame") {
+            elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
+            elementsIdentify.push.apply(elementsIdentify, queue);
+
+            node = await CrawlerUtil.extractIframesUrl(node, page, elementsIdentify, criterion.name);
+            queue.push.apply(queue, node.getEdges());
+            iframesUrlNodes = node.getEdges();
+
             page = (await PuppeteerUtil.detectContext(page, elementsIdentify, node).catch(e => void e));
+            await page.waitForNavigation().catch(e => void e);
         }
 
-        if (!changeUrl || (changeUrl && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, newCurrentURL, node, newCurrentURL))) {
+        elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
+        elementsIdentify.push.apply(elementsIdentify, queue);
+
+        if (!changeUrl ||
+            (changeUrl && (await page.constructor.name) === "Frame") ||
+            (changeUrl && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, newCurrentURL, node, newCurrentURL))) {
+
+            await page.waitForNavigation().catch(e => void e);
             node = await CrawlerUtil.extractEdges(node, page, criterion.name, elementsIdentify, withOutSearchKeyWord);
             itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
         }
 
         if (node.getLevel() === 0) {
-            await page.waitFor(6000);
+            await page.waitFor(3000);
             node.getSource().setUrl((await page.url()));
         }
+
         queue.push.apply(queue, node.getEdges());
         node.edges.push.apply(node.edges, iframesUrlNodes);
 

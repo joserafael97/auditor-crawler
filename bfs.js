@@ -17,13 +17,14 @@ export default class Bfs {
         const currentPage = page;
 
         try {
-            const nodeCrawledResult = await CrawlerUtil.crawlerNode(criterion, evaluation, node, page, elementsAccessed, itens, queue);
+            const nodeCrawledResult = await CrawlerUtil.crawlerNode(criterion, evaluation, node, page, puppeteer, elementsAccessed, itens, queue);
             queue = nodeCrawledResult.queue;
             node = nodeCrawledResult.node;
             elementsAccessed = nodeCrawledResult.elementsAccessed;
             itens = nodeCrawledResult.itens;
 
         } catch (e) {
+           
             logger.warn("Click error: ", e);
         }
 

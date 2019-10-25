@@ -22,7 +22,7 @@ export default class BanditProcess {
         const lengthQueueBefore = queue.length;
 
         try {
-            const nodeCrawledResult = await CrawlerUtil.crawlerNode(criterion, evaluation, node, page, elementsAccessed, itens, queue);
+            const nodeCrawledResult = await CrawlerUtil.crawlerNode(criterion, evaluation, node, page, puppeteer, elementsAccessed, itens, queue);
             queue = nodeCrawledResult.queue;
             node = nodeCrawledResult.node;
             elementsAccessed = nodeCrawledResult.elementsAccessed;

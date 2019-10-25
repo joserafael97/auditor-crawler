@@ -19,6 +19,8 @@ export default class PuppeteerUtil {
     static async createPuppetterInstance() {
         const browser = await puppeteer.launch({
             args: [
+                '--unlimited-storage', 
+                '--full-memory-crash-report',
                 '--no-sandbox',
                 '--disable-features=site-per-process',
                 '--start-fullscreen',
@@ -39,13 +41,13 @@ export default class PuppeteerUtil {
                 '--disable-infobars',
                 '--test-type',
             ],
-            headless: false
+            headless: true
         });
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
         await mainPage.setViewport({
-            width: 1500,
-            height: 1000
+            width: 3000,
+            height: 2000
         });
 
         return new PuppeteerInstance(browser, [mainPage]);
@@ -145,7 +147,7 @@ export default class PuppeteerUtil {
         return null;
     }
 
-    static checkDuplicateNode(arrayNodes, text, currentNode, currentUrl, edgesList = null) {
+    static checkDuplicateNode(arrayNodes, text, currentNode, currentUrl, edgesList = null) {      
         if (HtmlUtil.isUrl(text)) {
             let urlsList = [];
             urlsList.push.apply(urlsList, TextUtil.getUrlsNodes(arrayNodes))
@@ -156,9 +158,10 @@ export default class PuppeteerUtil {
             allNodes.push.apply(allNodes, arrayNodes)
             allNodes.push.apply(allNodes, edgesList)
             const isnum = /^\d+$/.test(text);
-            let isDate = /\d{ 2 } (\/)\d{2}(\/)\d{4}/.test(text);
+            let isDate = /\d{2}(\/)\d{2}(\/)\d{4}/.test(text);
+        
             text = (/\d{2,20}(\/)\d{4}/.test(text)) && !isDate ? text.substring(text.length - 4, text.length) : text;
-            const currentValue = currentNode.getSource().getValue();
+            const currentValue = currentNode.getSource().getValue();        
 
             if (isnum || isDate) {
                 return true;
@@ -166,8 +169,8 @@ export default class PuppeteerUtil {
 
             for (let node of allNodes) {
                 let value = node.getSource().getValue();
-                value = (/\d{2,20}(\/)\d{4}/.test(text)) && !(/\d{ 2 } (\/)\d{2}(\/)\d{4}/.test(text)) ? value.substring(value.length - 4, value.length) : value;
-
+                value = (/\d{2,20}(\/)\d{4}/.test(value)) && !(/\d{2}(\/)\d{2}(\/)\d{4}/.test(value)) ? value.substring(value.length - 4, value.length) : value;
+        
                 if (node.getLevel() !== 0) {
             
                     if (node.getSource().getUrl() === currentUrl && (currentNode.getLevel() + 1) === node.getLevel()) {

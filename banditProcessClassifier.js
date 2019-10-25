@@ -25,7 +25,7 @@ export default class BanditProcessClassifier {
         node.initializeFeatures();
 
         try {
-            const nodeCrawledResult = await CrawlerUtil.crawlerNode(criterion, evaluation, node, page, elementsAccessed, itens, queue, true);
+            const nodeCrawledResult = await CrawlerUtil.crawlerNode(criterion, evaluation, node, page, puppeteer, elementsAccessed, itens, queue);
             queue = nodeCrawledResult.queue;
             node = nodeCrawledResult.node;
             elementsAccessed = nodeCrawledResult.elementsAccessed;
