@@ -46,10 +46,7 @@ export default class CrawlerUtil {
         let newCurrentURL = await page.url();
         const currentURL = await page.url();
         const currentPage = page;
-        page.setMaxListeners(Infinity);
-        page._frameManager.setMaxListeners(Infinity);
-        page._frameManager._networkManager.setMaxListeners(Infinity);
-        page._client.setMaxListeners(Infinity)
+       
 
         console.log("===================================================================");
         logger.info("node value: " + value);

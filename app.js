@@ -137,7 +137,6 @@ const startCrawler = async () => {
     const element = new Element(evaluation.transparencyPortalUrl, null, null, null, null);
 
     let root = new Node(element, null, [], false);
-    process.setMaxListeners(Infinity);
 
     let criterionDespesaOrc = CrawlerUtil.createCriterion('Despesa Orçamentária');
     let criterionDespesaExtra = CrawlerUtil.createCriterion('Despesa Extra Orçamentária');
@@ -146,13 +145,12 @@ const startCrawler = async () => {
     let criterionLicit = CrawlerUtil.createCriterion('Licitação');
     let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
+    process.setMaxListeners(0);
+
     // Promise.all([
-    run(criterionDespesaOrc, evaluation, root)
-    run(criterionDespesaExtra, evaluation, root)
+   
     run(criterionReceitaExtra, evaluation, root)
-    run(criterionReceitaOrc, evaluation, root)
-    run(criterionLicit, evaluation, root)
-    run(criterionPessoal, evaluation, root)
+   
     // ]).then((result) => {
     //     moogoseInstace.connection.close(function () {
     //         console.log("Finished process, crawling finalized");
