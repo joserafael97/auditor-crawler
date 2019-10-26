@@ -148,9 +148,12 @@ const startCrawler = async () => {
     process.setMaxListeners(0);
 
     // Promise.all([
-   
+    run(criterionDespesaOrc, evaluation, root)
+    run(criterionDespesaExtra, evaluation, root)
     run(criterionReceitaExtra, evaluation, root)
-   
+    run(criterionReceitaOrc, evaluation, root)
+    run(criterionLicit, evaluation, root)
+    run(criterionPessoal, evaluation, root)
     // ]).then((result) => {
     //     moogoseInstace.connection.close(function () {
     //         console.log("Finished process, crawling finalized");
