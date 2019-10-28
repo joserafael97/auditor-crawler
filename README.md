@@ -172,9 +172,7 @@ Com objetivo de comparar o desempenho do crawler na avaliação da transparênci
 
 Na elaboração dos gabaritos cada item registrado é classificado manualmente, atribuindo na coluna encontrado o valor ***TRUE*** caso a presença no portal seja confirmada e ***FALSE*** caso contrário. Além disso, é registrada a localização onde cada item foi identificado, assegurando a corretude da informação durante a comparação entre o gabarito e os resultados do crawler.
 
-Nesse cenário, devido a dificuldade na elaboração manual de gabaritos para todos 223 municípios do estado da Paraíba foi optado pelo uso de amostra significativa, considerando o número de fornecedores de portais no estado e possíveis mesclagens existentes.
-
-TODO explicar a amostra.
+Nesse cenário, devido a dificuldade na elaboração manual de gabaritos para todos 223 municípios do estado da Paraíba foi optado pelo uso de amostra com ***51*** gabaritos (22.8% do total de 223 municípios) que consideram o número de fornecedores de portais no estado e combinações existentes entre eles.
 
 ### Métricas
 
