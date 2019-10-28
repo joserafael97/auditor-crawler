@@ -20,6 +20,7 @@ import Dfs from './dfs';
 import BanditProcessClassifier from './banditProcessClassifier';
 import logger from './core/logger/app-logger'
 import ObjectsToCsv from 'objects-to-csv';
+import moment from 'moment';
 
 
 const logErrorAndExit = err => {

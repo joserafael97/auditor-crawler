@@ -1,0 +1,1317 @@
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Campina Grande" "aproach=bfs"
+
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: bfs","level":"info"}
+{"message":"AproachType: bfs","level":"info"}
+{"message":"AproachType: bfs","level":"info"}
+{"message":"AproachType: bfs","level":"info"}
+{"message":"AproachType: bfs","level":"info"}
+{"message":"AproachType: bfs","level":"info"}
+===================================================================
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+===================================================================
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+===================================================================
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+===================================================================
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+===================================================================
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+===================================================================
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Receita Extra Orçamentária","level":"info"}
+queue nodes: ****: http://transparencia.campinagrande.pb.gov.br/licitacoes  level:  1
+===================================================================
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br/licitacoes","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Despesa Orçamentária","level":"info"}
+queue nodes: ****: https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores  level:  1
+queue nodes: ****: http://transparencia.campinagrande.pb.gov.br/folha-de-pessoal  level:  1
+queue nodes: ****: acessar  level:  1
+===================================================================
+{"message":"node value: https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores  level:  1
+queue nodes: ****: http://transparencia.campinagrande.pb.gov.br/folha-de-pessoal  level:  1
+queue nodes: ****: acessar  level:  1
+===================================================================
+{"message":"node value: https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Receita Orçamentária","level":"info"}
+queue nodes: ****: https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores  level:  1
+queue nodes: ****: http://transparencia.campinagrande.pb.gov.br/folha-de-pessoal  level:  1
+queue nodes: ****: acessar  level:  1
+===================================================================
+{"message":"node value: https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Licitação","level":"info"}
+queue nodes: ****: https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores  level:  1
+queue nodes: ****: http://transparencia.campinagrande.pb.gov.br/folha-de-pessoal  level:  1
+queue nodes: ****: acessar  level:  1
+===================================================================
+{"message":"node value: https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores  level:  1
+queue nodes: ****: http://transparencia.campinagrande.pb.gov.br/folha-de-pessoal  level:  1
+queue nodes: ****: acessar  level:  1
+===================================================================
+{"message":"node value: https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: http://transparencia.campinagrande.pb.gov.br/folha-de-pessoal  level:  1
+queue nodes: ****: acessar  level:  1
+queue nodes: ****: execucao extraorcamentaria  level:  2
+===================================================================
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br/folha-de-pessoal","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Despesa Orçamentária","level":"info"}
+queue nodes: ****: http://transparencia.campinagrande.pb.gov.br/folha-de-pessoal  level:  1
+queue nodes: ****: acessar  level:  1
+queue nodes: ****: execucao extraorcamentaria  level:  2
+===================================================================
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br/folha-de-pessoal","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: http://transparencia.campinagrande.pb.gov.br/folha-de-pessoal  level:  1
+queue nodes: ****: acessar  level:  1
+===================================================================
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br/folha-de-pessoal","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Licitação","level":"info"}
+queue nodes: ****: http://transparencia.campinagrande.pb.gov.br/folha-de-pessoal  level:  1
+queue nodes: ****: acessar  level:  1
+===================================================================
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br/folha-de-pessoal","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Receita Orçamentária","level":"info"}
+queue nodes: ****: http://transparencia.campinagrande.pb.gov.br/folha-de-pessoal  level:  1
+queue nodes: ****: acessar  level:  1
+===================================================================
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br/folha-de-pessoal","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Receita Extra Orçamentária","level":"info"}
+queue nodes: ****: http://portaldatransparencia.publicsoftsolutions.com/sistemas/ContabilidadePublica/MtY=/editais-e-documentos-de-licitacoes  level:  2
+queue nodes: ****: consultar receitas extraorcamentarias  level:  2
+queue nodes: ****: receitas  level:  2
+===================================================================
+{"message":"node value: http://portaldatransparencia.publicsoftsolutions.com/sistemas/ContabilidadePublica/MtY=/editais-e-documentos-de-licitacoes","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: true","level":"info"}
+===================================================================
+{"message":"Criterion: Despesa Orçamentária","level":"info"}
+queue nodes: ****: acessar  level:  1
+queue nodes: ****: execucao extraorcamentaria  level:  2
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: acessar  level:  1
+queue nodes: ****: pessoal  level:  2
+{"message":"Criterion: Receita Orçamentária","level":"info"}
+queue nodes: ****: acessar  level:  1
+{"message":"Criterion: Licitação","level":"info"}
+queue nodes: ****: acessar  level:  1
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: acessar  level:  1
+queue nodes: ****: execucao extraorcamentaria  level:  2
+queue nodes: ****: execucao extraorcamentaria  level:  2
+{"message":"Criterion: Receita Extra Orçamentária","level":"info"}
+queue nodes: ****: consultar receitas extraorcamentarias  level:  2
+queue nodes: ****: receitas  level:  2
+===================================================================
+{"message":"node value: acessar","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+===================================================================
+{"message":"node value: acessar","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+===================================================================
+{"message":"node value: acessar","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+===================================================================
+{"message":"node value: acessar","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+===================================================================
+{"message":"node value: acessar","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+===================================================================
+{"message":"node value: consultar receitas extraorcamentarias","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: true","level":"info"}
+===================================================================
+{"level":"warn","message":"Click error: Node is either not visible or not an HTMLElement","stack":"Error: Node is either not visible or not an HTMLElement\n    at ElementHandle._clickablePoint (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/puppeteer/lib/JSHandle.js:217:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ElementHandle.<anonymous> (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/puppeteer/lib/helper.js:111:15)\n    at Function.crawlerNode (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:82:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"Criterion: Despesa Orçamentária","level":"info"}
+queue nodes: ****: execucao extraorcamentaria  level:  2
+{"level":"warn","message":"Click error: Node is either not visible or not an HTMLElement","stack":"Error: Node is either not visible or not an HTMLElement\n    at ElementHandle._clickablePoint (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/puppeteer/lib/JSHandle.js:217:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ElementHandle.<anonymous> (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/puppeteer/lib/helper.js:111:15)\n    at Function.crawlerNode (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:82:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: pessoal  level:  2
+{"level":"warn","message":"Click error: Node is either not visible or not an HTMLElement","stack":"Error: Node is either not visible or not an HTMLElement\n    at ElementHandle._clickablePoint (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/puppeteer/lib/JSHandle.js:217:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ElementHandle.<anonymous> (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/puppeteer/lib/helper.js:111:15)\n    at Function.crawlerNode (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:82:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"Close Puppeteer ...","level":"info"}
+{"message":"Returnin Criterion: Receita Orçamentária","level":"info"}
+itens [ { keywordsXpath:
+     [ 'nome',
+       'unidade gestora',
+       'orgao',
+       'entidade',
+       'Nome Entidade',
+       'fonte de recurso',
+       'Entidade' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee09b8f3f4278f875e6,
+    name: 'uni_gestora',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nome" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "unidade gestora" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "orgao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "entidade" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nome entidade" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "fonte de recurso" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "entidade"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'valor previsto(r$)',
+       'receita prevista',
+       'previsao de receitas',
+       'Valor Previsto',
+       'Previsão',
+       'prevista' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee09b8f3f4278f875e7,
+    name: 'previsao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor previsto(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "receita prevista" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "previsao de receitas" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor previsto" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "previsao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "prevista"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'valor arrecadado(r$)',
+       'receita arrecadada',
+       'realizada ate o mes',
+       'Arrecadada',
+       'arrecadado ate o momento',
+       'arrecadacao de receitas',
+       'Valor Arrecadado',
+       'Arrecadação' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee09b8f3f4278f875e8,
+    name: 'arrecadacao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor arrecadado(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "receita arrecadada" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "realizada ate o mes" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "arrecadada" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "arrecadado ate o momento" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "arrecadacao de receitas" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor arrecadado" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "arrecadacao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'valor lancado(r$)', 'valor', 'lançada' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee09b8f3f4278f875e9,
+    name: 'lancado',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor lancado(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "lancada"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'categoria da receita',
+       'receita l.o.a.',
+       'CATEGORIA ECONÔMICA' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee09b8f3f4278f875ea,
+    name: 'categoria_economica',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "categoria da receita" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "receita l.o.a." or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "categoria economica"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'origem dos recursos a conta',
+       'descricao da receita',
+       'nome',
+       'descricao receita (STN)',
+       'Descrição STN',
+       'Descrição',
+       'Fonte Recurso',
+       'Fonte de Recurso',
+       'ORIGEM',
+       'Fonte do Recurso' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee09b8f3f4278f875eb,
+    name: 'origem',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "origem dos recursos a conta" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao da receita" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nome" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao receita (stn)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao stn" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "fonte recurso" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "fonte de recurso" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "origem" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "fonte do recurso"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'especie' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee09b8f3f4278f875ec,
+    name: 'especie',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "especie"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'rubrica' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee09b8f3f4278f875ed,
+    name: 'rubrica',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "rubrica"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'alinea' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee09b8f3f4278f875ee,
+    name: 'alinea',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "alinea"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'subalinea', 'sub alinea' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee09b8f3f4278f875ef,
+    name: 'sub_alinea',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "subalinea" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "sub alinea"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' } ]
+{"message":"Duration in crawling proccess for the criterion Receita Orçamentária was: 3 min","level":"info"}
+{"level":"warn","message":"Click error: Node is either not visible or not an HTMLElement","stack":"Error: Node is either not visible or not an HTMLElement\n    at ElementHandle._clickablePoint (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/puppeteer/lib/JSHandle.js:217:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ElementHandle.<anonymous> (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/puppeteer/lib/helper.js:111:15)\n    at Function.crawlerNode (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:82:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"Close Puppeteer ...","level":"info"}
+{"message":"Returnin Criterion: Licitação","level":"info"}
+itens [ { keywordsXpath:
+     [ 'numero da licitacao',
+       'nº licitacao',
+       'numero',
+       'processo',
+       'numero',
+       'N° Processo' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee19b8f3f4278f875f0,
+    name: 'numero_licitacao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "numero da licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "n licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "numero" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "processo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "numero" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "n processo"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'Objeto',
+       'Objeto da Licitação',
+       'descricao do objeto',
+       'objeto resumido',
+       'tipo do objeto' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee19b8f3f4278f875f1,
+    name: 'objeto_licitacao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "objeto" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "objeto da licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao do objeto" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "objeto resumido" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo do objeto"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'tipo', 'modalidade', 'categoria' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee19b8f3f4278f875f2,
+    name: 'modalidade_licitacao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "modalidade" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "categoria"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'data publicacao',
+       'data',
+       'data da homogacao',
+       'data da homologacao',
+       'Publicação',
+       'data da publicacao',
+       'dt. homologacao',
+       'homologacao' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee19b8f3f4278f875f3,
+    name: 'data_publicacao_licitacao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data publicacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data da homogacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data da homologacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "publicacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data da publicacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "dt. homologacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "homologacao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'valor', 'VALOR R$' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee19b8f3f4278f875f4,
+    name: 'valor',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor r$"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'cpf', 'cnpj', 'CNPJ/CPF', 'CPF/CNPJ' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee19b8f3f4278f875f5,
+    name: 'cnpj_cpf',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cpf" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cnpj" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cnpj/cpf" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cpf/cnpj"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'edital' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee19b8f3f4278f875f6,
+    name: 'edital',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "edital"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'fornecedor',
+       'favorecido',
+       'Participantes',
+       'Status',
+       'propostas' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee19b8f3f4278f875f7,
+    name: 'nome_vencedores',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "fornecedor" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "favorecido" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "participantes" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "status" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "propostas"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'participante', 'participantes', 'propostas' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee19b8f3f4278f875f8,
+    name: 'nome_perdedores',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "participante" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "participantes" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "propostas"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'assinatura',
+       'DATA ASSINATURA',
+       'abertura / realizacao',
+       'data inicial' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee19b8f3f4278f875f9,
+    name: 'data_realizacao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "assinatura" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data assinatura" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "abertura / realizacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data inicial"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'setor interessado', 'reparticao/setor interessado:', 'orgao' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee19b8f3f4278f875fa,
+    name: 'setor_interessado',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "setor interessado" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "reparticao/setor interessado" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "orgao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'integra' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee19b8f3f4278f875fb,
+    name: 'integra',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "integra"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'ratificacao' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee19b8f3f4278f875fc,
+    name: 'termo_ratificacao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "ratificacao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'pregao', 'pregao eletronico' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee19b8f3f4278f875fd,
+    name: 'pregao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "pregao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "pregao eletronico"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'edital', 'publicacao', 'aviso' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee19b8f3f4278f875fe,
+    name: 'aviso',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "edital" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "publicacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "aviso"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'licitado', 'licitacao' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ee19b8f3f4278f875ff,
+    name: 'licitado',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "licitado" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "licitacao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' } ]
+{"message":"Duration in crawling proccess for the criterion Licitação was: 3 min","level":"info"}
+{"level":"warn","message":"Click error: Node is either not visible or not an HTMLElement","stack":"Error: Node is either not visible or not an HTMLElement\n    at ElementHandle._clickablePoint (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/puppeteer/lib/JSHandle.js:217:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ElementHandle.<anonymous> (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/puppeteer/lib/helper.js:111:15)\n    at Function.crawlerNode (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:82:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: execucao extraorcamentaria  level:  2
+queue nodes: ****: execucao extraorcamentaria  level:  2
+===================================================================
+{"message":"node value: execucao extraorcamentaria","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+===================================================================
+{"message":"node value: pessoal","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+===================================================================
+{"message":"node value: execucao extraorcamentaria","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"level":"warn","message":"Click error: Node is either not visible or not an HTMLElement","stack":"Error: Node is either not visible or not an HTMLElement\n    at ElementHandle._clickablePoint (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/puppeteer/lib/JSHandle.js:217:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ElementHandle.<anonymous> (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/puppeteer/lib/helper.js:111:15)\n    at Function.crawlerNode (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:82:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"Criterion: Receita Extra Orçamentária","level":"info"}
+queue nodes: ****: receitas  level:  2
+===================================================================
+{"message":"node value: receitas","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: true","level":"info"}
+===================================================================
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: execucao extraorcamentaria  level:  2
+queue nodes: ****: execucao extraorcamentaria  level:  3
+{"message":"Criterion: Despesa Orçamentária","level":"info"}
+queue nodes: ****: execucao extraorcamentaria  level:  3
+{"message":"Close Puppeteer ...","level":"info"}
+{"message":"Returnin Criterion: Quadro Pessoal","level":"info"}
+itens [ { keywordsXpath: [ 'nome', 'Servidor' ],
+    tagNameParents: [ 'div', 'div', 'span' ],
+    textParents:
+     [ '    <span ref="eText" class="ag-header-cell-text" role="columnheader" unselectable="on">Servidor</span>    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on"></span></span>    <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-asc" unselectable="on"></span></span>    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-desc" unselectable="on"></span></span>    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-none" unselectable="on"></span></span>  ',
+       '  <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true" style="opacity: 0; transition: opacity 0.2s ease 0s, border 0.2s ease 0s;"><span class="ag-icon ag-icon-menu" unselectable="on"></span></span>  <div ref="eLabel" class="ag-header-cell-label" role="presentation" unselectable="on">    <span ref="eText" class="ag-header-cell-text" role="columnheader" unselectable="on">Servidor</span>    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on"></span></span>    <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-asc" unselectable="on"></span></span>    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-desc" unselectable="on"></span></span>    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-none" unselectable="on"></span></span>  </div>' ],
+    _id: 5db37ee29b8f3f4278f87600,
+    name: 'nome',
+    found: true,
+    foundText: 'servidor',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nome" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "servidor"]',
+    pathSought:
+     'https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores',
+    proof:
+     './proof/Campina Grande/2019-10-25T23:00:57.594Z/Quadro Pessoal/Quadro Pessoal-nome-level-2-Fri Oct 25 2019 20:06:34 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Servidor',
+    valid: true,
+    tagName: 'span' },
+  { keywordsXpath: [ 'cpf' ],
+    tagNameParents: [ 'div', 'div' ],
+    textParents:
+     [ '    <span ref="eText" class="ag-header-cell-text" role="columnheader" unselectable="on">CPF</span>    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on"></span></span>    <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-asc" unselectable="on"></span></span>    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-desc" unselectable="on"></span></span>    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-none" unselectable="on"></span></span>  ',
+       '  <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true" style="opacity: 0; transition: opacity 0.2s ease 0s, border 0.2s ease 0s;"><span class="ag-icon ag-icon-menu" unselectable="on"></span></span>  <div ref="eLabel" class="ag-header-cell-label" role="presentation" unselectable="on">    <span ref="eText" class="ag-header-cell-text" role="columnheader" unselectable="on">CPF</span>    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on"></span></span>    <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-asc" unselectable="on"></span></span>    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-desc" unselectable="on"></span></span>    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-none" unselectable="on"></span></span>  </div>' ],
+    _id: 5db37ee29b8f3f4278f87601,
+    name: 'cpf',
+    found: true,
+    foundText: 'cpf',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cpf"]',
+    pathSought:
+     'https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores',
+    proof:
+     './proof/Campina Grande/2019-10-25T23:00:57.594Z/Quadro Pessoal/Quadro Pessoal-cpf-level-2-Fri Oct 25 2019 20:06:35 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'CPF',
+    valid: true,
+    tagName: 'span' },
+  { keywordsXpath: [ 'cargo' ],
+    tagNameParents: [ 'div', 'div' ],
+    textParents:
+     [ '    <span ref="eText" class="ag-header-cell-text" role="columnheader" unselectable="on">Cargo</span>    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on"></span></span>    <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-asc" unselectable="on"></span></span>    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-desc" unselectable="on"></span></span>    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-none" unselectable="on"></span></span>  ',
+       '  <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true" style="opacity: 0; transition: opacity 0.2s ease 0s, border 0.2s ease 0s;"><span class="ag-icon ag-icon-menu" unselectable="on"></span></span>  <div ref="eLabel" class="ag-header-cell-label" role="presentation" unselectable="on">    <span ref="eText" class="ag-header-cell-text" role="columnheader" unselectable="on">Cargo</span>    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on"></span></span>    <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-asc" unselectable="on"></span></span>    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-desc" unselectable="on"></span></span>    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-none" unselectable="on"></span></span>  </div>' ],
+    _id: 5db37ee29b8f3f4278f87602,
+    name: 'cargo',
+    found: true,
+    foundText: 'cargo',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cargo"]',
+    pathSought:
+     'https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores',
+    proof:
+     './proof/Campina Grande/2019-10-25T23:00:57.594Z/Quadro Pessoal/Quadro Pessoal-cargo-level-2-Fri Oct 25 2019 20:06:36 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Cargo',
+    valid: true,
+    tagName: 'span' },
+  { keywordsXpath:
+     [ 'tipo do ato',
+       'secretaria',
+       'tipo cargo',
+       'tipo de cargo',
+       'regime',
+       'tipo',
+       'Tipo de Contratação' ],
+    tagNameParents: [ 'div', 'div' ],
+    textParents:
+     [ '    <span ref="eText" class="ag-header-cell-text" role="columnheader" unselectable="on">Tipo de Cargo</span>    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on"></span></span>    <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-asc" unselectable="on"></span></span>    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-desc" unselectable="on"></span></span>    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-none" unselectable="on"></span></span>  ',
+       '  <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true" style="opacity: 0; transition: opacity 0.2s ease 0s, border 0.2s ease 0s;"><span class="ag-icon ag-icon-menu" unselectable="on"></span></span>  <div ref="eLabel" class="ag-header-cell-label" role="presentation" unselectable="on">    <span ref="eText" class="ag-header-cell-text" role="columnheader" unselectable="on">Tipo de Cargo</span>    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on"></span></span>    <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-asc" unselectable="on"></span></span>    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-desc" unselectable="on"></span></span>    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-none" unselectable="on"></span></span>  </div>' ],
+    _id: 5db37ee29b8f3f4278f87603,
+    name: 'tipo_cargo',
+    found: true,
+    foundText: 'tipo de cargo',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo do ato" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "secretaria" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo cargo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo de cargo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "regime" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo de contratacao"]',
+    pathSought:
+     'https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores',
+    proof:
+     './proof/Campina Grande/2019-10-25T23:00:57.594Z/Quadro Pessoal/Quadro Pessoal-tipo_cargo-level-2-Fri Oct 25 2019 20:06:36 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Tipo de Cargo',
+    valid: true,
+    tagName: 'span' },
+  { keywordsXpath:
+     [ 'salario',
+       'Total Vantagem*',
+       'sal. base',
+       'liquido',
+       'valor liquido',
+       'Vantagens (Bruto)' ],
+    tagNameParents: [ 'div', 'div' ],
+    textParents:
+     [ '    <span ref="eText" class="ag-header-cell-text" role="columnheader" unselectable="on">Vantagens (Bruto)</span>    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on"></span></span>    <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-asc" unselectable="on"></span></span>    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-desc" unselectable="on"></span></span>    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-none" unselectable="on"></span></span>  ',
+       '  <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true" style="opacity: 0; transition: opacity 0.2s ease 0s, border 0.2s ease 0s;"><span class="ag-icon ag-icon-menu" unselectable="on"></span></span>  <div ref="eLabel" class="ag-header-cell-label" role="presentation" unselectable="on">    <span ref="eText" class="ag-header-cell-text" role="columnheader" unselectable="on">Vantagens (Bruto)</span>    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on"></span></span>    <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-asc" unselectable="on"></span></span>    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-desc" unselectable="on"></span></span>    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-none" unselectable="on"></span></span>  </div>' ],
+    _id: 5db37ee29b8f3f4278f87604,
+    name: 'salario_cargo',
+    found: true,
+    foundText: 'vantagens (bruto)',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "salario" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "total vantagem*" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "sal. base" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "liquido" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor liquido" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "vantagens (bruto)"]',
+    pathSought:
+     'https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores',
+    proof:
+     './proof/Campina Grande/2019-10-25T23:00:57.594Z/Quadro Pessoal/Quadro Pessoal-salario_cargo-level-2-Fri Oct 25 2019 20:06:37 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Vantagens (Bruto)',
+    valid: true,
+    tagName: 'span' } ]
+{"message":"Duration in crawling proccess for the criterion Quadro Pessoal was: 5 min","level":"info"}
+===================================================================
+{"message":"node value: execucao extraorcamentaria","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Receita Extra Orçamentária","level":"info"}
+queue nodes: ****: consultar receitas extraorcamentarias  level:  3
+===================================================================
+{"message":"node value: execucao extraorcamentaria","level":"info"}
+{"message":"node level: 3","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: execucao extraorcamentaria  level:  3
+===================================================================
+{"message":"node value: consultar receitas extraorcamentarias","level":"info"}
+{"message":"node level: 3","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: true","level":"info"}
+===================================================================
+{"message":"Close Puppeteer ...","level":"info"}
+{"message":"Returnin Criterion: Despesa Orçamentária","level":"info"}
+itens [ { keywordsXpath: [ 'funcao' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875cb,
+    name: 'funcao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "funcao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'subfuncao', 'sub funcao' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875cc,
+    name: 'sub_funcao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "subfuncao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "sub funcao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'ORGÃO',
+       'unidade orcamentaria',
+       'descricao do orgao',
+       'und. orcamentaria' ],
+    tagNameParents: [ 'div', 'div', 'span', 'span' ],
+    textParents:
+     [ '    <span ref="eText" class="ag-header-cell-text" role="columnheader" unselectable="on">Unidade Orçamentária</span>    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on"></span></span>    <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-asc" unselectable="on"></span></span>    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-desc" unselectable="on"></span></span>    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-none" unselectable="on"></span></span>  ',
+       '  <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true" style="opacity: 0; transition: opacity 0.2s ease 0s, border 0.2s ease 0s;"><span class="ag-icon ag-icon-menu" unselectable="on"></span></span>  <div ref="eLabel" class="ag-header-cell-label" role="presentation" unselectable="on">    <span ref="eText" class="ag-header-cell-text" role="columnheader" unselectable="on">Unidade Orçamentária</span>    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on"></span></span>    <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-asc" unselectable="on"></span></span>    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-desc" unselectable="on"></span></span>    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-none" unselectable="on"></span></span>  </div>' ],
+    _id: 5db37ede9b8f3f4278f875cd,
+    name: 'orgao_or_uni_orcamentaria',
+    found: true,
+    foundText: 'unidade orcamentaria',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "orgao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "unidade orcamentaria" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao do orgao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "und. orcamentaria"]',
+    pathSought:
+     'https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores',
+    proof:
+     './proof/Campina Grande/2019-10-25T23:00:57.594Z/Despesa Orçamentária/Despesa Orçamentária-orgao_or_uni_orcamentaria-level-2-Fri Oct 25 2019 20:06:35 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Unidade Orçamentária',
+    valid: true,
+    tagName: 'span' },
+  { keywordsXpath:
+     [ 'programa',
+       'descricao do programa',
+       'funcao programatica',
+       'programa de governo' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875ce,
+    name: 'programa',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "programa" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao do programa" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "funcao programatica" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "programa de governo"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'categoria economica', 'cat.economica' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875cf,
+    name: 'categoria_economica',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "categoria economica" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cat.economica"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'acao',
+       'classificacao',
+       'acao de governoNatuirezValor ',
+       'acao de governo' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875d0,
+    name: 'acao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "acao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "classificacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "acao de governonatuirezvalor " or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "acao de governo"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'nat. desp.',
+       'natureza',
+       'natureza',
+       'descricao da natureza da despesa',
+       'natureza da despesa' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875d1,
+    name: 'natureza_despesa',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nat. desp." or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "natureza" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "natureza" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao da natureza da despesa" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "natureza da despesa"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'modalidade', 'tipo da licitacao', 'modalidade de aplicacao' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875d2,
+    name: 'modalidade',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "modalidade" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo da licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "modalidade de aplicacao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'elemento',
+       'classificacao',
+       'elemento de depesa',
+       'elemento da despesa' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875d3,
+    name: 'elemento',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "elemento" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "classificacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "elemento de depesa" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "elemento da despesa"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'empenho', 'numero', 'Ficha' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875d4,
+    name: 'emp_numero',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "empenho" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "numero" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "ficha"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'data' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875d5,
+    name: 'emp_data',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "data"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'cpf/cnpj', 'cpf', 'cnpj' ],
+    tagNameParents: [ 'div', 'div', 'span', 'span' ],
+    textParents:
+     [ '    <span ref="eText" class="ag-header-cell-text" role="columnheader" unselectable="on">CPF</span>    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on"></span></span>    <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-asc" unselectable="on"></span></span>    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-desc" unselectable="on"></span></span>    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-none" unselectable="on"></span></span>  ',
+       '  <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true" style="opacity: 0; transition: opacity 0.2s ease 0s, border 0.2s ease 0s;"><span class="ag-icon ag-icon-menu" unselectable="on"></span></span>  <div ref="eLabel" class="ag-header-cell-label" role="presentation" unselectable="on">    <span ref="eText" class="ag-header-cell-text" role="columnheader" unselectable="on">CPF</span>    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on"></span></span>    <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-asc" unselectable="on"></span></span>    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-desc" unselectable="on"></span></span>    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-none" unselectable="on"></span></span>  </div>' ],
+    _id: 5db37ede9b8f3f4278f875d6,
+    name: 'emp_cnpj_cpf',
+    found: true,
+    foundText: 'cpf',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cpf/cnpj" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cpf" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cnpj"]',
+    pathSought:
+     'https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores',
+    proof:
+     './proof/Campina Grande/2019-10-25T23:00:57.594Z/Despesa Orçamentária/Despesa Orçamentária-emp_cnpj_cpf-level-2-Fri Oct 25 2019 20:06:35 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'CPF',
+    valid: true,
+    tagName: 'span' },
+  { keywordsXpath:
+     [ 'tipo da licitacao',
+       'nº licitacao',
+       'licitacao',
+       'nº. da licitacao' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875d7,
+    name: 'emp_indicacao_licitacao',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo da licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "n licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "n. da licitacao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'valor', 'valor empenhado(r$)', 'valor empenhado' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875d8,
+    name: 'emp_valor',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor empenhado(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor empenhado"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'valor Fixado(r$)', 'valor empenhado' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875d9,
+    name: 'valor_fixado',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor fixado(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor empenhado"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'valor liquidado(r$)', 'valor liquidado' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875da,
+    name: 'valor_liquidado',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor liquidado(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor liquidado"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'valor pago(R$)', 'valor pago' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875db,
+    name: 'valor_pago',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor pago(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor pago"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'dt. pag. ultima parcela.' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875dc,
+    name: 'lic_data_pag_ultima',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "dt. pag. ultima parcela."]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'tipo do objeto' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875dd,
+    name: 'lic_obj_servico',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo do objeto"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'elemento',
+       'sub-elemento',
+       'subelemento',
+       'subelemento da despesa' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875de,
+    name: 'sub_elemento',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "elemento" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "subelemento" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "subelemento" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "subelemento da despesa"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'modalidade', 'modalidade aplicacao' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875df,
+    name: 'lic_modalidade',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "modalidade" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "modalidade aplicacao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'nº licitacao', 'licitacao' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875e0,
+    name: 'lic_numero',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "n licitacao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "licitacao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'numero', 'historico' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37ede9b8f3f4278f875e1,
+    name: 'lic_num_contrato',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "numero" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "historico"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'orgao',
+       'unid. orcamentaria',
+       'UNIDADE ORÇAMENTÁRIA',
+       'credor' ],
+    tagNameParents: [ 'div', 'div', 'span', 'span' ],
+    textParents:
+     [ '    <span ref="eText" class="ag-header-cell-text" role="columnheader" unselectable="on" style="background-color: rgb(79, 6, 101); color: rgb(255, 255, 255);">Unidade Orçamentária</span>    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on"></span></span>    <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-asc" unselectable="on"></span></span>    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-desc" unselectable="on"></span></span>    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-none" unselectable="on"></span></span>  ',
+       '  <span ref="eMenu" class="ag-header-icon ag-header-cell-menu-button" aria-hidden="true" style="opacity: 0; transition: opacity 0.2s ease 0s, border 0.2s ease 0s;"><span class="ag-icon ag-icon-menu" unselectable="on"></span></span>  <div ref="eLabel" class="ag-header-cell-label" role="presentation" unselectable="on">    <span ref="eText" class="ag-header-cell-text" role="columnheader" unselectable="on" style="background-color: rgb(79, 6, 101); color: rgb(255, 255, 255);">Unidade Orçamentária</span>    <span ref="eFilter" class="ag-header-icon ag-filter-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-filter" unselectable="on"></span></span>    <span ref="eSortOrder" class="ag-header-icon ag-sort-order ag-hidden" aria-hidden="true"></span>    <span ref="eSortAsc" class="ag-header-icon ag-sort-ascending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-asc" unselectable="on"></span></span>    <span ref="eSortDesc" class="ag-header-icon ag-sort-descending-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-desc" unselectable="on"></span></span>    <span ref="eSortNone" class="ag-header-icon ag-sort-none-icon ag-hidden" aria-hidden="true"><span class="ag-icon ag-icon-none" unselectable="on"></span></span>  </div>' ],
+    _id: 5db37ede9b8f3f4278f875e2,
+    name: 'nome',
+    found: true,
+    foundText: 'unidade orcamentaria',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "orgao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "unid. orcamentaria" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "unidade orcamentaria" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "credor"]',
+    pathSought:
+     'https://sagresonline.tce.pb.gov.br/#/municipal/pessoal/servidores',
+    proof:
+     './proof/Campina Grande/2019-10-25T23:00:57.594Z/Despesa Orçamentária/Despesa Orçamentária-nome-level-2-Fri Oct 25 2019 20:06:36 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Unidade Orçamentária',
+    valid: true,
+    tagName: 'span' } ]
+{"message":"Duration in crawling proccess for the criterion Despesa Orçamentária was: 8 min","level":"info"}
+===================================================================
+{"message":"node value: execucao extraorcamentaria","level":"info"}
+{"message":"node level: 3","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"level":"warn","message":"Click error: Node is either not visible or not an HTMLElement","stack":"Error: Node is either not visible or not an HTMLElement\n    at ElementHandle._clickablePoint (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/puppeteer/lib/JSHandle.js:217:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ElementHandle.<anonymous> (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/puppeteer/lib/helper.js:111:15)\n    at Function.crawlerNode (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:82:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"message":"Close Puppeteer ...","level":"info"}
+{"message":"Returnin Criterion: Receita Extra Orçamentária","level":"info"}
+itens [ { keywordsXpath: [ 'valor', 'valor(r$)', 'valor total', 'Valor Até Mês R$' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37edb9b8f3f4278f875c8,
+    name: 'valor',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor total" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor ate mes r$"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'codigo', 'receita' ],
+    tagNameParents: [ 'h3', 'div', 'b' ],
+    textParents:
+     [ '<i class="fa fa-pie-chart text-green"></i> <b>   Receita</b> Orçamentária',
+       '\n                        <h3 class="box-title text-primary"><i class="fa fa-pie-chart text-green"></i> <b>   Receita</b> Orçamentária</h3>\n                        <div class="box-tools pull-right">\n                            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>\n                            <!--<button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>-->\n                        </div>\n                    ' ],
+    _id: 5db37edb9b8f3f4278f875c9,
+    name: 'codigo',
+    found: true,
+    foundText: 'receita',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "codigo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "receita"]',
+    pathSought:
+     'http://portaldatransparencia.publicsoftsolutions.com/sistemas/ContabilidadePublica/views/?url=LicitacaoV2/Licitacoes.php&urlorigem=http://transparencia.campinagrande.pb.gov.br/licitacoes/',
+    proof:
+     './proof/Campina Grande/2019-10-25T23:00:57.594Z/Receita Extra Orçamentária/Receita Extra Orçamentária-codigo-level-2-Fri Oct 25 2019 20:07:41 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: '   Receita',
+    valid: false,
+    tagName: 'b' },
+  { keywordsXpath: [ 'descricao', 'descricao da receita' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37edb9b8f3f4278f875ca,
+    name: 'nomenclatura',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao da receita"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' } ]
+{"message":"Duration in crawling proccess for the criterion Receita Extra Orçamentária was: 9 min","level":"info"}
+{"message":"Close Puppeteer ...","level":"info"}
+{"message":"Returnin Criterion: Despesa Extra Orçamentária","level":"info"}
+itens [ { keywordsXpath: [ 'valor', 'empenhado(r$)', 'VALOR ATÉ MÊS R$' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37edf9b8f3f4278f875e3,
+    name: 'valor',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "empenhado(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor ate mes r$"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'codigo', 'cod. despesa' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37edf9b8f3f4278f875e4,
+    name: 'codigo',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "codigo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cod. despesa"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'descricao', 'nome da despesa' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5db37edf9b8f3f4278f875e5,
+    name: 'nomenclatura',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nome da despesa"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' } ]
+{"message":"Duration in crawling proccess for the criterion Despesa Extra Orçamentária was: 10 min","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Campina Grande" "aproach=bfs"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-10-25T23_51_25_562Z-debug.log

@@ -174,17 +174,15 @@ export default class PuppeteerUtil {
 
                 if (node.getLevel() !== 0) {
 
-                    if (node.getSource().getUrl() === currentUrl) {
+                    console.log("=================================node.getSource().getUrl() === currentUrl: ", node.getSource().getUrl() === currentUrl)
+                    console.log("===== text init", text)
+                    console.log("StringSimilarity.compareTwoStrings(node.getSource().getUrl(), currentUrl) > 0.95: ",StringSimilarity.compareTwoStrings(node.getSource().getUrl(), currentUrl) > 0.95);
 
-                        if (((currentValue === value || value === text) ||
-                            ((isnum &&
-                                StringSimilarity.compareTwoStrings(value.substring(value.length - 4, value.length),
-                                    text.substring(text.length - 4, text.length)) > 0.6))) || StringSimilarity.compareTwoStrings(value, text) > 0.95) {
+                    if (node.getSource().getUrl() === currentUrl || StringSimilarity.compareTwoStrings(node.getSource().getUrl(), currentUrl) > 0.95) {
+                        if ((value === text || currentValue === text) || StringSimilarity.compareTwoStrings(value, text) > 0.95) {
                             
-                            numRepetText++;            
-                            console.log("===============num repet text: ", numRepetText)
-                            if ((currentNode.getLevel() + 1) === node.getLevel() || numRepetText > 1) {
-                                console.log("é duplicado -----------------------------------")
+                            numRepetText++;
+                            if (((currentNode.getLevel() + 1) === node.getLevel() && value === text) || (currentValue === text || numRepetText > 4)) {                       
                                 return true;
                             }
                         }
@@ -193,6 +191,7 @@ export default class PuppeteerUtil {
 
 
             }
+
             return false;
         }
     }

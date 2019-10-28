@@ -46,6 +46,10 @@ export default class CrawlerUtil {
         let newCurrentURL = await page.url();
         const currentURL = await page.url();
         const currentPage = page;
+        page.setMaxListeners(0);
+        page._frameManager.setMaxListeners(0);
+        page._frameManager._networkManager.setMaxListeners(0);
+        page._client.setMaxListeners(0)
 
 
         console.log("==================================================================")
@@ -78,8 +82,6 @@ export default class CrawlerUtil {
             let element = node.getSource().getElement();
             element = await PuppeteerUtil.selectElementPage(page, xpath, value);
             await element.click();
-            await page.waitForNavigation().catch(e => void e);
-
             const pages = await puppeteer.getBrowser().pages()
 
             if (pages.length > 1) {
@@ -107,7 +109,6 @@ export default class CrawlerUtil {
             iframesUrlNodes = node.getEdges();
 
             page = (await PuppeteerUtil.detectContext(page, elementsIdentify, node).catch(e => void e));
-            await page.waitForNavigation().catch(e => void e);
         }
 
         elementsIdentify.push.apply(elementsIdentify, elementsAccessed);

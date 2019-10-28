@@ -23,8 +23,7 @@ export default class Bfs {
             elementsAccessed = nodeCrawledResult.elementsAccessed;
             itens = nodeCrawledResult.itens;
         } catch (e) {
-
-            logger.warn("Click error: ", e);
+            logger.warn("Click error in criterion"  + criterion.name + "in value: " + node.getSource().getValue() + ": " + e);
         }
 
         page = currentPage;
