@@ -30,9 +30,9 @@ const logErrorAndExit = err => {
 };
 
 let trainModel = [];
-let moogoseInstace = null;
+connectToDb();
 
-const run = async (criterion, evaluation, root) => {
+let run = async (criterion, evaluation, root) => {
 
     const aproachSelected = CliParamUtil.aproachParamExtract(process.argv.slice(3)[0])
     let itens = [];
@@ -61,7 +61,7 @@ const run = async (criterion, evaluation, root) => {
 };
 
 
-const selectAproachToRun = async (aproachSelected, root, criterion, evaluation, itens) => {
+let selectAproachToRun = async (aproachSelected, root, criterion, evaluation, itens) => {
 
     let classifierCli = '';
     let resultCrawlingCriterion = null;
@@ -121,47 +121,45 @@ const initColletions = async () => {
 
 
 
-const startCrawler = async () => {
-    moogoseInstace = await connectToDb();
+let startCrawler = async (evaluation, criterion) => {
 
     await initColletions();
     const county = await County.findByName(CliParamUtil.countyParamExtract(process.argv.slice(2)[0]));
-
-    let evaluation = Evaluation({
-        date: new Date(),
-        county: county.name,
-        cityHallUrl: county.cityHallUrl,
-        transparencyPortalUrl: county.transparencyPortalUrl,
-    });
+    
+    evaluation.county = county.name;
+    evaluation.cityHallUrl = county.cityHallUrl;
+    evaluation.transparencyPortalUrl = county.transparencyPortalUrl;
+    evaluation.transparencyPortalUrl = county.transparencyPortalUrl;
 
     const element = new Element(evaluation.transparencyPortalUrl, null, null, null, null);
 
     let root = new Node(element, null, [], false);
 
-    let criterionDespesaOrc = CrawlerUtil.createCriterion('Despesa Orçamentária');
-    let criterionDespesaExtra = CrawlerUtil.createCriterion('Despesa Extra Orçamentária');
-    let criterionReceitaOrc = CrawlerUtil.createCriterion('Receita Orçamentária');
-    let criterionReceitaExtra = CrawlerUtil.createCriterion('Receita Extra Orçamentária');
-    let criterionLicit = CrawlerUtil.createCriterion('Licitação');
-    let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
-
-    process.setMaxListeners(0);
-
-    // Promise.all([
-    run(criterionDespesaOrc, evaluation, root)
-    run(criterionDespesaExtra, evaluation, root)
-    run(criterionReceitaExtra, evaluation, root)
-    run(criterionReceitaOrc, evaluation, root)
-    run(criterionLicit, evaluation, root)
-    run(criterionPessoal, evaluation, root)
-    // ]).then((result) => {
-    //     moogoseInstace.connection.close(function () {
-    //         console.log("Finished process, crawling finalized");
-    //         process.exit(0);
-    //     })
-    // });
-
+    run(criterion, evaluation, root)
 }
 
+process.setMaxListeners(0);
 
-startCrawler();
+let evaluation = Evaluation({
+    date: new Date(),
+    county: '',
+    cityHallUrl: '',
+    transparencyPortalUrl: '',
+});
+
+
+let criterionDespesaOrc = CrawlerUtil.createCriterion('Despesa Orçamentária');
+let criterionDespesaExtra = CrawlerUtil.createCriterion('Despesa Extra Orçamentária');
+let criterionReceitaOrc = CrawlerUtil.createCriterion('Receita Orçamentária');
+let criterionReceitaExtra = CrawlerUtil.createCriterion('Receita Extra Orçamentária');
+let criterionLicit = CrawlerUtil.createCriterion('Licitação');
+let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
+
+
+startCrawler(evaluation, criterionDespesaOrc);
+startCrawler(evaluation, criterionDespesaExtra);
+startCrawler(evaluation, criterionReceitaOrc);
+startCrawler(evaluation, criterionReceitaExtra);
+startCrawler(evaluation, criterionLicit);
+startCrawler(evaluation, criterionPessoal);
+

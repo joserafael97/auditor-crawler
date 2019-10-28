@@ -46,13 +46,14 @@ export default class CrawlerUtil {
         let newCurrentURL = await page.url();
         const currentURL = await page.url();
         const currentPage = page;
-       
 
-        console.log("===================================================================");
+
+        console.log("==================================================================")
+        logger.info("criterion: " + criterion.name);
         logger.info("node value: " + value);
         logger.info("node level: " + node.getLevel());
         logger.info("current page: " + (await page.constructor.name));
-        logger.info("node extracted in Frame: " + node.getSource().getIsExtractIframe());
+        logger.info("node extracted in Frame: " + node.getSource().getIsExtractIframe());   
         console.log("===================================================================");
 
         if (node.getSource().getIsExtractIframe() && !isUrl) {
@@ -130,9 +131,16 @@ export default class CrawlerUtil {
         node.edges.push.apply(node.edges, iframesUrlNodes);
 
         node.setResearched(true);
-        elementsAccessed.push(node);
 
-        return { "node": node, "queue": queue, "elementsAccessed": elementsAccessed, "itens": itens };
+        elementsAccessed.push(node);
+        const result = { "node": node, "queue": queue, "elementsAccessed": elementsAccessed, "itens": itens }
+
+        queue = [];
+        node = null;
+        elementsAccessed = [];
+        itens = null;
+
+        return result;
     }
 
     static async extractIframesUrl(node, page, elementsIdentify, criterionKeyWordName) {
@@ -207,8 +215,8 @@ export default class CrawlerUtil {
                         const isUrl = HtmlUtil.isUrl(text);
                         text = !isUrl && (await CrawlerUtil.hrefValid(element, currentUrl)) ? await (await element.getProperty('href')).jsonValue() : text;
                         elementsIdentify.push.apply(elementsIdentify, edgesList);
-
-                        if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase()) &&
+                        
+                        if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase(), false) &&
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
 
                             if ((text.length > 0 && HtmlUtil.isUrl(text)) ||

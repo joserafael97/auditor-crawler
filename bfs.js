@@ -22,9 +22,8 @@ export default class Bfs {
             node = nodeCrawledResult.node;
             elementsAccessed = nodeCrawledResult.elementsAccessed;
             itens = nodeCrawledResult.itens;
-
         } catch (e) {
-           
+
             logger.warn("Click error: ", e);
         }
 
