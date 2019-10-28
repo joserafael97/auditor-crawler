@@ -172,7 +172,7 @@ Com objetivo de comparar o desempenho do crawler na avaliação da transparênci
 
 Na elaboração dos gabaritos cada item registrado é classificado manualmente, atribuindo na coluna encontrado o valor ***TRUE*** caso a presença no portal seja confirmada e ***FALSE*** caso contrário. Além disso, é registrada a localização onde cada item foi identificado, assegurando a corretude da informação durante a comparação entre o gabarito e os resultados do crawler.
 
-Nesse cenário, devido a dificuldade na elaboração manual de gabaritos para todos 223 municípios do estado da Paraíba foi optado pelo uso de amostra com ***51*** gabaritos (22.8% do total de 223 municípios) que consideram o número de fornecedores de portais no estado e combinações existentes entre eles.
+Nesse cenário, devido a dificuldade na elaboração manual de gabaritos para todos 223 municípios do estado da Paraíba foi optado pelo uso de uma amostra com ***51*** gabaritos de difentes portais de transparência (22.8% do total de 223 municípios) selecionados considerando o número de combinações existentes, sendo elas individuais, uma única empresa genreciando as informações fiscais do site, ou mesclagens, duas ou mais empresas genreciando as informações fiscais do site. Esta amostra torna-se representativa por experimentar e análisar todas as variações possíveis durante a execução do Auditor-Crawler. 
 
 ### Métricas
 
