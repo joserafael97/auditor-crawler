@@ -1,0 +1,30 @@
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Esperança" "aproach=bfs"
+
+{"message":"Connected to mongo!!!","level":"info"}
+(node:14059) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'name' of null
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:125:24)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14059) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 1)
+(node:14059) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:14059) UnhandledPromiseRejectionWarning: MongoError: insertDocument :: caused by :: 11000 E11000 duplicate key error index: auditor-crawler.CriterionKeyWord.$name_1  dup key: { : "Receita Extra Orçamentária" }
+    at Function.create (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/mongodb/lib/core/error.js:44:12)
+    at toError (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/mongodb/lib/utils.js:150:22)
+    at coll.s.topology.insert (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/mongodb/lib/operations/common_functions.js:266:39)
+    at handler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/mongodb/lib/core/sdam/topology.js:973:24)
+    at wireProtocol.(anonymous function) (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/mongodb/lib/core/sdam/server.js:437:5)
+    at /home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/mongodb/lib/core/connection/pool.js:420:18
+    at process._tickCallback (internal/process/next_tick.js:61:11)
+(node:14059) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Esperança" "aproach=bfs"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-10-16T11_40_19_842Z-debug.log

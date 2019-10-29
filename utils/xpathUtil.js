@@ -7,7 +7,8 @@ import { QUERYTODYNAMICELEMENT, QUERYTOSTATICCOMPONENT } from '../models/queryEl
 const EQUALTYPESEARCH = 'tagSearch = "{}"';
 const CONTAINSTYPESEARCH = 'contains(tagSearch, "{}")';
 const XPATHIFRAME = '//*/iframe';
-const UNUSABLEIFRAMES = ['limpo', 'blank'];
+const UNUSABLEIFRAMES = ['limpo', 'blank', 'graficos', 'Graficos', 'DXR.axd', "javascript", 
+'assets','anexo', 'download', 'widget', ".zip", ".jpeg", ".rar", "noticia", "publicidade",];
 const CONSULTAR = "consultar";
 const PESQUISAR = "pesquisar";
 const ACESSAR = "acessar";
@@ -120,6 +121,11 @@ export default class XpathUtil {
     }
 
 
+    static createXpathToExtractIframe() {
+        return new QueryElement('//iframe/@src', '', QUERYTOSTATICCOMPONENT, [], true);
+    }
+
+
     static async createXpathsToExtractDynamicComponents(criterionKeyWordName) {
         let xpaths = [];
         await CriterionKeyWord.findByName(criterionKeyWordName).then(function (criterionKeyWords) {
@@ -128,11 +134,10 @@ export default class XpathUtil {
                 xpaths.push(queryElement);
             }
         });
-
         return xpaths;
     }
 
-    static addGenericTerms(terms ) {
+    static addGenericTerms(terms) {
         terms.push(CONSULTAR);
         terms.push(PESQUISAR);
         terms.push(ACESSAR);
@@ -154,6 +159,7 @@ export default class XpathUtil {
     }
 
     static createXpathQuery(keyWord, terms) {
+        keyWord = TextUtil.normalizeText(keyWord);
         return new QueryElement('//div[contains({tagSearch},"{}")]/following::a[1]'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
             '//button[contains({tagSearch},"{}")]'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
             '//input[contains({tagSearch},"{}")]'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +

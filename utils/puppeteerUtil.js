@@ -19,6 +19,8 @@ export default class PuppeteerUtil {
     static async createPuppetterInstance() {
         const browser = await puppeteer.launch({
             args: [
+                '--unlimited-storage',
+                '--full-memory-crash-report',
                 '--no-sandbox',
                 '--disable-features=site-per-process',
                 '--start-fullscreen',
@@ -44,8 +46,8 @@ export default class PuppeteerUtil {
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
         await mainPage.setViewport({
-            width: 2000,
-            height: 3000
+            width: 3000,
+            height: 2000
         });
 
         return new PuppeteerInstance(browser, [mainPage]);
@@ -67,10 +69,16 @@ export default class PuppeteerUtil {
 
     }
 
-    static async detectContext(page) {
+    static async detectContext(page, urls = [], node = null) {
         if (await PuppeteerUtil.checkXpath(page, XPATHIFRAME)) {
             for (const frame of page.mainFrame().childFrames()) {
-                if (!TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, frame.url())) {
+                let urlFrame = await frame.url();
+                let validation = true;
+                if (node !== null && urls.length > 0 && PuppeteerUtil.checkDuplicateNode(urls, urlFrame, node, urlFrame)) {
+                    validation = false;
+                }
+
+                if (validation && !TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, urlFrame)) {
                     return frame;
                 }
             }
@@ -106,8 +114,10 @@ export default class PuppeteerUtil {
                             page = await PuppeteerUtil.detectContext(page).catch(e => void e);
                         }
                         let element = await PuppeteerUtil.selectElementPage(page, source.getXpath(), source.getValue());
-                        await element.click().catch(e => void e);
-                        await page.waitForNavigation().catch(e => void e);
+                        if (element) {
+                            await element.click().catch(e => void e);
+                            await page.waitForNavigation().catch(e => void e);
+                        }
                     }
                 }
                 page = currentPage;
@@ -147,34 +157,39 @@ export default class PuppeteerUtil {
             return TextUtil.similarityUrls(text, urlsList);
         } else {
             let allNodes = [];
+            let numRepetText = 0
             allNodes.push.apply(allNodes, arrayNodes)
             allNodes.push.apply(allNodes, edgesList)
             const isnum = /^\d+$/.test(text);
+            let isDate = /\d{2}(\/)\d{2}(\/)\d{4}/.test(text);
+
+            text = (/\d{2,20}(\/)\d{4}/.test(text)) && !isDate ? text.substring(text.length - 4, text.length) : text;
             const currentValue = currentNode.getSource().getValue();
 
-            if (isnum) {
+            if (isnum || isDate) {
                 return true;
             }
 
             for (let node of allNodes) {
-                const value = node.getSource().getValue();
-
+                let value = node.getSource().getValue();
+                value = (/\d{2,20}(\/)\d{4}/.test(value)) && !(/\d{2}(\/)\d{2}(\/)\d{4}/.test(value)) ? value.substring(value.length - 4, value.length) : value;
 
                 if (node.getLevel() !== 0) {
-                    if ((HtmlUtil.isUrl(currentValue) && node.getSource().getUrl() === currentUrl)) {
-                        if (((currentValue === value || value === text) ||
-                            (isnum &&
-                                StringSimilarity.compareTwoStrings(value.substring(value.length - 4, value.length),
-                                    text.substring(text.length - 4, text.length)) > 0.6)) ||
-                            StringSimilarity.compareTwoStrings(value, text) > 0.95) {
 
-                            return true;
+                    if (node.getSource().getUrl() === currentUrl || StringSimilarity.compareTwoStrings(node.getSource().getUrl(), currentUrl) > 0.95) {
+                        if ((value === text || currentValue === text) || StringSimilarity.compareTwoStrings(value, text) > 0.95) {
+
+                            numRepetText++;
+                            if (((currentNode.getLevel() + 1) === node.getLevel() && value === text) || (currentValue === text || numRepetText > 4)) {
+                                return true;
+                            }
                         }
                     }
                 }
 
 
             }
+
             return false;
         }
     }

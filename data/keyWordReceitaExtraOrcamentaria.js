@@ -1,5 +1,5 @@
 const keywordSearchRecExtraOrcamentaria = ['consultar receitas extra-orcamentarias', 'extraorcamentaria', 
-    'receitas', 'extra-orcamentaria', 'extra orcamentaria', 'consultar', 'Pesquisar'
+    'receitas', 'extra-orcamentaria', 'extra orcamentaria', 'consultar', 'Pesquisar', "/"+new Date().getFullYear(),
 ];
 
 const identificationKeyWordRecExtraOrcamentaria = {

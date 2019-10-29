@@ -1,5 +1,5 @@
 const keywordSearchDespExtraOrcamentaria = ['despesas extras-orcamentarias', 'extra','consultar Despesas extras orcamentarias','Consultar Despesas Extras','despesaextraorcamentaria.aspx',
-    'despesasextras', 'despesas', 'despesa com diarias', 'locomocao', 'detalhamentos das despesas',  'consultar', 'pesquisar'
+    'despesasextras', 'despesas', 'despesa com diarias', 'locomocao', 'detalhamentos das despesas',  'consultar', 'pesquisar', "/"+new Date().getFullYear(),
 ];
 
 const identificationKeyWordDespExtraOrcamentaria = {

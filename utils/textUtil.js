@@ -14,11 +14,14 @@ export default class TextUtil {
     }
 
 
-
-    static checkTextContainsArray(array, text) {
+    static checkTextContainsArray(array, text, withOutNormalization = true) {
         for (let index = 0; index < array.length; index++) {
-            const value = TextUtil.normalizeText(TextUtil.removeWhiteSpace(array[index]));
+            const value = withOutNormalization ? TextUtil.normalizeText(TextUtil.removeWhiteSpace(array[index])) : 
+            TextUtil.removeWhiteSpace(array[index]).toLowerCase();
+            text = text.toLowerCase();
+
             if (text === value || text.includes(value)) {
+
                 return true;
             }
 
@@ -33,23 +36,22 @@ export default class TextUtil {
         if (criterionKeyWordName.indexOf(' ') >= 0) {
             terms = criterionKeyWordName.split(" ");
         }
-        
+
         terms.push(criterionKeyWordName)
 
         return terms;
 
-    } 
+    }
 
     static similarityTwoString(string01, string02) {
         return StringSimilarity.compareTwoStrings(string01, string02) > 0.95;
     }
 
-    static checkUrlRelvant(urlPage, termosCriterion) {
-        const url1Isnum = /^\d+$/.test(urlPage);
-        let uri1 = !url1Isnum ? HtmlUtil.extractUri(urlPage).replace('/', '').replace(/[0-9]/g, '') : HtmlUtil.extractUri(urlPage).replace('/', '');
-
-        if (StringSimilarity.compareTwoStrings(uri1, termosCriterion) > 0.95 || TextUtil.checkTextContainsInText(termosCriterion, uri1)) {
-            return true;
+    static checkUrlRelvant(urlPage, criterionName) {
+        for (const term in TextUtil.extractTermsCriterionName(criterionName)) {
+            if (TextUtil.checkTextContainsInText(term, urlPage)) {
+                return true;
+            }
         }
 
         return false;
@@ -74,9 +76,14 @@ export default class TextUtil {
 
     }
 
-    static similarityUrls(url1, UrlsList) {
+    static similarityUrls(url1, UrlsList, similarityValue = 0.93) {
+        url1 = url1.substr(url1.length - 1) === "/" ? url1.slice(0, -1) : url1;
 
         for (const currentUrl of UrlsList) {
+            if ((StringSimilarity.compareTwoStrings(currentUrl, url1) > similarityValue)) {
+                return true;
+            }
+
             const host1 = HtmlUtil.extractHost(url1);
             const host2 = HtmlUtil.extractHost(currentUrl);
             const url1Isnum = /^\d+$/.test(url1);
@@ -92,11 +99,11 @@ export default class TextUtil {
                     uri2 = uri2.split('/')[uri2.split('/').length - 2];
                 }
 
-                if (StringSimilarity.compareTwoStrings(uri1, uri2) > 0.95) {
+                if (StringSimilarity.compareTwoStrings(uri1, uri2) > similarityValue) {
                     return true;
                 }
             } else {
-                if (StringSimilarity.compareTwoStrings(url1, currentUrl) > 0.95) {
+                if (StringSimilarity.compareTwoStrings(url1, currentUrl) > similarityValue) {
                     return true;
                 }
 
@@ -113,7 +120,9 @@ export default class TextUtil {
             TextUtil.checkTextContainsArray(tagNameParents, 'th') ? true :
                 TextUtil.checkTextContainsArray(tagNameParents, 'thead') ? true :
                     TextUtil.checkTextContainsArray(tagNameParents, 'tr') ? true :
-                        TextUtil.checkTextContainsArray(tagNameParents, 'li') ? true : false
+                        TextUtil.checkTextContainsArray(tagNameParents, 'li') ? true :
+                            TextUtil.checkTextContainsArray(tagNameParents, 'span') ? true : false
+
 
     }
 
@@ -144,17 +153,17 @@ export default class TextUtil {
 
     static validateItemSearch(criterionName) {
         const unusableTerms = {
-            'Despesa Extra Orçamentária': ['despesa orcamentaria', 'empenho', 'servicos', 'locomocao', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',
+            'Despesa Extra Orçamentária': ['despesas-quadro-geral', 'gerenciamento-frota', 'despesas-favorecidos','quadro-geral', 'detalhamento', 'previsao', 'arrecadacao', 'sagresonline.tce.pb.gov.br', 'despesa orcamentaria', 'empenho', 'servicos', 'locomocao', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',
                 'demonstrativo', 'outras despesas', 'restos a pagar', ' por orgao', 'obras', 'diarias', 'passagens', 'transferencia', 'programatica', 'fornecedor',],
-            'Despesa Orçamentária': ['extra', 'elemento', 'favorecido', 'orgao', 'programatica', 'obras', 'passagens', 'transferencia', 'diarias', 'receitas', 'outras despesas', 'receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'restos a pagar'],
-            'Receita Orçamentária': ['extra', 'divisorReceitaCompetencia', 'deducao', 'transferencias', 'transferencia', 'detalhado', 'receita de contribuicoes', 'receita de servicos', 'receita patrimonial', 'comparativo', 'restos a pagar', 'prevista', 'resumo geral', 'loalei', 'execucao', 'outras receitas', 'despesas', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo'],
-            'Receita Extra Orçamentária': ['transferencias', 'receitas orcamentarias', 'despesas', 'licitacao', 'licitacoes', 'despesa', 'pessoal', 'restos a pagar', 'folha de pagamento', 'demonstrativo', 'outras receitas'],
-            'Licitação': ['extra', 'contratos', 'receitas', 'despesa', 'despesas', 'receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'consultar restos a pagar'],
+            'Despesa Orçamentária': ['sagresonline.tce.pb.gov.br', 'extra', 'elemento', 'favorecido', 'orgao', 'programatica', 'obras', 'passagens', 'transferencia', 'diarias', 'receitas', 'outras despesas', 'receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'restos a pagar'],
+            'Receita Orçamentária': ['o que e receita?', 'sagresonline.tce.pb.gov.br', 'despesa', 'extra', 'divisorReceitaCompetencia', 'deducao', 'transferencias', 'transferencia', 'detalhado', 'receita de contribuicoes', 'receita de servicos', 'receita patrimonial', 'comparativo', 'restos a pagar', 'prevista', 'resumo geral', 'loalei', 'execucao', 'outras receitas', 'despesas', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo'],
+            'Receita Extra Orçamentária': ['receitas-quadro-geral','quadro-geral', 'detalhamento', 'previsao', 'arrecadacao', 'sagresonline.tce.pb.gov.br', 'transferencias', 'receitas orcamentarias', 'despesas', 'licitacao', 'licitacoes', 'despesa', 'pessoal', 'restos a pagar', 'folha de pagamento', 'demonstrativo', 'outras receitas'],
+            'Licitação': ['o que e uma licitacao?', 'receita', 'extra', 'extraorcamentarias', 'sagresonline.tce.pb.gov.br', 'contratos', 'receitas', 'despesa', 'despesas', 'receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'consultar restos a pagar'],
             'Quadro Pessoal': ['extra', 'receitas', 'outras despesas', 'receita', 'licitacao', 'licitacoes', 'demonstrativo', 'consultar restos a pagar']
 
         };
 
-        const unusableCommumTerms = ["javascript", 'foot', 'token', 'maps', 'filtro', 'xmlrpc', 'feed', 'tutorial', "pwd", "transparencia.rn.gov.br", "css", "recuperar-senha", "cadastro", '.xml', "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
+        const unusableCommumTerms = ["javascript", 'themes', 'wp-content', 'form', 'addtoany', 'staticxx', 'e=101095', 'insira o texto', 'facebook', 'assets', 'anexo', 'ldolei', 'http://sagresonline.tce.pb.gov.br#/municipal/execucao-orcamentaria', 'foot', 'graficos', 'token', 'maps', 'filtro', 'xmlrpc', 'feed', 'tutorial', "pwd", "transparencia.rn.gov.br", "css", "recuperar-senha", "cadastro", '.xml', "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
             '.js', 'download', 'widget', ".zip", ".jpeg", ".rar", "noticia", "publicidade", "noticia", "pinterest.com", 'javascript', 'wp-json', 'json'
         ];
 

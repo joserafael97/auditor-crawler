@@ -1,5 +1,5 @@
 const keywordSearchRecOrcamentaria = ['ORÇAMENTÁRIA', 'Receitas', 'receita-orcamentaria', 'Consultar Receitas Orçamentárias',
-    'receita prevista com arrecadada', 'Receitas Orçamentárias', 'receita', 'Consultar', 'consultando', 'DetalhesReceita', 'Pesquisar'
+    'receita prevista com arrecadada', 'Receitas Orçamentárias', 'receita', 'Consultar', 'consultando', 'DetalhesReceita', 'Pesquisar', "/"+new Date().getFullYear(),
 ];
 
 const identificationKeyWordRecOrcamentaria = {

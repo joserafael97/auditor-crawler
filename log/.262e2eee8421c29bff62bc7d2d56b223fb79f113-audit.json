@@ -6,11 +6,6 @@
     "auditLog": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/.262e2eee8421c29bff62bc7d2d56b223fb79f113-audit.json",
     "files": [
         {
-            "date": 1557171362605,
-            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Mo-05-yyyy",
-            "hash": "2939818f0c14f2c3af73014d4cd781a6"
-        },
-        {
             "date": 1557235901077,
             "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Tu-05-yyyy",
             "hash": "e28a3c5efc3dd3b986d0208f4499854a"
@@ -124,6 +119,16 @@
             "date": 1570469616083,
             "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Mo-10-yyyy",
             "hash": "61e073bafa3a5114d499dcff7a8e9ea0"
+        },
+        {
+            "date": 1570889196510,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Sa-10-yyyy",
+            "hash": "22503df106ece3a136a61f5dd8947527"
+        },
+        {
+            "date": 1570935636257,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Su-10-yyyy",
+            "hash": "519f00549035200bb98b645090eed649"
         }
     ]
 }
