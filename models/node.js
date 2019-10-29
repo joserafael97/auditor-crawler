@@ -76,6 +76,17 @@ export default class Node {
         this.features[FeaturesConst.URL_RELEVANT] = 0;
     }
 
+    getChildrenResearchedNodes(){
+        let nodes = [];
+        for (const node of this.edges){
+            if (node.getResearched()){
+                nodes.push(node);
+            }
+        }
+
+        return nodes;
+    }
+
 
     updateParentsReward() {
         if (this.parent !== null) {
@@ -92,6 +103,20 @@ export default class Node {
         }
     }
 
+    updateRewardNodes(){
+        if (this.rewardValue > 0){
+            if (this.getParent() !== null && this.getParent().getLevel > 0){
+                this.getParent().setRewardValue((this.getParent().getRewardValue() + this.rewardValue));
+                for (let node of this.getParent().getEdges()) {
+                    node.setRewardValue((node.getRewardValue() + this.rewardValue));
+                }
+            }
+            for (let node of this.edges) {
+                node.setRewardValue((node.getRewardValue() + this.rewardValue));
+            }
+        }
+    }
+
     parentsReward(node) {
         let nodeActualy = node;
         let iterationCount = 0;
@@ -105,7 +130,8 @@ export default class Node {
                         done: false,
                     }
                     nodeActualy = nodeActualy.getParent();
-                    nodeActualy.setRewardValue(node.rewardValue == 1 ? 1 : 0);
+                    if (nodeActualy.getLevel() > 1)
+                        nodeActualy.setRewardValue(node.rewardValue == 1 ? 1 : 0);
                     iterationCount++;
                     return result;
                 } else {

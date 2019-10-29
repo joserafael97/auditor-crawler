@@ -114,8 +114,10 @@ export default class PuppeteerUtil {
                             page = await PuppeteerUtil.detectContext(page).catch(e => void e);
                         }
                         let element = await PuppeteerUtil.selectElementPage(page, source.getXpath(), source.getValue());
-                        await element.click().catch(e => void e);
-                        await page.waitForNavigation().catch(e => void e);
+                        if (element) {
+                            await element.click().catch(e => void e);
+                            await page.waitForNavigation().catch(e => void e);
+                        }
                     }
                 }
                 page = currentPage;
@@ -174,15 +176,11 @@ export default class PuppeteerUtil {
 
                 if (node.getLevel() !== 0) {
 
-                    console.log("=================================node.getSource().getUrl() === currentUrl: ", node.getSource().getUrl() === currentUrl)
-                    console.log("===== text init", text)
-                    console.log("StringSimilarity.compareTwoStrings(node.getSource().getUrl(), currentUrl) > 0.95: ",StringSimilarity.compareTwoStrings(node.getSource().getUrl(), currentUrl) > 0.95);
-
                     if (node.getSource().getUrl() === currentUrl || StringSimilarity.compareTwoStrings(node.getSource().getUrl(), currentUrl) > 0.95) {
                         if ((value === text || currentValue === text) || StringSimilarity.compareTwoStrings(value, text) > 0.95) {
-                            
+
                             numRepetText++;
-                            if (((currentNode.getLevel() + 1) === node.getLevel() && value === text) || (currentValue === text || numRepetText > 4)) {                       
+                            if (((currentNode.getLevel() + 1) === node.getLevel() && value === text) || (currentValue === text || numRepetText > 4)) {
                                 return true;
                             }
                         }

@@ -20,6 +20,7 @@ export default class BanditProcess {
         let page = puppeteer.getFirstPage();
         const currentPage = page;
         const lengthQueueBefore = queue.length;
+        node.initializeFeatures();
 
         try {
             const nodeCrawledResult = await CrawlerUtil.crawlerNode(criterion, evaluation, node, page, puppeteer, elementsAccessed, itens, queue);
@@ -40,15 +41,21 @@ export default class BanditProcess {
         if (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
 
             epsilonGreedyAlg.updateNumArms(queue.length);
+            node.updateRewardNodes();
+
 
             if (node.getLevel() > 1 && lengthQueueBefore < queue.length) {
-                for (let i = lengthQueueBefore; i < queue.length; i++) {
-                    if (queue[i].getMaxReward() > 0)
-                        epsilonGreedyAlg.update(i, queue[i].getMaxReward())
+                for (let i = 0; i < queue.length; i++) {
+                    const maxReward = queue[i].getMaxReward();
+                    if (maxReward > 0)
+                        epsilonGreedyAlg.update(i, maxReward)
                 }
             }
 
+            console.log("values ======================== ", epsilonGreedyAlg.values)
+
             const index = epsilonGreedyAlg.chooseArm();
+            console.log("index ======================== ", index)
 
             const newNode = queue[index]
             queue.splice(index, 1);

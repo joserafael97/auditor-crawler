@@ -16,11 +16,11 @@ module.exports  = {
     URL_RELEVANT_PARENT: "url_relevant_parent", 
   
     //brothers
-    TERM_CRITERION_BRORHER_1: "have_term_criterion_parent_brother_1",
-    ONE_ITEM_CRITERIO_BRORHER_1: "have_one_item_criterio_parent_brother_1",
-    MORE_ITEM_CRITERIO_BRORHER_1: "have_more_item_criterio_parent_brother_1",
-    MORE_THAN_ONE_NEW_COMPONENT_BRORHER_1: 'have_more_than_one_new_component_parent_brother_1',
-    URL_RELEVANT_PARENT_BRORHER_1: "url_relevant_parent_brother_1",
+    TERM_CRITERION_BRORHER: "have_term_criterion_brother",
+    ONE_ITEM_CRITERIO_BRORHER: "have_one_item_criterio_brother",
+    MORE_ITEM_CRITERIO_BRORHER: "have_more_item_criterio_brother",
+    MORE_THAN_ONE_NEW_COMPONENT_BRORHER: 'have_more_than_one_new_component_brother',
+    URL_RELEVANT_BRORHER: "url_relevant_brother",
 
     TERM_CRITERION_BRORHER_2: "have_term_criterion_parent_brother_2",
     ONE_ITEM_CRITERIO_BRORHER_2: "have_one_item_criterio_parent_brother_2",

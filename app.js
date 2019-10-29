@@ -87,7 +87,7 @@ let selectAproachToRun = async (aproachSelected, root, criterion, evaluation, it
             resultCrawlingCriterion = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1), [], [], 0, 1, trainModel).catch(logErrorAndExit)
 
         } else {
-            resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(10000, 0.1)).catch(logErrorAndExit)
+            resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(100, 0.1)).catch(logErrorAndExit)
         }
 
 
@@ -158,9 +158,9 @@ let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
 
 startCrawler(evaluation, criterionDespesaOrc);
-startCrawler(evaluation, criterionDespesaExtra);
-startCrawler(evaluation, criterionReceitaOrc);
-startCrawler(evaluation, criterionReceitaExtra);
-startCrawler(evaluation, criterionLicit);
-startCrawler(evaluation, criterionPessoal);
+// startCrawler(evaluation, criterionDespesaExtra);
+// startCrawler(evaluation, criterionReceitaOrc);
+// startCrawler(evaluation, criterionReceitaExtra);
+// startCrawler(evaluation, criterionLicit);
+// startCrawler(evaluation, criterionPessoal);
 

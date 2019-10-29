@@ -82,6 +82,7 @@ export default class CrawlerUtil {
             let element = node.getSource().getElement();
             element = await PuppeteerUtil.selectElementPage(page, xpath, value);
             await element.click();
+            await page.waitForNavigation().catch(e => void e);
             const pages = await puppeteer.getBrowser().pages()
 
             if (pages.length > 1) {
@@ -201,8 +202,6 @@ export default class CrawlerUtil {
                     text = TextUtil.normalizeText(TextUtil.removeWhiteSpace(text)).length > 0 ? text :
                         (value !== undefined && value.length > 0) ? value : '';
 
-
-
                     if (queryElement.getTypeQuery() === QUERYTOSTATICCOMPONENT) {
                         text = HtmlUtil.isUrl(text) ? text :
                             HtmlUtil.isUrl(urljoin(HtmlUtil.extractHostname(currentUrl), text)) ?
@@ -285,9 +284,11 @@ export default class CrawlerUtil {
                 });
                 item.proof.length > 0 ? FileUtil.deleteFile(item.proof) : '';
                 item.proof = path;
-                numberItensIdentify = (item.found && item.valid) ? numberItensIdentify + 1 : numberItensIdentify;
+                numberItensIdentify = item.found ? ++numberItensIdentify: numberItensIdentify;
             }
         }
+        CrawlerUtil.checkIdentificationItens(itens, await page.url());
+
         node.setRewardValue(numberItensIdentify > 0 ? 1 : 0);
         result[FeaturesConst.ONE_ITEM_CRITERIO] = numberItensIdentify === 1 ? 1 : 0;
         result[FeaturesConst.MORE_ITEM_CRITERIO] = numberItensIdentify > 1 ? 1 : 0;
@@ -295,7 +296,6 @@ export default class CrawlerUtil {
             (await CrawlerUtil.CheckCriterionTermExistsInPage(criterionName, node, page)) ? 1 : 0;
 
         node.setFeatures(result)
-        CrawlerUtil.checkIdentificationItens(itens, await page.url());
         return itens;
     }
 
