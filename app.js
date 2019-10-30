@@ -158,9 +158,9 @@ let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
 
 startCrawler(evaluation, criterionDespesaOrc);
-// startCrawler(evaluation, criterionDespesaExtra);
-// startCrawler(evaluation, criterionReceitaOrc);
-// startCrawler(evaluation, criterionReceitaExtra);
-// startCrawler(evaluation, criterionLicit);
-// startCrawler(evaluation, criterionPessoal);
+startCrawler(evaluation, criterionDespesaExtra);
+startCrawler(evaluation, criterionReceitaOrc);
+startCrawler(evaluation, criterionReceitaExtra);
+startCrawler(evaluation, criterionLicit);
+startCrawler(evaluation, criterionPessoal);
 
