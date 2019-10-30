@@ -32,6 +32,7 @@ const logErrorAndExit = err => {
 
 let trainModel = [];
 connectToDb();
+const dateStart = new Date();
 
 let run = async (criterion, evaluation, root) => {
 
@@ -44,9 +45,8 @@ let run = async (criterion, evaluation, root) => {
     evaluation = resultEvaluation.evaluation;
 
     evaluation.dateEnd = new Date();
-    const duration = evaluation.dateEnd.getTime() - evaluation.date.getTime();
-    const delta = Math.abs(new Date() - evaluation.date) / 1000;
-    const minutes = Math.floor(delta / 60) % 60;
+    const duration = (evaluation.dateEnd - evaluation.date);
+    const minutes = Math.round(((duration % 86400000) % 3600000) / 60000); 
     evaluation.dateEnd = evaluation.dateEnd.getTime();
 
     evaluation.duration = duration;
@@ -142,7 +142,7 @@ let startCrawler = async (evaluation, criterion) => {
 process.setMaxListeners(0);
 
 let evaluation = Evaluation({
-    date: new Date(),
+    date: dateStart,
     county: '',
     cityHallUrl: '',
     transparencyPortalUrl: '',
