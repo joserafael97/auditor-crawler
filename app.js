@@ -32,6 +32,7 @@ const logErrorAndExit = err => {
 
 let trainModel = [];
 connectToDb();
+const dateStart = new Date();
 
 let run = async (criterion, evaluation, root) => {
 
@@ -44,9 +45,7 @@ let run = async (criterion, evaluation, root) => {
     evaluation = resultEvaluation.evaluation;
 
     evaluation.dateEnd = new Date();
-    const duration = evaluation.dateEnd.getTime() - evaluation.date.getTime();
-    const delta = Math.abs(new Date() - evaluation.date) / 1000;
-    const minutes = Math.floor(delta / 60) % 60;
+    const minutes = Math.abs((((evaluation.dateEnd.getTime() - evaluation.date.getTime()) / 1000)/60));
     evaluation.dateEnd = evaluation.dateEnd.getTime();
 
     evaluation.duration = duration;
@@ -87,7 +86,7 @@ let selectAproachToRun = async (aproachSelected, root, criterion, evaluation, it
             resultCrawlingCriterion = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1), [], [], 0, 1, trainModel).catch(logErrorAndExit)
 
         } else {
-            resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(100, 0.1)).catch(logErrorAndExit)
+            resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(1000, 0.1)).catch(logErrorAndExit)
         }
 
 
@@ -142,7 +141,7 @@ let startCrawler = async (evaluation, criterion) => {
 process.setMaxListeners(0);
 
 let evaluation = Evaluation({
-    date: new Date(),
+    date: dateStart,
     county: '',
     cityHallUrl: '',
     transparencyPortalUrl: '',
@@ -158,9 +157,9 @@ let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
 
 startCrawler(evaluation, criterionDespesaOrc);
-// startCrawler(evaluation, criterionDespesaExtra);
-// startCrawler(evaluation, criterionReceitaOrc);
-// startCrawler(evaluation, criterionReceitaExtra);
-// startCrawler(evaluation, criterionLicit);
-// startCrawler(evaluation, criterionPessoal);
+startCrawler(evaluation, criterionDespesaExtra);
+startCrawler(evaluation, criterionReceitaOrc);
+startCrawler(evaluation, criterionReceitaExtra);
+startCrawler(evaluation, criterionLicit);
+startCrawler(evaluation, criterionPessoal);
 

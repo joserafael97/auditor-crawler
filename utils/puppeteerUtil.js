@@ -180,7 +180,7 @@ export default class PuppeteerUtil {
                         if ((value === text || currentValue === text) || StringSimilarity.compareTwoStrings(value, text) > 0.95) {
 
                             numRepetText++;
-                            if (((currentNode.getLevel() + 1) === node.getLevel() && value === text) || (currentValue === text || numRepetText > 4)) {
+                            if (((currentNode.getLevel() + 1) === node.getLevel() && value === text) || (currentValue === text || numRepetText > 3)) {
                                 return true;
                             }
                         }
