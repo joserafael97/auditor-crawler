@@ -45,8 +45,7 @@ let run = async (criterion, evaluation, root) => {
     evaluation = resultEvaluation.evaluation;
 
     evaluation.dateEnd = new Date();
-    const duration = (evaluation.dateEnd - evaluation.date);
-    const minutes = Math.round(((duration % 86400000) % 3600000) / 60000); 
+    const minutes = Math.abs((((evaluation.dateEnd.getTime() - evaluation.date.getTime()) / 1000)/60));
     evaluation.dateEnd = evaluation.dateEnd.getTime();
 
     evaluation.duration = duration;
