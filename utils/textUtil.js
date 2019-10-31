@@ -36,7 +36,7 @@ export default class TextUtil {
         if (criterionKeyWordName.indexOf(' ') >= 0) {
             terms = criterionKeyWordName.split(" ");
         }
-
+        criterionKeyWordName = criterionKeyWordName.toLowerCase()
         terms.push(criterionKeyWordName)
 
         return terms;
@@ -48,7 +48,10 @@ export default class TextUtil {
     }
 
     static checkUrlRelvant(urlPage, criterionName) {
-        for (const term in TextUtil.extractTermsCriterionName(criterionName)) {
+      
+        urlPage = urlPage.toLowerCase();
+
+        for (const term of TextUtil.extractTermsCriterionName(criterionName)) {
             if (TextUtil.checkTextContainsInText(term, urlPage)) {
                 return true;
             }
@@ -164,7 +167,7 @@ export default class TextUtil {
         };
 
         const unusableCommumTerms = ["javascript", 'themes', 'wp-content', 'form', 'addtoany', 'staticxx', 'e=101095', 'insira o texto', 'facebook', 'assets', 'anexo', 'ldolei', 'http://sagresonline.tce.pb.gov.br#/municipal/execucao-orcamentaria', 'foot', 'graficos', 'token', 'maps', 'filtro', 'xmlrpc', 'feed', 'tutorial', "pwd", "transparencia.rn.gov.br", "css", "recuperar-senha", "cadastro", '.xml', "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
-            '.js', 'download', 'widget', ".zip", ".jpeg", ".rar", "noticia", "publicidade", "noticia", "pinterest.com", 'javascript', 'wp-json', 'json'
+            '.js', 'download', 'widget', ".zip",'.jpg',  ".jpeg", ".rar", "noticia", "publicidade", "noticia", "pinterest.com", 'javascript', 'wp-json', 'json'
         ];
 
         let unusableCommumTermsFinal = unusableTerms[criterionName];

@@ -22,7 +22,6 @@ export default class BanditProcessClassifier {
         let page = puppeteer.getFirstPage();
         const currentPage = page;
         const lengthQueueBefore = queue.length;
-        node.initializeFeatures();
 
         try {
             const nodeCrawledResult = await CrawlerUtil.crawlerNode(criterion, evaluation, node, page, puppeteer, elementsAccessed, itens, queue, true);
@@ -50,14 +49,14 @@ export default class BanditProcessClassifier {
             newData[FeaturesConst.TERM_CRITERION_PARENT] = node.getParent().getFeatures()[FeaturesConst.TERM_CRITERION];
             newData[FeaturesConst.ONE_ITEM_CRITERIO_PARENT] = node.getParent().getFeatures()[FeaturesConst.ONE_ITEM_CRITERIO];
             newData[FeaturesConst.MORE_ITEM_CRITERIO_PARENT] = node.getParent().getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO];
-            
+
             let urlRelevantBrother = 0;
             let moreThanOneNewComponentBrother = 0;
             let oneItemCriterionBrother = 0;
             let moreItemCriterionBrother = 0;
             let termCriterionBrother = 0;
 
-            for (const brotherNode of node.getParent().getChildrenResearchedNodes()){
+            for (const brotherNode of node.getParent().getChildrenResearchedNodes()) {
                 urlRelevantBrother = brotherNode.getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO] + urlRelevantBrother;
                 moreThanOneNewComponentBrother = brotherNode.getFeatures()[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT] + moreThanOneNewComponentBrother;
                 oneItemCriterionBrother = brotherNode.getFeatures()[FeaturesConst.ONE_ITEM_CRITERIO] + oneItemCriterionBrother;
@@ -72,8 +71,8 @@ export default class BanditProcessClassifier {
             newData[FeaturesConst.MORE_ITEM_CRITERIO_BRORHER] = moreItemCriterionBrother;
             newData[FeaturesConst.TERM_CRITERION_BRORHER] = termCriterionBrother;
 
-            newData["result"] = (node.getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO] === 1 || node.getFeatures()[FeaturesConst.ONE_ITEM_CRITERIO] === 1) ? 'identification_item' : node.getEdges().length > 0 ? 'component_relevant' : 'no_relevant' ;
-            
+            newData["result"] = (node.getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO] === 1 || node.getFeatures()[FeaturesConst.ONE_ITEM_CRITERIO] === 1) ? 'identification_item' : node.getEdges().length > 0 ? 'component_relevant' : 'no_relevant';
+
             trainModel.push(newData);
         }
 
@@ -93,8 +92,6 @@ export default class BanditProcessClassifier {
             const index = epsilonGreedyAlg.chooseArm();
             console.log("index ======================== ", index)
             let newNode = queue[index]
-            newNode.getFeatures()[FeaturesConst.URL_RELEVANT] = TextUtil.checkUrlRelvant(node.getSource().getUrl(), criterion.name) ? 1 : 0;
-            console.log("featuare init new node ======================== ", newNode.getFeatures());
 
             queue.splice(index, 1);
             epsilonGreedyAlg.values.splice(index, 1);
@@ -114,7 +111,7 @@ export default class BanditProcessClassifier {
         await puppeteer.getBrowser().close()
 
         logger.info("Returnin Criterion: " + criterion.name);
-        return { "itens": itens, "contNodeNumber": contNodeNumber,  "trainModel": trainModel};
+        return { "itens": itens, "contNodeNumber": contNodeNumber, "trainModel": trainModel };
 
     };
 

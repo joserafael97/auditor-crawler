@@ -45,7 +45,8 @@ let run = async (criterion, evaluation, root) => {
     evaluation = resultEvaluation.evaluation;
 
     evaluation.dateEnd = new Date();
-    const minutes = Math.abs((((evaluation.dateEnd.getTime() - evaluation.date.getTime()) / 1000)/60));
+    const duration = (evaluation.dateEnd.getTime() - evaluation.date.getTime());
+    const minutes = Math.round(Math.abs(((duration/ 1000)/60)));
     evaluation.dateEnd = evaluation.dateEnd.getTime();
 
     evaluation.duration = duration;
@@ -119,8 +120,6 @@ const initColletions = async () => {
     });
 }
 
-
-
 let startCrawler = async (evaluation, criterion) => {
 
     await initColletions();
@@ -147,14 +146,12 @@ let evaluation = Evaluation({
     transparencyPortalUrl: '',
 });
 
-
 let criterionDespesaOrc = CrawlerUtil.createCriterion('Despesa Orçamentária');
 let criterionDespesaExtra = CrawlerUtil.createCriterion('Despesa Extra Orçamentária');
 let criterionReceitaOrc = CrawlerUtil.createCriterion('Receita Orçamentária');
 let criterionReceitaExtra = CrawlerUtil.createCriterion('Receita Extra Orçamentária');
 let criterionLicit = CrawlerUtil.createCriterion('Licitação');
 let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
-
 
 startCrawler(evaluation, criterionDespesaOrc);
 startCrawler(evaluation, criterionDespesaExtra);
