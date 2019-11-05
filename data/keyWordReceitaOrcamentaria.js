@@ -7,15 +7,15 @@ const identificationKeyWordRecOrcamentaria = {
         'fonte de recurso', 'Entidade'
     ],
     "previsao": ['valor previsto(r$)', 'receita prevista', 'previsao de receitas',
-        'Valor Previsto', 'Previsão',
+        'Valor Previsto', 'Previsão', 'Prev. Inicial', 
         'prevista'
     ],
     "arrecadacao": ['valor arrecadado(r$)', 'receita arrecadada', 'realizada ate o mes',
         'Arrecadada',
         'arrecadado ate o momento', 'arrecadacao de receitas',
-        'Valor Arrecadado', 'Arrecadação'
+        'Valor Arrecadado', 'Arrecadação', 'Arrec. Total'
     ],
-    "lancado": ['valor lancado(r$)', 'valor', 'lançada'],
+    "lancado": ['valor lancado(r$)', 'valor', 'lançada' , 'Prev. Atualizada'],
     "categoria_economica": ['categoria da receita', 'receita l.o.a.', 'CATEGORIA ECONÔMICA'],
     "origem": ['origem dos recursos a conta', 'descricao da receita', 'nome',
         'descricao receita (STN)',  'Descrição STN', 'Descrição',

@@ -88,7 +88,11 @@ let selectAproachToRun = async (aproachSelected, root, criterion, evaluation, it
         if (classifierCli === 'naivebayes') {
             let train = await readTrainData();
             let nbModel = new MultinomialNB();
-            nbModel.train(train['x_train'], train['y_train'])
+
+            if (train.length > 0) {
+                nbModel.train(train['x_train'], train['y_train'])
+            }
+            
             resultCrawlingCriterion = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, nbModel, new EpsilonGreedy(10000, 0.1), [], [], 0, 1, trainModel).catch(logErrorAndExit)
 
         } else {
@@ -111,9 +115,15 @@ let selectAproachToRun = async (aproachSelected, root, criterion, evaluation, it
 }
 
 const readTrainData = async () => {
-    const dataTrain = await csv().fromFile('test.csv');;
+    let dataTrain = [];
     let data = [];
     let labels = [];
+
+    try {
+        dataTrain = await csv().fromFile('test.csv');
+    } catch (e) {
+        logger.info("not found file");
+    }
 
     for (const item of dataTrain) {
         data.push([
@@ -186,9 +196,9 @@ let criterionLicit = CrawlerUtil.createCriterion('Licitação');
 let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
 startCrawler(evaluation, criterionDespesaOrc);
-//startCrawler(evaluation, criterionDespesaExtra);
-//startCrawler(evaluation, criterionReceitaOrc);
-//startCrawler(evaluation, criterionReceitaExtra);
-//startCrawler(evaluation, criterionLicit);
-//startCrawler(evaluation, criterionPessoal);
+startCrawler(evaluation, criterionDespesaExtra);
+startCrawler(evaluation, criterionReceitaOrc);
+startCrawler(evaluation, criterionReceitaExtra);
+startCrawler(evaluation, criterionLicit);
+startCrawler(evaluation, criterionPessoal);
 

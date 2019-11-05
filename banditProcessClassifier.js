@@ -49,18 +49,19 @@ export default class BanditProcessClassifier {
             epsilonGreedyAlg.updateNumArms(queue.length);
             //node.updateRewardNodes();
 
-            if (node.getLevel() > 1) {
+            if (node.getLevel() > 0) {
                 for (let i = 0; i < queue.length; i++) {
-                    xPred = this.formatData(this.getFeaturesWithOutResultNode(queue[i]));
-                    console.log("---------xPred--------------", xPred)
-                    const maxReward = queue[i].getMaxReward();
-                    if (maxReward > 0)
-                        epsilonGreedyAlg.update(i, maxReward)
+                    let xPred = this.formatData(this.getFeaturesWithOutResultNode(queue[i]));
+                    const predict = model.predict([xPred]);
+                    if (predict[0] > 0)
+                        epsilonGreedyAlg.update(i, predict[0])
                 }
             }
 
             const index = epsilonGreedyAlg.chooseArm();
             console.log("index ======================== ", index)
+            console.log("index ======================== ", epsilonGreedyAlg.values)
+
             let newNode = queue[index]
 
             queue.splice(index, 1);
@@ -106,7 +107,6 @@ export default class BanditProcessClassifier {
             oneItemCriterionBrother = brotherNode.getFeatures()[FeaturesConst.ONE_ITEM_CRITERIO] + oneItemCriterionBrother;
             moreItemCriterionBrother = brotherNode.getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO] + moreItemCriterionBrother;
             termCriterionBrother = brotherNode.getFeatures()[FeaturesConst.TERM_CRITERION] + termCriterionBrother;
-
         }
 
         newData[FeaturesConst.URL_RELEVANT_BRORHER] = urlRelevantBrother;

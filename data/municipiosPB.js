@@ -65,7 +65,51 @@ const counties = [
         cityHallUrl:'http://www.joaopessoa.pb.gov.br',
         transparencyPortalUrl: 'https://transparencia.joaopessoa.pb.gov.br',
         population: 0
-    }
+    },
+
+    {
+        name: 'Areia de Baraúnas',
+        codSepro: '0448',
+        empresas: [PUBLICSOFT, EASYWEB, E_TICONS],
+        cityHallUrl:'http://areiadebaraunas.pb.gov.br',
+        transparencyPortalUrl: 'http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia',
+        population: 0
+    }, 
+
+    {
+        name: 'Curral de Cima',
+        codSepro: '0476',
+        empresas: [ALFA_CONSULTORIA, ELMAR],
+        cityHallUrl:'http://www.curraldecima.pb.gov.br',
+        transparencyPortalUrl: 'http://transparencia.curraldecima.pb.gov.br',
+        population: 0
+    },
+    {
+        name: 'Itabaiana',
+        codSepro: '2039',
+        empresas: [PORTAL_PROPRIO, ELMAR],
+        cityHallUrl:'http://itabaiana.pb.gov.br/site/',
+        transparencyPortalUrl: 'http://transparencia.itabaiana.pb.gov.br',
+        population: 0
+    },
+
+    {
+        name: 'Bom Sucesso',
+        codSepro: '1947',
+        empresas: [PORTAL_PROPRIO, ELMAR],
+        cityHallUrl:'http://bomsucesso.pb.gov.br',
+        transparencyPortalUrl: 'http://bomsucesso.pb.gov.br/portal-da-transparencia',
+        population: 0
+    },
+
+    {
+        name: 'Pedra Lavrada',
+        codSepro: '2039',
+        empresas: [PORTAL_PROPRIO, ELMAR],
+        cityHallUrl:'http://pedralavrada.pb.gov.br',
+        transparencyPortalUrl: 'http://portaldatransparencia.lhsystem.com.br/PMPL',
+        population: 0
+    },
 ];
 
 export {counties};

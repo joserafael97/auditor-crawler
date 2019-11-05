@@ -161,9 +161,13 @@ export default class CrawlerUtil {
 
                 if ((HtmlUtil.isUrl(text) && !TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, text)) &&
                     !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
+                    let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), currentUrl, (await page.constructor.name) === "Frame" || queryElement.getIsExtractIframe());
+                    let newNode = new Node(source, node);
+                    newNode.initializeFeatures();
+                    newNode.getFeatures()[FeaturesConst.URL_RELEVANT] = TextUtil.
+                        checkUrlRelvant(newNode.getSource().getValue(), criterionKeyWordName) ? 1 : 0;
 
-                    let source = new Element(text, element, queryIframe.getXpath(), queryIframe.getTypeQuery(), currentUrl, (await page.constructor.name) === "Frame" || queryIframe.getIsExtractIframe());
-                    edgesList.push(new Node(source, node));
+                    edgesList.push(newNode);
 
                 }
 
@@ -226,8 +230,8 @@ export default class CrawlerUtil {
                                 let newNode = new Node(source, node);
                                 newNode.initializeFeatures();
                                 newNode.getFeatures()[FeaturesConst.URL_RELEVANT] = TextUtil.
-                                checkUrlRelvant(newNode.getSource().getValue(), criterionKeyWordName) ? 1 : 0;
-                                
+                                    checkUrlRelvant(newNode.getSource().getValue(), criterionKeyWordName) ? 1 : 0;
+
                                 edgesList.push(newNode);
                             }
 
@@ -299,7 +303,7 @@ export default class CrawlerUtil {
         result[FeaturesConst.ONE_ITEM_CRITERIO] = numberItensIdentify === 1 ? 1 : 0;
         result[FeaturesConst.MORE_ITEM_CRITERIO] = numberItensIdentify > 1 ? 1 : 0;
         result[FeaturesConst.TERM_CRITERION] =
-            (await CrawlerUtil.CheckCriterionTermExistsInPage(criterionName, node, page)) ? 1 : 0;
+            (await CrawlerUtil.CheckCriterionTermExistsInPage(criterionName, page)) ? 1 : 0;
         console.log("---------------result[FeaturesConst.TERM_CRITERION]: ", result[FeaturesConst.TERM_CRITERION])
         node.setFeatures(result)
         return itens;
@@ -385,16 +389,16 @@ export default class CrawlerUtil {
         return itens;
     }
 
-    static async CheckCriterionTermExistsInPage(criterionName, node, page) {
+    static async CheckCriterionTermExistsInPage(criterionName, page) {
         const queryElement = XpathUtil.createXpathsToIdentifyPage(criterionName);
-
         const elements = await page.$x(queryElement.getXpath());
         if (elements.length > 0) {
             for (let element of elements) {
                 let text = await (await element.getProperty('textContent')).jsonValue();
-                text = TextUtil.normalizeText(text);
-                for (const term of queryElement.getKeyWordsXpath()) {
-                    if (TextUtil.checkTextContainsInText(text, term) || (TextUtil.checkTextContainsInText(term, text) ||
+                text = TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+                for (let term of queryElement.getKeyWordsXpath()) {
+                    term = term.toLowerCase();
+                    if ((TextUtil.checkTextContainsInText(text, term) || text.includes(term)) || (TextUtil.checkTextContainsInText(term, text) ||
                         TextUtil.similarityTwoString(text, term)))
                         return true;
                 }
