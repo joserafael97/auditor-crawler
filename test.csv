@@ -4595,3 +4595,5 @@ url_relevant,have_more_than_one_new_component_parent,url_relevant_parent,have_te
 1,1,1,1,0,0,0,0,0,0,0,no_relevant
 0,1,0,1,0,0,0,0,0,0,1,no_relevant
 0,1,1,1,1,0,0,3,11,0,23,no_relevant
+1,1,0,1,0,0,1,0,0,1,1,identification_item
+1,1,0,1,0,0,1,0,0,1,1,identification_item

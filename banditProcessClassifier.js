@@ -47,8 +47,7 @@ export default class BanditProcessClassifier {
         if (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
 
             epsilonGreedyAlg.updateNumArms(queue.length);
-            //node.updateRewardNodes();
-
+            
             if (node.getLevel() > 0) {
                 for (let i = 0; i < queue.length; i++) {
                     let xPred = this.formatData(this.getFeaturesWithOutResultNode(queue[i]));
@@ -59,8 +58,8 @@ export default class BanditProcessClassifier {
             }
 
             const index = epsilonGreedyAlg.chooseArm();
+            console.log("values ======================== ", epsilonGreedyAlg.values)
             console.log("index ======================== ", index)
-            console.log("index ======================== ", epsilonGreedyAlg.values)
 
             let newNode = queue[index]
 

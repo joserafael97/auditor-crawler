@@ -304,7 +304,6 @@ export default class CrawlerUtil {
         result[FeaturesConst.MORE_ITEM_CRITERIO] = numberItensIdentify > 1 ? 1 : 0;
         result[FeaturesConst.TERM_CRITERION] =
             (await CrawlerUtil.CheckCriterionTermExistsInPage(criterionName, page)) ? 1 : 0;
-        console.log("---------------result[FeaturesConst.TERM_CRITERION]: ", result[FeaturesConst.TERM_CRITERION])
         node.setFeatures(result)
         return itens;
     }

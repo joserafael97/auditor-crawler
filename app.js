@@ -35,6 +35,8 @@ const logErrorAndExit = err => {
 let trainModel = [];
 connectToDb();
 const dateStart = new Date();
+let nbModel = new MultinomialNB();
+let trained = false;
 
 let run = async (criterion, evaluation, root) => {
 
@@ -87,10 +89,9 @@ let selectAproachToRun = async (aproachSelected, root, criterion, evaluation, it
 
         if (classifierCli === 'naivebayes') {
             let train = await readTrainData();
-            let nbModel = new MultinomialNB();
-
-            if (train.length > 0) {
-                nbModel.train(train['x_train'], train['y_train'])
+            if (train['x_train'].length > 0 && !trained) {
+                nbModel.train(train['x_train'], train['y_train']);
+                trained = true;
             }
             
             resultCrawlingCriterion = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, nbModel, new EpsilonGreedy(10000, 0.1), [], [], 0, 1, trainModel).catch(logErrorAndExit)
