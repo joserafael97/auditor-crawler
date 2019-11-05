@@ -14,7 +14,7 @@ const LH_SYSTEM = 'lh_system'
 const FRAN_INFORMATICA = 'fran_informatica'
 const FIORILLI = 'fiorilli';
 const PORTAL_PROPRIO = 'portal_proprio'
-
+const DC_SOLUCOES = 'dc_solucoes'
 
 const counties = [
     {
@@ -96,7 +96,7 @@ const counties = [
     {
         name: 'Bom Sucesso',
         codSepro: '1947',
-        empresas: [PORTAL_PROPRIO, ELMAR],
+        empresas: [DC_SOLUCOES],
         cityHallUrl:'http://bomsucesso.pb.gov.br',
         transparencyPortalUrl: 'http://bomsucesso.pb.gov.br/portal-da-transparencia',
         population: 0
@@ -105,9 +105,18 @@ const counties = [
     {
         name: 'Pedra Lavrada',
         codSepro: '2039',
-        empresas: [PORTAL_PROPRIO, ELMAR],
+        empresas: [LH_SYSTEM, ELMAR],
         cityHallUrl:'http://pedralavrada.pb.gov.br',
         transparencyPortalUrl: 'http://portaldatransparencia.lhsystem.com.br/PMPL',
+        population: 0
+    },
+
+    {
+        name: 'Gado Bravo',
+        codSepro: '0480',
+        empresas: [FRAN_INFORMATICA, PUBLICSOFT],
+        cityHallUrl:'http://www.gadobravo.pb.gov.br',
+        transparencyPortalUrl: 'http://www.gadobravo.pb.gov.br/transparencia',
         population: 0
     },
 ];
