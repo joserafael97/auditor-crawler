@@ -1,8 +1,7 @@
-const keywordSearchDespOrcamentaria = ['despesas', 'Detalhes do Empenho', 'empenhos','despesas orcamentaria', 'Consultar Despesas Orçamentárias', 'despesa com licitacao',
+const keywordSearchDespOrcamentaria = ['despesas', 'lnkDespesasPor_NotaEmpenho','Despesa Geral', 'Detalhes do Empenho', 'empenhos','despesas orcamentaria', 'Consultar Despesas Orçamentárias', 'despesa com licitacao',
     'despesa por elemento', 'despesa por orgao', 'despesa por favorecido', 'despesa por funcional programatica', 'despesa por transferencia', 'consultar', 
     'detalhesEmpenho', 'Pesquisar', "Ordem de Pagamento", "/"+new Date().getFullYear(),
 ];
-
 
 const identificationKeyWordDespOrcamentaria = {
     "funcao": ['funcao'],

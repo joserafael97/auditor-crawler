@@ -161,7 +161,7 @@ export default class CrawlerUtil {
 
                 if ((HtmlUtil.isUrl(text) && !TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, text)) &&
                     !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
-                    let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), currentUrl, (await page.constructor.name) === "Frame" || queryElement.getIsExtractIframe());
+                    let source = new Element(text, element, queryIframe.getXpath(), queryIframe.getTypeQuery(), currentUrl, (await page.constructor.name) === "Frame" || queryIframe.getIsExtractIframe());
                     let newNode = new Node(source, node);
                     newNode.initializeFeatures();
                     newNode.getFeatures()[FeaturesConst.URL_RELEVANT] = TextUtil.
@@ -213,6 +213,7 @@ export default class CrawlerUtil {
                                 urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
                     }
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+                    
                     if ((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text)))
                         || (/^\d+$/.test(text))) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
