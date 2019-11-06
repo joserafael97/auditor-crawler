@@ -131,7 +131,7 @@ export default class PuppeteerUtil {
     static async selectElementPage(page, xpath, searchValue) {
 
         await page.waitForNavigation().catch(e => void e);
-        await page.waitFor(3000);
+        await page.waitFor(6000);
         const elements = await page.$x(xpath);
         if (elements.length > 0) {
             for (let element of elements) {
