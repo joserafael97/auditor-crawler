@@ -96,7 +96,7 @@ export default class CrawlerUtil {
             }
         }
 
-        await page.waitFor(3000);
+        await page.waitFor(6000);
 
         let elementsIdentify = []
         let iframesUrlNodes = []
