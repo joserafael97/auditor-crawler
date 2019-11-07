@@ -7,7 +7,7 @@ import { QUERYTODYNAMICELEMENT, QUERYTOSTATICCOMPONENT } from '../models/queryEl
 const EQUALTYPESEARCH = 'tagSearch = "{}"';
 const CONTAINSTYPESEARCH = 'contains(tagSearch, "{}")';
 const XPATHIFRAME = '//*/iframe';
-const UNUSABLEIFRAMES = ['limpo', 'youtube', 'blank', 'google', 'sharethis','graficos', 'Graficos', 'DXR.axd', "javascript", 
+const UNUSABLEIFRAMES = ['limpo', 'youtube', 'tweet', 'blank', 'google', 'sharethis','graficos', 'Graficos', 'DXR.axd', "javascript", 
 'assets','anexo', 'download', 'widget', ".zip", ".jpeg", ".rar", "noticia", "publicidade",'facebook', "email", 'whatsapp', 'print', 'png', 'dist'];
 const CONSULTAR = "consultar";
 const PESQUISAR = "pesquisar";
