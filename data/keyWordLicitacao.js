@@ -25,7 +25,7 @@ const identificationKeyLicitacao = {
     "termo_ratificacao": ["ratificacao", ],
     "pregao": ["pregao", "pregao eletronico"],
     "aviso": ["edital", "publicacao", "aviso"],
-    "licitado": ["licitado", "licitacao"]
+    "licitado": ["licitado"]
 }
 
 export {keywordSearchLicitacao};

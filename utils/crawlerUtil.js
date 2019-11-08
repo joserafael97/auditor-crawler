@@ -96,7 +96,7 @@ export default class CrawlerUtil {
             }
         }
 
-        await page.waitFor(6000);
+        await page.waitFor(3000);
 
         let elementsIdentify = []
         let iframesUrlNodes = []
@@ -279,6 +279,7 @@ export default class CrawlerUtil {
                     item.name + '-level-' + node.getLevel() + '-' + new Date() + '-proof.png'
 
                 item.foundText = TextUtil.normalizeText(TextUtil.removeWhiteSpace(await (await element.getProperty('textContent')).jsonValue()));
+
                 item.found = (item.foundText.length > 0 && TextUtil.checkTextContainsArray(item.keywordsXpath, item.foundText)) ? true : false;
                 item.foundText = item.found ? item.foundText : '';
                 item.pathSought = await page.url();

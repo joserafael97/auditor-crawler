@@ -171,7 +171,6 @@ let startCrawler = async (evaluation, criterion) => {
     evaluation.county = county.name;
     evaluation.cityHallUrl = county.cityHallUrl;
     evaluation.transparencyPortalUrl = county.transparencyPortalUrl;
-    evaluation.transparencyPortalUrl = county.transparencyPortalUrl;
 
     const element = new Element(evaluation.transparencyPortalUrl, null, null, null, null);
 
@@ -196,10 +195,10 @@ let criterionReceitaExtra = CrawlerUtil.createCriterion('Receita Extra Orçament
 let criterionLicit = CrawlerUtil.createCriterion('Licitação');
 let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
-startCrawler(evaluation, criterionDespesaOrc);
-startCrawler(evaluation, criterionDespesaExtra);
+// startCrawler(evaluation, criterionDespesaOrc);
+// startCrawler(evaluation, criterionDespesaExtra);
 startCrawler(evaluation, criterionReceitaOrc);
-startCrawler(evaluation, criterionReceitaExtra);
-startCrawler(evaluation, criterionLicit);
-startCrawler(evaluation, criterionPessoal);
+// startCrawler(evaluation, criterionReceitaExtra);
+// startCrawler(evaluation, criterionLicit);
+// startCrawler(evaluation, criterionPessoal);
 
