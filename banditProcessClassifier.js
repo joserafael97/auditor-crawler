@@ -14,7 +14,6 @@ import FeaturesConst from './consts/featuares';
 export default class BanditProcessClassifier {
 
     static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, model, epsilonGreedyAlg, xTrain = [], yTrain = [], actuallyIndex = 0, contNodeNumber = 1, trainModel = []) {
-
         if (puppeteer == null) {
             puppeteer = await PuppeteerUtil.createPuppetterInstance();
         }
@@ -22,7 +21,6 @@ export default class BanditProcessClassifier {
         let page = puppeteer.getFirstPage();
         const currentPage = page;
         const lengthQueueBefore = queue.length;
-        node.initializeFeatures();
 
         try {
             const nodeCrawledResult = await CrawlerUtil.crawlerNode(criterion, evaluation, node, page, puppeteer, elementsAccessed, itens, queue, true);
@@ -42,59 +40,28 @@ export default class BanditProcessClassifier {
         }
 
         if (node.getLevel() > 0) {
-
-            let newData = {};
-            newData[FeaturesConst.URL_RELEVANT] = node.getFeatures()[FeaturesConst.URL_RELEVANT];
-            newData[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT_PARENT] = node.getParent().getFeatures()[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT];
-            newData[FeaturesConst.URL_RELEVANT_PARENT] = node.getParent().getFeatures()[FeaturesConst.URL_RELEVANT];
-            newData[FeaturesConst.TERM_CRITERION_PARENT] = node.getParent().getFeatures()[FeaturesConst.TERM_CRITERION];
-            newData[FeaturesConst.ONE_ITEM_CRITERIO_PARENT] = node.getParent().getFeatures()[FeaturesConst.ONE_ITEM_CRITERIO];
-            newData[FeaturesConst.MORE_ITEM_CRITERIO_PARENT] = node.getParent().getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO];
-            
-            let urlRelevantBrother = 0;
-            let moreThanOneNewComponentBrother = 0;
-            let oneItemCriterionBrother = 0;
-            let moreItemCriterionBrother = 0;
-            let termCriterionBrother = 0;
-
-            for (const brotherNode of node.getParent().getChildrenResearchedNodes()){
-                urlRelevantBrother = brotherNode.getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO] + urlRelevantBrother;
-                moreThanOneNewComponentBrother = brotherNode.getFeatures()[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT] + moreThanOneNewComponentBrother;
-                oneItemCriterionBrother = brotherNode.getFeatures()[FeaturesConst.ONE_ITEM_CRITERIO] + oneItemCriterionBrother;
-                moreItemCriterionBrother = brotherNode.getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO] + moreItemCriterionBrother;
-                termCriterionBrother = brotherNode.getFeatures()[FeaturesConst.TERM_CRITERION] + termCriterionBrother;
-
-            }
-
-            newData[FeaturesConst.URL_RELEVANT_BRORHER] = urlRelevantBrother;
-            newData[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT_BRORHER] = moreThanOneNewComponentBrother;
-            newData[FeaturesConst.ONE_ITEM_CRITERIO_BRORHER] = oneItemCriterionBrother;
-            newData[FeaturesConst.MORE_ITEM_CRITERIO_BRORHER] = moreItemCriterionBrother;
-            newData[FeaturesConst.TERM_CRITERION_BRORHER] = termCriterionBrother;
-
-            newData["result"] = (node.getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO] === 1 || node.getFeatures()[FeaturesConst.ONE_ITEM_CRITERIO] === 1) ? 'identification_item' : node.getEdges().length > 0 ? 'component_relevant' : 'no_relevant' ;
-            
+            const newData = this.getFeaturesNode(node);
             trainModel.push(newData);
         }
 
         if (queue.length > 0 && CrawlerUtil.checkItensComplete(itens) === false) {
 
             epsilonGreedyAlg.updateNumArms(queue.length);
-            node.updateRewardNodes();
-
-            if (node.getLevel() > 1 && lengthQueueBefore < queue.length) {
+            
+            if (node.getLevel() > 0) {
                 for (let i = 0; i < queue.length; i++) {
-                    const maxReward = queue[i].getMaxReward();
-                    if (maxReward > 0)
-                        epsilonGreedyAlg.update(i, maxReward)
+                    let xPred = this.formatData(this.getFeaturesWithOutResultNode(queue[i]));
+                    const predict = model.predict([xPred]);
+                    if (predict[0] > 0)
+                        epsilonGreedyAlg.update(i, predict[0])
                 }
             }
 
             const index = epsilonGreedyAlg.chooseArm();
+            console.log("values ======================== ", epsilonGreedyAlg.values)
             console.log("index ======================== ", index)
+
             let newNode = queue[index]
-            newNode.getFeatures()[FeaturesConst.URL_RELEVANT] = TextUtil.checkUrlRelvant(node.getSource().getUrl(), criterion.name) ? 1 : 0;
-            console.log("featuare init new node ======================== ", newNode.getFeatures());
 
             queue.splice(index, 1);
             epsilonGreedyAlg.values.splice(index, 1);
@@ -114,45 +81,95 @@ export default class BanditProcessClassifier {
         await puppeteer.getBrowser().close()
 
         logger.info("Returnin Criterion: " + criterion.name);
-        return { "itens": itens, "contNodeNumber": contNodeNumber,  "trainModel": trainModel};
+        return { "itens": itens, "contNodeNumber": contNodeNumber, "trainModel": trainModel };
 
     };
 
-    static trainModel(node, xTrain, yTrain, model) {
-        const newTrain = [
-            node.getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
-            node.getParent().getFeatures()[FeaturesConst.HAVE_CRITERION_TERM_IN_PAGE],
-            node.getParent().getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
-            node.getParent().getFeatures()[FeaturesConst.HAVE_ONE_ITEM_CRITERIO],
-            node.getParent().getFeatures()[FeaturesConst.HAVE_TWO_ITEM_CRITERIO],
-            node.getParent().getFeatures()[FeaturesConst.HAVE_MORE_ITEM_CRITERIO],
-        ]
+    static getFeaturesNode(node) {
+        let newData = {};
+        newData[FeaturesConst.URL_RELEVANT] = node.getFeatures()[FeaturesConst.URL_RELEVANT];
+        newData[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT_PARENT] = node.getParent().getFeatures()[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT];
+        newData[FeaturesConst.URL_RELEVANT_PARENT] = node.getParent().getFeatures()[FeaturesConst.URL_RELEVANT];
+        newData[FeaturesConst.TERM_CRITERION_PARENT] = node.getParent().getFeatures()[FeaturesConst.TERM_CRITERION];
+        newData[FeaturesConst.ONE_ITEM_CRITERIO_PARENT] = node.getParent().getFeatures()[FeaturesConst.ONE_ITEM_CRITERIO];
+        newData[FeaturesConst.MORE_ITEM_CRITERIO_PARENT] = node.getParent().getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO];
 
-        if (!TextUtil.checkArrayContainsInListArrays(xTrain, newTrain)) {
-            xTrain.push(newTrain);
-            yTrain.push(node.getFeatures()[FeaturesConst.RESULT]);
-            model.train(xTrain, yTrain);
+        let urlRelevantBrother = 0;
+        let moreThanOneNewComponentBrother = 0;
+        let oneItemCriterionBrother = 0;
+        let moreItemCriterionBrother = 0;
+        let termCriterionBrother = 0;
+
+        for (const brotherNode of node.getParent().getChildrenResearchedNodes()) {
+            urlRelevantBrother = brotherNode.getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO] + urlRelevantBrother;
+            moreThanOneNewComponentBrother = brotherNode.getFeatures()[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT] + moreThanOneNewComponentBrother;
+            oneItemCriterionBrother = brotherNode.getFeatures()[FeaturesConst.ONE_ITEM_CRITERIO] + oneItemCriterionBrother;
+            moreItemCriterionBrother = brotherNode.getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO] + moreItemCriterionBrother;
+            termCriterionBrother = brotherNode.getFeatures()[FeaturesConst.TERM_CRITERION] + termCriterionBrother;
         }
-        return model;
 
+        newData[FeaturesConst.URL_RELEVANT_BRORHER] = urlRelevantBrother;
+        newData[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT_BRORHER] = moreThanOneNewComponentBrother;
+        newData[FeaturesConst.ONE_ITEM_CRITERIO_BRORHER] = oneItemCriterionBrother;
+        newData[FeaturesConst.MORE_ITEM_CRITERIO_BRORHER] = moreItemCriterionBrother;
+        newData[FeaturesConst.TERM_CRITERION_BRORHER] = termCriterionBrother;
+
+        newData["result"] = (node.getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO] === 1 || node.getFeatures()[FeaturesConst.ONE_ITEM_CRITERIO] === 1) ? 'identification_item' : node.getEdges().length > 0 ? 'component_relevant' : 'no_relevant';
+        return newData;
     }
 
-    static trainModelActuallyNode(node, xTrain, yTrain, model) {
-        const newTrain = [
-            node.getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
-            node.getParent().getFeatures()[FeaturesConst.HAVE_CRITERION_TERM_IN_PAGE],
-            node.getFeatures()[FeaturesConst.HAVE_URL_RELEVANT],
-            node.getFeatures()[FeaturesConst.HAVE_ONE_ITEM_CRITERIO],
-            node.getFeatures()[FeaturesConst.HAVE_TWO_ITEM_CRITERIO],
-            node.getFeatures()[FeaturesConst.HAVE_MORE_ITEM_CRITERIO],
-        ]
+    static getFeaturesWithOutResultNode(node) {
+        let newData = {};
+        newData[FeaturesConst.URL_RELEVANT] = node.getFeatures()[FeaturesConst.URL_RELEVANT];
+        newData[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT_PARENT] = node.getParent().getFeatures()[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT];
+        newData[FeaturesConst.URL_RELEVANT_PARENT] = node.getParent().getFeatures()[FeaturesConst.URL_RELEVANT];
+        newData[FeaturesConst.TERM_CRITERION_PARENT] = node.getParent().getFeatures()[FeaturesConst.TERM_CRITERION];
+        newData[FeaturesConst.ONE_ITEM_CRITERIO_PARENT] = node.getParent().getFeatures()[FeaturesConst.ONE_ITEM_CRITERIO];
+        newData[FeaturesConst.MORE_ITEM_CRITERIO_PARENT] = node.getParent().getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO];
 
-        xTrain.push(newTrain);
-        yTrain.push(node.getFeatures()[FeaturesConst.RESULT]);
-        model.train(xTrain, yTrain);
+        let urlRelevantBrother = 0;
+        let moreThanOneNewComponentBrother = 0;
+        let oneItemCriterionBrother = 0;
+        let moreItemCriterionBrother = 0;
+        let termCriterionBrother = 0;
 
-        return model;
+        for (const brotherNode of node.getParent().getChildrenResearchedNodes()) {
+            urlRelevantBrother = brotherNode.getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO] + urlRelevantBrother;
+            moreThanOneNewComponentBrother = brotherNode.getFeatures()[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT] + moreThanOneNewComponentBrother;
+            oneItemCriterionBrother = brotherNode.getFeatures()[FeaturesConst.ONE_ITEM_CRITERIO] + oneItemCriterionBrother;
+            moreItemCriterionBrother = brotherNode.getFeatures()[FeaturesConst.MORE_ITEM_CRITERIO] + moreItemCriterionBrother;
+            termCriterionBrother = brotherNode.getFeatures()[FeaturesConst.TERM_CRITERION] + termCriterionBrother;
+
+        }
+
+        newData[FeaturesConst.URL_RELEVANT_BRORHER] = urlRelevantBrother;
+        newData[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT_BRORHER] = moreThanOneNewComponentBrother;
+        newData[FeaturesConst.ONE_ITEM_CRITERIO_BRORHER] = oneItemCriterionBrother;
+        newData[FeaturesConst.MORE_ITEM_CRITERIO_BRORHER] = moreItemCriterionBrother;
+        newData[FeaturesConst.TERM_CRITERION_BRORHER] = termCriterionBrother;
+
+        return newData;
     }
+
+    static formatData(data) {
+        return [
+            data[FeaturesConst.URL_RELEVANT],
+            data[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT_PARENT],
+            data[FeaturesConst.URL_RELEVANT_PARENT],
+            data[FeaturesConst.TERM_CRITERION_PARENT],
+            data[FeaturesConst.ONE_ITEM_CRITERIO_PARENT],
+            data[FeaturesConst.MORE_ITEM_CRITERIO_PARENT],
+            data[FeaturesConst.URL_RELEVANT_BRORHER],
+            data[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT_BRORHER],
+            data[FeaturesConst.ONE_ITEM_CRITERIO_BRORHER],
+            data[FeaturesConst.MORE_ITEM_CRITERIO_BRORHER],
+            data[FeaturesConst.TERM_CRITERION_BRORHER],
+        ];
+    }
+
+
+
+
 
 
 }

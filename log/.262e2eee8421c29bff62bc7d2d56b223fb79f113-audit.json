@@ -6,36 +6,6 @@
     "auditLog": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/.262e2eee8421c29bff62bc7d2d56b223fb79f113-audit.json",
     "files": [
         {
-            "date": 1557235901077,
-            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Tu-05-yyyy",
-            "hash": "e28a3c5efc3dd3b986d0208f4499854a"
-        },
-        {
-            "date": 1557421028587,
-            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Th-05-yyyy",
-            "hash": "fefd28051de2e2bd1898227a50439bdc"
-        },
-        {
-            "date": 1558114548248,
-            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Fr-05-yyyy",
-            "hash": "679b3abcf75491f1ca8e3833bd4ba470"
-        },
-        {
-            "date": 1558533998504,
-            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..We-05-yyyy",
-            "hash": "a5f03cf5e47ef2dc16857db4d6073255"
-        },
-        {
-            "date": 1559670775704,
-            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Tu-06-yyyy",
-            "hash": "fcd6d7cd36b26cf3ebaa77f2da663680"
-        },
-        {
-            "date": 1559929339814,
-            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Fr-06-yyyy",
-            "hash": "6e8691b6af3a716a3c3c23fd4037b3b8"
-        },
-        {
             "date": 1560943578652,
             "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..We-06-yyyy",
             "hash": "d7bea107c0de92af3329afdecfeb28ca"
@@ -129,6 +99,36 @@
             "date": 1570935636257,
             "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Su-10-yyyy",
             "hash": "519f00549035200bb98b645090eed649"
+        },
+        {
+            "date": 1572577283859,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Fr-11-yyyy",
+            "hash": "b26ddb063f3207cfb1f8385789a0fbcd"
+        },
+        {
+            "date": 1572718635429,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Sa-11-yyyy",
+            "hash": "10e0fc4023f0bce82eeb61829cdcd5c7"
+        },
+        {
+            "date": 1572869099993,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Mo-11-yyyy",
+            "hash": "b97a4a5c16557efa39a4ae902631ee38"
+        },
+        {
+            "date": 1572985192240,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Tu-11-yyyy",
+            "hash": "6b33f956d68e1a08dc263892028509dc"
+        },
+        {
+            "date": 1573061329488,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..We-11-yyyy",
+            "hash": "1987de541ec88fe28a7cead2de5665d4"
+        },
+        {
+            "date": 1573146330936,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Th-11-yyyy",
+            "hash": "f386a88868aafe781dcf4585908768fc"
         }
     ]
 }

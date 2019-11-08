@@ -16,12 +16,14 @@ import AproachType from './consts/aproachType'
 import BanditProcess from './banditProcess';
 import EpsilonGreedy from './epsilonGreedy';
 import { GaussianNB } from 'ml-naivebayes';
+import { MultinomialNB } from 'ml-naivebayes';
 import Dfs from './dfs';
 import BanditProcessClassifier from './banditProcessClassifier';
 import logger from './core/logger/app-logger'
 import ObjectsToCsv from 'objects-to-csv';
-import moment from 'moment';
-
+import csv from 'csvtojson';
+import fs from 'fs';
+import FeaturesConst from './consts/featuares';
 
 const logErrorAndExit = err => {
     console.log(err)
@@ -33,6 +35,8 @@ const logErrorAndExit = err => {
 let trainModel = [];
 connectToDb();
 const dateStart = new Date();
+let nbModel = new MultinomialNB();
+let trained = false;
 
 let run = async (criterion, evaluation, root) => {
 
@@ -45,7 +49,8 @@ let run = async (criterion, evaluation, root) => {
     evaluation = resultEvaluation.evaluation;
 
     evaluation.dateEnd = new Date();
-    const minutes = Math.abs((((evaluation.dateEnd.getTime() - evaluation.date.getTime()) / 1000)/60));
+    const duration = (evaluation.dateEnd.getTime() - evaluation.date.getTime());
+    const minutes = Math.round(Math.abs(((duration / 1000) / 60)));
     evaluation.dateEnd = evaluation.dateEnd.getTime();
 
     evaluation.duration = duration;
@@ -83,7 +88,13 @@ let selectAproachToRun = async (aproachSelected, root, criterion, evaluation, it
         logger.info("Classier: " + classifierCli);
 
         if (classifierCli === 'naivebayes') {
-            resultCrawlingCriterion = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, new GaussianNB(), new EpsilonGreedy(10000, 0.1), [], [], 0, 1, trainModel).catch(logErrorAndExit)
+            let train = await readTrainData();
+            if (train['x_train'].length > 0 && !trained) {
+                nbModel.train(train['x_train'], train['y_train']);
+                trained = true;
+            }
+            
+            resultCrawlingCriterion = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, nbModel, new EpsilonGreedy(10000, 0.1), [], [], 0, 1, trainModel).catch(logErrorAndExit)
 
         } else {
             resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(1000, 0.1)).catch(logErrorAndExit)
@@ -104,6 +115,39 @@ let selectAproachToRun = async (aproachSelected, root, criterion, evaluation, it
     return { 'itens': itens, 'criterion': criterion, 'evaluation': evaluation };
 }
 
+const readTrainData = async () => {
+    let dataTrain = [];
+    let data = [];
+    let labels = [];
+
+    try {
+        dataTrain = await csv().fromFile('test.csv');
+    } catch (e) {
+        logger.info("not found file");
+    }
+
+    for (const item of dataTrain) {
+        data.push([
+            item[FeaturesConst.URL_RELEVANT],
+            item[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT_PARENT],
+            item[FeaturesConst.URL_RELEVANT_PARENT],
+            item[FeaturesConst.TERM_CRITERION_PARENT],
+            item[FeaturesConst.ONE_ITEM_CRITERIO_PARENT],
+            item[FeaturesConst.MORE_ITEM_CRITERIO_PARENT],
+            item[FeaturesConst.URL_RELEVANT_BRORHER],
+            item[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT_BRORHER],
+            item[FeaturesConst.ONE_ITEM_CRITERIO_BRORHER],
+            item[FeaturesConst.MORE_ITEM_CRITERIO_BRORHER],
+            item[FeaturesConst.TERM_CRITERION_BRORHER],
+        ]);
+        item['result'] = item['result'] === 'component_relevant' ? 1 : item['result'] === 'no_relevant' ? 0 : 2;
+
+        labels.push(item['result'])
+    }
+
+    return { 'x_train': data, 'y_train': labels };
+};
+
 const initColletions = async () => {
     await CriterionKeyWord.getAllWithOutItens().then(async (criterionsKeyWords) => {
         if (criterionsKeyWords.length == 0) {
@@ -119,16 +163,13 @@ const initColletions = async () => {
     });
 }
 
-
-
 let startCrawler = async (evaluation, criterion) => {
 
     await initColletions();
     const county = await County.findByName(CliParamUtil.countyParamExtract(process.argv.slice(2)[0]));
-    
+
     evaluation.county = county.name;
     evaluation.cityHallUrl = county.cityHallUrl;
-    evaluation.transparencyPortalUrl = county.transparencyPortalUrl;
     evaluation.transparencyPortalUrl = county.transparencyPortalUrl;
 
     const element = new Element(evaluation.transparencyPortalUrl, null, null, null, null);
@@ -147,14 +188,12 @@ let evaluation = Evaluation({
     transparencyPortalUrl: '',
 });
 
-
 let criterionDespesaOrc = CrawlerUtil.createCriterion('Despesa Orçamentária');
 let criterionDespesaExtra = CrawlerUtil.createCriterion('Despesa Extra Orçamentária');
 let criterionReceitaOrc = CrawlerUtil.createCriterion('Receita Orçamentária');
 let criterionReceitaExtra = CrawlerUtil.createCriterion('Receita Extra Orçamentária');
 let criterionLicit = CrawlerUtil.createCriterion('Licitação');
 let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
-
 
 startCrawler(evaluation, criterionDespesaOrc);
 startCrawler(evaluation, criterionDespesaExtra);

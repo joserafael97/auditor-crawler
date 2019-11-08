@@ -1,5 +1,5 @@
-const keywordSearchRecOrcamentaria = ['ORÇAMENTÁRIA', 'Receitas', 'receita-orcamentaria', 'Consultar Receitas Orçamentárias',
-    'receita prevista com arrecadada', 'Receitas Orçamentárias', 'receita', 'Consultar', 'consultando', 'DetalhesReceita', 'Pesquisar', "/"+new Date().getFullYear(),
+const keywordSearchRecOrcamentaria = ['ORÇAMENTÁRIA', 'lnkReceitaOrcamentaria', 'Receita Geral','Receitas', 'receita-orcamentaria', 'Consultar Receitas Orçamentárias',
+    'receita prevista com arrecadada', 'Receitas Orçamentárias', 'receita', 'onCellClick','Consultar', 'consultando', 'DetalhesReceita', 'Pesquisar', "/"+new Date().getFullYear(),
 ];
 
 const identificationKeyWordRecOrcamentaria = {
@@ -7,15 +7,15 @@ const identificationKeyWordRecOrcamentaria = {
         'fonte de recurso', 'Entidade'
     ],
     "previsao": ['valor previsto(r$)', 'receita prevista', 'previsao de receitas',
-        'Valor Previsto', 'Previsão',
+        'Valor Previsto', 'Previsão', 'Prev. Inicial', 
         'prevista'
     ],
     "arrecadacao": ['valor arrecadado(r$)', 'receita arrecadada', 'realizada ate o mes',
         'Arrecadada',
         'arrecadado ate o momento', 'arrecadacao de receitas',
-        'Valor Arrecadado', 'Arrecadação'
+        'Valor Arrecadado', 'Arrecadação', 'Arrec. Total'
     ],
-    "lancado": ['valor lancado(r$)', 'valor', 'lançada'],
+    "lancado": ['valor lancado(r$)', 'valor', 'lançada' , 'Prev. Atualizada'],
     "categoria_economica": ['categoria da receita', 'receita l.o.a.', 'CATEGORIA ECONÔMICA'],
     "origem": ['origem dos recursos a conta', 'descricao da receita', 'nome',
         'descricao receita (STN)',  'Descrição STN', 'Descrição',

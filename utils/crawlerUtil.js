@@ -57,7 +57,7 @@ export default class CrawlerUtil {
         logger.info("node value: " + value);
         logger.info("node level: " + node.getLevel());
         logger.info("current page: " + (await page.constructor.name));
-        logger.info("node extracted in Frame: " + node.getSource().getIsExtractIframe());   
+        logger.info("node extracted in Frame: " + node.getSource().getIsExtractIframe());
         console.log("===================================================================");
 
         if (node.getSource().getIsExtractIframe() && !isUrl) {
@@ -161,9 +161,13 @@ export default class CrawlerUtil {
 
                 if ((HtmlUtil.isUrl(text) && !TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, text)) &&
                     !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
-
                     let source = new Element(text, element, queryIframe.getXpath(), queryIframe.getTypeQuery(), currentUrl, (await page.constructor.name) === "Frame" || queryIframe.getIsExtractIframe());
-                    edgesList.push(new Node(source, node));
+                    let newNode = new Node(source, node);
+                    newNode.initializeFeatures();
+                    newNode.getFeatures()[FeaturesConst.URL_RELEVANT] = TextUtil.
+                        checkUrlRelvant(newNode.getSource().getValue(), criterionKeyWordName) ? 1 : 0;
+
+                    edgesList.push(newNode);
 
                 }
 
@@ -192,6 +196,7 @@ export default class CrawlerUtil {
         const currentUrl = await page.url();
         const currentNodeUrl = node.getSource().getUrl();
         result[FeaturesConst.URL_RELEVANT] = TextUtil.checkUrlRelvant(currentUrl, criterionKeyWordName) ? 1 : 0;
+
         for (let queryElement of queryElements) {
             const elements = await page.$x(queryElement.getXpath());
             if (elements.length > 0) {
@@ -215,14 +220,19 @@ export default class CrawlerUtil {
                         const isUrl = HtmlUtil.isUrl(text);
                         text = !isUrl && (await CrawlerUtil.hrefValid(element, currentUrl)) ? await (await element.getProperty('href')).jsonValue() : text;
                         elementsIdentify.push.apply(elementsIdentify, edgesList);
-                        
+
                         if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase(), false) &&
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
 
                             if ((text.length > 0 && HtmlUtil.isUrl(text)) ||
                                 ((text.length > 0 && !HtmlUtil.isUrl(text)) && text.length < 120)) {
                                 let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), currentUrl, (await page.constructor.name) === "Frame" || queryElement.getIsExtractIframe());
-                                edgesList.push(new Node(source, node));
+                                let newNode = new Node(source, node);
+                                newNode.initializeFeatures();
+                                newNode.getFeatures()[FeaturesConst.URL_RELEVANT] = TextUtil.
+                                    checkUrlRelvant(newNode.getSource().getValue(), criterionKeyWordName) ? 1 : 0;
+
+                                edgesList.push(newNode);
                             }
 
                         }
@@ -269,6 +279,7 @@ export default class CrawlerUtil {
                     item.name + '-level-' + node.getLevel() + '-' + new Date() + '-proof.png'
 
                 item.foundText = TextUtil.normalizeText(TextUtil.removeWhiteSpace(await (await element.getProperty('textContent')).jsonValue()));
+
                 item.found = (item.foundText.length > 0 && TextUtil.checkTextContainsArray(item.keywordsXpath, item.foundText)) ? true : false;
                 item.foundText = item.found ? item.foundText : '';
                 item.pathSought = await page.url();
@@ -284,7 +295,7 @@ export default class CrawlerUtil {
                 });
                 item.proof.length > 0 ? FileUtil.deleteFile(item.proof) : '';
                 item.proof = path;
-                numberItensIdentify = item.found ? ++numberItensIdentify: numberItensIdentify;
+                numberItensIdentify = item.found ? ++numberItensIdentify : numberItensIdentify;
             }
         }
         CrawlerUtil.checkIdentificationItens(itens, await page.url());
@@ -293,8 +304,7 @@ export default class CrawlerUtil {
         result[FeaturesConst.ONE_ITEM_CRITERIO] = numberItensIdentify === 1 ? 1 : 0;
         result[FeaturesConst.MORE_ITEM_CRITERIO] = numberItensIdentify > 1 ? 1 : 0;
         result[FeaturesConst.TERM_CRITERION] =
-            (await CrawlerUtil.CheckCriterionTermExistsInPage(criterionName, node, page)) ? 1 : 0;
-
+            (await CrawlerUtil.CheckCriterionTermExistsInPage(criterionName, page)) ? 1 : 0;
         node.setFeatures(result)
         return itens;
     }
@@ -379,17 +389,17 @@ export default class CrawlerUtil {
         return itens;
     }
 
-    static async CheckCriterionTermExistsInPage(criterionName, node, page) {
+    static async CheckCriterionTermExistsInPage(criterionName, page) {
         const queryElement = XpathUtil.createXpathsToIdentifyPage(criterionName);
-
         const elements = await page.$x(queryElement.getXpath());
         if (elements.length > 0) {
             for (let element of elements) {
                 let text = await (await element.getProperty('textContent')).jsonValue();
-                text = TextUtil.normalizeText(text);
-                for (const term of queryElement.getKeyWordsXpath()) {
-                    if (TextUtil.checkTextContainsInText(text, term) || TextUtil.checkTextContainsInText(term, text) ||
-                        TextUtil.similarityTwoString(text, term))
+                text = TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+                for (let term of queryElement.getKeyWordsXpath()) {
+                    term = term.toLowerCase();
+                    if ((TextUtil.checkTextContainsInText(text, term) || text.includes(term)) || (TextUtil.checkTextContainsInText(term, text) ||
+                        TextUtil.similarityTwoString(text, term)))
                         return true;
                 }
             }
