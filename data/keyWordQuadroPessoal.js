@@ -5,9 +5,9 @@ const keywordSearchPessoal = ['folha de pagamento', 'QUADRO FUNCIONAL', 'Pessoal
 const identificationKeyWordPessoal = {
     'nome': ['nome', 'Servidor'],
     'cpf': ['cpf', 'nome'],
-    'cargo': ['cargo', 'CARGO/VÍNCULO'],
-    'tipo_cargo': ['tipo do ato', 'secretaria', 'tipo cargo', 'tipo de cargo', 'regime', 'tipo', 'Tipo de Contratação'],
-    'salario_cargo': ['salario', 'Total Vantagem*', 'sal. base', 'liquido', 'valor liquido', 'Vantagens','Vantagens (Bruto)'],
+    'cargo': ['cargo', 'CARGO/VINCULO'],
+    'tipo_cargo': ['tipo do ato', 'Vinculo', 'secretaria', 'tipo cargo', 'tipo de cargo', 'regime', 'tipo', 'Tipo de Contratação'],
+    'salario_cargo': ['salario', 'Total Vantagem*', 'sal. base', 'liquido', 'valor liquido', 'Vantagens','Vantagens (Bruto)', 'total liquido R$'],
 };
 
 export {identificationKeyWordPessoal};
