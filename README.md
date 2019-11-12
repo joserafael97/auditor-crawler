@@ -157,7 +157,34 @@ O detalhamento das atividades do diagrama é apresentada abaixo:
 
 ## Avaliação dos Resultados
 
-Para análise da ***eficácia*** e ***eficiência*** do crawler durante as avaliações fiscais foram propostas algumas métricas e abordagens apresentadas nesta seção.
+Para a análise da ***eficácia*** e ***eficiência*** do crawler durante as avaliações fiscais é fundamental estabelecer a população/amostra que servirá de base representativa do contexto avaliado. Nesta perspectiva, foi utilizado um recorte de 35 portais de transparência de diferentes municípios da Paraíba, representando 15.6% dos 223 portais existentes no estado.
+
+Como forma de garantir uma amostra representativa durante a seleção do portais foram considerados o fornecedor do portal, as diferentes combinações entre eles nos sites de transparência e as frequência de aparição de cada combinação na população. Assim, para cada combinação contendo mais de 2 portais foram selecionados de forma aleatoria o número de portais que representassem um número superior 10% da combinação na população. 
+
+
+| Combinação     | Total de portais na amostra | % utilizado da população  | 
+| -------------  | ----------------------------| --------------------------| 
+| Publicsoft	    | 6	                          |  12,2                     | 
+| Elmar Tecnologia |	3 |	25,0|
+| e-TICons 	| 3	| 27,3| 
+| Info Public |	2 |	12,5 |
+| Alfa Consultoria / Elmar Tecnologia	| 2 |	15,4 |
+| Portal Próprio / Publicsoft | 	2 |	20,0 |
+| Alfa Consultoria / Publicsoft |	2 |	22,2 |
+| EasyWeb / Publicsoft	| 2 |	22,2 |
+| Portal Próprio / Elmar Tecnologia 	| 1 |	12,5 |
+| LHSystem / Elmar Tecnologia	| 1 |	25,0 |
+| DC Soluções	 | 1 |	33,3 |
+| Portal Próprio / e-TICons	| 1 |	25,0 |
+| Portal Próprio / Info Public	 | 1 |	33,3 |
+| Alfa Consultoria / Info Public	 | 1	| 50,0 |
+| EasyWeb / Publicsoft / e-TICons	|1	 | 50,0 |
+| Portal Próprio / Publicsoft / Elmar Tecnologia |	1	| 50,0 |
+| Franinformática / Publicsoft / Aspec Informática	 | 1	 | 100,0 |
+| TI de João Pessoal	| 1	 | 100,0 |
+| EasyWeb / e-TICons |	1	 | 16,7 |
+
+### População
 
 ### Gabaritos
 
@@ -172,7 +199,7 @@ Com objetivo de comparar o desempenho do crawler na avaliação da transparênci
 
 Na elaboração dos gabaritos cada item registrado é classificado manualmente, atribuindo na coluna encontrado o valor ***TRUE*** caso a presença no portal seja confirmada e ***FALSE*** caso contrário. Além disso, é registrada a localização onde cada item foi identificado, assegurando a corretude da informação durante a comparação entre o gabarito e os resultados do crawler.
 
-Nesse cenário, devido a dificuldade na elaboração manual de gabaritos para todos 223 municípios do estado da Paraíba foi optado pelo uso de uma amostra com ***51*** gabaritos de difentes portais de transparência (22.8% do total de 223 municípios) selecionados considerando o número de combinações existentes, sendo elas individuais, uma única empresa genreciando as informações fiscais do site, ou mesclagens, duas ou mais empresas genreciando as informações fiscais do site. Esta amostra torna-se representativa por experimentar e análisar todas as variações possíveis durante a execução do Auditor-Crawler. 
+Nesse cenário, devido a dificuldade na elaboração manual de gabaritos para todos 223 municípios do estado da Paraíba foi optado pelo uso de uma amostra com ***35*** gabaritos de difentes portais de transparência (15.6% do total de 223 municípios) selecionados considerando o número de combinações existentes, sendo elas individuais, uma única empresa genreciando as informações fiscais do site, ou mesclagens, duas ou mais empresas genreciando as informações fiscais do site. Esta amostra torna-se representativa por experimentar e análisar todas as variações possíveis durante a execução do Auditor-Crawler. 
 
 ### Métricas
 
