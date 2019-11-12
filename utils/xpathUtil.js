@@ -12,6 +12,7 @@ const UNUSABLEIFRAMES = ['limpo', 'youtube', 'tweet', 'twitter', 'blank', 'googl
 const CONSULTAR = "consultar";
 const PESQUISAR = "pesquisar";
 const ACESSAR = "acessar";
+const SERVIDOR = "servidor";
 
 
 export {
@@ -141,6 +142,7 @@ export default class XpathUtil {
         terms.push(CONSULTAR);
         terms.push(PESQUISAR);
         terms.push(ACESSAR);
+        terms.push(SERVIDOR);
 
         return terms;
     }

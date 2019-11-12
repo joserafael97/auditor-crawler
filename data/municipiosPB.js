@@ -220,11 +220,11 @@ const counties = [
         population: 0
     },
     {
-        name: 'Puxinanã',
-        codSepro: '2149',
-        empresas: [PORTAL_PROPRIO, PUBLICSOFT],
-        cityHallUrl: 'https://www.puxinana.pb.gov.br',
-        transparencyPortalUrl: 'https://www.puxinana.pb.gov.br/portal/transparencia-fiscal',
+        name: 'Remígio',
+        codSepro: '2155',
+        empresas: [PORTAL_PROPRIO, PUBLICSOFT, ELMAR],
+        cityHallUrl: 'https://www.remigio.pb.gov.br',
+        transparencyPortalUrl: 'https://www.remigio.pb.gov.br/portal/transparencia-fiscal',
         population: 0
     },
     {
@@ -305,6 +305,14 @@ const counties = [
         empresas: [PORTAL_PROPRIO, PUBLICSOFT, ELMAR],
         cityHallUrl: 'http://cabedelo.pb.gov.br',
         transparencyPortalUrl: 'http://cabedelo.pb.gov.br/portal-da-transparencia',
+        population: 0
+    },
+    {
+        name: 'Coremas',
+        codSepro: '1997',
+        empresas: [E_TICONS],
+        cityHallUrl: 'https://www.coremas.pb.gov.br',
+        transparencyPortalUrl: 'http://siteseticons.com.br/portal/ws/empresa/MDg5Mzk5MzYwMDAxOTQ=',
         population: 0
     },
 ];
