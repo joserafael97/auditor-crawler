@@ -159,6 +159,12 @@ O detalhamento das atividades do diagrama é apresentada abaixo:
 
 Nesta seção é apresentado os procedimentos e métricas utilizadas para avaliar e validar a solução proposta nesta pesquisa.
 
+### Critérios Avaliados
+
+Critérios com maior padronização (tabelas) na exibição das informações nos portais de transparência;
+Mais importantes para o manutenção da transparência??? 
+Critérios mais encontrados nos portais???
+
 ### Amostra
 
 Para a análise da ***eficácia*** e ***eficiência*** do crawler durante as avaliações fiscais é fundamental estabelecer a população/amostra que servirá de base representativa do contexto avaliado. Nesta perspectiva, foi utilizado um recorte de 35 portais de transparência de diferentes municípios da Paraíba, representando ***15.6%*** dos ***223 portais*** existentes no estado.
