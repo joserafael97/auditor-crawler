@@ -157,7 +157,7 @@ O detalhamento das atividades do diagrama é apresentada abaixo:
 
 ## Avaliação dos Resultados
 
-Nesta seção é apresentado os procedimentos e métricas utilizados para avaliar e validar a solução proposta nesta pesquisa.
+Nesta seção é apresentado os procedimentos e métricas utilizadas para avaliar e validar a solução proposta nesta pesquisa.
 
 ### Amostra
 
@@ -225,7 +225,7 @@ De acordo com os resultados obtidos nos gabaritos e avaliações do crawler fora
 * ***Precision*** é o valor resultante do cálculo apresentado na função de Precision;
 * ***Recall*** é o valor resultante do cálculo apresentado na função de Recall.
 
-No que diz respeito a eficiência do crawler foram utilizados a medição número de ***Nós acessados*** (URLs, Componentes clicáveis) e o consumo de ***CPU***, ***Memória RAM*** e ***Internet***.
+No que diz respeito a eficiência do crawler foram utilizados a medição do número de ***Nós acessados*** (URLs, Componentes clicáveis) em cada avaliação, a duração de cada avaliação, o consumo de ***CPU***, ***Memória RAM*** e ***Internet***.
 
 Obs: toda a análise dos resultados foi realizada pelo projeto [https://github.com/joserafael97/analyze-auditor-crawlers](https://github.com/joserafael97/analyze-auditor-crawlers)
 
