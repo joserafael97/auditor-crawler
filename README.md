@@ -157,7 +157,7 @@ O detalhamento das atividades do diagrama é apresentada abaixo:
 
 ## Avaliação dos Resultados
 
-Nesta seção é apresentado os procedimentos e métricas utilizadas para avaliar e validar a solução proposta nesta pesquisa.
+Nesta seção é apresentado os procedimentos e métricas adotadas para avaliar e validar a solução proposta nesta pesquisa.
 
 ### Critérios Avaliados
 
