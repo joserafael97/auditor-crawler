@@ -87,7 +87,7 @@ export default class TextUtil {
 
         for (const currentUrl of UrlsList) {
            
-            if (StringSimilarity.compareTwoStrings(currentUrl, url1) >= similarityValue) {
+            if (StringSimilarity.compareTwoStrings(currentUrl, url1) >= similarityValue || currentUrl === url1) {
                 return true;
             }
 
