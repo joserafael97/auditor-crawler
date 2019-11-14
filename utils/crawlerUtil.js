@@ -279,9 +279,6 @@ export default class CrawlerUtil {
         let numberItensIdentify = 0;
         let result = node.getFeatures();
 
-        console.log("idefication is Frame: " , node.getSource().getIsExtractIframe());
-        console.log("await page.url(): " , await page.url());
-
         for (let item of itens) {
             let element = (await page.$x(item.xpath))[0];
             if (element !== undefined && !item.valid) {
@@ -310,8 +307,6 @@ export default class CrawlerUtil {
                 numberItensIdentify = item.found ? ++numberItensIdentify : numberItensIdentify;
             }
         }
-        console.log("numberItensIdentify: " , numberItensIdentify);
-
         CrawlerUtil.checkIdentificationItens(itens, await page.url());
 
         node.setRewardValue(numberItensIdentify > 0 ? 1 : 0);
