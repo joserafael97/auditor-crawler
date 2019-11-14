@@ -1,4 +1,4 @@
-const keywordSearchRecExtraOrcamentaria = ['consultar receitas extra-orcamentarias', 'extraorcamentaria', 
+const keywordSearchRecExtraOrcamentaria = ['consultar receitas extra-orcamentarias', 'extraorcamentaria', 'extraorcamentarias', 
     'receita', 'extra-orcamentaria', 'extra orcamentaria', 'consultar', 'Pesquisar', "/"+new Date().getFullYear(),
 ];
 

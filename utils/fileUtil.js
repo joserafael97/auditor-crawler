@@ -22,5 +22,14 @@ export default class FileUtil {
     static deleteFile(filePath) {
         fs.unlinkSync(filePath);
     }
+
+    static getLastMonthInExtensionName() {
+        const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+            "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+        ];
+
+        const d = new Date();
+        return monthNames[d.getMonth() - 1];
+    }
 }
 

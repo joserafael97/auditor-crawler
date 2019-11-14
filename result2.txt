@@ -1,0 +1,187 @@
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Quixaba" "aproach=bfs"
+
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: bfs","level":"info"}
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+idefication is Frame:  false
+await page.url():  http://quixaba.pb.gov.br/assuntos/portal-da-transparencia
+numberItensIdentify:  0
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L3JlY2VpdGEtZXh0cmEtb3JjYW1lbnRhcmlh&m=2  level:  1
+queue nodes: ****: despesa  level:  1
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L3JlY2VpdGEtZXh0cmEtb3JjYW1lbnRhcmlh&m=2","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+(await page.constructor.name) === "Frame":  false
+queryIframe.getIsExtractIframe() true
+idefication is Frame:  false
+await page.url():  http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/?url=Receitas/FormCPRCGuiasReceitaExtra.php&urlorigem=http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L3JlY2VpdGEtZXh0cmEtb3JjYW1lbnRhcmlh&m=2
+numberItensIdentify:  0
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: despesa  level:  1
+queue nodes: ****: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/Okk=/receita-extra-orcamentaria  level:  2
+queue nodes: ****: consultar despesas extras  level:  2
+queue nodes: ****: despesas  level:  2
+queue nodes: ****: despesas extrasorcamentarias  level:  2
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: despesa","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+idefication is Frame:  false
+await page.url():  http://quixaba.pb.gov.br/assuntos/portal-da-transparencia
+numberItensIdentify:  0
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/Okk=/receita-extra-orcamentaria  level:  2
+queue nodes: ****: consultar despesas extras  level:  2
+queue nodes: ****: despesas  level:  2
+queue nodes: ****: despesas extrasorcamentarias  level:  2
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/Okk=/receita-extra-orcamentaria","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+idefication is Frame:  false
+await page.url():  http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/Receitas/FormCPRCGuiasReceitaExtra.php
+numberItensIdentify:  0
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: consultar despesas extras  level:  2
+queue nodes: ****: despesas  level:  2
+queue nodes: ****: despesas extrasorcamentarias  level:  2
+queue nodes: ****: consultar  level:  3
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: consultar despesas extras","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: true","level":"info"}
+===================================================================
+{"message":"Click error in criterionDespesa Extra Orçamentáriain value: consultar despesas extras: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: despesas  level:  2
+queue nodes: ****: despesas extrasorcamentarias  level:  2
+queue nodes: ****: consultar  level:  3
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: despesas","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: true","level":"info"}
+===================================================================
+idefication is Frame:  true
+await page.url():  http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/?url=Receitas/FormCPRCGuiasReceitaExtra.php&urlorigem=http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L3JlY2VpdGEtZXh0cmEtb3JjYW1lbnRhcmlh&m=2
+numberItensIdentify:  0
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: despesas extrasorcamentarias  level:  2
+queue nodes: ****: consultar  level:  3
+queue nodes: ****: consultar despesas extras  level:  3
+queue nodes: ****: despesas extrasorcamentarias  level:  3
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: despesas extrasorcamentarias","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: true","level":"info"}
+===================================================================
+{"message":"Click error in criterionDespesa Extra Orçamentáriain value: despesas extrasorcamentarias: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: consultar  level:  3
+queue nodes: ****: consultar despesas extras  level:  3
+queue nodes: ****: despesas extrasorcamentarias  level:  3
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: consultar","level":"info"}
+{"message":"node level: 3","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: true","level":"info"}
+===================================================================
+idefication is Frame:  true
+await page.url():  http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/Receitas/resultadoConsultaGridCPRCGuiasReceitaExtra.php
+numberItensIdentify:  0
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: consultar despesas extras  level:  3
+queue nodes: ****: despesas extrasorcamentarias  level:  3
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: consultar despesas extras","level":"info"}
+{"message":"node level: 3","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: true","level":"info"}
+===================================================================
+{"message":"Click error in criterionDespesa Extra Orçamentáriain value: consultar despesas extras: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: despesas extrasorcamentarias  level:  3
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: despesas extrasorcamentarias","level":"info"}
+{"message":"node level: 3","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: true","level":"info"}
+===================================================================
+{"message":"Click error in criterionDespesa Extra Orçamentáriain value: despesas extrasorcamentarias: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Close Puppeteer ...","level":"info"}
+{"message":"Returnin Criterion: Despesa Extra Orçamentária","level":"info"}
+itens [ { keywordsXpath:
+     [ 'valor',
+       'Valor Pago',
+       'empenhado(r$)',
+       'VALOR ATÉ MÊS R$',
+       'saldo' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5dcd5c48f7c3ef4c673240b9,
+    name: 'valor',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor pago" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "empenhado(r$)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor ate mes r$" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "saldo"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'codigo', 'cod. despesa' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5dcd5c48f7c3ef4c673240ba,
+    name: 'codigo',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "codigo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cod. despesa"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath: [ 'descricao', 'nome da despesa' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5dcd5c48f7c3ef4c673240bb,
+    name: 'nomenclatura',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "descricao" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nome da despesa"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' } ]
+{"message":"Duration in crawling proccess for the criterion Despesa Extra Orçamentária was: 20 min","level":"info"}

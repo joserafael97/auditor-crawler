@@ -1,4 +1,4 @@
-const keywordSearchRecOrcamentaria = ['ORÇAMENTÁRIA', 'lnkReceitaOrcamentaria', 'Receita Geral','Receitas', 'receita-orcamentaria', 'Consultar Receitas Orçamentárias',
+const keywordSearchRecOrcamentaria = ['ORÇAMENTÁRIA', 'orcamentaria', 'orcamentarias', 'lnkReceitaOrcamentaria', 'Receita Geral','Receitas', 'receita-orcamentaria', 'Consultar Receitas Orçamentárias',
     'receita prevista com arrecadada', 'Receitas Orçamentárias', 'receita', 'onCellClick','Consultar', 'consultando', 'DetalhesReceita', 'Pesquisar', "/"+new Date().getFullYear(),
 ];
 

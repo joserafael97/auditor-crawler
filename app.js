@@ -24,6 +24,7 @@ import ObjectsToCsv from 'objects-to-csv';
 import csv from 'csvtojson';
 import fs from 'fs';
 import FeaturesConst from './consts/featuares';
+import FileUtil from './utils/fileUtil';
 
 const logErrorAndExit = err => {
     console.log(err)
@@ -93,7 +94,7 @@ let selectAproachToRun = async (aproachSelected, root, criterion, evaluation, it
                 nbModel.train(train['x_train'], train['y_train']);
                 trained = true;
             }
-            
+
             resultCrawlingCriterion = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, nbModel, new EpsilonGreedy(10000, 0.1), [], [], 0, 1, trainModel).catch(logErrorAndExit)
 
         } else {
@@ -163,7 +164,7 @@ const initColletions = async () => {
     });
 }
 
-let startCrawler = async (evaluation, criterion) => {
+let startCrawler = async (evaluation, criterion) => {   
 
     await initColletions();
     const county = await County.findByName(CliParamUtil.countyParamExtract(process.argv.slice(2)[0]));
@@ -196,9 +197,9 @@ let criterionLicit = CrawlerUtil.createCriterion('Licitação');
 let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
 startCrawler(evaluation, criterionDespesaOrc);
-startCrawler(evaluation, criterionDespesaExtra);
-startCrawler(evaluation, criterionReceitaOrc);
-startCrawler(evaluation, criterionReceitaExtra);
-startCrawler(evaluation, criterionLicit);
-startCrawler(evaluation, criterionPessoal);
+// startCrawler(evaluation, criterionDespesaExtra);
+// startCrawler(evaluation, criterionReceitaOrc);
+// startCrawler(evaluation, criterionReceitaExtra);
+// startCrawler(evaluation, criterionLicit);
+// startCrawler(evaluation, criterionPessoal);
 

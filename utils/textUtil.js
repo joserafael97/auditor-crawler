@@ -79,11 +79,15 @@ export default class TextUtil {
 
     }
 
-    static similarityUrls(url1, UrlsList, similarityValue = 0.93) {
+    static similarityUrls(url1, UrlsList, similarityValue = 0.95) {
         url1 = url1.substr(url1.length - 1) === "/" ? url1.slice(0, -1) : url1;
 
+        similarityValue = url1.includes("/assuntos/portal-da-transparencia?acao=aHR0") ? 0.99 : 0.95;
+
+
         for (const currentUrl of UrlsList) {
-            if ((StringSimilarity.compareTwoStrings(currentUrl, url1) > similarityValue)) {
+           
+            if (StringSimilarity.compareTwoStrings(currentUrl, url1) >= similarityValue) {
                 return true;
             }
 
@@ -102,6 +106,10 @@ export default class TextUtil {
                     uri2 = uri2.split('/')[uri2.split('/').length - 2];
                 }
 
+                if (uri1 === 'assuntos' && url1.includes("/assuntos/portal-da-transparencia?acao=aHR0")) {
+                    return false;
+                }
+
                 if (StringSimilarity.compareTwoStrings(uri1, uri2) > similarityValue) {
                     return true;
                 }
@@ -113,9 +121,8 @@ export default class TextUtil {
             }
 
         }
+
         return false;
-
-
     }
 
     static checkRelevantTagInTagsNameItem(tagNameParents) {
@@ -156,17 +163,16 @@ export default class TextUtil {
 
     static validateItemSearch(criterionName) {
         const unusableTerms = {
-            'Despesa Extra Orçamentária': ['despesas-quadro-geral', 'gerenciamento-frota', 'despesas-favorecidos', 'quadro-geral', 'detalhamento', 'previsao', 'arrecadacao', 'sagresonline.tce.pb.gov.br', 'despesa orcamentaria', 'empenho', 'servicos', 'locomocao', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',
-                'demonstrativo', 'outras despesas', 'restos a pagar', ' por orgao', 'obras', 'diarias', 'passagens', 'transferencia', 'programatica', 'fornecedor',],
-            'Despesa Orçamentária': ['sagresonline.tce.pb.gov.br', 'ldo', 'lei', 'loa', 'extra', 'elemento', 'favorecido', 'orgao', 'programatica', 'obras', 'passagens', 'transferencia', 'diarias', 'receitas', 'outras despesas', 'receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'restos a pagar'],
-            'Receita Orçamentária': ['o que e receita?', 'sagresonline.tce.pb.gov.br', 'despesa', 'extra', 'divisorReceitaCompetencia', 'deducao', 'transferencias', 'transferencia', 'detalhado', 'receita de contribuicoes', 'receita de servicos', 'receita patrimonial', 'comparativo', 'restos a pagar', 'prevista', 'resumo geral', 'loalei', 'execucao', 'outras receitas', 'despesas', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo'],
-            'Receita Extra Orçamentária': ['receitas-quadro-geral', 'quadro-geral', 'detalhamento', 'previsao', 'arrecadacao', 'sagresonline.tce.pb.gov.br', 'transferencias', 'receitas orcamentarias', 'despesas', 'licitacao', 'licitacoes', 'despesa', 'pessoal', 'restos a pagar', 'folha de pagamento', 'demonstrativo', 'outras receitas'],
-            'Licitação': ['o que e uma licitacao?', 'receita', 'extra', 'extraorcamentarias', 'sagresonline.tce.pb.gov.br', 'contratos', 'receitas', 'despesa', 'despesas', 'receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'consultar restos a pagar'],
-            'Quadro Pessoal': ['extra', 'receitas', 'outras despesas', 'receita', 'licitacao', 'licitacoes', 'demonstrativo', 'consultar restos a pagar']
+            'Despesa Extra Orçamentária': ['despesas-quadro-geral', 'FormCPRCGuiasReceitaExtra', 'receita-extra-orcamentaria', 'gerenciamento-frota', 'despesas-favorecidos', 'quadro-geral', 'detalhamento', 'previsao', 'arrecadacao', 'sagresonline.tce.pb.gov.br', 'despesa orcamentaria', 'empenho', 'servicos', 'locomocao', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',
+                'demonstrativo', 'outras despesas', 'restos a pagar', ' por orgao', 'obras', 'diarias', 'passagens', 'transferencia', 'programatica', 'fornecedor', 'h&m=2', '==&m=3'],
+            'Despesa Orçamentária': ['sagresonline.tce.pb.gov.br', 'ldo', 'cw==&m=', '8=&m=8', 'ZXM=&m=', '==&m=8', '==&m=3', 'h&m=2', 'lei', 'loa', 'extra', 'elemento', 'favorecido', 'orgao', 'programatica', 'obras', 'passagens', 'transferencia', 'diarias', 'receitas', 'outras despesas', 'receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'restos a pagar'],
+            'Receita Orçamentária': ['o que e receita?', 'sagresonline.tce.pb.gov.br', 'jYW1lbnRhcmlh&m=2', '==&m=3', 'h&m=3', 'despesa', 'extra', 'divisorReceitaCompetencia', 'deducao', 'transferencias', 'transferencia', 'detalhado', 'receita de contribuicoes', 'receita de servicos', 'receita patrimonial', 'comparativo', 'restos a pagar', 'prevista', 'resumo geral', 'loalei', 'execucao', 'outras receitas', 'despesas', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo'],
+            'Receita Extra Orçamentária': ['receitas-quadro-geral', 'quadro-geral', '==&m=3', 'h&m=3', 'detalhamento', 'previsao', 'arrecadacao', 'sagresonline.tce.pb.gov.br', 'transferencias', 'receitas orcamentarias', 'despesas', 'licitacao', 'licitacoes', 'despesa', 'pessoal', 'restos a pagar', 'folha de pagamento', 'demonstrativo', 'outras receitas'],
+            'Licitação': ['o que e uma licitacao?', 'receita', 'h&m=3', 'extra', '==&m=3', 'extraorcamentarias', 'sagresonline.tce.pb.gov.br', 'contratos', 'receitas', 'despesa', 'despesas', 'receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'consultar restos a pagar'],
+            'Quadro Pessoal': ['extra', 'receitas', 'despesas orcamentarias', '&m=', 'outras despesas', 'receita', 'licitacao', 'licitacoes', 'demonstrativo', 'consultar restos a pagar']
 
         };
-
-        const unusableCommumTerms = ["javascript", 'new date', '&quot', 'youtube', 'twitter', 'tweet','sharethis', 'google','facebook', 'themes', 'wp-content', 'form', 'addtoany', 'staticxx', 'e=101095', 'insira o texto', 'facebook', 'assets', 'anexo', 'ldolei', 'http://sagresonline.tce.pb.gov.br#/municipal/execucao-orcamentaria', 'foot', 'graficos', 'token', 'maps', 'filtro', 'xmlrpc', 'feed', 'tutorial', "pwd", "transparencia.rn.gov.br", "css", "recuperar-senha", "cadastro", '.xml', "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
+        const unusableCommumTerms = ["javascript", 'vlibras', 'new date', '&quot', 'youtube', 'twitter', 'tweet', 'sharethis', 'google', 'facebook', 'themes', 'wp-content', 'form', 'addtoany', 'staticxx', 'e=101095', 'insira o texto', 'facebook', 'assets', 'anexo', 'ldolei', 'http://sagresonline.tce.pb.gov.br#/municipal/execucao-orcamentaria', 'foot', 'graficos', 'token', 'maps', 'filtro', 'xmlrpc', 'feed', 'tutorial', "pwd", "transparencia.rn.gov.br", "css", "recuperar-senha", "cadastro", '.xml', "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
             '.js', 'download', 'widget', ".zip", '.jpg', ".jpeg", ".rar", "noticia", "publicidade", "noticia", "pinterest.com", 'javascript', 'wp-json', 'json'
         ];
 
@@ -174,5 +180,4 @@ export default class TextUtil {
         unusableCommumTermsFinal.push.apply(unusableCommumTermsFinal, unusableCommumTerms)
         return unusableCommumTermsFinal;
     };
-
 }

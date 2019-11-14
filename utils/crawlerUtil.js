@@ -81,6 +81,14 @@ export default class CrawlerUtil {
         } else {
             let element = node.getSource().getElement();
             element = await PuppeteerUtil.selectElementPage(page, xpath, value);
+            
+            // console.log("==========antes ")
+
+            // if (criterion.name === 'Quadro Pessoal'){
+            //     console.log("==========entrou ")
+            //     await page.select('.form-control input-sm ng-pristine ng-valid ng-not-empty ng-touched', 'Outubro').catch(e => console.log("erro:", e));
+            // }
+
             await element.click();
             await page.waitForNavigation().catch(e => void e);
             const pages = await puppeteer.getBrowser().pages()
@@ -96,7 +104,7 @@ export default class CrawlerUtil {
             }
         }
 
-        await page.waitFor(3000);
+        await page.waitFor(4000);
 
         let elementsIdentify = []
         let iframesUrlNodes = []
@@ -161,7 +169,8 @@ export default class CrawlerUtil {
 
                 if ((HtmlUtil.isUrl(text) && !TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, text)) &&
                     !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
-                    let source = new Element(text, element, queryIframe.getXpath(), queryIframe.getTypeQuery(), currentUrl, (await page.constructor.name) === "Frame" || queryIframe.getIsExtractIframe());
+
+                    let source = new Element(text, element, queryIframe.getXpath(), queryIframe.getTypeQuery(), currentUrl, (await page.constructor.name) === "Frame");
                     let newNode = new Node(source, node);
                     newNode.initializeFeatures();
                     newNode.getFeatures()[FeaturesConst.URL_RELEVANT] = TextUtil.
@@ -270,8 +279,11 @@ export default class CrawlerUtil {
         let numberItensIdentify = 0;
         let result = node.getFeatures();
 
+        console.log("idefication is Frame: " , node.getSource().getIsExtractIframe());
+        console.log("await page.url(): " , await page.url());
+
         for (let item of itens) {
-            const element = (await page.$x(item.xpath))[0];
+            let element = (await page.$x(item.xpath))[0];
             if (element !== undefined && !item.valid) {
                 let path = FileUtil.createMultiDirecttory('./proof/' + evaluation.county,
                     "/" + evaluation.date.toISOString(), "/" + criterionName)
@@ -298,6 +310,8 @@ export default class CrawlerUtil {
                 numberItensIdentify = item.found ? ++numberItensIdentify : numberItensIdentify;
             }
         }
+        console.log("numberItensIdentify: " , numberItensIdentify);
+
         CrawlerUtil.checkIdentificationItens(itens, await page.url());
 
         node.setRewardValue(numberItensIdentify > 0 ? 1 : 0);
