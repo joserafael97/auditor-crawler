@@ -86,7 +86,7 @@ export default class TextUtil {
 
 
         for (const currentUrl of UrlsList) {
-           
+
             if (StringSimilarity.compareTwoStrings(currentUrl, url1) >= similarityValue || currentUrl === url1) {
                 return true;
             }
@@ -172,7 +172,8 @@ export default class TextUtil {
             'Quadro Pessoal': ['extra', 'receitas', 'despesas orcamentarias', 'outras despesas', 'receita', 'licitacao', 'licitacoes', 'demonstrativo', 'consultar restos a pagar']
 
         };
-        const unusableCommumTerms = ["javascript", 'vlibras', '=&m=8', 'new date', '&quot', 'youtube', 'twitter', 'tweet', 'sharethis', 'google', 'facebook', 'themes', 'wp-content', 'form', 'addtoany', 'staticxx', 'e=101095', 'insira o texto', 'facebook', 'assets', 'anexo', 'ldolei', 'http://sagresonline.tce.pb.gov.br#/municipal/execucao-orcamentaria', 'foot', 'graficos', 'token', 'maps', 'filtro', 'xmlrpc', 'feed', 'tutorial', "pwd", "transparencia.rn.gov.br", "css", "recuperar-senha", "cadastro", '.xml', "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
+        const unusableCommumTerms = ["javascript", 'pdf', 'perguntas_frequentes', 'vlibras', "jaipt", '/jan/', '/fev/', '/mar/', '/abr/', '/maio/', '/jun/', '/jul/', '/jul/', '/ago/', '/set/'
+            , 'ldo', 'loa', '=&m=8', 'new date', '&quot', 'youtube', 'twitter', 'tweet', 'sharethis', 'google', 'facebook', 'themes', 'wp-content', 'form', 'addtoany', 'staticxx', 'e=101095', 'insira o texto', 'facebook', 'assets', 'anexo', 'ldolei', 'http://sagresonline.tce.pb.gov.br#/municipal/execucao-orcamentaria', 'foot', 'graficos', 'token', 'maps', 'filtro', 'xmlrpc', 'feed', 'tutorial', "pwd", "transparencia.rn.gov.br", "css", "recuperar-senha", "cadastro", '.xml', "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
             '.js', 'download', 'widget', ".zip", '.jpg', ".jpeg", ".rar", "noticia", "publicidade", "noticia", "pinterest.com", 'javascript', 'wp-json', 'json'
         ];
 
@@ -181,4 +182,3 @@ export default class TextUtil {
         return unusableCommumTermsFinal;
     };
 }
-
