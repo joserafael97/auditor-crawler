@@ -81,7 +81,7 @@ export default class CrawlerUtil {
         } else {
             let element = node.getSource().getElement();
             element = await PuppeteerUtil.selectElementPage(page, xpath, value);
-            
+
             // console.log("==========antes ")
 
             // if (criterion.name === 'Quadro Pessoal'){
@@ -168,7 +168,7 @@ export default class CrawlerUtil {
                 elementsIdentify.push.apply(elementsIdentify, edgesList);
 
                 if ((HtmlUtil.isUrl(text) && !TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, text)) &&
-                    (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase(), false) && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) ) {
+                    (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase(), false) && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList))) {
 
                     let source = new Element(text, element, queryIframe.getXpath(), queryIframe.getTypeQuery(), currentUrl, (await page.constructor.name) === "Frame");
                     let newNode = new Node(source, node);
@@ -208,6 +208,7 @@ export default class CrawlerUtil {
 
         for (let queryElement of queryElements) {
             const elements = await page.$x(queryElement.getXpath());
+
             if (elements.length > 0) {
                 for (let element of elements) {
                     let text = await (await element.getProperty('textContent')).jsonValue();
@@ -222,7 +223,7 @@ export default class CrawlerUtil {
                                 urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
                     }
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                    if ((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text)))
+                    if (((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))))
                         || (/^\d+$/.test(text))) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
                             (currentNodeUrl !== currentUrl))) {
@@ -230,8 +231,12 @@ export default class CrawlerUtil {
                         text = !isUrl && (await CrawlerUtil.hrefValid(element, currentUrl)) ? await (await element.getProperty('href')).jsonValue() : text;
                         elementsIdentify.push.apply(elementsIdentify, edgesList);
 
+                        text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+                    
+
                         if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase(), false) &&
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
+
 
                             if ((text.length > 0 && HtmlUtil.isUrl(text)) ||
                                 ((text.length > 0 && !HtmlUtil.isUrl(text)) && text.length < 120)) {
