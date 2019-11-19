@@ -88,6 +88,7 @@ export default class TextUtil {
         for (const currentUrl of UrlsList) {
 
             if (StringSimilarity.compareTwoStrings(currentUrl, url1) >= similarityValue || currentUrl === url1) {
+
                 return true;
             }
 
@@ -99,11 +100,10 @@ export default class TextUtil {
             if (host1 === host2 && uri1.length > 0) {
                 const consturi2Isnum = /^\d+$/.test(currentUrl);
                 let uri2 = !consturi2Isnum ? HtmlUtil.extractUri(currentUrl).replace('/', '').replace(/[0-9]/g, '') : HtmlUtil.extractUri(currentUrl).replace('/', '');
-
-
-                if ((uri1.split('/').length - 1) > 0 && (uri2.split('/').length - 1) > 0) {
-                    uri1 = uri1.split('/')[uri1.split('/').length - 2];
-                    uri2 = uri2.split('/')[uri2.split('/').length - 2];
+                
+                if ((uri1.split('/').length - 1) > 1 && (uri2.split('/').length - 1) > 1) {
+                    uri1 = uri1.split('/')[uri1.split('/').length - 2] +"/"+ uri1.split('/')[uri1.split('/').length - 1];
+                    uri2 = uri2.split('/')[uri2.split('/').length - 2]  +"/"+ uri2.split('/')[uri2.split('/').length - 1];
                 }
 
                 if (uri1 === 'assuntos' && url1.includes("/assuntos/portal-da-transparencia?acao=aHR0")) {
@@ -165,11 +165,11 @@ export default class TextUtil {
         const unusableTerms = {
             'Despesa Extra Orçamentária': ['despesas-quadro-geral', 'FormCPRCGuiasReceitaExtra', 'receita-extra-orcamentaria', 'gerenciamento-frota', 'despesas-favorecidos', 'quadro-geral', 'detalhamento', 'previsao', 'arrecadacao', 'sagresonline.tce.pb.gov.br', 'despesa orcamentaria', 'empenho', 'servicos', 'locomocao', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',
                 'demonstrativo', 'outras despesas', 'restos a pagar', ' por orgao', 'obras', 'diarias', 'passagens', 'transferencia', 'programatica', 'fornecedor', 'h&m=2', '==&m=3'],
-            'Despesa Orçamentária': ['sagresonline.tce.pb.gov.br', 'ldo', 'cw==&m=', '8=&m=8', 'ZXM=&m=', '==&m=8', '==&m=3', 'h&m=2', 'lei', 'loa', 'extra', 'elemento', 'favorecido', 'orgao', 'programatica', 'obras', 'passagens', 'transferencia', 'diarias', 'receitas', 'outras despesas', 'receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'restos a pagar'],
+            'Despesa Orçamentária': ['sagresonline.tce.pb.gov.br', 'anulacao', 'especificacao da despesa', 'rreo', 'servicos', 'contratos', '/unidade', '/programas', 'lrf', 'ldo', 'cw==&m=', '8=&m=8', 'ZXM=&m=', '==&m=8', '==&m=3', 'h&m=2', 'lei', 'loa', 'extra', 'elemento', 'favorecido', 'orgao', 'programatica', 'obras', 'passagens', 'transferencia', 'diarias', 'receitas', 'outras despesas', 'receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'restos a pagar'],
             'Receita Orçamentária': ['o que e receita?', 'sagresonline.tce.pb.gov.br', '==&m=3', 'h&m=3', 'despesa', 'extra', 'divisorReceitaCompetencia', 'deducao', 'transferencias', 'transferencia', 'detalhado', 'receita de contribuicoes', 'receita de servicos', 'receita patrimonial', 'comparativo', 'restos a pagar', 'prevista', 'resumo geral', 'loalei', 'execucao', 'outras receitas', 'despesas', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo'],
             'Receita Extra Orçamentária': ['receitas-quadro-geral', 'quadro-geral', '==&m=3', 'h&m=3', 'detalhamento', 'previsao', 'arrecadacao', 'sagresonline.tce.pb.gov.br', 'transferencias', 'receitas orcamentarias', 'despesas', 'licitacao', 'licitacoes', 'despesa', 'pessoal', 'restos a pagar', 'folha de pagamento', 'demonstrativo', 'outras receitas'],
             'Licitação': ['o que e uma licitacao?', 'receita', 'extra', 'extraorcamentarias', 'sagresonline.tce.pb.gov.br', 'contratos', 'receitas', 'despesa', 'despesas', 'receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'consultar restos a pagar'],
-            'Quadro Pessoal': ['extra', 'receitas', 'despesas orcamentarias', 'outras despesas', 'receita', 'licitacao', 'licitacoes', 'demonstrativo', 'consultar restos a pagar']
+            'Quadro Pessoal': ['extra', 'receitas', 'empenho', 'despesas orcamentarias', 'outras despesas', 'receita', 'licitacao', 'licitacoes', 'demonstrativo', 'consultar restos a pagar']
 
         };
         const unusableCommumTerms = ["javascript", 'pdf', 'perguntas_frequentes', 'vlibras', "jaipt", '/jan/', '/fev/', '/mar/', '/abr/', '/maio/', '/jun/', '/jul/', '/jul/', '/ago/', '/set/'

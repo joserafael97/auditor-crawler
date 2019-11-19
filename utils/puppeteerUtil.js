@@ -160,19 +160,25 @@ export default class PuppeteerUtil {
             let numRepetText = 0
             allNodes.push.apply(allNodes, arrayNodes)
             allNodes.push.apply(allNodes, edgesList)
-            const isnum = /^\d+$/.test(text);
+            const isnum = (/^\d+$/.test(text));
             let isDate = /\d{2}(\/)\d{2}(\/)\d{4}/.test(text);
 
             text = (/\d{2,20}(\/)\d{4}/.test(text)) && !isDate ? text.substring(text.length - 4, text.length) : text;
             const currentValue = currentNode.getSource().getValue();
 
-            if (isnum || isDate) {
+            if (isDate) {
                 return true;
+            }
+
+            if (isnum) {
+                text = text.substr(0, 2);
             }
 
             for (let node of allNodes) {
                 let value = node.getSource().getValue();
                 value = (/\d{2,20}(\/)\d{4}/.test(value)) && !(/\d{2}(\/)\d{2}(\/)\d{4}/.test(value)) ? value.substring(value.length - 4, value.length) : value;
+
+                value = (/^\d+$/.test(value)) ? value.substr(0, 2) : value;
 
                 if (node.getLevel() !== 0) {
 

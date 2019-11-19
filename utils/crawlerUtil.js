@@ -223,16 +223,16 @@ export default class CrawlerUtil {
                                 urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
                     }
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+
                     if (((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))))
-                        || (/^\d+$/.test(text))) &&
+                        || ((/^\d+$/.test(text)) && (text.length > 2 && text.length < 7))) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
                             (currentNodeUrl !== currentUrl))) {
                         const isUrl = HtmlUtil.isUrl(text);
-                        text = !isUrl && (await CrawlerUtil.hrefValid(element, currentUrl)) ? await (await element.getProperty('href')).jsonValue() : text;
+                        text = (!isUrl && !(/^\d+$/.test(text))) && (await CrawlerUtil.hrefValid(element, currentUrl)) ? await (await element.getProperty('href')).jsonValue() : text;
                         elementsIdentify.push.apply(elementsIdentify, edgesList);
 
                         text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                    
 
                         if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase(), false) &&
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
@@ -269,8 +269,8 @@ export default class CrawlerUtil {
         const actuallyUrl = TextUtil.checkTextContainsInText('#', currentUrl) ? currentUrl :
             currentUrl.substring(currentUrl.lastIndexOf('/')) === '/' ? currentUrl + '#' : currentUrl + '/#';
 
-        if ((url !== undefined && url.length > 0) && ((onclick !== null && onclick.length > 0) ||
-            (actuallyUrl === url || TextUtil.checkTextContainsInText('frameContent', url)))) {
+        if ((url !== undefined && url.length > 0) && (((onclick !== null && onclick.length > 0) || actuallyUrl === url) ||
+            (TextUtil.checkTextContainsInText('frameContent', url) || TextUtil.checkTextContainsInText('PrimeFaces', url)))) {
             return false
         }
 
