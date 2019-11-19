@@ -86,9 +86,7 @@ export default class TextUtil {
 
 
         for (const currentUrl of UrlsList) {
-
             if (StringSimilarity.compareTwoStrings(currentUrl, url1) >= similarityValue || currentUrl === url1) {
-
                 return true;
             }
 
@@ -100,13 +98,13 @@ export default class TextUtil {
             if (host1 === host2 && uri1.length > 0) {
                 const consturi2Isnum = /^\d+$/.test(currentUrl);
                 let uri2 = !consturi2Isnum ? HtmlUtil.extractUri(currentUrl).replace('/', '').replace(/[0-9]/g, '') : HtmlUtil.extractUri(currentUrl).replace('/', '');
-                
+
                 if ((uri1.split('/').length - 1) > 1 && (uri2.split('/').length - 1) > 1) {
-                    uri1 = uri1.split('/')[uri1.split('/').length - 2] +"/"+ uri1.split('/')[uri1.split('/').length - 1];
-                    uri2 = uri2.split('/')[uri2.split('/').length - 2]  +"/"+ uri2.split('/')[uri2.split('/').length - 1];
+                    uri1 = uri1.split('/')[uri1.split('/').length - 2] + "/" + uri1.split('/')[uri1.split('/').length - 1];
+                    uri2 = uri2.split('/')[uri2.split('/').length - 2] + "/" + uri2.split('/')[uri2.split('/').length - 1];
                 }
 
-                if (uri1 === 'assuntos' && url1.includes("/assuntos/portal-da-transparencia?acao=aHR0")) {
+                if (url1.includes("/assuntos/portal-da-transparencia?acao=aHR0")) {
                     return false;
                 }
 
