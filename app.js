@@ -208,16 +208,16 @@ function sleep(ms) {
 
     Promise.all([
         startCrawler(evaluation, criterionDespesaOrc),
-        // await sleep(1000),
-        // startCrawler(evaluation, criterionDespesaExtra),
-        // await sleep(1000),
-        // startCrawler(evaluation, criterionReceitaOrc),
-        // await sleep(1000),
-        // startCrawler(evaluation, criterionReceitaExtra),
-        // await sleep(1000),
-        // startCrawler(evaluation, criterionLicit),
-        // await sleep(1000),
-        // startCrawler(evaluation, criterionPessoal)
+        await sleep(1000),
+        startCrawler(evaluation, criterionDespesaExtra),
+        await sleep(1000),
+        startCrawler(evaluation, criterionReceitaOrc),
+        await sleep(1000),
+        startCrawler(evaluation, criterionReceitaExtra),
+        await sleep(1000),
+        startCrawler(evaluation, criterionLicit),
+        await sleep(1000),
+        startCrawler(evaluation, criterionPessoal)
     ]).then((result) => {
         console.log("=================finished=======================");
         moogoseInstace.connection.close(function () {
