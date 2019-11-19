@@ -167,7 +167,7 @@ Critérios mais encontrados nos portais???
 
 ### Amostra
 
-Para a análise da ***eficácia*** e ***eficiência*** do crawler durante as avaliações fiscais é fundamental estabelecer a população/amostra que servirá de base representativa do contexto avaliado. Nesta perspectiva, foi utilizado um recorte de 35 portais de transparência de diferentes municípios da Paraíba, representando ***15.6%*** dos ***223 portais*** existentes no estado.
+Para a análise da ***eficácia*** e ***eficiência*** do crawler durante as avaliações fiscais é fundamental estabelecer a população/amostra que servirá de base representativa do contexto avaliado. Nesta perspectiva, foi utilizado um recorte de 30 portais de transparência de diferentes municípios da Paraíba, representando ***13.4%*** dos ***223 portais*** existentes no estado.
 
 Como forma de garantir a construção de uma amostra de portais representativa para avaliação da ferramenta os critérios fornecedor do portal, número de portais, as combinações entre fornecedores e a frequência de aparição da combinação foram considerados. Neste sentido, para cada combinação contendo mais de ***2 portais*** foram selecionados de forma aleatória o número de portais que representassem um número ***superior 10%*** da combinação na população. A proporção de portais selecionados para amostra por combinação é apresentado na Tabela abaixo. 
 
