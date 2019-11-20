@@ -21,7 +21,6 @@ export default class TextUtil {
             text = text.toLowerCase();
 
             if (text === value || text.includes(value)) {
-
                 return true;
             }
 
@@ -161,7 +160,7 @@ export default class TextUtil {
 
     static validateItemSearch(criterionName) {
         const unusableTerms = {
-            'Despesa Extra Orçamentária': ['despesas-quadro-geral', 'FormCPRCGuiasReceitaExtra', 'receita-extra-orcamentaria', 'gerenciamento-frota', 'despesas-favorecidos', 'quadro-geral', 'detalhamento', 'previsao', 'arrecadacao', 'sagresonline.tce.pb.gov.br', 'despesa orcamentaria', 'empenho', 'servicos', 'locomocao', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',
+            'Despesa Extra Orçamentária': ['despesas-quadro-geral', 'FormCPRCGuiasReceitaExtra', 'receita-extra-orcamentaria', 'gerenciamento-frota', 'despesas-favorecidos', 'quadro-geral', 'detalhamento', 'previsao', 'arrecadacao', 'sagresonline.tce.pb.gov.br', 'despesa orcamentaria', 'servicos', 'locomocao', 'despesas orcamentarias', 'receitas', 'receita', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento',
                 'demonstrativo', 'outras despesas', 'restos a pagar', ' por orgao', 'obras', 'diarias', 'passagens', 'transferencia', 'programatica', 'fornecedor', 'h&m=2', '==&m=3'],
             'Despesa Orçamentária': ['sagresonline.tce.pb.gov.br', 'anulacao', 'especificacao da despesa', 'rreo', 'servicos', 'contratos', '/unidade', '/programas', 'lrf', 'ldo', 'cw==&m=', '8=&m=8', 'ZXM=&m=', '==&m=8', '==&m=3', 'h&m=2', 'lei', 'loa', 'extra', 'elemento', 'favorecido', 'orgao', 'programatica', 'obras', 'passagens', 'transferencia', 'diarias', 'receitas', 'outras despesas', 'receita', 'pessoal', 'folha de pagamento', 'demonstrativo', 'restos a pagar'],
             'Receita Orçamentária': ['o que e receita?', 'sagresonline.tce.pb.gov.br', '==&m=3', 'h&m=3', 'despesa', 'extra', 'divisorReceitaCompetencia', 'deducao', 'transferencias', 'transferencia', 'detalhado', 'receita de contribuicoes', 'receita de servicos', 'receita patrimonial', 'comparativo', 'restos a pagar', 'prevista', 'resumo geral', 'loalei', 'execucao', 'outras receitas', 'despesas', 'licitacao', 'licitacoes', 'pessoal', 'folha de pagamento', 'demonstrativo'],
@@ -171,7 +170,7 @@ export default class TextUtil {
 
         };
         const unusableCommumTerms = ["javascript", 'pdf', 'perguntas_frequentes', 'vlibras', "jaipt", '/jan/', '/fev/', '/mar/', '/abr/', '/maio/', '/jun/', '/jul/', '/jul/', '/ago/', '/set/'
-            , 'ldo', 'loa', '=&m=8', 'new date', '&quot', 'youtube', 'twitter', 'tweet', 'sharethis', 'google', 'facebook', 'themes', 'wp-content', 'form', 'addtoany', 'staticxx', 'e=101095', 'insira o texto', 'facebook', 'assets', 'anexo', 'ldolei', 'http://sagresonline.tce.pb.gov.br#/municipal/execucao-orcamentaria', 'foot', 'graficos', 'token', 'maps', 'filtro', 'xmlrpc', 'feed', 'tutorial', "pwd", "transparencia.rn.gov.br", "css", "recuperar-senha", "cadastro", '.xml', "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
+            , 'ldo', 'loa', '=&m=8', 'new date', '&quot', 'youtube', 'twitter', 'tweet', 'sharethis', 'google', 'facebook', 'themes', 'wp-content', 'form', 'addtoany', 'staticxx', 'e=101095', 'insira o texto', 'facebook', 'assets', 'anexo', 'ldolei', 'http://sagresonline.tce.pb.gov.br#/municipal/execucao-orcamentaria', 'graficos', 'token', 'maps', 'filtro', 'xmlrpc', 'feed', 'tutorial', "pwd", "transparencia.rn.gov.br", "css", "recuperar-senha", "cadastro", '.xml', "email", 'whatsapp', 'print', 'png', 'dist', 'src', '.css',
             '.js', 'download', 'widget', ".zip", '.jpg', ".jpeg", ".rar", "noticia", "publicidade", "noticia", "pinterest.com", 'javascript', 'wp-json', 'json'
         ];
 

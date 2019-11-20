@@ -22,7 +22,7 @@ export default class PuppeteerUtil {
                 '--unlimited-storage',
                 '--full-memory-crash-report',
                 '--no-sandbox',
-                '--disable-features=site-per-process',
+                '--disable-setuid-sandbox',
                 '--start-fullscreen',
                 '--disable-extensions',
                 '--ignore-certificate-errors',
@@ -31,17 +31,9 @@ export default class PuppeteerUtil {
                 '--disable-popup-blocking',
                 '--blacklist-webgl',
                 '--blacklist-accelerated-compositing',
-                '--dev-shm-usage',
-                '--disable-accelerated-2d-canvas',
-                '--disable-accelerated-compositing',
-                '--disable-accelerated-layers',
-                '--disable-accelerated-plugins',
-                '--disable-accelerated-video',
-                '--disable-accelerated-video-decode',
-                '--disable-infobars',
-                '--test-type',
+              
             ],
-            headless: true
+            headless: true,
         });
         const [page] = await browser.pages();
         const mainPage = await page.target().page();

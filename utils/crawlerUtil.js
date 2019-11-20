@@ -94,7 +94,7 @@ export default class CrawlerUtil {
             const pages = await puppeteer.getBrowser().pages()
 
             if (pages.length > 1) {
-                await Promise.all([page.goto((await pages[pages.length - 1].url())).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
+                await Promise.all([page.goto((await pages[pages.length - 1].url()), { waitUntil: 'networkidle0' }).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
                 await pages[pages.length - 1].close();
             }
 
@@ -207,6 +207,7 @@ export default class CrawlerUtil {
         result[FeaturesConst.URL_RELEVANT] = TextUtil.checkUrlRelvant(currentUrl, criterionKeyWordName) ? 1 : 0;
 
         for (let queryElement of queryElements) {
+
             const elements = await page.$x(queryElement.getXpath());
 
             if (elements.length > 0) {
@@ -224,6 +225,7 @@ export default class CrawlerUtil {
                     }
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
 
+
                     if (((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))))
                         || ((/^\d+$/.test(text)) && (text.length > 2 && text.length < 7))) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
@@ -233,6 +235,7 @@ export default class CrawlerUtil {
                         elementsIdentify.push.apply(elementsIdentify, edgesList);
 
                         text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+                        console.log("texto: ", text)
 
                         if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase(), false) &&
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
