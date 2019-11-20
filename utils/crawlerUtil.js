@@ -82,13 +82,6 @@ export default class CrawlerUtil {
             let element = node.getSource().getElement();
             element = await PuppeteerUtil.selectElementPage(page, xpath, value);
 
-            // console.log("==========antes ")
-
-            // if (criterion.name === 'Quadro Pessoal'){
-            //     console.log("==========entrou ")
-            //     await page.select('.form-control input-sm ng-pristine ng-valid ng-not-empty ng-touched', 'Outubro').catch(e => console.log("erro:", e));
-            // }
-
             await element.click();
             await page.waitForNavigation().catch(e => void e);
             const pages = await puppeteer.getBrowser().pages()
@@ -225,6 +218,8 @@ export default class CrawlerUtil {
                     }
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
 
+                    console.log("text: ", text)
+
 
                     if (((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))))
                         || ((/^\d+$/.test(text)) && (text.length > 2 && text.length < 7))) &&
@@ -235,7 +230,7 @@ export default class CrawlerUtil {
                         elementsIdentify.push.apply(elementsIdentify, edgesList);
 
                         text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                        console.log("texto: ", text)
+                        console.log("text 02: ", text)
 
                         if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase(), false) &&
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {

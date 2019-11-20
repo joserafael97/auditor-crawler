@@ -7,8 +7,8 @@ import { QUERYTODYNAMICELEMENT, QUERYTOSTATICCOMPONENT } from '../models/queryEl
 const EQUALTYPESEARCH = 'tagSearch = "{}"';
 const CONTAINSTYPESEARCH = 'contains(tagSearch, "{}")';
 const XPATHIFRAME = '//*/iframe';
-const UNUSABLEIFRAMES = ['limpo', 'youtube', 'tweet', 'twitter', 'blank', 'google', 'sharethis','graficos', 'Graficos', 'DXR.axd', "javascript", 
-'assets','anexo', 'download', 'widget', ".zip", ".jpeg", ".rar", "noticia", "publicidade",'facebook', "email", 'whatsapp', 'print', 'png', 'dist'];
+const UNUSABLEIFRAMES = ['limpo', 'youtube', 'tweet', 'twitter', 'blank', 'google', 'sharethis', 'graficos', 'Graficos', 'DXR.axd', "javascript",
+    'assets', 'anexo', 'download', 'widget', ".zip", ".jpeg", ".rar", "noticia", "publicidade", 'facebook', "email", 'whatsapp', 'print', 'png', 'dist'];
 const CONSULTAR = "consultar";
 const PESQUISAR = "pesquisar";
 const ACESSAR = "acessar";
@@ -174,7 +174,9 @@ export default class XpathUtil {
             '//a[contains({tagSearch},"{}")]'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord) + ' | ' +
             '//*[contains({tagSearch},"{}")]/parent::a'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
             '//a[contains({tagSearch},"{}")]/following::span'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
-            '//span[contains({tagSearch},"{}")]/parent::*'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTODYNAMICELEMENT, terms);
+            '//span[contains({tagSearch},"{}")]/parent::*'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
+            '//*[contains({tagSearch},"{}")]//@title'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord) + ' | ' +
+            '//*[contains({tagSearch},"{}")]//@onclick'.replace('{tagSearch}', XpathUtil.normalizeXpath('@onclick')).replace('{}', keyWord), keyWord, QUERYTODYNAMICELEMENT, terms);
 
     }
 

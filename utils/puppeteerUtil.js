@@ -22,7 +22,6 @@ export default class PuppeteerUtil {
                 '--unlimited-storage',
                 '--full-memory-crash-report',
                 '--no-sandbox',
-                '--disable-setuid-sandbox',
                 '--start-fullscreen',
                 '--disable-extensions',
                 '--ignore-certificate-errors',
