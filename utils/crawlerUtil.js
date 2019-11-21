@@ -23,6 +23,7 @@ import {
 } from '../models/queryElement.class';
 
 import urljoin from 'url-join';
+import CliParamUtil from './cliParamUtil';
 
 export default class CrawlerUtil {
 
@@ -388,10 +389,23 @@ export default class CrawlerUtil {
 
     static async initializeItens(criterionName) {
 
+        const itensToNotSearch = ['licitado', 'integra', 'edital', 'pregao', 'termo_ratificacao',
+            'especie', 'rubrica', 'alinea', 'sub_alinea', 'lic_obj_servico', 'nome_perdedores', 'nome_vencedores', 'aviso'];
+
+        const allItens = CliParamUtil.allItensParamExtract(process.argv.slice(4)[0]) === "true" ? true : false; 
+
+        console.log("-allItens:", allItens )
+
         const itensIdentificationItensQueries = await XpathUtil.createXpathsToIdentificationKeyWord(criterionName);
         let itens = [];
+        
+
         for (let query of itensIdentificationItensQueries) {
-            if (query.getKeyWord().length > 0) {
+            console.log("-!TextUtil.checkTextContainsArray(itensToNotSearch, query.getKeyWord()):", !TextUtil.checkTextContainsArray(itensToNotSearch, query.getKeyWord()) )
+            console.log("-query.getKeyWord(): ", query.getKeyWord())
+            if (query.getKeyWord().length > 0 &&
+                (allItens || (!allItens && !TextUtil.checkTextContainsArray(itensToNotSearch, query.getKeyWord())))) {
+
                 itens.push(CrawlerUtil.createItem(query.getKeyWord(), query.xpath, query.getKeyWordsXpath()));
             }
         }

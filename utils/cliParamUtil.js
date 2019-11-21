@@ -15,4 +15,9 @@ export default class CliParamUtil {
     static sequentialParamExtract(param) {
         return param.replace('sequential=', '').trim()
     }
+
+
+    static allItensParamExtract(param) {
+        return param.replace('allitens=', '').trim()
+    }
 }
