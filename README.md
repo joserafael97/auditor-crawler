@@ -157,12 +157,46 @@ O detalhamento das atividades do diagrama é apresentada abaixo:
 
 ## Avaliação dos Resultados
 
-Para análise da ***eficácia*** e ***eficiência*** do crawler durante as avaliações fiscais foram propostas algumas métricas e abordagens apresentadas nesta seção.
+Nesta seção é apresentado os procedimentos e métricas adotadas para avaliar e validar a solução proposta nesta pesquisa.
 
-### Gabaritos
+### Critérios Avaliados
 
-Com objetivo de comparar o desempenho do crawler na avaliação da transparência municipal, os gabaritos registram a presença ou ausência dos itens de cada critério nos diferentes sites de transparência. A Tabela abaixo apresenta um exemplo do registro do gabarito para os itens do critério Receita Extra Orçamentária no portal do município de Santa Rita:
+Critérios com maior padronização (tabelas) na exibição das informações nos portais de transparência;
+Mais importantes para o manutenção da transparência??? 
+Critérios mais encontrados nos portais???
 
+### Amostra
+
+Para a análise da ***eficácia*** e ***eficiência*** do crawler durante as avaliações fiscais é fundamental estabelecer a população/amostra que servirá de base representativa do contexto avaliado. Nesta perspectiva, foi utilizado um recorte de 30 portais de transparência de diferentes municípios da Paraíba, representando ***13.4%*** dos ***223 portais*** existentes no estado.
+
+Como forma de garantir a construção de uma amostra de portais representativa para avaliação da ferramenta os critérios fornecedor do portal, número de portais, as combinações entre fornecedores e a frequência de aparição da combinação foram considerados. Neste sentido, para cada combinação contendo mais de ***2 portais*** foram selecionados de forma aleatória o número de portais que representassem um número ***superior 10%*** da combinação na população. A proporção de portais selecionados para amostra por combinação é apresentado na Tabela abaixo. 
+
+
+| Combinação     | Total de portais na amostra | % utilizado da população  | 
+| -------------  | ----------------------------| --------------------------| 
+| Publicsoft	    | 6	                          |  12,2                     | 
+| Elmar Tecnologia |	3 |	25,0|
+| e-TICons 	| 3	| 27,3| 
+| Info Public |	2 |	12,5 |
+| Alfa Consultoria / Elmar Tecnologia	| 2 |	15,4 |
+| Portal Próprio / Publicsoft | 	2 |	20,0 |
+| Alfa Consultoria / Publicsoft |	2 |	22,2 |
+| EasyWeb / Publicsoft	| 2 |	22,2 |
+| Portal Próprio / Elmar Tecnologia 	| 2 |	12,5 |
+| LHSystem / Elmar Tecnologia	| 1 |	25,0 |
+| DC Soluções	 | 1 |	33,3 |
+| Portal Próprio / e-TICons	| 1 |	25,0 |
+| Portal Próprio / Info Public	 | 1 |	33,3 |
+| Alfa Consultoria / Info Public	 | 1	| 50,0 |
+| EasyWeb / Publicsoft / e-TICons	|1	 | 50,0 |
+| Portal Próprio / Publicsoft / Elmar Tecnologia |	1	| 50,0 |
+| Franinformática / Publicsoft / Aspec Informática	 | 1	 | 100,0 |
+| TI de João Pessoal	| 1	 | 100,0 |
+| EasyWeb / e-TICons |	1	 | 16,7 |
+
+obs: O grupo de ***Portal Próprio*** são portais de transparência onde não foi possível relaciona-lo a nenhuma empresa e que possuem algumas semelhanças entre seuus layouts. 
+
+Nesse cenário, com o objetivo medir o desempenho do crawler na avaliação da transparência na amostra selecionada, foi proposto a criação de gabaritos que registram a presença ou ausência dos itens de cada critério nas páginas Web de cada portal. A Tabela abaixo apresenta um exemplo do registro do gabarito para os itens do critério Receita Extra Orçamentária no portal do município de Santa Rita:
 
 | municipio     | criterio                    | item          |  encontrado      |local_encontrado  | local_encontrado_2       |
 | ------------- | ----------------------------| ------------- |  --------------- |----------------- | -------------------------|                                                     
@@ -170,9 +204,7 @@ Com objetivo de comparar o desempenho do crawler na avaliação da transparênci
 | Santa Rita    | Receita Extra Orçamentária  | codigo         | TRUE      |http://siteseticons.com.br/portal/faces/pages/receita/extra/inicio.xhtml	 |                          | 
 | Santa Rita    | Receita Extra Orçamentária  | nomenclatura         | TRUE      |http://siteseticons.com.br/portal/faces/pages/receita/extra/inicio.xhtml	 |                          | 
 
-Na elaboração dos gabaritos cada item registrado é classificado manualmente, atribuindo na coluna encontrado o valor ***TRUE*** caso a presença no portal seja confirmada e ***FALSE*** caso contrário. Além disso, é registrada a localização onde cada item foi identificado, assegurando a corretude da informação durante a comparação entre o gabarito e os resultados do crawler.
-
-Nesse cenário, devido a dificuldade na elaboração manual de gabaritos para todos 223 municípios do estado da Paraíba foi optado pelo uso de uma amostra com ***51*** gabaritos de difentes portais de transparência (22.8% do total de 223 municípios) selecionados considerando o número de combinações existentes, sendo elas individuais, uma única empresa genreciando as informações fiscais do site, ou mesclagens, duas ou mais empresas genreciando as informações fiscais do site. Esta amostra torna-se representativa por experimentar e análisar todas as variações possíveis durante a execução do Auditor-Crawler. 
+Durante a elaboração dos gabaritos cada item registrado foi classificado manualmente, sendo atribuído a coluna encontrado o valor ***TRUE*** caso a presença no portal fosse confirmada e ***FALSE*** caso contrário. Além disso, foi registrado o local de identificação de cada item, assegurando a corretude da informação durante a comparação entre o gabarito e os resultados do crawler.
 
 ### Métricas
 
@@ -201,7 +233,7 @@ De acordo com os resultados obtidos nos gabaritos e avaliações do crawler fora
 * ***Precision*** é o valor resultante do cálculo apresentado na função de Precision;
 * ***Recall*** é o valor resultante do cálculo apresentado na função de Recall.
 
-No que diz respeito a eficiência do crawler foram utilizados a medição número de ***Nós acessados*** (URLs, Componentes clicáveis) e o consumo de ***CPU***, ***Memória RAM*** e ***Internet***.
+No que diz respeito a eficiência do crawler foram utilizados a medição do número de ***Nós acessados*** (URLs, Componentes clicáveis) em cada avaliação, a duração de cada avaliação, o consumo de ***CPU***, ***Memória RAM*** e ***Internet***.
 
 Obs: toda a análise dos resultados foi realizada pelo projeto [https://github.com/joserafael97/analyze-auditor-crawlers](https://github.com/joserafael97/analyze-auditor-crawlers)
 
