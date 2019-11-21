@@ -401,8 +401,6 @@ export default class CrawlerUtil {
         
 
         for (let query of itensIdentificationItensQueries) {
-            console.log("-!TextUtil.checkTextContainsArray(itensToNotSearch, query.getKeyWord()):", !TextUtil.checkTextContainsArray(itensToNotSearch, query.getKeyWord()) )
-            console.log("-query.getKeyWord(): ", query.getKeyWord())
             if (query.getKeyWord().length > 0 &&
                 (allItens || (!allItens && !TextUtil.checkTextContainsArray(itensToNotSearch, query.getKeyWord())))) {
 

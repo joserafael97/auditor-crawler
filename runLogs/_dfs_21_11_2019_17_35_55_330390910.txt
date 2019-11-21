@@ -1,0 +1,168 @@
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Alcantil" "aproach=dfs"
+
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Areia" "aproach=dfs"
+
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: dfs","level":"info"}
+{"message":"AproachType: dfs","level":"info"}
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://transparencia.areia.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLvr","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"level":"warn","message":"Click error: Cannot read property 'replace' of undefined","stack":"TypeError: Cannot read property 'replace' of undefined\n    at Function.allItensParamExtract (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/cliParamUtil.js:21:22)\n    at Function.initializeItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:395:39)\n    at Function.identificationItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:279:76)\n    at Function.crawlerNode (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:126:39)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+TypeError: Cannot read property 'replace' of undefined
+    at Function.allItensParamExtract (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/cliParamUtil.js:21:22)
+    at Function.initializeItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:395:39)
+    at Function.identificationItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:279:76)
+    at Function.initilize (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/dfs.js:47:39)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+{"level":"error"}
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Areia de Baraúnas" "aproach=dfs"
+
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: dfs","level":"info"}
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"level":"warn","message":"Click error: Cannot read property 'replace' of undefined","stack":"TypeError: Cannot read property 'replace' of undefined\n    at Function.allItensParamExtract (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/cliParamUtil.js:21:22)\n    at Function.initializeItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:395:39)\n    at Function.identificationItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:279:76)\n    at Function.crawlerNode (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:126:39)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+TypeError: Cannot read property 'replace' of undefined
+    at Function.allItensParamExtract (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/cliParamUtil.js:21:22)
+    at Function.initializeItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:395:39)
+    at Function.identificationItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:279:76)
+    at Function.initilize (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/dfs.js:47:39)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+{"level":"error"}
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Barra de Santa Rosa	" "aproach=dfs"
+
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: dfs","level":"info"}
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: https://www.barradesantarosa.pb.gov.br/portal/transparencia-fiscal","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"level":"warn","message":"Click error: Cannot read property 'replace' of undefined","stack":"TypeError: Cannot read property 'replace' of undefined\n    at Function.allItensParamExtract (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/cliParamUtil.js:21:22)\n    at Function.initializeItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:395:39)\n    at Function.identificationItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:279:76)\n    at Function.crawlerNode (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:126:39)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+TypeError: Cannot read property 'replace' of undefined
+    at Function.allItensParamExtract (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/cliParamUtil.js:21:22)
+    at Function.initializeItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:395:39)
+    at Function.identificationItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:279:76)
+    at Function.initilize (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/dfs.js:47:39)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+{"level":"error"}
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Bom Sucesso" "aproach=dfs"
+
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: dfs","level":"info"}
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://bomsucesso.pb.gov.br/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"level":"warn","message":"Click error: Cannot read property 'replace' of undefined","stack":"TypeError: Cannot read property 'replace' of undefined\n    at Function.allItensParamExtract (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/cliParamUtil.js:21:22)\n    at Function.initializeItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:395:39)\n    at Function.identificationItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:279:76)\n    at Function.crawlerNode (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:126:39)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+TypeError: Cannot read property 'replace' of undefined
+    at Function.allItensParamExtract (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/cliParamUtil.js:21:22)
+    at Function.initializeItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:395:39)
+    at Function.identificationItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:279:76)
+    at Function.initilize (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/dfs.js:47:39)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+{"level":"error"}
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Carrapateira" "aproach=dfs"
+
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: dfs","level":"info"}
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201054","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"level":"warn","message":"Click error: Cannot read property 'replace' of undefined","stack":"TypeError: Cannot read property 'replace' of undefined\n    at Function.allItensParamExtract (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/cliParamUtil.js:21:22)\n    at Function.initializeItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:395:39)\n    at Function.identificationItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:279:76)\n    at Function.crawlerNode (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:126:39)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+TypeError: Cannot read property 'replace' of undefined
+    at Function.allItensParamExtract (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/cliParamUtil.js:21:22)
+    at Function.initializeItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:395:39)
+    at Function.identificationItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:279:76)
+    at Function.initilize (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/dfs.js:47:39)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+{"level":"error"}
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Coremas" "aproach=dfs"
+
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: dfs","level":"info"}
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://siteseticons.com.br/portal/ws/empresa/MDg5Mzk5MzYwMDAxOTQ=","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"level":"warn","message":"Click error: Cannot read property 'replace' of undefined","stack":"TypeError: Cannot read property 'replace' of undefined\n    at Function.allItensParamExtract (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/cliParamUtil.js:21:22)\n    at Function.initializeItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:395:39)\n    at Function.identificationItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:279:76)\n    at Function.crawlerNode (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:126:39)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+TypeError: Cannot read property 'replace' of undefined
+    at Function.allItensParamExtract (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/cliParamUtil.js:21:22)
+    at Function.initializeItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:395:39)
+    at Function.identificationItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:279:76)
+    at Function.initilize (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/dfs.js:47:39)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+{"level":"error"}
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Cruz do Espírito Santo	" "aproach=dfs"
+
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: dfs","level":"info"}
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLN0","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"level":"warn","message":"Click error: Cannot read property 'replace' of undefined","stack":"TypeError: Cannot read property 'replace' of undefined\n    at Function.allItensParamExtract (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/cliParamUtil.js:21:22)\n    at Function.initializeItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:395:39)\n    at Function.identificationItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:279:76)\n    at Function.crawlerNode (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:126:39)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+TypeError: Cannot read property 'replace' of undefined
+    at Function.allItensParamExtract (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/cliParamUtil.js:21:22)
+    at Function.initializeItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:395:39)
+    at Function.identificationItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:279:76)
+    at Function.initilize (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/dfs.js:47:39)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+{"level":"error"}
+{"level":"warn","message":"Click error: Cannot read property 'replace' of undefined","stack":"TypeError: Cannot read property 'replace' of undefined\n    at Function.allItensParamExtract (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/cliParamUtil.js:21:22)\n    at Function.initializeItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:395:39)\n    at Function.identificationItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:279:76)\n    at Function.crawlerNode (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:126:39)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+TypeError: Cannot read property 'replace' of undefined
+    at Function.allItensParamExtract (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/cliParamUtil.js:21:22)
+    at Function.initializeItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:395:39)
+    at Function.identificationItens (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:279:76)
+    at Function.initilize (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/dfs.js:47:39)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+{"level":"error"}

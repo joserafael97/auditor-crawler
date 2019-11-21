@@ -1,6 +1,5 @@
 #!/bin/bash
 
-aproach="bandit"
+aproach="dfs"
 
-cat counties.txt | xargs -P 5  -d '\n' -l1 -I value npm start county=value aproach="$aproach" &
-
+cat counties.txt | xargs -P 2  -d '\n' -l1 -I value nohup npm start county=value aproach="$aproach" allitens="true" > runLogs/"$i"_"$aproach"_"$(date +%d_%m_%Y_%H_%M_%S_%N)".out.txt &
