@@ -175,8 +175,7 @@ export default class XpathUtil {
             '//*[contains({tagSearch},"{}")]/parent::a'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
             '//a[contains({tagSearch},"{}")]/following::span'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
             '//span[contains({tagSearch},"{}")]/parent::*'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
-            '//*[contains({tagSearch},"{}")]//@title'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord) + ' | ' +
-            '//*[contains({tagSearch},"{}")]//@onclick'.replace('{tagSearch}', XpathUtil.normalizeXpath('@onclick')).replace('{}', keyWord), keyWord, QUERYTODYNAMICELEMENT, terms);
+            '//*[contains({tagSearch},"{}")]//@title'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord), keyWord, QUERYTODYNAMICELEMENT, terms);
 
     }
 

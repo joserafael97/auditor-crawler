@@ -6420,3 +6420,372 @@ queue nodes: ****: quadro funcional  level:  6
 queue nodes: ****: consultar  level:  6
 queue nodes: ****: servidores temporarios  level:  6
 queue nodes: ****: servidores cedidos  level:  6
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: servidores temporarios","level":"info"}
+{"message":"node level: 5","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: servidores temporarios: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: servidores cedidos  level:  5
+queue nodes: ****: folha de pagamento  level:  5
+queue nodes: ****: quadro funcional  level:  5
+queue nodes: ****: servidores temporarios  level:  5
+queue nodes: ****: servidores cedidos  level:  5
+queue nodes: ****: folha de pagamento  level:  5
+queue nodes: ****: quadro funcional  level:  5
+queue nodes: ****: consultar  level:  5
+queue nodes: ****: servidores temporarios  level:  5
+queue nodes: ****: servidores cedidos  level:  5
+queue nodes: ****: folha de pagamento  level:  6
+queue nodes: ****: quadro funcional  level:  6
+queue nodes: ****: consultar  level:  6
+queue nodes: ****: servidores temporarios  level:  6
+queue nodes: ****: servidores cedidos  level:  6
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: servidores cedidos","level":"info"}
+{"message":"node level: 5","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: servidores cedidos: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: folha de pagamento  level:  5
+queue nodes: ****: quadro funcional  level:  5
+queue nodes: ****: servidores temporarios  level:  5
+queue nodes: ****: servidores cedidos  level:  5
+queue nodes: ****: folha de pagamento  level:  5
+queue nodes: ****: quadro funcional  level:  5
+queue nodes: ****: consultar  level:  5
+queue nodes: ****: servidores temporarios  level:  5
+queue nodes: ****: servidores cedidos  level:  5
+queue nodes: ****: folha de pagamento  level:  6
+queue nodes: ****: quadro funcional  level:  6
+queue nodes: ****: consultar  level:  6
+queue nodes: ****: servidores temporarios  level:  6
+queue nodes: ****: servidores cedidos  level:  6
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: folha de pagamento","level":"info"}
+{"message":"node level: 5","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: folha de pagamento: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: quadro funcional  level:  5
+queue nodes: ****: servidores temporarios  level:  5
+queue nodes: ****: servidores cedidos  level:  5
+queue nodes: ****: folha de pagamento  level:  5
+queue nodes: ****: quadro funcional  level:  5
+queue nodes: ****: consultar  level:  5
+queue nodes: ****: servidores temporarios  level:  5
+queue nodes: ****: servidores cedidos  level:  5
+queue nodes: ****: folha de pagamento  level:  6
+queue nodes: ****: quadro funcional  level:  6
+queue nodes: ****: consultar  level:  6
+queue nodes: ****: servidores temporarios  level:  6
+queue nodes: ****: servidores cedidos  level:  6
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: quadro funcional","level":"info"}
+{"message":"node level: 5","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: quadro funcional: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: servidores temporarios  level:  5
+queue nodes: ****: servidores cedidos  level:  5
+queue nodes: ****: folha de pagamento  level:  5
+queue nodes: ****: quadro funcional  level:  5
+queue nodes: ****: consultar  level:  5
+queue nodes: ****: servidores temporarios  level:  5
+queue nodes: ****: servidores cedidos  level:  5
+queue nodes: ****: folha de pagamento  level:  6
+queue nodes: ****: quadro funcional  level:  6
+queue nodes: ****: consultar  level:  6
+queue nodes: ****: servidores temporarios  level:  6
+queue nodes: ****: servidores cedidos  level:  6
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: servidores temporarios","level":"info"}
+{"message":"node level: 5","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: servidores temporarios: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: servidores cedidos  level:  5
+queue nodes: ****: folha de pagamento  level:  5
+queue nodes: ****: quadro funcional  level:  5
+queue nodes: ****: consultar  level:  5
+queue nodes: ****: servidores temporarios  level:  5
+queue nodes: ****: servidores cedidos  level:  5
+queue nodes: ****: folha de pagamento  level:  6
+queue nodes: ****: quadro funcional  level:  6
+queue nodes: ****: consultar  level:  6
+queue nodes: ****: servidores temporarios  level:  6
+queue nodes: ****: servidores cedidos  level:  6
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: servidores cedidos","level":"info"}
+{"message":"node level: 5","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: servidores cedidos: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: folha de pagamento  level:  5
+queue nodes: ****: quadro funcional  level:  5
+queue nodes: ****: consultar  level:  5
+queue nodes: ****: servidores temporarios  level:  5
+queue nodes: ****: servidores cedidos  level:  5
+queue nodes: ****: folha de pagamento  level:  6
+queue nodes: ****: quadro funcional  level:  6
+queue nodes: ****: consultar  level:  6
+queue nodes: ****: servidores temporarios  level:  6
+queue nodes: ****: servidores cedidos  level:  6
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: folha de pagamento","level":"info"}
+{"message":"node level: 5","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: folha de pagamento: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: quadro funcional  level:  5
+queue nodes: ****: consultar  level:  5
+queue nodes: ****: servidores temporarios  level:  5
+queue nodes: ****: servidores cedidos  level:  5
+queue nodes: ****: folha de pagamento  level:  6
+queue nodes: ****: quadro funcional  level:  6
+queue nodes: ****: consultar  level:  6
+queue nodes: ****: servidores temporarios  level:  6
+queue nodes: ****: servidores cedidos  level:  6
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: quadro funcional","level":"info"}
+{"message":"node level: 5","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: quadro funcional: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: consultar  level:  5
+queue nodes: ****: servidores temporarios  level:  5
+queue nodes: ****: servidores cedidos  level:  5
+queue nodes: ****: folha de pagamento  level:  6
+queue nodes: ****: quadro funcional  level:  6
+queue nodes: ****: consultar  level:  6
+queue nodes: ****: servidores temporarios  level:  6
+queue nodes: ****: servidores cedidos  level:  6
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: consultar","level":"info"}
+{"message":"node level: 5","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: consultar: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: servidores temporarios  level:  5
+queue nodes: ****: servidores cedidos  level:  5
+queue nodes: ****: folha de pagamento  level:  6
+queue nodes: ****: quadro funcional  level:  6
+queue nodes: ****: consultar  level:  6
+queue nodes: ****: servidores temporarios  level:  6
+queue nodes: ****: servidores cedidos  level:  6
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: servidores temporarios","level":"info"}
+{"message":"node level: 5","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: servidores temporarios: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: servidores cedidos  level:  5
+queue nodes: ****: folha de pagamento  level:  6
+queue nodes: ****: quadro funcional  level:  6
+queue nodes: ****: consultar  level:  6
+queue nodes: ****: servidores temporarios  level:  6
+queue nodes: ****: servidores cedidos  level:  6
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: servidores cedidos","level":"info"}
+{"message":"node level: 5","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: servidores cedidos: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: folha de pagamento  level:  6
+queue nodes: ****: quadro funcional  level:  6
+queue nodes: ****: consultar  level:  6
+queue nodes: ****: servidores temporarios  level:  6
+queue nodes: ****: servidores cedidos  level:  6
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: folha de pagamento","level":"info"}
+{"message":"node level: 6","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: folha de pagamento: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: quadro funcional  level:  6
+queue nodes: ****: consultar  level:  6
+queue nodes: ****: servidores temporarios  level:  6
+queue nodes: ****: servidores cedidos  level:  6
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: quadro funcional","level":"info"}
+{"message":"node level: 6","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: quadro funcional: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: consultar  level:  6
+queue nodes: ****: servidores temporarios  level:  6
+queue nodes: ****: servidores cedidos  level:  6
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: consultar","level":"info"}
+{"message":"node level: 6","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: consultar: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: servidores temporarios  level:  6
+queue nodes: ****: servidores cedidos  level:  6
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: servidores temporarios","level":"info"}
+{"message":"node level: 6","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: servidores temporarios: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: servidores cedidos  level:  6
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: servidores cedidos","level":"info"}
+{"message":"node level: 6","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: servidores cedidos: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Close Puppeteer ...","level":"info"}
+{"message":"Returnin Criterion: Quadro Pessoal","level":"info"}
+itens [ { keywordsXpath: [ 'nome', 'Servidor' ],
+    tagNameParents: [ 'tr', 'tbody', 'td', 'td' ],
+    textParents:
+     [ '\n\t\t\t\t\t\t\t<td class="dx-wrap">Nome</td><td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span><img class="dxGridView_gvHeaderFilter_Moderno dxgv__hfb dx-vam" src="/DXR.axd?r=1_112-gdqch" alt="[Filtro]" style="cursor:default;"></td>\n\t\t\t\t\t\t',
+       '<tr>\n\t\t\t\t\t\t\t<td class="dx-wrap">Nome</td><td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span><img class="dxGridView_gvHeaderFilter_Moderno dxgv__hfb dx-vam" src="/DXR.axd?r=1_112-gdqch" alt="[Filtro]" style="cursor:default;"></td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t' ],
+    _id: 5dd558b25ee05c13ab77c1ba,
+    name: 'nome',
+    found: true,
+    foundText: 'nome',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nome" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "servidor"]',
+    pathSought:
+     'https://transparencia.elmartecnologia.com.br/FolhaPag?e=201022&Tab=1&isModal=false&ctx=201022',
+    proof:
+     './proof/Barra de Santa Rosa/2019-11-20T15:15:11.166Z/Quadro Pessoal/Quadro Pessoal-nome-level-1-Wed Nov 20 2019 12:17:01 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Nome',
+    valid: true,
+    tagName: 'td' },
+  { keywordsXpath: [ 'cpf', 'nome' ],
+    tagNameParents: [ 'tr', 'tbody' ],
+    textParents:
+     [ '\n\t\t\t\t\t\t\t<td class="dx-wrap" style="background-color: rgb(79, 6, 101); color: rgb(255, 255, 255);">Nome</td><td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span><img class="dxGridView_gvHeaderFilter_Moderno dxgv__hfb dx-vam" src="/DXR.axd?r=1_112-gdqch" alt="[Filtro]" style="cursor:default;"></td>\n\t\t\t\t\t\t',
+       '<tr>\n\t\t\t\t\t\t\t<td class="dx-wrap" style="background-color: rgb(79, 6, 101); color: rgb(255, 255, 255);">Nome</td><td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span><img class="dxGridView_gvHeaderFilter_Moderno dxgv__hfb dx-vam" src="/DXR.axd?r=1_112-gdqch" alt="[Filtro]" style="cursor:default;"></td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t' ],
+    _id: 5dd558b25ee05c13ab77c1bb,
+    name: 'cpf',
+    found: true,
+    foundText: 'nome',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cpf" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nome"]',
+    pathSought:
+     'https://transparencia.elmartecnologia.com.br/FolhaPag?e=201022&Tab=1&isModal=false&ctx=201022',
+    proof:
+     './proof/Barra de Santa Rosa/2019-11-20T15:15:11.166Z/Quadro Pessoal/Quadro Pessoal-cpf-level-1-Wed Nov 20 2019 12:17:01 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Nome',
+    valid: true,
+    tagName: 'td' },
+  { keywordsXpath: [ 'cargo', 'CARGO/VINCULO' ],
+    tagNameParents: [ 'tr', 'tbody' ],
+    textParents:
+     [ '\n\t\t\t\t\t\t\t<td class="dx-wrap">Cargo</td><td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span><img class="dxGridView_gvHeaderFilter_Moderno dxgv__hfb dx-vam" src="/DXR.axd?r=1_112-gdqch" alt="[Filtro]" style="cursor:default;"></td>\n\t\t\t\t\t\t',
+       '<tr>\n\t\t\t\t\t\t\t<td class="dx-wrap">Cargo</td><td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span><img class="dxGridView_gvHeaderFilter_Moderno dxgv__hfb dx-vam" src="/DXR.axd?r=1_112-gdqch" alt="[Filtro]" style="cursor:default;"></td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t' ],
+    _id: 5dd558b25ee05c13ab77c1bc,
+    name: 'cargo',
+    found: true,
+    foundText: 'cargo',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cargo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cargo/vinculo"]',
+    pathSought:
+     'https://transparencia.elmartecnologia.com.br/FolhaPag?e=201022&Tab=1&isModal=false&ctx=201022',
+    proof:
+     './proof/Barra de Santa Rosa/2019-11-20T15:15:11.166Z/Quadro Pessoal/Quadro Pessoal-cargo-level-1-Wed Nov 20 2019 12:17:02 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Cargo',
+    valid: true,
+    tagName: 'td' },
+  { keywordsXpath:
+     [ 'tipo do ato',
+       'Vinculo',
+       'secretaria',
+       'tipo cargo',
+       'tipo de cargo',
+       'regime',
+       'tipo',
+       'Tipo de Contratação' ],
+    tagNameParents: [ 'tr', 'tbody' ],
+    textParents:
+     [ '\n\t\t\t\t\t\t\t<td class="dx-wrap">Secretaria</td><td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span><img class="dxGridView_gvHeaderFilter_Moderno dxgv__hfb dx-vam" src="/DXR.axd?r=1_112-gdqch" alt="[Filtro]" style="cursor:default;"></td>\n\t\t\t\t\t\t',
+       '<tr>\n\t\t\t\t\t\t\t<td class="dx-wrap">Secretaria</td><td style="width:1px;text-align:right;"><span class="dx-vam">&nbsp;</span><img class="dxGridView_gvHeaderFilter_Moderno dxgv__hfb dx-vam" src="/DXR.axd?r=1_112-gdqch" alt="[Filtro]" style="cursor:default;"></td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t' ],
+    _id: 5dd558b25ee05c13ab77c1bd,
+    name: 'tipo_cargo',
+    found: true,
+    foundText: 'secretaria',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo do ato" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "vinculo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "secretaria" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo cargo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo de cargo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "regime" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo de contratacao"]',
+    pathSought:
+     'https://transparencia.elmartecnologia.com.br/FolhaPag?e=201022&Tab=1&isModal=false&ctx=201022',
+    proof:
+     './proof/Barra de Santa Rosa/2019-11-20T15:15:11.166Z/Quadro Pessoal/Quadro Pessoal-tipo_cargo-level-1-Wed Nov 20 2019 12:17:03 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Secretaria',
+    valid: true,
+    tagName: 'td' },
+  { keywordsXpath:
+     [ 'salario',
+       'Total Vantagem*',
+       'sal. base',
+       'liquido',
+       'valor liquido',
+       'Vantagens',
+       'Vantagens (Bruto)',
+       'total liquido R$' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5dd558b25ee05c13ab77c1be,
+    name: 'salario_cargo',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "salario" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "total vantagem*" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "sal. base" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "liquido" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor liquido" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "vantagens" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "vantagens (bruto)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "total liquido r$"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' } ]
+{"message":"Duration in crawling proccess for the criterion Quadro Pessoal was: 195 min","level":"info"}
+=================finished=======================

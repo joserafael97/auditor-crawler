@@ -153,6 +153,7 @@ export default class PuppeteerUtil {
             allNodes.push.apply(allNodes, edgesList)
             const isnum = (/^\d+$/.test(text));
             let isDate = /\d{2}(\/)\d{2}(\/)\d{4}/.test(text);
+            
 
             text = (/\d{2,20}(\/)\d{4}/.test(text)) && !isDate ? text.substring(text.length - 4, text.length) : text;
             const currentValue = currentNode.getSource().getValue();
