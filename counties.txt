@@ -1,30 +1,18 @@
-Belém do Brejo do Cruz
-Ouro Velho
-Cruz do Espírito Santo
-Pocinhos
-Santa Cecília
 Alcantil
-Bom Jesus
-Arara
-Carrapateira
-Santa Rita
-Bayeux
-Coremas
-Esperança
-Umbuzeiro
-Serraria
-Curral de Cima
-Ingá
-Remígio
-Campina Grande
 Areia
-Quixaba
-Serra Grande
-Itabaiana
-Barra de Santa Rosa
-Conceição
-Pedra Lavrada
-Bom Sucesso
 Areia de Baraúnas
+Barra de Santa Rosa	
+Bom Sucesso
+Carrapateira
+Coremas
+Cruz do Espírito Santo	
+Curral de Cima
 Gado Bravo
-João Pessoal
+Ingá
+Quixaba
+Remígio
+Santa Cecília
+Santa Rita
+Serra Grande
+Serraria
+Conceição
