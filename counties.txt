@@ -1,6 +1,4 @@
-Alcantil
 Areia
-Areia de Baraúnas
 Bom Sucesso
 Carrapateira
 Coremas
@@ -15,3 +13,4 @@ Santa Rita
 Serra Grande
 Serraria
 Conceição
+Areia de Baraúnas
