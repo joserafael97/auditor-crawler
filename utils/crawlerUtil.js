@@ -66,6 +66,8 @@ export default class CrawlerUtil {
             page = await PuppeteerUtil.detectContext(page).catch(e => void e);
         }
 
+        
+
         if (isUrl) {
             await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
             if (node.getLevel() === 0) {
@@ -218,10 +220,11 @@ export default class CrawlerUtil {
                                 urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
                     }
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+                    console.log("=====text01: ", text)
 
 
                     if (((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))))
-                        || ((/^\d+$/.test(text)) && (text.length > 2 && text.length < 7))) &&
+                        || ((/^\d+$/.test(text)) && (text.length > 2))) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
                             (currentNodeUrl !== currentUrl))) {
                         const isUrl = HtmlUtil.isUrl(text);
@@ -229,6 +232,8 @@ export default class CrawlerUtil {
                         elementsIdentify.push.apply(elementsIdentify, edgesList);
 
                         text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+
+                        console.log("=====text: ", text)
 
                         if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase(), false) &&
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
@@ -393,8 +398,6 @@ export default class CrawlerUtil {
             'especie', 'rubrica', 'alinea', 'sub_alinea', 'lic_obj_servico', 'nome_perdedores', 'nome_vencedores', 'aviso'];
 
         const allItens = CliParamUtil.allItensParamExtract(process.argv.slice(4)[0]) === "true" ? true : false; 
-
-        console.log("-allItens:", allItens )
 
         const itensIdentificationItensQueries = await XpathUtil.createXpathsToIdentificationKeyWord(criterionName);
         let itens = [];
