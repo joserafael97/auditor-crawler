@@ -1,8 +1,9 @@
 Areia
-Bom Sucesso
+Bayeux
 Carrapateira
+Conceição
 Coremas
-Cruz do Espírito Santo	
+Cruz do Espírito Santo
 Curral de Cima
 Gado Bravo
 Ingá
@@ -12,5 +13,3 @@ Santa Cecília
 Santa Rita
 Serra Grande
 Serraria
-Conceição
-Areia de Baraúnas
