@@ -66,8 +66,6 @@ export default class CrawlerUtil {
             page = await PuppeteerUtil.detectContext(page).catch(e => void e);
         }
 
-        
-
         if (isUrl) {
             await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
             if (node.getLevel() === 0) {
@@ -90,7 +88,7 @@ export default class CrawlerUtil {
             const pages = await puppeteer.getBrowser().pages()
 
             if (pages.length > 1) {
-                await Promise.all([page.goto((await pages[pages.length - 1].url()), { waitUntil: 'networkidle0' }).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
+                await Promise.all([page.goto((await pages[pages.length - 1].url())).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
                 await pages[pages.length - 1].close();
             }
 
@@ -238,6 +236,7 @@ export default class CrawlerUtil {
 
                             if ((text.length > 0 && HtmlUtil.isUrl(text)) ||
                                 ((text.length > 0 && !HtmlUtil.isUrl(text)) && text.length < 120)) {
+
                                 let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), currentUrl, (await page.constructor.name) === "Frame" || queryElement.getIsExtractIframe());
                                 let newNode = new Node(source, node);
                                 newNode.initializeFeatures();
@@ -245,6 +244,7 @@ export default class CrawlerUtil {
                                     checkUrlRelvant(newNode.getSource().getValue(), criterionKeyWordName) ? 1 : 0;
 
                                 edgesList.push(newNode);
+
                             }
 
                         }
@@ -254,6 +254,7 @@ export default class CrawlerUtil {
                 }
             }
         }
+
         result[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT] = edgesList.length > 1 ? 1 : 0;
         node.setFeatures(result)
         node.setEdgesList(edgesList);
@@ -394,11 +395,11 @@ export default class CrawlerUtil {
         const itensToNotSearch = ['licitado', 'integra', 'edital', 'pregao', 'termo_ratificacao',
             'especie', 'rubrica', 'alinea', 'sub_alinea', 'lic_obj_servico', 'nome_perdedores', 'nome_vencedores', 'aviso'];
 
-        const allItens = CliParamUtil.allItensParamExtract(process.argv.slice(4)[0]) === "true" ? true : false; 
+        const allItens = CliParamUtil.allItensParamExtract(process.argv.slice(4)[0]) === "true" ? true : false;
 
         const itensIdentificationItensQueries = await XpathUtil.createXpathsToIdentificationKeyWord(criterionName);
         let itens = [];
-        
+
 
         for (let query of itensIdentificationItensQueries) {
             if (query.getKeyWord().length > 0 &&

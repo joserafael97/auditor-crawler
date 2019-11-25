@@ -30,7 +30,7 @@ export default class PuppeteerUtil {
                 '--disable-popup-blocking',
                 '--blacklist-webgl',
                 '--blacklist-accelerated-compositing',
-              
+
             ],
             headless: true,
         });
@@ -113,8 +113,6 @@ export default class PuppeteerUtil {
                 }
                 page = currentPage;
             }
-            await page.waitFor(3000);
-
         }
     }
 
@@ -122,7 +120,7 @@ export default class PuppeteerUtil {
     static async selectElementPage(page, xpath, searchValue) {
 
         await page.waitForNavigation().catch(e => void e);
-        await page.waitFor(6000);
+        await page.waitFor(5000);
         const elements = await page.$x(xpath);
         if (elements.length > 0) {
             for (let element of elements) {
@@ -153,7 +151,7 @@ export default class PuppeteerUtil {
             allNodes.push.apply(allNodes, edgesList)
             const isnum = (/^\d+$/.test(text));
             let isDate = /\d{2}(\/)\d{2}(\/)\d{4}/.test(text);
-            
+
 
             text = (/\d{2,20}(\/)\d{4}/.test(text)) && !isDate ? text.substring(text.length - 4, text.length) : text;
             const currentValue = currentNode.getSource().getValue();
@@ -166,11 +164,17 @@ export default class PuppeteerUtil {
                 text = text.substr(0, 2);
             }
 
+
             for (let node of allNodes) {
                 let value = node.getSource().getValue();
                 value = (/\d{2,20}(\/)\d{4}/.test(value)) && !(/\d{2}(\/)\d{2}(\/)\d{4}/.test(value)) ? value.substring(value.length - 4, value.length) : value;
 
                 value = (/^\d+$/.test(value)) ? value.substr(0, 2) : value;
+
+
+                if (isnum && StringSimilarity.compareTwoStrings(text, value) > 0.95) {
+                    return true;
+                }
 
                 if (node.getLevel() !== 0) {
 
@@ -185,9 +189,7 @@ export default class PuppeteerUtil {
                     }
                 }
 
-
             }
-
             return false;
         }
     }
