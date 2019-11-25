@@ -100,7 +100,7 @@ export default class CrawlerUtil {
             }
         }
 
-        await page.waitFor(4000);
+        await page.waitFor(6000);
 
         let elementsIdentify = []
         let iframesUrlNodes = []
@@ -129,7 +129,7 @@ export default class CrawlerUtil {
         }
 
         if (node.getLevel() === 0) {
-            await page.waitFor(3000);
+            await page.waitFor(6000);
             node.getSource().setUrl((await page.url()));
         }
 
@@ -220,7 +220,6 @@ export default class CrawlerUtil {
                                 urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
                     }
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                    console.log("=====text01: ", text)
 
 
                     if (((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))))
@@ -232,8 +231,6 @@ export default class CrawlerUtil {
                         elementsIdentify.push.apply(elementsIdentify, edgesList);
 
                         text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-
-                        console.log("=====text: ", text)
 
                         if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase(), false) &&
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {

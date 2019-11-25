@@ -12,7 +12,7 @@ config.dbPort = process.env.dbPort || '27017';
 
 const allItens = process.argv.slice(4)[0] !== undefined ? 
 CliParamUtil.allItensParamExtract(process.argv.slice(4)[0]) === "true" ? true : false: undefined;
-if (allItens !== undefined && allItens) {
+if (allItens !== undefined && !allItens) {
     config.dbName = process.env.dbName || 'auditor-crawler-test';
     // config.dbName = process.env.dbName || 'auditor-crawler-exp02-notitens';
 } else {
