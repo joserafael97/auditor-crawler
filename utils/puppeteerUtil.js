@@ -124,7 +124,7 @@ export default class PuppeteerUtil {
         let elements = []
         elements = await page.$x(xpath).catch(e => void e);
         
-        if (elements.length > 0) {
+        if (elements !== undefined && elements.length > 0) {
             for (let element of elements) {
                 let text = await (await element.getProperty('textContent')).jsonValue();
                 const propertyHandleValue = await (await element.getProperty('value')).jsonValue();
