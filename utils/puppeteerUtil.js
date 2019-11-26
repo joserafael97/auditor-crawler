@@ -32,7 +32,7 @@ export default class PuppeteerUtil {
                 '--blacklist-accelerated-compositing',
 
             ],
-            headless: false,
+            headless: true,
         });
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
