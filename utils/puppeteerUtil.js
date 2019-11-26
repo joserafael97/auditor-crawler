@@ -32,7 +32,7 @@ export default class PuppeteerUtil {
                 '--blacklist-accelerated-compositing',
 
             ],
-            headless: true,
+            headless: false,
         });
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
@@ -120,8 +120,10 @@ export default class PuppeteerUtil {
     static async selectElementPage(page, xpath, searchValue) {
 
         await page.waitForNavigation().catch(e => void e);
-        await page.waitFor(5000);
-        const elements = await page.$x(xpath);
+        await page.waitFor(6000);
+        let elements = []
+        elements = await page.$x(xpath).catch(e => void e);
+        
         if (elements.length > 0) {
             for (let element of elements) {
                 let text = await (await element.getProperty('textContent')).jsonValue();
@@ -139,26 +141,32 @@ export default class PuppeteerUtil {
     }
 
     static checkDuplicateNode(arrayNodes, text, currentNode, currentUrl, edgesList = null) {
+        
         if (HtmlUtil.isUrl(text)) {
             let urlsList = [];
             urlsList.push.apply(urlsList, TextUtil.getUrlsNodes(arrayNodes))
             edgesList !== null ? urlsList.push.apply(urlsList, TextUtil.getUrlsNodes(edgesList)) : urlsList;
             return TextUtil.similarityUrls(text, urlsList);
         } else {
+            console.log("=========text entrando no check duplicate:", text);
+
             let allNodes = [];
             let numRepetText = 0
             allNodes.push.apply(allNodes, arrayNodes)
             allNodes.push.apply(allNodes, edgesList)
-            const isnum = (/^\d+$/.test(text));
             let isDate = /\d{2}(\/)\d{2}(\/)\d{4}/.test(text);
 
 
             text = (/\d{2,20}(\/)\d{4}/.test(text)) && !isDate ? text.substring(text.length - 4, text.length) : text;
             const currentValue = currentNode.getSource().getValue();
+            text = text.trim();
+            const isnum = (/^\d+$/.test(text));
 
             if (isDate) {
                 return true;
             }
+
+
 
             if (isnum) {
                 text = text.substr(0, 2);
@@ -169,8 +177,20 @@ export default class PuppeteerUtil {
                 let value = node.getSource().getValue();
                 value = (/\d{2,20}(\/)\d{4}/.test(value)) && !(/\d{2}(\/)\d{2}(\/)\d{4}/.test(value)) ? value.substring(value.length - 4, value.length) : value;
 
-                value = (/^\d+$/.test(value)) ? value.substr(0, 2) : value;
+                value = ( isnum && (/^\d+$/.test(value)))  ? value.substr(0, 2) : value;
 
+                console.log("===================================================")
+                console.log("isnum", isnum)
+                console.log("isDate", isDate)
+                console.log("text:", text)
+                console.log("value:", value)
+                console.log("StringSimilarity.compareTwoStrings(text, value):", StringSimilarity.compareTwoStrings(text, value))
+                console.log("node.getSource().getUrl(): ", node.getSource().getUrl())
+                console.log("currentUrl: ", currentUrl)
+                console.log("node.getSource().getUrl() === currentUrl: ", node.getSource().getUrl() === currentUrl)
+                console.log("StringSimilarity.compareTwoStrings(node.getSource().getUrl(), currentUrl): ", StringSimilarity.compareTwoStrings(node.getSource().getUrl(), currentUrl))
+
+                console.log("===================================================")
 
                 if (isnum && StringSimilarity.compareTwoStrings(text, value) > 0.95) {
                     return true;

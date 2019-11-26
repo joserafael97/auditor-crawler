@@ -52,7 +52,6 @@ export default class CrawlerUtil {
         page._frameManager._networkManager.setMaxListeners(0);
         page._client.setMaxListeners(0)
 
-
         console.log("==================================================================")
         logger.info("criterion: " + criterion.name);
         logger.info("node value: " + value);
@@ -219,6 +218,11 @@ export default class CrawlerUtil {
                     }
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
 
+                    console.log("***************************************************88")
+                    console.log("antes text 01:", text)
+                    console.log("========================fim 01")
+
+
 
                     if (((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))))
                         || ((/^\d+$/.test(text)) && (text.length > 2))) &&
@@ -229,10 +233,15 @@ export default class CrawlerUtil {
                         elementsIdentify.push.apply(elementsIdentify, edgesList);
 
                         text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
+                        console.log("antes text 02:", text)
+                        console.log("========================fim 02")
+
 
                         if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase(), false) &&
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
 
+                            console.log("antes text 03:", text)
+                            console.log("========================fim 03")
 
                             if ((text.length > 0 && HtmlUtil.isUrl(text)) ||
                                 ((text.length > 0 && !HtmlUtil.isUrl(text)) && text.length < 120)) {
