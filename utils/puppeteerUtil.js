@@ -148,8 +148,6 @@ export default class PuppeteerUtil {
             edgesList !== null ? urlsList.push.apply(urlsList, TextUtil.getUrlsNodes(edgesList)) : urlsList;
             return TextUtil.similarityUrls(text, urlsList);
         } else {
-            console.log("=========text entrando no check duplicate:", text);
-
             let allNodes = [];
             let numRepetText = 0
             allNodes.push.apply(allNodes, arrayNodes)
@@ -178,20 +176,7 @@ export default class PuppeteerUtil {
                 value = (/\d{2,20}(\/)\d{4}/.test(value)) && !(/\d{2}(\/)\d{2}(\/)\d{4}/.test(value)) ? value.substring(value.length - 4, value.length) : value;
 
                 value = ( isnum && (/^\d+$/.test(value)))  ? value.substr(0, 2) : value;
-
-                console.log("===================================================")
-                console.log("isnum", isnum)
-                console.log("isDate", isDate)
-                console.log("text:", text)
-                console.log("value:", value)
-                console.log("StringSimilarity.compareTwoStrings(text, value):", StringSimilarity.compareTwoStrings(text, value))
-                console.log("node.getSource().getUrl(): ", node.getSource().getUrl())
-                console.log("currentUrl: ", currentUrl)
-                console.log("node.getSource().getUrl() === currentUrl: ", node.getSource().getUrl() === currentUrl)
-                console.log("StringSimilarity.compareTwoStrings(node.getSource().getUrl(), currentUrl): ", StringSimilarity.compareTwoStrings(node.getSource().getUrl(), currentUrl))
-
-                console.log("===================================================")
-
+                
                 if (isnum && StringSimilarity.compareTwoStrings(text, value) > 0.95) {
                     return true;
                 }
