@@ -194,7 +194,7 @@ Como forma de garantir a construção de uma amostra de portais representativa p
 | TI de João Pessoal	| 1	 | 100,0 |
 | EasyWeb / e-TICons |	1	 | 16,7 |
 
-obs: O grupo de ***Portal Próprio*** são portais de transparência onde não foi possível relaciona-lo a nenhuma empresa e que possuem algumas semelhanças entre seuus layouts. 
+obs: O grupo de ***Portal Próprio*** são portais de transparência aos quais não foi possível relacioná-lo a nenhuma empresa e que possuem algumas semelhanças entre seus layouts. 
 
 Nesse cenário, com o objetivo medir o desempenho do crawler na avaliação da transparência na amostra selecionada, foi proposto a criação de gabaritos que registram a presença ou ausência dos itens de cada critério nas páginas Web de cada portal. A Tabela abaixo apresenta um exemplo do registro do gabarito para os itens do critério Receita Extra Orçamentária no portal do município de Santa Rita:
 
