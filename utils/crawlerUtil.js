@@ -61,33 +61,22 @@ export default class CrawlerUtil {
         console.log("===================================================================");
 
         if (node.getSource().getIsExtractIframe() && !isUrl) {
-            await page.waitForNavigation().catch(e => void e);
+            await page.waitForNavigation({ timeout: 3000 }).catch(e => void e);
             page = await PuppeteerUtil.detectContext(page).catch(e => void e);
         }
 
         if (isUrl) {
-            await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
-            if (node.getLevel() === 0) {
-                await page.waitFor(3000);
-                const [button] = await page.$x("//*[contains(., 'Aceitar')]");
-                if (button) {
-                    try {
-                        await button.click();
-                    } catch (e) {
-                        logger.warn("Button Aceitar not clicked: ", e);
-                    }
-                }
-            }
+            await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation({ timeout: 3000 }).catch(e => void e)]);
         } else {
             let element = node.getSource().getElement();
             element = await PuppeteerUtil.selectElementPage(page, xpath, value);
 
             await element.click();
-            await page.waitForNavigation().catch(e => void e);
+            await page.waitForNavigation({ timeout: 3000 }).catch(e => void e);
             const pages = await puppeteer.getBrowser().pages()
 
             if (pages.length > 1) {
-                await Promise.all([page.goto((await pages[pages.length - 1].url())).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
+                await Promise.all([page.goto((await pages[pages.length - 1].url())).catch(e => void e), page.waitForNavigation({ timeout: 3000 }).catch(e => void e)]);
                 await pages[pages.length - 1].close();
             }
 
@@ -96,8 +85,7 @@ export default class CrawlerUtil {
                 changeUrl = true;
             }
         }
-
-        await page.waitFor(6000);
+        await page.waitFor(3000);
 
         let elementsIdentify = []
         let iframesUrlNodes = []
@@ -119,14 +107,13 @@ export default class CrawlerUtil {
         if (!changeUrl ||
             (changeUrl && (await page.constructor.name) === "Frame") ||
             (changeUrl && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, newCurrentURL, node, newCurrentURL))) {
-
-            await page.waitForNavigation().catch(e => void e);
+        
             node = await CrawlerUtil.extractEdges(node, page, criterion.name, elementsIdentify, withOutSearchKeyWord);
             itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
         }
 
         if (node.getLevel() === 0) {
-            await page.waitFor(6000);
+            await page.waitFor(3000);
             node.getSource().setUrl((await page.url()));
         }
 
@@ -202,7 +189,6 @@ export default class CrawlerUtil {
         for (let queryElement of queryElements) {
 
             const elements = await page.$x(queryElement.getXpath());
-
             if (elements.length > 0) {
                 for (let element of elements) {
                     let text = await (await element.getProperty('textContent')).jsonValue();
@@ -217,7 +203,6 @@ export default class CrawlerUtil {
                                 urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
                     }
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-
                     if (((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))))
                         || ((/^\d+$/.test(text)) && (text.length > 2))) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
@@ -227,7 +212,7 @@ export default class CrawlerUtil {
                         elementsIdentify.push.apply(elementsIdentify, edgesList);
 
                         text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                
+
                         if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase(), false) &&
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
 

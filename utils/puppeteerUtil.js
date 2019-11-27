@@ -22,6 +22,7 @@ export default class PuppeteerUtil {
                 '--unlimited-storage',
                 '--full-memory-crash-report',
                 '--no-sandbox',
+                '--disable-features=site-per-process',
                 '--start-fullscreen',
                 '--disable-extensions',
                 '--ignore-certificate-errors',
@@ -30,6 +31,7 @@ export default class PuppeteerUtil {
                 '--disable-popup-blocking',
                 '--blacklist-webgl',
                 '--blacklist-accelerated-compositing',
+                '--dev-shm-usage',
 
             ],
             headless: true,
@@ -120,7 +122,7 @@ export default class PuppeteerUtil {
     static async selectElementPage(page, xpath, searchValue) {
 
         await page.waitForNavigation().catch(e => void e);
-        await page.waitFor(6000);
+        await page.waitFor(6000).catch(e => void e);
         let elements = []
         elements = await page.$x(xpath).catch(e => void e);
         

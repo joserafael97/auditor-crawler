@@ -95,10 +95,10 @@ let selectAproachToRun = async (aproachSelected, root, criterion, evaluation, it
                 trained = true;
             }
 
-            resultCrawlingCriterion = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, nbModel, new EpsilonGreedy(10000, 0.1), [], [], 0, 1, trainModel).catch(logErrorAndExit)
+            resultCrawlingCriterion = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, nbModel, new EpsilonGreedy(500, 0.1), [], [], 0, 1, trainModel).catch(logErrorAndExit)
 
         } else {
-            resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(1000, 0.1)).catch(logErrorAndExit)
+            resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(500, 0.1)).catch(logErrorAndExit)
         }
 
 
