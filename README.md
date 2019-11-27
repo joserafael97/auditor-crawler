@@ -161,9 +161,14 @@ Nesta seção é apresentado os procedimentos e métricas adotadas para avaliar 
 
 ### Critérios Avaliados
 
-Critérios com maior padronização (tabelas) na exibição das informações nos portais de transparência;
-Mais importantes para o manutenção da transparência??? 
-Critérios mais encontrados nos portais???
+Atualmente o Ìndice de transparência criado pelo TCE-PB possui 123 itens dividos entre os critérios Despesa Orçamentária, Despesa Extra-Orçamentária, Licitação, Receita Orçamentária, Receita Extra-Orçamentária, Quadro Pessoal, Contratos, Convênios, Usabilidade, Série Histórica e Frequência de atualização, Extração de Dados e Outros. No entanto, pela numerosa quantidade de itens, foi optado pela redução de critérios e consequentemente a redução do número de itens. Para seleção que seriam utilizados durante as avaliações do Auditor Crawler, foram escolhidos critérios com itens mais bem definidos e claros, critérios com maior presença nos sites e considerados fundamentais para transparência pública. Neste sentido, foram selecionados os critérios (61 itens avaliados): 
+
+* Despesa Orçamentário;
+* Despesa Extra-Orçamentária;
+* Receita Orçamentária
+* Receita Extra-Orçamentária;
+* Licitação
+* Quadro Pessoal
 
 ### Amostra
 
