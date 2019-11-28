@@ -61,18 +61,18 @@ export default class CrawlerUtil {
         console.log("===================================================================");
 
         if (node.getSource().getIsExtractIframe() && !isUrl) {
-            await page.waitForNavigation({ timeout: 3000 }).catch(e => void e);
+            await page.waitForNavigation().catch(e => void e);
             page = await PuppeteerUtil.detectContext(page).catch(e => void e);
         }
 
         if (isUrl) {
-            await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation({ timeout: 3000 }).catch(e => void e)]);
+            await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
         } else {
             let element = node.getSource().getElement();
             element = await PuppeteerUtil.selectElementPage(page, xpath, value);
 
             await element.click();
-            await page.waitForNavigation({ timeout: 3000 }).catch(e => void e);
+            await page.waitForNavigation().catch(e => void e);
             const pages = await puppeteer.getBrowser().pages()
 
             if (pages.length > 1) {
@@ -85,10 +85,13 @@ export default class CrawlerUtil {
                 changeUrl = true;
             }
         }
-        await page.waitFor(3000);
+        await page.waitFor(4000);
 
         let elementsIdentify = []
         let iframesUrlNodes = []
+
+        console.log("--------------PAGE: ", page == undefined || page == null ? 'page is not valid': 'page valid')
+
 
         if ((await page.constructor.name) !== "Frame") {
             elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
@@ -104,6 +107,9 @@ export default class CrawlerUtil {
         elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
         elementsIdentify.push.apply(elementsIdentify, queue);
 
+        console.log("--------------PAGE: ", page == undefined || page == null ? 'page is not valid': 'page valid')
+
+
         if (!changeUrl ||
             (changeUrl && (await page.constructor.name) === "Frame") ||
             (changeUrl && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, newCurrentURL, node, newCurrentURL))) {
@@ -113,7 +119,7 @@ export default class CrawlerUtil {
         }
 
         if (node.getLevel() === 0) {
-            await page.waitFor(3000);
+            await page.waitFor(5000);
             node.getSource().setUrl((await page.url()));
         }
 

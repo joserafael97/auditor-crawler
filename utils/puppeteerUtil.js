@@ -95,7 +95,7 @@ export default class PuppeteerUtil {
             const nodeParent = parents[0];
 
             if (HtmlUtil.isUrl(nodeParent.getSource().getValue())) {
-                Promise.all([page.goto(nodeParent.getSource().getValue()).catch(e => void e), page.waitForNavigation({ timeout: 3000 }).catch(e => void e)]);
+                Promise.all([page.goto(nodeParent.getSource().getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
 
             } else {
                 const currentPage = page;
@@ -103,12 +103,13 @@ export default class PuppeteerUtil {
                     let source = parent.getSource();
 
                     if (HtmlUtil.isUrl(source.getValue())) {
-                        Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation({ timeout: 3000 }).catch(e => void e)]);
+                        Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
 
                     } else {
+                        console.log("--------------PAGE: ", page == undefined || page == null ? 'page is not valid': 'page valid')
 
                         if (parent.getSource().getIsExtractIframe() && (await page.constructor.name) !== "Frame") {
-                            await page.waitForNavigation({ timeout: 3000 }).catch(e => void e);
+                            await page.waitForNavigation().catch(e => void e);
                             page = await PuppeteerUtil.detectContext(page).catch(e => void e);
                         }
 
@@ -116,7 +117,7 @@ export default class PuppeteerUtil {
 
                         if (element) {
                             await element.click().catch(e => void e);
-                            await page.waitForNavigation({ timeout: 3000 }).catch(e => void e);
+                            await page.waitForNavigation().catch(e => void e);
                         }
                     }
                 }
@@ -129,8 +130,8 @@ export default class PuppeteerUtil {
     static async selectElementPage(page, xpath, searchValue) {
 
 
-        if (page !== undefined || page !== null) {
-            await page.waitForNavigation({ timeout: 3000 }).catch(e => void e);
+        if (page !== undefined && page !== null) {
+            await page.waitForNavigation().catch(e => void e);
             await page.waitFor(6000).catch(e => void e);
             let elements = []
 

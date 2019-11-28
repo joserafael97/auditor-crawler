@@ -59,6 +59,8 @@ export default class BanditProcess {
             epsilonGreedyAlg.values.splice(index, 1);
             epsilonGreedyAlg.counts.splice(index, 1);
 
+            console.log("--------------PAGE: ", page == undefined || page == null ? 'page is not valid': 'page valid')
+
             if (newNode.getLevel() > 0 && !HtmlUtil.isUrl(newNode.getSource().getValue())) {
                 await page.waitForNavigation().catch(e => void e);
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
