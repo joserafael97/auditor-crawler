@@ -27,8 +27,6 @@ if (allItens !== undefined && !allItens) {
     // config.dbName = process.env.dbName || 'auditor-crawler-exp01';
     config.dbName = process.env.dbName || 'auditor-crawler-exp01-expandit';
 
-    // config.dbName = process.env.dbName || 'auditor-crawler-test';
-
 }
 
 config.serverPort = process.env.serverPort || 3000;
