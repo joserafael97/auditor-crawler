@@ -24,6 +24,7 @@ import ObjectsToCsv from 'objects-to-csv';
 import csv from 'csvtojson';
 import fs from 'fs';
 import FeaturesConst from './consts/featuares';
+import FileUtil from './utils/fileUtil';
 
 const logErrorAndExit = err => {
     console.log(err)
@@ -31,9 +32,8 @@ const logErrorAndExit = err => {
     process.exit();
 
 };
-
+// let moogoseInstace = connectToDb();
 let trainModel = [];
-connectToDb();
 const dateStart = new Date();
 let nbModel = new MultinomialNB();
 let trained = false;
@@ -66,6 +66,7 @@ let run = async (criterion, evaluation, root) => {
 };
 
 
+
 let selectAproachToRun = async (aproachSelected, root, criterion, evaluation, itens) => {
 
     let classifierCli = '';
@@ -93,11 +94,11 @@ let selectAproachToRun = async (aproachSelected, root, criterion, evaluation, it
                 nbModel.train(train['x_train'], train['y_train']);
                 trained = true;
             }
-            
-            resultCrawlingCriterion = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, nbModel, new EpsilonGreedy(10000, 0.1), [], [], 0, 1, trainModel).catch(logErrorAndExit)
+
+            resultCrawlingCriterion = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, nbModel, new EpsilonGreedy(500, 0.1), [], [], 0, 1, trainModel).catch(logErrorAndExit)
 
         } else {
-            resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(1000, 0.1)).catch(logErrorAndExit)
+            resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(500, 0.1)).catch(logErrorAndExit)
         }
 
 
@@ -164,7 +165,7 @@ const initColletions = async () => {
 }
 
 let startCrawler = async (evaluation, criterion) => {
-
+    await sleep(3000);
     await initColletions();
     const county = await County.findByName(CliParamUtil.countyParamExtract(process.argv.slice(2)[0]));
 
@@ -176,29 +177,55 @@ let startCrawler = async (evaluation, criterion) => {
 
     let root = new Node(element, null, [], false);
 
-    run(criterion, evaluation, root)
+    await run(criterion, evaluation, root)
+
 }
 
-process.setMaxListeners(0);
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-let evaluation = Evaluation({
-    date: dateStart,
-    county: '',
-    cityHallUrl: '',
-    transparencyPortalUrl: '',
-});
 
-let criterionDespesaOrc = CrawlerUtil.createCriterion('Despesa Orçamentária');
-let criterionDespesaExtra = CrawlerUtil.createCriterion('Despesa Extra Orçamentária');
-let criterionReceitaOrc = CrawlerUtil.createCriterion('Receita Orçamentária');
-let criterionReceitaExtra = CrawlerUtil.createCriterion('Receita Extra Orçamentária');
-let criterionLicit = CrawlerUtil.createCriterion('Licitação');
-let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
-startCrawler(evaluation, criterionDespesaOrc);
-startCrawler(evaluation, criterionDespesaExtra);
-startCrawler(evaluation, criterionReceitaOrc);
-startCrawler(evaluation, criterionReceitaExtra);
-startCrawler(evaluation, criterionLicit);
-startCrawler(evaluation, criterionPessoal);
+(async () => {
+    let moogoseInstace = await connectToDb();
+    process.setMaxListeners(0);
+
+    let evaluation = Evaluation({
+        date: dateStart,
+        county: '',
+        cityHallUrl: '',
+        transparencyPortalUrl: '',
+    });
+
+
+    let criterionDespesaOrc = CrawlerUtil.createCriterion('Despesa Orçamentária');
+    let criterionDespesaExtra = CrawlerUtil.createCriterion('Despesa Extra Orçamentária');
+    let criterionReceitaOrc = CrawlerUtil.createCriterion('Receita Orçamentária');
+    let criterionReceitaExtra = CrawlerUtil.createCriterion('Receita Extra Orçamentária');
+    let criterionLicit = CrawlerUtil.createCriterion('Licitação');
+    let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
+
+    Promise.all([
+        startCrawler(evaluation, criterionDespesaOrc),
+        await sleep(1000),
+        startCrawler(evaluation, criterionDespesaExtra),
+        await sleep(1000),
+        startCrawler(evaluation, criterionReceitaOrc),
+        await sleep(1000),
+        startCrawler(evaluation, criterionReceitaExtra),
+        await sleep(1000),
+        startCrawler(evaluation, criterionLicit),
+        await sleep(1000),
+        startCrawler(evaluation, criterionPessoal)
+    ]).then((result) => {
+        console.log("=================finished=======================");
+        moogoseInstace.connection.close(function () {
+            process.exit(0);
+        })
+    });
+
+
+
+})(this);
 

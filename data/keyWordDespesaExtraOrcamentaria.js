@@ -1,4 +1,4 @@
-const keywordSearchDespExtraOrcamentaria = ['despesas extras-orcamentarias', 'extra','consultar Despesas extras orcamentarias','Consultar Despesas Extras','despesaextraorcamentaria.aspx',
+const keywordSearchDespExtraOrcamentaria = ['despesas extras-orcamentarias', 'extraorcamentaria', 'extraorcamentarias','extra','consultar Despesas extras orcamentarias','Consultar Despesas Extras','despesaextraorcamentaria.aspx',
     'despesasextras', 'despesa', 'despesa com diarias', 'locomocao', 'detalhamentos das despesas',  'consultar', 'pesquisar', "/"+new Date().getFullYear(),
 ];
 

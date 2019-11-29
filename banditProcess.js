@@ -52,15 +52,14 @@ export default class BanditProcess {
                 }
             }
 
-            console.log("values ======================== ", epsilonGreedyAlg.values)
-
             const index = epsilonGreedyAlg.chooseArm();
-            console.log("index ======================== ", index)
 
             const newNode = queue[index]
             queue.splice(index, 1);
             epsilonGreedyAlg.values.splice(index, 1);
             epsilonGreedyAlg.counts.splice(index, 1);
+
+            console.log("--------------PAGE: ", page == undefined || page == null ? 'page is not valid': 'page valid')
 
             if (newNode.getLevel() > 0 && !HtmlUtil.isUrl(newNode.getSource().getValue())) {
                 await page.waitForNavigation().catch(e => void e);

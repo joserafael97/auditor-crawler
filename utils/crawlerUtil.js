@@ -23,6 +23,7 @@ import {
 } from '../models/queryElement.class';
 
 import urljoin from 'url-join';
+import CliParamUtil from './cliParamUtil';
 
 export default class CrawlerUtil {
 
@@ -51,7 +52,6 @@ export default class CrawlerUtil {
         page._frameManager._networkManager.setMaxListeners(0);
         page._client.setMaxListeners(0)
 
-
         console.log("==================================================================")
         logger.info("criterion: " + criterion.name);
         logger.info("node value: " + value);
@@ -67,26 +67,16 @@ export default class CrawlerUtil {
 
         if (isUrl) {
             await Promise.all([page.goto(value).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
-            if (node.getLevel() === 0) {
-                await page.waitFor(3000);
-                const [button] = await page.$x("//*[contains(., 'Aceitar')]");
-                if (button) {
-                    try {
-                        await button.click();
-                    } catch (e) {
-                        logger.warn("Button Aceitar not clicked: ", e);
-                    }
-                }
-            }
         } else {
             let element = node.getSource().getElement();
             element = await PuppeteerUtil.selectElementPage(page, xpath, value);
+
             await element.click();
             await page.waitForNavigation().catch(e => void e);
             const pages = await puppeteer.getBrowser().pages()
 
             if (pages.length > 1) {
-                await Promise.all([page.goto((await pages[pages.length - 1].url())).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
+                await Promise.all([page.goto((await pages[pages.length - 1].url())).catch(e => void e), page.waitForNavigation({ timeout: 3000 }).catch(e => void e)]);
                 await pages[pages.length - 1].close();
             }
 
@@ -95,11 +85,13 @@ export default class CrawlerUtil {
                 changeUrl = true;
             }
         }
-
-        await page.waitFor(3000);
+        await page.waitFor(4000);
 
         let elementsIdentify = []
         let iframesUrlNodes = []
+
+        console.log("--------------PAGE: ", page == undefined || page == null ? 'page is not valid': 'page valid')
+
 
         if ((await page.constructor.name) !== "Frame") {
             elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
@@ -115,17 +107,19 @@ export default class CrawlerUtil {
         elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
         elementsIdentify.push.apply(elementsIdentify, queue);
 
+        console.log("--------------PAGE: ", page == undefined || page == null ? 'page is not valid': 'page valid')
+
+
         if (!changeUrl ||
             (changeUrl && (await page.constructor.name) === "Frame") ||
             (changeUrl && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, newCurrentURL, node, newCurrentURL))) {
-
-            await page.waitForNavigation().catch(e => void e);
+        
             node = await CrawlerUtil.extractEdges(node, page, criterion.name, elementsIdentify, withOutSearchKeyWord);
             itens = await CrawlerUtil.identificationItens(criterion.name, page, itens, currentPage, evaluation, node);
         }
 
         if (node.getLevel() === 0) {
-            await page.waitFor(3000);
+            await page.waitFor(5000);
             node.getSource().setUrl((await page.url()));
         }
 
@@ -160,8 +154,9 @@ export default class CrawlerUtil {
                 elementsIdentify.push.apply(elementsIdentify, edgesList);
 
                 if ((HtmlUtil.isUrl(text) && !TextUtil.checkTextContainsArray(UNUSABLEIFRAMES, text)) &&
-                    !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
-                    let source = new Element(text, element, queryIframe.getXpath(), queryIframe.getTypeQuery(), currentUrl, (await page.constructor.name) === "Frame" || queryIframe.getIsExtractIframe());
+                    (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase(), false) && !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList))) {
+
+                    let source = new Element(text, element, queryIframe.getXpath(), queryIframe.getTypeQuery(), currentUrl, (await page.constructor.name) === "Frame");
                     let newNode = new Node(source, node);
                     newNode.initializeFeatures();
                     newNode.getFeatures()[FeaturesConst.URL_RELEVANT] = TextUtil.
@@ -198,6 +193,7 @@ export default class CrawlerUtil {
         result[FeaturesConst.URL_RELEVANT] = TextUtil.checkUrlRelvant(currentUrl, criterionKeyWordName) ? 1 : 0;
 
         for (let queryElement of queryElements) {
+
             const elements = await page.$x(queryElement.getXpath());
             if (elements.length > 0) {
                 for (let element of elements) {
@@ -213,19 +209,22 @@ export default class CrawlerUtil {
                                 urljoin(HtmlUtil.extractHostname(currentUrl), text) : text;
                     }
                     text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
-                    if ((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text)))
-                        || (/^\d+$/.test(text))) &&
+                    if (((TextUtil.checkTextContainsArray(queryElement.getKeyWordsXpath(), TextUtil.normalizeText(TextUtil.removeWhiteSpace(text))))
+                        || ((/^\d+$/.test(text)) && (text.length > 2))) &&
                         ((currentNodeUrl === currentUrl && text !== currentValue) ||
                             (currentNodeUrl !== currentUrl))) {
                         const isUrl = HtmlUtil.isUrl(text);
-                        text = !isUrl && (await CrawlerUtil.hrefValid(element, currentUrl)) ? await (await element.getProperty('href')).jsonValue() : text;
+                        text = (!isUrl && !(/^\d+$/.test(text))) && (await CrawlerUtil.hrefValid(element, currentUrl)) ? await (await element.getProperty('href')).jsonValue() : text;
                         elementsIdentify.push.apply(elementsIdentify, edgesList);
+
+                        text = HtmlUtil.isUrl(text) ? text : TextUtil.normalizeText(TextUtil.removeWhiteSpace(text));
 
                         if (!TextUtil.checkTextContainsArray(TextUtil.validateItemSearch(criterionKeyWordName), text.toLowerCase(), false) &&
                             !PuppeteerUtil.checkDuplicateNode(elementsIdentify, text, node, currentUrl, edgesList)) {
 
                             if ((text.length > 0 && HtmlUtil.isUrl(text)) ||
                                 ((text.length > 0 && !HtmlUtil.isUrl(text)) && text.length < 120)) {
+
                                 let source = new Element(text, element, queryElement.getXpath(), queryElement.getTypeQuery(), currentUrl, (await page.constructor.name) === "Frame" || queryElement.getIsExtractIframe());
                                 let newNode = new Node(source, node);
                                 newNode.initializeFeatures();
@@ -233,6 +232,7 @@ export default class CrawlerUtil {
                                     checkUrlRelvant(newNode.getSource().getValue(), criterionKeyWordName) ? 1 : 0;
 
                                 edgesList.push(newNode);
+
                             }
 
                         }
@@ -242,6 +242,7 @@ export default class CrawlerUtil {
                 }
             }
         }
+
         result[FeaturesConst.MORE_THAN_ONE_NEW_COMPONENT] = edgesList.length > 1 ? 1 : 0;
         node.setFeatures(result)
         node.setEdgesList(edgesList);
@@ -255,8 +256,8 @@ export default class CrawlerUtil {
         const actuallyUrl = TextUtil.checkTextContainsInText('#', currentUrl) ? currentUrl :
             currentUrl.substring(currentUrl.lastIndexOf('/')) === '/' ? currentUrl + '#' : currentUrl + '/#';
 
-        if ((url !== undefined && url.length > 0) && ((onclick !== null && onclick.length > 0) ||
-            (actuallyUrl === url || TextUtil.checkTextContainsInText('frameContent', url)))) {
+        if ((url !== undefined && url.length > 0) && (((onclick !== null && onclick.length > 0) || actuallyUrl === url) ||
+            (TextUtil.checkTextContainsInText('frameContent', url) || TextUtil.checkTextContainsInText('PrimeFaces', url)))) {
             return false
         }
 
@@ -271,7 +272,7 @@ export default class CrawlerUtil {
         let result = node.getFeatures();
 
         for (let item of itens) {
-            const element = (await page.$x(item.xpath))[0];
+            let element = (await page.$x(item.xpath))[0];
             if (element !== undefined && !item.valid) {
                 let path = FileUtil.createMultiDirecttory('./proof/' + evaluation.county,
                     "/" + evaluation.date.toISOString(), "/" + criterionName)
@@ -379,10 +380,19 @@ export default class CrawlerUtil {
 
     static async initializeItens(criterionName) {
 
+        const itensToNotSearch = ['licitado', 'integra', 'edital', 'pregao', 'termo_ratificacao',
+            'especie', 'rubrica', 'alinea', 'sub_alinea', 'lic_obj_servico', 'nome_perdedores', 'nome_vencedores', 'aviso'];
+
+        const allItens = CliParamUtil.allItensParamExtract(process.argv.slice(4)[0]) === "true" ? true : false;
+
         const itensIdentificationItensQueries = await XpathUtil.createXpathsToIdentificationKeyWord(criterionName);
         let itens = [];
+
+
         for (let query of itensIdentificationItensQueries) {
-            if (query.getKeyWord().length > 0) {
+            if (query.getKeyWord().length > 0 &&
+                (allItens || (!allItens && !TextUtil.checkTextContainsArray(itensToNotSearch, query.getKeyWord())))) {
+
                 itens.push(CrawlerUtil.createItem(query.getKeyWord(), query.xpath, query.getKeyWordsXpath()));
             }
         }

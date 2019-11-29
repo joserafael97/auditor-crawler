@@ -297,13 +297,15 @@ npm install
 ### Run Crawler
 
 ```
-npm start county="Santa Rita" aproach="bandit"
+npm start county="Santa Rita" aproach="bandit" allitens="true"
 ```
 
 Os parâmetros apresentados são descritos com mais detalhes abaixo:
 
 * ***County:*** Deve ser informar o nome do município ao qual deseja avaliar;
 * ***Aproach:*** Deve ser informar a abordagem a ser utilizada durante a execução, podendo ser ***bfs***, ***dfs*** ou ***bandit***. Caso a abordagem não seja informada a opção bfs é utilizada.
+* ***allitens:*** Deve ser informar se execução deve considerar todos os itens ou não, caso opção seja ***false*** os itens ***bfs***, ***licitado***, ***edital***, ***pregao***, ***termo_ratificacao***, ***especie***, ***rubrica***, ***alinea***,  ***sub_alinea***, ***lic_obj_servico***,  ***nome_perdedores***,  ***nome_vencedores*** e ***aviso*** não serão pesquisados.
+
 
 ### Run Rest Api
 

@@ -7,11 +7,12 @@ import { QUERYTODYNAMICELEMENT, QUERYTOSTATICCOMPONENT } from '../models/queryEl
 const EQUALTYPESEARCH = 'tagSearch = "{}"';
 const CONTAINSTYPESEARCH = 'contains(tagSearch, "{}")';
 const XPATHIFRAME = '//*/iframe';
-const UNUSABLEIFRAMES = ['limpo', 'youtube', 'tweet', 'twitter', 'blank', 'google', 'sharethis','graficos', 'Graficos', 'DXR.axd', "javascript", 
-'assets','anexo', 'download', 'widget', ".zip", ".jpeg", ".rar", "noticia", "publicidade",'facebook', "email", 'whatsapp', 'print', 'png', 'dist'];
+const UNUSABLEIFRAMES = ['limpo', 'youtube', 'tweet', 'twitter', 'blank', 'google', 'sharethis', 'graficos', 'Graficos', 'DXR.axd', "javascript",
+    'assets', 'anexo', 'download', 'widget', ".zip", ".jpeg", ".rar", "noticia", "publicidade", 'facebook', "email", 'whatsapp', 'print', 'png', 'dist'];
 const CONSULTAR = "consultar";
 const PESQUISAR = "pesquisar";
 const ACESSAR = "acessar";
+const SERVIDOR = "servidor";
 
 
 export {
@@ -141,6 +142,7 @@ export default class XpathUtil {
         terms.push(CONSULTAR);
         terms.push(PESQUISAR);
         terms.push(ACESSAR);
+        terms.push(SERVIDOR);
 
         return terms;
     }
@@ -169,10 +171,12 @@ export default class XpathUtil {
             '//input[contains({tagSearch},"{}")]'.replace('{tagSearch}', XpathUtil.normalizeXpath('@id')).replace('{}', keyWord) + ' | ' +
             '//a[contains({tagSearch},"{}")]'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord) + ' | ' +
             '//a[contains({tagSearch},"{}")]'.replace('{tagSearch}', XpathUtil.normalizeXpath('@onclick')).replace('{}', keyWord) + ' | ' +
+            '//a[contains({tagSearch},"{}")]//text()'.replace('{tagSearch}', XpathUtil.normalizeXpath('@onclick')).replace('{}', keyWord) + ' | ' +
             '//a[contains({tagSearch},"{}")]'.replace('{tagSearch}', XpathUtil.normalizeXpath('@href')).replace('{}', keyWord) + ' | ' +
             '//*[contains({tagSearch},"{}")]/parent::a'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
             '//a[contains({tagSearch},"{}")]/following::span'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
-            '//span[contains({tagSearch},"{}")]/parent::*'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord), keyWord, QUERYTODYNAMICELEMENT, terms);
+            '//span[contains({tagSearch},"{}")]/parent::*'.replace('{tagSearch}', XpathUtil.normalizeXpath('text()')).replace('{}', keyWord) + ' | ' +
+            '//*[contains({tagSearch},"{}")]//@title'.replace('{tagSearch}', XpathUtil.normalizeXpath('@title')).replace('{}', keyWord), keyWord, QUERYTODYNAMICELEMENT, terms);
 
     }
 
