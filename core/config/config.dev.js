@@ -16,10 +16,10 @@ const allItens = process.argv.slice(4)[0] !== undefined && CliParamUtil.allItens
 console.log("allItens: ", allItens)
 
 if (allItens !== undefined && !allItens) {
+    config.dbName = process.env.dbName || 'auditor-crawler-exp02';
     // config.dbName = process.env.dbName || 'auditor-crawler-test-lessitens';
-    // config.dbName = process.env.dbName || 'auditor-crawler-exp02';
 
-    config.dbName = process.env.dbName || 'auditor-crawler-test';
+    // config.dbName = process.env.dbName || 'auditor-crawler-test';
 
 
 } else {
