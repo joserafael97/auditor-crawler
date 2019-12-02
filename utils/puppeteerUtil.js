@@ -39,7 +39,7 @@ export default class PuppeteerUtil {
                     '--dev-shm-usage',
 
                 ],
-                headless: true,
+                headless: false,
             });
         
         } else {
