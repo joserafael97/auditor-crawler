@@ -10,6 +10,7 @@ import {
     UNUSABLEIFRAMES
 } from '../utils/xpathUtil';
 import { is } from 'bluebird';
+import CliParamUtil from './cliParamUtil';
 
 
 
@@ -17,25 +18,60 @@ export default class PuppeteerUtil {
 
 
     static async createPuppetterInstance() {
-        const browser = await puppeteer.launch({
-            args: [
-                '--unlimited-storage',
-                '--full-memory-crash-report',
-                '--no-sandbox',
-                '--disable-features=site-per-process',
-                '--start-fullscreen',
-                '--disable-extensions',
-                '--ignore-certificate-errors',
-                '--disable-dev-shm-usage',
-                '--disable-webgl',
-                '--disable-popup-blocking',
-                '--blacklist-webgl',
-                '--blacklist-accelerated-compositing',
-                '--dev-shm-usage',
 
-            ],
-            headless: true,
-        });
+        let browser = null;
+       
+        if (CliParamUtil.countyParamExtract(process.argv.slice(2)[0]) === 'Barra de Santa Rosa') {
+            browser = await puppeteer.launch({
+                args: [
+                    '--unlimited-storage',
+                    '--full-memory-crash-report',
+                    '--no-sandbox',
+                    '--disable-features=site-per-process',
+                    '--start-fullscreen',
+                    '--disable-extensions',
+                    '--ignore-certificate-errors',
+                    '--disable-dev-shm-usage',
+                    '--disable-webgl',
+                    '--disable-popup-blocking',
+                    '--blacklist-webgl',
+                    '--blacklist-accelerated-compositing',
+                    '--dev-shm-usage',
+
+                ],
+                headless: true,
+            });
+        
+        } else {
+            browser = await puppeteer.launch({
+                args: [
+                    '--unlimited-storage',
+                    '--full-memory-crash-report',
+                    '--no-sandbox',
+                    '--disable-features=site-per-process',
+                    '--start-fullscreen',
+                    '--disable-extensions',
+                    '--ignore-certificate-errors',
+                    '--disable-dev-shm-usage',
+                    '--disable-webgl',
+                    '--disable-popup-blocking',
+                    '--blacklist-webgl',
+                    '--blacklist-accelerated-compositing',
+                    '--dev-shm-usage',
+                    '--disable-accelerated-2d-canvas',
+                    '--disable-accelerated-compositing',
+                    '--disable-accelerated-layers',
+                    '--disable-accelerated-plugins',
+                    '--disable-accelerated-video',
+                    '--disable-accelerated-video-decode',
+                    '--disable-infobars',
+                    '--test-type',
+                ],
+                headless: true
+            });
+
+        }
+
         const [page] = await browser.pages();
         const mainPage = await page.target().page();
         await mainPage.setViewport({
@@ -106,7 +142,7 @@ export default class PuppeteerUtil {
                         Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
 
                     } else {
-                        console.log("--------------PAGE: ", page == undefined || page == null ? 'page is not valid': 'page valid')
+                        console.log("--------------PAGE: ", page == undefined || page == null ? 'page is not valid' : 'page valid')
 
                         if (parent.getSource().getIsExtractIframe() && (await page.constructor.name) !== "Frame") {
                             await page.waitForNavigation().catch(e => void e);
