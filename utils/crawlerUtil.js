@@ -90,7 +90,7 @@ export default class CrawlerUtil {
         let elementsIdentify = []
         let iframesUrlNodes = []
 
-        console.log("--------------PAGE: ", page == undefined || page == null ? 'page is not valid': 'page valid')
+        console.log("--------01------PAGE: ", page == undefined || page == null ? 'page is not valid': 'page valid')
 
 
         if ((await page.constructor.name) !== "Frame") {
@@ -107,7 +107,7 @@ export default class CrawlerUtil {
         elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
         elementsIdentify.push.apply(elementsIdentify, queue);
 
-        console.log("--------------PAGE: ", page == undefined || page == null ? 'page is not valid': 'page valid')
+        console.log("--------02------PAGE: ", page == undefined || page == null ? 'page is not valid': 'page valid')
 
 
         if (!changeUrl ||
