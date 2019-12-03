@@ -27,17 +27,8 @@ export default class PuppeteerUtil {
                     '--unlimited-storage',
                     '--full-memory-crash-report',
                     '--no-sandbox',
-                    '--disable-features=site-per-process',
                     '--start-fullscreen',
                     '--disable-extensions',
-                    '--ignore-certificate-errors',
-                    '--disable-dev-shm-usage',
-                    '--disable-webgl',
-                    '--disable-popup-blocking',
-                    '--blacklist-webgl',
-                    '--blacklist-accelerated-compositing',
-                    '--dev-shm-usage',
-
                 ],
                 headless: false,
             });
