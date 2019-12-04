@@ -1,0 +1,1054 @@
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Arara" "aproach=babdit" "allitens=false"
+
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Areia" "aproach=babdit" "allitens=false"
+
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Serraria" "aproach=babdit" "allitens=false"
+
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Quixaba" "aproach=babdit" "allitens=false"
+
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Serraria" "aproach=babdit" "allitens=false"
+
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Areia de Baraúnas" "aproach=babdit" "allitens=false"
+
+allItens:  false
+allItens:  false
+allItens:  false
+allItens:  false
+allItens:  false
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:4045) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4045) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:4045) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:4039) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4039) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:4069) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4039) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:4069) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:4069) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:4075) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4075) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:4075) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:4109) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4109) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:4109) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:4103) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4103) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:4103) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:4045) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4045) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+{"message":"AproachType: babdit","level":"info"}
+(node:4069) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4069) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+{"message":"AproachType: babdit","level":"info"}
+(node:4039) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4039) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+{"message":"AproachType: babdit","level":"info"}
+(node:4075) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4075) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+{"message":"AproachType: babdit","level":"info"}
+(node:4109) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4109) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+{"message":"AproachType: babdit","level":"info"}
+(node:4103) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4103) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+(node:4045) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:4045) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:4045) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4045) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+{"message":"AproachType: babdit","level":"info"}
+(node:4069) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:4069) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:4069) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4069) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+{"message":"AproachType: babdit","level":"info"}
+(node:4039) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:4039) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:4039) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4039) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+{"message":"AproachType: babdit","level":"info"}
+(node:4075) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:4075) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:4075) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4075) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+{"message":"AproachType: babdit","level":"info"}
+(node:4109) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:4109) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:4109) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4109) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+(node:4103) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:4103) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:4103) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:4103) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Arara" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_13_58_916Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Barra de Santa Rosa" "aproach=babdit" "allitens=false"
+
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14297) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14297) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14297) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14297) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14297) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+{"message":"AproachType: babdit","level":"info"}
+(node:14297) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14297) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 6)
+(node:14297) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14297) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14297) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 6)
+(node:14297) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14297) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 7)
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Areia" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_14_09_709Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Campina Grande" "aproach=babdit" "allitens=false"
+
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14329) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14329) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14329) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14329) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14329) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+{"message":"AproachType: babdit","level":"info"}
+(node:14329) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14329) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 6)
+(node:14329) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14329) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14329) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 6)
+(node:14329) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14329) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 7)
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Quixaba" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_14_19_750Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Carrapateira" "aproach=babdit" "allitens=false"
+
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14361) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14361) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14361) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14361) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14361) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+{"message":"AproachType: babdit","level":"info"}
+(node:14361) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14361) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 6)
+(node:14361) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14361) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14361) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 6)
+(node:14361) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14361) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 7)
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Serraria" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_14_35_481Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Conceição" "aproach=babdit" "allitens=false"
+
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14396) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14396) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14396) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14396) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14396) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+{"message":"AproachType: babdit","level":"info"}
+(node:14396) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14396) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 6)
+(node:14396) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14396) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14396) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 6)
+(node:14396) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14396) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 7)
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Serraria" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_14_43_507Z-debug.log
+{"message":"AproachType: babdit","level":"info"}
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Coremas" "aproach=babdit" "allitens=false"
+
+allItens:  false
+{"message":"AproachType: babdit","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14431) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14431) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14431) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14431) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14431) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+(node:14431) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14431) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14431) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14431) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Areia de Baraúnas" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_14_50_780Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Cruz do Espírito Santo" "aproach=babdit" "allitens=false"
+
+{"message":"AproachType: babdit","level":"info"}
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14463) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14463) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14463) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14463) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14463) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+(node:14463) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14463) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14463) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14463) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Barra de Santa Rosa" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_15_09_399Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Esperança" "aproach=babdit" "allitens=false"
+
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14498) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14498) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14498) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14498) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14498) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+{"message":"AproachType: babdit","level":"info"}
+(node:14498) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14498) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 6)
+(node:14498) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14498) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14498) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 6)
+(node:14498) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14498) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 7)
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Campina Grande" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_15_29_667Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Gado Bravo" "aproach=babdit" "allitens=false"
+
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14532) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14532) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14532) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14532) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14532) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+(node:14532) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14532) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14532) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14532) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Carrapateira" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_15_37_931Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Itabaiana" "aproach=babdit" "allitens=false"
+
+{"message":"AproachType: babdit","level":"info"}
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14564) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14564) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14564) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14564) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14564) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+(node:14564) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14564) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14564) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14564) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Conceição" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_15_47_726Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Pedra Lavrada" "aproach=babdit" "allitens=false"
+
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14599) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14599) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14599) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14599) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14599) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+(node:14599) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14599) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14599) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14599) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Coremas" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_15_54_472Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Remígio" "aproach=babdit" "allitens=false"
+
+{"message":"AproachType: babdit","level":"info"}
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14631) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14631) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14631) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14631) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14631) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+{"message":"AproachType: babdit","level":"info"}
+(node:14631) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14631) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 6)
+(node:14631) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14631) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14631) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 6)
+(node:14631) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14631) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 7)
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Cruz do Espírito Santo" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_16_01_643Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Santa Cecília" "aproach=babdit" "allitens=false"
+
+allItens:  false
+{"message":"AproachType: babdit","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14664) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14664) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14664) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14664) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14664) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+(node:14664) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14664) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14664) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14664) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Esperança" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_16_09_947Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Santa Rita" "aproach=babdit" "allitens=false"
+
+{"message":"AproachType: babdit","level":"info"}
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14696) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14696) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14696) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14696) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14696) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+(node:14696) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14696) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14696) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14696) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Gado Bravo" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_16_35_827Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Serra Grande" "aproach=babdit" "allitens=false"
+
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14730) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14730) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14730) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14730) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14730) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+(node:14730) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14730) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14730) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14730) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Itabaiana" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_16_42_137Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Umbuzeiro" "aproach=babdit" "allitens=false"
+
+{"message":"AproachType: babdit","level":"info"}
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14764) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14764) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14764) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14764) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14764) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+(node:14764) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14764) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14764) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14764) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Pedra Lavrada" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_16_50_834Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Bayeux" "aproach=babdit" "allitens=false"
+
+{"message":"AproachType: babdit","level":"info"}
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14797) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+(node:14797) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14797) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14797) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14797) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Santa Cecília" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_16_57_717Z-debug.log
+{"message":"AproachType: babdit","level":"info"}
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Bom Sucesso" "aproach=babdit" "allitens=false"
+
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+(node:14829) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14829) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:14829) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+{"message":"AproachType: babdit","level":"info"}
+(node:14829) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14829) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 4)
+(node:14829) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 2)
+(node:14829) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 4)
+(node:14829) UnhandledPromiseRejectionWarning: TypeError: Cannot read property 'itens' of null
+    at selectAproachToRun (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:110:37)
+    at run (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:45:34)
+    at startCrawler (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/app.js:180:11)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+(node:14829) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 5)
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Santa Rita" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_17_05_017Z-debug.log
+{"message":"AproachType: babdit","level":"info"}
+{"message":"AproachType: babdit","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Remígio" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_17_25_551Z-debug.log
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Serra Grande" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_17_33_686Z-debug.log
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Umbuzeiro" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_17_41_316Z-debug.log
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Bayeux" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_17_48_091Z-debug.log
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Bom Sucesso" "aproach=babdit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T14_17_57_746Z-debug.log

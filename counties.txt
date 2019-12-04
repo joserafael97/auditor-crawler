@@ -1,6 +1,5 @@
-Bayeux
-Belém do Brejo do Cruz
-Bom Sucesso
+Arara
+Quixaba
 Alcantil
 Areia
 Areia de Baraúnas
@@ -22,8 +21,6 @@ Pocinhos
 Remígio
 Santa Cecília
 Santa Rita
+Serra Grande
 Serraria
 Umbuzeiro
-Arara
-Quixaba
-Serra Grande

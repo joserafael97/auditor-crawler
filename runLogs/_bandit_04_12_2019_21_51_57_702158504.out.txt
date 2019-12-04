@@ -1,0 +1,1507 @@
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Arara" "aproach=bandit" "allitens=false"
+
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Areia de Baraúnas" "aproach=bandit" "allitens=false"
+
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Alcantil" "aproach=bandit" "allitens=false"
+
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Areia" "aproach=bandit" "allitens=false"
+
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Quixaba" "aproach=bandit" "allitens=false"
+
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Barra de Santa Rosa" "aproach=bandit" "allitens=false"
+
+allItens:  false
+allItens:  false
+allItens:  false
+allItens:  false
+allItens:  false
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201012","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLvr","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.areia.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: https://www.barradesantarosa.pb.gov.br/portal/transparencia-fiscal","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201012","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.areia.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLvr","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: https://www.barradesantarosa.pb.gov.br/portal/transparencia-fiscal","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201012","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.areia.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLvr","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: https://www.barradesantarosa.pb.gov.br/portal/transparencia-fiscal","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201012","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLvr","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.areia.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: https://www.barradesantarosa.pb.gov.br/portal/transparencia-fiscal","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://transparencia.areia.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLvr","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201012","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201012","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLvr","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: http://transparencia.areia.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: https://www.barradesantarosa.pb.gov.br/portal/transparencia-fiscal","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: https://www.barradesantarosa.pb.gov.br/portal/transparencia-fiscal","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+queue nodes: ****: http://transparencia.areia.pb.gov.br/receitas  level:  1
+-------ep---- 1
+Math.random() =  0.7887581668454571
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.areia.pb.gov.br/receitas","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+queue nodes: ****: http://transparencia.areia.pb.gov.br/despesas  level:  1
+-------ep---- 1
+Math.random() =  0.40224123361378417
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.areia.pb.gov.br/despesas","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: http://transparencia.areia.pb.gov.br/receitas  level:  1
+-------ep---- 1
+Math.random() =  0.3970393477182066
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.areia.pb.gov.br/receitas","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: http://areia.pb.gov.br/licitacoes  level:  1
+-------ep---- 1
+Math.random() =  0.3628320913179923
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://areia.pb.gov.br/licitacoes","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: http://transparencia.areia.pb.gov.br/despesas  level:  1
+-------ep---- 1
+Math.random() =  0.4147178789013106
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.areia.pb.gov.br/despesas","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: https://transparencia.elmartecnologia.com.br/Contab/Receitas?e=201022&ctx=201022  level:  1
+queue nodes: ****: receitas  level:  1
+-------ep---- 1
+Math.random() =  0.18861055286386064
+epsilon =  1
+--------------PAGE:  page valid
+queue nodes: ****: http://transparencia.areia.pb.gov.br/folha-pessoal/  level:  1
+queue nodes: ****: http://areia.pb.gov.br/category/quadro-funcional/  level:  1
+queue nodes: ****: acessar  level:  1
+-------ep---- 1
+Math.random() =  0.10949995716877892
+epsilon =  1
+--------------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+queue nodes: ****: https://transparencia.elmartecnologia.com.br/Contab/Receitas?e=201022&ctx=201022  level:  1
+queue nodes: ****: receitas  level:  1
+-------ep---- 1
+Math.random() =  0.5264513769237484
+epsilon =  1
+--------------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+queue nodes: ****: https://transparencia.elmartecnologia.com.br/Contab/Despesas/Empenhos?e=201022&Tab=2&isModal=false&ctx=201022&header=off&footer=off&menu=off  level:  1
+queue nodes: ****: despesas  level:  1
+-------ep---- 1
+Math.random() =  0.3794856615767237
+epsilon =  1
+--------------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+queue nodes: ****: https://transparencia.elmartecnologia.com.br/FolhaPag?e=201022&Tab=1&isModal=false&ctx=201022  level:  1
+queue nodes: ****: quadro pessoal  level:  1
+-------ep---- 1
+Math.random() =  0.6609818202094484
+epsilon =  1
+--------------PAGE:  page valid
+queue nodes: ****: https://transparencia.elmartecnologia.com.br/Contab/Despesas/Empenhos?e=201022&Tab=2&isModal=false&ctx=201022&header=off&footer=off&menu=off  level:  1
+queue nodes: ****: despesas  level:  1
+-------ep---- 1
+Math.random() =  0.5371792968014852
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: https://transparencia.elmartecnologia.com.br/Contab/Despesas/Empenhos?e=201022&Tab=2&isModal=false&ctx=201022&header=off&footer=off&menu=off","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+queue nodes: ****: https://www.barradesantarosa.pb.gov.br/pagina/acompanhe-sua-solicitacao  level:  1
+queue nodes: ****: https://transparencia.elmartecnologia.com.br/Licitacao?e=201022&ctx=201022  level:  1
+queue nodes: ****: 
+                                                                                                    https://www.barradesantarosa.pb.gov.br/portal/licitacao
+                                  level:  1
+queue nodes: ****: http://www.barradesantarosa.pb.gov.br/licitacoes  level:  1
+queue nodes: ****: licitacoes  level:  1
+queue nodes: ****: procedimentos licitatorios  level:  1
+-------ep---- 1
+Math.random() =  0.7332311472571562
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://www.barradesantarosa.pb.gov.br/licitacoes","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L2ZvbGhhLXBhZ2FtZW50bw==&m=3  level:  1
+queue nodes: ****: pessoal  level:  1
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3F1aXhhYmEucGIuZ292LmJyL2FjZXNzby9wZXJndW50YXNfZnJlcXVlbnRlcw==&m=  level:  1
+-------ep---- 1
+Math.random() =  0.7671584380247995
+epsilon =  1
+--------------PAGE:  page valid
+queue nodes: ****: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3NpdGVzZXRpY29ucy5jb20uYnIvcG9ydGFsL3dzL2VtcHJlc2EvTURFMk1USTJPRFV3TURBeE9UQT0vc2Vydmlkb3Jlcw==&m=5  level:  1
+queue nodes: ****: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL2FyZWlhZGViYXJhdW5hcy5wYi5nb3YuYnIvYWNlc3NvL3Blcmd1bnRhc19mcmVxdWVudGVz&m=  level:  1
+-------ep---- 1
+Math.random() =  0.3401499009907585
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3NpdGVzZXRpY29ucy5jb20uYnIvcG9ydGFsL3dzL2VtcHJlc2EvTURFMk1USTJPRFV3TURBeE9UQT0vc2Vydmlkb3Jlcw==&m=5","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: despesa  level:  1
+queue nodes: ****: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9OOWM9L2Rlc3Blc2EtZXh0cmEtb3JjYW1lbnRhcmlh&m=3  level:  1
+queue nodes: ****: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL2FyZWlhZGViYXJhdW5hcy5wYi5nb3YuYnIvYWNlc3NvL3Blcmd1bnRhc19mcmVxdWVudGVz&m=  level:  1
+-------ep---- 1
+Math.random() =  0.5621483940774601
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9OOWM9L2Rlc3Blc2EtZXh0cmEtb3JjYW1lbnRhcmlh&m=3","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: despesa  level:  1
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L2Rlc3Blc2EtZXh0cmEtb3JjYW1lbnRhcmlh&m=3  level:  1
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L2ZvbGhhLXBhZ2FtZW50bw==&m=3  level:  1
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3F1aXhhYmEucGIuZ292LmJyL2FjZXNzby9wZXJndW50YXNfZnJlcXVlbnRlcw==&m=  level:  1
+-------ep---- 1
+Math.random() =  0.2001039360354533
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L2ZvbGhhLXBhZ2FtZW50bw==&m=3","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9OOWM9L2xpY2l0YWNvZXM=&m=4  level:  1
+queue nodes: ****: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL2FyZWlhZGViYXJhdW5hcy5wYi5nb3YuYnIvYWNlc3NvLWEtaW5mb3JtYWNhby9saWNpdGFjb2VzP3E9Y29udHJhdG9z&m=4  level:  1
+queue nodes: ****: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL2FyZWlhZGViYXJhdW5hcy5wYi5nb3YuYnIvYWNlc3NvL3Blcmd1bnRhc19mcmVxdWVudGVz&m=  level:  1
+-------ep---- 1
+Math.random() =  0.6071105491012188
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9OOWM9L2xpY2l0YWNvZXM=&m=4","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9OOWM9L3JlY2VpdGEtZXh0cmEtb3JjYW1lbnRhcmlh&m=2  level:  1
+queue nodes: ****: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL2FyZWlhZGViYXJhdW5hcy5wYi5nb3YuYnIvYWNlc3NvL3Blcmd1bnRhc19mcmVxdWVudGVz&m=  level:  1
+-------ep---- 1
+Math.random() =  0.12610488964681954
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL2FyZWlhZGViYXJhdW5hcy5wYi5nb3YuYnIvYWNlc3NvL3Blcmd1bnRhc19mcmVxdWVudGVz&m=","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L3JlY2VpdGEtZXh0cmEtb3JjYW1lbnRhcmlh&m=2  level:  1
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3F1aXhhYmEucGIuZ292LmJyL2FjZXNzby9wZXJndW50YXNfZnJlcXVlbnRlcw==&m=  level:  1
+-------ep---- 1
+Math.random() =  0.6696848312899433
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3F1aXhhYmEucGIuZ292LmJyL2FjZXNzby9wZXJndW50YXNfZnJlcXVlbnRlcw==&m=","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L3JlY2VpdGEtZXh0cmEtb3JjYW1lbnRhcmlh&m=2  level:  1
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L3JlY2VpdGEtb3JjYW1lbnRhcmlh&m=2  level:  1
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3F1aXhhYmEucGIuZ292LmJyL2FjZXNzby9wZXJndW50YXNfZnJlcXVlbnRlcw==&m=  level:  1
+-------ep---- 1
+Math.random() =  0.04339347067392452
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L3JlY2VpdGEtb3JjYW1lbnRhcmlh&m=2","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9OOWM9L3JlY2VpdGEtZXh0cmEtb3JjYW1lbnRhcmlh&m=2  level:  1
+queue nodes: ****: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9OOWM9L3JlY2VpdGEtb3JjYW1lbnRhcmlh&m=2  level:  1
+queue nodes: ****: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL2FyZWlhZGViYXJhdW5hcy5wYi5nb3YuYnIvYWNlc3NvL3Blcmd1bnRhc19mcmVxdWVudGVz&m=  level:  1
+-------ep---- 1
+Math.random() =  0.16420883401024122
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9OOWM9L3JlY2VpdGEtb3JjYW1lbnRhcmlh&m=2","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L2xpY2l0YWNvZXM=&m=4  level:  1
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3F1aXhhYmEucGIuZ292LmJyL2FjZXNzby1hLWluZm9ybWFjYW8vbGljaXRhY29lcz9xPWNvbnRyYXRvcw==&m=4  level:  1
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3F1aXhhYmEucGIuZ292LmJyL2FjZXNzby9wZXJndW50YXNfZnJlcXVlbnRlcw==&m=  level:  1
+-------ep---- 1
+Math.random() =  0.2362517694583275
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3F1aXhhYmEucGIuZ292LmJyL2FjZXNzby9wZXJndW50YXNfZnJlcXVlbnRlcw==&m=","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: receitas","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: acessar","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: receitas","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: despesa  level:  1
+queue nodes: ****: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9OOWM9L2Rlc3Blc2EtZXh0cmEtb3JjYW1lbnRhcmlh&m=3  level:  1
+queue nodes: ****: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9OOWM9L2Rlc3Blc2Etb3JjYW1lbnRhcmlh&m=3  level:  1
+queue nodes: ****: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL2FyZWlhZGViYXJhdW5hcy5wYi5nb3YuYnIvYWNlc3NvL3Blcmd1bnRhc19mcmVxdWVudGVz&m=  level:  1
+-------ep---- 1
+Math.random() =  0.8281229003471791
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9OOWM9L2Rlc3Blc2Etb3JjYW1lbnRhcmlh&m=3","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L2ZvbGhhLXBhZ2FtZW50bw==&m=3  level:  1
+queue nodes: ****: despesa  level:  1
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L2Rlc3Blc2EtZXh0cmEtb3JjYW1lbnRhcmlh&m=3  level:  1
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L2Rlc3Blc2Etb3JjYW1lbnRhcmlh&m=3  level:  1
+-------ep---- 1
+Math.random() =  0.5787826952796233
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L2Rlc3Blc2Etb3JjYW1lbnRhcmlh&m=3","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+queue nodes: ****: folha de pagamento  level:  1
+queue nodes: ****: consultar gastos com folha de pagamento  level:  1
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: pessoal e encargos sociais  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+-------ep---- 1
+Math.random() =  0.05433916410797712
+epsilon =  1
+--------------PAGE:  page valid
+queue nodes: ****: http://transparencia.elmar.inf.br/Contab/Receitas?e=201012&ctx=201012  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/Contab/Receitas/Prevista?e=201012&Tab=1&isModal=false&ctx=201012  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/Contab/Receitas/Realizada?e=201012&Tab=2&isModal=false&ctx=201012  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/Contab/Receitas/Extra?e=201012&Tab=3&isModal=false&ctx=201012  level:  1
+queue nodes: ****: pesquisar  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/?e=201012#  level:  1
+queue nodes: ****: receitas  level:  1
+queue nodes: ****: receita prevista  level:  1
+queue nodes: ****: receita realizada  level:  1
+queue nodes: ****: receita extra orcamentaria  level:  1
+-------ep---- 1
+Math.random() =  0.48828122772659666
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201012#","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: despesas","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: quadro pessoal","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: https://areia.pb.gov.br/category/licitacoes/page/2/  level:  2
+queue nodes: ****: http://areia.pb.gov.br/licitacoes  level:  2
+queue nodes: ****: inicio licitacoes  level:  2
+queue nodes: ****: tomada de preco 00010/2019  level:  2
+queue nodes: ****: https://areia.pb.gov.br/tomada-de-preco-010-2019/  level:  2
+queue nodes: ****: chamada publica /2019  level:  2
+queue nodes: ****: https://areia.pb.gov.br/chamada-publica/  level:  2
+-------ep---- 1
+Math.random() =  0.3981995848966635
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: https://areia.pb.gov.br/tomada-de-preco-010-2019/","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+{"level":"warn","message":"Click error: Node is either not visible or not an HTMLElement","stack":"Error: Node is either not visible or not an HTMLElement\n    at ElementHandle._clickablePoint (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/puppeteer/lib/JSHandle.js:217:13)\n    at process._tickCallback (internal/process/next_tick.js:68:7)\n  -- ASYNC --\n    at ElementHandle.<anonymous> (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/node_modules/puppeteer/lib/helper.js:111:15)\n    at Function.crawlerNode (/home/rafaelfeitosa/workspace/MSC/auditor-crawler/utils/crawlerUtil.js:74:27)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+queue nodes: ****: http://transparencia.areia.pb.gov.br/folha-pessoal/  level:  1
+queue nodes: ****: http://areia.pb.gov.br/category/quadro-funcional/  level:  1
+-------ep---- 1
+Math.random() =  0.4813886461541912
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: http://areia.pb.gov.br/category/quadro-funcional/","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L3JlY2VpdGEtZXh0cmEtb3JjYW1lbnRhcmlh&m=2  level:  1
+-------ep---- 1
+Math.random() =  0.057476322271144076
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L3JlY2VpdGEtZXh0cmEtb3JjYW1lbnRhcmlh&m=2","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9OOWM9L3JlY2VpdGEtZXh0cmEtb3JjYW1lbnRhcmlh&m=2  level:  1
+-------ep---- 1
+Math.random() =  0.6350355577228302
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://areiadebaraunas.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9OOWM9L3JlY2VpdGEtZXh0cmEtb3JjYW1lbnRhcmlh&m=2","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: pessoal","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L2xpY2l0YWNvZXM=&m=4  level:  1
+queue nodes: ****: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3F1aXhhYmEucGIuZ292LmJyL2FjZXNzby1hLWluZm9ybWFjYW8vbGljaXRhY29lcz9xPWNvbnRyYXRvcw==&m=4  level:  1
+queue nodes: ****: avisos de licitacao  level:  2
+-------ep---- 1
+Math.random() =  0.053038533355237005
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://quixaba.pb.gov.br/assuntos/portal-da-transparencia?acao=aHR0cDovL3BvcnRhbGRhdHJhbnNwYXJlbmNpYS5wdWJsaWNzb2Z0LmNvbS5ici9zaXN0ZW1hcy9Db250YWJpbGlkYWRlUHVibGljYS9Pa2s9L2xpY2l0YWNvZXM=&m=4","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: http://transparencia.elmar.inf.br/Contab/Despesas/Extra?e=201012&Tab=4&isModal=false&ctx=201012  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/Contab/Despesas?e=201012&ctx=201012  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/Contab/Despesas/Fixada?e=201012&Tab=1&isModal=false&ctx=201012  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/Contab/Despesas/Empenhos?e=201012&Tab=2&isModal=false&ctx=201012  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/Contab/Despesas/Pagamentos?e=201012&Tab=6&isModal=false&ctx=201012  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/Contab/Despesas/Liquidacao?e=201012&Tab=7&isModal=false&ctx=201012  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/Contab/Despesas/Restos?e=201012&Tab=5&isModal=false&ctx=201012  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/Contab/Despesas/SubEmpenhos?e=201012&Tab=3&isModal=False  level:  1
+queue nodes: ****: pesquisar  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/?e=201012#  level:  1
+queue nodes: ****: despesas  level:  1
+queue nodes: ****: despesa fixada  level:  1
+queue nodes: ****: despesa extra orcamentaria  level:  1
+-------ep---- 1
+Math.random() =  0.2739744881467401
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/Contab/Despesas/Extra?e=201012&Tab=4&isModal=false&ctx=201012","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: http://transparencia.elmar.inf.br/FolhaPag?e=201012&Tab=1&isModal=false&ctx=201012  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/FolhaPag/Index/QuadroFuncional?e=201012&Tab=2&isModal=false&ctx=201012  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/FolhaPag/Index/Temporarios?e=201012&Tab=3&isModal=false&ctx=201012  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/FolhaPag/Index/Cedidos?e=201012&Tab=4&isModal=false&ctx=201012  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/FolhaPag/Index/PCargoCarreira?e=201012&Tab=5&isModal=false&ctx=201012  level:  1
+queue nodes: ****: acessar  level:  1
+queue nodes: ****: pesquisar  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/?e=201012#  level:  1
+queue nodes: ****: servidores  level:  1
+queue nodes: ****: folha de pagamento  level:  1
+queue nodes: ****: quadro funcional  level:  1
+queue nodes: ****: servidores temporarios  level:  1
+queue nodes: ****: servidores cedidos  level:  1
+-------ep---- 1
+Math.random() =  0.17586710174951947
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/FolhaPag?e=201012&Tab=1&isModal=false&ctx=201012","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: consultar gastos com folha de pagamento","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+queue nodes: ****: https://transparencia.elmartecnologia.com.br/Contab/Despesas/Empenhos?e=201022&Tab=2&isModal=false&ctx=201022&header=off&footer=off&menu=off  level:  1
+-------ep---- 1
+Math.random() =  0.5193167803132168
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: https://transparencia.elmartecnologia.com.br/Contab/Despesas/Empenhos?e=201022&Tab=2&isModal=false&ctx=201022&header=off&footer=off&menu=off","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+queue nodes: ****: https://transparencia.elmartecnologia.com.br/Contab/Receitas?e=201022&ctx=201022  level:  1
+-------ep---- 1
+Math.random() =  0.8778541517173644
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: https://transparencia.elmartecnologia.com.br/Contab/Receitas?e=201022&ctx=201022","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: http://transparencia.elmar.inf.br/Contab/Receitas?e=201012&ctx=201012  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/Contab/Receitas/Realizada?e=201012&Tab=2&isModal=false&ctx=201012  level:  1
+queue nodes: ****: pesquisar  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/?e=201012#  level:  1
+queue nodes: ****: receitas  level:  1
+queue nodes: ****: receita realizada  level:  1
+-------ep---- 1
+Math.random() =  0.08815151721284331
+epsilon =  1
+--------------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+queue nodes: ****: https://transparencia.elmartecnologia.com.br/Contab/Receitas?e=201022&ctx=201022  level:  1
+-------ep---- 1
+Math.random() =  0.029921114426497253
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: https://transparencia.elmartecnologia.com.br/Contab/Receitas?e=201022&ctx=201022","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+queue nodes: ****: http://transparencia.elmar.inf.br/Licitacao?e=201012&ctx=201012  level:  1
+queue nodes: ****: pesquisar  level:  1
+queue nodes: ****: http://transparencia.elmar.inf.br/?e=201012#  level:  1
+queue nodes: ****: licitacoes  level:  1
+-------ep---- 1
+Math.random() =  0.2707572559825189
+epsilon =  1
+--------------PAGE:  page valid
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201012#","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+Killed
+Killed
+npmnpm  ERR!ERR!  codecode ELIFECYCLE
+ ELIFECYCLE
+npmnpm  ERR!ERR!  errnoerrno 137
+ 137
+npm npmERR! ERR! package@1.0.0 start: `babel-node app.js "county=Arara" "aproach=bandit" "allitens=false"`
+npm  package@1.0.0 start: `babel-node app.js "county=Areia de Baraúnas" "aproach=bandit" "allitens=false"`
+ERR!npm  Exit status 137
+ERR! Exit status 137
+npmnpm ERR! ERR! 
+npm 
+ npmERR! ERR! Failed at the package@1.0.0 start script.
+npm  Failed at the package@1.0.0 start script.
+ERR!npm  This is probably not a problem with npm. There is likely additional logging output above.
+ERR! This is probably not a problem with npm. There is likely additional logging output above.
+Killed
+Killed
+npm npmERR! code  ELIFECYCLE
+ERR! code ELIFECYCLE
+npm ERR! npmerrno 137
+ ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Areia" "aproach=bandit" "allitens=false"`
+npm ERR!Killed
+Killed
+ Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Alcantil" "aproach=bandit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Quixaba" "aproach=bandit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Barra de Santa Rosa" "aproach=bandit" "allitens=false"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T21_54_01_528Z-debug.log
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T21_54_01_528Z-debug.log
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T21_54_01_531Z-debug.log
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T21_54_01_540Z-debug.log
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T21_54_01_541Z-debug.log
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-04T21_54_01_531Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Campina Grande" "aproach=bandit" "allitens=false"
+
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Carrapateira" "aproach=bandit" "allitens=false"
+
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Cruz do Espírito Santo" "aproach=bandit" "allitens=false"
+
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Conceição" "aproach=bandit" "allitens=false"
+
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Bom Jesus" "aproach=bandit" "allitens=false"
+
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Coremas" "aproach=bandit" "allitens=false"
+
+allItens:  false
+allItens:  false
+allItens:  false
+allItens:  false
+allItens:  false
+allItens:  false
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201054","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLN0","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201031","level":"info"}
+==================================================================
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"node value: http://conceicao.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: http://siteseticons.com.br/portal/ws/empresa/MDg5Mzk5MzYwMDAxOTQ=","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://siteseticons.com.br/portal/ws/empresa/MDg5Mzk5MzYwMDAxOTQ=","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201054","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://conceicao.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLN0","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201031","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bandit","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201054","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: http://conceicao.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: http://siteseticons.com.br/portal/ws/empresa/MDg5Mzk5MzYwMDAxOTQ=","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201031","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLN0","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://conceicao.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201031","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201054","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://siteseticons.com.br/portal/ws/empresa/MDg5Mzk5MzYwMDAxOTQ=","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLN0","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bandit","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://siteseticons.com.br/portal/ws/empresa/MDg5Mzk5MzYwMDAxOTQ=","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201054","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLN0","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201031","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bandit","level":"info"}
+{"message":"Classier: allitens=false","level":"info"}
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://conceicao.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201054","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"node value: http://siteseticons.com.br/portal/ws/empresa/MDg5Mzk5MzYwMDAxOTQ=","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"node value: http://transparencia.elmar.inf.br/?e=201031","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"node value: http://conceicao.pb.gov.br/assuntos/portal-da-transparencia","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLN0","level":"info"}
+===================================================================
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"node value: http://transparencia.campinagrande.pb.gov.br","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+--------02------PAGE:  page valid
+{"message":"Close Puppeteer ...","level":"info"}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
