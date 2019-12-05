@@ -39,7 +39,6 @@ export default class PuppeteerUtil {
                     '--unlimited-storage',
                     '--full-memory-crash-report',
                     '--no-sandbox',
-                    '--disable-features=site-per-process',
                     '--start-fullscreen',
                     '--disable-extensions',
                     '--ignore-certificate-errors',
@@ -121,6 +120,9 @@ export default class PuppeteerUtil {
         if (parents.length > 0) {
             const nodeParent = parents[0];
 
+            console.log("--------expt001------PAGE: ", page == undefined || page == null ? 'page is not valid' : 'page valid')
+
+
             if (HtmlUtil.isUrl(nodeParent.getSource().getValue())) {
                 Promise.all([page.goto(nodeParent.getSource().getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
 
@@ -133,12 +135,12 @@ export default class PuppeteerUtil {
                         Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
 
                     } else {
-                        console.log("--------expt------PAGE: ", page == undefined || page == null ? 'page is not valid' : 'page valid')
+                        console.log("--------expt002------PAGE: ", page == undefined || page == null ? 'page is not valid' : 'page valid')
 
                         if (parent.getSource().getIsExtractIframe() && (await page.constructor.name) !== "Frame") {
                             await page.waitForNavigation().catch(e => void e);
                             console.log("====passou por aqui e já esperou")
-                            page = await PuppeteerUtil.detectContext(page).catch(e => void e);
+                            page = await PuppeteerUtil.detectContext(page).catch(e => page = currentPage);
                             console.log("====saindo do if")
 
                         }
@@ -148,8 +150,8 @@ export default class PuppeteerUtil {
                         console.log("====termiou de procurar element")
 
                         if (element) {
-                            await element.click().catch(e => void e);
-                            await page.waitForNavigation().catch(e => void e);
+                            await element.click().catch(e => page = currentPage);
+                            await page.waitForNavigation().catch(e => page = currentPage);
                         }
                     }
                 }

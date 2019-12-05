@@ -73,11 +73,15 @@ export default class CrawlerUtil {
 
             await element.click();
             await page.waitForNavigation().catch(e => void e);
-            const pages = await puppeteer.getBrowser().pages()
-
+            let pages = await puppeteer.getBrowser().pages()
+           
+            console.log("pages: ", pages.length)
             if (pages.length > 1) {
-                await Promise.all([page.goto((await pages[pages.length - 1].url())).catch(e => void e), page.waitForNavigation({ timeout: 3000 }).catch(e => void e)]);
-                await pages[pages.length - 1].close();
+                await Promise.all([page.goto((await pages[pages.length - 1].url())).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
+                await (await puppeteer.getBrowser().pages())[pages.length - 1].close();
+                await page.waitFor(2000);
+                console.log("close tab: ", pages.length)
+
             }
 
             newCurrentURL = await page.url();
