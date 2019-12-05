@@ -6,6 +6,14 @@
     "auditLog": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/.262e2eee8421c29bff62bc7d2d56b223fb79f113-audit.json",
     "files": [
         {
+<<<<<<< HEAD
+=======
+            "date": 1562762903004,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..We-07-yyyy",
+            "hash": "5695e66e9b5e1b6622979e37663b362c"
+        },
+        {
+>>>>>>> 18fdde6f54423ea860c448b8501b72b9f52960b4
             "date": 1562863661612,
             "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Th-07-yyyy",
             "hash": "46acd8d0e9f82a333dda60455877b7d6"
@@ -121,6 +129,7 @@
             "hash": "d262becc8b10606aa172298cffcfc4aa"
         },
         {
+<<<<<<< HEAD
             "date": 1575428649786,
             "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..We-12-yyyy",
             "hash": "93bde966d827e0a92a92aad95024f506"
@@ -129,6 +138,11 @@
             "date": 1575515255852,
             "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..Th-12-yyyy",
             "hash": "ac412a86fa4ec6eda79d3c2e7d31ca28"
+=======
+            "date": 1575468839927,
+            "name": "/home/rafaelfeitosa/workspace/MSC/auditor-crawler/log/app.log..We-12-yyyy",
+            "hash": "0313a286af7fdcabee303c76be5344e2"
+>>>>>>> 18fdde6f54423ea860c448b8501b72b9f52960b4
         }
     ]
 }
