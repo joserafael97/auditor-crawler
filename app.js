@@ -71,13 +71,14 @@ let selectAproachToRun = async (aproachSelected, root, criterion, evaluation, it
 
     let classifierCli = '';
     let resultCrawlingCriterion = null;
+    let withOutSearchKeyWord = process.argv.slice(5)[0] ? CliParamUtil.allKeyWordsParamExtract(process.argv.slice(5)[0]) == 'true' ? true : false : false; 
 
     logger.info("AproachType: " + aproachSelected);
-
+    logger.info("AllKeyWords: " + withOutSearchKeyWord);
 
     if (aproachSelected == AproachType.BFS || aproachSelected == '' || aproachSelected == "default") {
         evaluation.aproach = AproachType.BFS
-        resultCrawlingCriterion = await Bfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
+        resultCrawlingCriterion = await Bfs.initilize(root, null, [], criterion, evaluation, [], null, 1, withOutSearchKeyWord).catch(logErrorAndExit)
 
     } else if (aproachSelected == AproachType.BANDIT) {
         evaluation.aproach = AproachType.BANDIT
@@ -93,18 +94,18 @@ let selectAproachToRun = async (aproachSelected, root, criterion, evaluation, it
             if (train['x_train'].length > 0 && !trained) {
                 nbModel.train(train['x_train'], train['y_train']);
                 trained = true;
-            }
+            } 
 
             resultCrawlingCriterion = await BanditProcessClassifier.initilize(root, null, [], criterion, evaluation, [], null, nbModel, new EpsilonGreedy(500, 0.1), [], [], 0, 1, trainModel).catch(logErrorAndExit)
 
         } else {
-            resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(500, 0.1)).catch(logErrorAndExit)
+            resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(500, 0.1), 0, 1, withOutSearchKeyWord).catch(logErrorAndExit)
         }
 
 
     } else if (aproachSelected == AproachType.DFS) {
         evaluation.aproach = AproachType.DFS
-        resultCrawlingCriterion = await Dfs.initilize(root, null, [], criterion, evaluation, [], null).catch(logErrorAndExit)
+        resultCrawlingCriterion = await Dfs.initilize(root, null, [], criterion, evaluation, [], null, 1, withOutSearchKeyWord).catch(logErrorAndExit)
     }
 
     itens = resultCrawlingCriterion.itens;

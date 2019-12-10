@@ -20,4 +20,8 @@ export default class CliParamUtil {
     static allItensParamExtract(param) {
         return param.replace('allitens=', '').trim()
     }
+
+    static allKeyWordsParamExtract(param) {
+        return param.replace('allkeywords=', '').trim()
+    }
 }

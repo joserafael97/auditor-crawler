@@ -12,7 +12,7 @@ import logger from './core/logger/app-logger'
 
 export default class BanditProcess {
 
-    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, epsilonGreedyAlg, actuallyIndex = 0, contNodeNumber = 1) {
+    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, epsilonGreedyAlg, actuallyIndex = 0, contNodeNumber = 1, withOutSearchKeyWord = false ) {
         if (puppeteer == null) {
             puppeteer = await PuppeteerUtil.createPuppetterInstance();
         }
@@ -23,7 +23,7 @@ export default class BanditProcess {
         node.initializeFeatures();
 
         try {
-            const nodeCrawledResult = await CrawlerUtil.crawlerNode(criterion, evaluation, node, page, puppeteer, elementsAccessed, itens, queue);
+            const nodeCrawledResult = await CrawlerUtil.crawlerNode(criterion, evaluation, node, page, puppeteer, elementsAccessed, itens, queue, withOutSearchKeyWord);
             queue = nodeCrawledResult.queue;
             node = nodeCrawledResult.node;
             elementsAccessed = nodeCrawledResult.elementsAccessed;
@@ -66,7 +66,7 @@ export default class BanditProcess {
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
             }
 
-            return BanditProcess.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, epsilonGreedyAlg, actuallyIndex, ++contNodeNumber);
+            return BanditProcess.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, epsilonGreedyAlg, actuallyIndex, ++contNodeNumber, withOutSearchKeyWord);
 
         }
 
