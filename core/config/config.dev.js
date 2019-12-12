@@ -10,17 +10,21 @@ config.dbHost = process.env.dbHost || 'localhost';
 config.dbPort = process.env.dbPort || '27017';
 
 
-const allItens = process.argv.slice(4)[0] !== undefined && CliParamUtil.allItensParamExtract(process.argv.slice(4)[0]) === "true" ? true : 
-        process.argv.slice(2)[0] !== undefined && CliParamUtil.allItensParamExtract(process.argv.slice(2)[0]) === "true" ? true : false;
+const allItens = process.argv.slice(4)[0] !== undefined && CliParamUtil.allItensParamExtract(process.argv.slice(4)[0]) === "true" ? true :
+    process.argv.slice(2)[0] !== undefined && CliParamUtil.allItensParamExtract(process.argv.slice(2)[0]) === "true" ? true : false;
 
 console.log("allItens: ", allItens)
 
 if (allItens !== undefined && !allItens) {
     //config.dbName = process.env.dbName || 'auditor-crawler-exp02';
-    config.dbName = process.env.dbName || 'auditor-crawler-test-lessitens';
+    config.dbName = process.env.dbName || 'auditor-crawler-exp03';
 
-    // config.dbName = process.env.dbName || 'auditor-crawler-test';
+    // config.dbName = process.env.dbName || 'auditor-crawler-test-lessitens';
 
+    //config.dbName = process.env.dbName || 'auditor-crawler-test';
+
+
+    //} else if () {
 
 } else {
     // config.dbName = process.env.dbName || 'auditor-crawler-test-allitens';

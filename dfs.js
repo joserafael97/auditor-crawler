@@ -8,7 +8,7 @@ import logger from './core/logger/app-logger'
 
 export default class Dfs {
 
-    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, contNodeNumber = 1) {
+    static async initilize(node, puppeteer = null, queue, criterion, evaluation, elementsAccessed = [], itens = null, contNodeNumber = 1, withOutSearchKeyWord = false) {
         if (puppeteer == null) {
             puppeteer = await PuppeteerUtil.createPuppetterInstance();
         }
@@ -17,7 +17,7 @@ export default class Dfs {
         const currentPage = page;
 
         try {
-            const nodeCrawledResult = await CrawlerUtil.crawlerNode(criterion, evaluation, node, page, puppeteer, elementsAccessed, itens, queue);
+            const nodeCrawledResult = await CrawlerUtil.crawlerNode(criterion, evaluation, node, page, puppeteer, elementsAccessed, itens, queue, withOutSearchKeyWord);
             queue = nodeCrawledResult.queue;
             node = nodeCrawledResult.node;
             elementsAccessed = nodeCrawledResult.elementsAccessed;
@@ -40,7 +40,7 @@ export default class Dfs {
                 await page.waitForNavigation().catch(e => void e);
                 await PuppeteerUtil.accessParent(page, newNode.getSourcesParents());
             }
-            return Dfs.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, ++contNodeNumber);
+            return Dfs.initilize(newNode, puppeteer, queue, criterion, evaluation, elementsAccessed, itens, ++contNodeNumber, withOutSearchKeyWord);
         }
 
         if (itens === null)
