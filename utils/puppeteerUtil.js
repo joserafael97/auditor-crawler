@@ -120,9 +120,6 @@ export default class PuppeteerUtil {
         if (parents.length > 0) {
             const nodeParent = parents[0];
 
-            console.log("--------expt001------PAGE: ", page == undefined || page == null ? 'page is not valid' : 'page valid')
-
-
             if (HtmlUtil.isUrl(nodeParent.getSource().getValue())) {
                 Promise.all([page.goto(nodeParent.getSource().getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
 
@@ -135,20 +132,14 @@ export default class PuppeteerUtil {
                         Promise.all([page.goto(source.getValue()).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
 
                     } else {
-                        console.log("--------expt002------PAGE: ", page == undefined || page == null ? 'page is not valid' : 'page valid')
 
                         if (parent.getSource().getIsExtractIframe() && (await page.constructor.name) !== "Frame") {
                             await page.waitForNavigation().catch(e => void e);
-                            console.log("====passou por aqui e já esperou")
                             page = await PuppeteerUtil.detectContext(page).catch(e => page = currentPage);
-                            console.log("====saindo do if")
-
                         }
-                        console.log("====procurando element")
 
                         let element = await PuppeteerUtil.selectElementPage(page, source.getXpath(), source.getValue());
-                        console.log("====termiou de procurar element")
-
+                        
                         if (element) {
                             await element.click().catch(e => page = currentPage);
                             await page.waitForNavigation().catch(e => page = currentPage);
@@ -162,7 +153,6 @@ export default class PuppeteerUtil {
 
 
     static async selectElementPage(page, xpath, searchValue) {
-
 
         if (page !== undefined && page !== null) {
             await page.waitForNavigation().catch(e => void e);

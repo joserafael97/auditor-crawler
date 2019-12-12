@@ -1,0 +1,1204 @@
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Alcantil" "aproach=bfs" "allitens=true"
+
+allItens:  true
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: bfs","level":"info"}
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLvr","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bfs","level":"info"}
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLvr","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bfs","level":"info"}
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLvr","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bfs","level":"info"}
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLvr","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bfs","level":"info"}
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLvr","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bfs","level":"info"}
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/accessdirect.php?link=MLvr","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: folha de pagamento  level:  1
+queue nodes: ****: consultar gastos com folha de pagamento  level:  1
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: pessoal e encargos sociais  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: despesas extrasorcamentarias  level:  1
+queue nodes: ****: consultar despesas extras  level:  1
+queue nodes: ****: consultar despesas extrasorcamentarias  level:  1
+queue nodes: ****: despesas  level:  1
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: resumo geral da despesa  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+{"message":"Criterion: Licitação","level":"info"}
+queue nodes: ****: licitacoes empenhadas  level:  1
+queue nodes: ****: consultar licitacoes  level:  1
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: editais e documentos de licitacao  level:  1
+queue nodes: ****: licitacoes  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+{"message":"Criterion: Receita Extra Orçamentária","level":"info"}
+queue nodes: ****: consultar receitas extraorcamentarias  level:  1
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: receitas  level:  1
+queue nodes: ****: resumo geral da receita  level:  1
+queue nodes: ****: r receita de contribuicoes  level:  1
+queue nodes: ****: r receita patrimonial  level:  1
+queue nodes: ****: r receita de servicos  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+{"message":"Criterion: Despesa Orçamentária","level":"info"}
+queue nodes: ****: despesas  level:  1
+queue nodes: ****: consultar despesas orcamentarias  level:  1
+queue nodes: ****: fixacao e execucao da despesa orcamentaria  level:  1
+queue nodes: ****: previsao e execucao da despesa orcamentaria  level:  1
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: resumo geral da despesa  level:  1
+queue nodes: ****: consultar licitacoes  level:  1
+{"message":"Criterion: Receita Orçamentária","level":"info"}
+queue nodes: ****: consultar receitas orcamentarias  level:  1
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: receitas  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: folha de pagamento","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: despesas extrasorcamentarias","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: folha de pagamento: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: consultar gastos com folha de pagamento  level:  1
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: pessoal e encargos sociais  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: licitacoes empenhadas","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: consultar receitas extraorcamentarias","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: despesas","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionDespesa Extra Orçamentáriain value: despesas extrasorcamentarias: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: consultar despesas extras  level:  1
+queue nodes: ****: consultar despesas extrasorcamentarias  level:  1
+queue nodes: ****: despesas  level:  1
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: resumo geral da despesa  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+{"message":"Click error in criterionLicitaçãoin value: licitacoes empenhadas: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Licitação","level":"info"}
+queue nodes: ****: consultar licitacoes  level:  1
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: editais e documentos de licitacao  level:  1
+queue nodes: ****: licitacoes  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+{"message":"Click error in criterionReceita Extra Orçamentáriain value: consultar receitas extraorcamentarias: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Receita Extra Orçamentária","level":"info"}
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: receitas  level:  1
+queue nodes: ****: resumo geral da receita  level:  1
+queue nodes: ****: r receita de contribuicoes  level:  1
+queue nodes: ****: r receita patrimonial  level:  1
+queue nodes: ****: r receita de servicos  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: consultar receitas orcamentarias","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionReceita Orçamentáriain value: consultar receitas orcamentarias: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Receita Orçamentária","level":"info"}
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: receitas  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: consultar gastos com folha de pagamento","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: consultar despesas extras","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: consultar gastos com folha de pagamento: Error: Node is detached from document","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: pessoal e encargos sociais  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: consultar licitacoes","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: 2020","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+pages:  1
+{"message":"Click error in criterionDespesa Extra Orçamentáriain value: consultar despesas extras: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: consultar despesas extrasorcamentarias  level:  1
+queue nodes: ****: despesas  level:  1
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: resumo geral da despesa  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+{"message":"Click error in criterionLicitaçãoin value: consultar licitacoes: Error: Node is detached from document","level":"warn"}
+{"message":"Criterion: Licitação","level":"info"}
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: editais e documentos de licitacao  level:  1
+queue nodes: ****: licitacoes  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+{"message":"Click error in criterionReceita Extra Orçamentáriain value: 2020: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Receita Extra Orçamentária","level":"info"}
+queue nodes: ****: receitas  level:  1
+queue nodes: ****: resumo geral da receita  level:  1
+queue nodes: ****: r receita de contribuicoes  level:  1
+queue nodes: ****: r receita patrimonial  level:  1
+queue nodes: ****: r receita de servicos  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: 2020","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionReceita Orçamentáriain value: 2020: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Receita Orçamentária","level":"info"}
+queue nodes: ****: receitas  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: 2020","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Despesa Orçamentária","level":"info"}
+queue nodes: ****: consultar despesas orcamentarias  level:  1
+queue nodes: ****: fixacao e execucao da despesa orcamentaria  level:  1
+queue nodes: ****: previsao e execucao da despesa orcamentaria  level:  1
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: resumo geral da despesa  level:  1
+queue nodes: ****: consultar licitacoes  level:  1
+queue nodes: ****: consultar despesas orcamentarias  level:  2
+queue nodes: ****: fixacao e execucao da despesa orcamentaria  level:  2
+queue nodes: ****: previsao e execucao da despesa orcamentaria  level:  2
+queue nodes: ****: resumo geral da despesa  level:  2
+queue nodes: ****: consultar licitacoes  level:  2
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: consultar despesas extrasorcamentarias","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionQuadro Pessoalin value: 2020: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: pessoal e encargos sociais  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: 2020","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: receitas","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionDespesa Extra Orçamentáriain value: consultar despesas extrasorcamentarias: Error: Node is detached from document","level":"warn"}
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: despesas  level:  1
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: resumo geral da despesa  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+{"message":"Click error in criterionLicitaçãoin value: 2020: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Licitação","level":"info"}
+queue nodes: ****: editais e documentos de licitacao  level:  1
+queue nodes: ****: licitacoes  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: receitas","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: consultar despesas orcamentarias","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: pessoal e encargos sociais","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionDespesa Orçamentáriain value: consultar despesas orcamentarias: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Despesa Orçamentária","level":"info"}
+queue nodes: ****: fixacao e execucao da despesa orcamentaria  level:  1
+queue nodes: ****: previsao e execucao da despesa orcamentaria  level:  1
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: resumo geral da despesa  level:  1
+queue nodes: ****: consultar licitacoes  level:  1
+queue nodes: ****: consultar despesas orcamentarias  level:  2
+queue nodes: ****: fixacao e execucao da despesa orcamentaria  level:  2
+queue nodes: ****: previsao e execucao da despesa orcamentaria  level:  2
+queue nodes: ****: resumo geral da despesa  level:  2
+queue nodes: ****: consultar licitacoes  level:  2
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: despesas","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: editais e documentos de licitacao","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+pages:  1
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+{"message":"Click error in criterionLicitaçãoin value: editais e documentos de licitacao: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Licitação","level":"info"}
+queue nodes: ****: licitacoes  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+pages:  1
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+{"message":"Criterion: Receita Extra Orçamentária","level":"info"}
+queue nodes: ****: resumo geral da receita  level:  1
+queue nodes: ****: r receita de contribuicoes  level:  1
+queue nodes: ****: r receita patrimonial  level:  1
+queue nodes: ****: r receita de servicos  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+queue nodes: ****: consultar receitas extraorcamentarias  level:  2
+queue nodes: ****: 2020  level:  2
+queue nodes: ****: resumo geral da receita  level:  2
+queue nodes: ****: r receita de contribuicoes  level:  2
+queue nodes: ****: r receita patrimonial  level:  2
+queue nodes: ****: r receita de servicos  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: fixacao e execucao da despesa orcamentaria","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+pages:  1
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+{"message":"Click error in criterionDespesa Orçamentáriain value: fixacao e execucao da despesa orcamentaria: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Despesa Orçamentária","level":"info"}
+queue nodes: ****: previsao e execucao da despesa orcamentaria  level:  1
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: resumo geral da despesa  level:  1
+queue nodes: ****: consultar licitacoes  level:  1
+queue nodes: ****: consultar despesas orcamentarias  level:  2
+queue nodes: ****: fixacao e execucao da despesa orcamentaria  level:  2
+queue nodes: ****: previsao e execucao da despesa orcamentaria  level:  2
+queue nodes: ****: resumo geral da despesa  level:  2
+queue nodes: ****: consultar licitacoes  level:  2
+pages:  1
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: licitacoes","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Quadro Pessoal","level":"info"}
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+{"message":"Criterion: Receita Orçamentária","level":"info"}
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+queue nodes: ****: consultar receitas orcamentarias  level:  2
+queue nodes: ****: 2020  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: resumo geral da receita","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: resumo geral da despesa  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+queue nodes: ****: despesas extrasorcamentarias  level:  2
+queue nodes: ****: consultar despesas extras  level:  2
+queue nodes: ****: consultar despesas extrasorcamentarias  level:  2
+queue nodes: ****: resumo geral da despesa  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: previsao e execucao da despesa orcamentaria","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Quadro Pessoal","level":"info"}
+{"message":"node value: consolidar consultar dados de todos os orgaos do poder executivo.","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: consolidar consultar dados de todos os orgaos do poder executivo.","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionReceita Extra Orçamentáriain value: resumo geral da receita: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Receita Extra Orçamentária","level":"info"}
+queue nodes: ****: r receita de contribuicoes  level:  1
+queue nodes: ****: r receita patrimonial  level:  1
+queue nodes: ****: r receita de servicos  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+queue nodes: ****: consultar receitas extraorcamentarias  level:  2
+queue nodes: ****: 2020  level:  2
+queue nodes: ****: resumo geral da receita  level:  2
+queue nodes: ****: r receita de contribuicoes  level:  2
+queue nodes: ****: r receita patrimonial  level:  2
+queue nodes: ****: r receita de servicos  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+pages:  1
+{"message":"Click error in criterionDespesa Orçamentáriain value: previsao e execucao da despesa orcamentaria: Error: Node is detached from document","level":"warn"}
+{"message":"Criterion: Despesa Orçamentária","level":"info"}
+queue nodes: ****: 2020  level:  1
+queue nodes: ****: resumo geral da despesa  level:  1
+queue nodes: ****: consultar licitacoes  level:  1
+queue nodes: ****: consultar despesas orcamentarias  level:  2
+queue nodes: ****: fixacao e execucao da despesa orcamentaria  level:  2
+queue nodes: ****: previsao e execucao da despesa orcamentaria  level:  2
+queue nodes: ****: resumo geral da despesa  level:  2
+queue nodes: ****: consultar licitacoes  level:  2
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+{"message":"Click error in criterionQuadro Pessoalin value: consolidar consultar dados de todos os orgaos do poder executivo.: TypeError: Cannot read property 'click' of null","level":"warn"}
+{"message":"Close Puppeteer ...","level":"info"}
+{"message":"Returnin Criterion: Quadro Pessoal","level":"info"}
+itens [ { keywordsXpath: [ 'nome', 'Servidor' ],
+    tagNameParents: [ 'tr', 'tbody', 'td' ],
+    textParents:
+     [ '<td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="2"></td><td class="ndcol2">Nome</td>',
+       '<tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="0"></td><td class="ndcol2">Número</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="1"></td><td class="ndcol2">Data</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="2"></td><td class="ndcol2">Nome</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="3"></td><td class="ndcol2">CPF/CNPJ</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="4"></td><td class="ndcol2">LICITAÇÃO</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="5"></td><td class="ndcol2">Nº LICITAÇÃO</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="6"></td><td class="ndcol2">Modalidade</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="7"></td><td class="ndcol2">ORGÃO</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="8"></td><td class="ndcol2">UNID. ORÇAMENTÁRIA</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="9"></td><td class="ndcol2">FUNÇÃO</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="10"></td><td class="ndcol2">SUBFUNÇÃO</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="11"></td><td class="ndcol2">PROGRAMA</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="12"></td><td class="ndcol2">AÇÃO</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="13"></td><td class="ndcol2">Categoria Econômica</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="14"></td><td class="ndcol2">Natureza</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="15"></td><td class="ndcol2">Aplicação</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="16"></td><td class="ndcol2">Elemento</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="17"></td><td class="ndcol2">Fonte Recursos</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="18"></td><td class="ndcol2">Valor Fixado(R$)</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="19"></td><td class="ndcol2">Valor Empenhado(R$)</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="20"></td><td class="ndcol2">Valor Liquidado(R$)</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="21"></td><td class="ndcol2">Valor Pago(R$)</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="22"></td><td class="ndcol2">Anulado(R$)</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="23"></td><td class="ndcol2">Saldo(R$)</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="24"></td><td class="ndcol2">Dt. pag. última parcela.</td></tr>' ],
+    _id: 5deb1770d047657bf72839a4,
+    name: 'nome',
+    found: true,
+    foundText: 'nome',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nome" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "servidor"]',
+    pathSought:
+     'http://portaldatransparencia.publicsoft.com.br/sistemas/Padroes/themes/PT/PTransparencia3.0/consultas-ajax/grid-total-despesa-pessoal-encargos.php',
+    proof:
+     './proof/Alcantil/2019-12-07T03:06:52.220Z/Quadro Pessoal/Quadro Pessoal-nome-level-1-Sat Dec 07 2019 00:10:40 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Nome',
+    valid: true,
+    tagName: 'td' },
+  { keywordsXpath: [ 'cpf', 'nome' ],
+    tagNameParents: [ 'tr', 'tbody', 'td' ],
+    textParents:
+     [ '<td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="2"></td><td class="ndcol2" style="background-color: rgb(79, 6, 101); color: rgb(255, 255, 255);">Nome</td>',
+       '<tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="0"></td><td class="ndcol2">Número</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="1"></td><td class="ndcol2">Data</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="2"></td><td class="ndcol2" style="background-color: rgb(79, 6, 101); color: rgb(255, 255, 255);">Nome</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="3"></td><td class="ndcol2">CPF/CNPJ</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="4"></td><td class="ndcol2">LICITAÇÃO</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="5"></td><td class="ndcol2">Nº LICITAÇÃO</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="6"></td><td class="ndcol2">Modalidade</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="7"></td><td class="ndcol2">ORGÃO</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="8"></td><td class="ndcol2">UNID. ORÇAMENTÁRIA</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="9"></td><td class="ndcol2">FUNÇÃO</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="10"></td><td class="ndcol2">SUBFUNÇÃO</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="11"></td><td class="ndcol2">PROGRAMA</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="12"></td><td class="ndcol2">AÇÃO</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="13"></td><td class="ndcol2">Categoria Econômica</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="14"></td><td class="ndcol2">Natureza</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="15"></td><td class="ndcol2">Aplicação</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="16"></td><td class="ndcol2">Elemento</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="17"></td><td class="ndcol2">Fonte Recursos</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="18"></td><td class="ndcol2">Valor Fixado(R$)</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="19"></td><td class="ndcol2">Valor Empenhado(R$)</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="20"></td><td class="ndcol2">Valor Liquidado(R$)</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="21"></td><td class="ndcol2">Valor Pago(R$)</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="22"></td><td class="ndcol2">Anulado(R$)</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="23"></td><td class="ndcol2">Saldo(R$)</td></tr><tr><td class="ndcol1"><input type="checkbox" checked="checked" class="togCol" value="24"></td><td class="ndcol2">Dt. pag. última parcela.</td></tr>' ],
+    _id: 5deb1770d047657bf72839a5,
+    name: 'cpf',
+    found: true,
+    foundText: 'nome',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cpf" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "nome"]',
+    pathSought:
+     'http://portaldatransparencia.publicsoft.com.br/sistemas/Padroes/themes/PT/PTransparencia3.0/consultas-ajax/grid-total-despesa-pessoal-encargos.php',
+    proof:
+     './proof/Alcantil/2019-12-07T03:06:52.220Z/Quadro Pessoal/Quadro Pessoal-cpf-level-1-Sat Dec 07 2019 00:10:41 GMT-0300 (Brasilia Standard Time)-proof.png',
+    proofText: 'Nome',
+    valid: true,
+    tagName: 'td' },
+  { keywordsXpath: [ 'cargo', 'CARGO/VINCULO' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5deb1770d047657bf72839a6,
+    name: 'cargo',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cargo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "cargo/vinculo"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'tipo do ato',
+       'Vinculo',
+       'secretaria',
+       'tipo cargo',
+       'tipo de cargo',
+       'regime',
+       'tipo',
+       'Tipo de Contratação' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5deb1770d047657bf72839a7,
+    name: 'tipo_cargo',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo do ato" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "vinculo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "secretaria" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo cargo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo de cargo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "regime" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "tipo de contratacao"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' },
+  { keywordsXpath:
+     [ 'salario',
+       'Total Vantagem*',
+       'sal. base',
+       'liquido',
+       'valor liquido',
+       'Vantagens',
+       'Vantagens (Bruto)',
+       'total liquido R$',
+       'Vantagens/pago' ],
+    tagNameParents: [],
+    textParents: [],
+    _id: 5deb1770d047657bf72839a8,
+    name: 'salario_cargo',
+    found: false,
+    foundText: '',
+    xpath:
+     '//*[translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "salario" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "total vantagem*" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "sal. base" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "liquido" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "valor liquido" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "vantagens" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "vantagens (bruto)" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "total liquido r$" or translate(translate(translate(normalize-space(text()),"ABCDEFGHIJKLMNOPQRSTUVWXYZÇ", "abcdefghijklmnopqrstuvwxyzc"),"ãáâàÃÁÀÂẽéêèẼÉÈÊõóôòÒÓÔÕĩìíîÌĨÎÍúùûũÚÙŨÛç", "aaaaaaaaeeeeeeeeooooooooiiiiiiiiuuuuuuuuc"),":-º°", "") = "vantagens/pago"]',
+    pathSought: '',
+    proof: '',
+    proofText: '',
+    valid: false,
+    tagName: '' } ]
+{"message":"Duration in crawling proccess for the criterion Quadro Pessoal was: 5 min","level":"info"}
+{"message":"Click error in criterionReceita Orçamentáriain value: consolidar consultar dados de todos os orgaos do poder executivo.: TypeError: Cannot read property 'click' of null","level":"warn"}
+{"message":"Criterion: Receita Orçamentária","level":"info"}
+queue nodes: ****: consultar receitas orcamentarias  level:  2
+queue nodes: ****: 2020  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: 2020","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionDespesa Extra Orçamentáriain value: 2020: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: resumo geral da despesa  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+queue nodes: ****: despesas extrasorcamentarias  level:  2
+queue nodes: ****: consultar despesas extras  level:  2
+queue nodes: ****: consultar despesas extrasorcamentarias  level:  2
+queue nodes: ****: resumo geral da despesa  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+{"message":"Criterion: Licitação","level":"info"}
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+queue nodes: ****: licitacoes empenhadas  level:  2
+queue nodes: ****: consultar licitacoes  level:  2
+queue nodes: ****: 2020  level:  2
+queue nodes: ****: editais e documentos de licitacao  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: r receita de contribuicoes","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: 2020","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionDespesa Orçamentáriain value: 2020: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Despesa Orçamentária","level":"info"}
+queue nodes: ****: resumo geral da despesa  level:  1
+queue nodes: ****: consultar licitacoes  level:  1
+queue nodes: ****: consultar despesas orcamentarias  level:  2
+queue nodes: ****: fixacao e execucao da despesa orcamentaria  level:  2
+queue nodes: ****: previsao e execucao da despesa orcamentaria  level:  2
+queue nodes: ****: resumo geral da despesa  level:  2
+queue nodes: ****: consultar licitacoes  level:  2
+--------expt001------PAGE:  page valid
+--------expt002------PAGE:  page valid
+====procurando element
+====termiou de procurar element
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: resumo geral da despesa","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: consolidar consultar dados de todos os orgaos do poder executivo.","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionDespesa Extra Orçamentáriain value: resumo geral da despesa: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+queue nodes: ****: despesas extrasorcamentarias  level:  2
+queue nodes: ****: consultar despesas extras  level:  2
+queue nodes: ****: consultar despesas extrasorcamentarias  level:  2
+queue nodes: ****: resumo geral da despesa  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+{"message":"Click error in criterionLicitaçãoin value: consolidar consultar dados de todos os orgaos do poder executivo.: TypeError: Cannot read property 'click' of null","level":"warn"}
+{"message":"Criterion: Licitação","level":"info"}
+queue nodes: ****: licitacoes empenhadas  level:  2
+queue nodes: ****: consultar licitacoes  level:  2
+queue nodes: ****: 2020  level:  2
+queue nodes: ****: editais e documentos de licitacao  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+pages:  1
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: resumo geral da despesa","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+{"message":"Criterion: Receita Extra Orçamentária","level":"info"}
+queue nodes: ****: r receita patrimonial  level:  1
+queue nodes: ****: r receita de servicos  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+queue nodes: ****: consultar receitas extraorcamentarias  level:  2
+queue nodes: ****: 2020  level:  2
+queue nodes: ****: resumo geral da receita  level:  2
+queue nodes: ****: r receita de contribuicoes  level:  2
+queue nodes: ****: r receita patrimonial  level:  2
+queue nodes: ****: r receita de servicos  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+queue nodes: ****: ir para consulta de guias de receita  level:  2
+{"message":"Click error in criterionDespesa Orçamentáriain value: resumo geral da despesa: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Despesa Orçamentária","level":"info"}
+queue nodes: ****: consultar licitacoes  level:  1
+queue nodes: ****: consultar despesas orcamentarias  level:  2
+queue nodes: ****: fixacao e execucao da despesa orcamentaria  level:  2
+queue nodes: ****: previsao e execucao da despesa orcamentaria  level:  2
+queue nodes: ****: resumo geral da despesa  level:  2
+queue nodes: ****: consultar licitacoes  level:  2
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: consultar receitas orcamentarias","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: consolidar consultar dados de todos os orgaos do poder executivo.","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+--------expt002------PAGE:  page valid
+====procurando element
+{"message":"Click error in criterionDespesa Extra Orçamentáriain value: consolidar consultar dados de todos os orgaos do poder executivo.: TypeError: Cannot read property 'click' of null","level":"warn"}
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: despesas extrasorcamentarias  level:  2
+queue nodes: ****: consultar despesas extras  level:  2
+queue nodes: ****: consultar despesas extrasorcamentarias  level:  2
+queue nodes: ****: resumo geral da despesa  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+====termiou de procurar element
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: r receita patrimonial","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: consultar licitacoes","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionDespesa Orçamentáriain value: consultar licitacoes: Error: Node is detached from document","level":"warn"}
+{"message":"Criterion: Despesa Orçamentária","level":"info"}
+queue nodes: ****: consultar despesas orcamentarias  level:  2
+queue nodes: ****: fixacao e execucao da despesa orcamentaria  level:  2
+queue nodes: ****: previsao e execucao da despesa orcamentaria  level:  2
+queue nodes: ****: resumo geral da despesa  level:  2
+queue nodes: ****: consultar licitacoes  level:  2
+--------expt001------PAGE:  page valid
+--------expt002------PAGE:  page valid
+====procurando element
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: licitacoes empenhadas","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+====termiou de procurar element
+--------expt001------PAGE:  page valid
+--------expt002------PAGE:  page valid
+====procurando element
+pages:  1
+pages:  1
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+====termiou de procurar element
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+{"message":"Criterion: Receita Extra Orçamentária","level":"info"}
+queue nodes: ****: r receita de servicos  level:  1
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+queue nodes: ****: consultar receitas extraorcamentarias  level:  2
+queue nodes: ****: 2020  level:  2
+queue nodes: ****: resumo geral da receita  level:  2
+queue nodes: ****: r receita de contribuicoes  level:  2
+queue nodes: ****: r receita patrimonial  level:  2
+queue nodes: ****: r receita de servicos  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+queue nodes: ****: ir para consulta de guias de receita  level:  2
+queue nodes: ****: ir para consulta de guias de receita  level:  2
+{"message":"Criterion: Receita Orçamentária","level":"info"}
+queue nodes: ****: 2020  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+queue nodes: ****: consultar  level:  3
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: despesas extrasorcamentarias","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: consultar despesas orcamentarias","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: r receita de servicos","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+--------expt002------PAGE:  page valid
+====procurando element
+====termiou de procurar element
+pages:  1
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+{"message":"Criterion: Licitação","level":"info"}
+queue nodes: ****: consultar licitacoes  level:  2
+queue nodes: ****: 2020  level:  2
+queue nodes: ****: editais e documentos de licitacao  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+queue nodes: ****: consultar  level:  3
+pages:  1
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: 2020","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+{"message":"Criterion: Receita Extra Orçamentária","level":"info"}
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  1
+queue nodes: ****: consultar receitas extraorcamentarias  level:  2
+queue nodes: ****: 2020  level:  2
+queue nodes: ****: resumo geral da receita  level:  2
+queue nodes: ****: r receita de contribuicoes  level:  2
+queue nodes: ****: r receita patrimonial  level:  2
+queue nodes: ****: r receita de servicos  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+queue nodes: ****: ir para consulta de guias de receita  level:  2
+queue nodes: ****: ir para consulta de guias de receita  level:  2
+queue nodes: ****: ir para consulta de guias de receita  level:  2
+pages:  1
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+--------expt001------PAGE:  page valid
+--------expt002------PAGE:  page valid
+====procurando element
+====termiou de procurar element
+pages:  1
+--------01------PAGE:  page valid
+--------02------PAGE:  page valid
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: consultar despesas extras  level:  2
+queue nodes: ****: consultar despesas extrasorcamentarias  level:  2
+queue nodes: ****: resumo geral da despesa  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+queue nodes: ****: consultar despesas extras  level:  3
+queue nodes: ****: consultar despesas extrasorcamentarias  level:  3
+queue nodes: ****: despesas  level:  3
+queue nodes: ****: 2020  level:  3
+queue nodes: ****: resumo geral da despesa  level:  3
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  3
+--------expt001------PAGE:  page valid
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: consolidar consultar dados de todos os orgaos do poder executivo.","level":"info"}
+{"message":"node level: 1","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionReceita Orçamentáriain value: 2020: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Receita Orçamentária","level":"info"}
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+queue nodes: ****: consultar  level:  3
+{"message":"Click error in criterionReceita Extra Orçamentáriain value: consolidar consultar dados de todos os orgaos do poder executivo.: TypeError: Cannot read property 'click' of null","level":"warn"}
+{"message":"Criterion: Receita Extra Orçamentária","level":"info"}
+queue nodes: ****: consultar receitas extraorcamentarias  level:  2
+queue nodes: ****: 2020  level:  2
+queue nodes: ****: resumo geral da receita  level:  2
+queue nodes: ****: r receita de contribuicoes  level:  2
+queue nodes: ****: r receita patrimonial  level:  2
+queue nodes: ****: r receita de servicos  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+queue nodes: ****: ir para consulta de guias de receita  level:  2
+queue nodes: ****: ir para consulta de guias de receita  level:  2
+queue nodes: ****: ir para consulta de guias de receita  level:  2
+==================================================================
+{"message":"criterion: Licitação","level":"info"}
+{"message":"node value: consultar licitacoes","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Criterion: Despesa Orçamentária","level":"info"}
+queue nodes: ****: fixacao e execucao da despesa orcamentaria  level:  2
+queue nodes: ****: previsao e execucao da despesa orcamentaria  level:  2
+queue nodes: ****: resumo geral da despesa  level:  2
+queue nodes: ****: consultar licitacoes  level:  2
+queue nodes: ****: consultar  level:  3
+--------expt001------PAGE:  page valid
+--------expt002------PAGE:  page valid
+====procurando element
+--------expt001------PAGE:  page valid
+--------expt002------PAGE:  page valid
+====procurando element
+====termiou de procurar element
+--------expt001------PAGE:  page valid
+--------expt002------PAGE:  page valid
+====procurando element
+====termiou de procurar element
+====termiou de procurar element
+{"message":"Click error in criterionLicitaçãoin value: consultar licitacoes: Error: Node is detached from document","level":"warn"}
+{"message":"Criterion: Licitação","level":"info"}
+queue nodes: ****: 2020  level:  2
+queue nodes: ****: editais e documentos de licitacao  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+queue nodes: ****: consultar  level:  3
+--------expt001------PAGE:  page valid
+--------expt002------PAGE:  page valid
+====procurando element
+====termiou de procurar element
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: consultar despesas extras","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: consolidar consultar dados de todos os orgaos do poder executivo.","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+==================================================================
+{"message":"criterion: Receita Extra Orçamentária","level":"info"}
+{"message":"node value: consultar receitas extraorcamentarias","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+--------expt001------PAGE:  page valid
+--------expt002------PAGE:  page valid
+====procurando element
+====termiou de procurar element
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: fixacao e execucao da despesa orcamentaria","level":"info"}
+{"message":"node level: 2","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"Click error in criterionDespesa Extra Orçamentáriain value: consultar despesas extras: Error: Node is either not visible or not an HTMLElement","level":"warn"}
+{"message":"Criterion: Despesa Extra Orçamentária","level":"info"}
+queue nodes: ****: consultar despesas extrasorcamentarias  level:  2
+queue nodes: ****: resumo geral da despesa  level:  2
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  2
+queue nodes: ****: consultar despesas extras  level:  3
+queue nodes: ****: consultar despesas extrasorcamentarias  level:  3
+queue nodes: ****: despesas  level:  3
+queue nodes: ****: 2020  level:  3
+queue nodes: ****: resumo geral da despesa  level:  3
+queue nodes: ****: consolidar consultar dados de todos os orgaos do poder executivo.  level:  3
+{"message":"Click error in criterionReceita Orçamentáriain value: consolidar consultar dados de todos os orgaos do poder executivo.: TypeError: Cannot read property 'click' of null","level":"warn"}
+{"message":"Criterion: Receita Orçamentária","level":"info"}
+queue nodes: ****: consultar  level:  3
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Alcantil" "aproach=bfs" "allitens=true"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-07T03_17_27_174Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Areia" "aproach=bfs" "allitens=true"
+
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Areia" "aproach=bfs" "allitens=true"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-07T03_17_29_770Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Areia de Baraúnas" "aproach=bfs" "allitens=true"
+
+allItens:  true
+{"message":"Connected to mongo!!!","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Areia de Baraúnas" "aproach=bfs" "allitens=true"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-07T03_17_34_021Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Barra de Santa Rosa" "aproach=bfs" "allitens=true"
+
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Barra de Santa Rosa" "aproach=bfs" "allitens=true"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-07T03_17_37_810Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Bayeux" "aproach=bfs" "allitens=true"
+
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Bayeux" "aproach=bfs" "allitens=true"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-07T03_17_39_272Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Belém do Brejo do Cruz" "aproach=bfs" "allitens=true"
+
+allItens:  true
+{"message":"Connected to mongo!!!","level":"info"}
+{"message":"AproachType: bfs","level":"info"}
+==================================================================
+{"message":"criterion: Despesa Orçamentária","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=Ow==&uf=PB","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bfs","level":"info"}
+==================================================================
+{"message":"criterion: Despesa Extra Orçamentária","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=Ow==&uf=PB","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+{"message":"AproachType: bfs","level":"info"}
+==================================================================
+{"message":"criterion: Receita Orçamentária","level":"info"}
+{"message":"node value: http://portaldatransparencia.publicsoft.com.br/sistemas/ContabilidadePublica/views/views_control/index.php?cidade=Ow==&uf=PB","level":"info"}
+{"message":"node level: 0","level":"info"}
+{"message":"current page: Page","level":"info"}
+{"message":"node extracted in Frame: false","level":"info"}
+===================================================================
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Belém do Brejo do Cruz" "aproach=bfs" "allitens=true"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-07T03_17_50_274Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Bom Jesus" "aproach=bfs" "allitens=true"
+
+allItens:  true
+{"message":"Connected to mongo!!!","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Bom Jesus" "aproach=bfs" "allitens=true"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-07T03_17_52_325Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Campina Grande" "aproach=bfs" "allitens=true"
+
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Campina Grande" "aproach=bfs" "allitens=true"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-07T03_17_53_542Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Carrapateira" "aproach=bfs" "allitens=true"
+
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Carrapateira" "aproach=bfs" "allitens=true"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-07T03_17_55_097Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Conceição" "aproach=bfs" "allitens=true"
+
+allItens:  true
+{"message":"Connected to mongo!!!","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Conceição" "aproach=bfs" "allitens=true"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-07T03_18_00_680Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Coremas" "aproach=bfs" "allitens=true"
+
+allItens:  true
+{"message":"Connected to mongo!!!","level":"info"}
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Coremas" "aproach=bfs" "allitens=true"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-07T03_18_03_992Z-debug.log
+
+> package@1.0.0 start /home/rafaelfeitosa/workspace/MSC/auditor-crawler
+> babel-node app.js "county=Cruz do Espírito Santo" "aproach=bfs" "allitens=true"
+
+Killed
+npm ERR! code ELIFECYCLE
+npm ERR! errno 137
+npm ERR! package@1.0.0 start: `babel-node app.js "county=Cruz do Espírito Santo" "aproach=bfs" "allitens=true"`
+npm ERR! Exit status 137
+npm ERR! 
+npm ERR! Failed at the package@1.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rafaelfeitosa/.npm/_logs/2019-12-07T03_18_05_363Z-debug.log

@@ -15,6 +15,7 @@ import CliParamUtil from './utils/cliParamUtil';
 import AproachType from './consts/aproachType'
 import BanditProcess from './banditProcess';
 import EpsilonGreedy from './epsilonGreedy';
+import epsilonGreedyBfs from './epsilonGreedyBfs';
 import { GaussianNB } from 'ml-naivebayes';
 import { MultinomialNB } from 'ml-naivebayes';
 import Dfs from './dfs';
@@ -102,6 +103,9 @@ let selectAproachToRun = async (aproachSelected, root, criterion, evaluation, it
             resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(500, 0.1), 0, 1, withOutSearchKeyWord).catch(logErrorAndExit)
         }
 
+    } else if (aproachSelected == AproachType.BANDIT_WITH_BFS) {
+        evaluation.aproach = AproachType.BANDIT_WITH_BFS
+        resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new epsilonGreedyBfs(500, 0.1)).catch(logErrorAndExit)
 
     } else if (aproachSelected == AproachType.DFS) {
         evaluation.aproach = AproachType.DFS
