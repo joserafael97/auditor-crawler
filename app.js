@@ -15,6 +15,7 @@ import CliParamUtil from './utils/cliParamUtil';
 import AproachType from './consts/aproachType'
 import BanditProcess from './banditProcess';
 import EpsilonGreedy from './epsilonGreedy';
+import epsilonGreedyBfs from './epsilonGreedyBfs';
 import { GaussianNB } from 'ml-naivebayes';
 import { MultinomialNB } from 'ml-naivebayes';
 import Dfs from './dfs';
@@ -101,6 +102,9 @@ let selectAproachToRun = async (aproachSelected, root, criterion, evaluation, it
             resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new EpsilonGreedy(500, 0.1)).catch(logErrorAndExit)
         }
 
+    } else if (aproachSelected == AproachType.BANDIT_WITH_BFS) {
+        evaluation.aproach = AproachType.BANDIT_WITH_BFS
+        resultCrawlingCriterion = await BanditProcess.initilize(root, null, [], criterion, evaluation, [], null, new epsilonGreedyBfs(500, 0.1)).catch(logErrorAndExit)
 
     } else if (aproachSelected == AproachType.DFS) {
         evaluation.aproach = AproachType.DFS
@@ -207,17 +211,17 @@ function sleep(ms) {
     let criterionPessoal = CrawlerUtil.createCriterion('Quadro Pessoal');
 
     Promise.all([
-        startCrawler(evaluation, criterionDespesaOrc),
-        await sleep(1000),
+        // startCrawler(evaluation, criterionDespesaOrc),
+        // await sleep(1000),
         startCrawler(evaluation, criterionDespesaExtra),
-        await sleep(1000),
-        startCrawler(evaluation, criterionReceitaOrc),
-        await sleep(1000),
-        startCrawler(evaluation, criterionReceitaExtra),
-        await sleep(1000),
-        startCrawler(evaluation, criterionLicit),
-        await sleep(1000),
-        startCrawler(evaluation, criterionPessoal)
+        // await sleep(1000),
+        // startCrawler(evaluation, criterionReceitaOrc),
+        // await sleep(1000),
+        // startCrawler(evaluation, criterionReceitaExtra),
+        // await sleep(1000),
+        // startCrawler(evaluation, criterionLicit),
+        // await sleep(1000),
+        // startCrawler(evaluation, criterionPessoal)
     ]).then((result) => {
         console.log("=================finished=======================");
         moogoseInstace.connection.close(function () {

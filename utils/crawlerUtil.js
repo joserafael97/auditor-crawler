@@ -80,8 +80,6 @@ export default class CrawlerUtil {
                 await Promise.all([page.goto((await pages[pages.length - 1].url())).catch(e => void e), page.waitForNavigation().catch(e => void e)]);
                 await (await puppeteer.getBrowser().pages())[pages.length - 1].close();
                 await page.waitFor(2000);
-                console.log("close tab: ", pages.length)
-
             }
 
             newCurrentURL = await page.url();
@@ -93,9 +91,6 @@ export default class CrawlerUtil {
 
         let elementsIdentify = []
         let iframesUrlNodes = []
-
-        console.log("--------01------PAGE: ", page == undefined || page == null ? 'page is not valid': 'page valid')
-
 
         if ((await page.constructor.name) !== "Frame") {
             elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
@@ -110,9 +105,6 @@ export default class CrawlerUtil {
 
         elementsIdentify.push.apply(elementsIdentify, elementsAccessed);
         elementsIdentify.push.apply(elementsIdentify, queue);
-
-        console.log("--------02------PAGE: ", page == undefined || page == null ? 'page is not valid': 'page valid')
-
 
         if (!changeUrl ||
             (changeUrl && (await page.constructor.name) === "Frame") ||
